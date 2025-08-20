@@ -31,7 +31,7 @@ export default function Header() {
             <li className="text-[14px]">
               <Link href="/"
                 className={`head ${
-                  isActive("/") ? "text-[rgb(97,64,18)] font-semibold" : "hover:text-[rgb(97,64,18)]"
+                  isActive("/") ? "text-[rgb(97,64,18)] font-bold" : "hover:text-[rgb(97,64,18)]"
                 }`}>
                 Home
               </Link>
@@ -41,7 +41,7 @@ export default function Header() {
                 href="/the-poetry"
                 className={`head ${
                   isActive("/the-poetry")
-                    ? "text-[rgb(97,64,18)] font-semibold"
+                    ? "text-[rgb(97,64,18)] font-bold"
                     : "hover:text-[rgb(97,64,18)]"
                 }`}
               >
@@ -53,7 +53,7 @@ export default function Header() {
                 href="/blog"
                 className={`head ${
                   isActive("/blog")
-                    ? "text-[rgb(97,64,18)] font-semibold"
+                    ? "text-[rgb(97,64,18)] font-bold"
                     : "hover:text-[rgb(97,64,18)]"
                 }`}
               >
@@ -65,7 +65,7 @@ export default function Header() {
                 className={`child flex items-center gap-2 ${
                   isActive("/baby-vaccination-chart") ||
                   isActive("/due-date-calculator")
-                    ? "text-[rgb(97,64,18)] font-semibold"
+                    ? "text-[rgb(97,64,18)] font-bold"
                     : "hover:text-[rgb(97,64,18)]"
                 }`}
               >
@@ -85,7 +85,7 @@ export default function Header() {
                   href="/baby-vaccination-chart"
                   className={`head block w-[240px] ${
                     isActive("/baby-vaccination-chart")
-                      ? "text-[rgb(97,64,18)] font-semibold"
+                      ? "text-[rgb(97,64,18)] font-bold"
                       : "hover:text-[rgb(97,64,18)]"
                   }`}
                 >
@@ -95,7 +95,7 @@ export default function Header() {
                   href="/due-date-calculator"
                   className={`head block mt-4 text-[14px] ${
                     isActive("/due-date-calculator")
-                      ? "text-[rgb(97,64,18)] font-semibold"
+                      ? "text-[rgb(97,64,18)] font-bold"
                       : "hover:text-[rgb(97,64,18)]"
                   }`}
                 >
@@ -108,7 +108,7 @@ export default function Header() {
                 href="/faqs"
                 className={`head ${
                   isActive("/faqs")
-                    ? "text-[rgb(97,64,18)] font-semibold"
+                    ? "text-[rgb(97,64,18)] font-bold"
                     : "hover:text-[rgb(97,64,18)]"
                 }`}
               >
