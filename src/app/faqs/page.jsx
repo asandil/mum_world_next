@@ -1,0 +1,40 @@
+import React from "react";
+import FaqData from "../../assets/FaqData.js";
+import FAQAccordion from "../../components/Faq";
+
+const page = () => {
+  return (
+    <div>
+      <section className="py-[40px] w-[100%] lg:w-[984px] xl:w-[1160px] mx-auto px-[24px]">
+        <div className="">
+          <h1 className="mb-[24px] leading-[1.4] tracking-[1px] text-[22px] font-[700] uppercase">
+            FREQUENTLY ASKED QUESTIONS
+            <hr className="mt-[16px] mb-[20px] border-[1px] border-black" />
+          </h1>
+          <p className="text-[16px] text-left font-[400] mb-[40px]">
+            Please reach us at{" "}
+            <a
+              className="text-[rgb(158,108,52)] underline"
+              href="mailto:mumworld.in@gmail.com"
+            >
+              mumworld.in@gmail.com
+            </a>{" "}
+            if you cannot find an answer to your question.
+          </p>
+        </div>
+        {/* questions and answers */}
+        <div className="mt-10">
+          {FaqData.map((item, idx) => (
+            <FAQAccordion
+              key={idx}
+              question={item.question}
+              answer={item.answer}
+            />
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default page;
