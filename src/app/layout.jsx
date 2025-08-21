@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Indian Mom&#39;s tips | mumworld.in",
+  title: "Indian Motherhood tips | mumworld.in",
   description: "Your go-to place for every tip, guide, and support a mum needs—helping you navigate motherhood with confidence and care.",
 };
 
