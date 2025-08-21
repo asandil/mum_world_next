@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
@@ -162,70 +163,7 @@ export default function Home() {
           </h2>
           <div className="md:flex">
             {/* Send message */}
-            <div className="pr-[24px]">
-              <h4 className="text-center md:text-start text-[22px] text-[rgb(27,27,27)] leading-[1.25] mb-[24px] font-[400]">
-                Send Message
-              </h4>
-              <form className="" action="">
-                <div className="pb-[24px]">
-                  <input
-                    className="py-[15.5px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
-                    id="name"
-                    type="text"
-                    placeholder="Name*"
-                  />
-                </div>
-                <div className="pb-[24px]">
-                  <input
-                    className="py-[15.5px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
-                    id="email"
-                    type="email"
-                    placeholder="Email*"
-                  />
-                </div>
-                <div className="pb-[24px]">
-                  <input
-                    className="py-[15.5px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
-                    id="phone"
-                    type="text"
-                    placeholder="Phone*"
-                  />
-                </div>
-                <div className="pb-[24px]">
-                  <textarea
-                    className="p-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
-                    name=""
-                    id=""
-                    rows={4}
-                    placeholder="How Can We Help You?"
-                  ></textarea>
-                </div>
-                <div className="pb-[24px]">
-                  <button className="font-[700] min-h-[56px] w-[100%] bg-[rgb(250,182,107)] text-black cursor-pointer text-[14px] hover:bg-[rgb(250,204,164)] transition-all duration-300 ease-in-out delay-0">
-                    SEND
-                  </button>
-                </div>
-                <div className="pt-[8px] pb-[16px]">
-                  <p className="text-[12px] leading-[1.5] font-[400] text-[rgb(89,89,89)] text-center">
-                    This site is protected by reCAPTCHA and the Google{" "}
-                    <a
-                      className="text-[rgb(158,108,52)]"
-                      href="https://policies.google.com/privacy"
-                    >
-                      Privacy Policy
-                    </a>{" "}
-                    and{" "}
-                    <a
-                      className="text-[rgb(158,108,52)]"
-                      href="https://policies.google.com/terms"
-                    >
-                      Terms of Service
-                    </a>{" "}
-                    apply.
-                  </p>
-                </div>
-              </form>
-            </div>
+            <ContactForm />
             {/* contact details */}
             <div className="mt-[40px] pl-[24px]">
               <div className="mb-[40px]">
