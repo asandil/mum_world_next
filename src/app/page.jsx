@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
+import SubscribeForm from "@/components/SubscribeForm";
 
 export default function Home() {
   return (
@@ -86,29 +87,7 @@ export default function Home() {
               <p className="mb-[16px] font-[400] text-[rgb(255,255,255)] text-center leading-[1.5] text-[16px]">
                 Sign up to hear more from us.
               </p>
-              {/* Form */}
-              <form className="md:flex gap-5 md:justify-between" action="">
-                <div className="relative pb-[24px] group w-[100%]">
-                  <input
-                    className="py-[15.5px] px-[16px] bg-transparent text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] font-[400] text-[16px] focus:outline-none focus:border focus:border-current w-[100%]"
-                    id="Email"
-                    type="email"
-                    placeholder="Email*"
-                  />
-                  <label
-                    className="text-[rgb(71,71,71)] font-[400] absolute left-[16px] top-[20%] group-focus-within:text-[rgb(158,108,52)] group-focus-within:top-[8px] group-focus-within:text-[12px] transition-all duration-150 ease-in-out delay-0"
-                    htmlFor="email"
-                  >
-                    Email
-                  </label>
-                </div>
-
-                <div className="pb-[24px] md:w-[30%]">
-                  <button className="font-[700] min-h-[56px] w-[100%] bg-[rgb(250,182,107)] text-black cursor-pointer text-[14px] hover:bg-[rgb(250,204,164)] transition-all duration-300 ease-in-out delay-0">
-                    SIGN UP
-                  </button>
-                </div>
-              </form>
+              <SubscribeForm />
             </div>
           </div>
         </section>
