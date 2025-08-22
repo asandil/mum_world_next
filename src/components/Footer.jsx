@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Footer = () => {
@@ -12,14 +13,16 @@ const Footer = () => {
 			Copyright © 2023 mumworld.in - All Rights Reserved.
 		</p>
 		<div className="py-[16px] md:py-[0] flex justify-center">
-			<img className="inline-block h-[24px] w-[45px]" src="/facebook.png" alt="" />
+			<Link href={"https://www.facebook.com/MumWorldIn"} target='_blank'>
+			<img className="inline-block h-[24px] w-[45px]" src="/facebook.png" alt="" /></Link>
+			<Link href={"https://www.instagram.com/mum_world_/"} target='_blank'>
 			<img
 				className="inline-block"
 				src="/instagram.png"
 				height={24}
 				width={24}
 				alt=""
-			/>
+			/></Link>
 		</div>
 	</div>
 </footer>
