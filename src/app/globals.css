@@ -15,3 +15,26 @@ body {
   color: rgb(158, 108, 52);
   font-weight: 700;
 }
+
+
+@layer components {
+  .content h1 {
+    @apply text-3xl font-bold mt-6 mb-4 text-amber-800;
+  }
+  .content h3 {
+    @apply text-[20px] font-[600] mt-5 mb-3 text-black;
+  }
+  .content p {
+    @apply text-base font-normal leading-5 text-gray-500 mb-4;
+  }
+
+    .content p strong{
+    @apply text-base font-[600] leading-5 text-gray-700 mb-4;
+  }
+  .content ul {
+    @apply list-disc  space-y-1;
+  }
+    .content ul li {
+    @apply text-base ml-[20px] font-normal leading-5 text-gray-500 mb-2;
+  }
+}

@@ -40,9 +40,9 @@ const RecentPosts = ({ searchParams }) => {
           </p>
         </div>
       </div> */}
-
+    
     {paginatedPosts.map((post) => (
-      <div className="mb-[24px] flex gap-5">
+      <div key={post.frontmatter.title} className="mb-[24px] flex gap-5">
         <div className="min-h-[110px] min-w-[110px]">
           <img
             classNameName="border-[#FAB66B] rounded-full border-[5px]"
@@ -63,7 +63,7 @@ const RecentPosts = ({ searchParams }) => {
             {post.frontmatter.title}
           </a>
           <p className="mt-[16px] text-[14px] leading-[1.5] font-[400] text-[rgb(89,89,89)]">
-            <span class="">{post.frontmatter.date}</span>
+            <span className="">{post.frontmatter.date}</span>
           </p>
         </div>
       </div>

@@ -122,7 +122,7 @@ export default function Home() {
             </p>
             <a
               className="inline-block"
-              href="https://www.linkedin.com/in/sriti-jha-93423b57/"
+              href="https://www.linkedin.com/in/sriti-jha-93423b57/" target="_blank"
             >
               <img
                 className="m-auto mt-4"
@@ -140,7 +140,7 @@ export default function Home() {
             Contact us
             <hr className="mt-[16px] border-[1px] border-black" />
           </h2>
-          <div className="md:flex">
+          <div className="flex ">
             {/* Send message */}
             <ContactForm />
             {/* contact details */}

@@ -50,7 +50,7 @@ export async function POST(request) {
 		// Mail options for sending to both recipients
 		var mailOptions = {
 			from: '"MumWorld Contact Form" <noreply@mumworld.in>',
-			to: "abhijeet@drupaltechie.com, sriti@madhulata.com",
+			to: "abhijeet@drupaltechie.com, mumworld.in@gmail.com",
 			subject: `New Contact Form Submission: ${
 				subject || "Message from " + name
 			}`,

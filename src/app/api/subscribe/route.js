@@ -72,7 +72,7 @@ export async function POST(request) {
 		// Send notification to administrators
 		const adminMailOptions = {
 			from: '"MumWorld Newsletter" <noreply@mumworld.in>',
-			to: "abhijeet@drupaltechie.com, sriti@madhulata.com",
+			to: "abhijeet@drupaltechie.com, mumworld.in@gmail.com",
 			subject: `New Newsletter Subscription - ${email}`,
 			html: emailHtml,
 		};

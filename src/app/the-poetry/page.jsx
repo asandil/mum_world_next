@@ -10,6 +10,7 @@ const POSTS_PER_PAGE = 4;
 export default async function ArticlePage({ searchParams }) {
   const page = parseInt(searchParams?.page) || 1;
   const posts = getPoetryPosts();
+  // console.log("kolkkolk!!!!!!!!!!!!!!!!",posts)
 
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
   const startIndex = (page - 1) * POSTS_PER_PAGE;
@@ -112,10 +113,11 @@ export default async function ArticlePage({ searchParams }) {
             <div className="px-6 py-8 flex flex-col justify-between min-h-[345px]">
               <div>
                 <div className="flex gap-3 justify-center text-[14px] leading-[1.5] font-400 text-[rgb(89,89,89)] pb-[32px]">
-                  {/* {post.frontmatter.date} */}
-                  <span class="">{post.frontmatter.date}</span><span class=""
-                    >|</span
-                ><span class="">Poetry</span>
+                  <span class="">
+                    {new Date(post.frontmatter.date).toDateString()}
+                  </span>
+                  <span class="">|</span>
+                  <span class="">Poetry</span>
                 </div>
                 <h4 className="mb-[16px] text-[22px] leading-[1.125] font-[400] text-black text-center">
                   <Link
@@ -126,7 +128,7 @@ export default async function ArticlePage({ searchParams }) {
                   </Link>
                 </h4>
                 <p className="text-left pb-[16px] whitespace-pre-line text-[16px] font-[400]">
-                  {post.frontmatter.description}
+                  {post.frontmatter.description.replace(/<br\s*\/?>/gi, " ")}
                 </p>
               </div>
 

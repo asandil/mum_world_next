@@ -82,7 +82,7 @@ export default function PoetryPage({ params }) {
                 {post.frontmatter.title}
               </h1>
               <p className="flex gap-3 justify-start text-[14px] leading-[1.5] font-400 text-[rgb(89,89,89)] mb-[32px]">
-                <span className="">{post.frontmatter.date}</span>
+                <span className="">{new Date(post.frontmatter.date).toDateString()}</span>
                 <span className="">|</span>
                 <span>poetry</span>
               </p>
@@ -101,7 +101,7 @@ export default function PoetryPage({ params }) {
               </figure>
               {/* <!-- slot --> */}
               {/* <slot /> */}
-              <p className="w-[50%] mb-[12px]">{post.content}</p>
+              <p className="w-[50%] mb-[12px]">{post.content.replace(/<br\s*\/?>/gi, " ")}</p>
               <div className="mt-[20px] ">
                 <Author />
               </div>

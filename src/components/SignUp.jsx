@@ -66,7 +66,7 @@ const SignUp = () => {
       
       <form onSubmit={handleSubmit} className="w-[100%] md:w-[50%] lg:w-[100%] mb-[56px]">
         <input
-          className="p-[16px] bg-transparent text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] font-[400] text-[16px] focus:outline-none focus:border focus:border-current w-[100%]"
+          className="p-[16px] bg-transparent text-black border-[1px] border-[rgb(226,226,226)] font-[400] text-[16px] focus:outline-none focus:border focus:border-current w-[100%]"
           id="signupEmail"
           name="email"
           type="email"
@@ -80,7 +80,47 @@ const SignUp = () => {
           disabled={isSubmitting}
           className="font-[700] min-h-[56px] w-[100%] bg-[rgb(250,182,107)] text-black cursor-pointer text-[14px] hover:bg-[rgb(250,204,164)] transition-all duration-300 ease-in-out delay-0 mt-[16px] disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? 'SIGNING UP...' : 'SIGN UP'}
+          {isSubmitting ? (
+              <div className="flex items-center justify-center text-white">
+                <div className="loader mr-[10px]"></div>
+                <style jsx>{`
+                  .loader {
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    border-top: 2px solid #ffeb3b;
+                    border-right: 2px solid transparent;
+                    box-sizing: border-box;
+                    animation: rotation 1s linear infinite;
+                    position: relative;
+                  }
+                  .loader::after {
+                    content: "";
+                    box-sizing: border-box;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 25px;
+                    height: 25px;
+                    border-radius: 50%;
+                    border-bottom: 2px solid #ffeb3b;
+                    border-left: 2px solid transparent;
+                  }
+                  @keyframes rotation {
+                    0% {
+                      transform: rotate(0deg);
+                    }
+                    100% {
+                      transform: rotate(360deg);
+                    }
+                  }
+                `}</style>
+                Sending...
+              </div>
+            ) : (
+              "SIGN UP"
+            )}
         </button>
       </form>
     </div>
