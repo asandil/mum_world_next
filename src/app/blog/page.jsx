@@ -2,6 +2,7 @@ import BlogList from "@/components/blog/BlogList";
 import Categories from "@/components/Categories";
 // import { getBlogPosts } from "@/lib/api/blog";
 import { getBlogPosts } from "@/lib/content";
+import Image from "next/image";
 import Link from "next/link";
 
 const POSTS_PER_PAGE = 4;
@@ -36,14 +37,21 @@ export default async function BlogPage({ searchParams }) {
 
             <div className="flex flex-wrap justify-center items-center">
               {paginatedPosts.map((post) => (
-                <div key={post.slug} className="pb-[40px] mt-[40px] border-b-[1px] border-[rgb(226,226,226)] flex flex-col md:flex-row gap-8 justify-center items-center mr-[24px]">
-                  <img
-                    className="max-w-[200px] h-auto"
-                    src="https://tse3.mm.bing.net/th/id/OIP.isXwJc2soLmlBLYvbWcxYAHaE8?pid=Api&P=0&h=180"
-                    alt={post.image}
-                    height={300}
-                  />
-                  <div className="text-start md:text-start flex flex-col">
+                <div
+                  key={post.slug}
+                  className="pb-[40px] mt-[40px] border-b-[1px] border-[rgb(226,226,226)] flex flex-col md:flex-row gap-8 justify-center items-center mr-[24px]"
+                >
+                  <div className="relative w-full md:w-[300px] h-[250px] overflow-hidden rounded-lg">
+                    <Image
+                      src={post.frontmatter.image.url}
+                      alt={post.frontmatter.image.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 400px, 400px"
+                    />
+                  </div>
+
+                  <div className="text-start md:text-start flex flex-col flex-1">
                     <p className="flex gap-3 justify-center md:justify-start text-[14px] leading-[1.5] font-400 text-[rgb(89,89,89)] mb-[16px]">
                       <span>
                         {new Date(post.frontmatter.date).toDateString()}

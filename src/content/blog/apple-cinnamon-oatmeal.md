@@ -3,7 +3,7 @@ title: Apple Cinnamon Oatmeal
 description: You will Need - Rolled oats (At the store, These are also called old-fashioned oats), Apple- Any kind of apple works here, Raisins- You can use regular or golden raisins in this oatmeal. Or another dried fruit lik...
 date: 2023-02-27
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-32.jpg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1755936520/Apple-Cinnamon-Oatmeal-2_yroptp.jpg,
     alt: Apple Cinnamon Oatmeal
 }
 tags: ["Babies Food(6-24Months)"]

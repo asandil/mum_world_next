@@ -63,14 +63,12 @@ export default async function BlogPostPage({ params }) {
                     <span className="">|</span>
                     <span>poetry</span>
                   </p>
-                  <figure className="mb-[24px] w-[272px] mx-auto">
+                  <figure className="mb-[24px] w-[372px] mx-auto ">
                     <img
-                      src={
-                        "https://tse1.mm.bing.net/th/id/OIP.Nf1Al2vYM7KnKK32pPSJ5gHaFE?pid=Api&P=0&h=180"
-                      }
-                      // src={post.frontmatter.image.url} alt={post.frontmatter.image.alt}
+                     
+                      src={post.frontmatter.image.url} alt={post.frontmatter.image.alt}
 
-                      width="272"
+                      width="272" className="mx-auto"
                     />
                     <figcaption className="text-[rgb(82,82,82)] px-[8px] py-[4px] bg-[rgb(246,246,246)] font-[400] font-[Lato] text-center">
                       {post.frontmatter.image.alt}

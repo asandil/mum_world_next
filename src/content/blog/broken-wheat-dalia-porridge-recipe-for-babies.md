@@ -3,7 +3,7 @@ title: Broken Wheat (Dalia) Porridge Recipe for Babies
 description: You will need- • Broken Wheat - 2 tbsp • Dates - 2 • Soaked Almonds - 4 • Powdered jaggery - 1.5 tbsp optional • Water - ¼ cup + ¾ cup • Cows milk - ½ cup don't add for  babies under one year
 date: 2023-02-20
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images-a708249.jpeg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1755936520/Broken_Wheat_Dalia_Porridge_Recipe_for_Babies_vuax87.jpg ,
     alt: Broken Wheat (Dalia) Porridge Recipe for Babies
 }
 tags: ["Babies Food(6-24Months)"]

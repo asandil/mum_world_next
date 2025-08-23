@@ -3,7 +3,7 @@ title: Beetroot Puree Recipe for Babies
 description: You will need-Beetroot Chopped - ½ cup.Water - ¼ cup How to Prepare-• Wash the beetroot in running water thoroughly• Peel the skin off with a peeler, cut them into cubes. (I used a ¼th portion of one big beetr...
 date: 2023-02-05
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-70.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1755936520/Beetroot_Puree_Recipe_udeyyb.jpg ,
     alt: Beetroot Puree for babies
 }
 tags: ["Babies Food(6-24Months)"]

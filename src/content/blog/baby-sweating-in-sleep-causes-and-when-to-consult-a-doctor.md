@@ -3,7 +3,7 @@ title: Baby Sweating In Sleep- Causes and When To Consult A Doctor?
 description: Night sweats are defined as drenching sweats that require you to change your bedclothes. Excessive sweating in babies can affect their sleep. Although&nbsp;it might worry you to see your baby sweating in sleep, it’s not alway...
 date: 2023-02-05
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-21.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1755936520/baby_sweating_in_sleep_be8con.jpg ,
     alt: Baby Sweating In Sleep
 }
 tags: ["Babies"]

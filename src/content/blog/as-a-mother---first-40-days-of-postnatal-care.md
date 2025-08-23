@@ -3,7 +3,7 @@ title: As a Mother - First 40 Days of Postnatal Care
 description: The first 40 days after childbirth are the most important days for a woman.&nbsp;Both my deliveries were by C-section. At the time of my first child, I was not aware about the care that needs to be taken, and therefore I face...
 date: 2023-03-02
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-114.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1755936520/postnatal_40_days-_main_image_wtge2u.jpg ,
     alt: First 40 Days of Postnatal Care
 }
 tags: ["Postnatal Care","Pregnancy Health"]
@@ -59,7 +59,7 @@ Last year, I gave birth to my second baby. This time, I was aware, as I did a lo
 - I prepared a herbal powder prescribed by an ayurvedic doctor, which I consumed daily after 10 days of delivery. This powder had turmeric (whole), dry ginger powder, nigella seeds, cumin, flaxseed, and methi. My periods were so easy and without pain. This powder helped me with weight loss, too.
 - I prepared dry fruits laddoo (panjeeri). 
 
-![Panjeeri laddoos](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-113.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+![Panjeeri laddoos](https://res.cloudinary.com/dc0wr8hev/image/upload/v1755937971/panjeri_laddu-_in_middle_of_blog-_postnatal_y90goy.jpg)
 
 - This laddoo strengthened me, and reduced pain in my body. You can have lactobites (easily available online).
 
