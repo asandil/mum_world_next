@@ -26,12 +26,12 @@ export default async function BlogPage({ searchParams }) {
         <hr className="mt-[16px] border-[1px] border-black" />
       </h1>
       <div className="flex flex-col lg:flex-row gap-5">
-        <div className="w-[100%] lg:w-[25%] order-2 lg:px-[24px] border-t-[1px] lg:border-t-0 pt-[1.25rem] lg:pt-0">
+        <div className="w-[100%] lg:w-[25%] order-2 border-t-[1px] lg:border-t-0 pt-[1.25rem] lg:pt-[12px]">
           {/* <!-- categories --> */}
           <Categories />
         </div>
-        <div className="w-[100%] lg:w-[75%]">
-          <div className="w-[100%] lg:border-r-[1px] border-[rgb(226,226,226)]">
+        <div className="w-[100%] lg:w-[73.2%]">
+          <div className="w-[100%] mt-[16px] lg:border-r-[2px] border-[rgb(226,226,226)]">
             {/* <BlogList posts={posts} /> */}
 
             <div className="flex flex-wrap justify-center items-center">

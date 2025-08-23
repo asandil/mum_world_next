@@ -15,13 +15,13 @@ export default async function BlogPostPage({ params }) {
   if (!post) return <p>Post not found</p>;
 
   return (
-    <section className="py-[26px] w-[100%] lg:w-[984px] xl:w-[1160px] mx-auto px-[24px]">
+    <section className="py-[40px] w-[100%] lg:w-[984px] xl:w-[1160px] mx-auto px-[24px]">
       <h1 className="mb-[24px] leading-[1.4] tracking-[1px] text-[22px] font-[700] uppercase text-black">
         MY BLOG
-        <hr className="mt-[1px] border-[1px] border-black" />
+        <hr className="mt-[16px] border-[1px] border-black" />
       </h1>
       <div className="flex flex-col lg:flex-row gap-5">
-        <div className="w-[100%] lg:w-[34.2%] order-2 lg:px-[24px] border-t-[1px] lg:border-t-0 pt-[1.25rem] lg:pt-[16px]">
+        <div className="w-[100%] lg:w-[34.2%] order-2 border-t-[1px] lg:border-t-0 pt-[1rem] lg:pt-[12px]">
           {/* <!-- categories --> */}
           <Categories />
 
@@ -30,13 +30,13 @@ export default async function BlogPostPage({ params }) {
           {/* <!-- RecentPosts --> */}
           <RecentPosts />
         </div>
-        <div className="w-[100%] lg:w-[65.8%]">
+        <div className="w-[100%] lg:w-[100%]">
           <div className="w-[100%] lg:border-r-[2px] border-[rgb(226,226,226)]">
             {/* <BlogPost posts={posts} /> */}
 
             <article className="mt-[16px]">
               <div className="flex flex-col lg:flex-row gap-5">
-                <div className="w-[100%]  px-[24px]">
+                <div className="  px-[24px]">
                   <a
                     className="text-[rgb(158,108,52)] text-[16px] font-[500] inline-flex mb-[40px] items-center gap-2 hover:text-[rgb(97,64,18)]"
                     href="/the-poetry"

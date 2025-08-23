@@ -28,9 +28,9 @@ const Categories = () => {
         {/* All Posts */}
         <li>
           <Link
-            href="/blog/0"
+            href="/blog"
             className={`categ ${
-              pathname === "/blog/0"
+              pathname === "/blog"
                 ? "text-[rgb(97,64,18)] font-semibold"
                 : "hover:text-[rgb(97,64,18)]"
             }`}
