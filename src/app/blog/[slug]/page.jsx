@@ -6,6 +6,7 @@ import RecentPosts from "@/components/RecentPosts";
 import SharePost from "@/components/SharePost";
 import SignUp from "@/components/SignUp";
 import { getBlogPosts } from "@/lib/content";
+import Image from "next/image";
 
 export default async function BlogPostPage({ params }) {
   const { slug } = await params;
@@ -63,14 +64,16 @@ export default async function BlogPostPage({ params }) {
                     <span className="">|</span>
                     <span>poetry</span>
                   </p>
-                  <figure className="mb-[24px] w-[372px] mx-auto ">
-                    <img
-                     
-                      src={post.frontmatter.image.url} alt={post.frontmatter.image.alt}
-
-                      width="272" className="mx-auto"
-                    />
-                    <figcaption className="text-[rgb(82,82,82)] px-[8px] py-[4px] bg-[rgb(246,246,246)] font-[400] font-[Lato] text-center">
+                  <figure className="mb-[24px] w-full max-w-[372px] md:max-w-[500px] flex flex-col mx-auto">
+                    <div className="relative  w-full h-[350px] overflow-hidden rounded-lg">
+                      <Image
+                        src={post.frontmatter.image.url}
+                        alt={post.frontmatter.image.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 400px, 400px"
+                      />
+                    </div>
+                    <figcaption className="text-[rgb(82,82,82)] px-[8px] py-[4px] bg-[rgb(246,246,246)] font-[400] text-center">
                       {post.frontmatter.image.alt}
                     </figcaption>
                   </figure>
@@ -99,6 +102,8 @@ export default async function BlogPostPage({ params }) {
           </div>
         </div>
       </div>
+
+      {/* <BlogPageClient posts={posts} /> */}
     </section>
   );
 }
