@@ -2,12 +2,14 @@
 title: Dry Fruits (Nuts) Powder for Babies & Toddlers
 description: This powder helps in weight gaining for babies.You will need-Cashews - ¼ cup,Almonds - ¼ cup,Pistachios - ¼ cup,foxnut - ¼ cup&nbsp;optional,Walnut - ¼ cup,Saffron- 10-15 thread,How to Prepare-• Measure all the ing...
 date: 2023-02-02
-image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-61.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
-    alt: Dry fruits powder
-}
+image:
+  {
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756113954/Dry_Fruits_Nuts_Powder_for_Babies_Toddlers_ovyvma.jpg,
+    alt: Dry fruits powder,
+  }
 tags: ["Babies Food(6-24Months)"]
 ---
+
 This powder helps in weight gaining for babies.
 
 ### You will need:

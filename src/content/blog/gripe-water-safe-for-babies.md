@@ -2,13 +2,15 @@
 title: Gripe Water Safe For Babies?
 description: One of the common remedies that parents have used for colic is gripe water.&nbsp;Colic is common among babies during the first few months of life.Gripe water for babies has shown to calm and relax them during bouts of colic...
 date: 2023-02-09
-image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-80.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
-    alt: Is Gripe water is safe for babies?
-}
+image:
+  {
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756113955/Gripe_Water_Safe_For_Babies._etf2a6.webp,
+    alt: Is Gripe water is safe for babies?,
+  }
 tags: ["Babies"]
 ---
-One of the common remedies that parents have used for colic is gripe water. 
+
+One of the common remedies that parents have used for colic is gripe water.
 Colic is common among babies during the first few months of life.
 Gripe water for babies has shown to calm and relax them during bouts of colic. However, the remedy has not been free from its share of purported side effects. Is gripe water safe for babies, and should you consider it for your little one’s colic?
 
@@ -33,6 +35,7 @@ In such cases, parents prefer to give a herbal remedy called gripe water, which 
 Gripe water has been used across the world for a long time and is believed to be quite effective, but the paediatrician does not support this claim.
 
 ### As per Doctor, parents should completely avoid giving gripe water to their child.
+
 They usually won't recommend gripe water at all. The companies selling gripe water are not regulated. So they do not exactly specify the ingredients they use to process the liquid. You do not know if the ingredients are safe or not.
 
 **Although Doctor does not recommend gripe water**, he said if you are still willing to give it then it is important to remember two things, that are:
@@ -51,19 +54,18 @@ Traditionally alcohol was used to prepare gripe water, which provides a soothing
 
 There is not enough evidence regarding the safety of gripe water on babies. You may have to check the specific ingredients in a bottle of gripe water to determine if it is safe for your baby.
 
-Gripe water’s effectiveness depends on the types of ingredients used in it. It is not fully known how does gripe water work but most of its effects are attributed to the herbs in it, such as fennel, dill, and peppermint. 
-
+Gripe water’s effectiveness depends on the types of ingredients used in it. It is not fully known how does gripe water work but most of its effects are attributed to the herbs in it, such as fennel, dill, and peppermint.
 
 ### These herbs may have the following effects.
 
 - Releases gas
 - Encourages bowel movements
 - Reduces fussiness such as caused
- by teething
+  by teething
 - Relaxes the baby to sleep
 - Subdues the colic symptoms
 
-### Other ways to soothe a baby: 
+### Other ways to soothe a baby:
 
 ![Ways to soothe a baby](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-81.jpg/:/rs=w:1280)
 

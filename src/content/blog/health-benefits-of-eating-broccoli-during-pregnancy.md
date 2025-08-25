@@ -2,19 +2,21 @@
 title: Health Benefits Of Eating Broccoli During Pregnancy
 description: Broccoli during pregnancy is indeed a superfood. Its benefits are not confined to nutrition, where it scores very high. Thanks to its high vitamin, mineral, and antioxidant content. Broccoli also has many medicinal and h...
 date: 2023-02-10
-image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-22.jpg/:/rs=w:200 ,
-    alt: Benefits Of Eating Broccoli During Pregnancy
-}
+image:
+  {
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756113954/Health_Benefits_Of_Eating_Broccoli_During_Pregnancy_pol6aa.jpg,
+    alt: Benefits Of Eating Broccoli During Pregnancy,
+  }
 tags: ["Pregnancy Health"]
 ---
+
 Broccoli during pregnancy is indeed a superfood. Its benefits are not confined to nutrition, where it scores very high. Thanks to its high vitamin, mineral, and antioxidant content. Broccoli also has many medicinal and health benefits, including cancer prevention.
 
 So, now that you are pregnant, are you wondering how broccoli can help? Read on to understand the amazing benefits of eating broccoli during pregnancy
 
-### Nutritional Value of Broccoli: 
+### Nutritional Value of Broccoli:
 
-Broccoli is relatively less in carb, hence this vegetable is an excellent choice for weight. 
+Broccoli is relatively less in carb, hence this vegetable is an excellent choice for weight.
 
 ### Other nutritional values include:
 
@@ -27,11 +29,11 @@ Broccoli is relatively less in carb, hence this vegetable is an excellent choice
 - Broccoli contains minerals such as manganese, potassium, and phosphorus.
 - Broccoli is high in vitamin A and other B vitamins.
 
-### Is it Safe to Eat Broccoli During Pregnancy? 
+### Is it Safe to Eat Broccoli During Pregnancy?
 
-It is safe to eat broccoli in moderate amounts during pregnancy. Broccoli is rich in vitamins A, C, K, B6, calcium, folatei, fiber, and antioxidant agents. Including this nutrient-rich food in your diet ensures good hemoglobin supply, strengthens bones, prevents skin ailments, birth defect and boosts nutrient intake. 
+It is safe to eat broccoli in moderate amounts during pregnancy. Broccoli is rich in vitamins A, C, K, B6, calcium, folatei, fiber, and antioxidant agents. Including this nutrient-rich food in your diet ensures good hemoglobin supply, strengthens bones, prevents skin ailments, birth defect and boosts nutrient intake.
 
-Eating broccoli in moderation is not only safe but highly beneficial during pregnancy.  However, it is better to ask the doctor about including this in your diet if you are experiencing thyroid issues.
+Eating broccoli in moderation is not only safe but highly beneficial during pregnancy. However, it is better to ask the doctor about including this in your diet if you are experiencing thyroid issues.
 
 ### How Much Broccoli is Good for Pregnant Women?
 
@@ -42,14 +44,14 @@ Three to five portions of broccoli per day are considered safe during pregnancy.
 You can reap the following health benefits of broccoli by including it in your pregnancy diet
 
 1. **Broccoli Can Prevent Anemia :**
-Broccoli is a great source of iron and folic acid. That is right, you take supplements for them. If you are adding a lot of broccoli in your diet, ask your gynecologist whether you need to take the tablets.
+   Broccoli is a great source of iron and folic acid. That is right, you take supplements for them. If you are adding a lot of broccoli in your diet, ask your gynecologist whether you need to take the tablets.
 
 2. **Broccoli Can Prevent Constipation :**
-Constipation is one thing that bothers most pregnant women. The iron supplements, hormonal changes, and metabolism changes – all of these can slow down and impact bowel movements.
-Broccoli is full of fiber, both soluble and insoluble. It can retain water, trigger bowel movements and hence help avoid constipation.
+   Constipation is one thing that bothers most pregnant women. The iron supplements, hormonal changes, and metabolism changes – all of these can slow down and impact bowel movements.
+   Broccoli is full of fiber, both soluble and insoluble. It can retain water, trigger bowel movements and hence help avoid constipation.
 
 3. **Broccoli Can Help Regulate Diabetes :**
-Gestational diabetes is another major problem among pregnant women. This happens because your body does not produce enough insulin to break down the sugar that you are consuming. Did you know that broccoli has the ability to regulate the sugar content in your body and thereby spare the use of insulin?
+   Gestational diabetes is another major problem among pregnant women. This happens because your body does not produce enough insulin to break down the sugar that you are consuming. Did you know that broccoli has the ability to regulate the sugar content in your body and thereby spare the use of insulin?
 
 **4. Broccoli Can Strengthen Bones:**
 Pregnant women are susceptible to bone-related problems such as osteoporosis during pregnancy. Broccoli has calcium, magnesium, zinc, and phosphorous – all of which help make bones healthy and strong.
@@ -66,7 +68,7 @@ The beta-carotene that helps improve immunity is also great for your vision. Vit
 
 **8. Broccoli Can Help Keep Allergies:**
 The vitamin C present in broccoli has allergy-relieving properties. It is known to clear various allergy symptoms, including clearing out sinuses that are blocked.
-However, be aware that broccoli can cause allergic reactions in a few. If you notice a rash or any other kind of discomfort after eating broccoli,  it is better to keep it off your plates.
+However, be aware that broccoli can cause allergic reactions in a few. If you notice a rash or any other kind of discomfort after eating broccoli, it is better to keep it off your plates.
 
 **9. Broccoli is Known to Prevent Cancer:**
 This might sound incredible, but the phytochemicals that are abundant in broccoli are known to have anti-cancer properties. If your diet is rich in broccoli, it might ensure that you and your baby are protected from cancer, not just during pregnancy, but throughout life.

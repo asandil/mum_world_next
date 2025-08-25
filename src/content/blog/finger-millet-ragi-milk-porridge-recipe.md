@@ -2,12 +2,14 @@
 title: Finger Millet (Ragi) Milk Porridge Recipe
 description: Ragi Porridge - Healthy ragi porridge for babies with the whole ragi by soaking ragi and extracting milk. This nutrition rich porridge is ideal when you introduce ragi to the baby...
 date: 2023-02-22
-image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-27.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
-    alt: Finger Millet (Ragi) Milk Porridge Recipe
-}
+image:
+  {
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756113954/Finger_Millet_Ragi_Milk_Porridge_Recipe_vflbou.jpg,
+    alt: Finger Millet (Ragi) Milk Porridge Recipe,
+  }
 tags: ["Babies Food(6-24Months)"]
 ---
+
 Ragi Porridge - Healthy ragi porridge for babies with the whole ragi by soaking ragi and extracting milk. This nutrition rich porridge is ideal when you introduce ragi to the baby.
 
 ### You will need:
@@ -18,7 +20,6 @@ Ragi Porridge - Healthy ragi porridge for babies with the whole ragi by soaking 
 ### How to Prepare:
 
 - Measure the ragi seeds using a measuring cup as mentioned in the ingredients table & keep it ready.
-
 
 - Take ragi in a vessel and wash it by rubbing well with your hands. It has lots of muds so repeat the process 2 to 3 times unless it is clean and get rid of all dirt.
 

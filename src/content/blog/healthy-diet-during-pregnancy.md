@@ -2,17 +2,19 @@
 title: Healthy diet during pregnancy
 description: For you and your baby during pregnancy, Why diet is important ?As a general guide, pregnant mothers need to eat a healthy diet, high in nutrients and low in sugar, salt and saturated fats.
 date: 2023-02-12
-image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-90.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
-    alt: Healthy diet during pregnancy
-}
+image:
+  {
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756113955/Healthy_diet_during_pregnancy_hlhxku.jpg,
+    alt: Healthy diet during pregnancy,
+  }
 tags: ["Pregnancy Health"]
 ---
+
 ### For you and your baby during pregnancy, Why diet is important ?
 
 As a general guide, pregnant mothers need to eat a healthy diet, high in nutrients and low in sugar, salt and saturated fats.
 
-Your diet during pregnancy helps to support your own well being and supplies the nutrition your baby needs to develop and grow. 
+Your diet during pregnancy helps to support your own well being and supplies the nutrition your baby needs to develop and grow.
 
 ![healthy diet](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-24.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
 
@@ -26,13 +28,13 @@ Nutrients needed to support a growing baby’s health and development and can pr
 - Folate
 - Iron
 - Iodine
-- vitamin D  
+- vitamin D
 
 If you are planning a pregnancy, you should start taking a folic acid supplement at least one month before you fall pregnant and for 3 months after conception. Folic acid supplements have been proven to help protect against neural tube defects.
 
 If you are considering taking or currently taking any supplements, please discuss this with your doctor or midwife, as doses can vary depending on your individual circumstance.
 
-### Balanced diet during pregnancy: 
+### Balanced diet during pregnancy:
 
 ![diet during pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-25.jpg/:/rs=w:1280)
 
@@ -43,12 +45,12 @@ A healthy, balanced diet includes a wide variety of nutritious foods from the fi
 - Dairy foods including mostly reduced fat milk, cheese and yoghurt
 - Vegetables and legumes/beans
 - Fruit
- 
+
 Most of us have days when we eat well, and days where our intake of ‘treat’ foods may be higher. Pregnancy cravings can also make this harder to manage, especially when they’re for foods which are high in sugar, salt or fat.
 
 If you are suffering from morning sickness or severe vomiting during pregnancy, it is important to eat what you can at the time. You should contact you doctor; if you are concerned.
 
-### What about pregnancy cravings? 
+### What about pregnancy cravings?
 
 ![pregnanct cravings](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-91.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
 
@@ -101,7 +103,7 @@ As a guide the approximate amounts of caffeine found in food and drinks are:
 ### What foods should I limit during pregnancy?
 
 The Australian Dietary Guidelines recommend that during pregnancy, you should limit the amount of foods that contain saturated fat, added salt and sugars as well as alcohol.
-Processed foods tend to be high in sugar, fat and salt. Although they can taste good and are often convenient, they don’t meet the daily requirements for nutrition.  
+Processed foods tend to be high in sugar, fat and salt. Although they can taste good and are often convenient, they don’t meet the daily requirements for nutrition.
 
 ### What are the recommended servings during pregnancy?
 

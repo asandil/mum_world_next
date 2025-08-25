@@ -2,13 +2,15 @@
 title: Egg Drop Soup
 description: You will need-• 1 egg• 1 cup homemade vegetable stock• 2 garlic cloves (peeled)• ½ cup green onions (thinly sliced)• 1tsp cornstarch
 date: 2023-01-27
-image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-10.jpg/:/rs=w:1280 ,
-    alt: Egg Drop Soup
-}
+image:
+  {
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756113954/Egg_Drop_Soup_jpi0no.webp,
+    alt: Egg Drop Soup,
+  }
 tags: ["Babies Food(6-24Months)"]
 ---
-### You will need: 
+
+### You will need:
 
 - 1 egg
 - 1 cup homemade vegetable stock

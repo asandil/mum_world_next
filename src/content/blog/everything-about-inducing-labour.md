@@ -2,13 +2,15 @@
 title: Everything About Inducing Labour
 description: As your due date approaches, you may be curious about the process of labour induction, especially if you're eager to be done with pregnancy. You may even have discussed the pros and cons of inducing labour with your heal...
 date: 2023-02-20
-image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-96.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
-    alt: Everything About Inducing Labour
-}
+image:
+  {
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756113955/Everything_About_Inducing_Labour_frtudv.jpg,
+    alt: Everything About Inducing Labour,
+  }
 tags: ["Pregnancy"]
 ---
-As your due date approaches, you may be curious about the process of labour induction, especially if you're eager to be done with pregnancy. You may even have discussed the pros and cons of inducing labour with your healthcare provider, or asked about natural ways to induce labour at home. Read on for answers to some frequently asked questions on this topic, and speak to your doctor for advice regarding your particular situation. 
+
+As your due date approaches, you may be curious about the process of labour induction, especially if you're eager to be done with pregnancy. You may even have discussed the pros and cons of inducing labour with your healthcare provider, or asked about natural ways to induce labour at home. Read on for answers to some frequently asked questions on this topic, and speak to your doctor for advice regarding your particular situation.
 
 ### What Is Inducing Labour? And When Does Labour Need to Be Induced?
 
@@ -16,6 +18,7 @@ Labor induction — also known as inducing labor — is prompting the uterus to 
 This is when a doctor gives you labour-inducing medication or uses another technique to try to bring on your labour or speed up your contractions.
 
 ### Labour might need to be induced for medical reasons.
+
 For example, if continuing the pregnancy would be harmful for you or your baby. Some other reasons can include:
 
 **• Post-term pregnancy:** If it’s two weeks past your due date, an induction might be recommended to avoid the pregnancy lasting longer than 42 weeks.
@@ -34,10 +37,10 @@ For example, if continuing the pregnancy would be harmful for you or your baby. 
 
 **• Detached placenta:** When the placenta detaches from the inner wall of the uterus before delivery.
 
-### When considering when to induce labour, your doctor will look at these factors: 
+### When considering when to induce labour, your doctor will look at these factors:
 
 - How far along you are in your
- pregnancy
+  pregnancy
 - Your health
 - Your baby’s weight and size
 - Your baby's health
@@ -46,7 +49,7 @@ For example, if continuing the pregnancy would be harmful for you or your baby. 
 
 ### Are There Reasons Why Induction Might Not Be Recommended?
 
-Yes!! Because, In some cases, your doctor might recommend a cesarean birth, or c-section, instead of inducing labour. 
+Yes!! Because, In some cases, your doctor might recommend a cesarean birth, or c-section, instead of inducing labour.
 
 **These cases can include:**
 
@@ -85,7 +88,7 @@ When labour is induced, the uterus is stimulated to contract so that a vaginal b
 
 **• Administering oxytocin:** A common labour-inducing drug is a synthetic version of the hormone oxytocin. It is administered intravenously to help induce labour, and can also be used to speed up contractions.
 
-### What Happens After Labour Is Induced? 
+### What Happens After Labour Is Induced?
 
 ![labour induced](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-95.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
 
@@ -94,7 +97,7 @@ After inducing labour, it can be a matter of hours or days before your baby is b
 ### Is There a Safe Way to Naturally Induce Labour at Home?
 
 You may have heard about various natural tricks and home remedies that may induce labour. One example like:
-Taking castor oil, which is a laxative. Consult your doctor if you're considering using castor oil to help induce labour and keep in mind that the side effects can include uncomfortable intestinal cramps and diarrhea. 
+Taking castor oil, which is a laxative. Consult your doctor if you're considering using castor oil to help induce labour and keep in mind that the side effects can include uncomfortable intestinal cramps and diarrhea.
 
 ![natural induction methods](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-97.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
 

@@ -2,12 +2,14 @@
 title: Broccoli Soup For Babies
 description: You will need-• 1 cup broccoli florets (chopped)• 1 cup baby carrots (peeled and chopped)• ½tsp fresh lemon juice• 1 red onion (chopped)• 1tbsp olive oil• 1 cup water
 date: 2023-01-25
-image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-39.jpg/:/rs=w:1280 ,
-    alt: Broccoli Soup For Babies
-}
+image:
+  {
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756113953/Broccoli_Soup_For_Babies_hyiofo.webp,
+    alt: Broccoli Soup For Babies,
+  }
 tags: ["Babies Food(6-24Months)"]
 ---
+
 ### You will need:
 
 - 1 cup broccoli florets (chopped)

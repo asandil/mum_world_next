@@ -2,15 +2,17 @@
 title: False Labor (Braxton Hicks Contractions)
 description: False labor have been referred to as "Braxton Hicks". They can occur as early as the fourth month but become frequent as your due date approaches. These contractions signify false labor as there is a pain but no dilation of the cervix.
 date: 2023-01-28
-image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-49.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
-    alt: False Labour
-}
+image:
+  {
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756113955/False_Labor_Braxton_Hicks_Contractions_ntzgdt.webp,
+    alt: False Labour,
+  }
 tags: ["Pregnancy"]
 ---
+
 ### What Is False Labor?
 
-False labor have been referred to as **"Braxton Hicks"**. They can occur as early as the fourth month but become frequent as your due date approaches. These contractions signify false labor as there is a pain but no dilation of the cervix. They are perfectly normal and have been said to represent contractions that occur as the uterus is preparing to give birth. 
+False labor have been referred to as **"Braxton Hicks"**. They can occur as early as the fourth month but become frequent as your due date approaches. These contractions signify false labor as there is a pain but no dilation of the cervix. They are perfectly normal and have been said to represent contractions that occur as the uterus is preparing to give birth.
 Braxton Hicks contractions are typically less painful than those of true labor and are unpredictable, do not occur at regular intervals. Braxton Hicks contractions do not become more intense over time. Dehydration and physical activity may trigger Braxton Hicks contractions.
 As your due date approaches, you begin to guard for every possible sign of labor, thinking if it is real labor or not. However, differentiating between real and false labor is quite difficult because some signs and contractions are identical in both scenarios. Therefore, it’s difficult to distinguish false labor so you don’t stress out every time.
 This post explains the indicators of labor signs and tells you the differences between false and real ones.
@@ -25,7 +27,7 @@ As mentioned above, not every woman will go through false labor. But its good to
 - Tightening in the abdomen
 - No bleeding
 - No water break.
--  If you notice any leakage of fluid that smells like ammonia, then it is urine and not amniotic fluid because it is odorless.
+- If you notice any leakage of fluid that smells like ammonia, then it is urine and not amniotic fluid because it is odorless.
 - Occurs a few times in a day.
 - It can occur every 10 to 20 minutes.
 
@@ -60,10 +62,9 @@ You can take these measures, if false labor makes you uncomfortable:
 - Perform relaxation exercises, deep breathing, or mental relaxation.
 - Bathe in a warm bath for up to 30 minutes.
 
-### When should I call my doctor about Braxton Hicks contractions? 
+### When should I call my doctor about Braxton Hicks contractions?
 
 ![Braxton Hicks](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-48.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
-
 
 It is important to call your doctor if you notice:
 
