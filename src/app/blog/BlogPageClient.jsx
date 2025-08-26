@@ -5,6 +5,8 @@ import React, { useState, useEffect } from "react";
 import FilterSection from "./FilterSection";
 import Link from "next/link";
 import Image from "next/image";
+import Recent from "./Recent";
+import SignUp from "@/components/SignUp";
 
 const BlogPageClient = ({ allPosts, displayPosts }) => {
   const [filteredPosts, setFilteredPosts] = useState([]);
@@ -112,7 +114,8 @@ const BlogPageClient = ({ allPosts, displayPosts }) => {
 
       <div className="w-[27%] px-[20px]">
         <FilterSection posts={allPosts} onFilterChange={handleFilterChange} />
-        
+        {/* <Recent/> */}
+        <SignUp/>
       </div>
 
       {filteredPosts.length === 0 && (

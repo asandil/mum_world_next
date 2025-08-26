@@ -8,10 +8,19 @@ import SignUp from "@/components/SignUp";
 import { getBlogPosts } from "@/lib/content";
 import Image from "next/image";
 
-export default async function BlogPostPage({ params }) {
+const POSTS_PER_PAGE = 10;
+
+export default async function BlogPostPage({ params, searchParams }) {
   const { slug } = await params;
   const posts = await getBlogPosts();
   const post = posts.find((p) => p.slug === slug);
+
+    const page = parseInt(searchParams?.page) || 1;
+    const data = await getBlogPosts();
+    // const posts = Array.isArray(data) ? data : [];
+    const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);
+    const startIndex = (page - 1) * POSTS_PER_PAGE;
+    const paginatedPosts = posts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   if (!post) return <p>Post not found</p>;
 
@@ -23,10 +32,7 @@ export default async function BlogPostPage({ params }) {
       </h1>
       <div className="flex flex-col lg:flex-row gap-5">
         <div className="w-[100%] lg:w-[34.2%] order-2 border-t-[1px] lg:border-t-0 pt-[1rem] lg:pt-[12px]">
-          {/* <!-- categories --> */}
-          <Categories />
-
-          {/* <!-- Sign Up for blog Updates */}
+        
           <SignUp />
           {/* <!-- RecentPosts --> */}
           <RecentPosts />
@@ -77,8 +83,6 @@ export default async function BlogPostPage({ params }) {
                       {post.frontmatter.image.alt}
                     </figcaption>
                   </figure>
-                  {/* <!-- slot --> */}
-                  {/* <slot /> */}
 
                   <div>
                     <div
@@ -97,13 +101,9 @@ export default async function BlogPostPage({ params }) {
                 </div>
               </div>
             </article>
-
-            {/* commom */}
           </div>
         </div>
       </div>
-
-      {/* <BlogPageClient posts={posts} /> */}
     </section>
   );
 }
