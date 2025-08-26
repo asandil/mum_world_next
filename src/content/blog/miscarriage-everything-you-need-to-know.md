@@ -3,7 +3,7 @@ title: Miscarriage- Everything You Need to Know
 description: Miscarriage is the spontaneous loss or also called early pregnancy loss, when a baby dies in the uterus before the 20th week. Most miscarriages occur because the fetus isn't developing normally. About 10 to 20 percent of...
 date: 2021-09-17
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-19.jpg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181480/Miscarriage_Everything_You_Need_to_Know_fg5mwd.webp ,
     alt: Miscarriage- Everything You Need to Know
 }
 tags: ["Pregnancy","Pregnancy Health"]

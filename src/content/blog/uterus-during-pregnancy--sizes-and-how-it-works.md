@@ -3,7 +3,7 @@ title: Uterus During Pregnancy- Sizes And How It Works
 description: The uterus plays a crucial role in pregnancy as the abode of the infant, and it constantly expands during your gestation journey to hold the developing fetus.The uterus creates the placenta...
 date: 2023-01-14
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-11.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181481/Uterus_During_Pregnancy_Sizes_And_How_It_Works_wa03xl.webp ,
     alt: Uterus During Pregnancy 
 }
 tags: ["Pregnancy"]

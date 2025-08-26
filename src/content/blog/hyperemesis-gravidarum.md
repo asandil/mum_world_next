@@ -3,7 +3,7 @@ title: Hyperemesis Gravidarum- Symptoms, Causes and Treatment
 description: Hyperemesis gravidarum is an extreme form of morning sickness that causes vomiting and severe nausea during pregnancy.&nbsp;It can lead to&nbsp;dehydration, weight loss, and electrolyte imbalances.
 date: 2021-08-21
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-12.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181478/Hyperemesis_Gravidarum_lmmnee.jpg,
     alt: Hyperemesis Gravidarum
 }
 tags: ["Pregnancy"]

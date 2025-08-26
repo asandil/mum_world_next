@@ -3,7 +3,7 @@ title: Women need to stop believing these Pregnancy myths
 description: Congratulations, you’re pregnant — now it’s time for the information overload. Now that you have seen the two pink lines on the pregnancy test kit, it’s time to celebrate the upcoming arrival of the new addition to your ...
 date: 2023-03-04
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-35.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181482/Women_need_to_stop_believing_these_Pregnancy_myths_-_Copy_-_Copy_kvnwhm.png ,
     alt: Pregnancy myths
 }
 tags: ["Pregnancy","Pregnancy Health"]

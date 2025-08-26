@@ -3,7 +3,7 @@ title: Sweet Potato Macaroni and Cheese
 description: This Sweet Potato Mac and Cheese requires just 5 simple ingredients, zero prep work, and is just the yummiest pasta recipe!&nbsp;You will need...
 date: 2023-02-28
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-108.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181480/Sweet_Potato_Macaroni_and_Cheese_bgy0td.jpg ,
     alt: Sweet Potato Macaroni and Cheese
 }
 tags: ["Babies Food(6-24Months)"]

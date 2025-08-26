@@ -3,7 +3,7 @@ title: What is Linea Nigra? Causes And How To Get Rid Of It
 description: Linea nigra is a vertical, dark line on the belly that appears during pregnancy. It typically runs from the navel to the pubic area.The line is usually about 1 centimeter wide and runs from the navel toward the pubic area. In some cases, linea nigra extends above...
 date: 2023-02-06
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-71.jpg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181482/What_is_Linea_Nigra_qrkyjb.jpg ,
     alt: Linea Nigra 
 }
 tags: ["Pregnancy"]

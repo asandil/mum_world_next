@@ -3,7 +3,7 @@ title: Second Pregnancy Symptoms & Differences
 description: Irrespective of whether it is your first pregnancy or second pregnancy, pregnancy symptoms are generally common across each pregnancy. But sometimes, there may be some early signs of second pregnancy...
 date: 2023-01-15
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-13-a6ed555.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181479/Second_Pregnancy_Symptoms_Differences_xqv38k.webp ,
     alt: Second Pregnancy
 }
 tags: ["Second Pregnancy"]

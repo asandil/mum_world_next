@@ -3,7 +3,7 @@ title: Is the second caesarean section more painful?
 description: What should be noted?&nbsp; Things to pay attention to in the 2nd caesarean section? After having undergone a cesarean section, pregnant women must have had certain childbirth experiences. However, the feeling of pain after ...
 date: 2023-02-04
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-20.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181479/Is_the_second_caesarean_section_more_painful_ikskka.jpg ,
     alt: Is the second caesarean section more painful?
 }
 tags: ["Second Pregnancy"]

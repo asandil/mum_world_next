@@ -3,7 +3,7 @@ title: What To Eat & Avoid After A Miscarriage
 description: In addition to emotional support, a woman needs physical nourishment and the right foods to eat after miscarriage to recover properly. A miscarriage is a devastating experience. There is no way to compensate for the loss of a child, regardless of how early in the pregnancy it occurs...
 date: 2023-01-16
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/9d8f7c0b486dda958333d69d401f9ce8.jpg/:/cr=t:25.12%25,l:14.5%25,w:58.14%25,h:58.14%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181482/What_To_Eat_Avoid_After_A_Miscarriage_ep6j3y.webp ,
     alt: What To Eat & Avoid After A Miscarriage?
 }
 tags: ["Miscarriage"]

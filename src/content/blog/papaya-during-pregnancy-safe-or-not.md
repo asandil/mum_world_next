@@ -3,7 +3,7 @@ title: Papaya During Pregnancy- Safe or not
 description: When you’re pregnant, all that you eat and don’t eat plays a pivotal role in the formation of your precious one. Fruits are an important element of a balanced diet and provide numerous benefits as they are a powerhouse of essential nutrients...
 date: 2023-02-11
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-86.jpg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181477/Papaya_During_Pregnancy_Safe_or_not_zolpkn.jpg ,
     alt: Papaya during pregnancy
 }
 tags: ["Pregnancy Health"]

@@ -3,7 +3,7 @@ title: Mental health during pregnancy
 description: If you are mentally healthy, you will be in the best position to manage the challenges of pregnancy and life with a new baby. It’s as important to look after your mental health and wellbeing during pregnancy as your phys...
 date: 2021-08-26
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-15.jpg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181480/Mental_health_during_pregnancy_vcp9r1.jpg,
     alt: Mental health during pregnancy
 }
 tags: ["Pregnancy","Pregnancy Health"]

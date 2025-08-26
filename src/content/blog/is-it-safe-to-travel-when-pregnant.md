@@ -3,7 +3,7 @@ title: Is it safe to travel when pregnant?
 description: Yes, it's generally safe to travel during pregnancy as long as you're not too close to your due date and you're not experiencing any serious pregnancy complications. There are special precautions to take, of course, and ...
 date: 2023-02-24
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-100.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181479/Is_it_safe_to_travel_when_pregnant_rhfamq.jpg ,
     alt: Is it safe to travel when pregnancy?
 }
 tags: ["Pregnancy"]

@@ -3,7 +3,7 @@ title: Using Postpartum Waist Trainers
 description: Can They Really Get You A Flat Stomach? Benefits and Precautions You’ve just done something amazing and brought a new life into this world! 
 date: 2023-02-27
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-105.jpg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181481/Using_Postpartum_Waist_Trainers_ossauj.webp ,
     alt: Postpartum Waist Trainers
 }
 tags: ["Postnatal Care"]

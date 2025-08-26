@@ -3,7 +3,7 @@ title: Third Trimester of Pregnancy
 description: Your third trimester lasts from month 7 through month 9 of pregnancy.The third trimester begins in week 28 of pregnancy and lasts until you give birth, which may be around week 40 of pregnancy. During this trimester, your baby grows, develops, and starts to change position to get ready for birth....
 date: 2021-08-16
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-5.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181481/The_Second_Trimester_of_Pregnancy_reqsgk.png ,
     alt: Third Trimester 
 }
 tags: ["Pregnancy"]

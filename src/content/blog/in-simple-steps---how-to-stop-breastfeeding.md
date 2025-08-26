@@ -3,7 +3,7 @@ title: In Simple Steps - How to Stop Breastfeeding
 description: You’ve decided the time has come to stop breastfeeding. There isn’t an exact way to know how long it will take for your milk supply to dry up. You can start by slowly decreasing the number of times you nurse your baby.W...
 date: 2023-03-01
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-109.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181477/How_to_Stop_Breastfeeding_ee7ums.jpg,
     alt: How to Stop Breastfeeding
 }
 tags: ["Babies","Toddler"]

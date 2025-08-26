@@ -3,7 +3,7 @@ title: New born care- What New Parents Need to Know.Why Is Newborn Care
 description: The initial months with your newborn can be confusing and yet extremely overwhelming for first-time parents. Deciding what to and what not to follow in regards to newborn care can be complex...
 date: 2023-01-31
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-20.jpg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181476/New_born_care_eanins.png ,
     alt: New born care
 }
 tags: ["Baby"]

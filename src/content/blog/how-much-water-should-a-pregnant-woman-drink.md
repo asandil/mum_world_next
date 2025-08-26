@@ -3,7 +3,7 @@ title: How Much Water Should A Pregnant Woman Drink?
 description: Water is essential to perform different physiological functions in the body, and its need increases during pregnancy. So, how much water should a pregnant woman drink? Knowing this can help you stay adequately hydrated a...
 date: 2023-02-19
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-92.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181478/How_Much_Water_Should_A_Pregnant_Woman_Drink_qtc6vt.jpg ,
     alt: How Much Water Should A Pregnant Woman Drink
 }
 tags: ["Pregnancy Health"]

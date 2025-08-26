@@ -3,7 +3,7 @@ title: What is a normal heart rate during pregnancy?
 description: Heart rate normally increases during pregnancy, as the body works to pump blood to the organs and placenta.During pregnancy, the amount of blood pumped by the heart (cardiac output) increases by 30 to 50%. As cardiac ou... 
 date: 2023-02-25
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-102.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181482/What_is_a_normal_heart_rate_during_pregnancy_il2k4z.jpg ,
     alt: What is a normal heart rate during pregnancy?
 }
 tags: ["Pregnancy Health"]

@@ -3,7 +3,7 @@ title: Mango and Banana Puree
 description: You will need- 1 banana 1 small mango How to Prepare-• Peel the banana and mango. Stand the mango on end and slice down...
 date: 2023-01-31
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-16.jpg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181480/Mango_and_Banana_Puree_jn07y8.webp ,
     alt: Mango Banana Puree
 }
 tags: ["Babies Food(6-24Months)"]

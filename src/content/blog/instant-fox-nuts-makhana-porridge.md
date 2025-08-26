@@ -3,7 +3,7 @@ title: Instant Fox nuts (Makhana) Porridge
 description: Phool Makhana Porridge - instant protein rich porridge recipe made with homemade phool makhana cereal .This porridge comes handy when traveling with your infant, you can simply mix it with water or milk and feed your baby whenever required...
 date: 2023-02-11
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-84.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181479/Instant_Fox_nuts_Makhana_Porridge_vowthp.png ,
     alt: Fox nuts (Makhana)
 }
 tags: ["Babies Food(6-24Months)"]

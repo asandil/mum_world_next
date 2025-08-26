@@ -3,7 +3,7 @@ title: Instant Semolina (Sooji) Porridge Recipe for Babies, Toddlers and
 description: Instant porridge recipe with homemade sooji cereal. Ideal during travel- Sooji Porridge You will need-• Homemade Semolina (Sooji) Cereal&nbsp;- 2 tbsp• Ghee -½ tsp• Hot Water - 1 cup• Breast milk/Formula Milk/Cows mil...
 date: 2023-02-04
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/Instant-Sooji-Porridge-Recipe-for-Baby-2284e7b.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181479/Instant_Semolina_Sooji_Porridge_Recipe_for_Babies_slnzhp.jpg,
     alt: Sooji Porridge Recipe for Babies
 }
 tags: ["Babies Food(6-24Months)"]

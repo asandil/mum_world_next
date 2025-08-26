@@ -3,7 +3,7 @@ title: How PCOS Affects Fertility and What to Do
 description: What is PCOS? Polycystic ovary syndrome (PCOS) is a condition involving hormonal imbalances and metabolism problems.
 date: 2023-01-31
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/1200px-Polycystic_Ovaries.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181477/How_PCOS_Affects_Fertility_and_What_to_Do_wfn3oy.jpg ,
     alt: PCOS
 }
 tags: ["Infertility"]

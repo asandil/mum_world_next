@@ -3,7 +3,7 @@ title: Prenatal Care Tips that Every soon to be mother should know
 description: Prenatal care is medical care you get during pregnancy. This can help keep you and your baby healthy. Early prenatal care can provide necessary information to the mother regarding nutrition-related...
 date: 2021-08-09
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/226416920_997590574388060_611396246088484-0001.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181478/Prenatal_Care_Tips_that_Every_soon_to_be_mother_should_know_qvfgkd.avif ,
     alt: Prenatal care
 }
 tags: ["Pregnancy","Pregnancy Health"]

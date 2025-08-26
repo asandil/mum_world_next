@@ -3,7 +3,7 @@ title: Spinach Soup For Babies
 description: You will need-• 1 large potato (peeled and cubed)• 2 cups baby spinach (thoroughly washed and chopped)• 1 cup homemade vegetable stock• 1 stalk celery (finely chopped• ½ cup red onion (finely chopped)• 2  garlic cloves (minced)• 2tsps olive oil...
 date: 2023-01-25
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-2.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181480/Spinach_Soup_ihik4j.jpg ,
     alt: Spinach Soup 
 }
 tags: ["Babies Food(6-24Months)"]

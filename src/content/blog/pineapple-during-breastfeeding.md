@@ -3,7 +3,7 @@ title: Pineapple During Breastfeeding
 description: Pineapple is a hydrating fruit that contains several essential nutrients, dietary fiber, and bioactive components that support long-term health...
 date: 2023-02-11
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-7.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181477/Pineapple_During_Breastfeeding_mznusk.jpg,
     alt: Pineapple During Breastfeeding
 }
 tags: ["Breastfeeding"]

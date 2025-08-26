@@ -3,7 +3,7 @@ title: Placenta Abruption
 description: While you’re pregnant, placenta is an organ that provides nutrients to your baby. Placenta is implanted in the upper part of your uterus, and normally detaches from the uterine wall after you deliver your baby. The placenta...
 date: 2021-08-23
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-14.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181478/Placenta_Abruption_hgh8q6.jpg ,
     alt: Placenta Abruption
 }
 tags: ["Pregnancy","Pregnancy Health"]

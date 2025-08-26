@@ -3,7 +3,7 @@ title: Normal Delivery vs. cesarean delivery Which Is Right for You
 description: What does normal delivery mean?Delivery of a full-term newborn baby, between 37-42 weeks through the vagina without the use of forceps or vacuum for assistance is called a normal delivery of a baby. It is the most...
 date: 2021-11-15
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-29.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181477/Normal_Delivery_vs_cesarean_delivery_Which_Is_Right_for_You_annman.jpg ,
     alt: Normal vs C-section
 }
 tags: ["Pregnancy"]

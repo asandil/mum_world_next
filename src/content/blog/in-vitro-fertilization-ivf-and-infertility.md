@@ -3,7 +3,7 @@ title: In Vitro Fertilization (IVF) and Infertility
 description: What is IVF? In vitro fertilization (IVF) is a type of assistive reproductive technology (ART). It involves retrieving eggs from a woman’s ovaries and fertilizing them with sperm. This fertilized egg is known as an emb...
 date: 2023-02-01
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-56.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181478/In_Vitro_Fertilization_IVF_and_Infertility_ktw9jh.png ,
     alt: IVF
 }
 tags: ["Infertility"]

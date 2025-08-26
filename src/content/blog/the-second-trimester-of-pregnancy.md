@@ -3,7 +3,7 @@ title: The Second Trimester of Pregnancy
 description: The weeks are grouped into three trimesters. The second trimester includes weeks 13 through 27 of a pregnancy or months 4, 5, and 6. It’s the middle phase of pregnancy.In the second trimester, the baby grows larger and stronger and many women begin showing a larger belly ...
 date: 2021-08-15
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-2.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181481/The_Second_Trimester_of_Pregnancy_a3ofvl.jpg ,
     alt: Second Trimester 
 }
 tags: ["Pregnancy"]

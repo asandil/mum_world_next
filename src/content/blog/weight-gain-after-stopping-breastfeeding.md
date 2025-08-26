@@ -3,7 +3,7 @@ title: Weight Gain After Stopping Breastfeeding
 description: Most lactating mothers worry about the increased possibilities of weight gain after breastfeeding. This is because lactation assists in postpartum weight loss. During exclusive nursing (the first six months), you may consume an excess of about...
 date: 2023-01-27
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-47.jpg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181482/Weight_Gain_After_Stopping_Breastfeeding_jmhyuo.webp ,
     alt: Weight gain after stopping breastfeeding 
 }
 tags: ["Breastfeeding"]

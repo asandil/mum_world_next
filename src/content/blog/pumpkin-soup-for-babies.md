@@ -3,7 +3,7 @@ title: Pumpkin Soup For Babies
 description: You will need- • 1 cup homemade vegetable stockve• ½ cup onion (chopped)• 1 cup pumpkin (diced)• ¼tsp&nbsp;nutmeg powder• 1tbsp parsley (finely chopped)• 2 cups water How to Prepare- • Put all the ingredients into...
 date: 2023-01-25
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-41.jpg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181479/Pumpkin_Soup_For_Babies_yzavm3.jpg ,
     alt: Pumpkin soup
 }
 tags: ["Babies Food(6-24Months)"]

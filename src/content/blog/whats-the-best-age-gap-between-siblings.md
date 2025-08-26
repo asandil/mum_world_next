@@ -3,7 +3,7 @@ title: What's the best age gap between siblings?
 description: The gap you leave between babies depends on when you and your partner feel ready to have another child. It also depends on when you're able to conceive. This can be difficult to control...
 date: 2023-02-03
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-62.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181482/What_s_the_best_age_gap_between_siblings_vpqkqm.webp ,
     alt: Best age gap between siblings
 }
 tags: ["Second Pregnancy"]

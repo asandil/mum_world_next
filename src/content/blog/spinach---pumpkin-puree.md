@@ -3,7 +3,7 @@ title: Spinach - Pumpkin Puree
 description: If you’re in search of a new recipe for your baby, we suggest that you make spinach pumpkin puree for him. Both spinach and pumpkin are very nutritious and can contribute to your baby’s overall growth and development. Th...
 date: 2023-03-04
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-114-4dbd558.jpg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181480/Spinach_Pumpkin_Puree_ioaqsk.jpg ,
     alt: Spinach - Pumpkin Puree
 }
 tags: ["Babies Food(6-24Months)"]
