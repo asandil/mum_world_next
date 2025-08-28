@@ -17,7 +17,7 @@ Research estimates that PCOS affect 5–13 percentTrusted Source of women of rep
 
 ### How PCOS affect fertility? 
 
-![How PCOS affect fertility](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-54.jpg/:/rs=w:1280)
+<!-- ![How PCOS affect fertility](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-54.jpg/:/rs=w:1280) -->
 
 On average, women with PCOS take longer to fall pregnant than other women. This can be because they have irregular periods which means that they don’t ovulate every month. Also, being overweight reduces fertility and can contribute to women with PCOS taking longer to conceive.
 
@@ -34,7 +34,7 @@ The prevalence of infertility in people with PCOS is thought to be between 70 an
 
 ### Symptoms of PCOS: 
 
-![PCOS symptoms](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-53.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![PCOS symptoms](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-53.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 **They include,**
 
@@ -62,7 +62,7 @@ If you don’t already, it’s a good time to start tracking your periods. There
 
 ### How can women with PCOS improve their chance of pregnancy? 
 
-![pcos](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-15.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![pcos](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-15.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 
 Adopting a healthy lifestyle can improve the chance of a pregnancy and healthy baby. This includes being in the healthy weight range,

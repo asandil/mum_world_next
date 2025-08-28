@@ -93,24 +93,23 @@ export default async function ArticlePage({ searchParams }) {
         {paginatedPosts.map((post) => (
           <div
             key={post.frontmatter.title}
-            className="w-full md:w-[45%] border border-gray-200 hover:shadow-lg m-4 transition-shadow duration-300"
+            className="w-full md:w-[45%] border rounded-lg border-gray-200 hover:shadow-lg m-4 transition-shadow duration-300"
           >
-            {/* Image Container */}
-            <div
-              className="bg-cover bg-no-repeat bg-center"
-              // style={`background-image: url(${post.frontmatter.image.url})`}
+            <figure
+              className="bg-cover bg-no-repeat  px-auto bg-center rounded-lg mt-[12px] md:mt-[16px] lg:mt-[24px]"
             >
               <img
-                className="z-10 h-[300px] block mx-auto bg-black"
+                className="w-[250px] h-[200px] sm:w-[450px] sm:h-[300px] md:w-[300px] md:h-[400px] lg:w-[450px] lg:h-[400px] mx-auto block rounded-lg"
                 src={post.frontmatter.image.url}
-                // src="https://tse3.mm.bing.net/th/id/OIP.isXwJc2soLmlBLYvbWcxYAHaE8?pid=Api&P=0&h=180"
                 alt={post.frontmatter.image.alt}
-                height={300}
+                // height={400}
               />
-            </div>
+            </figure>
+
+            
 
             {/* Content Container */}
-            <div className="px-6 py-8 flex flex-col justify-between min-h-[345px]">
+            <div className="px-6 py-8 flex flex-col ">
               <div>
                 <div className="flex gap-3 justify-center text-[14px] leading-[1.5] font-400 text-[rgb(89,89,89)] pb-[32px]">
                   <span class="">
@@ -127,7 +126,7 @@ export default async function ArticlePage({ searchParams }) {
                     {post.frontmatter.title}
                   </Link>
                 </h4>
-                <p className="text-left pb-[16px] whitespace-pre-line text-[16px] font-[400]">
+                <p className="text-left mb-[12px] pb-[16px] whitespace-pre-line text-[16px] font-[400]">
                   {post.frontmatter.description.replace(/<br\s*\/?>/gi, " ")}
                 </p>
               </div>

@@ -18,7 +18,7 @@ Here are some of the ways a second pregnancy can probably differ from the first.
 
 **1. Bump gets bigger sooner:** The stomach muscles are weaker than the first time. As they have already been stretched once before, the abdominal muscles are less resistant to stretching the second time, and the belly is likely to show soon as the baby starts to grow. 
 
-![Baby Bump get Bigger](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-15-932469e.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![Baby Bump get Bigger](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-15-932469e.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 **2. Breast changes:** Change in breasts is common during pregnancy, but the breasts might become more tender and painful during the second pregnancy. They may become more sensitive when you are breastfeeding, and the nipples may also hurt more. The pigmented area around the nipple, called the areola, gets darker.
 
@@ -36,7 +36,7 @@ Here are some of the ways a second pregnancy can probably differ from the first.
 
 **9. Back pain:** Back pain may increase with the subsequent pregnancy. It might develop due to the shifting of the center of gravity to accommodate the growing uterus. The pain could be intense since the bump shows up earlier in the second pregnancy. 
 
-![Back Pain During Second-Time Pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-14-c765a5d.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![Back Pain During Second-Time Pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-14-c765a5d.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 **10. Breastfeeding becomes easier:** You have already done it before, and you may have a better idea of what to do next. Milk might come in easier in the second pregnancy.
 

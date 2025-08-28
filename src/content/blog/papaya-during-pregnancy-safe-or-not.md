@@ -20,7 +20,7 @@ To give you an all-round view of the issue at hand, so that you can make a decis
 
 ### Why you should avoid unripe papayas? 
 
-![Unripe papaya](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-87.jpg/:/rs=w:1280) 
+<!-- ![Unripe papaya](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-87.jpg/:/rs=w:1280)  -->
 
 - Papain is known to disrupt cell growth and obstruct the development of tissues in the growing foetus. It can also potentially harm the embryo.
 - Unripe papayas can cause uterine contractions and premature labour as the latex in papayas contain papain, a substance that stimulates certain hormones that induce contractions. Consuming papayas in early stages of pregnancy can also cause miscarriages as it stimulates and increases menstrual flow.
@@ -30,7 +30,7 @@ To give you an all-round view of the issue at hand, so that you can make a decis
 
 ### Benefits of ripe papayas:
 
-![Ripe papaya](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-88.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![Ripe papaya](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-88.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 Fully ripe papayas with yellow skin have multiple benefits and are often considered safe during pregnancy, when consumed in moderation.
 
@@ -47,7 +47,7 @@ It's is better to opt for home-made juice or better, eating them fresh and ripe.
 
 ### What fruits can a pregnant woman eat instead of Papaya? 
 
-![fruits](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-24.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![fruits](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-24.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 If the female does not want to risk her pregnancy and wants to avoid papaya, she can consume other fruits mentioned ahead as a substitute to fulfill her nutritional needs;
 

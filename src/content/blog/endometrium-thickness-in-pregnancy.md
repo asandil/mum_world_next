@@ -31,7 +31,7 @@ Endometrial thickness can also be used as a predictor for normal intrauterine pr
 
 **The following chart can give you a better idea of how the thickness of endometrium varies during the cycle: **
 
-![Female sexual cycle](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-11.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![Female sexual cycle](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-11.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 ### What Causes Thickness Of Endometrium?
 
@@ -103,4 +103,4 @@ Endometrial thickness can indicate early pregnancy, be it normal or abnormal (ec
 Go through the infographic to learn ways to enhance endometrial functions and thickness before pregnancy.
 Reaching ideal endometrial thickness and functions before conception increases the chance of pregnancy. It also enhances the outcomes of assisted reproductive technologies.
 
-![improve endometrium](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-52-b930401.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![improve endometrium](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-52-b930401.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->

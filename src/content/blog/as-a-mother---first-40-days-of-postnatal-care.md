@@ -24,7 +24,7 @@ However long you end up spending on your confinement, enjoy this precious time y
 
 Depending on your birth experience, you may feel well again fairly soon after the birth. But it can also seem like a long time before you are free from aches and pains, especially if you had a caesarean birth.
 
-![meal](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-112.jpg/:/rs=w:1280)
+<!-- ![meal](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-112.jpg/:/rs=w:1280) -->
 
 It is best to allow your body to heal at it's own pace. You can help yourself heal by resting, eating well and looking out for the signs of an infection or other postnatal complication.
 
@@ -32,7 +32,7 @@ It is best to allow your body to heal at it's own pace. You can help yourself he
 
 Every mum responds in her own way. You may feel happy - physically, mentally, and emotionally satisfied. Or you may feel exhausted, disappointed and even depressed. You may find that you feel very protective and possessive of your baby or on the other hand, happy when someone offers to take care of him for a while.
 
-![emotion](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-33.jpg/:/rs=w:1280)
+<!-- ![emotion](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-33.jpg/:/rs=w:1280) -->
 
 Many new mums also get the baby blues and a few suffer from more serious postnatal depression. This can cause severe mood swings, sadness and guilt. If you feel extremely depressed and have thoughts of hurting yourself or your baby, you should speak to your doctor. With the right treatment, you will feel better again.
 
@@ -59,7 +59,7 @@ Last year, I gave birth to my second baby. This time, I was aware, as I did a lo
 - I prepared a herbal powder prescribed by an ayurvedic doctor, which I consumed daily after 10 days of delivery. This powder had turmeric (whole), dry ginger powder, nigella seeds, cumin, flaxseed, and methi. My periods were so easy and without pain. This powder helped me with weight loss, too.
 - I prepared dry fruits laddoo (panjeeri). 
 
-![Panjeeri laddoos](https://res.cloudinary.com/dc0wr8hev/image/upload/v1755937971/panjeri_laddu-_in_middle_of_blog-_postnatal_y90goy.jpg)
+<!-- ![Panjeeri laddoos](https://res.cloudinary.com/dc0wr8hev/image/upload/v1755937971/panjeri_laddu-_in_middle_of_blog-_postnatal_y90goy.jpg) -->
 
 - This laddoo strengthened me, and reduced pain in my body. You can have lactobites (easily available online).
 

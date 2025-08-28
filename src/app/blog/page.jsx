@@ -28,7 +28,7 @@ export default async function BlogPage({ searchParams }) {
         </div>
       </div>
       {/* Pagination */}
-      <div className="flex w-[73%] justify-between items-center gap-4 mt-8">
+      <div className="flex w-full lg:w-[73%] justify-between items-center gap-4 mt-8">
         <div>
           {page > 1 && (
             <Link

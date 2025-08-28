@@ -16,7 +16,7 @@ Common pregnancy myths:
 
 ### There are myths about everything surrounding - 
 Ranging from how to tell the baby’s gender to how much hair your baby will have -  pregnancy and childbirth. Here are the most common ones to stay aware about. Learning more about facts and less about myths can help you maintain a healthy pregnancy with peace of mind.
-![myths](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-34.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![myths](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-34.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 
 
@@ -53,7 +53,7 @@ Doctors agree that heartburn only indicates that you ate something which caused 
 
 ### Avoid all caffeine completely:
 According to gynaecologists, one or two servings of caffeine is absolutely safe during pregnancy unless you have some other conditions like heartburn, which may be worsened by hot drinks.
-![Avoid Caffiene](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-36.jpg/:/rs=w:1280)
+<!-- ![Avoid Caffiene](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-36.jpg/:/rs=w:1280) -->
 
 ### Note:
 As explained above, it’s best to verify all the information that you come across when you are pregnant before implementing them. People love sharing stories and may be more than eager to give you a fair share of their experiences or what they might have heard. However, this can be misinformation or simply cause anxiety so it’s better to make a list of things to ignore when you are pregnant, with myths topping the list. Always get verified information from your doctor or physician before you start or stop anything new.

@@ -90,7 +90,7 @@ When labour is induced, the uterus is stimulated to contract so that a vaginal b
 
 ### What Happens After Labour Is Induced?
 
-![labour induced](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-95.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![labour induced](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-95.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 After inducing labour, it can be a matter of hours or days before your baby is born. It depends on how ripe your cervix is, which induction method is used, and how your body reacts. Sometimes the induction may not work, and so your doctor may try the same method again, try another labour-inducing technique, or suggest a cesarean section if your labour doesn’t start naturally. To help things go smoothly, consider discussing comfort measures and pain relief during labour before labour is induced.
 
@@ -99,6 +99,6 @@ After inducing labour, it can be a matter of hours or days before your baby is b
 You may have heard about various natural tricks and home remedies that may induce labour. One example like:
 Taking castor oil, which is a laxative. Consult your doctor if you're considering using castor oil to help induce labour and keep in mind that the side effects can include uncomfortable intestinal cramps and diarrhea.
 
-![natural induction methods](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-97.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![natural induction methods](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-97.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 It's important to remember that although there are lots of old wives’ tales about how to induce labour at home, these methods are not backed by science, and some such as herbal supplements can even cause harm. Ask your doctor whether it’s OK to speed things up, and how to safely give nature a helping hand.

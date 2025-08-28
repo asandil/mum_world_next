@@ -19,7 +19,7 @@ After the anesthetic wears off, each woman's pain is different. Pregnant women a
 
 ### Women who have multiple repeat cesarean deliveries are at increased risk of:
 
-![Multiple cesarean deliveries](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-67.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![Multiple cesarean deliveries](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-67.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 **Problems with the placenta:** The more C-sections you've had, the greater is your risk of developing problems with the placenta — such as the placenta implanting too deeply into the uterine wall (placenta accreta) or the placenta partially or completely covering the opening of the cervix (placenta previa).
 
@@ -29,7 +29,7 @@ After the anesthetic wears off, each woman's pain is different. Pregnant women a
 
 ### What should pregnant women pay attention to in the 2nd caesarean section?
 
-![2nd caserean](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-19.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![2nd caserean](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-19.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 - You should keep a gap of 3 years before having your second baby if you are having a cesarean section for the first time.
 

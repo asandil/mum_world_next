@@ -38,18 +38,6 @@ export default function Header() {
             </li>
             <li className="text-[14px]">
               <Link
-                href="/the-poetry"
-                className={`head ${
-                  isActive("/the-poetry")
-                    ? "text-[rgb(97,64,18)] font-bold"
-                    : "hover:text-[rgb(97,64,18)]"
-                }`}
-              >
-                The poetry
-              </Link>
-            </li>
-            <li className="text-[14px]">
-              <Link
                 href="/blog"
                 className={`head ${
                   isActive("/blog")
@@ -58,6 +46,18 @@ export default function Header() {
                 }`}
               >
                 Blog
+              </Link>
+            </li>
+            <li className="text-[14px]">
+              <Link
+                href="/the-poetry"
+                className={`head ${
+                  isActive("/the-poetry")
+                    ? "text-[rgb(97,64,18)] font-bold"
+                    : "hover:text-[rgb(97,64,18)]"
+                }`}
+              >
+                The poetry
               </Link>
             </li>
             <li className="text-[14px] group relative cursor-pointer">
@@ -123,7 +123,7 @@ export default function Header() {
       <div className="my-[24px] text-[16px] px-[24px] flex flex-col">
         <Link href="/" className="block text-center mx-auto">
           <img
-            className="inline-block w-[188px] h-[110px] md:w-[547.5px] md:h-[320px]"
+            className="inline-block w-[188px] h-[110px] md:w-[547.5px] md:h-[320px] "
             src="/logo.webp"
             alt="mum_world"
           />

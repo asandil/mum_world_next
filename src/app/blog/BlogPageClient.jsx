@@ -63,8 +63,8 @@ const BlogPageClient = ({ allPosts, displayPosts }) => {
   }
 
   return (
-    <div className="flex w-full">
-      <div className="flex w-[73%] flex-wrap justify-center items-center lg:border-r-[2px] border-[rgb(226,226,226)]">
+    <div className="flex flex-col lg:flex-row gap-5 w-full">
+      <div className="flex w-full lg:w-[73%] flex-wrap justify-center items-center lg:border-r-[2px] border-[rgb(226,226,226)]">
         
 
         {filteredPosts.map((post) => (
@@ -112,7 +112,7 @@ const BlogPageClient = ({ allPosts, displayPosts }) => {
         ))}
       </div>
 
-      <div className="w-[27%] px-[20px]">
+      <div className="w-full lg:w-[27%] px-[20px]">
         <FilterSection posts={allPosts} onFilterChange={handleFilterChange} />
         {/* <Recent/> */}
         <SignUp/>

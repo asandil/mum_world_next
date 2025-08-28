@@ -3,7 +3,7 @@ title: I’m the Motherof all contradiction!!
 description: I’m so happy with my choices<br/>Yet question them daily??<br/><br/>I’ve never felt so accomplished<br/>Then suddenly, failing<br/><br/>I’m excited for the future<br/>Yet always looking back<br/><br/>I’m bursting at the seams<br/>With all the things that I ...<br/>
 date: 2023-12-05
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/FB_IMG_1701752545896.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756355925/I_m_the_Motherof_all_contradiction_zinnsp.jpg ,
     alt: I’m the Mother of all contradiction.
 }
 ---

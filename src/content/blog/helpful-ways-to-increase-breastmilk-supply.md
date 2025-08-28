@@ -56,11 +56,11 @@ If the mother cannot create sufficient milk for the baby. Here are some tips to 
 
 - Herbal supplements: The most commonly used supplement is fenugreek but there are also risks which should be taken into consideration. This show an effective increase in milk supply in some women.
 
-![Herbal](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-4.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![Herbal](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-4.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 - Pumping: This involves the use of a electric or manual breast pump or learning to hand express. The mother is advised to pump when she feels her supply is at its best. Usually between midnight and 8am. She can pump from both breasts and should not expect to be able to pump as much as the baby takes from a bottle initially. Ten minutes on each breast would be a good starting point. Increased breast milk demand increases supply.
 
-![pumping](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-5.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![pumping](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-5.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 - Medication: Healthcare professionals might prescribe certain medications, to increase the supply of milk. Make sure you discuss both the benefits and risks of any medication with your doctor.
 

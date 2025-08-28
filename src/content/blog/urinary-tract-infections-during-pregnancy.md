@@ -3,7 +3,7 @@ title: Urinary Tract Infections During Pregnancy
 description: Urinary tract infections are common during pregnancy. Women can often experience them in pregnancy. Left or untreated, UTI can pose a serious health risk to a pregnant woman and a developing fetus. According to one study from the Centers for Disease Control and Prevention...
 date: 2021-08-26
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-17.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181481/Tips_for_Taking_Care_of_Your_Mental_Health_During_Pregnancy_v44u0u.png ,
     alt: Urinary Tract Infections 
 }
 tags: ["Pregnancy"]

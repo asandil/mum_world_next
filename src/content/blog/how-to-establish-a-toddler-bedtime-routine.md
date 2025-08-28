@@ -21,7 +21,7 @@ Even if your toddler isn't a huge fan of bedtime itself, chances are he or she'l
 
 You'll likely find that a routine will make bedtime a little smoother and less protest-prone. Calm, quiet activities encourage your toddler to feel relaxed rather than riled up, which can set the stage for sleep. Plus, toddler will be less likely to give you pushback when she knows what's coming.  
 
-![toddler](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-98.jpg/:/rs=w:1280)
+<!-- ![toddler](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-98.jpg/:/rs=w:1280) -->
 
 And while a routine may not turn your toddler into a perfect sleeper, there's a good chance that it'll allow everyone in your family to get more of the shut-eye they need. A predictable evening process helps your toddler get to bed on time, which can go a long way towards easing problems like overtiredness, waking up at night or rising too early in the morning. 
 
@@ -36,7 +36,7 @@ A child who gets an energy boost in the tub, for example, probably shouldn’t h
 
 ### Toddler bedtime chart:
 
-![timechart](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/1b485f6cac15a29fa813433066b8e1c3.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![timechart](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/1b485f6cac15a29fa813433066b8e1c3.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 ### Set a time:
 
@@ -91,7 +91,7 @@ Starting your routine too late could lead to your child being overtired and not 
 
 ### Tips and hacks for establishing a foolproof toddler bedtime routine: 
 
-![toddler](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-99.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![toddler](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-99.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 
 - Choose the perfect story. Check out “The Rabbit Who Wants to Fall Asleep” before you put your toddler to bed. This book may be helpful for kiddos who have a harder time settling down.

@@ -3,6 +3,7 @@ import Author from "@/components/Author";
 import SharePost from "@/components/SharePost";
 import RecentPosts from "@/components/RecentPosts";
 import SignUp from "@/components/SignUp";
+import Image from "next/image";
 
 export default function PoetryPage({ params }) {
   const posts = getPoetryPosts();
@@ -82,26 +83,31 @@ export default function PoetryPage({ params }) {
                 {post.frontmatter.title}
               </h1>
               <p className="flex gap-3 justify-start text-[14px] leading-[1.5] font-400 text-[rgb(89,89,89)] mb-[32px]">
-                <span className="">{new Date(post.frontmatter.date).toDateString()}</span>
+                <span className="">
+                  {new Date(post.frontmatter.date).toDateString()}
+                </span>
                 <span className="">|</span>
                 <span>poetry</span>
               </p>
-              <figure className="mb-[24px] w-[272px] mx-auto">
-                {/* <img src={post.frontmatter.image.url} alt={post.frontmatter.image.alt} width="272" /> */}
-                <img
-                  src={
-                    "https://tse3.mm.bing.net/th/id/OIP.isXwJc2soLmlBLYvbWcxYAHaE8?pid=Api&P=0&h=180"
-                  }
-                  alt={post.frontmatter.image.alt}
-                  width="272"
-                />
-                <figcaption className="text-[rgb(82,82,82)] px-[8px] py-[4px] bg-[rgb(246,246,246)] font-[400] font-[Lato] text-center">
+              
+              <figure className="mb-[24px] w-full max-w-[372px] md:max-w-[500px] flex flex-col mx-auto">
+                <div className="relative  w-full h-[350px] overflow-hidden rounded-lg">
+                  <Image
+                    src={post.frontmatter.image.url}
+                    alt={post.frontmatter.image.alt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 400px, 400px"
+                  />
+                </div>
+                <figcaption className="text-[rgb(82,82,82)] px-[8px] py-[4px] bg-[rgb(246,246,246)] font-[400] text-center">
                   {post.frontmatter.image.alt}
                 </figcaption>
               </figure>
               {/* <!-- slot --> */}
               {/* <slot /> */}
-              <p className="w-[50%] mb-[12px]">{post.content.replace(/<br\s*\/?>/gi, " ")}</p>
+              <p className="w-[60%] mb-[12px]">
+                {post.content.replace(/<br\s*\/?>/gi, " ")}
+              </p>
               <div className="mt-[20px] ">
                 <Author />
               </div>

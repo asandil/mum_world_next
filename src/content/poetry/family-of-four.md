@@ -3,7 +3,7 @@ title: Family of Four!!
 description: When Three Become Four<br/>It’s such a change for our babies<br/>When three become four.<br/>They wake up one morning<br/>And they’re the baby no more.<br/>They’ve had us all to themselves<br/>for the whole life they’ve known.<br/>And then, all of...
 date: 2023-02-24
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/FB_IMG_1677086439635.jpg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756355924/Family_of_Four_jgad4d.jpg ,
     alt: Family of Four
 }
 ---

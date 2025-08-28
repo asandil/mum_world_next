@@ -16,7 +16,7 @@ A miscarriage can cause heavy bleeding and dizziness. It can also cause weakness
 
 ### 1.Calcium-rich foods:
 
-![Calcium rich food for pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/c742652a88c629cdcd3a066c6cea0377.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![Calcium rich food for pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/c742652a88c629cdcd3a066c6cea0377.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 
 During pregnancy, your body’s calcium reserves can plummet.
@@ -32,9 +32,9 @@ That is why it is important to consume foods that are rich in calcium.
 
 ### 2. Iron-rich foods:
 
-![Iron rich food for pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/9ebbf2f95a7edd79efce1d0226e6c0f8.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![Iron rich food for pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/9ebbf2f95a7edd79efce1d0226e6c0f8.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
-![Iron rich food for pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/632f249fead019032b49514f7efe15c0.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![Iron rich food for pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/632f249fead019032b49514f7efe15c0.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 
 As mentioned before, a miscarriage can cause heavy bleeding. That can cause depletion in the amount of iron in your body. You may even experience anemia and other symptoms of iron deficiency due to your miscarriage. Feelings of weakness and fatigue are common after a miscarriage. That is why it is important to consume iron-rich foods after a pregnancy loss.

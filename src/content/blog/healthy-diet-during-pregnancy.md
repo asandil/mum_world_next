@@ -16,7 +16,7 @@ As a general guide, pregnant mothers need to eat a healthy diet, high in nutrien
 
 Your diet during pregnancy helps to support your own well being and supplies the nutrition your baby needs to develop and grow.
 
-![healthy diet](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-24.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![healthy diet](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-24.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 It’s normal for a pregnant mother to gain weight, however, gaining too much or too little weight increases the risk of complications for you and your baby.
 A well balanced diet is usually enough to meet your nutritional needs during pregnancy. However, some foods contain higher concentrations of certain nutrients which are specifically recommended during pregnancy.
@@ -36,7 +36,7 @@ If you are considering taking or currently taking any supplements, please discus
 
 ### Balanced diet during pregnancy:
 
-![diet during pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-25.jpg/:/rs=w:1280)
+<!-- ![diet during pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-25.jpg/:/rs=w:1280) -->
 
 A healthy, balanced diet includes a wide variety of nutritious foods from the five food groups. It’s also very important and advisable to drink plenty of water to stay hydrated.
 
@@ -52,7 +52,7 @@ If you are suffering from morning sickness or severe vomiting during pregnancy, 
 
 ### What about pregnancy cravings?
 
-![pregnanct cravings](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-91.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![pregnanct cravings](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-91.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 It used to be thought that pregnancy food cravings were a sign of nutrient deficiencies in a pregnant mother’s diet; however, there is no evidence to support this link. Pregnancy can also cause changes in a mother’s tastes, and foods once found appealing can take on a completely different flavour. Food aversions can develop during pregnancy, due in part to hormonal influence.
 
@@ -113,4 +113,4 @@ During pregnancy, you will have extra energy requirements and needs more serves.
 
 **Infographic:**
 
-![What to eat during pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-89.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![What to eat during pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-89.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->

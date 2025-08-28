@@ -36,7 +36,7 @@ Ensure that while holding your newborn, you are supporting the back of their nec
 
 **3. Burping** 
 
-![Burping](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-21.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![Burping](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-21.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 Try to gently hold your baby against your chest with one hand. Their chin should be resting on your shoulder and now start patting gently on their back with your other hand until they burp.
 While the babies are having their feed, they tend to swallow air which causes gas in their tummies. Burping helps to get rid of this gas by expelling excess air, aiding in digestion and preventing spit-ups. 
@@ -44,7 +44,7 @@ While the babies are having their feed, they tend to swallow air which causes ga
 
 **4.Massage Them** 
 
-![Massage](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-22-c2ae6a5.jpg/:/rs=w:1280)
+<!-- ![Massage](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-22-c2ae6a5.jpg/:/rs=w:1280) -->
 
 Massage helps in soothing them and eventually to sleep and in improving blood circulation and even digestion.
 Bond with your baby by massaging them. Spread a small quantity of baby oil or moisturizer on your hands. After this, gently on their body. Maintain eye contact, smile, laugh, and talk to them when massaging their body. A good time to massage your baby is before they take a bath.

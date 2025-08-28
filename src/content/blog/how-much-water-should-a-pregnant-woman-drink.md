@@ -36,7 +36,7 @@ Sipping on water may be one of the simplest steps you can take towards a healthy
 
 ### Why Is It So Important To Hydrate During Pregnancy? 
 
-![Hydrate During Pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-93-1b15513.jpg/:/rs=w:1280)
+<!-- ![Hydrate During Pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-93-1b15513.jpg/:/rs=w:1280) -->
 
 Besides the ones mentioned in the above section, water has additional functions during pregnancy. Water requirements increase during pregnancy to maintain maternal hydration and support fetal development. The physiological changesi that increase water demand during pregnancy include:
 
@@ -70,7 +70,7 @@ Here’s how the water needs based on the increased calorie requirements can be 
 
 ### What Are The Benefits Of Staying Hydrated During Pregnancy? 
 
-![The Benefits Of Staying Hydrated During Pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-94.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![The Benefits Of Staying Hydrated During Pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-94.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 **Sufficient water intake during your pregnancy could help:**
 

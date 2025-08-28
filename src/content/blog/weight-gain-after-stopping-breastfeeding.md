@@ -25,7 +25,7 @@ Some women may notice weight gain after they wean their baby.
 
 **2.Caloric surplus:** Your appetite may increase during breastfeeding, and it may stay that way for a while even after you wean your baby. The excess calories may eventually lead to weight gain. The effects of caloric surplus could be compounded by a lack of physical activity and a sedentary lifestyle. 
 
-![Appetite during breastfeeding](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-8.jpg/:/rs=w:1280)
+<!-- ![Appetite during breastfeeding](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-8.jpg/:/rs=w:1280) -->
 
 ### Tips To Avoid Weight Gain After Weaning:
 
@@ -37,7 +37,7 @@ The following tips could help you manage your food intake to shed the extra weig
 - Eat healthy snacks, such as fruits and nuts, to provide yourself with the necessary nutrients and calories.
 - Engage in moderate exercises. If you do not have more free time on hand, you may spread out your workouts into various parts across the day.
 
-![exercises](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-9.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![exercises](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-9.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 
 - Stay active whenever possible. For instance. If you can walk to a place, then avoid using the car or bus.

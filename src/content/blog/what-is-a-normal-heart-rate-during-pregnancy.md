@@ -47,7 +47,7 @@ Arrhythmias are heart palpitations or other disturbances of the heart rate. Peop
 
 **5. Exercise:**
 
-![Excercise](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-31.jpg/:/rs=w:1280)
+<!-- ![Excercise](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-31.jpg/:/rs=w:1280) -->
 
 People who are physically active may have lower resting heart rates. This can extend to pregnancy.
 
@@ -76,7 +76,7 @@ Regular prenatal care involves monitoring heart health and can reduce the risk o
 
 **Manage anxiety and mental health:** 
 
-![mental health](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-103.jpg/:/rs=w:1280)
+<!-- ![mental health](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-103.jpg/:/rs=w:1280) -->
 
 Anxiety can make the heart beat faster and make pregnancy more difficult.
 People experiencing anxiety should talk to a doctor, practice slow and deep breathing, and speak with a mental health counselor specializing in prenatal mental health.
@@ -85,7 +85,7 @@ People experiencing anxiety should talk to a doctor, practice slow and deep brea
 
 It is important to have regular prenatal visits with a doctor during pregnancy. Discuss any changes in heart rate, and make sure the healthcare provider takes heart rate and blood pressure readings. Changes like; 
 
-![When to see a doctor](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-101.jpg/:/rs=w:1280)
+<!-- ![When to see a doctor](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-101.jpg/:/rs=w:1280) -->
 
 - an intense headache, stomach pain, or sudden swelling in one or both feet or legs
 - chest pain or pressure

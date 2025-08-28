@@ -4,12 +4,12 @@ const headData = [
         to: "/"
     },
     {
-        name: "The poetry",
-        to: "/the-poetry"
-    },
-    {
         name: "Blog",
         to: "/blog"
+    },
+    {
+        name: "The poetry",
+        to: "/the-poetry"
     },
     {
         name: "Faqs",

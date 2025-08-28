@@ -31,11 +31,11 @@ If you suspect any food, including pineapple, is affecting your baby, eliminate 
 
 Pineapple has several varieties with varying nutritional values. On average, one cup of pineapple can offer a nursing mother the following nutrients to contribute to her nutritional needs during the lactation period and beyond.
 
-![Nutritional Value Of Pineapple](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-43.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![Nutritional Value Of Pineapple](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-43.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 ### Benefits of Eating Pineapple for Nursing Moms: 
 
-![Eating Pineapple for Nursing mom](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-45.jpg/:/rs=w:1280)
+<!-- ![Eating Pineapple for Nursing mom](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-45.jpg/:/rs=w:1280) -->
 
 While the evidence of pineapple juice increasing breast milk in a lactating woman might not be conclusively proved, there are many other benefits of consuming this fruit for a mother and her baby are,
 

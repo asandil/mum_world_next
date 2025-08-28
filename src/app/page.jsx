@@ -23,14 +23,14 @@ export default function Home() {
                 <br />
               </p>
             </div>
-            <div className="mx-[-12px] flex justify-center items-center">
+            {/* <div className="mx-[-12px] flex justify-center items-center">
               <a
                 className="bg-[rgb(250,182,107)] text-black text-[14px] font-[700] tracking-[0.143em] w-[100%] md:w-auto py-[8px] px-[32px] min-h-[56px] flex justify-center items-center"
                 href="/#0a817186-e965-4065-ad41-8790eb031a27"
               >
                 SEND MESSAGE
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
         {/* what we do */}
@@ -140,13 +140,15 @@ export default function Home() {
             Contact us
             <hr className="mt-[16px] border-[1px] border-black" />
           </h2>
-          <div className="flex ">
+          <div className="flex flex-wrap justify-center lg:justify-between ">
             {/* Send message */}
-            <ContactForm />
+            <div className="w-full lg:w-[487px]">
+              <ContactForm />
+            </div>
             {/* contact details */}
-            <div className="mt-[40px] pl-[24px]">
+            <div className="mt-[40px] ">
               <div className="mb-[40px]">
-                <p className="leading-[1.5] font-[400] text-[rgb(94,94,94)] text-center md:text-start text-[16px]">
+                <p className="leading-[1.5] font-[400] flex flex-wrap text-[rgb(94,94,94)] text-center md:text-start text-[16px]">
                   Please contact us directly with any questions, comments, or
                   inquiries you may have. <br />
                   <br />

@@ -3,7 +3,7 @@ title: Stay at Home Mumm!!
 description: Stay at Home Mum<br/>The house is a mess<br/>My clothes are old<br/>The chores are endless<br/>As the day unfolds<br/>Guilt is a feeling<br/>I’ve grown to know<br/>It follows me daily<br/>Like a dismal shadow<br/>Aches and pains<br/>and all the strains<br/Bending...
 date: 2023-02-24
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/FB_IMG_1677257734905.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756355925/Stay_at_Home_Mum_hjel9g.jpg,w:100%25,h:100%25/rs=w:1280 ,
     alt: Stay at Home Mumm
 }
 ---

@@ -12,7 +12,7 @@ tags: ["Infertility"]
 
 In vitro fertilization (IVF) is a type of assistive reproductive technology (ART). It involves retrieving eggs from a woman’s ovaries and fertilizing them with sperm. This fertilized egg is known as an embryo. The embryo can then be frozen for storage or transferred to a woman’s uterus.
 
-![In vitro fertilization ](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images-4.png/:/rs=w:1280)
+<!-- ![In vitro fertilization ](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images-4.png/:/rs=w:1280) -->
 
 In vitro fertilization (IVF) is a complex series of procedures used to help with fertility or prevent genetic problems and assist with the conception of a child.
 
@@ -68,7 +68,7 @@ A medical lab can test the embryos for genetic abnormalities. Then, a doctor onl
 
 ### How Is In Vitro Fertilization Performed?
 
-![In Vitro Fertilization Performed](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-55.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![In Vitro Fertilization Performed](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-55.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 ### There are five steps involved in IVF:
 

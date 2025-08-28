@@ -37,7 +37,7 @@ The pregnancy line is prominent in women with darker skin compared to those with
 
 ### Linea Nigra And The Old Wives Tale: 
 
-![Linea Nigra And The Old Wives Tale](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-73.jpg/:/rs=w:1280)
+<!-- ![Linea Nigra And The Old Wives Tale](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-73.jpg/:/rs=w:1280) -->
 
 According to old wives tales, the linea nigra helps to predict the gender of the baby, they said:
 
@@ -79,7 +79,7 @@ After pregnancy, linea nigra will resolve on its own, although it can take sever
 ### The following methods may help linea nigra fade sooner. 
 
 
-![methods may help linea nigra fade sooner](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-72.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![methods may help linea nigra fade sooner](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-72.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 - Lightening creams or bleaches; only if not breastfeeding
 - Protecting the belly from excess sun exposure

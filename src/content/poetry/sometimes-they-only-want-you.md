@@ -3,7 +3,7 @@ title: Sometimes They Only Want You
 description: Sometimes they only want you,⁣<br/>to read them a story before bed snuggled right into you,⁣<br/>⁣to lay next to them, hands clasped together, while they close their eyes,⁣⁣<br/>to make them their favorite snack the way they like i...
 date: 2023-02-25
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/FB_IMG_1677343482069.jpg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756355925/Sometimes_they_only_want_you_ocfkhw.jpg ,
     alt: Sometimes They Only Want You
 }
 ---

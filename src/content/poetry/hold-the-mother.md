@@ -3,7 +3,7 @@ title: Hold the Mother
 description: Hold the mother, not the baby.⁣<br/>Because the baby’s being taken care of⁣<br/>fed, snuggled, and given all the love in the world—⁣⁣<br/>by not only the mother,⁣⁣<br/>but her partner, grandparents,⁣<br/> siblings, cousins, and friends.⁣<br/>
 date: 2023-02-24
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/FB_IMG_1677086435792.jpg/:/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756355925/Hold_the_Mother_vd4i9y.jpg ,
     alt: Hold the Mother
 }
 ---

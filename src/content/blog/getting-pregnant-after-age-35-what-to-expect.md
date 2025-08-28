@@ -85,7 +85,7 @@ Talk to your provider about prenatal vitamins as well as any other supplements.
 Once you’re pregnant, keep up with regular prenatal care and monitor your baby’s movement as they develop.
 “Counting your baby’s kicks is important because a change in your baby’s movement patterns could be an early sign of stress,” Dr. Edgerton said. “Focus on what’s normal for your baby and keep track. If anything changes or seems unusual, let your provider know immediately.”
 
-![getting pregnant](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-120.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![getting pregnant](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-120.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 ### Note:
 

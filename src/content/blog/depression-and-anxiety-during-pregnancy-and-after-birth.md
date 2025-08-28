@@ -14,7 +14,7 @@ tags: ["Pregnancy"]
 
 Anxiety—feeling nervous, worried or scared and Depression—feeling sad, empty or down. Research has shown that up to 33 percent of women experience clinical anxiety or depression at some point during pregnancy. Both are serious medical conditions that involve the brain and may occur during pregnancy or after birth. Depression and anxiety that happen during pregnancy or anytime during the first year after the birth of your baby are medical conditions. These feelings are not something you caused by doing or not doing something. They can be treated if you seek help.
 
-![depression](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-9.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![depression](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-9.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 #### Symptoms of Anxiety During Pregnancy and After Birth:
 

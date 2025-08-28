@@ -67,7 +67,7 @@ Gripe water’s effectiveness depends on the types of ingredients used in it. It
 
 ### Other ways to soothe a baby:
 
-![Ways to soothe a baby](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-81.jpg/:/rs=w:1280)
+<!-- ![Ways to soothe a baby](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-81.jpg/:/rs=w:1280) -->
 
 Doctor says that rather than giving gripe water there are other things that you can do to soothe a crying baby. Asafoetida and Probiotics may help to reduce or relieve excess gas and pain.
 

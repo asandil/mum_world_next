@@ -23,17 +23,19 @@ const page = () => {
           >
             Select the Date of the Last Menstrual Period:
           </label>
-          <input
-            class="border-[1px] border-[rgb(226,226,226)] ml-[2px] py-[3px] px-[6px] rounded cursor-pointer"
-            type="date"
-            id="lmpDate"
-          />
-          <button
-            class="ml-[5px] border py-[3px] px-[16px] bg-gray-500 text-white hover:bg-gray-700 rounded"
-            id="calculate"
-          >
-            Calculate Due Date
-          </button>
+          <div className="flex flex-col sm:flex-row gap-[8px]">
+            <input
+              class="border-[1px] border-[rgb(226,226,226)] ml-[2px] py-[3px] px-[6px] rounded cursor-pointer"
+              type="date"
+              id="lmpDate"
+            />
+            <button
+              class="ml-[5px] border py-[3px] px-[16px] bg-gray-500 text-white hover:bg-gray-700 rounded"
+              id="calculate"
+            >
+              Calculate Due Date
+            </button>
+          </div>
         </div>
 
         <p class="text-center mt-4 md:text-start" id="result"></p>

@@ -69,7 +69,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className=" min-w-[387px]">
+    <div className="">
       <h4 className="text-center md:text-start text-[22px] text-[rgb(27,27,27)] leading-[1.25] mb-[24px] font-[400]">
         Send Message
       </h4>

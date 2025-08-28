@@ -15,7 +15,7 @@ When you stop breastfeeding, only one thing's for certain: You're bound to run i
 
 Everyone will be different when it comes to weaning, but in general, there are some steps you can follow to initiate the end of breastfeeding, such as looking for signs your baby is ready to wean from breastfeeding. There's no right or wrong way to stop breastfeeding. For lots of mothers and babies, stopping breastfeeding happens gradually as the child grows and eats more solid foods. 
 
-![stop breastfeed](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-111.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![stop breastfeed](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-111.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 It's important that solid food should not simply replace breast milk. There's evidence that breast milk may play a part in helping a baby's digestive system to deal with their first solids.
 
@@ -90,8 +90,8 @@ Your toddler may also find breastfeeding comforting when they're ill or upset.
 **These two pictures may help you - How to wean your baby or toddler:**
 
 
-![wean toddler](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images-6.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![wean toddler](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images-6.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
-![toddler](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-110.jpg/:/rs=w:1280)
+<!-- ![toddler](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-110.jpg/:/rs=w:1280) -->
 
 

@@ -17,7 +17,7 @@ You'll want to avoid places where infectious diseases are prevalent (or there ar
 The COVID-19 pandemic has made people reconsider where they feel safe traveling as well; if you're fully vaccinated, the CDC says you can travel, but it's always best to check with your doctor first.
 Keep in mind that the activities you take part in might be different than normal.
 
-![travel while pregnant](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-30.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![travel while pregnant](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-30.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 It's safe to fly when you're pregnant as well, and most airlines will allow you to fly domestically until about 36 weeks of pregnancy. International routes may have different rules, so be sure to check with your airline before booking anything. Your doctor will tell you to avoid flying, however, if you have a health concern that might require emergency care or any other health conditions that aren’t well controlled.
 

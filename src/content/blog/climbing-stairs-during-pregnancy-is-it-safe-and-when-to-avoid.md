@@ -46,7 +46,7 @@ The study has found that pregnant women, who are inactive, can reduce the risk o
 - When you are wearing an overflowing dress, do not take the stairs as you have a high chance of tripping over it.
 - Contact your doctor if you slipped on the stairs.
 
-![Slipped on stairs during pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-18.jpg/:/rs=w:1280)
+<!-- ![Slipped on stairs during pregnancy](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-18.jpg/:/rs=w:1280) -->
 
 ### When To Avoid Climbing Stairs In Early Pregnancy?
 

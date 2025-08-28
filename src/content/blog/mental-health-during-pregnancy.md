@@ -21,7 +21,7 @@ Symptoms of mental illness in pregnancy are similar to symptoms you have at othe
 - Broken sleep 
 - Lack of energy are common in both pregnancy and depression.
 
-![mental health](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-16.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![mental health](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-16.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 **Mental health Problems during pregnancy:** Women experiences mental health issues during the pregnancy as well as after the birth.For some people, pregnancy can lead to conditions such as:
 

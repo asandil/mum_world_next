@@ -28,7 +28,7 @@ A baby sweating at night is not always a cause for concern. Various reasons caus
 
 **• Crying:** Excess crying can make a baby tired and exhausted, and it might lead to sweating. Sweating usually stops once the baby stops crying. 
 
-![crying baby](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-23.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![crying baby](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/download.jpeg-23.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 **• Too many layers of clothes:** Wearing too many layers of clothes or covering the baby with layers of blankets might cause increased body temperature and subsequent sweating. Getting too hot has been linked with sudden infant death syndrome (SIDS) or sudden unexpected death in an infant (SUDI). It is suggested to dress the baby according to the weather and not overdress.
 
@@ -58,7 +58,7 @@ A baby sweating at night is not always a cause for concern. Various reasons caus
 
 **• Hydration:** Keep the baby hydrated to compensate for the fluids lost due to sweating. 
 
-![reduce sweating](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-69.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![reduce sweating](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-69.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 ### When To Consult A Doctor For Baby’s Night Sweating?
 

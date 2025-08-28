@@ -43,7 +43,7 @@ As mentioned above, not every woman will go through false labor. But its good to
 
 ### What do false labor feel like?
 
-![false labour](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-50.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![false labour](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-50.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 Like true labor, false labor are not typically as painful. Some women describe them as a tightening sensation across the lower abdomen. In some women, this may feel similar to menstrual cramps. The abdomen may become firm to the touch and feel like a muscle tightening in your abdomen or a squeezing sensation in the lower abdomen. These contractions do not continue for long; they neither get stronger nor closer with time. False Labor usually last about 15 to 30 seconds, but may continue as long as two minutes, at times.
 If these contractions are felt towards the last weeks of pregnancy, they indicate that your true labor is not very far.
@@ -64,7 +64,7 @@ You can take these measures, if false labor makes you uncomfortable:
 
 ### When should I call my doctor about Braxton Hicks contractions?
 
-![Braxton Hicks](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-48.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![Braxton Hicks](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-48.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 It is important to call your doctor if you notice:
 

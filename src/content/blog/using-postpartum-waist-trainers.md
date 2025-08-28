@@ -22,7 +22,7 @@ It’s not uncommon to see celebrity moms and many other people back in perfect 
 
 ### What Is Waist Training? 
 
-![waist belt](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-106.jpg/:/cr=t:4.25%25,l:12.39%25,w:76.92%25,h:76.92%25/rs=w:1280)
+<!-- ![waist belt](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-106.jpg/:/cr=t:4.25%25,l:12.39%25,w:76.92%25,h:76.92%25/rs=w:1280) -->
 
 After birth, the changes in hormones and fluid content in the body can cause water retention in the abdomen. The accumulated water takes about two weeks to dissipate and two more weeks for the rest to subside. Meanwhile, it can take up to six weeks for the uterus to shrink from the size of a watermelon to its normal size. All this occurs naturally along with belly shrinkage whether women wear waist trainers or not. However, waist training is thought to speed up the process and help women shrink their bellies sooner.
 The rationale behind waist training after delivery is that during pregnancy, the body releases a hormone called relaxin that softens the ligaments and cartilage. It helps during the final weeks of pregnancy to allow for increased flexibility to help with the baby’s passage through the birth canal.
@@ -49,7 +49,7 @@ Waist trainers are tighter and designed to apply more pressure on the abdomen us
 
 ### Benefits of Using Waist Trainers After Pregnancy:
 
-![cordet](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-104-558bb10.jpg/:/rs=w:1280)
+<!-- ![cordet](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-104-558bb10.jpg/:/rs=w:1280) -->
 
 Using a waist trainer after delivery has a number of benefits for postpartum women. Here are some: 
 
@@ -75,7 +75,7 @@ The waist trainer wrapped tightly around your abdomen won’t allow you to stuff
 
 **This picture shows, before and after effects of wearing waist trainer:**
 
-![effects of wearing waist trainer](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-107.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280)
+<!-- ![effects of wearing waist trainer](https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/images.jpeg-107.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280) -->
 
 *This picture shows, before and after effects of wearing waist trainer
 This picture shows, before and after effects of wearing waist trainer*
