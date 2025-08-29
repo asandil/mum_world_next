@@ -62,7 +62,7 @@ const RecentPosts = ({ searchParams }) => {
               {post.frontmatter.title}
             </a>
             <p className="mt-[16px] text-[14px] leading-[1.5] font-[400] text-[rgb(89,89,89)]">
-              <span className="">{post.frontmatter.date}</span>
+              <span className="">{new Date(post.frontmatter.date).toDateString()}</span>
             </p>
           </div>
         </div>
