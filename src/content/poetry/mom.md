@@ -3,7 +3,7 @@ title: Mom
 description: Mom is depressed<br/>And no one has noticed<br/>She wants everything to be perfect..<br/>She is hurt from within<br/>And the hormones drive her crazy<br/>Why do some men not help..<br/>Is it because it’s only for women?<br/>Now her life changed..<br/>S...
 date: 2023-02-22
 image: {
-    url: https://img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/FB_IMG_1677089885075.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280 ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756450959/Mom_xxwcpe.jpg ,
     alt: Mom poetry
 }
 ---

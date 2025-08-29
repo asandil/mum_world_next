@@ -3,7 +3,7 @@ title: Tips for Taking Care of Your Mental Health During Pregnancy
 description: It is no surprise that there are unique  challenges and psychological changes that can occur during pregnancy. One moment you may feel wonderfully happy, teary-eyed and  next sad, irritable and tired.There are so much of advice for maintaining physical health during pregnancy...
 date: 2021-08-16
 image: {
-    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181481/Tips_for_Taking_Care_of_Your_Mental_Health_During_Pregnancy_v44u0u.png ,
+    url: https://res.cloudinary.com/dc0wr8hev/image/upload/v1756450958/Tips_for_Taking_Care_of_Your_Mental_Health_During_Pregnancy_fsmofb.jpg ,
     alt: Mental health during pregnancy 
 }
 tags: ["Pregnancy"]

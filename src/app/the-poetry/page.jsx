@@ -3,6 +3,7 @@ import ArticleList from "@/components/the-poetry/ArticleList";
 import BlogList from "@/components/the-poetry/ArticleList";
 import { getBlogPosts } from "@/lib/api/blog";
 import { getPoetryPosts } from "@/lib/content";
+import Image from "next/image";
 import Link from "next/link";
 
 const POSTS_PER_PAGE = 4;
@@ -31,14 +32,14 @@ export default async function ArticlePage({ searchParams }) {
           Poetry of Pregnancy, New Born, Motherhood and Parenting
           <hr className="mt-[16px] border-[1px] border-black" />
         </h1>
-        <div className="mb-[24px]">
-          <img
-            className="w-[100%]
-                md:w-[50%]
-                lg:w-[33%]"
-            src="//img1.wsimg.com/isteam/ip/7d906beb-bc9b-4377-9b06-b22a3566899c/20230222_225058.jpg/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:400,h:400,cg:true"
-            alt="The Poetry of Modern Pregnancy, Newborn Motherhood and parenting "
-            sizes="(max-width: 600px) 100%, (max-width: 900px) 50vw, 33.3vw"
+        <div className="mb-[24px] rounded-2xl w-full h-[500px] relative">
+          <Image
+            src="https://res.cloudinary.com/dc0wr8hev/image/upload/v1756450957/Poetry_section_top_image_nqwdva.jpg"
+            alt="The Poetry of Modern Pregnancy, Newborn Motherhood and parenting"
+            fill
+            className="object-cover rounded-2xl"
+            priority
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1160px"
           />
         </div>
         <h2

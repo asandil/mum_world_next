@@ -5,9 +5,11 @@ import RecentPosts from "@/components/RecentPosts";
 import SignUp from "@/components/SignUp";
 import Image from "next/image";
 
-export default function PoetryPage({ params }) {
+export default async function PoetryPage({ params }) {
+  const { slug } = await params;
+  const decodedSlug = decodeURIComponent(slug);
   const posts = getPoetryPosts();
-  const post = posts.find((p) => p.slug === params.slug);
+  const post = posts.find((p) => p.slug === decodedSlug);
 
   if (!post) return <p>Post not found</p>;
 
@@ -89,7 +91,7 @@ export default function PoetryPage({ params }) {
                 <span className="">|</span>
                 <span>poetry</span>
               </p>
-              
+
               <figure className="mb-[24px] w-full max-w-[372px] md:max-w-[500px] flex flex-col mx-auto">
                 <div className="relative  w-full h-[350px] overflow-hidden rounded-lg">
                   <Image
