@@ -28,50 +28,57 @@ export default async function BlogPage({ searchParams }) {
         </div>
       </div>
       {/* Pagination */}
-      <div className="flex w-full lg:w-[73%] justify-between items-center gap-4 mt-8">
-        <div>
-          {page > 1 && (
+      <div className="flex justify-center items-center gap-2 mt-8 flex-wrap">
+        {/* Previous Button */}
+        {page > 1 ? (
+          <Link
+            href={`/blog?page=${page - 1}`}
+            className="px-4 py-2 bg-[rgb(158,108,52)] text-white rounded hover:bg-[rgb(97,64,18)]"
+          >
+            Prev
+          </Link>
+        ) : (
+          <button
+            disabled
+            className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+          >
+            Prev
+          </button>
+        )}
+
+        {/* Page Numbers */}
+        <div className="flex flex-wrap gap-2">
+          {Array.from({ length: totalPages }, (_, i) => (
             <Link
-              href={`/blog?page=${page - 1}`}
-              className="px-4 py-2 text-black hover:text-blue-600"
+              key={i + 1}
+              href={`/blog?page=${i + 1}`}
+              className={`px-4 py-2 rounded ${
+                i + 1 === page
+                  ? "bg-[rgb(158,108,52)] text-white"
+                  : "bg-gray-200 text-black hover:bg-gray-300"
+              }`}
             >
-              <div className="flex items-center">
-                <img
-                  src="/nextPage.png"
-                  height="24"
-                  width="24"
-                  className="mr-1 rotate-180 hover:text-blue-500"
-                  alt="Previous"
-                />
-                Previous
-              </div>
+              {i + 1}
             </Link>
-          )}
+          ))}
         </div>
 
-        <span className="px-4 py-2 bg-white text-black">
-          Page {page} of {totalPages}
-        </span>
-
-        <div>
-          {page < totalPages && (
-            <Link
-              href={`/blog?page=${page + 1}`}
-              className="px-4 py-2 bg-white text-black hover:text-blue-600"
-            >
-              <div className="flex items-center">
-                NEXT{" "}
-                <img
-                  src="/nextPage.png"
-                  height="24"
-                  width="24"
-                  className="ml-1"
-                  alt="Next"
-                />
-              </div>
-            </Link>
-          )}
-        </div>
+        {/* Next Button */}
+        {page < totalPages ? (
+          <Link
+            href={`/blog?page=${page + 1}`}
+            className="px-4 py-2 bg-[rgb(158,108,52)] text-white rounded hover:bg-[rgb(97,64,18)]"
+          >
+            Next
+          </Link>
+        ) : (
+          <button
+            disabled
+            className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+          >
+            Next
+          </button>
+        )}
       </div>
     </section>
   );

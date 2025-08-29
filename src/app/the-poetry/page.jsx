@@ -95,9 +95,7 @@ export default async function ArticlePage({ searchParams }) {
             key={post.frontmatter.title}
             className="w-full md:w-[45%] border rounded-lg border-gray-200 hover:shadow-lg m-4 transition-shadow duration-300"
           >
-            <figure
-              className="bg-cover bg-no-repeat  px-auto bg-center rounded-lg mt-[12px] md:mt-[16px] lg:mt-[24px]"
-            >
+            <figure className="bg-cover bg-no-repeat  px-auto bg-center rounded-lg mt-[12px] md:mt-[16px] lg:mt-[24px]">
               <img
                 className="w-[250px] h-[200px] sm:w-[450px] sm:h-[300px] md:w-[300px] md:h-[400px] lg:w-[450px] lg:h-[400px] mx-auto block rounded-lg"
                 src={post.frontmatter.image.url}
@@ -105,8 +103,6 @@ export default async function ArticlePage({ searchParams }) {
                 // height={400}
               />
             </figure>
-
-            
 
             {/* Content Container */}
             <div className="px-6 py-8 flex flex-col ">
@@ -145,67 +141,58 @@ export default async function ArticlePage({ searchParams }) {
       </div>
 
       {/* Pagination */}
-      <div className="flex justify-between  items-center gap-4 mt-8">
+
+      <div className="flex justify-center items-center gap-2 mt-8 flex-wrap">
         {/* Previous Button */}
-        <div>
-          {""}
-          {page > 1 && (
-            <Link
-              href={`/the-poetry?page=${page - 1}`}
-              className="px-4 py-2  text-black hover:text-blue-600"
-            >
-              <div className="flex items-center">
-                <img
-                  src="/nextPage.png"
-                  height="24"
-                  width="24"
-                  className="mr-1 rotate-180 hover:text-blue-500"
-                />
-                Previous
-              </div>
-            </Link>
-          )}
-        </div>
+        {page > 1 ? (
+          <Link
+            href={`/the-poetry?page=${page - 1}`}
+            className="px-4 py-2 bg-[rgb(158,108,52)] text-white rounded hover:bg-[rgb(97,64,18)]"
+          >
+            Prev
+          </Link>
+        ) : (
+          <button
+            disabled
+            className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+          >
+            Prev
+          </button>
+        )}
 
         {/* Page Numbers */}
-        {/* {Array.from({ length: totalPages }, (_, i) => (
-          <Link
-            key={i + 1}
-            href={`/the-poetry?page=${i + 1}`}
-            className={`px-4 py-2 border ${
-              i + 1 === page
-                ? "bg-amber-800 text-white"
-                : "bg-white text-black hover:bg-gray-100"
-            }`}
-          >
-            {i + 1}
-          </Link>
-        ))} */}
-
-        <span className="px-4 py-2  bg-white text-black">
-          Page {page} of {totalPages}
-        </span>
+        <div className="flex flex-wrap gap-2">
+          {Array.from({ length: totalPages }, (_, i) => (
+            <Link
+              key={i + 1}
+              href={`/the-poetry?page=${i + 1}`}
+              className={`px-4 py-2 rounded ${
+                i + 1 === page
+                  ? "bg-[rgb(158,108,52)] text-white"
+                  : "bg-gray-200 text-black hover:bg-gray-300"
+              }`}
+            >
+              {i + 1}
+            </Link>
+          ))}
+        </div>
 
         {/* Next Button */}
-        <div>
-          {""}
-          {page < totalPages && (
-            <Link
-              href={`/the-poetry?page=${page + 1}`}
-              className="px-4 py-2 bg-white text-black hover:text-blue-600"
-            >
-              <div className="flex items-center">
-                NEXT{" "}
-                <img
-                  src="/nextPage.png"
-                  height="24"
-                  width="24"
-                  className="ml-1"
-                />
-              </div>
-            </Link>
-          )}
-        </div>
+        {page < totalPages ? (
+          <Link
+            href={`/the-poetry?page=${page + 1}`}
+            className="px-4 py-2 bg-[rgb(158,108,52)] text-white rounded hover:bg-[rgb(97,64,18)]"
+          >
+            Next
+          </Link>
+        ) : (
+          <button
+            disabled
+            className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+          >
+            Next
+          </button>
+        )}
       </div>
     </section>
   );

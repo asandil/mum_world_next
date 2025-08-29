@@ -68,7 +68,7 @@ export default async function BlogPostPage({ params, searchParams }) {
                       {new Date(post.frontmatter.date).toDateString()}
                     </span>
                     <span className="">|</span>
-                    <span>poetry</span>
+                    <span>Blog</span>
                   </p>
                   <figure className="mb-[24px] w-full max-w-[372px] md:max-w-[500px] flex flex-col mx-auto">
                     <div className="relative  w-full h-[350px] overflow-hidden rounded-lg">
