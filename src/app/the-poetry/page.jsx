@@ -148,7 +148,7 @@ export default async function ArticlePage({ searchParams }) {
         {page > 1 ? (
           <Link
             href={`/the-poetry?page=${page - 1}`}
-            className="px-4 py-2 bg-[rgb(158,108,52)] text-white rounded hover:bg-[rgb(97,64,18)]"
+            className="px-4 py-2 bg-[#FAB66B] text-white rounded hover:bg-[#fb9d39]"
           >
             Prev
           </Link>
@@ -169,7 +169,7 @@ export default async function ArticlePage({ searchParams }) {
               href={`/the-poetry?page=${i + 1}`}
               className={`px-4 py-2 rounded ${
                 i + 1 === page
-                  ? "bg-[rgb(158,108,52)] text-white"
+                  ? "bg-[#FAB66B] text-white"
                   : "bg-gray-200 text-black hover:bg-gray-300"
               }`}
             >
@@ -182,7 +182,7 @@ export default async function ArticlePage({ searchParams }) {
         {page < totalPages ? (
           <Link
             href={`/the-poetry?page=${page + 1}`}
-            className="px-4 py-2 bg-[rgb(158,108,52)] text-white rounded hover:bg-[rgb(97,64,18)]"
+            className="px-4 py-2 bg-[#FAB66B] text-white rounded hover:bg-[#fb9d39]"
           >
             Next
           </Link>

@@ -67,21 +67,21 @@ export default function SubscribeForm() {
       >
         <div className="relative pb-[24px] group w-[100%]">
           <input
-            className="py-[15.5px] px-[16px] bg-transparent text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] font-[400] text-[16px] focus:outline-none focus:border focus:border-current w-[100%]"
+            className="py-[15.5px] px-[16px] bg-transparent text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] font-[400] text-[16px] focus:outline-none focus:border focus:border-current w-[100%] placeholder-[rgb(158,108,52)]"
             id="subscribeEmail"
             name="email"
             type="email"
-            // placeholder="Email*"
+            placeholder="Email*"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          <label
+          {/* <label
             className="text-[rgb(71,71,71)] font-[400] absolute left-[16px] top-[24%] group-focus-within:text-[rgb(158,108,52)] group-focus-within:top-[8px] group-focus-within:text-[12px] transition-all duration-150 ease-in-out delay-0"
             htmlFor="subscribeEmail"
           >
             Email
-          </label>
+          </label> */}
         </div>
 
         <div className="pb-[24px] md:w-[30%]">
