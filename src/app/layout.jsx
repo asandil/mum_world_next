@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Indian Motherhood tips | mumworld.in",
+  title: "Pregnancy Journey And New Born Care | mumworld.in",
   description: "Your go-to place for every tip, guide, and support a mum needs—helping you navigate motherhood with confidence and care.",
 };
 
