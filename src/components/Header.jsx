@@ -123,8 +123,8 @@ export default function Header() {
       <div className="my-[24px] text-[16px] px-[24px] flex flex-col">
         <Link href="/" className="block text-center mx-auto">
           <img
-            className="inline-block w-[188px] h-[110px] md:w-[547.5px] md:h-[320px] "
-            src="/logo.webp"
+            className="inline-block w-[188px] h-[130px] md:w-[547.5px] md:h-[420px] "
+            src="/logo.png"
             alt="mum_world"
           />
         </Link>
