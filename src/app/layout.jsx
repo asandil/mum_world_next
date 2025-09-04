@@ -15,7 +15,8 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Pregnancy Journey And New Born Care | mumworld.in",
-  description: "Your go-to place for every tip, guide, and support a mum needs—helping you navigate motherhood with confidence and care.",
+  description:
+    "Your go-to place for every tip, guide, and support a mum needs—helping you navigate motherhood with confidence and care.",
 };
 
 export default function RootLayout({ children }) {
@@ -24,9 +25,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header/>
+        <Header />
         {children}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

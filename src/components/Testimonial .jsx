@@ -146,7 +146,7 @@ const TestimonialCarousel = () => {
         {/* Navigation buttons - Hidden on mobile, visible on tablet and up */}
         <button
           onClick={prevTestimonial}
-          className="hidden sm:block absolute left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 sm:p-3 shadow-md hover:bg-gray-100 focus:outline-none z-10"
+          className="hidden sm:block absolute cursor-pointer left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 sm:p-3 shadow-md hover:bg-gray-100 focus:outline-none z-10"
           aria-label="Previous testimonial"
         >
           <svg
@@ -166,7 +166,7 @@ const TestimonialCarousel = () => {
 
         <button
           onClick={nextTestimonial}
-          className="hidden sm:block absolute right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 sm:p-3 shadow-md hover:bg-gray-100 focus:outline-none z-10"
+          className="hidden sm:block absolute cursor-pointer right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 sm:p-3 shadow-md hover:bg-gray-100 focus:outline-none z-10"
           aria-label="Next testimonial"
         >
           <svg
@@ -236,7 +236,7 @@ const TestimonialCarousel = () => {
             <button
               key={index}
               onClick={() => goToTestimonial(index)}
-              className={`h-2 w-2 sm:h-3 sm:w-3 rounded-full mx-1 sm:mx-2 ${
+              className={`h-2 w-2 cursor-pointer sm:h-3 sm:w-3 rounded-full mx-1 sm:mx-2 ${
                 index === currentIndex ? "bg-blue-600" : "bg-gray-300"
               }`}
               aria-label={`Go to testimonial group ${index + 1}`}

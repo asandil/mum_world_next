@@ -29,10 +29,14 @@ export default function Header() {
             {/* Desktop links */}
 
             <li className="text-[14px]">
-              <Link href="/"
+              <Link
+                href="/"
                 className={`head ${
-                  isActive("/") ? "text-[rgb(97,64,18)] font-bold" : "hover:text-[rgb(97,64,18)]"
-                }`}>
+                  isActive("/")
+                    ? "text-[rgb(97,64,18)] font-bold"
+                    : "hover:text-[rgb(97,64,18)]"
+                }`}
+              >
                 Home
               </Link>
             </li>
@@ -135,7 +139,7 @@ export default function Header() {
 
       {/* Mobile menu (conditionally rendered) */}
       {menuOpen && (
-        <div className="fixed inset-0 bg-[rgba(143,141,141,0.8)]  h-[100vh] w-[100vw] z-10">
+        <div className="fixed inset-0 bg-[rgba(143,141,141,0.6)]  h-[100vh] w-[100vw] z-10 sm:hidden">
           <nav className="py-[20px] px-[24px]">
             <div className="flex justify-end border-b-1 border-white">
               <button

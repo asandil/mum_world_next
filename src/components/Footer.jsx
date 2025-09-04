@@ -1,14 +1,10 @@
 import Link from "next/link";
 import React from "react";
-import TestimonialCarousel from "./Testimonial ";
 
 const Footer = () => {
   return (
     <div>
       <footer className="py-[32px] md:py-[56px] lg:w-[984px] xl:w-[1160px] mx-auto">
-        <section>
-          <TestimonialCarousel />
-        </section>
         <div className="p-[24px]">
           <hr className="border-[1px] border-[rgb(226,226,226)]" />
         </div>

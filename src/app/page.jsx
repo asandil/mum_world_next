@@ -2,6 +2,7 @@ import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 import SubscribeForm from "@/components/SubscribeForm";
 import TestimonialCarousel from "@/components/Testimonial ";
+import FeedBackForm from "@/components/FeedBackForm";
 
 export default function Home() {
   return (
@@ -123,7 +124,8 @@ export default function Home() {
             </p>
             <a
               className="inline-block"
-              href="https://www.linkedin.com/in/sriti-jha-93423b57/" target="_blank"
+              href="https://www.linkedin.com/in/sriti-jha-93423b57/"
+              target="_blank"
             >
               <img
                 className="m-auto mt-4"
@@ -138,7 +140,7 @@ export default function Home() {
 
         {/* Testimonial section */}
         <section>
-               <TestimonialCarousel />
+          <TestimonialCarousel />
         </section>
 
         {/* contact us */}
@@ -213,6 +215,9 @@ export default function Home() {
                 </p>
                 {/* </div> */}
               </div>
+            </div>
+            <div className="w-full lg:w-[487px]">
+              <FeedBackForm />
             </div>
           </div>
         </section>
