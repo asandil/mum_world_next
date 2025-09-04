@@ -27,8 +27,9 @@ export default async function BlogPage({ searchParams }) {
           <BlogPageClient allPosts={posts} displayPosts={paginatedPosts} />
         </div>
       </div>
+
       {/* Pagination */}
-      <div className="flex justify-center items-center gap-2 mt-8 flex-wrap">
+      <div className="flex justify-center items-center gap-2 lg:mt-8 flex-wrap">
         {/* Previous Button */}
         {page > 1 ? (
           <Link
@@ -46,8 +47,8 @@ export default async function BlogPage({ searchParams }) {
           </button>
         )}
 
-        {/* Page Numbers */}
-        <div className="flex flex-wrap gap-2">
+        {/* Page Numbers - Hidden on small screens */}
+        <div className="hidden md:flex flex-wrap gap-2">
           {Array.from({ length: totalPages }, (_, i) => (
             <Link
               key={i + 1}
@@ -61,6 +62,11 @@ export default async function BlogPage({ searchParams }) {
               {i + 1}
             </Link>
           ))}
+        </div>
+
+        {/* Current Page Indicator - Visible only on small screens */}
+        <div className="md:hidden px-4 py-2 bg-[#FAB66B] text-white rounded">
+          {page} / {totalPages}
         </div>
 
         {/* Next Button */}

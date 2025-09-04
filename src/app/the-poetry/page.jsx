@@ -161,8 +161,8 @@ export default async function ArticlePage({ searchParams }) {
           </button>
         )}
 
-        {/* Page Numbers */}
-        <div className="flex flex-wrap gap-2">
+        {/* Page Numbers - Hidden on small screens */}
+        <div className="hidden md:flex flex-wrap gap-2">
           {Array.from({ length: totalPages }, (_, i) => (
             <Link
               key={i + 1}
@@ -176,6 +176,11 @@ export default async function ArticlePage({ searchParams }) {
               {i + 1}
             </Link>
           ))}
+        </div>
+
+        {/* Current Page Indicator - Visible only on small screens */}
+        <div className="md:hidden px-4 py-2 bg-[#FAB66B] text-white rounded">
+          {page} / {totalPages}
         </div>
 
         {/* Next Button */}
