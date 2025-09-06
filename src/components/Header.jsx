@@ -139,7 +139,7 @@ export default function Header() {
 
       {/* Mobile menu (conditionally rendered) */}
       {menuOpen && (
-        <div className="fixed inset-0 bg-[rgba(143,141,141,0.6)]  h-[100vh] w-[100vw] z-10 sm:hidden">
+        <div className="fixed inset-0 bg-[url('/background-image-contact-us.png')] bg-no-repeat bg-cover opacity-100 h-[100vh] w-[100vw] z-10 sm:hidden">
           <nav className="py-[20px] px-[24px]">
             <div className="flex justify-end border-b-1 border-white">
               <button
@@ -150,7 +150,7 @@ export default function Header() {
                 +
               </button>
             </div>
-            <ul className="text-white px-[24px] text-[22px] font-[400] flex flex-col mt-[16px]">
+            <ul className="text-[#F69E87] px-[24px] text-[22px] font-[400] flex flex-col mt-[16px]">
               {headData.map((data) => (
                 <li
                   key={data.name}
@@ -160,7 +160,7 @@ export default function Header() {
                     href={data.to}
                     className={`mobileHead ${
                       isActive(data.to)
-                        ? "text-[rgb(97,64,18)] font-semibold"
+                        ? "text-[#F69E87] font-semibold"
                         : "hover:text-[rgb(97,64,18)]"
                     }`}
                     onClick={toggleMenu}

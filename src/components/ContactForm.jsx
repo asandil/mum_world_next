@@ -124,7 +124,7 @@ export default function ContactForm() {
         </div>
         <div className="pb-[24px]">
           <textarea
-            className="p-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
+            className="p-[16px] resize-none text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
             name="message"
             rows={4}
             placeholder="How Can We Help You?"
@@ -137,7 +137,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="font-[700] min-h-[56px] w-[100%] bg-[rgb(250,182,107)] text-black cursor-pointer text-[14px] hover:bg-[rgb(250,204,164)] transition-all duration-300 ease-in-out delay-0 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="font-[700] min-h-[56px] w-[100%] bg-[#F69E87] text-black cursor-pointer text-[14px] hover:bg-[#e6846a] transition-all duration-300 ease-in-out delay-0 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg rounded-[3px]"
           >
             {isSubmitting ? (
               <div className="flex items-center justify-center text-white">

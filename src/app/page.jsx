@@ -3,6 +3,8 @@ import ContactForm from "@/components/ContactForm";
 import SubscribeForm from "@/components/SubscribeForm";
 import TestimonialCarousel from "@/components/Testimonial ";
 import FeedBackForm from "@/components/FeedBackForm";
+import { BsChatHeartFill } from "react-icons/bs";
+import { BsFillHeartFill } from "react-icons/bs";
 
 export default function Home() {
   return (
@@ -146,16 +148,20 @@ export default function Home() {
         {/* contact us */}
         <section className="py-[32px] lg:w-[984px] xl:w-[1160px] mx-auto px-[24px] lg:px-[0px]">
           <h2 className="mb-[24px] leading-[1.4] tracking-[1px] text-[22px] font-[700] uppercase text-black">
-            Contact us
-            <hr className="mt-[16px] border-[1px] border-black" />
+            <div className="flex relative ">
+              <span>Contact Us</span> <span className="absolute left-[160px] top-1" ><BsFillHeartFill color="#F69E87" /></span>
+            </div>
+            <p className="text-[16px] font-[500]">We’re here to help and would love your feedback.</p>
+            
+            <hr className="mt-[8px] border-[1px] border-black" />
           </h2>
-          <div className="flex justify-center flex-col sm:justify-between sm:flex-row md:gap-[40px] sm:gap-[30px] ">
+          <div className="flex justify-center flex-col sm:justify-between sm:flex-row gap-[20px] bg-[url('/background-image-contact-us.png')] bg-no-repeat bg-cover px-[30px] py-[20px] rounded-lg  shadow-xl">
             {/* Send message */}
-            <div className="w-full lg:w-[487px]">
+            <div className="w-full bg-[#fff] px-[30px] py-[20px] rounded-lg shadow-xl opacity-80">
               <ContactForm />
             </div>
             {/* contact details */}
-            <div className="lg:mt-[40px] md:mt-[50px] sm:mt-[50px] ">
+            {/* <div className="lg:mt-[40px] md:mt-[50px] sm:mt-[50px] ">
               <div className="lg:mb-[40px] mb-[20px]">
                 <p className="leading-[1.5] font-[400] flex flex-wrap text-[rgb(94,94,94)] text-start sm:text-start text-[16px]">
                   Please contact us directly with any questions, comments, or
@@ -202,7 +208,6 @@ export default function Home() {
                     8010213009/mumworld.in@gmail.com
                   </a>
                 </p>
-                {/* <div className="flex"> */}
                 <h4 className="mb-[12px] lg:mb-[24px] leading-[1.25] text-[22px] font-[400] text-black text-start sm:text-start">
                   Hours
                 </h4>
@@ -213,10 +218,9 @@ export default function Home() {
                     Monday - Friday: 9am - 5pm
                   </span>
                 </p>
-                {/* </div> */}
               </div>
-            </div>
-            <div className="w-full lg:w-[487px]">
+            </div> */}
+            <div className="w-full bg-[#fff] px-[30px] py-[20px] rounded-lg shadow-xl opacity-80">
               <FeedBackForm />
             </div>
           </div>

@@ -54,48 +54,50 @@ const FeedbackForm = () => {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label
+            {/* <label
               htmlFor="name"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
               Name
-            </label>
+            </label> */}
             <input
               type="text"
               id="name"
               name="name"
+              placeholder="Name*"
               value={formData.name}
               onChange={handleChange}
-              className="py-[10px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
+              className="py-[15.5px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
               required
             />
           </div>
 
           <div>
-            <label
+            {/* <label
               htmlFor="email"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
               Email
-            </label>
+            </label> */}
             <input
               type="email"
               id="email"
               name="email"
+              placeholder="Email*"
               value={formData.email}
               onChange={handleChange}
-              className="py-[10px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
+              className="py-[15.5px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
               required
             />
           </div>
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            How would you rate your experience?
+          <label className="block text-sm font-medium text-gray-700">
+            Rate your experience with us
           </label>
           <div className="flex space-x-2">
             {[1, 2, 3, 4, 5].map((star) => (
@@ -103,13 +105,11 @@ const FeedbackForm = () => {
                 key={star}
                 type="button"
                 onClick={() => handleRatingChange(star)}
-                className="focus:outline-none"
+                className="focus:outline-none cursor-pointer"
               >
                 <svg
-                  className={`w-10 h-10 ${
-                    star <= formData.rating
-                      ? "text-[rgb(250,182,107)]"
-                      : "text-gray-300"
+                  className={`w-8 h-8 ${
+                    star <= formData.rating ? "text-[#F69E87]" : "text-gray-300"
                   }`}
                   fill="currentColor"
                   viewBox="0 0 20 20"
@@ -124,7 +124,7 @@ const FeedbackForm = () => {
         <div>
           <label
             htmlFor="category"
-            className="block text-sm font-medium text-gray-700 mb-1"
+            className="block text-sm font-medium text-gray-700 mb-[8px]"
           >
             Category
           </label>
@@ -133,7 +133,7 @@ const FeedbackForm = () => {
             name="category"
             value={formData.category}
             onChange={handleChange}
-            className="py-[10px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
+            className="py-[15.5px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
           >
             <option value="general">General Feedback</option>
             <option value="content">Content Suggestion</option>
@@ -162,16 +162,16 @@ const FeedbackForm = () => {
             rows={5}
             value={formData.message}
             onChange={handleChange}
-            className="py-[6px] px-[16px] h-[78px] resize-none text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
+            className="py-[6px] px-[16px] h-[112px] resize-none text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
             required
           ></textarea>
         </div>
 
-        <div className="pb-[24px]">
+        <div className="pb-[24px] mt-[24px]">
           <button
             type="submit"
             disabled={isSubmitting}
-            className="font-[700] min-h-[56px] w-[100%] bg-[rgb(250,182,107)] text-black cursor-pointer text-[14px] hover:bg-[rgb(250,204,164)] transition-all duration-300 ease-in-out delay-0 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="font-[700] min-h-[56px] w-[100%] bg-[#F69E87] text-black cursor-pointer text-[14px] hover:bg-[#e6846a] transition-all duration-300 ease-in-out delay-0 disabled:opacity-50 disabled:cursor-not-allowed rounded-[3px] hover:shadow-lg"
           >
             {isSubmitting ? (
               <div className="flex items-center justify-center text-white">
