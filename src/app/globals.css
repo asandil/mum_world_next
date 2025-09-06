@@ -24,6 +24,11 @@ body {
   color: rgb(94,94,94);
 }
 
+.form_text:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset !important;
+  -webkit-text-fill-color: #5e5e5e !important;
+}
+
 
 @layer components {
   .content h1 {
