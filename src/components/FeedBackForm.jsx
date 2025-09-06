@@ -70,7 +70,7 @@ const FeedbackForm = () => {
               placeholder="Name*"
               value={formData.name}
               onChange={handleChange}
-              className="py-[15.5px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
+              className="py-[15.5px] px-[16px] form_text text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
               required
             />
           </div>
@@ -89,7 +89,7 @@ const FeedbackForm = () => {
               placeholder="Email*"
               value={formData.email}
               onChange={handleChange}
-              className="py-[15.5px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
+              className="py-[15.5px] px-[16px] form_text text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
               required
             />
           </div>
@@ -133,7 +133,7 @@ const FeedbackForm = () => {
             name="category"
             value={formData.category}
             onChange={handleChange}
-            className="py-[15.5px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
+            className="py-[15.5px] px-[16px] form_text text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
           >
             <option value="general">General Feedback</option>
             <option value="content">Content Suggestion</option>
@@ -162,7 +162,7 @@ const FeedbackForm = () => {
             rows={5}
             value={formData.message}
             onChange={handleChange}
-            className="py-[6px] px-[16px] h-[112px] resize-none text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
+            className="py-[6px] px-[16px] h-[112px] resize-none form_text text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
             required
           ></textarea>
         </div>

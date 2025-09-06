@@ -91,7 +91,7 @@ export default function ContactForm() {
       <form onSubmit={handleSubmit} >
         <div className="pb-[24px]">
           <input
-            className="py-[15.5px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
+            className="py-[15.5px] px-[16px] form_text text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
             name="name"
             type="text"
             placeholder="Name*"
@@ -102,7 +102,7 @@ export default function ContactForm() {
         </div>
         <div className="pb-[24px]">
           <input
-            className="py-[15.5px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
+            className="py-[15.5px] px-[16px] form_text text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
             name="email"
             type="email"
             placeholder="Email*"
@@ -113,7 +113,7 @@ export default function ContactForm() {
         </div>
         <div className="pb-[24px]">
           <input
-            className="py-[15.5px] px-[16px] text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
+            className="py-[15.5px] px-[16px] form_text text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
             name="phone"
             type="text"
             placeholder="Phone*"
@@ -124,7 +124,7 @@ export default function ContactForm() {
         </div>
         <div className="pb-[24px]">
           <textarea
-            className="p-[16px] resize-none text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
+            className="p-[16px] resize-none form_text text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
             name="message"
             rows={4}
             placeholder="How Can We Help You?"

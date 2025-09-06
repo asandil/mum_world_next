@@ -20,6 +20,10 @@ body {
   color: #e6846a;
 }
 
+.form_text{
+  color: rgb(94,94,94);
+}
+
 
 @layer components {
   .content h1 {
