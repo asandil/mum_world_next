@@ -20,7 +20,7 @@ export default function Header() {
       <div className="text-[16px] bg-[rgb(246,246,246)] min-w-full">
         <nav className=" relative py-[20px] px-[24px] mx-auto lg:max-w-[984px] xl:max-w-[1160px]">
           <button
-            className="text-4xl text-black inline-block md:hidden cursor-pointer"
+            className="text-4xl text-[#e6846a] inline-block md:hidden cursor-pointer"
             onClick={toggleMenu}
           >
             ≡
@@ -33,8 +33,8 @@ export default function Header() {
                 href="/"
                 className={`head ${
                   isActive("/")
-                    ? "text-[rgb(97,64,18)] font-bold"
-                    : "hover:text-[rgb(97,64,18)]"
+                    ? "text-[#e6846a] font-bold"
+                    : "hover:text-[#e6846a]"
                 }`}
               >
                 Home
@@ -45,8 +45,8 @@ export default function Header() {
                 href="/blog"
                 className={`head ${
                   isActive("/blog")
-                    ? "text-[rgb(97,64,18)] font-bold"
-                    : "hover:text-[rgb(97,64,18)]"
+                    ? "text-[#e6846a] font-bold"
+                    : "hover:text-[#e6846a]"
                 }`}
               >
                 Blog
@@ -57,8 +57,8 @@ export default function Header() {
                 href="/the-poetry"
                 className={`head ${
                   isActive("/the-poetry")
-                    ? "text-[rgb(97,64,18)] font-bold"
-                    : "hover:text-[rgb(97,64,18)]"
+                    ? "text-[#e6846a] font-bold"
+                    : "hover:text-[#e6846a]"
                 }`}
               >
                 The poetry
@@ -69,8 +69,8 @@ export default function Header() {
                 className={`child flex items-center gap-2 ${
                   isActive("/baby-vaccination-chart") ||
                   isActive("/due-date-calculator")
-                    ? "text-[rgb(97,64,18)] font-bold"
-                    : "hover:text-[rgb(97,64,18)]"
+                    ? "text-[#e6846a] font-bold"
+                    : "hover:text-[#e6846a]"
                 }`}
               >
                 Tools{" "}
@@ -89,8 +89,8 @@ export default function Header() {
                   href="/baby-vaccination-chart"
                   className={`head block w-[240px] ${
                     isActive("/baby-vaccination-chart")
-                      ? "text-[rgb(97,64,18)] font-bold"
-                      : "hover:text-[rgb(97,64,18)]"
+                      ? "text-[#e6846a] font-bold"
+                      : "hover:text-[#e6846a]"
                   }`}
                 >
                   Baby Vaccination Chart
@@ -99,8 +99,8 @@ export default function Header() {
                   href="/due-date-calculator"
                   className={`head block mt-4 text-[14px] ${
                     isActive("/due-date-calculator")
-                      ? "text-[rgb(97,64,18)] font-bold"
-                      : "hover:text-[rgb(97,64,18)]"
+                      ? "text-[#e6846a] font-bold"
+                      : "hover:text-[#e6846a]"
                   }`}
                 >
                   Due Date Calculator
@@ -112,8 +112,8 @@ export default function Header() {
                 href="/faqs"
                 className={`head ${
                   isActive("/faqs")
-                    ? "text-[rgb(97,64,18)] font-bold"
-                    : "hover:text-[rgb(97,64,18)]"
+                    ? "text-[#e6846a] font-bold"
+                    : "hover:text-[#e6846a]"
                 }`}
               >
                 Faqs
@@ -141,10 +141,10 @@ export default function Header() {
       {menuOpen && (
         <div className="fixed inset-0 bg-[url('/background-image-contact-us.png')] bg-no-repeat bg-cover opacity-100 h-[100vh] w-[100vw] z-10 sm:hidden">
           <nav className="py-[20px] px-[24px]">
-            <div className="flex justify-end border-b-1 border-white">
+            <div className="flex justify-end border-b-1 border-[#e6846a]">
               <button
                 id="closemenu"
-                className="text-5xl text-white rotate-45 cursor-pointer"
+                className="text-5xl text-[#e6846a] rotate-45 cursor-pointer"
                 onClick={toggleMenu}
               >
                 +
@@ -154,14 +154,14 @@ export default function Header() {
               {headData.map((data) => (
                 <li
                   key={data.name}
-                  className="py-[16px] border-b border-[rgba(76,76,76,0.5)]"
+                  className="py-[16px] border-b border-[#e6846a]"
                 >
                   <Link
                     href={data.to}
                     className={`mobileHead ${
                       isActive(data.to)
-                        ? "text-[#F69E87] font-semibold"
-                        : "hover:text-[rgb(97,64,18)]"
+                        ? "text-[#e6846a] font-semibold"
+                        : "hover:text-[#e6846a]"
                     }`}
                     onClick={toggleMenu}
                   >

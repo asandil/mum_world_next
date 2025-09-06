@@ -137,7 +137,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="font-[700] min-h-[56px] w-[100%] bg-[#F69E87] text-black cursor-pointer text-[14px] hover:bg-[#e6846a] transition-all duration-300 ease-in-out delay-0 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg rounded-[3px]"
+            className="font-[700] min-h-[56px] w-[100%] bg-[#F69E87] text-[#fff] cursor-pointer text-[14px] hover:bg-[#e6846a] transition-all duration-300 ease-in-out delay-0 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg rounded-[3px]"
           >
             {isSubmitting ? (
               <div className="flex items-center justify-center text-white">

@@ -67,7 +67,7 @@ const TestimonialCarousel = () => {
   }, [isAutoPlay, currentIndex, totalGroups]);
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-0">
+    <div className="lg:w-[984px] xl:w-[1160px] mx-auto px-[24px] md:px-[24px] lg:px-[0px]">
       <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-gray-800">
         What Our Clients Say
       </h2>
@@ -121,8 +121,8 @@ const TestimonialCarousel = () => {
                                 key={i}
                                 className={`w-3 h-3 sm:w-4 sm:h-4 ${
                                   i < testimonial.rating
-                                    ? "text-yellow-400"
-                                    : "text-gray-300"
+                                    ? "text-[#F69E87]"
+                                    : "text-gray-200"
                                 }`}
                                 fill="currentColor"
                                 viewBox="0 0 20 20"
@@ -237,7 +237,7 @@ const TestimonialCarousel = () => {
               key={index}
               onClick={() => goToTestimonial(index)}
               className={`h-2 w-2 cursor-pointer sm:h-3 sm:w-3 rounded-full mx-1 sm:mx-2 ${
-                index === currentIndex ? "bg-blue-600" : "bg-gray-300"
+                index === currentIndex ? "bg-[#F69E87]" : "bg-gray-300"
               }`}
               aria-label={`Go to testimonial group ${index + 1}`}
             />

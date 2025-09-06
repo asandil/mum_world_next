@@ -67,7 +67,7 @@ export default function SubscribeForm() {
       >
         <div className="relative pb-[24px] group w-[100%]">
           <input
-            className="py-[15.5px] px-[16px] bg-transparent text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] font-[400] text-[16px] focus:outline-none focus:border focus:border-current w-[100%] placeholder-[rgb(158,108,52)]"
+            className="py-[15.5px] px-[16px] bg-transparent text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] font-[400] text-[16px] focus:outline-none focus:border focus:border-current w-[100%] placeholder-[#e6846a]"
             id="subscribeEmail"
             name="email"
             type="email"
@@ -88,7 +88,7 @@ export default function SubscribeForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="font-[700] min-h-[56px] w-[100%] bg-[rgb(250,182,107)] text-black cursor-pointer text-[14px] hover:bg-[rgb(250,204,164)] transition-all duration-300 ease-in-out delay-0 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="font-[700] min-h-[56px] w-[100%] bg-[#F69E87] rounded-[3px] text-[#fff] cursor-pointer text-[14px] hover:bg-[#e6846a] transition-all duration-300 ease-in-out delay-0 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <div className="flex items-center justify-center text-white">

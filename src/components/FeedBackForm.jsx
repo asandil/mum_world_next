@@ -171,7 +171,7 @@ const FeedbackForm = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="font-[700] min-h-[56px] w-[100%] bg-[#F69E87] text-black cursor-pointer text-[14px] hover:bg-[#e6846a] transition-all duration-300 ease-in-out delay-0 disabled:opacity-50 disabled:cursor-not-allowed rounded-[3px] hover:shadow-lg"
+            className="font-[700] min-h-[56px] w-[100%] bg-[#F69E87] text-[#fff] cursor-pointer text-[14px] hover:bg-[#e6846a] transition-all duration-300 ease-in-out delay-0 disabled:opacity-50 disabled:cursor-not-allowed rounded-[3px] hover:shadow-lg"
           >
             {isSubmitting ? (
               <div className="flex items-center justify-center text-white">

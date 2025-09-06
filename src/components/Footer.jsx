@@ -8,21 +8,21 @@ import { FaClockRotateLeft } from "react-icons/fa6";
 const Footer = () => {
   return (
     <div>
-      <footer className="py-[32px] md:py-[56px] lg:w-[984px] xl:w-[1160px] mx-auto px-[24px]">
-        <div className="py-[24px]">
+      <footer className=" md:py-[56px] lg:w-[984px] xl:w-[1160px] mx-auto px-[24px] lg:px-[0px]">
+        <div className="">
           <hr className="border-[1px] border-[rgb(226,226,226)]" />
         </div>
 
-        <div className="py-[24px] md:flex md:justify-between">
+        <div className="py-[24px] sm:flex sm:flex-row justify-between flex-col ">
           <a
             href="mailto:mumworld.in@gmail.com"
-            className=" text-[#F69E87] leading-[1.5] font-[400] text-start sm:text-start text-[16px] flex items-center"
+            className=" text-[#F69E87] mb-2 sm:mb-0 leading-[1.5] font-[400] text-start sm:text-start text-[16px] flex items-center"
           >
             <MdOutgoingMail size={32} />
             <p className="text-[rgb(94,94,94)]">mumworld.in@gmail.com</p>
           </a>
 
-          <div className="flex sm:items-center gap-[8px] sm:gap-[4px] mt-[4px] sm:mt-[0px] ml-[4px]">
+          <div className="flex sm:items-center mb-2 sm:mb-0 gap-[8px] sm:gap-[4px] mt-[4px] sm:mt-[0px] ml-[4px]">
             {/* <FaClock color="F69E87"/> */}
             <FaClockRotateLeft
               size={20}
@@ -31,11 +31,11 @@ const Footer = () => {
             />
             <div className="flex flex-wrap leading-[1.5] font-[400] text-[rgb(94,94,94)] text-[16px]">
               <p className="font-[700] mr-[4px]">Center Hours:</p>
-              <p>Monday - Friday: 9am - 5pm</p>
+              <p  >Monday - Friday: 9am - 5pm</p>
             </div>
           </div>
 
-          <div className="py-[16px] md:py-[0] flex justify-start">
+          <div className="py-[1px] md:py-[0] flex justify-start mb-2 sm:mb-0 ">
             <Link href={"https://wa.me/918010213009"} target="_blank">
               <img
                 className="inline-block h-[30px] w-[30px]"
