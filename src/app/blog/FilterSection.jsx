@@ -83,8 +83,8 @@ const FilterSection = ({ posts, onFilterChange }) => {
             onClick={() => handleCategoryClick(category)}
             className={` py-2 text-start transition-colors text-[16px] font-[400] ${
               activeCategory === category
-                ? ' text-amber-600 font-bold cursor-not-allowed'
-                : 'hover:text-[rgb(97,64,18)] cursor-pointer'
+                ? ' text-[#F69E87] font-bold cursor-not-allowed'
+                : 'hover:text-[#e6846a] cursor-pointer'
             }`}
           >
             {category}

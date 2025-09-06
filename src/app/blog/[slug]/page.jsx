@@ -45,7 +45,7 @@ export default async function BlogPostPage({ params, searchParams }) {
               <div className="flex flex-col lg:flex-row gap-5">
                 <div className="  px-[24px]">
                   <a
-                    className="text-[rgb(158,108,52)] text-[16px] font-[500] inline-flex mb-[40px] items-center gap-2 hover:text-[rgb(97,64,18)]"
+                    className="text-[#F69E87] text-[16px] font-[500] inline-flex mb-[40px] items-center gap-2 hover:text-[#e6846a]"
                     href="/the-poetry"
                   >
                     <svg

@@ -34,14 +34,14 @@ export default async function BlogPage({ searchParams }) {
         {page > 1 ? (
           <Link
             href={`/blog?page=${page - 1}`}
-            className="px-4 py-2 bg-[#FAB66B] text-white rounded hover:bg-[#fb9d39]"
+            className="px-4 py-2 bg-[#F69E87] text-white rounded hover:bg-[#e6846a]"
           >
             Prev
           </Link>
         ) : (
           <button
             disabled
-            className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+            className="px-4 py-2 bg-gray-200 text-gray-300 rounded cursor-not-allowed"
           >
             Prev
           </button>
@@ -55,7 +55,7 @@ export default async function BlogPage({ searchParams }) {
               href={`/blog?page=${i + 1}`}
               className={`px-4 py-2 rounded ${
                 i + 1 === page
-                  ? "bg-[#FAB66B] text-white"
+                  ? "bg-[#F69E87] text-white"
                   : "bg-gray-200 text-black hover:bg-gray-300"
               }`}
             >
@@ -65,7 +65,7 @@ export default async function BlogPage({ searchParams }) {
         </div>
 
         {/* Current Page Indicator - Visible only on small screens */}
-        <div className="md:hidden px-4 py-2 bg-[#FAB66B] text-white rounded">
+        <div className="md:hidden px-4 py-2 bg-[#F69E87] text-white rounded">
           {page} / {totalPages}
         </div>
 
@@ -73,14 +73,14 @@ export default async function BlogPage({ searchParams }) {
         {page < totalPages ? (
           <Link
             href={`/blog?page=${page + 1}`}
-            className="px-4 py-2 bg-[#FAB66B] text-white rounded hover:bg-[#fb9d39]"
+            className="px-4 py-2 bg-[#F69E87] text-white rounded hover:bg-[#e6846a]"
           >
             Next
           </Link>
         ) : (
           <button
             disabled
-            className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+            className="px-4 py-2 bg-gray-200 text-gray-300 rounded cursor-not-allowed"
           >
             Next
           </button>

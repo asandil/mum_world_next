@@ -44,7 +44,7 @@ const RecentPosts = ({ searchParams }) => {
         <div key={post.frontmatter.title} className="mb-[24px] flex gap-5">
           <div className="min-h-[110px] min-w-[110px]">
             <img
-              className="border-[#FAB66B] rounded-full border-[2px]"
+              className="border-[#F69E87] rounded-full border-[2px]"
               // src="/shriti.webp"
               src={post.frontmatter.image.url}
               // src="https://tse3.mm.bing.net/th/id/OIP.isXwJc2soLmlBLYvbWcxYAHaE8?pid=Api&P=0&h=180"

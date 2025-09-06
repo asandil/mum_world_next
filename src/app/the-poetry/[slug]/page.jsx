@@ -66,7 +66,7 @@ export default async function PoetryPage({ params }) {
           <div className="flex flex-col lg:flex-row gap-5">
             <div className="w-[100%] lg:w-[67%] lg:border-r-[1px] border-[rgb(226,226,226)] px-[24px]">
               <a
-                className="text-[rgb(158,108,52)] text-[16px] font-[500] inline-flex mb-[40px]  items-center gap-2 hover:text-[rgb(97,64,18)]"
+                className="text-[#F69E87] text-[16px] font-[500] inline-flex mb-[40px]  items-center gap-2 hover:text-[#e6846a]"
                 href="/the-poetry"
               >
                 <svg

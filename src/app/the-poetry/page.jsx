@@ -66,16 +66,11 @@ export default async function ArticlePage({ searchParams }) {
         <div className="pb-[48px] font-bold">
           <nav>
             <ul
-              className="flex
-                    justify-center
-                    items-center
-                    gap-[1rem]
-                    text-[16px]
-                    font-[700]"
+              className="flex justify-center items-center gap-[1rem] text-[16px] font-[700]"
             >
               <li>
                 <a
-                  className="active-link text-[rgb(158,108,52)] hover:text-[rgb(97,64,18)]"
+                  className="active-link text-[#F69E87] hover:text-[#e6846a]"
                   href="/the-poetry"
                 >
                   All Posts
@@ -118,7 +113,7 @@ export default async function ArticlePage({ searchParams }) {
                 <h4 className="mb-[16px] text-[22px] leading-[1.125] font-[400] text-black text-center">
                   <Link
                     href={`/the-poetry/${post.slug}`}
-                    className="hover:text-amber-800 transition-colors"
+                    className="hover:text-[#e6846a] transition-colors"
                   >
                     {post.frontmatter.title}
                   </Link>
@@ -131,7 +126,7 @@ export default async function ArticlePage({ searchParams }) {
               <div className="block text-end">
                 <Link
                   href={`/the-poetry/${post.slug}`}
-                  className="block text-end cursor-pointer text-[rgb(158,108,52)] hover:text-[rgb(97,64,18)]"
+                  className="block text-end cursor-pointer text-[#F69E87] hover:text-[#e6846a]"
                 >
                   Continue Reading
                 </Link>
@@ -148,14 +143,14 @@ export default async function ArticlePage({ searchParams }) {
         {page > 1 ? (
           <Link
             href={`/the-poetry?page=${page - 1}`}
-            className="px-4 py-2 bg-[#FAB66B] text-white rounded hover:bg-[#fb9d39]"
+            className="px-4 py-2 bg-[#F69E87] text-white rounded hover:bg-[#e6846a]"
           >
             Prev
           </Link>
         ) : (
           <button
             disabled
-            className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+            className="px-4 py-2 bg-gray-200 text-gray-300 rounded cursor-not-allowed"
           >
             Prev
           </button>
@@ -169,7 +164,7 @@ export default async function ArticlePage({ searchParams }) {
               href={`/the-poetry?page=${i + 1}`}
               className={`px-4 py-2 rounded ${
                 i + 1 === page
-                  ? "bg-[#FAB66B] text-white"
+                  ? "bg-[#F69E87] text-white"
                   : "bg-gray-200 text-black hover:bg-gray-300"
               }`}
             >
@@ -179,7 +174,7 @@ export default async function ArticlePage({ searchParams }) {
         </div>
 
         {/* Current Page Indicator - Visible only on small screens */}
-        <div className="md:hidden px-4 py-2 bg-[#FAB66B] text-white rounded">
+        <div className="md:hidden px-4 py-2 bg-[#F69E87] text-white rounded">
           {page} / {totalPages}
         </div>
 
@@ -187,14 +182,14 @@ export default async function ArticlePage({ searchParams }) {
         {page < totalPages ? (
           <Link
             href={`/the-poetry?page=${page + 1}`}
-            className="px-4 py-2 bg-[#FAB66B] text-white rounded hover:bg-[#fb9d39]"
+            className="px-4 py-2 bg-[#F69E87] text-white rounded hover:bg-[#e6846a]"
           >
             Next
           </Link>
         ) : (
           <button
             disabled
-            className="px-4 py-2 bg-gray-300 text-gray-500 rounded cursor-not-allowed"
+            className="px-4 py-2 bg-gray-200 text-gray-300 rounded cursor-not-allowed"
           >
             Next
           </button>

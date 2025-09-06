@@ -4,10 +4,10 @@ const Author = () => {
   return (
     <div>
       <div>
-        <p className="w-[45%] h-[4px] bg-[#FAB66B] mb-4"></p>
+        <p className="w-[45%] h-[4px] bg-[#F69E87] mb-4"></p>
         <div className="flex items-center gap-7">
           <img
-            className="border-[#FAB66B] rounded-full border-[5px]"
+            className="border-[#F69E87] rounded-full border-[5px]"
             src="/shriti.webp"
             alt="Author"
             width="70"

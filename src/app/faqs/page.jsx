@@ -14,7 +14,7 @@ const page = () => {
           <p className="text-[16px] text-left font-[400] mb-[40px]">
             Please reach us at{" "}
             <a
-              className="text-[rgb(158,108,52)] underline"
+              className="text-[#F69E87] underline"
               href="mailto:mumworld.in@gmail.com"
             >
               mumworld.in@gmail.com

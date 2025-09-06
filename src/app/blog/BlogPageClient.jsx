@@ -20,7 +20,6 @@ const BlogPageClient = ({ allPosts, displayPosts }) => {
   }, [displayPosts]);
 
   const handleFilterChange = (category) => {
-
     if (!category) {
       setFilteredPosts(displayPosts);
     } else {
@@ -52,12 +51,44 @@ const BlogPageClient = ({ allPosts, displayPosts }) => {
     }
   };
 
-
-
   if (isLoading) {
     return (
-      <div className="text-center py-12">
-        <p className="text-gray-500">Loading posts...</p>
+      <div className="flex items-center justify-center text-white">
+        {/* <p className="text-gray-500">Loading posts...</p> */}
+        <div className="loader mr-[10px]"></div>
+        <style jsx>{`
+          .loader {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: inline-block;
+            border-top: 2px solid #f69e87;
+            border-right: 2px solid transparent;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+            position: relative;
+          }
+          .loader::after {
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border-bottom: 2px solid #f69e87;
+            border-left: 2px solid transparent;
+          }
+          @keyframes rotation {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+        `}</style>
       </div>
     );
   }
@@ -65,8 +96,6 @@ const BlogPageClient = ({ allPosts, displayPosts }) => {
   return (
     <div className="flex flex-col lg:flex-row gap-5 w-full">
       <div className="flex w-full lg:w-[73%] flex-wrap justify-center items-center lg:border-r-[2px] border-[rgb(226,226,226)]">
-        
-
         {filteredPosts.map((post) => (
           <div
             key={post.slug}
@@ -91,7 +120,7 @@ const BlogPageClient = ({ allPosts, displayPosts }) => {
               <h4 className="mb-[16px] leading-[1.125] text-[22px] font-[400] text-black">
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="hover:text-amber-800 transition-colors"
+                  className="hover:text-[#F69E87] transition-colors"
                 >
                   {post.frontmatter.title}
                 </Link>
@@ -99,10 +128,10 @@ const BlogPageClient = ({ allPosts, displayPosts }) => {
               <p className="mb-[16px] leading-[1.5]">
                 {post.frontmatter.description}
               </p>
-              <span className="text-[rgb(158,108,52)] cursor-pointer text-end block text-[16px] hover:text-[rgb(97,64,18)]">
+              <span className="text-[#F69E87] cursor-pointer text-end block text-[16px] hover:text-[#e6846a]">
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="block text-end cursor-pointer text-[rgb(158,108,52)] hover:text-[rgb(97,64,18)]"
+                  className="block text-end cursor-pointer text-[#F69E87] hover:text-[#e6846a]"
                 >
                   Continue Reading →
                 </Link>
@@ -115,13 +144,12 @@ const BlogPageClient = ({ allPosts, displayPosts }) => {
       <div className="w-full lg:w-[27%] px-[20px]">
         <FilterSection posts={allPosts} onFilterChange={handleFilterChange} />
         {/* <Recent/> */}
-        <SignUp/>
+        <SignUp />
       </div>
 
       {filteredPosts.length === 0 && (
         <div className="text-center py-12 w-full">
           <p className="text-gray-500">No posts found in this category.</p>
-          
         </div>
       )}
     </div>

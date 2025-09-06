@@ -11,8 +11,8 @@ export default function FAQAccordion({ question, answer }) {
       <div className="py-[16px] border-b-[1px] border-[rgb(226,226,226)] faq-accordion">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`flex w-[100%] justify-between items-center ${
-          isOpen ? "text-[rgb(158,108,52)]" : ""
+        className={`flex w-[100%] justify-between items-center cursor-pointer ${
+          isOpen ? "text-[#F69E87]" : ""
         }`}
       >
         <p className="leading-[1.25] text-[22px] font-[400] text-start">

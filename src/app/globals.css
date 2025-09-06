@@ -12,8 +12,12 @@ body {
 }
 
 .active-link {
-  color: rgb(158, 108, 52);
+  color: #F69E87;
   font-weight: 700;
+}
+
+.active-link:hover {
+  color: #e6846a;
 }
 
 
