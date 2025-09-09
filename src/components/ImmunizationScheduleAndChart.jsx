@@ -94,17 +94,17 @@ const ImmunizationScheduleAndChart = () => {
 
       {/* video section */}
 
-      <div class="bg-white rounded-xl shadow-xl p-6 mb-8">
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+      <div className="bg-white rounded-xl shadow-xl p-6 mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
           Baby Vaccination Immunization Schedule and Chart
         </h2>
-        <div class="video-container rounded-lg overflow-hidden shadow-lg">
+        <div className="video-container rounded-lg overflow-hidden shadow-lg">
           <iframe
             src="https://www.youtube.com/embed/aRVn-OUqKCQ?si=-AIm7dSux-7ap7bj"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
             className="w-full h-[522px]"
           ></iframe>
         </div>

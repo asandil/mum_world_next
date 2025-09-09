@@ -1,31 +1,12 @@
 import Image from "next/image";
-import Vaccination from "../../components/Vaccination";
 import React from "react";
-import PregnancyCalculator from "@/components/PregnancyCalculator";
 import PregnancyCalculatorDetailed from "@/components/PregnancyCalculatorDetailed";
 import ImmunizationScheduleAndChart from "@/components/ImmunizationScheduleAndChart";
+import ImmunizationScheduler from "@/components/ImmunizationSchedule";
 
 const page = () => {
   return (
     <>
-      <div>
-        <section className="py-[40px] w-[100%] lg:w-[984px] xl:w-[1160px] mx-auto px-[24px]">
-          <h1
-            className="mb-[25px]
-            leading-[1.4]
-            tracking-[1px]
-            text-[22px]
-            font-[700]
-            uppercase
-            text-black"
-          >
-            Baby Vaccination Chart
-            <hr className="mt-[16px] border-[1px] border-black" />
-          </h1>
-          <Vaccination />
-        </section>
-      </div>
-
       <div>
         <section className="py-[40px] w-[100%] lg:w-[984px] xl:w-[1160px] mx-auto px-[24px]">
           <h1 className="leading-[1.4] tracking-[1px] text-[22px] font-[700] uppercase text-black">
@@ -116,7 +97,7 @@ const page = () => {
             </div>
           </div>
 
-          <PregnancyCalculator />
+          <ImmunizationScheduler />
           <ImmunizationScheduleAndChart />
         </section>
       </div>
