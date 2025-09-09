@@ -104,11 +104,11 @@ export default async function ArticlePage({ searchParams }) {
             <div className="px-6 py-8 flex flex-col ">
               <div>
                 <div className="flex gap-3 justify-center text-[14px] leading-[1.5] font-400 text-[rgb(89,89,89)] pb-[32px]">
-                  <span class="">
+                  <span className="">
                     {new Date(post.frontmatter.date).toDateString()}
                   </span>
-                  <span class="">|</span>
-                  <span class="">Poetry</span>
+                  <span className="">|</span>
+                  <span className="">Poetry</span>
                 </div>
                 <h4 className="mb-[16px] text-[22px] leading-[1.125] font-[400] text-black text-center">
                   <Link

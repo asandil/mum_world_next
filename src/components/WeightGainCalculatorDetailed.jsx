@@ -41,38 +41,114 @@ const WeightGainCalculatorDetailed = () => {
         </p>
         <p className="text-gray-600 mb-3">Your overall health and lifestyle.</p>
         {/* <div className="bg-white mb-8 p-6 rounded-2xl shadow-lg shadow-[#FDE9E6]"> */}
-        <p className="text-gray-600 mb-1">
+        <p className="text-gray-600 text-lg font-semibold mb-1">
           Recommended Weight Gain for Singleton Pregnancy
         </p>
-        <p className="text-gray-600 mb-1">
-          Pre-pregnancy BMI Category Recommended Weight Gain
-        </p>
-        <p className="text-gray-600 mb-1">
-          18.5 Underweight 28–40 lb (13–18 kg)
-        </p>
-        <p className="text-gray-600 mb-1">
-          18.5–24.9 Normal weight 24–35 lb (11–16 kg)
-        </p>
-        <p className="text-gray-600 mb-1">
-          25–29.9 Overweight 15–25 lb (7–11 kg)
-        </p>
-        <p className="text-gray-600 mb-1">30 Obese 11–20 lb (5–9 kg)</p>
-        <p className="text-gray-600 mb-3">
+        <div className="overflow-x-auto mb-4">
+          <table className="table-auto border border-gray-300 w-full text-left text-gray-600">
+            <thead>
+              <tr className="bg-[#FDE9E6]">
+                <th className="border border-gray-300 px-4 py-2">
+                  Pre-pregnancy BMI
+                </th>
+                <th className="border border-gray-300 px-4 py-2">Category</th>
+                <th className="border border-gray-300 px-4 py-2">
+                  Recommended Weight Gain
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">&lt;18.5</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Underweight
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  28–40 lb (13–18 kg)
+                </td>
+              </tr>
+              <tr className="bg-[#FDE9E6]">
+                <td className="border border-gray-300 px-4 py-2">18.5–24.9</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  Normal weight
+                </td>
+                <td className="border border-gray-300 px-4 py-2">
+                  24–35 lb (11–16 kg)
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">25–29.9</td>
+                <td className="border border-gray-300 px-4 py-2">Overweight</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  15–25 lb (7–11 kg)
+                </td>
+              </tr>
+              <tr className="bg-[#FDE9E6]">
+                <td className="border border-gray-300 px-4 py-2">≥30</td>
+                <td className="border border-gray-300 px-4 py-2">Obese</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  11–20 lb (5–9 kg)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p className="text-gray-600 text-lg font-semibold mb-2">
           Recommended Weight Gain for Twin Pregnancy
         </p>
 
-        <p className="text-gray-600 mb-3">
+        <p className="text-gray-600 mb-2">
           If you are carrying twins, the weight gain recommendation is higher:
         </p>
 
-        <p className="text-gray-600 mb-1">
-          Pre-pregnancy BMI Category Recommended Weight Gain
-        </p>
-        <p className="text-gray-600 mb-1">
-          18.5–24.9 Normal weight 37–54 lb (17–25 kg)
-        </p>
-        <p className="text-gray-600 mb-3" >25–29.9 Overweight 31–50 lb (14–23 kg)</p>
-        <p className="text-gray-600 mb-3">30 Obese 25–42 lb (11–19 kg)</p>
+        <div className="overflow-x-auto mb-4">
+          <table className="table-auto border border-gray-300 w-full text-left text-gray-600">
+            <thead>
+              <tr className="bg-[#FDE9E6]">
+                <th className="border border-gray-300 px-4 py-2">
+                  Pre-pregnancy BMI
+                </th>
+                <th className="border border-gray-300 px-4 py-2">Category</th>
+                <th className="border border-gray-300 px-4 py-2">
+                  Recommended Weight Gain
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">18.5-24.9</td>
+                <td className="border border-gray-300 px-4 py-2">Normal</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  28-40lb (13-18kg)
+                </td>
+              </tr>
+              <tr className="bg-[#FDE9E6]">
+                <td className="border border-gray-300 px-4 py-2">
+                  18.5 – 24.9
+                </td>
+                <td className="border border-gray-300 px-4 py-2">Normal</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  37-54lb (17-25kg)
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">25-29.9</td>
+                <td className="border border-gray-300 px-4 py-2">Overweight</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  31-50lb (14-23kg)
+                </td>
+              </tr>
+              <tr className="bg-[#FDE9E6]">
+                <td className="border border-gray-300 px-4 py-2">≥30</td>
+                <td className="border border-gray-300 px-4 py-2">Obese</td>
+                <td className="border border-gray-300 px-4 py-2">
+                  25-42lb (11-19kg)
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <p className="text-gray-600 font-semibold">
           For triplets or more, there are no fixed guidelines, so it’s best to
@@ -142,7 +218,6 @@ const WeightGainCalculatorDetailed = () => {
           ></iframe>
         </div>
       </div>
-
 
       <div className="bg-white mb-8 p-6 rounded-2xl shadow-lg shadow-[#FDE9E6]">
         <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">

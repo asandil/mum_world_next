@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
 
 export default function PregnancyCalculator() {
   const [method, setMethod] = useState("lastPeriod");
@@ -12,6 +13,14 @@ export default function PregnancyCalculator() {
   const [showResults, setShowResults] = useState(false);
   const [dueDate, setDueDate] = useState(null);
   const [pregnancyData, setPregnancyData] = useState(null);
+  const [tableData, setTableData] = useState([]);
+
+  const printRef = useRef();
+
+  const handlePrint = useReactToPrint({
+    contentRef: printRef,
+    documentTitle: "Pregnancy Weight Gain Report",
+  });
 
   useEffect(() => {
     // Set today's date as default for date inputs
@@ -471,7 +480,7 @@ export default function PregnancyCalculator() {
 
           {/* Results Section */}
           {showResults && pregnancyData && (
-            <div id="results" className="fade-in mt-8">
+            <div id="results" ref={printRef} className="fade-in mt-8">
               <div className="bg-green-50 p-8 rounded-xl border border-green-200 mb-6 text-center">
                 <h2 className="text-3xl font-bold text-green-700 mb-2">
                   Congratulations!
@@ -638,6 +647,33 @@ export default function PregnancyCalculator() {
               </div>
             </div>
           )}
+
+          {showResults && (
+
+         
+
+          <div className="flex flex-wrap gap-4 justify-center mt-6">
+            <button
+              onClick={handlePrint}
+              className="px-4 py-2 cursor-pointer uppercase bg-green-600 text-white rounded-lg shadow hover:bg-green-700"
+            >
+              Print
+            </button>
+
+            <button
+              onClick={handlePrint} // will also save as PDF
+              className="px-4 py-2 cursor-pointer uppercase bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700"
+            >
+              Save as PDF
+            </button>
+            <button
+              onClick={() => window.location.reload()}
+              className="px-4 py-2 cursor-pointer uppercase bg-gray-500 text-white rounded-lg shadow hover:bg-gray-600"
+            >
+              Recalculate
+            </button>
+          </div>
+           )}
         </div>
       </div>
 
@@ -654,11 +690,11 @@ export default function PregnancyCalculator() {
           border-right: 1px solid #e5e7eb;
         }
         .milestone-table th {
-          background-color: #FDE9E6;
+          background-color: #fde9e6;
           font-weight: 600;
         }
         .highlight {
-          background-color: #FDE9E6;
+          background-color: #fde9e6;
           padding: 4px 8px;
           border-radius: 4px;
           font-weight: 500;
