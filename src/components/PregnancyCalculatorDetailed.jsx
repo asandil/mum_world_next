@@ -167,6 +167,25 @@ const PregnancyCalculatorDetailed = () => {
         </p>
       </div>
 
+      {/* video section */}
+
+      <div class="bg-white rounded-xl shadow-xl p-6 mb-8">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+          Pregnancy Due Date Calculator
+        </h2>
+        <div class="video-container rounded-lg overflow-hidden shadow-lg">
+          <iframe
+            src="https://www.youtube.com/embed/-Z5OtJ-GC6o?si=kmzJKU-fnXyuM-VU"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            className="w-full h-[522px]"
+          ></iframe>
+          
+        </div>
+      </div>
+
       {/* Information Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="bg-white p-6 rounded-2xl shadow-lg shadow-[#FDE9E6]">

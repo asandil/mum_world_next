@@ -96,14 +96,24 @@ export default function Header() {
                   Baby Vaccination Chart
                 </Link>
                 <Link
-                  href="/due-date-calculator"
+                  href="/pregnancy-due-date-calculator"
                   className={`head block mt-4 text-[14px] ${
-                    isActive("/due-date-calculator")
+                    isActive("/pregnancy-due-date-calculator")
                       ? "text-[#e6846a] font-bold"
                       : "hover:text-[#e6846a]"
                   }`}
                 >
-                  Due Date Calculator
+                  Pregnancy Due Date Calculator
+                </Link>
+                <Link
+                  href="/pregnancy-weight-gain-calculator"
+                  className={`head block mt-4 text-[14px] ${
+                    isActive("/pregnancy-weight-gain-calculator")
+                      ? "text-[#e6846a] font-bold"
+                      : "hover:text-[#e6846a]"
+                  }`}
+                >
+                  Pregnancy Weight Gain Calculator
                 </Link>
               </div>
             </li>

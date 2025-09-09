@@ -20,8 +20,8 @@ const headData = [
         to: "/baby-vaccination-chart"
     },
     {
-        name: "Due Date Calculator",
-        to: "/due-date-calculator"
+        name: "Pregnancy Due Date Calculator",
+        to: "/pregnancy-due-date-calculator"
     }
 ]
 
