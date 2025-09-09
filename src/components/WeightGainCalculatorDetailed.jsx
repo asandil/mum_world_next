@@ -71,7 +71,7 @@ const WeightGainCalculatorDetailed = () => {
         <p className="text-gray-600 mb-1">
           18.5–24.9 Normal weight 37–54 lb (17–25 kg)
         </p>
-        <p c>25–29.9 Overweight 31–50 lb (14–23 kg)</p>
+        <p className="text-gray-600 mb-3" >25–29.9 Overweight 31–50 lb (14–23 kg)</p>
         <p className="text-gray-600 mb-3">30 Obese 25–42 lb (11–19 kg)</p>
 
         <p className="text-gray-600 font-semibold">
@@ -127,17 +127,17 @@ const WeightGainCalculatorDetailed = () => {
 
       {/* video section */}
 
-      <div class="bg-white rounded-xl shadow-xl p-6 mb-8">
-        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+      <div className="bg-white rounded-xl shadow-xl p-6 mb-8">
+        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
           Pregnancy Weight Gain Calculator
         </h2>
-        <div class="video-container rounded-lg overflow-hidden shadow-lg">
+        <div className="video-container rounded-lg overflow-hidden shadow-lg">
           <iframe
             src="https://www.youtube.com/embed/CePJMNvZTNM?si=BzwM1tG1wwjcLBVP"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
             className="w-full h-[522px]"
           ></iframe>
         </div>

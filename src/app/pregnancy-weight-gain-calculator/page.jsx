@@ -1,5 +1,6 @@
 import PregnancyCalculator from "@/components/PregnancyCalculator";
 import PregnancyCalculatorDetailed from "@/components/PregnancyCalculatorDetailed";
+import WeightCalculator from "@/components/WeightCalculator";
 import WeightGainCalculatorDetailed from "@/components/WeightGainCalculatorDetailed";
 import Image from "next/image";
 import React from "react";
@@ -48,7 +49,7 @@ const page = () => {
           </p>
         </div>
 
-        <PregnancyCalculator />
+        <WeightCalculator />
         <WeightGainCalculatorDetailed />
       </section>
     </div>
