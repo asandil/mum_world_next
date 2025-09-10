@@ -7,6 +7,107 @@ const ImmunizationScheduleAndChart = () => {
       <div className="bg-white mb-8 p-6 rounded-2xl shadow-lg shadow-[#FDE9E6]">
         <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
           <i className="fas fa-info-circle text-primary-600"></i>
+          Child’s immunization chart will include the following vaccines –
+        </h3>
+        <p className="text-gray-600 mb-1">
+          The immunization scheduler and chart is based on the recommendations
+          of World Health Organization (WHO), which monitors vaccination
+          schedules across the world.
+        </p>
+
+        <div className="overflow-x-auto mb-4">
+          <table className="table-auto border border-gray-300 w-full text-left text-gray-600">
+            <thead>
+              <tr className="bg-[#FDE9E6]">
+                <th className="border border-gray-300 px-4 py-2">
+                  Type of vaccine
+                </th>
+                <th className="border border-gray-300 px-4 py-2">
+                  No of shots (dosages)
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Hepatitis B
+                </td>
+                <td className="border border-gray-300 px-4 py-2">3</td>
+              </tr>
+              <tr className="bg-[#FDE9E6]" >
+                <td className="border border-gray-300 px-4 py-2">
+                  DTaP
+                </td>
+                <td className="border border-gray-300 px-4 py-2">6</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Hib
+                </td>
+                <td className="border border-gray-300 px-4 py-2">3 – 4 (depends on the brand)</td>
+              </tr>
+              <tr className="bg-[#FDE9E6]" >
+                <td className="border border-gray-300 px-4 py-2">
+                 IPV (Polio)
+                </td>
+                <td className="border border-gray-300 px-4 py-2">4</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Rotavirus
+                </td>
+                <td className="border border-gray-300 px-4 py-2">2 – 3 (depends on the brand)</td>
+              </tr>
+              <tr className="bg-[#FDE9E6]" >
+                <td className="border border-gray-300 px-4 py-2">
+                 PCV13 (Pneumococcal)
+                </td>
+                <td className="border border-gray-300 px-4 py-2">4</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  MMR (Measles, mumps, rubella)
+                </td>
+                <td className="border border-gray-300 px-4 py-2">2</td>
+              </tr>
+              <tr className="bg-[#FDE9E6]">
+                <td className="border border-gray-300 px-4 py-2">
+                  Influenza
+                </td>
+                <td className="border border-gray-300 px-4 py-2">Influenza</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  Hepatitis A
+                </td>
+                <td className="border border-gray-300 px-4 py-2">2 or 1 depending on the brand</td>
+              </tr>
+              <tr className="bg-[#FDE9E6]">
+                <td className="border border-gray-300 px-4 py-2">
+                  Varicella (chicken pox)
+                </td>
+                <td className="border border-gray-300 px-4 py-2">2</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-300 px-4 py-2">
+                  HPV
+                </td>
+                <td className="border border-gray-300 px-4 py-2">2-3</td>
+              </tr>
+              <tr className="bg-[#FDE9E6]">
+                <td className="border border-gray-300 px-4 py-2">
+                  Meningococcal
+                </td>
+                <td className="border border-gray-300 px-4 py-2">2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="bg-white mb-8 p-6 rounded-2xl shadow-lg shadow-[#FDE9E6]">
+        <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+          <i className="fas fa-info-circle text-primary-600"></i>
           Are Vaccines Safe For Your Baby?
         </h3>
         <p className="text-gray-600 mb-1">

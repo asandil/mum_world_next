@@ -1,236 +1,265 @@
 "use client";
-import { useState } from 'react';
+import { useRef, useState } from "react";
+import immunizationSchedules from "@/lib/ImmunizationData";
+import { useReactToPrint } from "react-to-print";
 
 export default function ImmunizationScheduler() {
-  const [dob, setDob] = useState('2025-09-09');
-  const [country, setCountry] = useState('INDIA');
-  const [childName, setChildName] = useState('');
-  const [showResults, setShowResults] = useState(false);
-  
-  // Country-specific immunization schedules
-  const immunizationSchedules = {
-    INDIA: [
-      { age: 'At Birth', vaccine: 'Hepatitis B - Dose 1 of 3', protection: 'Hepatitis B virus', weeks: 0, months: 0 },
-      { age: 'At Birth', vaccine: 'BCG - Dose 1', protection: 'Tuberculosis', weeks: 0, months: 0 },
-      { age: 'At Birth', vaccine: 'OPV - Dose 1 of 4', protection: 'Polio', weeks: 0, months: 0 },
-      { age: '6 weeks', vaccine: 'Hepatitis B - Dose 2 of 3', protection: 'Hepatitis B virus', weeks: 6, months: 0 },
-      { age: '6 weeks', vaccine: 'DTaP - Dose 1 of 5', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 6, months: 0 },
-      { age: '6 weeks', vaccine: 'IPV - Dose 1 of 4', protection: 'Polio', weeks: 6, months: 0 },
-      { age: '10 weeks', vaccine: 'DTaP - Dose 2 of 5', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 10, months: 0 },
-      { age: '14 weeks', vaccine: 'DTaP - Dose 3 of 5', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 14, months: 0 },
-      { age: '6 months', vaccine: 'Hepatitis B - Dose 3 of 3', protection: 'Hepatitis B virus', weeks: 0, months: 6 },
-      { age: '9 months', vaccine: 'MMR - Dose 1 of 2', protection: 'Measles, Mumps, Rubella', weeks: 0, months: 9 },
-      { age: '12 months', vaccine: 'Hepatitis A - Dose 1 of 2', protection: 'Hepatitis A', weeks: 0, months: 12 },
-      { age: '15 months', vaccine: 'MMR - Dose 2 of 2', protection: 'Measles, Mumps, Rubella', weeks: 0, months: 15 },
-      { age: '18 months', vaccine: 'DTaP - Dose 4 of 5', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 0, months: 18 },
-      { age: '4-6 years', vaccine: 'DTaP - Dose 5 of 5', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 0, months: 48, rangeMonths: 72 },
-      { age: '10-12 years', vaccine: 'Tdap - Dose 1', protection: 'Tetanus, Diphtheria, Pertussis', weeks: 0, months: 120, rangeMonths: 144 },
-      { age: '10-12 years', vaccine: 'HPV - Dose 1', protection: 'Human Papillomavirus', weeks: 0, months: 120, rangeMonths: 144 },
-    ],
-    USA: [
-      { age: 'At Birth', vaccine: 'Hepatitis B - Dose 1 of 3', protection: 'Hepatitis B virus', weeks: 0, months: 0 },
-      { age: '1-2 months', vaccine: 'Hepatitis B - Dose 2 of 3', protection: 'Hepatitis B virus', weeks: 0, months: 1 },
-      { age: '2 months', vaccine: 'DTaP - Dose 1 of 5', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 0, months: 2 },
-      { age: '2 months', vaccine: 'IPV - Dose 1 of 4', protection: 'Polio', weeks: 0, months: 2 },
-      { age: '2 months', vaccine: 'PCV13 - Dose 1 of 4', protection: 'Pneumococcal disease', weeks: 0, months: 2 },
-      { age: '2 months', vaccine: 'RV - Dose 1 of 3', protection: 'Rotavirus', weeks: 0, months: 2 },
-      { age: '4 months', vaccine: 'DTaP - Dose 2 of 5', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 0, months: 4 },
-      { age: '4 months', vaccine: 'IPV - Dose 2 of 4', protection: 'Polio', weeks: 0, months: 4 },
-      { age: '4 months', vaccine: 'PCV13 - Dose 2 of 4', protection: 'Pneumococcal disease', weeks: 0, months: 4 },
-      { age: '4 months', vaccine: 'RV - Dose 2 of 3', protection: 'Rotavirus', weeks: 0, months: 4 },
-      { age: '6 months', vaccine: 'DTaP - Dose 3 of 5', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 0, months: 6 },
-      { age: '6 months', vaccine: 'PCV13 - Dose 3 of 4', protection: 'Pneumococcal disease', weeks: 0, months: 6 },
-      { age: '6 months', vaccine: 'RV - Dose 3 of 3', protection: 'Rotavirus', weeks: 0, months: 6 },
-      { age: '6-18 months', vaccine: 'IPV - Dose 3 of 4', protection: 'Polio', weeks: 0, months: 6, rangeMonths: 18 },
-      { age: '6-18 months', vaccine: 'Hepatitis B - Dose 3 of 3', protection: 'Hepatitis B virus', weeks: 0, months: 6, rangeMonths: 18 },
-      { age: '12-15 months', vaccine: 'MMR - Dose 1 of 2', protection: 'Measles, Mumps, Rubella', weeks: 0, months: 12, rangeMonths: 15 },
-      { age: '12-15 months', vaccine: 'Varicella - Dose 1 of 2', protection: 'Chickenpox', weeks: 0, months: 12, rangeMonths: 15 },
-      { age: '12-15 months', vaccine: 'PCV13 - Dose 4 of 4', protection: 'Pneumococcal disease', weeks: 0, months: 12, rangeMonths: 15 },
-      { age: '12-18 months', vaccine: 'Hib - Dose 4 of 4', protection: 'Haemophilus influenzae type b', weeks: 0, months: 12, rangeMonths: 18 },
-      { age: '4-6 years', vaccine: 'DTaP - Dose 5 of 5', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 0, months: 48, rangeMonths: 72 },
-      { age: '4-6 years', vaccine: 'IPV - Dose 4 of 4', protection: 'Polio', weeks: 0, months: 48, rangeMonths: 72 },
-      { age: '4-6 years', vaccine: 'MMR - Dose 2 of 2', protection: 'Measles, Mumps, Rubella', weeks: 0, months: 48, rangeMonths: 72 },
-      { age: '4-6 years', vaccine: 'Varicella - Dose 2 of 2', protection: 'Chickenpox', weeks: 0, months: 48, rangeMonths: 72 },
-      { age: '11-12 years', vaccine: 'Tdap - Dose 1', protection: 'Tetanus, Diphtheria, Pertussis', weeks: 0, months: 132, rangeMonths: 144 },
-      { age: '11-12 years', vaccine: 'HPV - Dose 1', protection: 'Human Papillomavirus', weeks: 0, months: 132, rangeMonths: 144 },
-    ],
-    UK: [
-      { age: '8 weeks', vaccine: '6-in-1 - Dose 1 of 3', protection: 'Diphtheria, Tetanus, Pertussis, Polio, Hib, Hepatitis B', weeks: 8, months: 0 },
-      { age: '8 weeks', vaccine: 'Rotavirus - Dose 1 of 2', protection: 'Rotavirus', weeks: 8, months: 0 },
-      { age: '8 weeks', vaccine: 'MenB - Dose 1 of 3', protection: 'Meningococcal B', weeks: 8, months: 0 },
-      { age: '12 weeks', vaccine: '6-in-1 - Dose 2 of 3', protection: 'Diphtheria, Tetanus, Pertussis, Polio, Hib, Hepatitis B', weeks: 12, months: 0 },
-      { age: '12 weeks', vaccine: 'Rotavirus - Dose 2 of 2', protection: 'Rotavirus', weeks: 12, months: 0 },
-      { age: '16 weeks', vaccine: '6-in-1 - Dose 3 of 3', protection: 'Diphtheria, Tetanus, Pertussis, Polio, Hib, Hepatitis B', weeks: 16, months: 0 },
-      { age: '16 weeks', vaccine: 'MenB - Dose 2 of 3', protection: 'Meningococcal B', weeks: 16, months: 0 },
-      { age: '12 months', vaccine: 'Hib/MenC - Dose 1', protection: 'Haemophilus influenzae type b, Meningococcal C', weeks: 0, months: 12 },
-      { age: '12 months', vaccine: 'MMR - Dose 1 of 2', protection: 'Measles, Mumps, Rubella', weeks: 0, months: 12 },
-      { age: '12 months', vaccine: 'MenB - Dose 3 of 3', protection: 'Meningococcal B', weeks: 0, months: 12 },
-      { age: '3 years 4 months', vaccine: '4-in-1 - Preschool Booster', protection: 'Diphtheria, Tetanus, Pertussis, Polio', weeks: 0, months: 40 },
-      { age: '3 years 4 months', vaccine: 'MMR - Dose 2 of 2', protection: 'Measles, Mumps, Rubella', weeks: 0, months: 40 },
-      { age: '12-13 years', vaccine: 'HPV - Dose 1', protection: 'Human Papillomavirus', weeks: 0, months: 144, rangeMonths: 156 },
-      { age: '14 years', vaccine: '3-in-1 - Teenage Booster', protection: 'Tetanus, Diphtheria, Polio', weeks: 0, months: 168 },
-      { age: '14 years', vaccine: 'MenACWY - Dose 1', protection: 'Meningococcal A, C, W, Y', weeks: 0, months: 168 },
-    ],
-    CANADA: [
-      { age: 'At Birth', vaccine: 'Hepatitis B - Dose 1 of 3', protection: 'Hepatitis B virus', weeks: 0, months: 0 },
-      { age: '2 months', vaccine: 'DTaP - Dose 1 of 5', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 0, months: 2 },
-      { age: '2 months', vaccine: 'IPV - Dose 1 of 4', protection: 'Polio', weeks: 0, months: 2 },
-      { age: '2 months', vaccine: 'Hib - Dose 1 of 4', protection: 'Haemophilus influenzae type b', weeks: 0, months: 2 },
-      { age: '2 months', vaccine: 'PCV13 - Dose 1 of 4', protection: 'Pneumococcal disease', weeks: 0, months: 2 },
-      { age: '2 months', vaccine: 'Rotavirus - Dose 1 of 3', protection: 'Rotavirus', weeks: 0, months: 2 },
-      { age: '4 months', vaccine: 'DTaP - Dose 2 of 5', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 0, months: 4 },
-      { age: '4 months', vaccine: 'IPV - Dose 2 of 4', protection: 'Polio', weeks: 0, months: 4 },
-      { age: '4 months', vaccine: 'Hib - Dose 2 of 4', protection: 'Haemophilus influenzae type b', weeks: 0, months: 4 },
-      { age: '4 months', vaccine: 'PCV13 - Dose 2 of 4', protection: 'Pneumococcal disease', weeks: 0, months: 4 },
-      { age: '4 months', vaccine: 'Rotavirus - Dose 2 of 3', protection: 'Rotavirus', weeks: 0, months: 4 },
-      { age: '6 months', vaccine: 'DTaP - Dose 3 of 5', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 0, months: 6 },
-      { age: '6 months', vaccine: 'Hib - Dose 3 of 4', protection: 'Haemophilus influenzae type b', weeks: 0, months: 6 },
-      { age: '6 months', vaccine: 'PCV13 - Dose 3 of 4', protection: 'Pneumococcal disease', weeks: 0, months: 6 },
-      { age: '6 months', vaccine: 'Rotavirus - Dose 3 of 3', protection: 'Rotavirus', weeks: 0, months: 6 },
-      { age: '12 months', vaccine: 'MMR - Dose 1 of 2', protection: 'Measles, Mumps, Rubella', weeks: 0, months: 12 },
-      { age: '12 months', vaccine: 'Varicella - Dose 1 of 2', protection: 'Chickenpox', weeks: 0, months: 12 },
-      { age: '12 months', vaccine: 'Hib - Dose 4 of 4', protection: 'Haemophilus influenzae type b', weeks: 0, months: 12 },
-      { age: '12 months', vaccine: 'PCV13 - Dose 4 of 4', protection: 'Pneumococcal disease', weeks: 0, months: 12 },
-      { age: '18 months', vaccine: 'DTaP - Dose 4 of 5', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 0, months: 18 },
-      { age: '18 months', vaccine: 'IPV - Dose 3 of 4', protection: 'Polio', weeks: 0, months: 18 },
-      { age: '4-6 years', vaccine: 'DTaP - Dose 5 of 5', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 0, months: 48, rangeMonths: 72 },
-      { age: '4-6 years', vaccine: 'IPV - Dose 4 of 4', protection: 'Polio', weeks: 0, months: 48, rangeMonths: 72 },
-      { age: '4-6 years', vaccine: 'MMR - Dose 2 of 2', protection: 'Measles, Mumps, Rubella', weeks: 0, months: 48, rangeMonths: 72 },
-      { age: '4-6 years', vaccine: 'Varicella - Dose 2 of 2', protection: 'Chickenpox', weeks: 0, months: 48, rangeMonths: 72 },
-      { age: '9-10 years', vaccine: 'HPV - Dose 1', protection: 'Human Papillomavirus', weeks: 0, months: 108, rangeMonths: 120 },
-      { age: '14-16 years', vaccine: 'Tdap - Dose 1', protection: 'Tetanus, Diphtheria, Pertussis', weeks: 0, months: 168, rangeMonths: 192 },
-    ],
-    AUSTRALIA: [
-      { age: 'At Birth', vaccine: 'Hepatitis B - Dose 1 of 3', protection: 'Hepatitis B virus', weeks: 0, months: 0 },
-      { age: '2 months', vaccine: '6-in-1 - Dose 1 of 3', protection: 'Diphtheria, Tetanus, Pertussis, Polio, Hib, Hepatitis B', weeks: 0, months: 2 },
-      { age: '2 months', vaccine: 'PCV13 - Dose 1 of 3', protection: 'Pneumococcal disease', weeks: 0, months: 2 },
-      { age: '2 months', vaccine: 'Rotavirus - Dose 1 of 2', protection: 'Rotavirus', weeks: 0, months: 2 },
-      { age: '4 months', vaccine: '6-in-1 - Dose 2 of 3', protection: 'Diphtheria, Tetanus, Pertussis, Polio, Hib, Hepatitis B', weeks: 0, months: 4 },
-      { age: '4 months', vaccine: 'PCV13 - Dose 2 of 3', protection: 'Pneumococcal disease', weeks: 0, months: 4 },
-      { age: '4 months', vaccine: 'Rotavirus - Dose 2 of 2', protection: 'Rotavirus', weeks: 0, months: 4 },
-      { age: '6 months', vaccine: '6-in-1 - Dose 3 of 3', protection: 'Diphtheria, Tetanus, Pertussis, Polio, Hib, Hepatitis B', weeks: 0, months: 6 },
-      { age: '6 months', vaccine: 'PCV13 - Dose 3 of 3', protection: 'Pneumococcal disease', weeks: 0, months: 6 },
-      { age: '12 months', vaccine: 'MMR - Dose 1 of 2', protection: 'Measles, Mumps, Rubella', weeks: 0, months: 12 },
-      { age: '12 months', vaccine: 'MenACWY - Dose 1', protection: 'Meningococcal A, C, W, Y', weeks: 0, months: 12 },
-      { age: '18 months', vaccine: 'MMR - Dose 2 of 2', protection: 'Measles, Mumps, Rubella', weeks: 0, months: 18 },
-      { age: '18 months', vaccine: 'DTaP - Booster', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 0, months: 18 },
-      { age: '4 years', vaccine: '4-in-1 - Booster', protection: 'Diphtheria, Tetanus, Pertussis, Polio', weeks: 0, months: 48 },
-      { age: '12-13 years', vaccine: 'HPV - Dose 1', protection: 'Human Papillomavirus', weeks: 0, months: 144, rangeMonths: 156 },
-      { age: '14-16 years', vaccine: 'dTpa - Booster', protection: 'Diphtheria, Tetanus, Pertussis', weeks: 0, months: 168, rangeMonths: 192 },
-      { age: '14-16 years', vaccine: 'MenACWY - Booster', protection: 'Meningococcal A, C, W, Y', weeks: 0, months: 168, rangeMonths: 192 },
-    ]
-  };
+  const [dob, setDob] = useState("2025-09-09");
+  const [country, setCountry] = useState("INDIA");
+  const [childName, setChildName] = useState("");
+  const [scheduleData, setScheduleData] = useState(null);
+
+  const printRef = useRef();
+
+  const handlePrint = useReactToPrint({
+    contentRef: printRef,
+    documentTitle: "Immunization Schedule Report",
+    pageStyle: `
+      @media print {
+        body { 
+          -webkit-print-color-adjust: exact; 
+          color-adjust: exact;
+        }
+        .print-table-header {
+          background-color: #FDE9E6 !important;
+        }
+        .print-table-row-even {
+          background-color: #FDE9E6 !important;
+        }
+      }
+    `,
+  });
 
   // Calculate vaccination dates based on DOB
-  const calculateDates = (baseDate, weeks = 0, months = 0, rangeMonths = null) => {
+  const calculateDates = (
+    baseDate,
+    weeks = 0,
+    months = 0,
+    rangeMonths = null
+  ) => {
     const date = new Date(baseDate);
     if (weeks) date.setDate(date.getDate() + weeks * 7);
     if (months) date.setMonth(date.getMonth() + months);
-    
+
     if (rangeMonths) {
       const endDate = new Date(baseDate);
       endDate.setMonth(endDate.getMonth() + rangeMonths);
-      return `${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} - ${endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+      return `${date.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      })} - ${endDate.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      })}`;
     }
-    
-    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setShowResults(true);
+    setScheduleData({
+      dob,
+      country,
+      childName,
+      schedule: immunizationSchedules[country] || [],
+    });
   };
 
   return (
-    <div className="max-w-5xl mx-auto p-5 font-sans">
-      <h1 className="text-3xl font-bold text-center text-blue-800 mb-8">Immunization Scheduler and Chart</h1>
-      
-      {!showResults ? (
-        <form onSubmit={handleSubmit} className="bg-blue-50 p-8 rounded-lg shadow-md">
-          <div className="mb-5">
-            <label htmlFor="dob" className="block text-gray-700 font-bold mb-2">Your Child's Date of Birth:</label>
+    <div className="mx-auto p-5 font-sans shadow-xl mb-8 rounded-lg ">
+      <h2 className="text-lg font-bold mb-4">
+        Immunization Scheduler and Chart
+      </h2>
+
+      {/* Form is always visible */}
+      <form onSubmit={handleSubmit} className="rounded-lg mb-6">
+        <div className="md:flex-row flex justify-between gap-[0px] md:gap-[20px] flex-col ">
+          <div className="mb-5 w-full">
+            <label htmlFor="dob" className="block text-gray-700 font-bold mb-2">
+              Your Child's Date of Birth:
+            </label>
             <input
               type="date"
               id="dob"
               value={dob}
               onChange={(e) => setDob(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#F89D8A]"
               required
             />
           </div>
-          
-          <div className="mb-5">
-            <label htmlFor="country" className="block text-gray-700 font-bold mb-2">Your Country:</label>
+
+          <div className="mb-5 w-full ">
+            <label
+              htmlFor="country"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Your Country:
+            </label>
             <select
               id="country"
               value={country}
               onChange={(e) => setCountry(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#F89D8A]"
               required
             >
-              <option value="INDIA">INDIA</option>
-              <option value="USA">USA</option>
-              <option value="UK">UK</option>
-              <option value="CANADA">CANADA</option>
               <option value="AUSTRALIA">AUSTRALIA</option>
+              <option value="CANADA">CANADA</option>
+              <option value="INDIA">INDIA</option>
+              <option value="UK">UK</option>
+              <option value="USA">KUWAIT</option>
+              <option value="USA">MALAYSIA</option>
+              <option value="USA">NIGERIA</option>
+              <option value="USA">QATAR</option>
+              <option value="USA">SOUTH AFRICA</option>
+              <option value="USA">USA</option>
+              <option value="UK">OTHER</option>
             </select>
           </div>
-          
-          <div className="mb-5">
-            <label htmlFor="childName" className="block text-gray-700 font-bold mb-2">Your Child's Name (Optional)</label>
+
+          <div className="mb-5 w-full ">
+            <label
+              htmlFor="childName"
+              className="block text-gray-700 font-bold mb-2"
+            >
+              Your Child's Name (Optional)
+            </label>
             <input
               type="text"
               id="childName"
               value={childName}
               onChange={(e) => setChildName(e.target.value)}
               placeholder="Enter child's name"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#F89D8A]"
             />
           </div>
-          
-          <button 
-            type="submit" 
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-md transition-colors duration-200"
-          >
-            Get Schedule
-          </button>
-        </form>
-      ) : (
-        <div className="bg-blue-50 p-8 rounded-lg shadow-md">
-          <h2 className="text-2xl font-bold text-blue-800 mb-4">Result</h2>
-          <p className="mb-6">Following Immunization Schedule is based on recommendation of {country}'s Advisory Committee on Vaccines & Immunization Practices</p>
-          
-          <div className="overflow-x-auto mb-6">
-            <table className="min-w-full border-collapse border border-gray-300">
-              <thead>
-                <tr className="bg-blue-100">
-                  <th className="border border-gray-300 px-4 py-2 text-left font-bold">Child's Age</th>
-                  <th className="border border-gray-300 px-4 py-2 text-left font-bold">Vaccine and Dose</th>
-                  <th className="border border-gray-300 px-4 py-2 text-left font-bold">Protects Against</th>
-                  <th className="border border-gray-300 px-4 py-2 text-left font-bold">Recommended Vaccination Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {immunizationSchedules[country].map((vaccine, index) => (
-                  <tr key={index} className="even:bg-blue-50 hover:bg-blue-100">
-                    <td className="border border-gray-300 px-4 py-2">{vaccine.age}</td>
-                    <td className="border border-gray-300 px-4 py-2">{vaccine.vaccine}</td>
-                    <td className="border border-gray-300 px-4 py-2">{vaccine.protection}</td>
-                    <td className="border border-gray-300 px-4 py-2">
-                      {calculateDates(dob, vaccine.weeks, vaccine.months, vaccine.rangeMonths)}
-                    </td>
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-[#F89D8B] hover:bg-[#e6846a] cursor-pointer text-white font-bold py-3 px-4 rounded-md transition-colors duration-200"
+        >
+          Get Schedule
+        </button>
+      </form>
+
+      {/* Results section appears below the form when data exists */}
+      {scheduleData && (
+        <div className="rounded-lg">
+          <h2 className="text-2xl font-bold mb-4">Result</h2>
+
+          {/* Printable content */}
+          <div ref={printRef} className="p-4 bg-white">
+            <h1 className="text-2xl font-bold mb-4">
+              Immunization Schedule
+            </h1>
+
+            <div className="mb-4">
+              <p>
+                <strong>Child's Date of Birth:</strong>{" "}
+                {new Date(scheduleData.dob).toLocaleDateString()}
+              </p>
+              <p>
+                <strong>Country:</strong> {scheduleData.country}
+              </p>
+              {scheduleData.childName && (
+                <p>
+                  <strong>Child's Name:</strong> {scheduleData.childName}
+                </p>
+              )}
+              <p className="mb-6">
+                Following Immunization Schedule is based on recommendation of{" "}
+                {scheduleData.country}'s Advisory Committee on Vaccines &
+                Immunization Practices
+              </p>
+            </div>
+
+            <div className="overflow-x-auto mb-6">
+              <table className="min-w-full border-collapse border border-gray-300">
+                <thead>
+                  <tr className="print-table-header bg-[#FDE9E6]">
+                    <th className="border border-gray-300 px-4 py-2 text-left font-bold">
+                      Child's Age
+                    </th>
+                    <th className="border border-gray-300 px-4 py-2 text-left font-bold">
+                      Vaccine and Dose
+                    </th>
+                    <th className="border border-gray-300 px-4 py-2 text-left font-bold">
+                      Protects Against
+                    </th>
+                    <th className="border border-gray-300 px-4 py-2 text-left font-bold">
+                      Recommended Vaccination Date
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {scheduleData.schedule.map((vaccine, index) => (
+                    <tr
+                      key={index}
+                      className={
+                        index % 2 !== 0
+                          ? "print-table-row-even bg-[#FDE9E6]"
+                          : "hover:bg-[#ffe2de]"
+                      }
+                    >
+                      <td className="border border-gray-300 px-4 py-2">
+                        {vaccine.age}
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        {vaccine.vaccine}
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        {vaccine.protection}
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2">
+                        {calculateDates(
+                          scheduleData.dob,
+                          vaccine.weeks,
+                          vaccine.months,
+                          vaccine.rangeMonths
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* <div className="text-sm text-gray-500 mt-8">
+              <p>Generated on: {new Date().toLocaleDateString()}</p>
+            </div> */}
           </div>
-          
-          <button 
-            onClick={() => setShowResults(false)} 
-            className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-4 rounded-md transition-colors duration-200"
-          >
-            Back to Form
-          </button>
+
+          <div>
+            <div className="flex flex-wrap gap-4 justify-center mt-0">
+              <button
+                onClick={handlePrint}
+                className="px-4 py-2 cursor-pointer uppercase bg-green-600 text-white rounded-lg shadow hover:bg-green-700"
+              >
+                Print
+              </button>
+
+              <button
+                onClick={handlePrint} // will also save as PDF
+                className="px-4 py-2 cursor-pointer uppercase bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700"
+              >
+                Save as PDF
+              </button>
+
+              <button
+                onClick={() => setScheduleData(null)}
+                className="px-4 py-2 cursor-pointer uppercase bg-gray-500 text-white rounded-lg shadow hover:bg-gray-600"
+              >
+                Recalculate
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>

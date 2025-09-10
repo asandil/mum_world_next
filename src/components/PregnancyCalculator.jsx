@@ -306,7 +306,7 @@ export default function PregnancyCalculator() {
           <div className="">
             {method === "lastPeriod" && (
               <div id="lastPeriodInput">
-                <div className="flex justify-between gap-[20px] ">
+                <div className="flex justify-between gap-[0px] md:gap-[20px] flex-col md:flex-row  ">
                   <div className=" w-full">
                     <label className="block text-lg font-medium text-gray-700 mb-3">
                       First day of your last menstrual period
@@ -482,13 +482,13 @@ export default function PregnancyCalculator() {
           {showResults && pregnancyData && (
             <div id="results" ref={printRef} className="fade-in mt-8">
               <div className="bg-green-50 p-8 rounded-xl border border-green-200 mb-6 text-center">
-                <h2 className="text-3xl font-bold text-green-700 mb-2">
+                <h2 className=" text-2xl md:text-3xl font-bold text-green-700 mb-2">
                   Congratulations!
                 </h2>
                 <p className="text-lg text-green-600 mb-6">
                   Your Baby's Estimated Due Date is On Or Around
                 </p>
-                <p className="text-4xl font-bold text-green-800 mb-4">
+                <p className=" text-2xl md:text-4xl font-bold text-green-800 mb-4">
                   {formatDate(pregnancyData.dueDate)}
                 </p>
                 <p className="text-xl text-green-700">
@@ -498,7 +498,7 @@ export default function PregnancyCalculator() {
                 </p>
               </div>
 
-              <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
+              <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm mb-6 ">
                 <h3 className="text-xl font-semibold text-gray-800 mb-4">
                   Pregnancy Timeline
                 </h3>
@@ -576,10 +576,11 @@ export default function PregnancyCalculator() {
               </div>
 
               <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                <h3 className=" text-lg sm:text-xl font-semibold text-gray-800 mb-4">
                   Significant Milestones In Embryo/Fetal Development
                 </h3>
-                <table className="milestone-table">
+                <div className="overflow-x-auto" >
+                <table className="milestone-table min-w-full">
                   <thead>
                     <tr>
                       <th>Description</th>
@@ -598,9 +599,10 @@ export default function PregnancyCalculator() {
                   </tbody>
                 </table>
               </div>
+              </div>
 
               <div className="bg-white p-6 rounded-xl shadow-sm mb-6">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                <h3 className=" text-lg sm:text-xl font-semibold text-gray-800 mb-4">
                   Multiples - Due Dates by Average Gestation
                 </h3>
                 <table className="milestone-table">
