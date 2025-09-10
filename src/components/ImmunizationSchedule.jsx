@@ -90,7 +90,7 @@ export default function ImmunizationScheduler() {
               id="dob"
               value={dob}
               onChange={(e) => setDob(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#F89D8A]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 hover:border-gray-400 focus:ring-[#F89D8A] focus:border-transparent"
               required
             />
           </div>
@@ -106,7 +106,7 @@ export default function ImmunizationScheduler() {
               id="country"
               value={country}
               onChange={(e) => setCountry(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#F89D8A]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 hover:border-gray-400 focus:ring-[#F89D8A] focus:border-transparent"
               required
             >
               <option value="AUSTRALIA">AUSTRALIA</option>
@@ -136,7 +136,7 @@ export default function ImmunizationScheduler() {
               value={childName}
               onChange={(e) => setChildName(e.target.value)}
               placeholder="Enter child's name"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-[#F89D8A]"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 hover:border-gray-400 focus:ring-[#F89D8A] focus:border-transparent"
             />
           </div>
         </div>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import headData from "../assets/navData.js";
 import { usePathname } from "next/navigation";
+import menuItems from "../assets/navData.js";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -13,6 +14,21 @@ export default function Header() {
 
   const isActive = (href) =>
     href === "/" ? pathname === href : pathname.startsWith(href);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [openSubmenu, setOpenSubmenu] = useState(null);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const toggleSubmenu = (index) => {
+    if (openSubmenu === index) {
+      setOpenSubmenu(null);
+    } else {
+      setOpenSubmenu(index);
+    }
+  };
 
   return (
     <>
@@ -148,7 +164,7 @@ export default function Header() {
       </div>
 
       {/* Mobile menu (conditionally rendered) */}
-      {menuOpen && (
+      {/* {menuOpen && (
         <div className="fixed inset-0 bg-[url('/background-image-contact-us.png')] bg-no-repeat bg-cover opacity-100 h-[100vh] w-[100vw] z-10 sm:hidden">
           <nav className="py-[20px] px-[24px]">
             <div className="flex justify-end border-b-1 border-[#e6846a]">
@@ -182,7 +198,99 @@ export default function Header() {
             </ul>
           </nav>
         </div>
-      )}
+      )} */}
+
+      <>
+        {/* Mobile menu button */}
+        <button
+          onClick={toggleSidebar}
+          className="fixed top-4 left-4 z-50 md:hidden p-2 rounded-md bg-blue-600 text-white"
+        >
+          {isOpen ? "✕" : "☰"}
+        </button>
+
+        {/* Overlay */}
+        {isOpen && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+            onClick={() => setIsOpen(false)}
+          ></div>
+        )}
+
+        {/* Sidebar */}
+        <div
+          className={`fixed top-0 left-0 h-full w-64 bg-gray-800 sm:hidden text-white transform transition-transform duration-300 ease-in-out z-40 ${
+            isOpen ? "translate-x-0" : "-translate-x-full"
+          } md:translate-x-0 md:static md:z-auto`}
+        >
+
+          <nav className="p-4">
+            <ul className="space-y-2">
+              {menuItems.map((item, index) => (
+                <li key={index}>
+                  {item.submenu ? (
+                    <div>
+                      <button
+                        onClick={() => toggleSubmenu(index)}
+                        className="flex items-center justify-between w-full p-2 rounded hover:bg-gray-700 transition-colors"
+                      >
+                        <div className="flex items-center">
+                          <span className="mr-3">{item.icon}</span>
+                          <span>{item.title}</span>
+                        </div>
+                        <span
+                          className={`transform transition-transform ${
+                            openSubmenu === index ? "rotate-90" : ""
+                          }`}
+                        >
+                          ▶
+                        </span>
+                      </button>
+
+                      {openSubmenu === index && (
+                        <ul className="ml-6 mt-1 space-y-1 overflow-hidden">
+                          {item.submenu.map((subItem, subIndex) => (
+                            <li key={subIndex}>
+                              <Link
+                                href={subItem.link}
+                                className="block p-2 rounded hover:bg-gray-700 transition-colors"
+                                onClick={() => setIsOpen(false)}
+                              >
+                                {subItem.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.link}
+                      className="flex items-center p-2 rounded hover:bg-gray-700 transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <span className="mr-3">{item.icon}</span>
+                      <span>{item.title}</span>
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="absolute bottom-0 w-full p-4 border-t border-gray-700">
+            <div className="flex items-center">
+              <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-2">
+                <span>U</span>
+              </div>
+              <div>
+                <p className="text-sm font-medium">User Name</p>
+                <p className="text-xs text-gray-400">Admin</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
     </>
   );
 }

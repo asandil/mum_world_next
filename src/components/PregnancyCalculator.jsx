@@ -316,7 +316,7 @@ export default function PregnancyCalculator() {
                         type="date"
                         value={lastPeriodDate}
                         onChange={(e) => setLastPeriodDate(e.target.value)}
-                        className="flex-1 w-full h-[48px] p-2 border border-gray-300 rounded-lg  focus:border-transparent text-lg"
+                        className="flex-1 w-full h-[48px] p-2 border border-gray-300 rounded-lg   text-lg focus:outline-none focus:ring-1 hover:border-gray-400 focus:ring-[#F89D8A] focus:border-transparent"
                       />
                     </div>
                   </div>
@@ -331,7 +331,7 @@ export default function PregnancyCalculator() {
                         onChange={(e) =>
                           setCycleLength(parseInt(e.target.value))
                         }
-                        className="border w-full border-gray-300 rounded-md h-[48px] p-2 text-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                        className="border w-full border-gray-300 rounded-md h-[48px] p-2 text-lg focus:outline-none focus:ring-1 hover:border-gray-400 focus:ring-[#F89D8A] focus:border-transparent"
                       >
                         {Array.from({ length: 15 }, (_, i) => i + 21).map(
                           (day) => (
@@ -370,7 +370,7 @@ export default function PregnancyCalculator() {
                         type="date"
                         value={conceptionDate}
                         onChange={(e) => setConceptionDate(e.target.value)}
-                        className="flex-1 w-full h-[48px] p-2 border border-gray-300 rounded-lg  focus:border-transparent text-lg"
+                        className="flex-1 w-full h-[48px] p-2 border border-gray-300 rounded-lg  focus:outline-none focus:ring-1 hover:border-gray-400 focus:ring-[#F89D8A] focus:border-transparent text-lg"
                       />
                     </div>
                   </div>
@@ -385,7 +385,7 @@ export default function PregnancyCalculator() {
                         onChange={(e) =>
                           setCycleLength(parseInt(e.target.value))
                         }
-                        className="border w-full border-gray-300 rounded-md h-[48px] p-2 text-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                        className="border w-full border-gray-300 rounded-md h-[48px] p-2 text-lg focus:outline-none focus:ring-1 hover:border-gray-400 focus:ring-[#F89D8A] focus:border-transparent"
                       >
                         {Array.from({ length: 15 }, (_, i) => i + 21).map(
                           (day) => (
@@ -428,7 +428,7 @@ export default function PregnancyCalculator() {
                         onChange={(e) => setUltrasoundWeeks(e.target.value)}
                         min="0"
                         max="40"
-                        className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+                        className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 hover:border-gray-400 focus:ring-[#F89D8A] focus:border-transparent"
                         placeholder="0"
                       />
                     </div>
@@ -440,7 +440,7 @@ export default function PregnancyCalculator() {
                         onChange={(e) => setUltrasoundDays(e.target.value)}
                         min="0"
                         max="6"
-                        className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500"
+                        className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 hover:border-gray-400 focus:ring-[#F89D8A] focus:border-transparent"
                         placeholder="0"
                       />
                     </div>
@@ -455,7 +455,7 @@ export default function PregnancyCalculator() {
                     <select
                       value={cycleLength}
                       onChange={(e) => setCycleLength(parseInt(e.target.value))}
-                      className="border w-full border-gray-300 rounded-md h-[48px] p-2 text-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                      className="border w-full border-gray-300 rounded-md h-[48px] p-2 text-lg focus:outline-none focus:ring-1 hover:border-gray-400 focus:ring-[#F89D8A] focus:border-transparent"
                     >
                       {Array.from({ length: 15 }, (_, i) => i + 21).map(
                         (day) => (

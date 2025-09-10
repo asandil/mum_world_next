@@ -149,7 +149,7 @@ export default function PregnancyWeightGainCalculator() {
               value={preWeight}
               onChange={(e) => setPreWeight(e.target.value)}
               placeholder={unitSystem === "us" ? "lbs" : "kg"}
-              className="w-full border rounded p-3 h-[48px] "
+              className="w-full rounded p-3 h-[48px] focus:outline-none focus:ring-1 hover:border-gray-400 focus:ring-[#F89D8A] focus:border-transparent  border border-gray-300"
             />
           </div>
 
@@ -160,7 +160,7 @@ export default function PregnancyWeightGainCalculator() {
             <select
               value={week}
               onChange={(e) => setWeek(e.target.value)}
-              className="w-full border rounded p-3 h-[48px]"
+              className="w-full border rounded p-3 h-[48px] focus:outline-none focus:ring-1 hover:border-gray-400 focus:ring-[#F89D8A] focus:border-transparent border-gray-300"
             >
               <option value="">Select Week</option>
               {Array.from({ length: 40 }, (_, i) => i + 1).map((w) => (
@@ -183,7 +183,7 @@ export default function PregnancyWeightGainCalculator() {
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
                 placeholder={unitSystem === "us" ? "inches" : "cm"}
-                className="w-full border rounded px-3 py-2"
+                className="w-full focus:outline-none focus:ring-1 hover:border-gray-400 focus:ring-[#F89D8A] focus:border-transparent  border border-gray-300 rounded px-3 py-2"
               />
             </div>
 
@@ -196,7 +196,7 @@ export default function PregnancyWeightGainCalculator() {
                 value={currentWeight}
                 onChange={(e) => setCurrentWeight(e.target.value)}
                 placeholder={unitSystem === "us" ? "lbs" : "kg"}
-                className="w-full border rounded px-3 py-2"
+                className="w-full focus:outline-none focus:ring-1 hover:border-gray-400 focus:ring-[#F89D8A] focus:border-transparent  border border-gray-300 rounded px-3 py-2"
               />
             </div>
             <div className="w-full">
