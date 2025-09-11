@@ -55,7 +55,7 @@ export default function WeightChart({ chartData, currentWeek, currentWeight }) {
 
               {/* Custom SVG Chart */}
               <div className="custom-chart">
-                <svg width="100%" height="300" viewBox="0 0 600 300">
+                <svg width="100%" height="100%" viewBox="0 0 600 300">
                   {/* Y-axis labels */}
                   <text x="30" y="50" className="axis-label">
                     {Math.max(...chartData.map((d) => d.max)) + 5}
@@ -207,6 +207,8 @@ export default function WeightChart({ chartData, currentWeek, currentWeight }) {
               </div>
             </div>
 
+            <div className={`status ${status.status}`}>{status.text}</div>
+
             <div className="notes">
               <h3>Points To Be Noted</h3>
               <ul>
@@ -230,7 +232,7 @@ export default function WeightChart({ chartData, currentWeek, currentWeight }) {
             </div>
           </div>
 
-          <div className={`status ${status.status}`}>{status.text}</div>
+          
         </div>
       </div>
 
@@ -270,7 +272,7 @@ export default function WeightChart({ chartData, currentWeek, currentWeight }) {
         .chart-container {
           background: #fde9e6;
           border-radius: 10px;
-          padding: 20px;
+          
           margin-bottom: 25px;
           border: 1px solid #e1e8ed;
         }
@@ -280,21 +282,22 @@ export default function WeightChart({ chartData, currentWeek, currentWeight }) {
           margin-bottom: 15px;
           font-size: 18px;
           color: #2c3e50;
+          padding: 20px;
           font-weight: 600;
         }
 
         .custom-chart {
-          width: 100%;
+          width: full;
           overflow-x: auto;
         }
 
         .axis-label {
-          font-size: 12px;
+          font-size: 18px;
           fill: #666;
         }
 
         .weight-label {
-          font-size: 12px;
+          font-size: 18px;
           fill: red;
           font-weight: bold;
         }
@@ -304,6 +307,7 @@ export default function WeightChart({ chartData, currentWeek, currentWeight }) {
           border-left: 4px solid #ffcc00;
           padding: 20px;
           border-radius: 8px;
+          margin-top: 20px;
         }
 
         .notes h3 {
