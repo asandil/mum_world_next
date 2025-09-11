@@ -204,7 +204,7 @@ export default function Header() {
         {/* Mobile menu button */}
         <button
           onClick={toggleSidebar}
-          className="fixed top-4 left-4 z-50 md:hidden p-2 rounded-md bg-blue-600 text-white"
+          className="absolute top-4 left-4 z-50 md:hidden p-2 rounded-md bg-[#e6846a] text-white"
         >
           {isOpen ? "✕" : "☰"}
         </button>
@@ -212,34 +212,33 @@ export default function Header() {
         {/* Overlay */}
         {isOpen && (
           <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
+            className="absolute inset-0 bg-opacity-50 z-30 md:hidden"
             onClick={() => setIsOpen(false)}
           ></div>
         )}
 
         {/* Sidebar */}
         <div
-          className={`fixed top-0 left-0 h-full w-64 bg-gray-800 sm:hidden text-white transform transition-transform duration-300 ease-in-out z-40 ${
+          className={`fixed top-0 left-0 bg-[url('/background-image-contact-us.png')] bg-no-repeat bg-cover opacity-100 h-[100vh]   md:hidden w-full text-white transform transition-transform duration-300 ease-in-out z-40 ${
             isOpen ? "translate-x-0" : "-translate-x-full"
           } md:translate-x-0 md:static md:z-auto`}
         >
-
-          <nav className="p-4">
-            <ul className="space-y-2">
+          <nav className="mt-14 ml-2 text-[#F69E87]">
+            <ul className="space-y-2 text-[22px]">
               {menuItems.map((item, index) => (
                 <li key={index}>
                   {item.submenu ? (
                     <div>
                       <button
                         onClick={() => toggleSubmenu(index)}
-                        className="flex items-center justify-between w-full p-2 rounded hover:bg-gray-700 transition-colors"
+                        className="flex items-center  w-full p-2 rounded hover:bg-gray-700 transition-colors relative"
                       >
                         <div className="flex items-center">
                           <span className="mr-3">{item.icon}</span>
                           <span>{item.title}</span>
                         </div>
                         <span
-                          className={`transform transition-transform ${
+                          className={`transform transition-transform absolute right-[25px] ${
                             openSubmenu === index ? "rotate-90" : ""
                           }`}
                         >
@@ -248,15 +247,16 @@ export default function Header() {
                       </button>
 
                       {openSubmenu === index && (
-                        <ul className="ml-6 mt-1 space-y-1 overflow-hidden">
+                        <ul className="ml-14 mt-0 space-y-0 overflow-y-auto text-[18px]">
                           {item.submenu.map((subItem, subIndex) => (
                             <li key={subIndex}>
                               <Link
                                 href={subItem.link}
-                                className="block p-2 rounded hover:bg-gray-700 transition-colors"
+                                className=" p-1 rounded hover:bg-gray-700 transition-colors flex items-center"
                                 onClick={() => setIsOpen(false)}
                               >
-                                {subItem.title}
+                                <span className="mr-3">{subItem.icon}</span>
+                                <span>{subItem.title}</span>
                               </Link>
                             </li>
                           ))}
@@ -278,7 +278,7 @@ export default function Header() {
             </ul>
           </nav>
 
-          <div className="absolute bottom-0 w-full p-4 border-t border-gray-700">
+          {/* <div className="absolute bottom-0 w-full p-4 border-t border-gray-700">
             <div className="flex items-center">
               <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-2">
                 <span>U</span>
@@ -288,7 +288,7 @@ export default function Header() {
                 <p className="text-xs text-gray-400">Admin</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </>
     </>

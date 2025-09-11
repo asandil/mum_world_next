@@ -1,83 +1,54 @@
-// const headData = [
-//     {
-//         name: "Home",
-//         to: "/"
-//     },
-//     {
-//         name: "Blog",
-//         to: "/blog"
-//     },
-//     {
-//         name: "The poetry",
-//         to: "/the-poetry"
-//     },
-//     {
-//         name: "Faqs",
-//         to: "/faqs"
-//     },
-//     {
-//         name: "Baby Vaccination Chart",
-//         to: "/baby-vaccination-chart"
-//     },
-//     {
-//         name: "Pregnancy Due Date Calculator",
-//         to: "/pregnancy-due-date-calculator"
-//     },
-//         {
-//         name: "Pregnancy Weight Gain Calculator",
-//         to: "/pregnancy-weight-gain-calculator"
-//     }
-// ]
+import { BsFillQuestionSquareFill } from "react-icons/bs";
+import { IoHome } from "react-icons/io5";
+import { FaBlog, FaTools } from "react-icons/fa";
 
-// export default headData;
+import { IoBookSharp } from "react-icons/io5";
+import { MdOutlineVaccines } from "react-icons/md";
+import { TbCalendarDue } from "react-icons/tb";
+import { FaWeightScale } from "react-icons/fa6";
 
-  const menuItems = [
-    {
-      title: 'Dashboard',
-      icon: '📊',
-      link: '/dashboard',
-    },
-    {
-      title: 'Products',
-      icon: '🛍️',
-      submenu: [
-        { title: 'All Products', link: '/products' },
-        { title: 'Categories', link: '/categories' },
-        { title: 'Inventory', link: '/inventory' },
-      ],
-    },
-    {
-      title: 'Orders',
-      icon: '📦',
-      submenu: [
-        { title: 'All Orders', link: '/orders' },
-        { title: 'Pending', link: '/orders/pending' },
-        { title: 'Completed', link: '/orders/completed' },
-      ],
-    },
-    {
-      title: 'Customers',
-      icon: '👥',
-      link: '/customers',
-    },
-    {
-      title: 'Analytics',
-      icon: '📈',
-      submenu: [
-        { title: 'Sales', link: '/analytics/sales' },
-        { title: 'Traffic', link: '/analytics/traffic' },
-        { title: 'Reports', link: '/analytics/reports' },
-      ],
-    },
-    {
-      title: 'Settings',
-      icon: '⚙️',
-      submenu: [
-        { title: 'Account', link: '/settings/account' },
-        { title: 'Preferences', link: '/settings/preferences' },
-        { title: 'Billing', link: '/settings/billing' },
-      ],
-    },
-  ];
+const menuItems = [
+  {
+    title: "Home",
+    icon: <IoHome size={32} />,
+    link: "/",
+  },
+  {
+    title: "Blog",
+    icon: <FaBlog size={32} />,
+    link: "/blog",
+  },
+  {
+    title: "The poetry",
+    icon: <IoBookSharp size={32} />,
+    link: "/the-poetry",
+  },
+  {
+    title: "Faqs",
+    icon: <BsFillQuestionSquareFill size={32} />,
+    link: "/faqs",
+  },
+  {
+    title: "Tools",
+    icon: <FaTools size={32} />,
+    submenu: [
+      {
+        title: "Baby Vaccination Chart",
+        link: "/baby-vaccination-chart",
+        icon: <MdOutlineVaccines size={24} />,
+      },
+      {
+        title: "Pregnancy Due Date Calculator",
+        link: "/pregnancy-due-date-calculator",
+        icon: <TbCalendarDue size={24} />,
+      },
+      {
+        title: "Pregnancy Weight Gain Calculator",
+        link: "/pregnancy-weight-gain-calculator",
+        icon: <FaWeightScale size={24} />,
+      },
+    ],
+  },
+];
 
-  export default menuItems;
+export default menuItems;
