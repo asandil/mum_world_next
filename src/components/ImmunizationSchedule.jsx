@@ -113,13 +113,13 @@ export default function ImmunizationScheduler() {
               <option value="CANADA">CANADA</option>
               <option value="INDIA">INDIA</option>
               <option value="UK">UK</option>
-              <option value="USA">KUWAIT</option>
-              <option value="USA">MALAYSIA</option>
-              <option value="USA">NIGERIA</option>
-              <option value="USA">QATAR</option>
-              <option value="USA">SOUTH AFRICA</option>
+              <option value="KUWAIT">KUWAIT</option>
+              <option value="MALAYSIA">MALAYSIA</option>
+              <option value="NIGERIA">NIGERIA</option>
+              <option value="QATAR">QATAR</option>
+              <option value="SOUTH AFRICA">SOUTH AFRICA</option>
               <option value="USA">USA</option>
-              <option value="UK">OTHER</option>
+              <option value="OTHER">OTHER</option>
             </select>
           </div>
 
