@@ -5,8 +5,8 @@ import { useMemo } from "react";
 export default function WeightChart({ chartData, currentWeek, currentWeight }) {
   // Calculate positions for the custom chart
   const getYPosition = (value) => {
-    const minWeight = Math.min(...chartData.map(d => d.min)) - 5;
-    const maxWeight = Math.max(...chartData.map(d => d.max)) + 5;
+    const minWeight = Math.min(...chartData.map((d) => d.min)) - 5;
+    const maxWeight = Math.max(...chartData.map((d) => d.max)) + 5;
     return 250 - ((value - minWeight) / (maxWeight - minWeight)) * 200;
   };
 
@@ -15,23 +15,23 @@ export default function WeightChart({ chartData, currentWeek, currentWeight }) {
   };
 
   const status = useMemo(() => {
-    const weekData = chartData.find(d => d.week === currentWeek);
+    const weekData = chartData.find((d) => d.week === currentWeek);
     if (!weekData) return { status: "normal", text: "Data not available" };
-    
+
     if (currentWeight < weekData.min) {
-      return { 
-        status: "underweight", 
-        text: `Your weight is below the recommended range for week ${currentWeek}.` 
+      return {
+        status: "underweight",
+        text: `Your weight is below the recommended range for week ${currentWeek}.`,
       };
     } else if (currentWeight > weekData.max) {
-      return { 
-        status: "overweight", 
-        text: `Your weight is above the recommended range for week ${currentWeek}.` 
+      return {
+        status: "overweight",
+        text: `Your weight is above the recommended range for week ${currentWeek}.`,
       };
     } else {
-      return { 
-        status: "normal", 
-        text: `Your weight is within the normal range for week ${currentWeek}.` 
+      return {
+        status: "normal",
+        text: `Your weight is within the normal range for week ${currentWeek}.`,
       };
     }
   }, [chartData, currentWeek, currentWeight]);
@@ -41,147 +41,193 @@ export default function WeightChart({ chartData, currentWeek, currentWeight }) {
       <div className="container">
         <header>
           <h1>Pregnancy Weight Tracker</h1>
-          <p className="subtitle">Monitor your weight gain throughout pregnancy</p>
+          <p className="subtitle">
+            Monitor your weight gain throughout pregnancy
+          </p>
         </header>
 
         <div className="content">
-          <div className="content_section" >
-          <div className="chart-container">
-            <div className="chart-title">Weight Progression During Pregnancy</div>
+          <div className="content_section">
+            <div className="chart-container">
+              <div className="chart-title">
+                Weight Progression During Pregnancy
+              </div>
 
-            {/* Custom SVG Chart */}
-            <div className="custom-chart">
-              <svg width="100%" height="300" viewBox="0 0 600 300">
-                {/* Y-axis labels */}
-                <text x="30" y="50" className="axis-label">
-                  {Math.max(...chartData.map(d => d.max)) + 5}
-                </text>
-                <text x="30" y="150" className="axis-label">
-                  {(Math.max(...chartData.map(d => d.max)) + Math.min(...chartData.map(d => d.min))) / 2}
-                </text>
-                <text x="30" y="250" className="axis-label">
-                  {Math.min(...chartData.map(d => d.min)) - 5}
-                </text>
+              {/* Custom SVG Chart */}
+              <div className="custom-chart">
+                <svg width="100%" height="300" viewBox="0 0 600 300">
+                  {/* Y-axis labels */}
+                  <text x="30" y="50" className="axis-label">
+                    {Math.max(...chartData.map((d) => d.max)) + 5}
+                  </text>
+                  <text x="30" y="150" className="axis-label">
+                    {(Math.max(...chartData.map((d) => d.max)) +
+                      Math.min(...chartData.map((d) => d.min))) /
+                      2}
+                  </text>
+                  <text x="30" y="250" className="axis-label">
+                    {Math.min(...chartData.map((d) => d.min)) - 5}
+                  </text>
 
-                {/* X-axis labels */}
-                <text x="100" y="280" className="axis-label">10</text>
-                <text x="300" y="280" className="axis-label">20</text>
-                <text x="500" y="280" className="axis-label">30</text>
+                  {/* X-axis labels */}
+                  <text x="100" y="280" className="axis-label">
+                    10
+                  </text>
+                  <text x="300" y="280" className="axis-label">
+                    20
+                  </text>
+                  <text x="500" y="280" className="axis-label">
+                    30
+                  </text>
 
-                {/* Y-axis line */}
-                <line x1="50" y1="50" x2="50" y2="250" stroke="#ccc" strokeWidth="1" />
+                  {/* Y-axis line */}
+                  <line
+                    x1="50"
+                    y1="50"
+                    x2="50"
+                    y2="250"
+                    stroke="#ccc"
+                    strokeWidth="1"
+                  />
 
-                {/* X-axis line */}
-                <line x1="50" y1="250" x2="550" y2="250" stroke="#ccc" strokeWidth="1" />
+                  {/* X-axis line */}
+                  <line
+                    x1="50"
+                    y1="250"
+                    x2="550"
+                    y2="250"
+                    stroke="#ccc"
+                    strokeWidth="1"
+                  />
 
-                {/* Ideal range area */}
-                <path
-                  d={`M${getXPosition(1)},${getYPosition(chartData[0]?.max)} ${
-                    chartData.map(data => 
-                      `L${getXPosition(data.week)},${getYPosition(data.max)}`
-                    ).join(" ")
-                  } L${getXPosition(40)},${getYPosition(chartData[chartData.length-1]?.min)} ${
-                    chartData.slice().reverse().map(data => 
-                      `L${getXPosition(data.week)},${getYPosition(data.min)}`
-                    ).join(" ")
-                  } Z`}
-                  fill="rgba(144, 238, 144, 0.3)"
-                  stroke="transparent"
-                />
+                  {/* Ideal range area */}
+                  <path
+                    d={`M${getXPosition(1)},${getYPosition(
+                      chartData[0]?.max
+                    )} ${chartData
+                      .map(
+                        (data) =>
+                          `L${getXPosition(data.week)},${getYPosition(
+                            data.max
+                          )}`
+                      )
+                      .join(" ")} L${getXPosition(40)},${getYPosition(
+                      chartData[chartData.length - 1]?.min
+                    )} ${chartData
+                      .slice()
+                      .reverse()
+                      .map(
+                        (data) =>
+                          `L${getXPosition(data.week)},${getYPosition(
+                            data.min
+                          )}`
+                      )
+                      .join(" ")} Z`}
+                    fill="rgba(144, 238, 144, 0.3)"
+                    stroke="transparent"
+                  />
 
-                {/* Min recommended line */}
-                <path
-                  d={`M${getXPosition(1)},${getYPosition(chartData[0]?.min)} ${
-                    chartData.map(data => 
-                      `L${getXPosition(data.week)},${getYPosition(data.min)}`
-                    ).join(" ")
-                  }`}
-                  fill="none"
-                  stroke="green"
-                  strokeWidth="2"
-                  strokeDasharray="4 4"
-                />
+                  {/* Min recommended line */}
+                  <path
+                    d={`M${getXPosition(1)},${getYPosition(
+                      chartData[0]?.min
+                    )} ${chartData
+                      .map(
+                        (data) =>
+                          `L${getXPosition(data.week)},${getYPosition(
+                            data.min
+                          )}`
+                      )
+                      .join(" ")}`}
+                    fill="none"
+                    stroke="green"
+                    strokeWidth="2"
+                    strokeDasharray="4 4"
+                  />
 
-                {/* Max recommended line */}
-                <path
-                  d={`M${getXPosition(1)},${getYPosition(chartData[0]?.max)} ${
-                    chartData.map(data => 
-                      `L${getXPosition(data.week)},${getYPosition(data.max)}`
-                    ).join(" ")
-                  }`}
-                  fill="none"
-                  stroke="green"
-                  strokeWidth="2"
-                  strokeDasharray="4 4"
-                />
+                  {/* Max recommended line */}
+                  <path
+                    d={`M${getXPosition(1)},${getYPosition(
+                      chartData[0]?.max
+                    )} ${chartData
+                      .map(
+                        (data) =>
+                          `L${getXPosition(data.week)},${getYPosition(
+                            data.max
+                          )}`
+                      )
+                      .join(" ")}`}
+                    fill="none"
+                    stroke="green"
+                    strokeWidth="2"
+                    strokeDasharray="4 4"
+                  />
 
-                {/* Current weight point */}
-                <circle
-                  cx={getXPosition(currentWeek)}
-                  cy={getYPosition(currentWeight)}
-                  r="6"
-                  fill="red"
-                  stroke="white"
-                  strokeWidth="2"
-                />
+                  {/* Current weight point */}
+                  <circle
+                    cx={getXPosition(currentWeek)}
+                    cy={getYPosition(currentWeight)}
+                    r="6"
+                    fill="red"
+                    stroke="white"
+                    strokeWidth="2"
+                  />
 
-                {/* Week indicator line */}
-                <line
-                  x1={getXPosition(currentWeek)}
-                  y1="50"
-                  x2={getXPosition(currentWeek)}
-                  y2="250"
-                  stroke="red"
-                  strokeWidth="1"
-                  strokeDasharray="4 2"
-                />
+                  {/* Week indicator line */}
+                  <line
+                    x1={getXPosition(currentWeek)}
+                    y1="50"
+                    x2={getXPosition(currentWeek)}
+                    y2="250"
+                    stroke="red"
+                    strokeWidth="1"
+                    strokeDasharray="4 2"
+                  />
 
-                {/* Weight indicator line */}
-                <line
-                  x1="50"
-                  y1={getYPosition(currentWeight)}
-                  x2={getXPosition(currentWeek)}
-                  y2={getYPosition(currentWeight)}
-                  stroke="red"
-                  strokeWidth="1"
-                  strokeDasharray="4 2"
-                />
+                  {/* Weight indicator line */}
+                  <line
+                    x1="50"
+                    y1={getYPosition(currentWeight)}
+                    x2={getXPosition(currentWeek)}
+                    y2={getYPosition(currentWeight)}
+                    stroke="red"
+                    strokeWidth="1"
+                    strokeDasharray="4 2"
+                  />
 
-                {/* Current weight label */}
-                <text
-                  x={getXPosition(currentWeek) + 10}
-                  y={getYPosition(currentWeight) - 10}
-                  className="weight-label"
-                >
-                  {currentWeight} kg
-                </text>
-              </svg>
+                  {/* Current weight label */}
+                  <text
+                    x={getXPosition(currentWeek) + 10}
+                    y={getYPosition(currentWeight) - 10}
+                    className="weight-label"
+                  >
+                    {currentWeight} kg
+                  </text>
+                </svg>
+              </div>
             </div>
-          </div>
 
-          
-
-          <div className="notes">
-            <h3>Points To Be Noted</h3>
-            <ul>
-              <li>
-                The red dot represents your weight gain and the green area
-                represents the ideal range of weight at your pregnancy week.
-              </li>
-              <li>
-                <strong>Overweight</strong> - If your red dot is above the
-                green area.
-              </li>
-              <li>
-                <strong>Underweight</strong> - If your red dot is below the
-                green area.
-              </li>
-              <li>
-                <strong>Normal Weight</strong> - If your red dot is within
-                the green area.
-              </li>
-            </ul>
-          </div>
+            <div className="notes">
+              <h3>Points To Be Noted</h3>
+              <ul>
+                <li>
+                  The red dot represents your weight gain and the green area
+                  represents the ideal range of weight at your pregnancy week.
+                </li>
+                <li>
+                  <strong>Overweight</strong> - If your red dot is above the
+                  green area.
+                </li>
+                <li>
+                  <strong>Underweight</strong> - If your red dot is below the
+                  green area.
+                </li>
+                <li>
+                  <strong>Normal Weight</strong> - If your red dot is within the
+                  green area.
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div className={`status ${status.status}`}>{status.text}</div>
@@ -200,7 +246,7 @@ export default function WeightChart({ chartData, currentWeek, currentWeight }) {
         }
 
         header {
-          background: linear-gradient(90deg, #4a90e2 0%, #5b6de0 100%);
+          background: #f89d88;
           color: white;
           padding: 20px;
           text-align: center;
@@ -221,15 +267,8 @@ export default function WeightChart({ chartData, currentWeek, currentWeight }) {
           padding: 25px;
         }
 
-        .content_section{
-          display: flex;
-          height: 100%
-          justify-content: space-between;
-          gap:20px
-        }
-
         .chart-container {
-          background: #f9fbfd;
+          background: #fde9e6;
           border-radius: 10px;
           padding: 20px;
           margin-bottom: 25px;
