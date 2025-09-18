@@ -31,9 +31,13 @@ export default function RootLayout({ children }) {
         <GoogleAnalytics />
         <GoogleAdSense />
         <Header />
-        <AdUnit slot="5878778835" />
+        <div className="border border-red-500 mx-[400px] " >
+          <AdUnit slot="5878778835" />
+        </div>
         {children}
-        <AdUnit slot="5878778835" />
+       <div className="border border-red-500 mx-[400px] " >
+          <AdUnit slot="5878778835" />
+        </div>
         <Footer />
       </body>
     </html>
