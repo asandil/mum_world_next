@@ -135,6 +135,18 @@ export default function Header() {
             </li>
             <li className="text-[14px]">
               <Link
+                href="/products"
+                className={`head ${
+                  isActive("/products")
+                    ? "text-[#e6846a] font-bold"
+                    : "hover:text-[#e6846a]"
+                }`}
+              >
+                Products
+              </Link>
+            </li>
+            <li className="text-[14px]">
+              <Link
                 href="/faqs"
                 className={`head ${
                   isActive("/faqs")
