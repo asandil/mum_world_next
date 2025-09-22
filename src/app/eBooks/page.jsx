@@ -1,15 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "@/components/ProductCard";
 import CartSidebar from "@/components/CartSidebar";
 import ProductModal from "@/components/ProductModal";
 import ProductHeader from "@/components/ProductHeader";
+import { useRouter } from "next/navigation";
 
 // Sample product data
 const productsData = [
   {
     id: 1,
     title: "Trimester By Trimester Pregnancy Guide – Indian Moms Edition",
+    pdfUrl: "/pdfs/indian-pregnancy-guide.pdf",
     image:
       "https://res.cloudinary.com/dc0wr8hev/image/upload/v1757874092/Trimester_by_Trimester_Pregnancy_Guide-Indian_Mom_Edition-_image_lvc6lm.png",
     description:
@@ -57,6 +59,7 @@ const productsData = [
   {
     id: 2,
     title: "Trimester By Trimester Pregnancy Guide – Overseas Moms Edition",
+    pdfUrl: "/pdfs/overseas-pregnancy-guide.pdf",
     image:
       "https://res.cloudinary.com/dc0wr8hev/image/upload/v1757874091/Premium_Breastfeeding_Guide-_Image_oh5i6v.png",
     description:
@@ -102,6 +105,8 @@ const productsData = [
   {
     id: 3,
     title: "Hospital Bag Checklist",
+    pdfUrl:
+      "/pdfs/trimester-by-trimester-pregnancy-guide-overseas-moms-edition.pdf",
     image:
       "https://res.cloudinary.com/dc0wr8hev/image/upload/v1757874091/Trimester_by_Trimester_Pregnancy_Guide-Overseas_Moms_Edition-_image_vbkbps.jpg",
     description:
@@ -144,51 +149,52 @@ const productsData = [
       "Affordable and accessible",
     ],
   },
-  {
-    id: 4,
-    title: "Premium Breastfeeding Guide",
-    image:
-      "https://res.cloudinary.com/dc0wr8hev/image/upload/v1757874090/Hospital_bag_Checklist-_image_h0wh4o.png",
-    description:
-      "A comprehensive guide to help new mothers recover after childbirth, with special focus on Indian traditions and practices.",
-    price: {
-      current: 129,
-      regular: 199,
-      currency: "₹",
-    },
-    what_Inside: {
-      first_trimester: [
-        "Physical recovery timeline",
-        "Dealing with body changes",
-        "Postpartum nutrition",
-        "Rest and sleep guidance",
-      ],
-      second_trimester: [
-        "Emotional wellness",
-        "Bonding with your baby",
-        "Breastfeeding support",
-        "Exercises for recovery",
-      ],
-      third_trimester: [
-        "Returning to work",
-        "Balancing motherhood",
-        "Self-care strategies",
-        "Long-term health tips",
-      ],
-    },
-    bonus_Section: {
-      bonus_Section_1: "Postpartum Meal Plans",
-      bonus_Section_2: "Recovery Timeline",
-      bonus_Section_3: "Emotional Wellness Guide",
-    },
-    why_Buy_This_Guide: [
-      "Blends modern science with traditional Indian practices",
-      "Supports holistic recovery",
-      "Easy-to-follow meal plans",
-      "Emotional wellness focus",
-      "Affordable and accessible",
-    ],
-  },
+  // {
+  //   id: 4,
+  //   title: "Premium Breastfeeding Guide",
+  //   pdfUrl: "/pdfs/Hospital-bag-Checklist.pdf",
+  //   image:
+  //     "https://res.cloudinary.com/dc0wr8hev/image/upload/v1757874090/Hospital_bag_Checklist-_image_h0wh4o.png",
+  //   description:
+  //     "A comprehensive guide to help new mothers recover after childbirth, with special focus on Indian traditions and practices.",
+  //   price: {
+  //     current: 129,
+  //     regular: 199,
+  //     currency: "₹",
+  //   },
+  //   what_Inside: {
+  //     first_trimester: [
+  //       "Physical recovery timeline",
+  //       "Dealing with body changes",
+  //       "Postpartum nutrition",
+  //       "Rest and sleep guidance",
+  //     ],
+  //     second_trimester: [
+  //       "Emotional wellness",
+  //       "Bonding with your baby",
+  //       "Breastfeeding support",
+  //       "Exercises for recovery",
+  //     ],
+  //     third_trimester: [
+  //       "Returning to work",
+  //       "Balancing motherhood",
+  //       "Self-care strategies",
+  //       "Long-term health tips",
+  //     ],
+  //   },
+  //   bonus_Section: {
+  //     bonus_Section_1: "Postpartum Meal Plans",
+  //     bonus_Section_2: "Recovery Timeline",
+  //     bonus_Section_3: "Emotional Wellness Guide",
+  //   },
+  //   why_Buy_This_Guide: [
+  //     "Blends modern science with traditional Indian practices",
+  //     "Supports holistic recovery",
+  //     "Easy-to-follow meal plans",
+  //     "Emotional wellness focus",
+  //     "Affordable and accessible",
+  //   ],
+  // },
 ];
 
 const Products = () => {
@@ -196,9 +202,21 @@ const Products = () => {
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
 
+  const router = useRouter();
+
+  useEffect(() => {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+      setCart(JSON.parse(savedCart));
+    }
+  }, []);
+
   const addToCart = (product) => {
-    setCart([...cart, product]);
-    // alert(`${product.title} added to cart!`);
+    const updatedCart = [...cart, product];
+    setCart(updatedCart);
+
+    // Save cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   const viewDetails = (product) => {
@@ -210,8 +228,25 @@ const Products = () => {
   };
 
   const checkout = () => {
-    // alert("Proceeding to checkout!");
+    // Save current cart to orders
+    const savedOrders = localStorage.getItem("orders");
+    const previousOrders = savedOrders ? JSON.parse(savedOrders) : [];
+
+    // Ensure each product has correct PDF path
+    const ordersWithValidPdf = cart.map((product) => ({
+      ...product,
+      pdfUrl: product.pdfUrl || "/pdfs/default.pdf", // Fallback if missing
+    }));
+
+    const updatedOrders = [...previousOrders, ...ordersWithValidPdf];
+    localStorage.setItem("orders", JSON.stringify(updatedOrders));
+
+    // Clear cart
+    setCart([]);
+    localStorage.removeItem("cart");
+
     setShowCart(false);
+    router.push("/orders");
   };
 
   const toggleCart = () => {

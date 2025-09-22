@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const CartSidebar = ({ cart, isOpen, onClose, onCheckout }) => {
   if (!isOpen) return null;
 
@@ -37,6 +39,7 @@ const CartSidebar = ({ cart, isOpen, onClose, onCheckout }) => {
             {cart.map((item, index) => (
               <div key={index} className="border-b py-4">
                 <h3 className="font-medium">{item.title}</h3>
+                <Image src={item.image} alt={item.title} width={200} height={200} />
                 <p className="text-[#F69E87] font-bold">
                   {item.price.currency}
                   {item.price.current}
