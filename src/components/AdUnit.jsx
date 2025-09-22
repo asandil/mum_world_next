@@ -1,7 +1,7 @@
+// src/components/AdUnit.jsx
 "use client";
 
 import { useEffect } from "react";
-
 
 const AdUnit = ({ slot }) => {
   useEffect(() => {
@@ -13,16 +13,16 @@ const AdUnit = ({ slot }) => {
   }, []);
 
   return (
-    <ins
-      className="adsbygoogle"
-      style={{ display: "block" }}
-      // data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT}
-      data-ad-client="ca-pub-7788727976273942"
-      data-ad-slot={slot}
-      // data-ad-slot="5878778835"
-      data-ad-format="auto"
-      data-full-width-responsive="true"
-    />
+    <div className="ad-unit">
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-client="ca-pub-7788727976273942"
+        data-ad-slot={slot}
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      />
+    </div>
   );
 };
 

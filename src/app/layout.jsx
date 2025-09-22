@@ -1,3 +1,4 @@
+// src/app/layout.jsx
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -25,19 +26,34 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <GoogleAnalytics />
         <GoogleAdSense />
         <Header />
-        <div className="border border-red-500  mx-[10px] h-[100px] sm:h-[120px] md:h-[150px] lg:h-[180px] xl:h-[200px] flex items-center justify-center">
+        
+        {/* Top Ad Unit - Leaderboard */}
+        <div className="ad-container">
+          <div className="ad-label">Advertisement</div>
           <AdUnit slot="5878778835" />
         </div>
-        {children}
-        {/* <div className="border border-red-500 " >
-          <AdUnit slot="5878778835" />
-        </div> */}
+        
+        <div className="content-wrapper">
+          <main>
+            {children}
+          </main>
+          
+          {/* <aside className="ad-sidebar">
+            <div className="ad-label">Advertisement</div>
+            <AdUnit slot="YOUR_SIDEBAR_SLOT_ID" />
+          </aside> */}
+        </div>
+        
+        {/* Bottom Ad Unit - Banner */}
+        <div className="ad-container">
+          <div className="ad-label">Advertisement</div>
+          <AdUnit slot="YOUR_BOTTOM_SLOT_ID" />
+        </div>
+        
         <Footer />
       </body>
     </html>
