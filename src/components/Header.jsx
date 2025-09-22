@@ -133,7 +133,7 @@ export default function Header() {
                 </Link>
               </div>
             </li>
-            <li className="text-[14px]">
+            {/* <li className="text-[14px]">
               <Link
                 href="/products"
                 className={`head ${
@@ -144,7 +144,7 @@ export default function Header() {
               >
                 Products
               </Link>
-            </li>
+            </li> */}
             <li className="text-[14px]">
               <Link
                 href="/faqs"
