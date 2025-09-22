@@ -41,10 +41,10 @@ export default function Header() {
           >
             ≡
           </button>
-          <ul className="hidden uppercase md:flex md:justify-around tracking-[0.143em] font-[400]">
+          <ul className="hidden md:flex md:justify-around tracking-[0.143em] font-[400]">
             {/* Desktop links */}
 
-            <li className="text-[14px]">
+            <li className="text-[14px] uppercase">
               <Link
                 href="/"
                 className={`head ${
@@ -56,7 +56,7 @@ export default function Header() {
                 Home
               </Link>
             </li>
-            <li className="text-[14px]">
+            <li className="text-[14px] uppercase">
               <Link
                 href="/blog"
                 className={`head ${
@@ -68,7 +68,7 @@ export default function Header() {
                 Blog
               </Link>
             </li>
-            <li className="text-[14px]">
+            <li className="text-[14px] uppercase">
               <Link
                 href="/the-poetry"
                 className={`head ${
@@ -80,7 +80,7 @@ export default function Header() {
                 The poetry
               </Link>
             </li>
-            <li className="text-[14px] group relative cursor-pointer">
+            <li className="text-[14px] group relative cursor-pointer uppercase">
               <div
                 className={`child flex items-center gap-2 ${
                   isActive("/baby-vaccination-chart") ||
@@ -135,17 +135,17 @@ export default function Header() {
             </li>
             {/* <li className="text-[14px]">
               <Link
-                href="/products"
+                href="/eBooks"
                 className={`head ${
                   isActive("/products")
                     ? "text-[#e6846a] font-bold"
                     : "hover:text-[#e6846a]"
                 }`}
               >
-                Products
+                eBooks
               </Link>
             </li> */}
-            <li className="text-[14px]">
+            <li className="text-[14px] uppercase">
               <Link
                 href="/faqs"
                 className={`head ${

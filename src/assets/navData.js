@@ -6,6 +6,7 @@ import { IoBookSharp } from "react-icons/io5";
 import { MdOutlineVaccines } from "react-icons/md";
 import { TbCalendarDue } from "react-icons/tb";
 import { FaWeightScale } from "react-icons/fa6";
+import { FaBookOpenReader } from "react-icons/fa6";
 
 const menuItems = [
   {
@@ -28,6 +29,11 @@ const menuItems = [
     icon: <BsFillQuestionSquareFill size={32} />,
     link: "/faqs",
   },
+  // {
+  //   title: "eBooks",
+  //   icon: <FaBookOpenReader size={32} />,
+  //   link: "/eBooks",
+  // },
   {
     title: "Tools",
     icon: <FaTools size={32} />,
