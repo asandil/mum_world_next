@@ -28,7 +28,7 @@ const TestBlogPage = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [currentPage, setCurrentPage] = useState(1);
 
-  const blogsPerPage = 100;
+  const blogsPerPage = 10;
   const blogsData = Blogs;
 
   // 🔎 Filter blogs
