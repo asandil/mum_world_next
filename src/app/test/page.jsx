@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SignUp from "@/components/SignUp";
 import Pagination from "@/components/Pagination";
+import CategoryFilter from "@/components/CategoryFilter"; // ✅ import the new component
 
 const categories = [
   "All",
@@ -108,7 +109,9 @@ const TestBlogPage = () => {
                         {blog.title}
                       </Link>
                     </h4>
-                    <p className="mb-[16px] leading-[1.5]">{blog.description}</p>
+                    <p className="mb-[16px] leading-[1.5]">
+                      {blog.description}
+                    </p>
                     <span className="text-[#F69E87] cursor-pointer text-end block text-[16px] hover:text-[#e6846a]">
                       <Link
                         href={`/test/${blog.slug}`}
@@ -135,24 +138,16 @@ const TestBlogPage = () => {
 
         {/* Sidebar */}
         <div className="w-full lg:w-[27%] px-[20px]">
-          <div className="flex flex-wrap gap-3 mb-6">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => {
-                  setSelectedCategory(category);
-                  setCurrentPage(1);
-                }}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                  selectedCategory === category
-                    ? "bg-[#F69E87] text-white"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
+          {/* ✅ Use the reusable CategoryFilter component */}
+          <CategoryFilter
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onSelectCategory={(category) => {
+              setSelectedCategory(category);
+              setCurrentPage(1);
+            }}
+          />
+
           <SignUp />
         </div>
       </div>

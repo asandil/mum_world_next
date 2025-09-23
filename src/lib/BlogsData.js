@@ -4964,6 +4964,1321 @@ const Blogs = [
       },
     ],
   },
+
+  {
+    id: 70,
+    slug: "common-baby-illnesses-remedies-moms-survival-guide",
+    title: "Common Baby Illnesses & Remedies – Mom’s Survival Guide",
+    description:
+      "One of the hardest parts of being a new mom is seeing your baby unwell. Babies catch colds, fevers, and tummy bugs often — and while it can be scary, remember: most common baby illnesses are mild and part of building immunity. This guide will help you recognize common illnesses, try safe remedies, and know when to call the doctor.",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758649659/Common_Baby_Illnesses_Remedies_dqmr7i.jpg",
+      alt: "Pregnancy myths",
+    },
+    tags: ["Pregnancy", "Pregnancy Health"],
+    content: [
+      {
+        heading: "Common Baby Illnesses & Remedies",
+        items: "",
+      },
+      {
+        heading: "1. Cold & Cough",
+        items: [
+          "Runny nose",
+          "Sneezing",
+          "Mild fever",
+          "Nasal congestion",
+
+          "Babies have developing immune systems and are prone to viral infections.",
+
+          "Use saline nasal drops to clear congestion.",
+          "Offer steam inhalation (sit with baby in a steamy bathroom for a few minutes).",
+          "Keep the baby hydrated with milk feeds.",
+          "Elevate the baby's head slightly while sleeping to ease breathing.",
+          "Avoid cough syrups unless prescribed — most aren’t safe for babies.",
+        ],
+      },
+      {
+        heading: "2. Fever",
+        items: [
+          "Temperature above 100.4°F (38°C)",
+          "Irritability",
+          "Reduced feeding",
+          "Often due to viral or bacterial infections.",
+
+          "Dress the baby in light clothing, avoid overdressing.",
+          "Use a digital thermometer for accuracy.",
+          "Only give paracetamol (acetaminophen) if prescribed by your doctor.",
+          "Offer frequent feeds to prevent dehydration.",
+
+          "Baby is under 3 months old with fever.",
+          "Fever is above 102°F.",
+          "Baby is unusually drowsy or irritable.",
+        ],
+      },
+      {
+        heading: "3. Diarrhea",
+        items: [
+          "Loose, watery stools",
+          "Sometimes with vomiting",
+          "Commonly caused by viral infections, teething, or food intolerance.",
+
+          "Hydration is key. Continue breastfeeding or formula feeding.",
+          "For older babies, give ORS (oral rehydration solution) as advised by the doctor.",
+          "Zinc supplements may be prescribed to reduce severity.",
+
+          "Stools are bloody.",
+          "Baby shows signs of dehydration (no wet diapers in 6+ hours, dry lips, sunken eyes).",
+        ],
+      },
+      {
+        heading: "4. Diaper Rash",
+        items: [
+          "Red, irritated skin in diaper area",
+          "Prolonged wetness, friction, or yeast infection.",
+
+          "Change diapers frequently.",
+          "Apply a zinc-based rash cream.",
+          "Give diaper-free “air time” to let skin breathe.",
+          "Use fragrance-free wipes or plain water for cleaning.",
+        ],
+      },
+      {
+        heading: "5. Colic & Gas",
+        items: [
+          "Long crying spells",
+          "Clenched fists",
+          "Tummy tightness",
+
+          "Immature digestive system, swallowing air while feeding.",
+
+          "Burp your baby after every feed.",
+          "Do tummy massage or cycling leg movements.",
+          "Hold the baby upright for 20–30 mins after feeding.",
+          "Use anti-colic bottles if formula feeding.",
+          "Colic usually improves by 3–4 months.",
+        ],
+      },
+
+      {
+        heading: "When to See a Doctor Immediately",
+        items: [
+          "High fever in a newborn (<3 months old).",
+          "Breathing difficulty, wheezing, or rapid breathing.",
+          "Severe dehydration (no wet diaper for 6+ hours).",
+          "Seizures, unresponsiveness, or extreme drowsiness.",
+          "Rash accompanied by fever.",
+          "Persistent vomiting or diarrhea.",
+        ],
+      },
+      {
+        heading: "Mom’s Survival Tips",
+        items: [
+          "Don’t panic at every sneeze. Minor illnesses are part of growing up.",
+          "Keep a baby first aid kit with a thermometer, saline drops, ORS, and rash cream.",
+          "Trust your instincts — if something feels wrong, call your pediatrician.",
+          "Stay calm and remember: a sick day doesn’t mean you’re failing as a mom.",
+        ],
+      },
+      {
+        heading: "Final Thoughts",
+        items: [
+          "Babies fall sick more often than we’d like, but most illnesses are mild and manageable at home with the right care.",
+          "By staying informed and knowing when to seek medical help, you can handle sick days with confidence.",
+          "Your baby needs your love and comfort more than anything — and that alone makes you the best medicine.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 71,
+    slug: "baby-sleep-training-tips-gentle-routines-that-work",
+    title: "Baby Sleep Training Tips – Gentle Routines That Work",
+    description:
+      "Ask any new parent what they struggle with most, and you’ll likely hear one answer: sleep. Babies don’t arrive with an understanding of night and day, and their tiny tummies mean frequent wake-ups. The result? Sleep-deprived parents and overtired babies. The good news? Gentle sleep training can help your baby learn healthy sleep habits without stress — and give you the rest you desperately need.",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758649659/Baby_Sleep_Training_Tips_dsfwbj.jpg",
+      alt: "Pregnancy myths",
+    },
+    tags: ["Pregnancy", "Pregnancy Health"],
+    content: [
+      {
+        heading: "Baby Sleep Basics by Age",
+        items: [
+          "Every baby is different, but here’s a general guide:",
+
+          "Newborns (0–3 months): 14–17 hours per day, broken into short naps of 2–4 hours. Night waking is normal for feeds.",
+          "3–6 months: 12–15 hours per day. Babies may start sleeping longer stretches at night.",
+          "6–12 months: 11–14 hours per day, including 2–3 naps. Some may sleep through the night, though teething or growth spurts can cause regressions.",
+          "Instead of clock-watching, look for sleep cues — rubbing eyes, yawning, fussiness — to prevent overtiredness.",
+        ],
+      },
+      {
+        heading: "Gentle Sleep Training Methods",
+        items:
+          "Sleep training doesn’t mean harsh methods or letting your baby “cry it out.” Gentle techniques focus on comfort, consistency, and cues.",
+      },
+      {
+        heading: "1. Create a Bedtime Routine",
+        items: [
+          "Babies thrive on predictability. A consistent bedtime routine signals that it’s time to wind down.",
+
+          "Warm bath",
+          "Gentle massage with oil",
+          "Feed",
+          "Lullaby or story",
+          "Dim lights",
+        ],
+      },
+      {
+        heading: "2. Keep Sleep Times Consistent",
+        items: [
+          "Put your baby down around the same time every night.",
+          "Wake them at a similar time each morning.",
+          "Consistency helps regulate their body clock.",
+        ],
+      },
+      {
+        heading: "3. Drowsy but Awake",
+        items:
+          "Instead of rocking your baby completely to sleep, put them down when they’re drowsy but still awake. This helps them self-soothe and fall back asleep if they wake in the night.",
+      },
+      {
+        heading: "4. Comfort Aids",
+        items: [
+          "White noise: Mimics the womb environment.",
+          "Swaddling: Helps newborns feel secure (stop when baby starts rolling).",
+          "Pacifier: Comforts and reduces risk of SIDS.",
+        ],
+      },
+      {
+        heading: "Mistakes to Avoid",
+        items: [
+          "Overstimulation Before Bed: Avoid screen time, loud play, or bright lights right before sleep.",
+          "Skipping Naps: An overtired baby often sleeps worse at night.",
+          "Inconsistency: If bedtime keeps shifting, your baby may resist sleep.",
+          "Expecting Instant Results: Sleep training takes days or even weeks.",
+        ],
+      },
+      {
+        heading: "Mom’s Note: Be Flexible",
+        items: [
+          "No two babies are alike. What works for one may not work for another. Sleep regressions happen around growth spurts, teething, or when babies hit new milestones. Patience is your best tool.",
+
+          "Gentle sleep training isn’t about perfection — it’s about helping your baby (and you!) rest better over time.",
+        ],
+      },
+      {
+        heading: "Final Thoughts",
+        items:
+          "Sleep training doesn’t mean less love — it means more peace for the whole family. By creating a predictable routine, recognizing sleep cues, and using gentle methods, you’ll gradually help your baby build healthy sleep habits. And yes, mama — those long stretches of rest are coming. You’ve got this.",
+      },
+    ],
+  },
+
+  {
+    id: 72,
+    slug: "toddler-nutrition-meal-ideas-healthy-made-fun",
+    title: "Toddler Nutrition & Meal Ideas – Healthy Made Fun",
+    description:
+      "Toddlers are little bundles of curiosity, energy, and… yes, pickiness! One day they finish a bowl of dal-rice, the next day they refuse even a bite. Most toddlers go through phases of fussy eating, but balanced nutrition during these years is critical for healthy growth. With a little creativity and patience, feeding your toddler can be fun, healthy, and stress-free.",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758649660/Toddler_Nutrition_Meal_Ideas_f3judh.jpg",
+      alt: "Toddler Nutrition Meal Ideas",
+    },
+    tags: ["Toddler Health", "Nutrition", "Parenting"],
+    content: [
+      {
+        heading: "Why Toddler Nutrition Matters",
+        items: [
+          "Toddlers (1–3 years) grow rapidly — both physically and mentally. Proper nutrition supports:",
+          "Brain development (healthy fats, iron, and proteins)",
+          "Strong bones and teeth (calcium, vitamin D)",
+          "Immunity (vitamins A, C, zinc)",
+          "Energy for play and learning (carbs, healthy fats)",
+          "Even small deficiencies at this stage can affect long-term growth, so variety and balance are key.",
+        ],
+      },
+      {
+        heading: "What Toddlers Need (Nutrients Made Simple)",
+        items: [
+          "Protein: Dal, eggs, paneer, chicken, fish (for muscle growth).",
+          "Calcium: Milk, curd, cheese, ragi (for strong bones).",
+          "Iron: Spinach, beans, jaggery, fortified cereals (for healthy blood).",
+          "Fiber: Fruits, veggies, oats, whole grains (for digestion).",
+          "Healthy Fats: Ghee, nuts (powdered), avocado (for brain development).",
+          "Vitamins & Minerals: Carrots, sweet potato, fruits like papaya & guava.",
+          "Tip: Toddlers need 3 main meals + 2–3 small snacks daily.",
+        ],
+      },
+      {
+        heading: "Toddler-Friendly Meal Ideas",
+        items: ["Here’s a mix of healthy and toddler-approved Indian meals:"],
+      },
+      {
+        heading: "Breakfast",
+        items: [
+          "Oats porridge with fruit puree",
+          "Vegetable dosa with chutney",
+          "Idli with sambar",
+          "Ragi pancakes with banana",
+        ],
+      },
+      {
+        heading: "Lunch",
+        items: [
+          "Dal-rice with ghee",
+          "Chapati with sabji and curd",
+          "Vegetable khichdi",
+          "Mini parathas stuffed with paneer or spinach",
+        ],
+      },
+      {
+        heading: "Snacks",
+        items: [
+          "Fresh fruit salad with yogurt",
+          "Boiled sweet corn",
+          "Homemade pancakes with jaggery",
+          "Vegetable sticks with hummus or chutney",
+        ],
+      },
+      {
+        heading: "Dinner",
+        items: [
+          "Vegetable pulao with curd",
+          "Upma with veggies",
+          "Dal with soft roti",
+          "Moong dal chilla with chutney",
+        ],
+      },
+      {
+        heading: "Smart Feeding Tips for Moms",
+        items: [
+          "Offer Small Portions – Toddlers have tiny tummies. Start small, offer more if needed.",
+          "Repetition Works – Don’t give up if your toddler rejects a food once. It may take 8–10 tries.",
+          "Make Food Fun – Cut sandwiches into shapes, make smiley faces with veggies.",
+          "Avoid Force-Feeding – Creates negative associations with food.",
+          "Snack Smart – Keep cut fruits, nuts (powdered for younger toddlers), or boiled eggs handy.",
+          "Limit Junk – Minimize packaged snacks, fried foods, and sugary drinks.",
+        ],
+      },
+      {
+        heading: "What If My Toddler Eats Very Little?",
+        items: [
+          "It’s normal! Toddlers grow slower than babies, so appetite dips.",
+          "As long as your child is active, alert, and growing steadily, small meals are fine.",
+          "Focus on nutrient-dense foods instead of large portions.",
+        ],
+      },
+      {
+        heading: "Final Thoughts",
+        items: [
+          "Feeding a toddler can test your patience, but remember — you’re not alone. Every mom has faced the mealtime struggle.",
+          "The key is to make food a positive experience and not a battlefield.",
+          "Your toddler may not always clean their plate, but with consistency, variety, and love, they’ll build healthy eating habits that last a lifetime.",
+          "Healthy meals = Happy tummy = Happier toddler (and calmer mom!).",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 73,
+    slug: "baby-weaning-first-foods-a-gentle-start",
+    title: "Baby Weaning & First Foods – A Gentle Start",
+    description:
+      "Weaning — the introduction of solids — is a huge milestone for your little one. It’s not just about nutrition, but also about discovering taste, texture, and the joy of eating. Learn when and how to start weaning your baby, safe first foods, what to avoid, and practical weaning tips for moms. A complete guide for confident new moms.",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758649659/Baby_Weaning_First_Foods_ohedfg.webp",
+      alt: "Baby Weaning First Foods",
+    },
+    tags: ["Baby Health", "Weaning", "Parenting"],
+    content: [
+      {
+        heading: "When to Start Weaning",
+        items: [
+          "Most babies are ready around 6 months. Signs include:",
+          "Sitting with support",
+          "Showing interest in food",
+          "Loss of tongue-thrust reflex",
+        ],
+      },
+      {
+        heading: "Best First Foods",
+        items: [
+          "Fruits: Mashed banana, apple puree",
+          "Vegetables: Carrot, sweet potato mash",
+          "Cereals: Rice porridge, dal water",
+          "Proteins: Mashed lentils, peas",
+        ],
+      },
+      {
+        heading: "Foods to Avoid Before 1 Year",
+        items: [
+          "Honey (risk of botulism)",
+          "Salt & sugar (strain on kidneys)",
+          "Cow’s milk as main drink",
+          "Whole nuts, popcorn (choking hazards)",
+        ],
+      },
+      {
+        heading: "Weaning Tips for Moms",
+        items: [
+          "Start with one food at a time, wait 3 days before new food.",
+          "Expect mess — eating is sensory learning too.",
+          "Watch for allergy signs like rash, diarrhea, vomiting.",
+          "Make mealtime playful, not pressured.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 74,
+    slug: "baby-growth-development-milestones-month-by-month",
+    title: "Baby Growth & Development Milestones – Month by Month",
+    description:
+      "Watching your baby grow is one of the most magical parts of parenthood. From first smiles to first steps, every milestone is a reason to celebrate. Here’s a month-by-month guide to baby milestones, while reminding moms that every baby develops at their own pace.",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758649659/Baby_Growth_Development_Milestones_ijrqao.webp",
+      alt: "Baby Growth Development Milestones",
+    },
+    tags: ["Baby Growth", "Parenting", "Milestones"],
+    content: [
+      {
+        heading: "0–3 Months",
+        items: [
+          "Smiles socially",
+          "Follows faces and sounds",
+          "Lifts head briefly during tummy time",
+        ],
+      },
+      {
+        heading: "4–6 Months",
+        items: [
+          "Rolls over",
+          "Sits with support",
+          "Babbles and laughs",
+          "Shows interest in food (ready for solids ~6 months)",
+        ],
+      },
+      {
+        heading: "7–9 Months",
+        items: [
+          "Sits without support",
+          "Crawls or scoots",
+          "Responds to name",
+          "Imitates sounds",
+        ],
+      },
+      {
+        heading: "10–12 Months",
+        items: [
+          "Pulls up to stand, may take first steps",
+          "Says “mama,” “dada”",
+          "Picks up objects with fingers",
+          "Understands simple commands",
+        ],
+      },
+      {
+        heading: "Parenting Tip",
+        items: [
+          "Don’t compare your baby with others. Milestones are averages, not deadlines.",
+          "If you’re concerned, consult your pediatrician, but remember — babies bloom in their own time.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 75,
+    slug: "breastfeeding-tips-challenges-complete-moms-guide",
+    title: "Breastfeeding Tips & Challenges – The Complete Mom’s Guide",
+    description:
+      "Practical breastfeeding tips and solutions for sore nipples, latching problems, low supply, and more. A complete guide for confident new moms.",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758649660/Breastfeeding_Tips_Challenges_fybjvp.webp",
+      alt: "Breastfeeding Tips",
+    },
+    tags: ["Breastfeeding", "New Moms", "Parenting"],
+    content: [
+      {
+        heading: "Essential Breastfeeding Tips for Success",
+        items: [
+          "Start Early – Offer the breast within the first hour of birth if possible.",
+          "Feed Often – 8–12 times in 24 hours helps establish supply.",
+          "Deep Latch Matters – Baby’s chin should touch breast, lips flanged outward.",
+          "Switch Breasts – Prevents engorgement and maintains balanced supply.",
+          "Hydrate & Eat Well – Breastfeeding moms need extra fluids and calories.",
+          "Comfort First – Use pillows or a nursing chair to protect your back.",
+        ],
+      },
+      {
+        heading: "Common Breastfeeding Challenges & Solutions",
+        items: [
+          "Sore Nipples → Correct latch, apply lanolin cream, air-dry after feeds.",
+          "Engorgement → Warm compress + gentle massage before nursing.",
+          "Blocked Ducts / Mastitis → Frequent nursing, massage, see doctor if fever.",
+          "Low Supply → Nurse more often, skin-to-skin, consider a lactation consultant.",
+          "Baby Refuses Breast → Try quiet, calm space; express a few drops to encourage.",
+        ],
+      },
+      {
+        heading: "The Emotional Side of Breastfeeding",
+        items: [
+          "Many moms feel guilt, pressure, or judgment about their feeding journey.",
+          "Remember: breastfeeding is not all-or-nothing. Even partial breastfeeding benefits your baby.",
+        ],
+      },
+      {
+        heading: "Final Thoughts",
+        items: [
+          "Breastfeeding can be beautiful and difficult at the same time.",
+          "Be gentle with yourself — every drop counts, and your love matters more than anything.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 76,
+    slug: "formula-feeding-guide-for-new-moms",
+    title: "Formula Feeding Guide for New Moms: Everything You Need to Know",
+    description:
+      "A complete guide on formula feeding — reasons to choose it, types of formula, safe preparation, pros & cons, common concerns, storage tips, and emotional support for moms.",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758649660/Formula_Feeding_Guide_for_New_Moms_mo6o6v.webp",
+      alt: "Formula Feeding Guide",
+    },
+    tags: ["Formula Feeding", "Parenting", "New Moms"],
+    content: [
+      {
+        heading: "Why Parents Choose Formula Feeding",
+        items: [
+          "Low Breastmilk Supply: Despite best efforts, some moms can’t produce enough milk.",
+          "Medical Reasons: Certain illnesses or medications may make breastfeeding unsafe.",
+          "Work-Life Balance: Returning to work, frequent travel, or needing flexibility.",
+          "Shared Parenting: Formula allows partners, dads, and grandparents to participate in feeding.",
+          "Personal Choice: Some moms simply feel more comfortable with formula — and that’s valid.",
+          "Remember: “Fed is best.” Both breastmilk and formula nourish your baby.",
+        ],
+      },
+      {
+        heading: "Types of Baby Formula",
+        subsections: [
+          {
+            title: "Cow’s Milk-Based Formula",
+            details: [
+              "Most common, fortified with iron.",
+              "Designed to be gentle and close to breastmilk.",
+            ],
+          },
+          {
+            title: "Soy-Based Formula",
+            details: [
+              "Plant-based, suitable for lactose intolerance or cow’s milk allergy.",
+              "Not recommended unless prescribed by pediatrician.",
+            ],
+          },
+          {
+            title: "Hydrolyzed Formula",
+            details: [
+              "Proteins are broken down for easier digestion.",
+              "Good for babies with sensitive tummies or reflux.",
+            ],
+          },
+          {
+            title: "Specialized Medical Formulas",
+            details: [
+              "For premature babies, low-birth-weight infants, or specific medical needs.",
+              "Always given under doctor’s supervision.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "How to Prepare Formula Safely",
+        items: [
+          "Wash Hands: Before touching bottles or formula.",
+          "Sterilize Bottles: Boil or use sterilizers for bottles, nipples, and utensils.",
+          "Boil Water: Let it cool to ~40–50°C before mixing.",
+          "Measure Exactly: Follow scoop instructions on the packet.",
+          "Mix Well: Shake gently until powder dissolves completely.",
+          "Check Temperature: Test milk on your wrist — it should be lukewarm.",
+          "Discard Leftovers: Don’t reuse formula left in bottle for more than 1 hour.",
+        ],
+      },
+      {
+        heading: "Storing Formula",
+        items: [
+          "Unopened Formula: Store in a cool, dry place.",
+          "Opened Formula Powder: Use within 4 weeks.",
+          "Prepared Formula: Store in fridge, use within 24 hours.",
+          "Never Freeze Formula: Changes texture and nutrition.",
+        ],
+      },
+      {
+        heading: "Pros & Cons of Formula Feeding",
+        subsections: [
+          {
+            title: "Benefits",
+            details: [
+              "Flexible feeding schedule.",
+              "Anyone can feed the baby, not just mom.",
+              "Precise measurement of intake.",
+              "No dietary restrictions for mom.",
+            ],
+          },
+          {
+            title: "Challenges",
+            details: [
+              "Expensive compared to breastfeeding.",
+              "Requires sterilization and preparation time.",
+              "Lacks natural antibodies breast milk provides.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Common Concerns (and Fixes)",
+        items: [
+          "Constipation: Switch to a gentler formula (with pediatrician’s advice).",
+          "Gas or Fussiness: Use anti-colic bottles, smaller feeds more often.",
+          "Allergic Reaction: Watch for rash, diarrhea, vomiting, or wheezing — seek immediate medical care.",
+          "Overfeeding: Follow baby’s hunger cues — don’t force bottle finishing.",
+        ],
+      },
+      {
+        heading: "Emotional Side of Formula Feeding",
+        items: [
+          "Many moms feel guilt or judgment when choosing formula. You might hear comments like “breast is best.”",
+          "Your worth isn’t measured by how you feed your baby.",
+          "A calm, rested, and happy mom is far better than a stressed, exhausted one.",
+          "Both formula-fed and breastfed babies can grow up healthy and strong.",
+        ],
+      },
+      {
+        heading: "Final Thoughts",
+        items: [
+          "Formula feeding is not a failure — it’s another way of showing love and care.",
+          "Whether you breastfeed, formula feed, or do a mix of both, you’re still the best mom for your baby.",
+          "What matters most is that your baby is fed, healthy, and thriving — and that you are mentally and physically well.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 77,
+    slug: "breastfeeding-positions-latching-issues",
+    title:
+      "Breastfeeding Positions & Latching Issues: The Ultimate Guide for New Moms",
+    description:
+      "A complete guide to breastfeeding positions, latching problems, practical fixes, hacks, emotional struggles, and when to seek professional help. Includes images of common breastfeeding positions.",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758702139/Breastfeeding_Positions_Guide_babymoms.jpg",
+      alt: "Breastfeeding Positions & Latching Guide",
+    },
+    tags: ["Breastfeeding", "Parenting", "New Moms"],
+    content: [
+      {
+        heading: "Why Position & Latch Matter So Much",
+        items: [
+          "For Baby: Ensures baby gets enough milk, prevents swallowing too much air (which leads to gas/colic).",
+          "For Mom: Reduces nipple pain, prevents cracked skin, blocked ducts, or mastitis.",
+          "For Both: Makes feeding calm, comfortable, and builds emotional bonding.",
+        ],
+      },
+      {
+        heading: "Most Effective Breastfeeding Positions",
+        subsections: [
+          {
+            title: "Cradle Hold (The Classic)",
+            details: [
+              "Baby’s head rests in your arm, tummy against yours.",
+              "Best for older babies who can latch easily.",
+              "Tip: Use a pillow under your arm for support.",
+            ],
+            image:
+              "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758702139/Cradle_Hold_babymoms.jpg",
+          },
+          {
+            title: "Cross-Cradle Hold (Guided Support)",
+            details: [
+              "Baby supported by opposite arm, with other hand guiding breast.",
+              "Great for newborns learning to latch.",
+              "Tip: Gives you more control in guiding the baby's head.",
+            ],
+            image:
+              "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758702139/Cross_Cradle_Hold_babymoms.jpg",
+          },
+          {
+            title: "Football / Clutch Hold",
+            details: [
+              "Baby tucked under your arm like a football.",
+              "Best for C-section moms (avoids pressure on stitches) and twins.",
+              "Tip: Add a pillow to lift the baby to breast height.",
+            ],
+            image:
+              "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758702139/Football_Hold_babymoms.jpg",
+          },
+          {
+            title: "Side-Lying Position",
+            details: [
+              "Both mom and baby lie on their sides, facing each other.",
+              "Best for night feeds and post-surgery recovery.",
+              "Tip: Use pillows for back support.",
+            ],
+            image:
+              "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758702139/Side_Lying_Position_babymoms.jpg",
+          },
+          {
+            title: "Laid-Back / Biological Nurturing",
+            details: [
+              "Mom reclines, baby lies tummy-down on chest.",
+              "Encourages natural rooting reflex, great for skin-to-skin bonding.",
+              "Tip: Especially calming in the early days.",
+            ],
+            image:
+              "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758702139/Laid_Back_Position_babymoms.jpg",
+          },
+        ],
+      },
+      {
+        heading: "Common Latching Problems (and Fixes)",
+        items: [
+          "Shallow latch (baby only on nipple): 👉 Guide baby to open mouth wide; bring baby to breast, not breast to baby.",
+          "Painful nipples / cracks: 👉 Break suction gently with finger, reposition. Use nipple cream.",
+          "Baby keeps slipping off: 👉 Try cross-cradle or football hold for stability.",
+          "Flat or inverted nipples: 👉 Hand-express a little milk first; nipple shields may help.",
+          "Baby refuses breast: 👉 Skin-to-skin contact, express a drop of milk so baby can smell/taste.",
+        ],
+      },
+      {
+        heading: "Advanced Breastfeeding Hacks",
+        items: [
+          "Sandwich Technique: Gently compress breast so baby gets a deeper latch.",
+          "Switch Angles: Rotate positions to reduce nipple soreness.",
+          "Warm Compress Before Feeding: Softens breast and stimulates flow.",
+          "Hand Express First: A few drops make it easier for baby to start sucking.",
+          "Breast Compression During Feeds: Helps baby get more milk efficiently.",
+        ],
+      },
+      {
+        heading: "Complex Feeding Issues",
+        items: [
+          "Oversupply / Fast Let-Down: Baby chokes, gulps. 👉 Feed in a reclined position, express a little before latching.",
+          "Low Supply Concerns: Baby fusses, seems hungry after feeds. 👉 Feed more often, stay hydrated, skin-to-skin, consult a lactation expert.",
+          "Nipple Pain That Won’t Heal: 👉 Check baby’s latch, alternate positions, seek lactation support.",
+          "Baby Prefers One Side: 👉 Start with the less-preferred side first, experiment with positions.",
+        ],
+      },
+      {
+        heading: "The Emotional Side of Latching",
+        items: [
+          "Breastfeeding struggles aren’t just physical — they’re emotional.",
+          "Many moms feel guilty if it hurts, anxious if supply seems low, pressured by 'perfect breastfeeding' images online.",
+          "The truth: Every mom-baby pair learns at their own pace. Struggle doesn’t mean failure.",
+          "If you feel overwhelmed, remember: you are not alone. Support groups, lactation consultants, and other moms can ease the journey.",
+        ],
+      },
+      {
+        heading: "When to Seek Professional Help",
+        items: [
+          "Baby isn’t gaining weight.",
+          "You experience severe nipple pain or bleeding.",
+          "Milk supply feels persistently too low.",
+          "You feel anxious or depressed about breastfeeding.",
+        ],
+      },
+      {
+        heading: "Final Thoughts",
+        items: [
+          "Breastfeeding is a journey, not a test. Some days it’s easy, other days it’s messy.",
+          "What matters most isn’t the 'perfect latch' but the bond you’re building with your baby.",
+          "With patience, the right position, and support, both you and your baby will find your rhythm.",
+          "Remember: You’re not failing — you’re learning. And your baby thinks you’re doing amazing.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 78,
+    slug: "self-care-for-new-moms",
+    title: "Self-Care for New Moms – The Secret to Thriving After Birth",
+    description:
+      "A complete guide to self-care for new moms after birth, covering practical, emotional, mental, and social well-being tips to thrive while caring for a newborn.",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758702139/Self_Care_New_Moms_babymoms.jpg",
+      alt: "Self-Care for New Moms",
+    },
+    tags: ["Parenting", "New Moms", "Self-Care"],
+    content: [
+      {
+        heading: "Why Self-Care is Essential After Baby",
+        items: [
+          "Boosts recovery after childbirth.",
+          "Prevents burnout, anxiety, and postpartum depression.",
+          "Helps you be more patient and present for your baby.",
+          "Maintain your identity beyond 'just mom.'",
+        ],
+      },
+      {
+        heading: "Physical Self-Care",
+        items: [
+          "Rest Whenever Possible: Nap when baby naps. Forget chores, prioritize recovery.",
+          "Gentle Movement: Start with walking or stretching (after doctor approval). Yoga helps energy and calmness.",
+          "Nutritious Food: Eat protein, iron, and calcium-rich foods. Keep healthy snacks ready.",
+          "Hydration: Keep a water bottle nearby, especially if breastfeeding.",
+          "Body Care: A quick skincare routine, warm showers, or even applying moisturizer can refresh you.",
+        ],
+      },
+      {
+        heading: "Emotional & Mental Self-Care",
+        items: [
+          "Talk About Your Feelings: Open up to your partner, a friend, or support group.",
+          "Limit Social Media: Comparing yourself to 'perfect moms' online fuels stress.",
+          "Mindfulness Practices: Deep breathing, journaling, or short meditation sessions.",
+          "Celebrate Small Wins: Feeding, calming your baby, or simply getting dressed — all are victories.",
+        ],
+      },
+      {
+        heading: "Relationship Self-Care",
+        items: [
+          "Divide Chores Fairly: Don’t carry the household alone.",
+          "Plan Mini Bonding Moments: Coffee after baby sleeps, 10 minutes of conversation without phones.",
+          "Show Gratitude: Appreciation strengthens connection.",
+        ],
+      },
+      {
+        heading: "Social Self-Care",
+        items: [
+          "Stay connected with friends who uplift you.",
+          "Accept help from family — meals, babysitting, or chores.",
+          "Join mom communities online or locally for support.",
+        ],
+      },
+      {
+        heading: "Final Thoughts",
+        items: [
+          "You cannot pour from an empty cup. Taking care of yourself makes you a stronger, calmer, and happier mom.",
+          "Remember: self-care is part of baby care — because your well-being directly affects your little one.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 79,
+    slug: "skin-hair-changes-after-pregnancy",
+    title:
+      "Skin & Hair Changes After Pregnancy: What to Expect and How to Manage Them",
+    description:
+      "A complete guide to understanding skin and hair changes after pregnancy, why they happen, and practical tips to manage them while boosting confidence.",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758702140/Skin_Hair_Changes_Post_Pregnancy.jpg",
+      alt: "Skin & Hair Changes After Pregnancy",
+    },
+    tags: ["Postpartum", "Skin Care", "Hair Care", "New Moms"],
+    content: [
+      {
+        heading: "Why Do Skin & Hair Changes Happen After Pregnancy?",
+        items: [
+          "The main culprit is hormones. During pregnancy, estrogen and progesterone are at their peak, giving you shiny hair and glowing skin.",
+          "After delivery, these hormone levels drop suddenly.",
+          "Add stress, lack of sleep, and nutritional shifts — and your body naturally reacts with changes in skin and hair.",
+        ],
+      },
+      {
+        heading: "Common Skin Changes After Pregnancy",
+        items: [
+          {
+            title: "Pigmentation & Dark Patches",
+            details: [
+              "Many moms experience melasma ('pregnancy mask') or dark patches on the face.",
+              "Underarms, inner thighs, and neck may also look darker.",
+            ],
+            solutions: [
+              "Use mild, fragrance-free sunscreen daily.",
+              "Include Vitamin C serums or natural remedies like aloe vera.",
+              "Most pigmentation lightens within 6–12 months.",
+            ],
+          },
+          {
+            title: "Stretch Marks",
+            details: [
+              "Caused by skin stretching around the belly, thighs, and breasts.",
+            ],
+            solutions: [
+              "Apply moisturizing oils/creams (cocoa butter, shea butter, almond oil).",
+              "Micro needling or dermatological treatments can reduce appearance if marks persist.",
+            ],
+          },
+          {
+            title: "Acne & Breakouts",
+            details: [
+              "Hormonal shifts can cause oily skin and pimples even if you never had acne before.",
+            ],
+            solutions: [
+              "Use gentle, non-comedogenic cleansers.",
+              "Avoid harsh chemical peels while breastfeeding.",
+              "Opt for dermatologist-approved safe products.",
+            ],
+          },
+          {
+            title: "Dryness & Sensitivity",
+            solutions: [
+              "Switch to hydrating cleansers and thick moisturizers.",
+              "Drink enough water and include omega-3 rich foods (flaxseeds, walnuts, fish).",
+            ],
+          },
+          {
+            title: "Linea Nigra (Dark Line on Belly)",
+            solutions: ["Usually fades naturally; no treatment needed."],
+          },
+        ],
+      },
+      {
+        heading: "Hair Changes After Pregnancy",
+        items: [
+          {
+            title: "Postpartum Hair Fall (Shedding)",
+            details: [
+              "Around 3–6 months postpartum, hair starts falling in clumps due to a drop in estrogen.",
+            ],
+            solutions: [
+              "Don’t panic — this is temporary and resolves in 6–12 months.",
+              "Use a wide-tooth comb and avoid tight hairstyles.",
+              "Ensure iron, protein, and Vitamin D intake.",
+            ],
+          },
+          {
+            title: "Texture Changes",
+            solutions: [
+              "Use mild, sulfate-free shampoos.",
+              "Experiment with natural oils like coconut or argan oil.",
+            ],
+          },
+          {
+            title: "Thinning & Slow Regrowth",
+            solutions: [
+              "Consider hair masks with fenugreek or onion juice.",
+              "Dermatologist treatments like PRP (Platelet-Rich Plasma) can help if thinning persists.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Emotional & Confidence Aspect",
+        items: [
+          "Changes in appearance can affect self-esteem.",
+          "These changes are normal and temporary.",
+          "You carried and birthed a life — your body deserves patience and care.",
+          "Small self-care rituals (skincare, oil massages, or a haircut) can boost confidence.",
+        ],
+      },
+      {
+        heading: "Holistic Care Tips",
+        items: [
+          "Diet: Add leafy greens, proteins, nuts, seeds, and seasonal fruits.",
+          "Hydration: 8–10 glasses of water daily.",
+          "Sleep: Even short naps support recovery.",
+          "Stress Management: Gentle yoga, meditation, or walks help balance hormones.",
+        ],
+      },
+      {
+        heading: "Final Thoughts",
+        items: [
+          "Skin and hair changes after pregnancy are part of the body’s healing journey. Most of them improve naturally within a year.",
+          "With the right care — and a little patience — you’ll feel like yourself again.",
+          "Remember: Your post-baby body tells the story of strength, love, and resilience. Take care of it gently.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 80,
+    slug: "travel-tips-with-baby",
+    title:
+      "Travel Tips with Baby: When to Start, How to Prepare & Smart Solutions",
+    description:
+      "A complete guide for parents on traveling with a baby, including when to start, practical tips for road, air, and train travel, packing essentials, sleep, feeding, and handling meltdowns.",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758702150/Travel_With_Baby.jpg",
+      alt: "Travel Tips with Baby",
+    },
+    tags: ["Parenting", "Baby Travel", "Travel Tips", "New Moms"],
+    content: [
+      {
+        heading: "When Can You Start Traveling with a Baby?",
+        items: [
+          "Newborns (0–2 months): Avoid non-essential travel. Babies are still adjusting, and exposure to crowded places increases infection risk.",
+          "3–6 months: Short trips are manageable. Babies sleep more, and feeding schedules are simpler.",
+          "6–12 months: The best time for travel. Babies are more predictable, enjoy stimulation, and haven’t hit the 'toddler tantrum' stage.",
+          "After 1 year: Travel is fun but more active. Pack extra snacks and toys to handle curiosity and energy.",
+          "Golden Rule: Always check with your pediatrician before long trips, especially if your baby was premature or has health concerns.",
+        ],
+      },
+      {
+        heading: "Road Travel with Baby",
+        items: [
+          "Challenges: Frequent stops, car-seat safety, feeding on the go.",
+          "Solutions:",
+          "Always use a rear-facing infant car seat. Non-negotiable for safety.",
+          "Plan breaks every 2–3 hours for feeding, diaper changes, and stretching.",
+          "Carry a travel organizer with diapers, wipes, and extra clothes within reach.",
+          "Travel during baby’s nap times — smoother for both baby and parents.",
+        ],
+      },
+      {
+        heading: "Air Travel with Baby",
+        items: [
+          "Challenges: Air pressure, crying, feeding, and luggage overload.",
+          "Solutions:",
+          "Best to fly after 3 months, when immunity is stronger.",
+          "Feed during takeoff and landing — sucking helps equalize ear pressure.",
+          "Request front-row or bassinet seats if available.",
+          "Carry extra layers — flights get cold.",
+          "Use a baby carrier for boarding/deplaning; strollers can be checked at the gate.",
+        ],
+      },
+      {
+        heading: "Train Travel with Baby",
+        items: [
+          "Challenges: Hygiene, long journeys, crowded compartments.",
+          "Solutions:",
+          "Choose AC coaches for a cleaner environment and comfort.",
+          "Carry your own bedding for the baby.",
+          "Keep sanitizing wipes and hand sanitizer ready.",
+          "Pack enough baby food and hot water in a thermos.",
+          "Prefer daytime travel for shorter journeys.",
+        ],
+      },
+      {
+        heading: "Baby Travel Essentials Checklist",
+        items: [
+          "Diapers, wipes, rash cream",
+          "Feeding bottles, formula/breast pump, snacks for older babies",
+          "Extra clothes (2–3 changes) for baby & mom",
+          "Baby carrier/sling",
+          "First-aid kit & baby-safe medicines",
+          "Toys, books, or teethers for distraction",
+          "Travel documents (if flying internationally)",
+        ],
+      },
+      {
+        heading: "Managing Sleep on the Go",
+        items: [
+          "Stick to familiar routines — carry a baby's blanket or favorite toy.",
+          "For long trips, try to align travel with nap times.",
+          "If staying in hotels, ask for a crib/cot in advance.",
+          "Use white noise apps to recreate a calming sleep environment.",
+        ],
+      },
+      {
+        heading: "Feeding While Traveling",
+        items: [
+          "Breastfeeding moms: carry a nursing cover for privacy.",
+          "Formula-feeding: pre-measure formula in containers for easy mixing.",
+          "For toddlers: carry travel-friendly snacks (puffed rice, fruit puree, biscuits).",
+          "Always keep boiled or bottled water handy.",
+        ],
+      },
+      {
+        heading: "Handling Meltdowns",
+        items: [
+          "Crying during travel is normal.",
+          "Try singing, gentle rocking, or walking around (on trains/planes when safe).",
+          "Distract with toys, peek-a-boo, or sensory books.",
+          "Stay calm — your baby senses your stress.",
+        ],
+      },
+      {
+        heading: "Final Thoughts",
+        items: [
+          "Traveling with a baby requires extra effort, but it also creates beautiful memories. From their first train ride to their first beach trip, every journey is a milestone.",
+          "The key is to plan realistically, pack smart, and stay flexible.",
+          "Remember: babies don’t need perfection — they just need comfort, love, and patience.",
+          "With the right approach, you’ll not only manage — you’ll enjoy the adventure.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 81,
+    slug: "work-life-balance-after-baby",
+    title: "Work-Life Balance After Baby: How to Thrive as a New Parent",
+    description:
+      "A comprehensive guide for new parents on achieving work-life balance after baby, with practical strategies, solutions for common challenges, and long-term hacks.",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758703200/Work_Life_Balance_After_Baby.jpg",
+      alt: "Work-Life Balance After Baby",
+    },
+    tags: ["Parenting", "New Moms", "Work-Life Balance", "Baby Care"],
+    content: [
+      {
+        heading: "Challenge 1: Time Feels Too Short",
+        items: [
+          "Problem: Work hours, baby care, and household tasks all fight for your attention.",
+          "Solution:",
+          "Prioritize with the 3–3 Rule – Focus daily on 3 key work tasks + 3 personal/home tasks. Anything else can wait.",
+          "Block Time for Baby – Even 30 minutes of distraction-free bonding daily builds connection without guilt.",
+          "Use Micro-Tasks – Break big projects into 15–20 minute chunks you can finish during naps.",
+        ],
+      },
+      {
+        heading: "Challenge 2: Baby’s Needs Are Unpredictable",
+        items: [
+          "Problem: Babies don’t follow calendars, but your workplace does.",
+          "Solution:",
+          "Communicate with Your Manager – Let them know your situation. Transparency builds trust.",
+          "Flexible Work Options – Request hybrid schedules, work-from-home days, or staggered hours if possible.",
+          "Emergency Backup Plan – Identify a family member, babysitter, or daycare you can call last minute.",
+        ],
+      },
+      {
+        heading: "Challenge 3: Household Responsibilities Pile Up",
+        items: [
+          "Problem: Laundry, cooking, cleaning, and baby care feel endless.",
+          "Solution:",
+          "Delegate Smartly – Share tasks with your partner or hire help if possible.",
+          "Batch & Simplify – Cook larger meals, do laundry twice a week instead of daily.",
+          "Use Tech & Apps – Grocery delivery, cleaning services, and meal subscriptions save hours.",
+        ],
+      },
+      {
+        heading: "Challenge 4: Losing “Me Time” and Identity",
+        items: [
+          "Problem: You feel like you’ve lost yourself in the role of 'mom/dad.'",
+          "Solution:",
+          "Protect 20 Minutes Daily – Read, meditate, walk, or do anything that makes you 'you.'",
+          "Stay Social – Connect with friends, join new-parent communities, or video call loved ones.",
+          "Invest in Self-Care – A workout, skincare routine, or hobby isn’t selfish — it’s essential.",
+        ],
+      },
+      {
+        heading: "Challenge 5: Relationship Strain",
+        items: [
+          "Problem: Work stress + baby duties leave little space for your partner.",
+          "Solution:",
+          "Divide Roles Clearly – Example: One handles morning routine, the other bedtime.",
+          "Mini Dates at Home – Coffee together after baby sleeps, cooking a meal as a team.",
+          "Express Gratitude – Small 'thank yous' prevent resentment from building.",
+        ],
+      },
+      {
+        heading: "Challenge 6: Guilt & Pressure",
+        items: [
+          "Problem: You feel guilty for leaving your baby for work OR guilty for pausing your career.",
+          "Solution:",
+          "Redefine Success – Success isn’t about doing it all; it’s about creating harmony.",
+          "Affirmations Help – Remind yourself: 'I am a good parent and a capable professional.'",
+          "Quality > Quantity – Even short, mindful bonding with your baby is more valuable than distracted hours.",
+        ],
+      },
+      {
+        heading: "Long-Term Hacks for Balance",
+        items: [
+          "Set Clear Boundaries – 'No work after 7 PM' or 'No emails during baby playtime'(if possible).",
+          "Plan Weekly, Adjust Daily – Babies change fast; review schedules weekly but stay flexible.",
+          "Think Team, Not Solo – Parenting is a partnership. Involve your partner, family, and support system.",
+          "Accept Imperfection – Some days will be messy. That’s okay.",
+        ],
+      },
+      {
+        heading: "Final Thoughts",
+        items: [
+          "Balancing work and family after a baby isn’t about doing everything equally — it’s about doing the right things at the right time. There will be days you ace a work project but forget to fold laundry, and days you rock parenting but miss an email. Both are normal.",
+          "Give yourself permission to grow into this new chapter. With time, routines stabilize, and life feels manageable again.",
+          "A happy parent = a happy baby.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 82,
+    slug: "parenting-hacks-for-new-moms",
+    title:
+      "Parenting Hacks for New Moms: Smart Solutions for Everyday Challenges",
+    description:
+      "A comprehensive guide with smart parenting hacks for new moms, covering sleep, feeding, baby care, household, self-care, relationships, and safety.",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758725000/Parenting_Hacks_New_Moms.jpg",
+      alt: "Parenting Hacks for New Moms",
+    },
+    tags: ["Parenting", "New Moms", "Baby Care", "Self-Care"],
+    content: [
+      {
+        heading: "Sleep & Rest Hacks",
+        items: [
+          "Problem: “My baby’s sleep is unpredictable, and I’m exhausted.”",
+          "Solution:",
+          "Follow the ‘Sleep When Baby Sleeps’ Rule – Even short naps restore your energy. Forget chores — rest matters more.",
+          "Create a Sleep-Friendly Environment – Dim lights, white noise, and swaddling help babies settle.",
+          "Share Night Duty – Take turns with your partner. One handles feeding, the other handles burping/diaper changes.",
+          "Prep Night Feed Station – Keep bottles, burp cloths, and diapers by the bedside to avoid midnight chaos.",
+        ],
+      },
+      {
+        heading: "Feeding & Nutrition Hacks",
+        items: [
+          "Problem: “Feeding takes all my time, and I don’t know if I’m doing it right.”",
+          "Solution:",
+          "Use a Nursing Pillow – Saves your back during long feeds.",
+          "Burp in Upright Positions – Hold baby over your shoulder or sit them on your lap to reduce gas.",
+          "Batch Cook for Yourself – Prepare and freeze healthy meals for quick reheating.",
+          "Hydrate While Feeding – Keep a water bottle near you — breastfeeding makes you extra thirsty.",
+        ],
+      },
+      {
+        heading: "Baby Care Hacks",
+        items: [
+          "Problem: “Baby cries, and I can’t figure out why.”",
+          "Solution:",
+          "The 5 S’s Method – Swaddle, Side position, Swing, Shush, and Suck — most babies calm with one of these.",
+          "Diaper Time Trick – Place a clean diaper under the baby before removing the dirty one. Saves you during unexpected “surprises.”",
+          "Wardrobe Hack – Buy onesies with envelope necklines so you can pull them down (not over the head) after a blowout.",
+          "Organize by Zones – Keep a small basket with diapers, wipes, and clothes in every room to avoid running around.",
+        ],
+      },
+      {
+        heading: "Household Management Hacks",
+        items: [
+          "Problem: “Housework piles up, and I feel guilty.”",
+          "Solution:",
+          "Set 3 Priorities Daily – Focus only on 3 important tasks. Ignore the rest.",
+          "Use Grocery Delivery Apps – Save energy by ordering essentials online.",
+          "One-Basket Rule – Keep a basket for baby toys and clothes in the living room. At the end of the day, carry it back to the nursery.",
+          "Paper Plate Days Are Okay – Don’t feel bad about simplifying chores.",
+        ],
+      },
+      {
+        heading: "Self-Care & Mental Health Hacks",
+        items: [
+          "Problem: “I feel stressed, lonely, or not myself.”",
+          "Solution:",
+          "10-Minute Rule – Take just 10 minutes daily for yourself (a bath, tea, stretching, journaling). It makes a difference.",
+          "Stay Connected – Call a friend, join a mom community, or talk openly with your partner.",
+          "Don’t Compare – Every baby develops differently. Ignore 'perfect mom' posts on social media.",
+          "Ask for Help – Let family or friends handle chores so you can focus on bonding.",
+        ],
+      },
+      {
+        heading: "Relationship Hacks",
+        items: [
+          "Problem: “We barely have time as a couple.”",
+          "Solution:",
+          "Micro Moments Matter – A hug, a smile, or saying “thank you” goes a long way.",
+          "Plan Short Date Nights – Even a coffee together after the baby sleeps keeps connection alive.",
+          "Divide Responsibilities – One parent handles laundry, the other dishes. Sharing reduces resentment.",
+        ],
+      },
+      {
+        heading: "Safety & Practical Hacks",
+        items: [
+          "Problem: “I worry about the baby's safety all the time.”",
+          "Solution:",
+          "Keep Emergency Numbers Handy – Pediatrician, hospital, ambulance.",
+          "First Aid Kit Ready – Thermometer, baby medicines (doctor-approved), nasal aspirator.",
+          "Baby-Proof Early – Cover sharp corners, plug points, and secure heavy furniture.",
+          "Car Seat is Non-Negotiable – Always use an infant car seat for travel.",
+        ],
+      },
+      {
+        heading: "Final Thoughts",
+        items: [
+          "Parenting is not about perfection — it’s about finding small systems that work for you and your baby. These hacks are not rules, but tools to make your journey easier.",
+          "Remember: Happy moms raise happy babies. Taking care of yourself is the first step to taking care of your little one.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 83,
+    slug: "hospital-bag-checklist-for-delivery",
+    title: "Hospital Bag Checklist for Delivery: Everything You Really Need",
+    description:
+      "A complete guide for moms-to-be on what to pack in your hospital bag, including essentials for mom, baby, and support person, plus items often overlooked.",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758726000/Hospital_Bag_Checklist.jpg",
+      alt: "Hospital Bag Checklist",
+    },
+    tags: ["Pregnancy", "Hospital Bag", "Delivery Prep", "Newborn"],
+    content: [
+      {
+        heading: "What Mom Should Pack",
+        items: [
+          "Documents & Papers – Hospital file, doctor’s prescriptions, ID card, and insurance details.",
+          "Clothing – Loose cotton gowns or front-open nightwear, nursing bras, disposable underwear, socks, and slippers.",
+          "Toiletries – Toothbrush, toothpaste, mild soap, deodorant, moisturizer, hair ties, lip balm, and sanitary pads (maternity size).",
+          "Extras for Comfort – Light blanket, your own pillow, water bottle, phone charger/power bank.",
+        ],
+      },
+      {
+        heading: "Baby’s First Bag",
+        items: [
+          "Clothes – Soft cotton onesies/rompers (3–4), mittens, socks, and a cap.",
+          "Diapering Needs – Newborn diapers, wipes, diaper cream.",
+          "Bath & Care – Baby towel, washcloth, and mild baby lotion/soap.",
+          "Going Home Outfit – A cozy outfit for your baby’s first journey home.",
+        ],
+      },
+      {
+        heading: "For the Partner / Support Person",
+        items: [
+          "Comfortable change of clothes.",
+          "Snacks, tea/coffee sachets, and a water bottle.",
+          "Toiletries for freshening up.",
+          "Mobile, charger, and some cash or card for bills.",
+          "A small pillow or blanket if staying overnight.",
+        ],
+      },
+      {
+        heading: "Things That Often Get Missed",
+        items: [
+          "Hospital admission papers and advance deposit slip.",
+          "A list of emergency contacts.",
+          "Baby nail cutter and gentle detergent.",
+          "Nursing cover or shawl for privacy.",
+          "Small hot/cold pack for relief.",
+        ],
+      },
+      {
+        heading: "Why This Matters",
+        items: [
+          "Your hospital bag isn’t just a suitcase—it’s your support kit. Each item you carry is there to make your journey smoother, calmer, and less stressful.",
+          "Preparing in advance means you’ll focus less on “what’s missing” and more on the precious moment of meeting your baby.",
+        ],
+      },
+      {
+        heading: "Premium Checklist Offer",
+        items: [
+          "Get the Premium Hospital Bag Checklist (Only ₹99).",
+          "Want a ready-to-use, printable hospital bag checklist that covers everything (including little details most moms forget)? It’s neat, easy to follow, and saves you the worry of missing something important.",
+        ],
+      },
+    ],
+  },
 ];
 
 export default Blogs;
