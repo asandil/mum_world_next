@@ -32,10 +32,10 @@ export default function RootLayout({ children }) {
         <Header />
         
         {/* Top Ad Unit - Leaderboard */}
-        <div className="ad-container">
+        {/* <div className="ad-container">
           <div className="ad-label">Advertisement</div>
           <AdUnit slot="5878778835" />
-        </div>
+        </div> */}
         
         <div className="content-wrapper">
           <main>
@@ -49,10 +49,10 @@ export default function RootLayout({ children }) {
         </div>
         
         {/* Bottom Ad Unit - Banner */}
-        <div className="ad-container">
+        {/* <div className="ad-container">
           <div className="ad-label">Advertisement</div>
           <AdUnit slot="YOUR_BOTTOM_SLOT_ID" />
-        </div>
+        </div> */}
         
         <Footer />
       </body>
