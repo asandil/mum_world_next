@@ -1,86 +1,43 @@
-// components/Pagination.jsx
 "use client";
 import React from "react";
 
-const Pagination = ({ 
-  currentPage, 
-  totalPages, 
-  onPageChange,
-  postsPerPage,
-  totalPosts 
-}) => {
-  // Generate page numbers
-  const pageNumbers = [];
-  for (let i = 1; i <= totalPages; i++) {
-    pageNumbers.push(i);
-  }
-
-  // Next page
-  const nextPage = () => {
-    if (currentPage < totalPages) {
-      onPageChange(currentPage + 1);
-    }
-  };
-
-  // Previous page
-  const prevPage = () => {
-    if (currentPage > 1) {
-      onPageChange(currentPage - 1);
-    }
-  };
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+  if (totalPages <= 1) return null; // no pagination if only 1 page
 
   return (
-    <div className="pagination-container">
-      {/* Pagination Controls */}
-      <div className="flex justify-center items-center mt-12 space-x-4">
-        {/* Previous Button */}
+    <div className="flex justify-center items-center gap-2 mt-8">
+      {/* Prev button */}
+      <button
+        onClick={() => onPageChange(currentPage - 1)}
+        disabled={currentPage === 1}
+        className="px-3 py-1 rounded-md border bg-gray-100 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        Prev
+      </button>
+
+      {/* Page numbers */}
+      {Array.from({ length: totalPages }, (_, i) => (
         <button
-          onClick={prevPage}
-          disabled={currentPage === 1}
-          className={`px-4 py-2 rounded-md transition-colors ${
-            currentPage === 1
-              ? "bg-gray-300 cursor-not-allowed text-gray-500"
-              : "bg-[#F69E87] hover:bg-[#e6846a] text-white"
+          key={i + 1}
+          onClick={() => onPageChange(i + 1)}
+          className={`px-3 py-1 rounded-md border ${
+            currentPage === i + 1
+              ? "bg-[#F69E87] text-white cursor-not-allowed"
+              : "bg-white hover:bg-gray-100 cursor-pointer"
           }`}
         >
-          Previous
+          {i + 1}
         </button>
+      ))}
 
-        {/* Page Numbers */}
-        <div className="flex space-x-2">
-          {pageNumbers.map((number) => (
-            <button
-              key={number}
-              onClick={() => onPageChange(number)}
-              className={`px-3 py-2 rounded-md transition-colors ${
-                currentPage === number
-                  ? "bg-[#F69E87] text-white"
-                  : "bg-gray-200 hover:bg-gray-300"
-              }`}
-            >
-              {number}
-            </button>
-          ))}
-        </div>
-
-        {/* Next Button */}
-        <button
-          onClick={nextPage}
-          disabled={currentPage === totalPages}
-          className={`px-4 py-2 rounded-md transition-colors ${
-            currentPage === totalPages
-              ? "bg-gray-300 cursor-not-allowed text-gray-500"
-              : "bg-[#F69E87] hover:bg-[#e6846a] text-white"
-          }`}
-        >
-          Next
-        </button>
-      </div>
-
-      {/* Page Info */}
-      <div className="text-center mt-4 text-gray-600">
-        Page {currentPage} of {totalPages}
-      </div>
+      {/* Next button */}
+      <button
+        onClick={() => onPageChange(currentPage + 1)}
+        disabled={currentPage === totalPages}
+        className="px-3 py-1 rounded-md border bg-gray-100 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+      >
+        Next
+      </button>
     </div>
   );
 };
