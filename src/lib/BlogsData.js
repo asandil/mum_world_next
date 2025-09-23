@@ -1,3 +1,5 @@
+import { ca } from "zod/v4/locales/index.cjs";
+
 const Blogs = [
   {
     id: 1,
@@ -11,7 +13,7 @@ const Blogs = [
       alt: "Apple Cinnamon Oatmeal",
     },
     tags: ["Babies Food(6-24Months)"],
-    category: "Baby",
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "You will Need:",
@@ -118,6 +120,7 @@ const Blogs = [
       alt: "Avocado Puree",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "You will need:",
@@ -155,6 +158,7 @@ const Blogs = [
       alt: "Baby Sweating In Sleep",
     },
     tags: ["Babies"],
+    category: "Babies",
     content: [
       {
         heading: "Night sweats?",
@@ -212,6 +216,7 @@ const Blogs = [
       alt: "Banana Puree",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "Introduction",
@@ -246,6 +251,7 @@ const Blogs = [
       alt: "Beetroot Puree for babies",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "You will need:",
@@ -279,6 +285,7 @@ const Blogs = [
       alt: "Broccoli Soup For Babies",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "You will need:",
@@ -321,6 +328,7 @@ const Blogs = [
       alt: "Broken Wheat (Dalia) Porridge Recipe for Babies",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "You will need:",
@@ -360,6 +368,7 @@ const Blogs = [
       alt: "Climbing Stairs during pregnancy",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "Introduction",
@@ -409,6 +418,7 @@ const Blogs = [
       alt: "Anxiety During Pregnancy and After Birth",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "What is Anxiety and Depression?",
@@ -508,6 +518,7 @@ const Blogs = [
       alt: "Dry fruits powder",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Toddler",
     content: [
       {
         heading:
@@ -547,6 +558,7 @@ const Blogs = [
       alt: "Egg Drop Soup",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "You will need:",
@@ -587,6 +599,7 @@ const Blogs = [
       alt: "Endometrium Thickness In Pregnancy",
     },
     tags: ["Infertility"],
+    category: "Infertility",
     content: [
       {
         heading: "The endometrium",
@@ -694,6 +707,7 @@ const Blogs = [
       alt: "Everything About Inducing Labour",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         items:
@@ -797,6 +811,7 @@ const Blogs = [
       alt: "False Labour",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "What Is False Labor?",
@@ -879,6 +894,7 @@ const Blogs = [
       alt: "Finger Millet (Ragi) Milk Porridge Recipe",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "",
@@ -918,6 +934,7 @@ const Blogs = [
       alt: "First trimester",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "",
@@ -1004,6 +1021,7 @@ const Blogs = [
       alt: "Gestational Diabetes During Pregnancy",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "Introduction",
@@ -1071,6 +1089,7 @@ const Blogs = [
       alt: "Getting Pregnant After Age 35",
     },
     tags: ["Pregnancy", "Pregnancy Health", "Babies"],
+    category: "Pregnancy",
     content: [
       {
         heading: "Introduction",
@@ -1145,6 +1164,7 @@ const Blogs = [
       alt: "Is Gripe water is safe for babies?",
     },
     tags: ["Babies"],
+    category: "Babies",
     content: [
       {
         heading: "Introduction",
@@ -1227,6 +1247,7 @@ const Blogs = [
       alt: "Benefits Of Eating Broccoli During Pregnancy",
     },
     tags: ["Pregnancy Health"],
+    category: "Pregnancy Health",
     content: [
       {
         heading: "Introduction",
@@ -1374,6 +1395,7 @@ const Blogs = [
       alt: "Healthy diet during pregnancy",
     },
     tags: ["Pregnancy Health"],
+    category: "Pregnancy Health",
     content: [
       {
         heading:
@@ -1487,6 +1509,7 @@ const Blogs = [
       alt: "Ways To Increase Breastmilk Supply",
     },
     tags: ["Breastfeeding"],
+    category: "Breastfeeding",
     content: [
       {
         heading: "",
@@ -1556,6 +1579,7 @@ const Blogs = [
       alt: "High blood pressure during pregnancy",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "What is High blood pressure?",
@@ -1622,6 +1646,7 @@ const Blogs = [
       alt: "All Posts How Long Does Ovulation Last",
     },
     tags: ["Pregnancy Health"],
+    category: "Pregnancy Health",
     content: [
       {
         heading: "Introduction",
@@ -1817,6 +1842,7 @@ const Blogs = [
       alt: "How Much Water Should A Pregnant Woman Drink",
     },
     tags: ["Pregnancy Health"],
+    category: "Pregnancy Health",
     content: [
       {
         heading: "Introduction",
@@ -1966,6 +1992,7 @@ const Blogs = [
       alt: "PCOS",
     },
     tags: ["Infertility"],
+    category: "Infertility",
     content: [
       {
         heading: "What is PCOS?",
@@ -2096,6 +2123,7 @@ const Blogs = [
       alt: "Establishing bed time routine for toddler",
     },
     tags: ["Toddler"],
+    category: "Toddler",
     content: [
       {
         heading: "Introduction",
@@ -2208,6 +2236,7 @@ const Blogs = [
       alt: "Hyperemesis Gravidarum",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "",
@@ -2260,6 +2289,7 @@ const Blogs = [
       alt: "How to Stop Breastfeeding",
     },
     tags: ["Babies", "Toddler"],
+    category: "Breastfeeding",
     content: [
       {
         heading: "",
@@ -2384,6 +2414,7 @@ const Blogs = [
       alt: "IVF",
     },
     tags: ["Infertility"],
+    category: "Infertility",
     content: [
       {
         heading: "What is IVF?",
@@ -2533,6 +2564,7 @@ const Blogs = [
       alt: "Fox nuts (Makhana)",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "Introduction",
@@ -2575,6 +2607,7 @@ const Blogs = [
       alt: "Sooji Porridge Recipe for Babies",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading:
@@ -2615,6 +2648,7 @@ const Blogs = [
       alt: "Is it safe to travel when pregnancy?",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "General Travel Safety While Pregnant",
@@ -2699,6 +2733,7 @@ const Blogs = [
       alt: "Is the second caesarean section more painful?",
     },
     tags: ["Second Pregnancy"],
+    category: "Second Pregnancy",
     content: [
       {
         heading:
@@ -2785,6 +2820,7 @@ const Blogs = [
       alt: "Lentil Soup For Babies",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "You will need",
@@ -2823,6 +2859,7 @@ const Blogs = [
       alt: "Mango Banana Puree",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "You will need",
@@ -2855,6 +2892,7 @@ const Blogs = [
       alt: "Sweet Potato Puree",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "You will need",
@@ -2896,6 +2934,7 @@ const Blogs = [
       alt: "Mental health during pregnancy",
     },
     tags: ["Pregnancy", "Pregnancy Health"],
+    category: "Pregnancy",
     content: [
       {
         heading: "Overview",
@@ -2956,6 +2995,7 @@ const Blogs = [
       alt: "Miscarriage- Everything You Need to Know",
     },
     tags: ["Pregnancy", "Pregnancy Health"],
+    category: "Miscarriage",
     content: [
       {
         heading: "Overview",
@@ -3037,6 +3077,7 @@ const Blogs = [
       alt: "New born care",
     },
     tags: ["Baby"],
+    category: "Baby",
     content: [
       {
         heading: "Introduction",
@@ -3158,6 +3199,7 @@ const Blogs = [
       alt: "Normal vs C-section",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "What does normal delivery mean?",
@@ -3266,6 +3308,7 @@ const Blogs = [
       alt: "Papaya during pregnancy",
     },
     tags: ["Pregnancy Health"],
+    category: "Pregnancy Health",
     content: [
       {
         items:
@@ -3333,6 +3376,7 @@ const Blogs = [
       alt: "Pineapple During Breastfeeding",
     },
     tags: ["Breastfeeding"],
+    category: "Breastfeeding",
     content: [
       {
         heading: "Nutritional Value, Safety And Benefits",
@@ -3417,6 +3461,7 @@ const Blogs = [
       alt: "Placenta Abruption",
     },
     tags: ["Pregnancy", "Pregnancy Health"],
+    category: "Pregnancy Health",
     content: [
       {
         heading: "",
@@ -3519,6 +3564,7 @@ const Blogs = [
       alt: "Pregnancy Diet",
     },
     tags: ["Pregnancy", "Pregnancy Health"],
+    category: "Pregnancy Health",
     content: [
       {
         heading: "",
@@ -3570,6 +3616,7 @@ const Blogs = [
       alt: "Prenatal care",
     },
     tags: ["Pregnancy", "Pregnancy Health"],
+    category: "Pregnancy Health",
     content: [
       {
         heading: "Prenatal care",
@@ -3594,7 +3641,7 @@ const Blogs = [
   },
 
   {
-    id: 49,
+    id: 48,
     slug: "pumpkin-soup-for-babies",
     title: "Pumpkin Soup For Babies",
     description:
@@ -3605,6 +3652,7 @@ const Blogs = [
       alt: "Pumpkin soup",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "You will need",
@@ -3634,7 +3682,7 @@ const Blogs = [
   },
 
   {
-    id: 50,
+    id: 49,
     slug: "second-pregnancy-symptoms-differences",
     title: "Second Pregnancy Symptoms & Differences",
     description:
@@ -3645,6 +3693,7 @@ const Blogs = [
       alt: "Second Pregnancy",
     },
     tags: ["Second Pregnancy"],
+    category: "Second Pregnancy",
     content: [
       {
         heading: "Introduction",
@@ -3746,7 +3795,7 @@ const Blogs = [
   },
 
   {
-    id: 51,
+    id: 50,
     slug: "simple-steps-to-do-urine-pregnancy-test-at-home",
     title: "Simple Steps To Do Urine Pregnancy Test At Home",
     description:
@@ -3757,6 +3806,7 @@ const Blogs = [
       alt: "Urine Pregnancy Test",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "Introduction",
@@ -3833,7 +3883,7 @@ const Blogs = [
   },
 
   {
-    id: 52,
+    id: 51,
     slug: "spinach-pumpkin-puree",
     title: "Spinach - Pumpkin Puree",
     description:
@@ -3844,6 +3894,7 @@ const Blogs = [
       alt: "Spinach - Pumpkin Puree",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "Introduction",
@@ -3877,7 +3928,7 @@ const Blogs = [
   },
 
   {
-    id: 53,
+    id: 52,
     slug: "spinach-soup-for-babies",
     title: "Spinach Soup For Babies",
     description:
@@ -3888,6 +3939,7 @@ const Blogs = [
       alt: "Spinach Soup",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "You will need",
@@ -3925,7 +3977,7 @@ const Blogs = [
   },
 
   {
-    id: 54,
+    id: 53,
     slug: "the-second-trimester-of-pregnancy",
     title: "The Second Trimester of Pregnancy",
     description:
@@ -3936,6 +3988,7 @@ const Blogs = [
       alt: "Second Trimester",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "What is the second trimester?",
@@ -3983,7 +4036,7 @@ const Blogs = [
   },
 
   {
-    id: 55,
+    id: 54,
     slug: "sweet-potato-macaroni-and-cheese",
     title: "Sweet Potato Macaroni and Cheese",
     description:
@@ -3994,6 +4047,7 @@ const Blogs = [
       alt: "Sweet Potato Macaroni and Cheese",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "Introduction",
@@ -4023,7 +4077,7 @@ const Blogs = [
   },
 
   {
-    id: 57,
+    id: 55,
     slug: "things-to-know-about-pregnancy-for-first-time-mother",
     title: "Things to know about pregnancy for first-time mother",
     description:
@@ -4034,6 +4088,7 @@ const Blogs = [
       alt: "first-time mother",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "Introduction",
@@ -4056,7 +4111,7 @@ const Blogs = [
   },
 
   {
-    id: 58,
+    id: 56,
     slug: "third-trimester-of-pregnancy",
     title: "Third Trimester of Pregnancy",
     description:
@@ -4067,6 +4122,7 @@ const Blogs = [
       alt: "Third Trimester",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "What is the third trimester?",
@@ -4107,7 +4163,7 @@ const Blogs = [
   },
 
   {
-    id: 59,
+    id: 57,
     slug: "tips-for-taking-care-of-your-mental-health-during-pregnancy",
     title: "Tips for Taking Care of Your Mental Health During Pregnancy",
     description:
@@ -4118,6 +4174,7 @@ const Blogs = [
       alt: "Mental health during pregnancy",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "Introduction",
@@ -4153,7 +4210,7 @@ const Blogs = [
   },
 
   {
-    id: 60,
+    id: 58,
     slug: "urinary-tract-infections-during-pregnancy",
     title: "Urinary Tract Infections During Pregnancy",
     description:
@@ -4164,6 +4221,7 @@ const Blogs = [
       alt: "Urinary Tract Infections",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "Introduction",
@@ -4225,7 +4283,7 @@ const Blogs = [
   },
 
   {
-    id: 61,
+    id: 59,
     slug: "using-postpartum-waist-trainers",
     title: "Using Postpartum Waist Trainers",
     description:
@@ -4236,6 +4294,7 @@ const Blogs = [
       alt: "Postpartum Waist Trainers",
     },
     tags: ["Postnatal Care"],
+    category: "Postnatal Care",
     content: [
       {
         heading: "Introduction",
@@ -4297,7 +4356,7 @@ const Blogs = [
   },
 
   {
-    id: 62,
+    id: 60,
     slug: "uterus-during-pregnancy-sizes-and-how-it-works",
     title: "Uterus During Pregnancy- Sizes And How It Works",
     description:
@@ -4308,6 +4367,7 @@ const Blogs = [
       alt: "Uterus During Pregnancy",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "",
@@ -4377,7 +4437,7 @@ const Blogs = [
   },
 
   {
-    id: 63,
+    id: 61,
     slug: "vegetable-dalia-khichdi",
     title: "Vegetable Dalia Khichdi",
     description:
@@ -4388,6 +4448,7 @@ const Blogs = [
       alt: "Vegetable Dalia Khichdi",
     },
     tags: ["Babies Food(6-24Months)"],
+    category: "Babies Food(6-24Months)",
     content: [
       {
         heading: "You will need",
@@ -4419,7 +4480,7 @@ const Blogs = [
   },
 
   {
-    id: 64,
+    id: 62,
     slug: "weight-gain-after-stopping-breastfeeding",
     title: "Weight Gain After Stopping Breastfeeding",
     description:
@@ -4430,6 +4491,7 @@ const Blogs = [
       alt: "Weight gain after stopping breastfeeding",
     },
     tags: ["Breastfeeding"],
+    category: "Breastfeeding",
     content: [
       {
         heading: "",
@@ -4472,7 +4534,7 @@ const Blogs = [
   },
 
   {
-    id: 65,
+    id: 63,
     slug: "what-is-a-normal-heart-rate-during-pregnancy",
     title: "What is a normal heart rate during pregnancy?",
     description:
@@ -4483,6 +4545,7 @@ const Blogs = [
       alt: "What is a normal heart rate during pregnancy?",
     },
     tags: ["Pregnancy Health"],
+    category: "Pregnancy Health",
     content: [
       {
         heading: "Heart rate",
@@ -4574,7 +4637,7 @@ const Blogs = [
   },
 
   {
-    id: 66,
+    id: 64,
     slug: "what-is-linea-nigra-causes-and-how-to-get-rid-of-it",
     title: "What is Linea Nigra? Causes And How To Get Rid Of It",
     description:
@@ -4585,6 +4648,7 @@ const Blogs = [
       alt: "Linea Nigra",
     },
     tags: ["Pregnancy"],
+    category: "Pregnancy",
     content: [
       {
         heading: "What is Linea Nigra?",
@@ -4679,7 +4743,7 @@ const Blogs = [
   },
 
   {
-    id: 67,
+    id: 65,
     slug: "what-to-eat-avoid-after-a-miscarriage",
     title: "What To Eat & Avoid After A Miscarriage",
     description:
@@ -4690,6 +4754,7 @@ const Blogs = [
       alt: "What To Eat & Avoid After A Miscarriage?",
     },
     tags: ["Miscarriage"],
+    category: "Miscarriage",
     content: [
       {
         heading: "",
@@ -4781,7 +4846,7 @@ const Blogs = [
   },
 
   {
-    id: 68,
+    id: 66,
     slug: "whats-the-best-age-gap-between-siblings",
     title: "What's the best age gap between siblings?",
     description:
@@ -4792,6 +4857,7 @@ const Blogs = [
       alt: "Best age gap between siblings",
     },
     tags: ["Second Pregnancy"],
+    category: "Second Pregnancy",
     content: [
       {
         heading: "",
@@ -4877,7 +4943,7 @@ const Blogs = [
   },
 
   {
-    id: 69,
+    id: 67,
     slug: "women-need-to-stop-believing-these-pregnancy-myths",
     title: "Women need to stop believing these Pregnancy myths",
     description:
@@ -4888,6 +4954,7 @@ const Blogs = [
       alt: "Pregnancy myths",
     },
     tags: ["Pregnancy", "Pregnancy Health"],
+    category: "Pregnancy",
     content: [
       {
         heading: "",
@@ -4966,7 +5033,7 @@ const Blogs = [
   },
 
   {
-    id: 70,
+    id: 68,
     slug: "common-baby-illnesses-remedies-moms-survival-guide",
     title: "Common Baby Illnesses & Remedies – Mom’s Survival Guide",
     description:
@@ -4977,6 +5044,7 @@ const Blogs = [
       alt: "Pregnancy myths",
     },
     tags: ["Pregnancy", "Pregnancy Health"],
+    category: "Pregnancy Health",
     content: [
       {
         heading: "Common Baby Illnesses & Remedies",
@@ -5093,7 +5161,7 @@ const Blogs = [
   },
 
   {
-    id: 71,
+    id: 69,
     slug: "baby-sleep-training-tips-gentle-routines-that-work",
     title: "Baby Sleep Training Tips – Gentle Routines That Work",
     description:
@@ -5104,6 +5172,7 @@ const Blogs = [
       alt: "Pregnancy myths",
     },
     tags: ["Pregnancy", "Pregnancy Health"],
+    category: "Baby Growth",
     content: [
       {
         heading: "Baby Sleep Basics by Age",
@@ -5180,7 +5249,7 @@ const Blogs = [
   },
 
   {
-    id: 72,
+    id: 70,
     slug: "toddler-nutrition-meal-ideas-healthy-made-fun",
     title: "Toddler Nutrition & Meal Ideas – Healthy Made Fun",
     description:
@@ -5191,6 +5260,7 @@ const Blogs = [
       alt: "Toddler Nutrition Meal Ideas",
     },
     tags: ["Toddler Health", "Nutrition", "Parenting"],
+    category: "Nutrition",
     content: [
       {
         heading: "Why Toddler Nutrition Matters",
@@ -5287,7 +5357,7 @@ const Blogs = [
   },
 
   {
-    id: 73,
+    id: 71,
     slug: "baby-weaning-first-foods-a-gentle-start",
     title: "Baby Weaning & First Foods – A Gentle Start",
     description:
@@ -5298,6 +5368,7 @@ const Blogs = [
       alt: "Baby Weaning First Foods",
     },
     tags: ["Baby Health", "Weaning", "Parenting"],
+    category: "Weaning",
     content: [
       {
         heading: "When to Start Weaning",
@@ -5339,7 +5410,7 @@ const Blogs = [
   },
 
   {
-    id: 74,
+    id: 72,
     slug: "baby-growth-development-milestones-month-by-month",
     title: "Baby Growth & Development Milestones – Month by Month",
     description:
@@ -5350,6 +5421,7 @@ const Blogs = [
       alt: "Baby Growth Development Milestones",
     },
     tags: ["Baby Growth", "Parenting", "Milestones"],
+    category: "Baby Growth",
     content: [
       {
         heading: "0–3 Months",
@@ -5397,7 +5469,7 @@ const Blogs = [
   },
 
   {
-    id: 75,
+    id: 73,
     slug: "breastfeeding-tips-challenges-complete-moms-guide",
     title: "Breastfeeding Tips & Challenges – The Complete Mom’s Guide",
     description:
@@ -5408,6 +5480,7 @@ const Blogs = [
       alt: "Breastfeeding Tips",
     },
     tags: ["Breastfeeding", "New Moms", "Parenting"],
+    category: "Breastfeeding",
     content: [
       {
         heading: "Essential Breastfeeding Tips for Success",
@@ -5448,7 +5521,7 @@ const Blogs = [
   },
 
   {
-    id: 76,
+    id: 74,
     slug: "formula-feeding-guide-for-new-moms",
     title: "Formula Feeding Guide for New Moms: Everything You Need to Know",
     description:
@@ -5459,6 +5532,7 @@ const Blogs = [
       alt: "Formula Feeding Guide",
     },
     tags: ["Formula Feeding", "Parenting", "New Moms"],
+    category: "Formula Feeding",
     content: [
       {
         heading: "Why Parents Choose Formula Feeding",
@@ -5577,7 +5651,7 @@ const Blogs = [
   },
 
   {
-    id: 77,
+    id: 75,
     slug: "breastfeeding-positions-latching-issues",
     title:
       "Breastfeeding Positions & Latching Issues: The Ultimate Guide for New Moms",
@@ -5589,6 +5663,7 @@ const Blogs = [
       alt: "Breastfeeding Positions & Latching Guide",
     },
     tags: ["Breastfeeding", "Parenting", "New Moms"],
+    category: "Breastfeeding",
     content: [
       {
         heading: "Why Position & Latch Matter So Much",
@@ -5713,7 +5788,7 @@ const Blogs = [
   },
 
   {
-    id: 78,
+    id: 76,
     slug: "self-care-for-new-moms",
     title: "Self-Care for New Moms – The Secret to Thriving After Birth",
     description:
@@ -5724,6 +5799,7 @@ const Blogs = [
       alt: "Self-Care for New Moms",
     },
     tags: ["Parenting", "New Moms", "Self-Care"],
+    category: "Self-Care",
     content: [
       {
         heading: "Why Self-Care is Essential After Baby",
@@ -5780,7 +5856,7 @@ const Blogs = [
   },
 
   {
-    id: 79,
+    id: 77,
     slug: "skin-hair-changes-after-pregnancy",
     title:
       "Skin & Hair Changes After Pregnancy: What to Expect and How to Manage Them",
@@ -5792,6 +5868,7 @@ const Blogs = [
       alt: "Skin & Hair Changes After Pregnancy",
     },
     tags: ["Postpartum", "Skin Care", "Hair Care", "New Moms"],
+    category: "Hair Care",
     content: [
       {
         heading: "Why Do Skin & Hair Changes Happen After Pregnancy?",
@@ -5910,7 +5987,7 @@ const Blogs = [
   },
 
   {
-    id: 80,
+    id: 78,
     slug: "travel-tips-with-baby",
     title:
       "Travel Tips with Baby: When to Start, How to Prepare & Smart Solutions",
@@ -5922,6 +5999,7 @@ const Blogs = [
       alt: "Travel Tips with Baby",
     },
     tags: ["Parenting", "Baby Travel", "Travel Tips", "New Moms"],
+    category: "Baby Travel",
     content: [
       {
         heading: "When Can You Start Traveling with a Baby?",
@@ -6020,7 +6098,7 @@ const Blogs = [
   },
 
   {
-    id: 81,
+    id: 79,
     slug: "work-life-balance-after-baby",
     title: "Work-Life Balance After Baby: How to Thrive as a New Parent",
     description:
@@ -6031,6 +6109,7 @@ const Blogs = [
       alt: "Work-Life Balance After Baby",
     },
     tags: ["Parenting", "New Moms", "Work-Life Balance", "Baby Care"],
+    category: "Work-Life Balance",
     content: [
       {
         heading: "Challenge 1: Time Feels Too Short",
@@ -6113,7 +6192,7 @@ const Blogs = [
   },
 
   {
-    id: 82,
+    id: 80,
     slug: "parenting-hacks-for-new-moms",
     title:
       "Parenting Hacks for New Moms: Smart Solutions for Everyday Challenges",
@@ -6125,6 +6204,7 @@ const Blogs = [
       alt: "Parenting Hacks for New Moms",
     },
     tags: ["Parenting", "New Moms", "Baby Care", "Self-Care"],
+    category: "Parenting Hacks",
     content: [
       {
         heading: "Sleep & Rest Hacks",
@@ -6213,7 +6293,7 @@ const Blogs = [
   },
 
   {
-    id: 83,
+    id: 81,
     slug: "hospital-bag-checklist-for-delivery",
     title: "Hospital Bag Checklist for Delivery: Everything You Really Need",
     description:
@@ -6224,6 +6304,7 @@ const Blogs = [
       alt: "Hospital Bag Checklist",
     },
     tags: ["Pregnancy", "Hospital Bag", "Delivery Prep", "Newborn"],
+    category: "Hospital Bag",
     content: [
       {
         heading: "What Mom Should Pack",

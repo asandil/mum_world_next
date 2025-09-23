@@ -1,33 +1,51 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Blogs from "@/lib/BlogsData";
 import Image from "next/image";
 import Link from "next/link";
 import SignUp from "@/components/SignUp";
 import Pagination from "@/components/Pagination";
-import CategoryFilter from "@/components/CategoryFilter"; // ✅ import the new component
+import CategoryFilter from "@/components/CategoryFilter";
+import { useSearchParams, useRouter } from "next/navigation";
 
 const categories = [
   "All",
   "Babies",
-  "Babies Food",
+  "Babies Food(6-24Months)",
   "Baby",
+  "Baby Growth",
   "Breastfeeding",
+  "Baby Travel",
+  "Formula Feeding",
+  "Hair Care",
+  "Healthcare",
+  "Hospital Bag",
   "Infertility",
+  "Lifestyle",
   "Miscarriage",
+  "Nutrition",
+  "Parenting Hacks",
   "Postnatal Care",
   "Pregnancy",
   "Pregnancy Health",
   "Second Pregnancy",
+  "Self-Care",
   "Toddler",
-  "Healthcare",
-  "Lifestyle",
+  "Weaning",
+  "Work-Life Balance",
 ];
 
 const TestBlogPage = () => {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
-  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState(
+    searchParams.get("category") || "All"
+  );
+  const [currentPage, setCurrentPage] = useState(
+    parseInt(searchParams.get("page")) || 1
+  );
 
   const blogsPerPage = 10;
   const blogsData = Blogs;
@@ -52,10 +70,36 @@ const TestBlogPage = () => {
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
   const currentBlogs = filteredBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
 
+  // 🔄 Sync state with URL
+  useEffect(() => {
+    const categoryFromURL = searchParams.get("category") || "All";
+    const pageFromURL = parseInt(searchParams.get("page")) || 1;
+    setSelectedCategory(categoryFromURL);
+    setCurrentPage(pageFromURL);
+  }, [searchParams]);
+
+  // 🔗 Handle category click
+  const handleCategoryClick = (category) => {
+    const query = new URLSearchParams(window.location.search);
+    if (category === "All") {
+      query.delete("category");
+    } else {
+      query.set("category", category);
+    }
+    query.set("page", "1"); // reset page when category changes
+    router.replace(`/test?${query.toString()}`);
+  };
+
+  // 🔗 Handle page change
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {
       setCurrentPage(page);
-      window.scrollTo({ top: 0, behavior: "smooth" }); // scroll to top
+
+      const query = new URLSearchParams(window.location.search);
+      query.set("page", page.toString());
+      router.replace(`/test?${query.toString()}`);
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -128,7 +172,7 @@ const TestBlogPage = () => {
             <p className="mt-10 text-gray-500">No blogs found...</p>
           )}
 
-          {/* 📄 Pagination */}
+          {/* Pagination */}
           <Pagination
             currentPage={currentPage}
             totalPages={totalPages}
@@ -138,14 +182,10 @@ const TestBlogPage = () => {
 
         {/* Sidebar */}
         <div className="w-full lg:w-[27%] px-[20px]">
-          {/* ✅ Use the reusable CategoryFilter component */}
           <CategoryFilter
             categories={categories}
             selectedCategory={selectedCategory}
-            onSelectCategory={(category) => {
-              setSelectedCategory(category);
-              setCurrentPage(1);
-            }}
+            onSelectCategory={handleCategoryClick}
           />
 
           <SignUp />
