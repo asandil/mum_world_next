@@ -1,9 +1,5 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import dynamic from "next/dynamic";
-
-// Dynamic import to prevent SSR
-const PdfModal = dynamic(() => import("@/components/PdfModal"), { ssr: false });
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState([]);
@@ -56,9 +52,7 @@ useEffect(() => {
         ))}
       </div>
 
-      {selectedPdf && (
-        <PdfModal pdfUrl={selectedPdf} onClose={() => setSelectedPdf(null)} />
-      )}
+     
     </div>
   );
 }
