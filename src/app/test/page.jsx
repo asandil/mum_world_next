@@ -135,13 +135,13 @@ const TestBlogPage = () => {
 
         {/* Sidebar */}
         <div className="w-full lg:w-[27%] px-[20px]">
-          <div className="flex flex-wrap gap-3 mb-6">
+          {/* <div className="flex flex-wrap gap-3 mb-6">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => {
                   setSelectedCategory(category);
-                  setCurrentPage(1); // reset to first page
+                  setCurrentPage(1);
                 }}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category
@@ -152,7 +152,7 @@ const TestBlogPage = () => {
                 {category}
               </button>
             ))}
-          </div>
+          </div> */}
           <SignUp />
         </div>
       </div>
