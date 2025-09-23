@@ -182,11 +182,11 @@ const TestBlogPage = () => {
 
         {/* Sidebar */}
         <div className="w-full lg:w-[27%] px-[20px]">
-          <CategoryFilter
+          {/* <CategoryFilter
             categories={categories}
             selectedCategory={selectedCategory}
             onSelectCategory={handleCategoryClick}
-          />
+          /> */}
 
           <SignUp />
         </div>
