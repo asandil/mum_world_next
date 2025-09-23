@@ -35,6 +35,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 2,
     title: "As a Mother - First 40 Days of Postnatal Care",
@@ -104,6 +105,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 3,
     title: "Avocado puree",
@@ -140,6 +142,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 4,
     title: "Baby Sweating In Sleep- Causes and When To Consult A Doctor?",
@@ -196,6 +199,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 5,
     slug: "banana-puree",
@@ -229,6 +233,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 6,
     slug: "beetroot-puree-recipe-for-babies",
@@ -261,6 +266,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 7,
     slug: "broccoli-soup-for-babies",
@@ -302,6 +308,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 8,
     slug: "broken-wheat-dalia-porridge-recipe-for-babies",
@@ -340,6 +347,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 9,
     slug: "climbing-stairs-during-pregnancy-is-it-safe-and-when-to-avoid",
@@ -388,6 +396,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 10,
     slug: "depression-and-anxiety-during-pregnancy-and-after-birth",
@@ -486,6 +495,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 11,
     slug: "dry-fruits-nuts-powder-for-babies-toddlers",
@@ -524,6 +534,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 12,
     slug: "egg-drop-soup",
@@ -563,6 +574,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 13,
     slug: "endometrium-thickness-in-pregnancy",
@@ -669,6 +681,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 14,
     slug: "everything-about-inducing-labour",
@@ -771,6 +784,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 15,
     slug: "false-labor-braxton-hicks-contractions",
@@ -852,6 +866,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 16,
     title: "Finger Millet (Ragi) Milk Porridge Recipe",
@@ -890,6 +905,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 17,
     slug: "first-trimester-of-pregnancy-what-to-expect",
@@ -975,6 +991,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 18,
     slug: "gestational-diabetes-during-pregnancy",
@@ -1041,6 +1058,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 19,
     slug: "getting-pregnant-after-age-35-what-to-expect",
@@ -1114,6 +1132,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 20,
     slug: "gripe-water-safe-for-babies",
@@ -1195,6 +1214,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 21,
     slug: "health-benefits-of-eating-broccoli-during-pregnancy",
@@ -1341,6 +1361,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 22,
     slug: "healthy-diet-during-pregnancy",
@@ -1453,6 +1474,7 @@ const Blogs = [
       },
     ],
   },
+
   {
     id: 23,
     slug: "helpful-ways-to-increase-breastmilk-supply",
@@ -1518,6 +1540,3524 @@ const Blogs = [
           "Herbal supplements: The most commonly used supplement is fenugreek but there are also risks which should be taken into consideration. This show an effective increase in milk supply in some women.",
           "Pumping: This involves the use of a electric or manual breast pump or learning to hand express. The mother is advised to pump when she feels her supply is at its best. Usually between midnight and 8am. She can pump from both breasts and should not expect to be able to pump as much as the baby takes from a bottle initially. Ten minutes on each breast would be a good starting point. Increased breast milk demand increases supply",
         ],
+      },
+    ],
+  },
+
+  {
+    id: 24,
+    slug: "high-blood-pressure-during-pregnancy-complications-control",
+    title: "High blood pressure during pregnancy- Complications & Control",
+    description:
+      "What is High blood pressure? Blood pressure is the force of blood that pushes against the walls of your arteries. Arteries are blood vessels that carry blood away from your heart to other parts of the body.",
+    date: "2021-08-21",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756113954/High_blood_pressure_during_pregnancy-_Complications_Control_aprw8a.jpg",
+      alt: "High blood pressure during pregnancy",
+    },
+    tags: ["Pregnancy"],
+    content: [
+      {
+        heading: "What is High blood pressure?",
+        items: [
+          "Blood pressure is the force of blood that pushes against the walls of your arteries",
+          "Arteries carry blood away from your heart to other parts of the body",
+          "High blood pressure (hypertension) is defined as blood pressure greater than or equal to 130/80 mm Hg",
+          "It can put extra stress on organs and lead to heart failure, heart attack, stroke and kidney failure",
+        ],
+      },
+      {
+        heading: "Blood pressure reading categories",
+        items: [
+          "Normal: Less than 120/80",
+          "Elevated: Systolic pressure between 120-129 and diastolic pressure less than 80",
+          "Stage 1 High blood pressure: Systolic pressure between 130-139 or diastolic pressure between 80-89",
+          "Stage 2 High blood pressure: Systolic pressure at least 140 or diastolic at least 90",
+          "Hypertensive crisis: Systolic pressure higher than 180 and/or diastolic pressure higher than 120 (call doctor immediately)",
+        ],
+      },
+      {
+        heading: "Complications for babies",
+        items: [
+          "Fetal growth restriction",
+          "Premature birth",
+          "Neonatal death",
+          "Fetal death",
+          "Low birthweight",
+        ],
+      },
+      {
+        heading: "Complications for moms",
+        items: [
+          "Gestational diabetes",
+          "Kidney failure",
+          "Heart attack",
+          "Placental abruption (placenta separates from uterus before birth)",
+          "Postpartum hemorrhage (PPH) - heavy bleeding after birth",
+          "Preeclampsia (high blood pressure with organ dysfunction)",
+        ],
+      },
+      {
+        heading: "High blood pressure control and management steps",
+        items: [
+          "Go for prenatal care checkups even if feeling fine",
+          "Take prescribed blood pressure medicine every day",
+          "Stay active with 30 minutes of daily activity to reduce stress and weight",
+          "Eat healthy food, avoid foods high in salt",
+          "Don't smoke and don't drink alcohol",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 25,
+    slug: "how-long-does-ovulation-last-duration-and-symptoms",
+    title: "How Long Does Ovulation Last? Duration And Symptoms",
+    description:
+      "Ovulation occurs when the ovaries release the mature egg during the menstrual cycle. Women planning to conceive may wonder; how long does ovulation last? The ovulation usually occurs on the 14th day of a 28-day menstrual cycle and lasts for a day. It is roughly around the middle of a monthly period. The time may differ from one woman to another. If the mature egg is not fertilized, it is released with menses. Knowing the duration of ovulation may help you plan conception better and increase the likelihood of becoming pregnant.",
+    date: "2023-02-09",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756350881/How_Long_Does_Ovulation_Last_1_fb6fg7.webp",
+      alt: "All Posts How Long Does Ovulation Last",
+    },
+    tags: ["Pregnancy Health"],
+    content: [
+      {
+        heading: "Introduction",
+        items: [
+          "Ovulation occurs when the ovaries release the mature egg during the menstrual cycle",
+          "Ovulation usually occurs on the 14th day of a 28-day menstrual cycle and lasts for a day",
+          "The time may differ from one woman to another",
+          "If the mature egg is not fertilized, it is released with menses",
+          "Knowing the duration of ovulation may help plan conception better and increase pregnancy likelihood",
+        ],
+      },
+      {
+        heading: "How Long Does It Take To Get Pregnant After Ovulation?",
+        items: [
+          "A woman can become pregnant up to 12 to 24 hours after ovulation",
+          "The highest pregnancy rate is when a sperm and egg fertilize within four to six hours of ovulation",
+          "This does not mean that you will only become pregnant if you have unprotected sexual intercourse on the day of ovulation because the sperm is viable (lives) up to five days in the woman's reproductive system",
+        ],
+      },
+      {
+        heading: "How Long Do Eggs Live After Ovulation?",
+        items: [
+          "Once the egg is released from the ovary ovulation, it may live about 12 to 24 hours",
+          "Usually, an egg may die within this time if sperm doesn't fertilize it",
+          "This may further change the hormones and result in menstruation",
+        ],
+      },
+      {
+        heading: "How To Determine The Right Time To Have Sex To Conceive?",
+        items: [
+          "Pregnancy is possible if you have sex during the fertile days",
+          "Five days before ovulation and the day of ovulation are fertile days",
+          "The three days before ovulation and the day of ovulation are considered the most fertile days in a cycle",
+          "The chance of pregnancy is high if you have unprotected sexual intercourse during this time",
+          "The chances of getting pregnant are almost none if you have sex before or after the fertile days",
+          "However, it is best recommended to rely on other methods of contraception / birth control methods if you are not planning for pregnancy",
+          "A woman cannot get pregnant during the menstrual cycle since the egg is not present in the fallopian tube",
+        ],
+      },
+      {
+        heading: "How To Track Ovulation To Find Your Fertile Days?",
+        items: [
+          "Tracking ovulation can help women find the right time to have sex to improve their chances of becoming pregnant",
+          "Knowing the menstrual cycle can help you determine ovulation days",
+          "You may track menstrual cycles in a diary, special charts, or a period-tracker app on your smartphone",
+          "The first day of menstruation when bleeding starts, is day one of a cycle and the last day is the day before the next period",
+          "You may calculate ovulation day by using the menstrual cycle length",
+          "The menstrual cycle length may vary between 23 and 35 days, with an average of 28 days",
+          "Subtracting 14 days from your menstrual cycle length gives you the ovulation day",
+          "The ovulation day helps determine the fertile window",
+          "However, this may not be useful for women with irregular menstrual cycles",
+          "They may use other methods to track ovulation",
+        ],
+      },
+      {
+        heading: "Other Ways To Gauge Your Ovulation",
+        items: [
+          "You may use various methods to determine ovulation other than a calculator",
+          "These methods are reliable for women with irregular periods as well",
+          "These tests may help understand the most fertile days of your cycle to increase the chances of pregnancy",
+        ],
+      },
+      {
+        heading: "Urine Test Kits",
+        items: [
+          "Ovulation can also be determined by easy-to-use kits",
+          "These kits are available online and in stores, and this involves urine test strips that change color during ovulation",
+          "Luteinizing hormones cause these color changes",
+          "The accuracy of the test may depend on the products, and you may try various strips to find the most accurate one for you",
+        ],
+      },
+      {
+        heading: "Basal Body Temperature (BBT) Chart",
+        items: [
+          "Daily BBT measures help you understand the temperature changes during fertile days",
+          "The rise of the temperature means that a progestin secretion happened following ovulation",
+          "This method is accurate to confirm the ovulation but not to monitor it",
+        ],
+      },
+      {
+        heading: "Blood and Urine Tests",
+        items: [
+          "Blood tests help determine estradiol hormone levels produced by mature follicles",
+          "A rise in LH levels in the blood indicates that the follicle is ready to release an ovum",
+          "However, LH surge is often not found in a single urine or blood test since this hormone is released in short bursts",
+          "Increased progesterone levels in the blood a week before menstruation indicate that ovulation has already taken place",
+        ],
+      },
+      {
+        heading: "Transvaginal Ultrasound",
+        items: [
+          "The follicle, fluid-filled sac with ovum can be visible on ultrasound imaging",
+          "Follicular growth in the images helps identify the moment to trigger the ovulation in assisted reproductive therapies, confirm that an egg is ready to ovulate, and confirm that it happened",
+        ],
+      },
+      {
+        heading: "Important Note About Contraception",
+        items: [
+          "Although these measurements can identify when you have more chances to get pregnant, experts do not recommend them to plan contraception since there can be slight variations",
+          "Instead, you may always rely on the most effective contraception to prevent pregnancy",
+        ],
+      },
+      {
+        heading: "What Are The Signs Of Ovulation?",
+        items: [
+          "Looking for ovulation signs during the expected ovulation days could help a woman track ovulation",
+        ],
+      },
+      {
+        heading: "Signs During Ovulation",
+        items: [
+          "Cervical mucus changes",
+          "Increased sex drive",
+          "One-sided lower abdominal pain and cramps",
+        ],
+      },
+      {
+        heading: "Premenstrual Symptoms Indicating Ovulation Occurred",
+        items: [
+          "Rise of basal body temperature",
+          "Breast tenderness",
+          "Bloating",
+          "Mood swings",
+          "Mild or light spotting",
+        ],
+      },
+      {
+        heading: "Menstrual Cycle as Ovulation Indicator",
+        items: [
+          "The menstrual cycle also indicates that you are ovulating in a cycle",
+          "Usually, failure to ovulate could result in the absence of menstrual periods (amenorrhea)",
+        ],
+      },
+      {
+        heading: "How Can You Know If You're Not Ovulating?",
+        items: [
+          "The main symptom of anovulation is the inability to get pregnant",
+          "The absence of menstruation also indicates that a woman is not ovulating",
+          "Irregular menstruation, including a menstrual cycle that is too long (35 days or more) or too short (less than 21 days), can also be a sign of anovulation",
+          "There are no other specific signs and symptoms to indicate that a woman is not ovulating",
+          "Although ovulation signs are present, they may not be noticeable in all women",
+        ],
+      },
+      {
+        heading: "What Are The Factors Preventing Ovulation?",
+        items: [
+          "Failure to ovulate is the common cause of female infertility",
+          "Nearly 40% of women with infertility problems have ovulation issues",
+        ],
+      },
+      {
+        heading: "Aging Factors",
+        items: [
+          "Aging can be a cause of decreased fertility due to diminished ovarian reserve",
+          "This means that a low number of eggs are present in the ovaries as age advances",
+        ],
+      },
+      {
+        heading: "Gynecological and Ovarian Conditions",
+        items: [
+          "Polycystic ovary syndrome (PCOS) and primary ovarian insufficiency (POI)",
+          "Excess of fast-burning sugars and lipids can disturb your ovulation by increasing your weight and the insulin resistance of your metabolism linked to PCOS",
+        ],
+      },
+      {
+        heading: "Lifestyle and Environmental Factors",
+        items: [
+          "Obesity, overweight, underweight, and excessive exercise are linked to ovarian dysfunction and infertility",
+          "Substance use such as marijuana, drugs like cocaine, heroin, tobacco, and heavy drinking may also affect ovarian function negatively",
+          "Certain toxins in the pesticides and treatments such as chemotherapy and radiotherapy also prevent ovulation",
+        ],
+      },
+      {
+        heading: "Endocrine Disorders",
+        items: [
+          "Hypothalamus and pituitary problems affect the reproductive hormones",
+          "Thyroid diseases and problems can also impact ovarian function",
+          "Too many or too few hormones or groups of hormones can affect the normal functioning of the ovaries",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 26,
+    slug: "how-much-water-should-a-pregnant-woman-drink",
+    title: "How Much Water Should A Pregnant Woman Drink?",
+    description:
+      "Water is essential to perform different physiological functions in the body, and its need increases during pregnancy. So, how much water should a pregnant woman drink? Knowing this can help you stay adequately hydrated a...",
+    date: "2023-02-19",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181478/How_Much_Water_Should_A_Pregnant_Woman_Drink_qtc6vt.jpg",
+      alt: "How Much Water Should A Pregnant Woman Drink",
+    },
+    tags: ["Pregnancy Health"],
+    content: [
+      {
+        heading: "Introduction",
+        items: [
+          "Water is essential to perform different physiological functions in the body, and its need increases during pregnancy",
+          "Knowing how much water to drink can help you stay adequately hydrated and reduce the risk of common pregnancy discomforts such as constipation, swelling, and urinary tract infections",
+          "The body derives water from the fluids and foods you consume, and its daily requirement depends on factors such as physical activity levels, body size, and weather conditions",
+          "The foods you eat during pregnancy help build your baby – but so, too, does what you drink",
+          "Your water needs increase to support your pregnancy and your baby, which makes it important to stay hydrated",
+        ],
+      },
+      {
+        heading: "Health benefits of drinking water",
+        items: [
+          "Sipping on water may be one of the simplest steps you can take towards a healthy pregnancy",
+          "Staying hydrated offers many health benefits",
+        ],
+      },
+      {
+        heading: "Specific benefits of drinking water",
+        items: [
+          "Supports your body: Around three-quarters of your body is made up of water – which helps to support digestion, regulate your body temperature, and create hormones, among many other essential functions",
+          "Lowers the risk of UTIs: Drinking water dilutes your urine and causes you to flush out bacteria as you pee more often, which reduces your risk of urinary tract and bladder infections",
+          "Supports your pregnancy: Your body needs more water during pregnancy for increased metabolism and significantly higher blood volume which supplies your baby with oxygen and nutrients",
+          "Keeps you regular: Fluids help prevent common pregnancy problems such as constipation and hemorrhoids by keeping your bowels moving and your stools soft",
+          "Reduces swelling: Drinking more water can help with swollen feet and ankles, as fluid retention can result from not drinking enough",
+        ],
+      },
+      {
+        heading: "Why Is It So Important To Hydrate During Pregnancy?",
+        items: [
+          "Water requirements increase during pregnancy to maintain maternal hydration and support fetal development",
+        ],
+      },
+      {
+        heading:
+          "Physiological changes that increase water demand during pregnancy",
+        items: [
+          "Formation of the amniotic fluid",
+          "Gradual increase of blood volume from six to eight weeks that peaks at 32 to 34 weeks",
+          "Increased respiration that increases water output",
+          "Changes in the urinary system, such as a slight increase in the kidney size, increased renal plasma flow, glomerular filtration rate, and urine volume (mostly at night and when lying down)",
+          "More sweating due to increased activities of the adrenal and thyroid glands, accelerated metabolism, and increased blood supply to the skin",
+        ],
+      },
+      {
+        heading: "How much water to drink while pregnant",
+        items: [
+          "Pregnant women should drink 8-12 cups, approximately or 1.9 to 2.8 liters of water daily",
+          "Your needs may vary based on your activity levels, your size, and the weather",
+          "You're likely to need more fluid than usual when it's hot outside or if you're exercising",
+          "The best way to tell if you're getting enough water: Your urine should look pale yellow or colorless, and you should feel thirsty only occasionally",
+        ],
+      },
+      {
+        heading: "How Much Water Is Needed In Each Trimester?",
+        items: [
+          "Water needs can be calculated based on the increased calorie requirements for each trimester",
+        ],
+      },
+      {
+        heading: "First trimester water requirements",
+        items: [
+          "Most normal-weight, healthy pregnant women need about 1800 calories daily in the first trimester",
+          "Total daily water requirement should be around 1.8 to 2.7 liters (approximately 61 to 91 ounces or 8 to 11 cups)",
+        ],
+      },
+      {
+        heading: "Second trimester water requirements",
+        items: [
+          "Expecting women in the second trimester need 2200 calories daily",
+          "They should consume 2.2 to 3.3 liters (74 to 112 ounces or 9 to 14 cups) of water daily",
+        ],
+      },
+      {
+        heading: "Third trimester water requirements",
+        items: [
+          "During the third trimester, the recommended daily calorie intake is about 2400 calories",
+          "Daily water requirement of 2.4 to 3.6 liters, or approximately 81 to 122 ounces, or 10 to 15 cups",
+        ],
+      },
+      {
+        heading: "What Are The Benefits Of Staying Hydrated During Pregnancy?",
+        items: ["Sufficient water intake during your pregnancy could help:"],
+      },
+      {
+        heading: "Specific benefits of staying hydrated",
+        items: [
+          "Reduce edema",
+          "Stay cool",
+          "Enhance energy",
+          "Alleviate morning sickness and nausea",
+          "Aid digestion",
+          "Reduce the risk of urinary tract infections",
+          "Lower the risk of early contractions and preterm labor",
+          "Hydrate skin",
+          "Prevent constipation and associated hemorrhoids",
+        ],
+      },
+      {
+        heading: "What Are The Signs Of Dehydration In Pregnancy?",
+        items: [
+          "Insufficient water intake during pregnancy can lead to dehydration",
+          "Dehydration is when one's water intake is less than the water excreted, making it difficult for the body to perform different functions",
+        ],
+      },
+      {
+        heading: "Signs of dehydration in pregnant women",
+        items: [
+          "Fatigue",
+          "Feeling thirsty",
+          "Dark yellow or strong-smelling urine",
+          "Dizziness",
+          "Dryness of mouth, lips, and eyes",
+          "Reduced urinary frequency, fewer than four times a day",
+        ],
+      },
+      {
+        heading: "Important medical note",
+        items: [
+          "Seek prompt medical guidance if these symptoms persist even after drinking enough water",
+        ],
+      },
+      {
+        heading: "Practical tips for staying hydrated",
+        items: [
+          "Make it a habit to drink water first after you wake up. Also, drink some water after each meal and snack",
+          "Keep a water bottle handy on the desk, or carry it around with you so you may remember to drink water",
+          "Drink water whenever thirsty and before and after physical activity. Choose water over soda or energy drinks",
+          "Prepare refreshing flavored water by adding mint leaves and slices of lemon or fruits, like strawberry, to the water",
+          "Set a timer on your phone that will remind you to drink water from time to time",
+          "Freeze fresh fruits into ice cubes and add them to your glass of water for variety. You may use sparkling water",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 27,
+    slug: "how-pcos-affects-fertility-and-what-to-do",
+    title: "How PCOS Affects Fertility and What to Do",
+    description:
+      "What is PCOS? Polycystic ovary syndrome (PCOS) is a condition involving hormonal imbalances and metabolism problems.",
+    date: "2023-01-31",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181477/How_PCOS_Affects_Fertility_and_What_to_Do_wfn3oy.jpg",
+      alt: "PCOS",
+    },
+    tags: ["Infertility"],
+    content: [
+      {
+        heading: "What is PCOS?",
+        items: [
+          "Polycystic ovary syndrome (PCOS) is a condition involving hormonal imbalances and metabolism problems",
+          "PCOS is a hormonal condition which affects about one in 10 women in their childbearing years",
+          "Women with PCOS have higher levels of insulin and androgens (male-type hormones) than other women",
+          "This condition affects the ovaries, but doesn't necessarily lead to infertility. You can get pregnant",
+          "However, PCOS is a common cause of infertility",
+          "Research estimates that PCOS affect 5–13 percent of women of reproductive age",
+          "It's treatable",
+        ],
+      },
+      {
+        heading: "How PCOS affect fertility?",
+        items: [
+          "On average, women with PCOS take longer to fall pregnant than other women",
+          "This can be because they have irregular periods which means that they don't ovulate every month",
+          "Also, being overweight reduces fertility and can contribute to women with PCOS taking longer to conceive",
+          "Although women with PCOS have more fertility problems than other women, they need reliable contraception to avoid unplanned pregnancy",
+          "People with PCOS have a hormonal imbalance that can lead to: high levels of insulin in your blood, high levels of hormones called androgens, thickening of the outer shell of the ovaries, the formation of small, painless, fluid-filled sacs in the ovaries",
+          "The prevalence of infertility in people with PCOS is thought to be between 70 and 80 percent",
+        ],
+      },
+      {
+        heading: "Symptoms of PCOS",
+        items: [
+          "Oily skin or severe acne",
+          "Excess hair growth on the face or other places where males are typically more likely to have hair",
+          "Skin tags on the neck or armpits",
+          "Thinning hair on the scalp",
+          "Weight gain or difficulty losing weight",
+          "Patches of thick, darkened skin (acanthosis nigricans), particularly on the neck, groin, or underneath the breasts",
+          "Symptoms that may suggest you have fertility problems include irregular or absent menstrual periods",
+          "You may not be ovulating regularly or at all",
+          "You might also have insulin resistance, which leads to high levels of insulin in your blood",
+          "Untreated, this can lead to type 2 diabetes",
+        ],
+      },
+      {
+        heading: "Fertility treatments for women with PCOS",
+        items: [
+          "There is currently no cure for PCOS, so treatment and management depends on the goal",
+          "For infertility caused by PCOS, treatment involves correcting any ovulation issues and tackling metabolic problems, such as insulin resistance",
+          "Hormonal birth control pills can be helpful for those who don't wish to get pregnant",
+          "There are treatments to help you ovulate and conceive",
+          "It can also be used to help regulate menstrual cycles and provide protection from endometriosis in women with irregular periods associated with PCOS",
+          "Your doctor will probably recommend some basic health measures first",
+          "If you don't already, it's a good time to start tracking your periods",
+          "There are many calendars and fertility apps designed to help you figure out which days you're most likely ovulating",
+        ],
+      },
+      {
+        heading: "How can women with PCOS improve their chance of pregnancy?",
+        items: [
+          "Adopting a healthy lifestyle can improve the chance of a pregnancy and healthy baby",
+          "This includes being in the healthy weight range",
+          "Not smoking",
+          "Cutting back on alcohol",
+          "Eating a healthy diet",
+          "Getting plenty of regular exercise",
+          "Getting enough sleep",
+        ],
+      },
+      {
+        heading: "PCOS and endometriosis",
+        items: [
+          "If you are struggling with PCOS and infertility, and you are not responding to treatment, your doctor may look for another cause",
+          "Endometriosis is a condition in which the type of tissue that lines the uterus grows elsewhere in the pelvis",
+          "This abnormal tissue growth can block the fallopian tubes or damage the egg or sperm",
+          "According to the American College of Obstetricians and Gynecologists, about 40 percent of women with infertility have endometriosis",
+        ],
+      },
+      {
+        heading: "Symptoms of endometriosis can include",
+        items: [
+          "Pelvic pain around menstruation or during sexual intercourse",
+          "Heavy periods",
+          "Pain during bowel movements or urination",
+          "Not everyone with endometriosis has these symptoms",
+          "A study in 2019 addressed the overlap of PCOS and endometriosis",
+          "The research included women with PCOS who hadn't responded to clomiphene citrate",
+          "After a procedure called laparoscopic ovarian drilling, 7.7 percent were found to have incidental endometriosis",
+        ],
+      },
+      {
+        heading: "In vitro fertilization (IVF)",
+        items: [
+          "Sometimes, lifestyle adjustments, medicines, and surgery don't work. If that happens to you, IVF may be an option",
+          "You'll start by having fertility injections to stimulate your ovaries",
+          "You'll probably produce multiple eggs at one time",
+          "Once the eggs are harvested, they'll be fertilized with sperm",
+          "Some fertilized eggs can be frozen for later use",
+          "Some will be transferred to your uterus to implant and develop",
+          "IVF may increase the likelihood of a multiple birth",
+        ],
+      },
+      {
+        heading: "When to talk with a doctor",
+        items: [
+          "If you have symptoms of PCOS, see your doctor for diagnosis and treatment",
+          "If you plan to get pregnant at any point, the sooner you start treatment for PCOS the better",
+          "Your doctor will guide you in how to proceed or refer you to a fertility specialist",
+        ],
+      },
+      {
+        heading: "Note",
+        items: [
+          "PCOS is a condition that involves a hormonal imbalance that can interfere with ovulation",
+          "Some people with PCOS have difficulty getting pregnant. There are effective treatments, though",
+          "With medical intervention, many people with fertility problems due to PCOS are able to conceive",
+          "It's also important to note that PCOS doesn't mean you can never get pregnant",
+          "Always use contraception if you don't want to conceive, even if you have PCOS",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 28,
+    slug: "how-to-establish-a-toddler-bedtime-routine",
+    title: "How to Establish a Toddler Bedtime Routine",
+    description:
+      "Is your little one having trouble settling down at night? Establishing a few nighttime rituals can surely help.<br/>Science says evening family routines can be good for kids. A small 2018 studyTrusted Source linked regular...",
+    date: "2023-02-22",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181478/How_to_Establish_a_Toddler_Bedtime_Routine_s6war3.jpg",
+      alt: "Establishing bed time routine for toddler",
+    },
+    tags: ["Toddler"],
+    content: [
+      {
+        heading: "Introduction",
+        items: [
+          "Is your little one having trouble settling down at night? Establishing a few nighttime rituals can surely help",
+          "Science says evening family routines can be good for kids. A small 2018 study linked regular bedtime routines to cognitive function, attention, and other signs of well-being",
+          "Maybe you fell off the bandwagon with your tried-and-true baby sleep routine, or maybe nights have always felt a little willy-nilly for your family",
+          "Either way, instituting a bedtime routine for your toddler will help get her ready for sleep",
+        ],
+      },
+      {
+        heading: "Why is a bedtime routine important for your toddler?",
+        items: [
+          "Even if your toddler isn't a huge fan of bedtime itself, chances are he or she'll delight in a nightly pre-bedtime plan",
+          "Having an established set of activities feeds toddler need for predictability to help them feel safe and secure and gives them a sense of control",
+          "You'll likely find that a routine will make bedtime a little smoother and less protest-prone",
+          "Calm, quiet activities encourage your toddler to feel relaxed rather than riled up, which can set the stage for sleep",
+          "Plus, toddler will be less likely to give you pushback when she knows what's coming",
+          "And while a routine may not turn your toddler into a perfect sleeper, there's a good chance that it'll allow everyone in your family to get more of the shut-eye they need",
+          "A predictable evening process helps your toddler get to bed on time, which can go a long way towards easing problems like overtiredness, waking up at night or rising too early in the morning",
+        ],
+      },
+      {
+        heading: "How to set up a toddler bedtime routine and schedule",
+        items: [
+          "The routine you're starting with your toddler should be: able to help soothe your child to sleep, unique to your child and family, based on activities that fit into your schedule",
+          "A child who gets an energy boost in the tub, for example, probably shouldn't have bath time as part of their bedtime routine",
+        ],
+      },
+      {
+        heading: "Set a time",
+        items: [
+          "Determining when to put your toddler to sleep may feel entirely up to your family and lifestyle",
+          "At the same time, having a set bedtime each night can be good for your child",
+          "A 2020 study of 107 children linked going to sleep late and too little sleep with obesity",
+          "Another study showed an associated of regular bedtimes and regular mealtimes on better emotional self-regulation and less risk of obesity",
+          "The time you choose to send your kiddo to bed may be earlier than you think",
+          "Watch your child's cues to see when they get sleepy",
+        ],
+      },
+      {
+        heading: "Slow down",
+        items: [
+          "Young kids often need help with transitions",
+          "Moving from a busy day to a sleep state is a huge transition",
+          "Try swapping any activities that stimulate your child with ones that will help them relax, especially in the hour before bed",
+          "This may be as easy as switching off the television, stopping the wrestling or tickling matches, and skipping anything with caffeine",
+        ],
+      },
+      {
+        heading: "Activities that might help unwind your toddler include",
+        items: [
+          "Singing bedtime songs",
+          "Taking a warm bath",
+          "Reading stories",
+          "While you want to slow down right before bedtime, also make sure your child gets plenty of physical activity during the daytime hours",
+          "Try playing outdoors, taking walks, dancing, meeting with friends for playdates, and engaging in other activities that get your kid moving and grooving",
+        ],
+      },
+      {
+        heading: "Dim the lights",
+        items: [
+          "You may have heard that bright lights before bedtime can disrupt the body's desire to sleep",
+          "A 2014 study suggested that exposure to artificial light at night suppresses the body's melatonin levels and, therefore, sleepiness",
+          "It can even shorten your body's understanding of how long night lasts, creating greater sleep problems",
+          "Anything that emits blue light — computer screens, tablets, cell phones, televisions — may have even more of an effect than regular artificial light",
+          "You might even try illuminating the room with a night light or amber light bulb",
+          "At the very least, dim the lights in your child's room during the bedtime routine to help them feel sleepy",
+        ],
+      },
+      {
+        heading: "Let your spouse help you in bed time of toddler",
+        items: [
+          "Does your toddler call you back into the bedroom again and again? Or worse, is your presence required for sleep to happen in the first place? You're definitely not alone",
+          "Many toddlers have trouble falling asleep on their own",
+          "For few days, Let your spouse try their skills, to make toddler sleep",
+          "Also, some kids do well using a dim night-light or comfort object like a special blanket",
+        ],
+      },
+      {
+        heading: "Common mistakes when starting a toddler bedtime routine",
+        items: [
+          "Mistake 1: Changing routines - The whole point of a routine is that it has to be consistent. If you're attempting a lot of trial and error with your routine, it won't ever really have the chance to become that routine your child can count on",
+          "Mistake 2: Making your routine too long - Only you know how much time you can commit to a bedtime routine each night. But if your routine lasts over an hour, you're going to have a much harder time sticking to it on a regular basis. If you're getting home later than usual, it can be more difficult to get through a lengthy routine",
+          "Mistake 3: Ignoring your child's cues - Most parents seek to establish a routine that fits their schedule, but you could be missing out on sleep if your toddler is giving sleep cues earlier than your currently established routine calls for. Starting your routine too late could lead to your child being overtired and not responding as well to the routine",
+        ],
+      },
+      {
+        heading:
+          "Tips and hacks for establishing a foolproof toddler bedtime routine",
+        items: [
+          "Choose the perfect story. Check out 'The Rabbit Who Wants to Fall Asleep' before you put your toddler to bed. This book may be helpful for kiddos who have a harder time settling down",
+          "Embrace a soothing scent. A squirt of lavender spray in your child's room can have calming properties",
+          "Teach time. One of the things a lot of toddlers struggle with is understanding when it's bedtime and when it's time to wake up. Night lights like the LittleHippo Mella can help them to better understand when they need to stay in bed by providing a visual cue",
+          "Make their daytime routine. Schedule nap times as consistently as you do bedtime. Consistency is key",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 29,
+    slug: "hyperemesis-gravidarum-symptoms-causes-and-treatment",
+    title: "Hyperemesis Gravidarum- Symptoms, Causes and Treatment",
+    description:
+      "Hyperemesis gravidarum is an extreme form of morning sickness that causes vomiting and severe nausea during pregnancy. It can lead to dehydration, weight loss, and electrolyte imbalances.",
+    date: "2021-08-21",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181478/Hyperemesis_Gravidarum_lmmnee.jpg",
+      alt: "Hyperemesis Gravidarum",
+    },
+    tags: ["Pregnancy"],
+    content: [
+      {
+        heading: "",
+        items:
+          "Hyperemesis gravidarum is an extreme form of morning sickness that causes vomiting and severe nausea during pregnancy. It can lead to dehydration, weight loss, and electrolyte imbalances. HG can be extremely debilitating and cause fatigue that lasts for weeks or months. Many women experience morning sickness (nausea) during pregnancy. This condition is generally harmless. While morning sickness can be quite uncomfortable, it typically goes away within 12 weeks. Morning sickness is mild nausea and vomiting that occurs in early pregnancy.",
+      },
+      {
+        heading: "Most common Symptoms of Hyperemesis Gravidarum",
+        items: [
+          "Becoming dehydrated",
+          "Loss of appetite",
+          "Weight loss",
+          "Constipation",
+          "Feeling light-headed or dizzy",
+          "Feeling nearly constant nausea",
+          "Vomiting more than three or four times per day",
+        ],
+      },
+      {
+        heading: "What causes hyperemesis gravidarum?",
+        items: [
+          "Almost all women experience some degree of morning sickness during their pregnancy.",
+          "HG and Morning sickness seem to have a connection to human chorionic gonadotropin (hCG). This is a hormone created during pregnancy by the placenta.",
+          "Your body produces a large amount of this hormone at a rapid rate early in pregnancy.",
+          "These levels can continue to rise throughout your pregnancy.",
+        ],
+      },
+      {
+        heading: "Hyperemesis gravidarum treatment",
+        items: [
+          "Your doctor may recommend natural nausea prevention methods, such as vitamin B-6 or ginger.",
+          "Drink plenty of fluids to stay hydrated.",
+          "Try eating smaller, more frequent meals and dry foods, such as crackers.",
+          "Severe cases of HG may require hospitalization.",
+          "The good news is that symptoms of HG will disappear after giving birth. However, postpartum recovery may be longer for women with HG.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 30,
+    slug: "in-simple-steps-how-to-stop-breastfeeding",
+    title: "In Simple Steps - How to Stop Breastfeeding",
+    description:
+      "You’ve decided the time has come to stop breastfeeding. There isn’t an exact way to know how long it will take for your milk supply to dry up. You can start by slowly decreasing the number of times you nurse your baby.W...",
+    date: "2023-03-01",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181477/How_to_Stop_Breastfeeding_ee7ums.jpg",
+      alt: "How to Stop Breastfeeding",
+    },
+    tags: ["Babies", "Toddler"],
+    content: [
+      {
+        heading: "",
+        items:
+          "You’ve decided the time has come to stop breastfeeding. There isn’t an exact way to know how long it will take for your milk supply to dry up. You can start by slowly decreasing the number of times you nurse your baby.When you stop breastfeeding, only one thing's for certain: You're bound to run into some surprises. Just like every other aspect of motherhood, weaning very rarely happens the way we think it's going to. But no matter your baby's age, there are some tips and tricks that can make the process easier.",
+      },
+      {
+        heading: "How to Stop Breastfeeding",
+        items: [
+          "Everyone will be different when it comes to weaning, but in general, there are some steps you can follow to initiate the end of breastfeeding, such as looking for signs your baby is ready to wean from breastfeeding.",
+          "There's no right or wrong way to stop breastfeeding. For lots of mothers and babies, stopping breastfeeding happens gradually as the child grows and eats more solid foods.",
+          "It's important that solid food should not simply replace breast milk. There's evidence that breast milk may play a part in helping a baby's digestive system to deal with their first solids.",
+          "Once they're eating solids, your baby will still need to have breast milk or formula as their main drink up to at least their 1st birthday.",
+          "Cows' milk is not suitable as a main drink for babies under 1 year old, although it can be added to foods, such as mashed potatoes.",
+          "Carrying on breastfeeding while giving your baby some formula can work very well.",
+          "Additionally, setting a schedule, starting out slowly, offering other ways of soothing to your baby, and enlisting help in feeding your baby can help. Here's how to stop breastfeeding your baby in easy steps.",
+        ],
+      },
+      {
+        heading: "Recognize the signs your baby is ready to stop breastfeeding",
+        items: [
+          "acting indifferent or cranky during nursing sessions",
+          "sitting with support",
+          "holding their head in an upright position",
+          "expressing interest in what you're eating",
+          "losing their active tongue-thrust reflex",
+        ],
+      },
+      {
+        heading: "Set a schedule for weaning",
+        items: [
+          "Allow yourself a full month to successfully stop chestfeeding; this gives you and your baby extra breathing room for obstacles and setbacks.",
+          "Avoid weaning during a major life change like teething, moving homes, starting daycare, etc.",
+          "Realize your baby will be more apt to cooperate when they aren't overly tired or hungry.",
+        ],
+      },
+      {
+        heading: "Start out slowly",
+        items: [
+          "Phasing out breastfeeding gently will give you both time to get used to the idea.",
+          "Stopping gradually will also help prevent problems like overfull, hard breasts and mastitis.",
+          "Easing into a weaning routine allows you and your baby to adjust to the change.",
+          "For instance, you may omit one breastfeeding session per week—probably the most inconvenient feeding or the one your baby's least interested in and gradually drop feedings until they're solely having bottles and solids.",
+          "Note: If your baby is 9 months or older, it's best to wean directly to a cup, so you don't have to deal with weaning them off the bottle in a few months.",
+          "By going slowly, you'll produce less and less milk, which will make weaning more comfortable for you.",
+          "It will also make weaning more pleasant for your baby since they'll be progressively adjusting to nursing less and drinking more from the bottle or cup.",
+          "You may even avoid triggering an episode of mastitis, which can be a painful infection caused by clogged ducts, which can occur during engorgement.",
+        ],
+      },
+      {
+        heading: "Provide emotional comfort",
+        items: [
+          "Breastfed babies love close physical contact with their parents, so when you're weaning, it's important to provide comfort in other ways.",
+          "Spend quality one-on-one time with activities that keep them emotionally stimulated—cuddling together while reading a book or singing a lullaby, romping around together at the playground, or massaging their back.",
+        ],
+      },
+      {
+        heading: "Consider letting your little one lead",
+        items: [
+          "Some babies excel at weaning when they're in control.",
+          "If you're OK with letting your baby call the shots, rely on the tried-and-true 'don't offer, don't refuse' method.",
+          "In a nutshell, you nurse when your child expresses interest, but you don't actually initiate it.",
+          "It's not the quickest weaning strategy, but it ensures your baby's needs are met.",
+        ],
+      },
+      {
+        heading: "Expect resistance when you stop breastfeeding",
+        items: [
+          "It's normal for babies to resist weaning.",
+          "After a day or two of mourning the loss of the breast, most little ones will begin eating solid foods and drinking liquids from a bottle or sippy cup without problems.",
+          "Healthy babies generally eat when they're hungry enough, no matter how badly they'd like to nurse.",
+        ],
+      },
+      {
+        heading: "Learn how to prevent or soothe engorgement",
+        items: [
+          "Another reason to take it slow: You can experience engorgement in your breasts after nursing ends quickly.",
+          "Your milk ducts miss the memo that they need to reduce milk production, and all that milk has nowhere to go.",
+          "If you're engorged, soothe the pain with cool ice packs or acetaminophen.",
+          "Or reach for your trusty breast pump; you can serve the pumped milk in a bottle or mix it with your baby's cereal.",
+        ],
+      },
+      {
+        heading: "Understand your own emotions",
+        items: [
+          "Your baby isn't the only one who has to adjust to weaning.",
+          "You must deal with a whirlwind of emotions—for example, some parents want their bodies back, while others feel rejected when their baby passes up the breast.",
+          "Though you may be pleased to end nursing once and for all, it's totally natural to feel pangs of nostalgia about your baby getting older.",
+          "Your best bet? Embrace their independence, know that weaning is an emotional experience, and talk to other breastfeeding mothers who can relate.",
+        ],
+      },
+      {
+        heading: "Consider partially stopping breastfeeding",
+        items: [
+          "All-or-nothing isn't your only option.",
+          "Many working parents opt for partial weaning, where a caregiver bottle feeds during the day, and you nurse when you're home.",
+        ],
+      },
+      {
+        heading: "Common reasons for stopping breastfeeding",
+        items: [
+          "Not enough breast milk: Lots of women worry that their baby is not getting enough milk when in fact they have plenty to meet their baby's needs.",
+          "Getting pregnant again: If you get pregnant again while you're breastfeeding, it should not affect your baby or the pregnancy. However, you may feel tired, and changes in your appetite and emotions can make breastfeeding more challenging.",
+          "Going back to work: Some women worry about breastfeeding and returning to work. Going back to work does not necessarily mean you have to stop breastfeeding. If your breast milk supply is well established, going back to work does not have to affect your milk supply for your baby. You can either express at work and give your breast milk to your child's carer, or provide formula milk while you're away.",
+          "Taking some medicines: Most medicines can be taken while you're breastfeeding without harming your baby. But it's always best to tell a doctor, dentist or pharmacist if you're breastfeeding.",
+          "Sore or painful breasts: Some women find breastfeeding uncomfortable, especially in the early days and weeks. Common problems include sore or cracked nipples and painful breasts. These problems can often happen when your baby is not positioned or attached well at the breast.",
+          "Breastfeeding older children: There's no reason why you should not continue breastfeeding your child into their 2nd year and beyond. You and your toddler can continue to enjoy the benefits of breastfeeding for as long as you want to. Your toddler may also find breastfeeding comforting when they're ill or upset.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 31,
+    slug: "in-vitro-fertilization-ivf-and-infertility",
+    title: "In Vitro Fertilization (IVF) and Infertility",
+    description:
+      "What is IVF? In vitro fertilization (IVF) is a type of assistive reproductive technology (ART). It involves retrieving eggs from a woman's ovaries and fertilizing them with sperm. This fertilized egg is known as an emb...",
+    date: "2023-02-01",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181478/In_Vitro_Fertilization_IVF_and_Infertility_ktw9jh.png",
+      alt: "IVF",
+    },
+    tags: ["Infertility"],
+    content: [
+      {
+        heading: "What is IVF?",
+        items: [
+          "In vitro fertilization (IVF) is a type of assistive reproductive technology (ART)",
+          "It involves retrieving eggs from a woman's ovaries and fertilizing them with sperm",
+          "This fertilized egg is known as an embryo",
+          "The embryo can then be frozen for storage or transferred to a woman's uterus",
+          "In vitro fertilization (IVF) is a complex series of procedures used to help with fertility or prevent genetic problems and assist with the conception of a child",
+        ],
+      },
+      {
+        heading: "Depending on your situation, IVF can use",
+        items: [
+          "Donor eggs and your partner's sperm",
+          "Your eggs and your partner's sperm",
+          "Donated embryos",
+          "Your eggs and donor sperm",
+          "Donor eggs and donor sperm",
+          "Your doctor can also implant embryos in a surrogate, or gestational carrier. This is a woman who carries your baby for you",
+          "Your chances of having a healthy baby using IVF depend on many factors, such as your age and the cause of infertility",
+          "In addition, IVF can be time-consuming, expensive and invasive",
+          "If more than one embryo is transferred to the uterus, IVF can result in a pregnancy with more than one fetus (multiple pregnancy)",
+          "Your doctor can help you understand how IVF works, the potential risks and whether this method of treating infertility is right for you",
+          "The success rate of IVF varies. According to the American Pregnancy Association, the live birth rate for women under age 35 undergoing IVF is 41 to 43 percent. This rate falls to 13 to 18 percent for women over the age of 40",
+        ],
+      },
+      {
+        heading: "Why Is In Vitro Fertilization Performed?",
+        items: [
+          "IVF is expensive and invasive, so couples often try other fertility treatments first",
+          "IVF helps people with infertility who want to have a baby. These may include taking fertility drugs or having intrauterine insemination. During that procedure, a doctor transfers sperm directly into a woman's uterus",
+        ],
+      },
+      {
+        heading: "Infertility issues for which IVF may be necessary include",
+        items: [
+          "Unexplained infertility",
+          "Reduced fertility in women over the age of 40",
+          "Uterine fibroids",
+          "Reduced ovarian function",
+          "Blocked or damaged fallopian tubes",
+          "Endometriosis",
+          "Male infertility, such as low sperm count or abnormalities in sperm shape",
+          "Parents may also choose IVF if they run the risk of passing a genetic disorder on to their offspring",
+          "A medical lab can test the embryos for genetic abnormalities. Then, a doctor only implants embryos without genetic defects",
+        ],
+      },
+      {
+        heading: "How Do I Prepare for In Vitro Fertilization?",
+        items: [
+          "Before beginning IVF, women will first undergo ovarian reserve testing. This involves taking a blood sample and testing it for the level of follicle stimulating hormone (FSH). The results of this test will give your doctor information about the size and quality of your eggs",
+          "Your doctor will also examine your uterus. This may involve doing an ultrasound, which uses high-frequency sound waves to create an image of your uterus",
+          "Your doctor may also insert a scope through your vagina and into your uterus. These tests can reveal the health of your uterus and help the doctor determine the best way to implant the embryos",
+          "Men will need to have sperm testing. This involves giving a semen sample, which a lab will analyze for the number, size, and shape of the sperm. If the sperm are weak or damaged, a procedure called intracytoplasmic sperm injection (ICSI) may be necessary. During ICSI, a technician injects sperm directly into the egg. ICSI can be part of the IVF process",
+        ],
+      },
+      {
+        heading: "Factors to consider when choosing IVF",
+        items: [
+          "What will you do with any unused embryos? How many embryos do you wish to transfer?",
+          "The more embryos transferred, the higher the risk of a multiple pregnancy. Most doctors won't transfer more than two embryos",
+          "What about the legal and emotional issues associated with using donated eggs, sperm, and embryos or a surrogate?",
+          "How do you feel about the possibility of having twins, triplets, or a higher order multiple pregnancy?",
+          "What are the financial, physical, and emotional stresses associated with IVF?",
+        ],
+      },
+      {
+        heading: "How Is In Vitro Fertilization Performed?",
+        items: ["There are five steps involved in IVF"],
+      },
+      {
+        heading: "Step 1: Stimulation",
+        items: [
+          "A woman normally produces one egg during each menstrual cycle. IVF requires multiple eggs",
+          "Using multiple eggs increases the chances of developing a viable embryo",
+          "You will receive fertility drugs to increase the number of eggs your body produces",
+          "During this time, your doctor will perform regular blood tests and ultrasounds to monitor the production of eggs and to let your doctor know when to retrieve them",
+        ],
+      },
+      {
+        heading: "Step 2: Egg retrieval",
+        items: [
+          "Egg retrieval is known as follicular aspiration. It's a surgical procedure performed with anesthesia",
+          "Your doctor will use an ultrasound wand to guide a needle through your vagina, into your ovary, and into an egg-containing follicle",
+          "The needle will suction eggs and fluid out of each follicle",
+        ],
+      },
+      {
+        heading: "Step 3: Insemination",
+        items: [
+          "The male partner will now need to give a semen sample",
+          "A technician will mix the sperm with the eggs in a petri dish",
+          "If that doesn't produce embryos, your doctor may decide to use ICSI",
+        ],
+      },
+      {
+        heading: "Step 4: Embryo culture",
+        items: [
+          "Your doctor will monitor the fertilized eggs to ensure that they're dividing and developing",
+          "The embryos may undergo testing for genetic conditions at this time",
+        ],
+      },
+      {
+        heading: "Step 5: Transfer",
+        items: [
+          "When the embryos are big enough, they can be implanted. This normally occurs 3-5 days after fertilization",
+          "Implantation involves inserting a thin tube called a catheter inserted into your vagina, past your cervix, and into your uterus",
+          "Your doctor then releases the embryo into your uterus",
+          "Pregnancy occurs when the embryo implants itself in the uterine wall. This can take 6 to 10 days",
+          "A blood test will determine if you are pregnant",
+        ],
+      },
+      {
+        heading:
+          "What Are the Complications Associated with In Vitro Fertilization?",
+        items: [
+          "There are risks associated with IVF. Complications include:",
+          "Pregnancy loss (Miscarriage)",
+          "Multiple pregnancies, which increases the risk of low birth weight and premature birth",
+          "Ectopic pregnancy (when the eggs implant outside the uterus)",
+          "Ovarian hyperstimulation syndrome (OHSS), a rare condition involving an excess of fluid in the abdomen and chest",
+          "Bleeding, infection, or damage to the bowels or bladder (rare)",
+        ],
+      },
+      {
+        heading: "Note",
+        items: [
+          "Deciding whether to undergo in vitro fertilization, and how to try if the first attempt is unsuccessful, is an incredibly complicated decision",
+          "The financial, physical, and emotional toll of this process can be difficult",
+          "Speak with your doctor extensively to determine what your best options are and if in vitro fertilization is the right path for you and your family",
+          "Seek a support to help you and your partner through this process",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 32,
+    slug: "instant-fox-nuts-makhana-porridge",
+    title: "Instant Fox nuts (Makhana) Porridge",
+    description:
+      "Phool Makhana Porridge - instant protein rich porridge recipe made with homemade phool makhana cereal .This porridge comes handy when traveling with your infant, you can simply mix it with water or milk and feed your baby whenever required...",
+    date: "2023-02-11",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181479/Instant_Fox_nuts_Makhana_Porridge_vowthp.png",
+      alt: "Fox nuts (Makhana)",
+    },
+    tags: ["Babies Food(6-24Months)"],
+    content: [
+      {
+        heading: "Introduction",
+        items: [
+          "Phool Makhana Porridge - instant protein rich porridge recipe made with homemade phool makhana cereal",
+          "This porridge comes handy when traveling with your infant, you can simply mix it with water or milk and feed your baby whenever required",
+        ],
+      },
+      {
+        heading: "You will need",
+        items: [
+          "Fox nuts (Phool Makaha) - ½ cup",
+          "Hot Water - ¾ cup",
+          "Ghee - ½ tsp (optional)",
+          "Dates syrup/any sweetener/fruit puree/Dry fruit powder - 1-2 tbsp (optional)",
+        ],
+      },
+      {
+        heading: "How to Prepare",
+        items: [
+          "Take ½ cup fox nuts in pre heat frying pan. Turn the flame in medium hot. Dry roast the fox nuts for 5 minutes. Take out the foxnuts in a plate and let the fox nut cool.",
+          "After that, take a mixture grinder and are a fine powder. This what we called fox nut cereal.",
+          "Take foxnuts cereal in a bowl. Add hot water little by little and mix well with a spoon or whisk. Make sure there are no lumps remained.",
+          "Add sweetener at this stage if using. Give a quick stir. Add ghee at the end and mix well.",
+          "The instant foxnuts or makhana porridge is ready. Feed your baby warm.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 33,
+    slug: "instant-semolina-sooji-porridge-recipe-for-babies-toddlers-and",
+    title: "Instant Semolina (Sooji) Porridge Recipe for Babies, Toddlers and",
+    description:
+      "Instant porridge recipe with homemade sooji cereal. Ideal during travel- Sooji Porridge You will need-• Homemade Semolina (Sooji) Cereal - 2 tbsp• Ghee -½ tsp• Hot Water - 1 cup• Breast milk/Formula Milk/Cows mil...",
+    date: "2023-02-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181479/Instant_Semolina_Sooji_Porridge_Recipe_for_Babies_slnzhp.jpg",
+      alt: "Sooji Porridge Recipe for Babies",
+    },
+    tags: ["Babies Food(6-24Months)"],
+    content: [
+      {
+        heading:
+          "Instant porridge recipe with homemade sooji cereal. Ideal during travel: Sooji Porridge",
+        items: [
+          "You will need:",
+          "Homemade Semolina (Sooji) Cereal - 2 tbsp",
+          "Ghee -½ tsp",
+          "Hot Water - 1 cup",
+          "Breast milk/Formula Milk/Cows milk ½ cup",
+          "Jaggery - According to taste (optional)",
+          "Dry fruit or nuts powder/ Dry Dates-1-2tbsp (optional )",
+        ],
+      },
+      {
+        heading: "How to Prepare",
+        items: [
+          "Take a pan. Put 1 tbsp of ghee and 2 tbsp sooji. Cook it further for 3-5 minutes in low medium flame.",
+          "Take required hot boiled water in a bowl or sauce pan. Add sooji little by little to the hot water.",
+          "Stir in continuously well with a spoon or whisk. Make sure there are no lumps remained. Now close this with a lid and keep it undisturbed. You can also cook it further for 5 minutes in low medium flame. Then add sweetener at this stage, Jaggery (optional). Give a quick stir.",
+          "Add milk. Mix well and serve. If adding cows milk make sure to add boiled milk. Cook it further for few minutes if desired and switch off the flame.",
+          "You can add dry fruits powder (https://mumworld.in/f/dry-fruits-nuts-powder-for-babies-toddlers?blogcategory=Babies+Food+%286-12+Months%29) or dry dates to this.",
+          "You could make this porridge with only water or milk or the combination of milk and water. It's purely your preference.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 34,
+    slug: "is-it-safe-to-travel-when-pregnant",
+    title: "Is it safe to travel when pregnant?",
+    description:
+      "Yes, it's generally safe to travel during pregnancy as long as you're not too close to your due date and you're not experiencing any serious pregnancy complications. There are special precautions to take, of course, and ...",
+    date: "2023-02-24",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181479/Is_it_safe_to_travel_when_pregnant_rhfamq.jpg",
+      alt: "Is it safe to travel when pregnancy?",
+    },
+    tags: ["Pregnancy"],
+    content: [
+      {
+        heading: "General Travel Safety While Pregnant",
+        items:
+          "Yes, it's generally safe to travel during pregnancy as long as you're not too close to your due date and you're not experiencing any serious pregnancy complications. There are special precautions to take, of course, and you may find yourself stopping to use the bathroom more than you're used to, but that babymoon can be within reach. Before you pack your suitcase, talk with your healthcare provider to make sure it’s safe for you to travel and that your destination is a good choice. You'll want to avoid places where infectious diseases are prevalent (or there are high outbreaks of Zika or malaria, for example). The COVID-19 pandemic has made people reconsider where they feel safe traveling as well; if you're fully vaccinated, the CDC says you can travel, but it's always best to check with your doctor first. Keep in mind that the activities you take part in might be different than normal. It's safe to fly when you're pregnant as well, and most airlines will allow you to fly domestically until about 36 weeks of pregnancy. International routes may have different rules, so be sure to check with your airline before booking anything. Your doctor will tell you to avoid flying, however, if you have a health concern that might require emergency care or any other health conditions that aren’t well controlled.",
+      },
+      {
+        heading: "When to avoid pregnancy travel",
+        items: [
+          "It's best to avoid traveling while pregnant if you have any health conditions that can be life-threatening to both you or your baby. If you have any of the following conditions, your doctor will almost certainly advise you against travel:",
+          "Premature rupture of membranes (PROM)",
+          "Placental abruption",
+          "A suspected ectopic pregnancy",
+          "Cervical insufficiency (incompetent cervix)",
+          "Vaginal bleeding",
+          "Preeclampsia",
+          "You're in preterm or active labor",
+          "You might also need to be extra-cautious or skip travel if you're experiencing intrauterine growth restriction, you have placenta previa, or you have other conditions that may place your pregnancy at a higher risk. It’s always a good idea to discuss your concerns with your healthcare provider before travel regarding any medical conditions you have, and they'll be able to advise you on what's best, depending on the trip.",
+        ],
+      },
+      {
+        heading: "When should you stop traveling while pregnant?",
+        items:
+          "The guidelines for when to stop traveling while you're pregnant vary based on your mode of travel, but more or less, you should wrap up travel before you're 36 weeks pregnant. Most airlines will let pregnant women fly domestically until they're 36 weeks pregnant and many cut that off earlier for international travel. This rule is often enforced on an honor system policy, but some airlines may ask for a doctor’s note so make sure you have that from your healthcare provider if you're traveling in the third trimester, just in case. Most cruise ships don't allow travel after 24 weeks of pregnancy. Some cruise lines' cutoff dates vary, so verify policies before booking a cruise. As for road trips, there's no official deadline for when you need to stop traveling, but your personal comfort level (physically and emotionally) – and your doctor's advice – might help you decide. You can drive while pregnant all the way up until your due date, but things may get considerably less comfortable on longer trips as you approach full term.",
+      },
+      {
+        heading: "Best time to travel while pregnant",
+        items:
+          "Travelling in your second trimester, between 14 weeks and 27 weeks, is a sweet spot for pregnancy. By the second trimester, any struggles you’ve had with morning sickness and fatigue during the earlier weeks of pregnancy should have hopefully subsided and after 12 weeks, your risk of miscarriage decreases significantly as well. And you're not too far along to worry about third trimester exhaustion or going into preterm labor yet, either. Your energy levels are likely to be good during your second trimester too (bring on the sightseeing!), and it will still be relatively easy and comfortable for you to travel and move around at this time. Keep in mind that once you hit that third trimester, pregnancy travel might be more difficult as you find it harder to move around and stay still for long periods of time.",
+      },
+      {
+        heading: "Pregnancy travel checklist",
+        items: [
+          "Before you travel:",
+          "Make sure you know your prenatal test schedule. Plan travels around any prenatal tests you need to schedule, including ultrasounds and other important screening tests.",
+          "Talk to your healthcare provider to determine if your trip is safe for you and if there are any medical concerns to consider. It's a good idea to discuss any activities you plan to do while you're away too. If you're planning an international trip, make sure to ask about any vaccines you may need for the areas you're visiting.",
+          "Book an aisle seat. You'll likely be more comfortable being able to get up to stretch or go to the bathroom on longer flights.",
+          "Gather your medical records and health information. If you’re in your second or third trimester, ask your ob-gyn or midwife for a digital copy of your prenatal chart, and have that easily accessible during your trip.",
+          "Buy travel insurance. You don't need special travel insurance when you're pregnant, but it's never a bad idea to secure a policy.",
+          "Keep a list of key names and numbers you may need in the event of an emergency saved on your phone and written on a piece of paper.",
+          "Have a contingency plan for doctors and hospitals that will take your insurance where you're going in case you go into labor early or experience pregnancy complications that require urgent care while you're away from home.",
+          "If you're flying during your third trimester, be sure to call the airline to check about the cutoff week for pregnancy travel. A note from your doctor that says you’re cleared to travel is always good to have when traveling during your third trimester.",
+          "Pack medicines and prenatal vitamins. Bring enough to cover your entire trip and a written prescription that you can fill if you lose anything.",
+          "Prepare for the unexpected. On a road trip, that might mean an unexpected breakdown, so join an auto club that provides roadside assistance. Download any apps you use for renting cars and accessing boarding passes before you leave so you can easily reschedule things in the event of a last-minute cancellation.",
+          "During your trip:",
+          "Drink plenty of water and continue to eat healthy foods. Avoid unpasteurized foods (like soft cheeses and milk) and contaminated water.",
+          "On long flights and drives, take time to stretch by pulling over for a walk or strolling up and down the airplane aisle. Always wear your seat belt.",
+          "Maternity compression socks are handy to have along.",
+          "Take advantage of help. Many countries have dedicated lines in shops and airports for pregnant travelers.",
+          "Go easy on yourself. Remember, you're growing a baby. You might not have quite the stamina for sightseeing and late nights like you used to pre-pregnancy.",
+          "Don’t forget to get photos of your bump.",
+          "Go for comfy shoes instead of heels.",
+          "Pack snacks so you always have something to curb your appetite.",
+          "Try to be in the moment with your travel partners as much as possible.",
+        ],
+      },
+      {
+        heading: "When to call your doctor while traveling",
+        items: [
+          "If you have any medical concerns traveling while pregnant, don’t hesitate to pick up the phone and call your doctor for advice.",
+          "Ruptured membranes (your water breaks)",
+          "Severe cramping",
+          "Spiking blood pressure",
+          "Severe nausea or vomiting",
+          "Covid-19 symptoms",
+          "Vaginal bleeding",
+          "Signs of pre-term labor (including a constant, low dull backache, bleeding, etc.)",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 35,
+    slug: "is-the-second-caesarean-section-more-painful",
+    title: "Is the second caesarean section more painful?",
+    description:
+      "What should be noted?  Things to pay attention to in the 2nd caesarean section? After having undergone a cesarean section, pregnant women must have had certain childbirth experiences. However, the feeling of pain after ...",
+    date: "2023-02-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181479/Is_the_second_caesarean_section_more_painful_ikskka.jpg",
+      alt: "Is the second caesarean section more painful?",
+    },
+    tags: ["Second Pregnancy"],
+    content: [
+      {
+        heading:
+          "What should be noted? Things to pay attention to in the 2nd caesarean section?",
+        items: [
+          "After having undergone a cesarean section, pregnant women must have had certain childbirth experiences",
+          "However, the feeling of pain after the first surgery also makes many women worry about the next surgery",
+        ],
+      },
+      {
+        heading: "Is the 2nd caesarean section more painful than the 1st time?",
+        items: [
+          "Whether the second caesarean section is more painful than the first depends on many factors",
+          "According to the surgical procedure, the pregnant woman will be relieved by spinal anesthesia, the effect of which only lasts for a few hours",
+          "After the anesthetic wears off, each woman's pain is different",
+          "Pregnant women are only prescribed more pain relievers if they feel pain, persistent pain, and affect the breastfeeding process",
+          "Each repeat C-section is generally more complicated than the last",
+          "However, research hasn't established the exact number of repeat C-sections considered safe",
+          "So the thoughts about 'the second caesarean section is more painful than the first' are completely unfounded",
+          "So don't let negative rumors affect your birthing journey",
+          "To make the second cesarean birth easier, please keep your mind at ease and prepare mentally",
+        ],
+      },
+      {
+        heading:
+          "Women who have multiple repeat cesarean deliveries are at increased risk of",
+        items: [
+          "Problems with the placenta: The more C-sections you've had, the greater is your risk of developing problems with the placenta — such as the placenta implanting too deeply into the uterine wall (placenta accreta) or the placenta partially or completely covering the opening of the cervix (placenta previa)",
+          "Incision-related complications: The risk of incision-related problems, such as a hernia, increases as the number of previous abdominal incisions grows. Surgical repair might be needed",
+          "Complications related to adhesions: Bands of scar-like tissue (adhesions) develop during each C-section. Dense adhesions can make a C-section more difficult and increase the risk of a bladder or bowel injury and excessive bleeding",
+        ],
+      },
+      {
+        heading:
+          "What should pregnant women pay attention to in the 2nd caesarean section?",
+        items: [
+          "You should keep a gap of 3 years before having your second baby if you are having a cesarean section for the first time",
+          "If it's been less than 3 years, your risk of having a caesarean section next time is higher",
+          "You can do simple physical exercises and participate in pelvic and back exercises",
+          "You can start walking but avoid heavy lifting during the first 40 days of pregnancy",
+          "You can start exercising regularly under the guidance of a fitness trainer from the 4th month of pregnancy",
+          "Women should breastfeed from the first day after giving birth. This does not affect the health of the fetus, on the contrary, it brings the first valuable source of nutrition to the baby's body",
+          "Weight gain is not due to cesarean section but can be caused by stress, eating too arbitrarily after surgery",
+          "It's best to drink lots of water, eat lots of healthy foods, and start with basic exercise",
+        ],
+      },
+      {
+        heading: "Diet after surgery",
+        items: [
+          "In the first 2 days after surgery, you should eat soft foods, avoid fat",
+          "From day 3, can eat solid foods rich in iron and fiber, vitamin C, supplement with fresh fruits, green vegetables, lean meat, low-fat yogurt and nuts, and drink enough water",
+          "A healthy and nutritious diet can help you promote health and increase nutrition for your baby",
+          "You may experience a lot of stress after giving birth, which only lasts for a few weeks",
+          "If it takes longer, see and consult a doctor so that you can overcome your feelings of anxiety, insecurity and for your baby's safety",
+          "Balance between child care and health recovery",
+          "Keep your body warm and avoid sneezing and coughing as they can put pressure on the incision",
+          "Do not lie on your back, just lie on your side with the help of a loved one and keep your hand on the surgical site to avoid injury",
+          "You should sleep at the same time as your baby and ask someone to look after him",
+          "The risk of deep vein thrombosis is higher with obesity because you can't function normally within 24 hours after surgery",
+        ],
+      },
+      {
+        heading:
+          "Answering the question of whether the second cesarean section is more painful, the answer is",
+        items: [
+          "Usually no more pain depending on the condition of the old incision with little or no adhesion, and the surgical technique, and pain relief of the doctors",
+          "Mothers having a second caesarean section should choose a reputable hospital for caesarean section",
+          "The advice given to mothers who have had a second caesarean section is to choose the hospital that had the previous surgery with the caesarean section",
+          "At this time, the doctor will understand the situation of the pregnant woman as well as save time to find out the information again",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 36,
+    slug: "lentil-soup-for-babies",
+    title: "Lentil Soup For Babies",
+    description:
+      "You will need- • ½ cup potato, bottle gourd, baby carrot (peeled and chopped)• ¼ cup yellow lentil (washed and drained)• 1tbsp olive oil/butter• ½ cup water How to Prepare...",
+    date: "2023-01-26",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181479/Lentil_Soup_For_Babies_rdc4ur.jpg",
+      alt: "Lentil Soup For Babies",
+    },
+    tags: ["Babies Food(6-24Months)"],
+    content: [
+      {
+        heading: "You will need",
+        items: [
+          "½ cup potato, bottle gourd, baby carrot (peeled and chopped)",
+          "¼ cup yellow lentil (washed and drained)",
+          "1tbsp olive oil/butter",
+          "½ cup water",
+        ],
+      },
+      {
+        heading: "How to Prepare",
+        items: [
+          "Add water, lentil, and veggies into a saucepan and put it on medium heat.",
+          "Boil the ingredients until the veggies turn tender. You can pressure cook the ingredients to hasten the preparation.",
+          "You can add butter instead of olive oil.",
+          "Once the mixture looks well-cooked.",
+          "Turn off the heat and set the saucepan aside to cool.",
+          "Blend the mixture into an easy-flowing soup, using an immersion blender, ensuring no lumps are present.",
+          "Add water into the saucepan and put it on low flame again, to simmer the soup for 4-5 minutes.",
+          "After that turn off the flame, and transfer the soup into a soup bowl and the soup is ready to feed.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 37,
+    slug: "mango-and-banana-puree",
+    title: "Mango and Banana Puree",
+    description:
+      "You will need- 1 banana 1 small mango How to Prepare-• Peel the banana and mango. Stand the mango on end and slice down...",
+    date: "2023-01-31",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181480/Mango_and_Banana_Puree_jn07y8.webp",
+      alt: "Mango Banana Puree",
+    },
+    tags: ["Babies Food(6-24Months)"],
+    content: [
+      {
+        heading: "You will need",
+        items: ["1 banana", "1 small mango"],
+      },
+      {
+        heading: "How to Prepare",
+        items: [
+          "Peel the banana and mango. Stand the mango on end and slice down.",
+          "Trim any remaining flesh from the pit and discard the pit.",
+          "Cut the mango and banana into chunks.",
+          "Transfer the fruit to a blender or food processor. Process the fruit to a very smooth or chunky puree, depending on your baby's age and chewing ability.",
+          "If needed, add a little water, breast milk, or formula to thin the puree.",
+          "Refrigerate the puree in an airtight container for up to three days, or freeze for up to three months.",
+          "(Storage tip: Spoon into ice-cube trays for single servings that are easy to thaw. Some discoloration may occur.)",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 38,
+    slug: "mashed-sweet-potato-puree",
+    title: "Mashed Sweet Potato Puree",
+    description:
+      "You will need- • Sweet potato (1 medium sized)• Butter/ Ghee 1 tsp• Pinch of Cardamom powder (optional) How to Prepare...",
+    date: "2023-01-30",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181480/Mashed_Sweet_Potato_Puree_cyiabj.jpg",
+      alt: "Sweet Potato Puree",
+    },
+    tags: ["Babies Food(6-24Months)"],
+    content: [
+      {
+        heading: "You will need",
+        items: [
+          "Sweet potato (1 medium sized)",
+          "Butter/ Ghee 1 tsp",
+          "Pinch of Cardamom powder (optional)",
+        ],
+      },
+      {
+        heading: "How to Prepare",
+        items: [
+          "Keep all the ingredients ready.",
+          "Wash the sweet potatoes thoroughly in running water. Then cut them into 2-3 pieces depends on its size.",
+          "Then pressure cook sweet potatoes with enough water for 2-3 whistles. Open the cooker once pressure released.",
+          "You can steam cook/bake the sweet potatoes too.",
+          "Take the cooked sweet potato pieces from the pressure cooker and place it to a wide bowl.",
+          "Then Peel the skin with your hand when its warm to touch.",
+          "Then Mash the cooked sweet potatoes well without any chunks, with a fork and set aside.",
+          "You can puree the sweet potatoes in a mixie/blender to get fine puree.",
+          "Add little water while grinding if necessary.",
+          "Heat ghee in a pan and add mashed sweet potatoes along with cardamom powder (optional) to the same pan and fry them for two minutes in low medium flame.",
+          "Switch off the flame once the sweet potato mash is mixed well with ghee.",
+          "Cool it down and serve warm. Adjust the consistency by adding water/breastmilk/formula while feeding your baby.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 39,
+    slug: "mental-health-during-pregnancy",
+    title: "Mental health during pregnancy",
+    description:
+      "If you are mentally healthy, you will be in the best position to manage the challenges of pregnancy and life with a new baby. It’s as important to look after your mental health and wellbeing during pregnancy as your physical health.",
+    date: "2021-08-26",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181480/Mental_health_during_pregnancy_vcp9r1.jpg",
+      alt: "Mental health during pregnancy",
+    },
+    tags: ["Pregnancy", "Pregnancy Health"],
+    content: [
+      {
+        heading: "Overview",
+        items: [
+          "If you are mentally healthy, you will be in the best position to manage the challenges of pregnancy and life with a new baby. It’s as important to look after your mental health and wellbeing during pregnancy as your physical health. Pregnancy can affect mental health of women. Many things can affect how you feel in pregnancy. These include physical symptoms like:",
+          "Morning sickness",
+          "The support you have or don’t have.",
+          "Stressful situations.",
+        ],
+      },
+      {
+        heading: "Pre-existing Mental Illness",
+        items: [
+          "You may already have had a mental illness when you became pregnant. Depression and anxiety are the most common mental health problems in pregnancy. As many as 1 in 5 women have mental health problems in pregnancy or after birth. It can happen to anyone. These affect about 10 to 15 out of every 100 pregnant women. You can have many different types of mental illness.",
+          "Symptoms of mental illness in pregnancy are similar to symptoms you have at other times, but some may focus on the pregnancy. For instance, you may have anxious or negative thoughts about your pregnancy or your baby. You may find changes in your weight and shape difficult, particularly if you have had an eating disorder. Sometimes symptoms caused by your pregnancy can be confused with symptoms of mental illness. For example:",
+          "Broken sleep",
+          "Lack of energy are common in both pregnancy and depression.",
+        ],
+      },
+      {
+        heading: "Mental health Problems during pregnancy",
+        items: [
+          "Women experiences mental health issues during the pregnancy as well as after the birth. For some people, pregnancy can lead to conditions such as:",
+          "Depression",
+          "Anxiety",
+          "Bipolar disorder (less common)",
+          "Treatment for mental health problems during pregnancy, It’s just as important to have treatment for mental health problems as it is for physical health problems in pregnancy. Both medication and psychological therapies treatments are available.",
+          "Pregnancy has its ups and downs, it’s time to seek advice from a health professional. Keep a lookout for signs that you may need help, and be ready to take action if you need to:",
+          "If you are showing signs of depression, feeling hopeless or unable to cope, or such as losing interest.",
+          "If you start having panic attacks, or develop obsessive.",
+          "Negative feelings and thoughts are starting to affect your ability to function normally.",
+          "If you have felt consistently sad or worried for longer than 2 weeks.",
+          "Take help and support. Talk to your doctor, partner, or someone else you trust.",
+        ],
+      },
+      {
+        heading: "How to manage your mental health during pregnancy",
+        items: [
+          "There are so many things that you can do to manage your mental health.",
+          "Make connections with other expectant parents, and talk to them.",
+          "Keep physical active.",
+          "Eat healthy meal regularly.",
+          "Spend time with people who make you feel relaxed and good about yourself.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 40,
+    slug: "miscarriage-everything-you-need-to-know",
+    title: "Miscarriage- Everything You Need to Know",
+    description:
+      "Miscarriage is the spontaneous loss or also called early pregnancy loss, when a baby dies in the uterus before the 20th week. Most miscarriages occur because the fetus isn't developing normally. About 10 to 20 percent of known pregnancies end in miscarriage.",
+    date: "2021-09-17",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181480/Miscarriage_Everything_You_Need_to_Know_fg5mwd.webp",
+      alt: "Miscarriage- Everything You Need to Know",
+    },
+    tags: ["Pregnancy", "Pregnancy Health"],
+    content: [
+      {
+        heading: "Overview",
+        items: [
+          "Miscarriage is the spontaneous loss or also called early pregnancy loss, when a baby dies in the uterus before the 20th week. Most miscarriages occur because the fetus isn't developing normally.",
+          "About 10 to 20 percent of known pregnancies end in miscarriage. But the actual number is likely higher because many miscarriages occur so early in pregnancy that a woman doesn't realize she is pregnant. Most miscarriages happen in the first trimester before the 12th week of pregnancy.",
+        ],
+      },
+      {
+        heading: "Repeat miscarriages?",
+        items: [
+          "About 1 in 100 women that is 1% have repeat miscarriages.",
+          "If you have repeat miscarriages you have two or more miscarriages in a row. Most women who have repeat miscarriages have an unknown cause.",
+        ],
+      },
+      {
+        heading: "Signs and symptoms of miscarriage include:",
+        items: [
+          "Vaginal spotting or bleeding.",
+          "Cramps like you feel with your period.",
+          "Severe belly pain.",
+          "Fluid or tissue passing from your vagina.",
+          "If you have any of these signs or symptoms, call your health care provider. They want you to do some test to make sure everything is fine.",
+          "These test include ultrasound, blood test and a pelvic examine.",
+        ],
+      },
+      {
+        heading: "Causes",
+        items: [
+          "Abnormal genes or chromosomes: About 50 percent of miscarriages are associated with extra or missing chromosomes. Most often, chromosome problems result from errors that occur by chance as the embryo divides and grows — not problems inherited from the parents.",
+          "Maternal health conditions: In a few cases, a mother's health condition might lead to miscarriage. Examples include:",
+          "Hormonal problems",
+          "Uterus or cervix problems",
+          "Thyroid disease",
+          "Uncontrolled diabetes",
+        ],
+      },
+      {
+        heading: "Risk factors",
+        items: [
+          "Factors increase the risk of miscarriage, including:",
+          "Uterine or cervical problems.",
+          "Previous miscarriages, women who have had two or more consecutive miscarriages are at higher risk of miscarriage.",
+          "Women who have a chronic condition, like uncontrolled diabetes, have a higher risk of miscarriage.",
+          "Being overweight or being underweight has been linked with an increased risk of miscarriage.",
+          "Age Factor, Women older than age 35 have a higher risk of miscarriage than do younger women. At age 35, you have about a 20 percent risk. At age 40, the risk is about 40 percent. And at age 45, it's about 80 percent.",
+        ],
+      },
+      {
+        heading: "Prevention",
+        items: [
+          "Nothing you can do to prevent a miscarriage.",
+          "Focus on taking good care of yourself and your baby:",
+          "Avoid known miscarriage risk factors, such as smoking, drinking alcohol and drug use.",
+          "Seek regular prenatal care.",
+          "Take a daily multivitamin.",
+          "Limit your caffeine intake. Drinking more than two caffeinated beverages a day appeared to be associated with a higher risk of miscarriage.",
+          "If you have a chronic condition, talk to your health care team to keep it under control.",
+        ],
+      },
+      {
+        heading: "Recovery",
+        items: [
+          "Generally it takes a few weeks to a month or more for your body to recover from a miscarriage. Depending on how long you were pregnant. Most women get their period again 4 to 6 weeks after a miscarriage.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 41,
+    slug: "new-born-care-what-new-parents-need-to-know-why-is-newborn-care",
+    title: "New born care- What New Parents Need to Know.Why Is Newborn Care",
+    description:
+      "The initial months with your newborn can be confusing and yet extremely overwhelming for first-time parents. Deciding what to and what not to follow in regards to newborn care can be complex...",
+    date: "2023-01-31",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181476/New_born_care_eanins.png",
+      alt: "New born care",
+    },
+    tags: ["Baby"],
+    content: [
+      {
+        heading: "Introduction",
+        items: [
+          "The initial months with your newborn can be confusing and yet extremely overwhelming for first-time parents",
+          "Deciding what to and what not to follow in regards to newborn care can be complex",
+          "Expect various kinds of advice from everyone about newborn baby care",
+          "Caring for a newborn is pretty exhausting and may come across as super challenging, but it is also one of the most amazing experiences of your life",
+          "Read on for all you need to know about caring for your newborn baby",
+        ],
+      },
+      {
+        heading: "At What Age Is A Newborn No Longer A Newborn?",
+        items: [
+          "As per WHO, a newborn infant is a child under 28 days of age",
+          "A baby is only considered a newborn for his first 2-3 months of life",
+          "Next is the infant stage, lasting till your baby turns 1 year old",
+        ],
+      },
+      {
+        heading: "Why Is Newborn Care Important?",
+        items: [
+          "Each and every newborn life requires essential care as they have just entered a new environment, wherein, they were first inside a safe and secure shell, a mother's womb",
+          "This is why, to minimize the risk of infections and maximize their growth and development is extremely important to give them the right amount of everything and love, warmth and care the most",
+        ],
+      },
+      {
+        heading: "How Do You Take Care Of A Newborn Baby?",
+        items: [
+          "Taking care of a newborn can surely be a tough task for a first-time mommy",
+          "Here are the few newborn care basics that are going to help you",
+        ],
+      },
+      {
+        heading: "1. Feeding",
+        items: [
+          "You would have to feed them every 2-3 hours which means you have to nurse them 8-12 times in 24 hours",
+          "Remember, it is extremely important to feed your newborn on time",
+          "Moreover, you should make sure to only breastfeed or give formula milk to your baby for the first 6 months",
+          "Breast milk is best for new born, it contains all the vital nutrients and antibodies required for your newborn's growth and development",
+          "In case your breast milk is not enough for baby, then you can give top feed (formula milk to babies)",
+        ],
+      },
+      {
+        heading: "2. How To Hold Your Newborn",
+        items: [
+          "Pay attention to holding your newborn baby's neck whenever you pick them up",
+          "Ensure that while holding your newborn, you are supporting the back of their neck as the neck muscles are still developing and are not strong enough to hold the weight of the head altogether",
+          "The backbone is still developing and becoming stronger day by day",
+          "For the neck to be able to support the head on its own, it would take around 3-4 months of age",
+        ],
+      },
+      {
+        heading: "3. Burping",
+        items: [
+          "Try to gently hold your baby against your chest with one hand. Their chin should be resting on your shoulder and now start patting gently on their back with your other hand until they burp",
+          "While the babies are having their feed, they tend to swallow air which causes gas in their tummies",
+          "Burping helps to get rid of this gas by expelling excess air, aiding in digestion and preventing spit-ups",
+        ],
+      },
+      {
+        heading: "4. Massage Them",
+        items: [
+          "Massage helps in soothing them and eventually to sleep and in improving blood circulation and even digestion",
+          "Bond with your baby by massaging them. Spread a small quantity of baby oil or moisturizer on your hands. After this, gently on their body",
+          "Maintain eye contact, smile, laugh, and talk to them when massaging their body",
+          "A good time to massage your baby is before they take a bath",
+        ],
+      },
+      {
+        heading: "5. Diapering",
+        items: [
+          "Changing diapers frequently is a crucial part when taking care of a newborn baby after delivery",
+          "To change a dirty diaper, you will need a changing sheet, gentle diaper wipes, diaper rash cream or baby powder, and fresh diapers",
+          "If your baby is being provided with sufficient breast milk/formula milk, they will wet at least 6 to 8 diapers in a day, along with regular poo-poos",
+          "Change their diaper, as soon as you feel it's full and wipe them from front to back to prevent the risk of urinary tract infection",
+          "You might have to change it at least 10 times a day too",
+        ],
+      },
+      {
+        heading: "6. Sleeping",
+        items: [
+          "On average, newborns need to sleep for about 16 hours a day in the first 2 months",
+          "Every baby is different and it is obvious that they would have different sleeping cycles",
+          "They mostly take naps for around 2 to 4 hours and wake up if they are wet or hungry",
+          "Try to utilize this time and take a nap of your own with them or have a peaceful cup of tea or coffee",
+        ],
+      },
+      {
+        heading: "7. Trimming The Nails",
+        items: [
+          "Remember to trim their nails by using a baby clipper",
+          "DO NOT trim the nails very deeply as it can be painful for them",
+          "Refrain from cutting the edges of the nails as this can cause painful ingrown nails",
+          "Your newborn baby's nails will surely grow very fast and because of this, they may scratch their body or face with their hand movements",
+        ],
+      },
+      {
+        heading: "8. Play Time",
+        items: [
+          "Make sure you have play time with your new born and keep these few things in mind when playing with your baby:",
+          "Always wash your hands before picking up your baby",
+          "Do not throw your baby up into the air",
+          "Do not shake your baby as their internal organs are delicate enough that they can get damaged by vigorous shaking",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 42,
+    slug: "normal-delivery-vs-cesarean-delivery-which-is-right-for-you",
+    title: "Normal Delivery vs. cesarean delivery Which Is Right for You",
+    description:
+      "What does normal delivery mean?Delivery of a full-term newborn baby, between 37-42 weeks through the vagina without the use of forceps or vacuum for assistance is called a normal delivery of a baby. It is the most preferred option.",
+    date: "2021-11-15",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181477/Normal_Delivery_vs_cesarean_delivery_Which_Is_Right_for_You_annman.jpg",
+      alt: "Normal vs C-section",
+    },
+    tags: ["Pregnancy"],
+    content: [
+      {
+        heading: "What does normal delivery mean?",
+        items: [
+          "Delivery of a full-term newborn baby, between 37-42 weeks through the vagina without the use of forceps or vacuum for assistance is called a normal delivery of a baby. It is the most preferred option of delivery.",
+        ],
+      },
+      {
+        heading: "What does cesarean delivery mean?",
+        items: [
+          "Cesarean delivery is a surgical procedure to deliver babies through a vertical or horizontal incision on the mother’s belly. The operation is used to save the mother and baby’s life. It is also called C-section or cesarean section.",
+          "During this surgery, the mother’s belly muscles are separated to make a incision on the wall of the womb. Then, the baby is extracted through the womb wall, and the womb and belly are closed with stitches.",
+        ],
+      },
+      {
+        heading: "What Is Better: Normal or Cesarean Delivery?",
+        items: [
+          "Vaginal delivery has far fewer risks to both the mother and baby than cesarean delivery. Each has its own set of positives and negatives. Vaginal birth is a natural way of giving birth, but it is prudent to discuss with your doctor, which is a safer option for you in your current condition.",
+        ],
+      },
+      {
+        heading: "Advantages of Normal (vaginal) delivery",
+        items: [
+          "There is less risk of blood loss, scarring, infections, and complications related to anesthesia or pain medications.",
+          "Vaginal delivery removes fluids from the baby’s lungs as it passes through the birth passage.",
+          "Access to beneficial bacteria to the baby while passing through the birth canal may support the baby’s immunity system.",
+          "It allows more immediate contact between the mother and baby.",
+          "It allows for quicker initiation of breastfeeding.",
+          "Short hospital stays are usually two- to three days long.",
+          "Quick recovery is often just within a few days to a week.",
+        ],
+      },
+      {
+        heading: "Risks of vaginal delivery",
+        items: [
+          "The process is longer and more physically demanding for the mother.",
+          "It may stretch the vagina, or the risk of vaginal tear and internal injuries is higher and may alleviate sometimes by an episiotomy or stitches.",
+          "Possible risk of complications in the mother such as loss of bowel control and urine control may be lifelong.",
+          "There is a higher risk of moderate-to-severe stress incontinence (urine control) in women who delivered vaginally than those who delivered by cesarean (10% vs 5%).",
+          "There will be a sore groin area usually just for a few days.",
+          "There is a possible weakening of the groin muscles.",
+          "There is a higher risk of adverse outcomes in a twin delivery.",
+        ],
+      },
+      {
+        heading: "Advantages of cesarean delivery",
+        items: [
+          "Cesarean is often safer than vaginal delivery in case of the danger posed to the mother or baby due to a medical condition and reduces the death rate and illnesses in the mother and baby.",
+          "Deliveries can be scheduled according to the convenience of the mother or for the relatives.",
+          "Elective cesarean delivery has become an easy way out, is efficient, and predictable.-For mother;",
+          "Provides a modest protective effect against loss of urine control later in life.-For babies;",
+          "Cesarean delivery is a life-saving operation for them in dangerous situations during the birth process.",
+          "It reduces mortality and morbidity rates in babies during birth.",
+        ],
+      },
+      {
+        heading: "Disadvantages of cesarean delivery",
+        items: [
+          "Prolonged hospital stays.",
+          "Less likely chances of the early beginning of breastfeeding.",
+          "Higher risks of repeating hospitalizations for both the mother and baby.",
+          "Expensive means of delivery.",
+        ],
+      },
+      {
+        heading: "Risks for mother",
+        items: [
+          "A higher risk of blood loss or blood clots.",
+          "Prolonged recovery period.",
+          "Pain at the surgical incision site.",
+          "Five times higher illness and death rate during cesarean delivery than during vaginal delivery due to complications such as bleeding and sepsis (a life-threatening infection in the body).",
+          "A higher risk of mother’s death during cesarean delivery than that during vaginal delivery due to uterine scarring.",
+          "A higher risk of placental issues and womb rupture in future pregnancies, which may increase severe illness, complications, and death rate in mothers.",
+          "A higher risk of the requirement of cesarean delivery in future pregnancies.",
+          "A weakening of the belly muscles.",
+        ],
+      },
+      {
+        heading: "Risks for baby",
+        items: [
+          "There is a higher risk of breathing issues such as asthma in babies that may extend up to their childhood.",
+          "Chances of development of a strong immune system are low in babies born with cesarean delivery, and the risk of asthma, atopic dermatitis (skin allergy), and celiac disease (gluten intolerance) is higher in these children.",
+          "There is a higher possibility of the baby being admitted to a neonatal intensive care unit (NICU) after delivery.",
+          "Premature delivery or early-term delivery may carry a significant risk of pulmonary complications in babies, especially in babies born through cesarean delivery without labor.",
+          "There is a higher chance of the baby being born dead (stillbirth).",
+        ],
+      },
+      {
+        heading: "Conclusion",
+        items: [
+          "If you have questions about each type of delivery, make sure to talk to your doctor during your routine prenatal visits. They can help you understand which option is best for you.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 43,
+    slug: "papaya-during-pregnancy-safe-or-not",
+    title: "Papaya During Pregnancy- Safe or not",
+    description:
+      "When you’re pregnant, all that you eat and don’t eat plays a pivotal role in the formation of your precious one. Fruits are an important element of a balanced diet and provide numerous benefits as they are a powerhouse of essential nutrients.",
+    date: "2023-02-11",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181477/Papaya_During_Pregnancy_Safe_or_not_zolpkn.jpg",
+      alt: "Papaya during pregnancy",
+    },
+    tags: ["Pregnancy Health"],
+    content: [
+      {
+        paragraphs: [
+          "When you’re pregnant, all that you eat and don’t eat plays a pivotal role in the formation of your precious one. Fruits are an important element of a balanced diet and provide numerous benefits as they are a powerhouse of essential nutrients. Your diet and nutrition is of utmost importance, and you’ll find yourself on the receiving end of a truckload of advice from friends, family, and relatives, most of which is fairly unsolicited. And one of the most frequently-doled out tip or rather warning is to avoid papayas during pregnancy, in any shape or form.",
+          "Eating fruits during pregnancy is suggested by doctors. But not all fruits are good for the pregnant women's. There is a lot of confusion around eating papaya in pregnancy. The simple answer to it is that eating ripe papaya can be beneficial for the pregnant female but unripe papaya is not good for the pregnancy.",
+          "Unripe papaya has a component known as latex. The presence of latex in unripe papaya can trigger uterine contractions, which can often cause miscarriage or early labor.",
+          "Truth is papayas can be safely eaten during pregnancy. The misconception arises from a lack of understanding and unawareness. Ripe papayas come with a host of nutrients that are extremely beneficial for pregnant women. The culprit is raw or unripe papayas, which are known to cause complications for expectant mothers.",
+          "To give you an all-round view of the issue at hand, so that you can make a decision after having all the pros and cons. Here’s a summary of the benefits of ripe papayas and effects of unripe papayas.",
+        ],
+      },
+      {
+        heading: "Why you should avoid unripe papayas?",
+        items: [
+          "Papain is known to disrupt cell growth and obstruct the development of tissues in the growing foetus. It can also potentially harm the embryo.",
+          "Unripe papayas can cause uterine contractions and premature labour as the latex in papayas contain papain, a substance that stimulates certain hormones that induce contractions. Consuming papayas in early stages of pregnancy can also cause miscarriages as it stimulates and increases menstrual flow.",
+          "Women who’ve had a history of miscarriages or premature labour need to be extremely cautious as they are more prone to having pregnancy complications due to the papain in unripe papayas.",
+          "Unripe papayas are very harmful to the placenta. Papain is known to cause internal bleeding, and bleeding on the edges of placenta can further complicate the pregnancy and cause delivery-related problems, and hence one should refrain from eating papayas in the third trimester of pregnancy.",
+          "Papayas increase bowel movement due to its high fibre content and this could create pressure around the uterus and pelvic region, leading to a possible miscarriage.",
+        ],
+      },
+      {
+        heading: "Benefits of ripe papayas",
+        items: [
+          "Fully ripe papayas with yellow skin have multiple benefits and are often considered safe during pregnancy, when consumed in moderation.",
+          "Folic acid, a vital nutrient for expectant mothers, is present in papayas. Folic acid is essential for the development of the baby’s brain and spinal cord.",
+          "Ripe papayas are great for boosting immunity owing to their high amounts of Vitamin A, B, C, potassium, and beta-carotene, which have high levels of antioxidants. A strong immunity means the ability to fight infections, which is important for pregnant women.",
+          "Most women experience constipation during pregnancy and the fibre content in papayas can help ease digestion.",
+          "If you are among those women who’ve had bouts of morning sickness, papayas are known to reduce it.",
+          "Eating ripe papayas in pregnancy, in the right proportion, is known to enhance milk production as well.",
+        ],
+      },
+      {
+        heading: "Is papaya juice safe to consume during pregnancy?",
+        items: [
+          "No, drinking papaya juice in pregnancy is not considered safe. It is also recommended that drinking papaya juice available in the market should be avoided. Converting papaya into juice negates its major benefit of fiber. Additionally, papaya juice available in tetra packs may contain papaya concentrate, which can be very harmful to pregnancy.",
+          "It's is better to opt for home-made juice or better, eating them fresh and ripe.",
+        ],
+      },
+      {
+        heading: "What fruits can a pregnant woman eat instead of Papaya?",
+        items: [
+          "If the female does not want to risk her pregnancy and wants to avoid papaya, she can consume other fruits mentioned ahead as a substitute to fulfill her nutritional needs:",
+          "Apple",
+          "Pomegranate",
+          "Guava",
+          "Orange",
+          "Grapes",
+        ],
+      },
+      {
+        heading: "Can papayas be eaten post-delivery?",
+        items: [
+          "Ripe papayas can be eaten post-delivery as it has an impressive amount of vitamins and minerals. The hormonal effects of papayas can be seen as a natural contraceptive, albeit not as strong as other methods.",
+          "Moreover Papayas are also known to boost milk production, thus benefitting nursing mothers.",
+          "Since papayas need to be consumed with extreme and utmost caution and pose adverse effects, most pregnant women find it feasible to avoid papayas altogether and look at other fruits that provide the same nutrients. Ripe papayas can, however, be eaten in proportion if there is no previous case of pregnancy complications.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 44,
+    slug: "pineapple-during-breastfeeding",
+    title: "Pineapple During Breastfeeding",
+    description:
+      "Pineapple is a hydrating fruit that contains several essential nutrients, dietary fiber, and bioactive components that support long-term health...",
+    date: "2023-02-11",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181477/Pineapple_During_Breastfeeding_mznusk.jpg",
+      alt: "Pineapple During Breastfeeding",
+    },
+    tags: ["Breastfeeding"],
+    content: [
+      {
+        heading: "Nutritional Value, Safety And Benefits",
+        items: [
+          "Pineapple is a hydrating fruit that contains several essential nutrients, dietary fiber, and bioactive components that support long-term health",
+          "Most women are aware that eating fruits during pregnancy and while breastfeeding is important, as fruits are extremely nutritious and babies also get the taste of a variety of nutritive elements that support their growth",
+          "Including pineapple in a pregnant woman's diet is recommended, especially in the last stage of pregnancy, as it is known to induce labour",
+          "However, when it comes to consuming this fruit while nursing, it cannot be surely stated that it is safe for a baby. pineapple is acidic and can cause diaper rash in breastfeeding babies",
+          "Lactating women may be unsure about their dietary choices because whatever they eat will be shared with their infants. One such doubt is whether or not to eat pineapple during breastfeeding",
+          "Therefore, being informed about the safety of eating pineapple is of utmost importance",
+          "This post addresses the most prevalent questions about pineapple, including its benefits for nursing mothers and ways to incorporate it into a breastfeeding diet",
+        ],
+      },
+      {
+        heading: "Can Nursing Mothers Eat Pineapple?",
+        items: [
+          "Yes. Pineapple is a nutritious fruit that you can consume when nursing",
+          "A mother who is breastfeeding can make pineapples a part of her diet, but only after she has been breastfeeding her baby for about 6 months",
+          "There are various studies that strongly indicate that a higher presence of citric fruits in the diet of a woman can be harmful to the baby's body. This may lead to diaper rash, especially in sensitive babies",
+          "If you suspect any food, including pineapple, is affecting your baby, eliminate it from the diet for a few days and observe the change",
+          "If your baby shows improvement in their health, it is most likely that the food item was affecting them through breast milk",
+        ],
+      },
+      {
+        heading: "Nutritional Value Of Pineapple",
+        items: [
+          "Pineapple has several varieties with varying nutritional values",
+          "On average, one cup of pineapple can offer a nursing mother the following nutrients to contribute to her nutritional needs during the lactation period and beyond",
+        ],
+      },
+      {
+        heading: "Benefits of Eating Pineapple for Nursing Moms",
+        items: [
+          "While the evidence of pineapple juice increasing breast milk in a lactating woman might not be conclusively proved, there are many other benefits of consuming this fruit for a mother and her baby are",
+          "If a mother has an infection of any sort and is not healing, the recovery period can be accelerated by eating pineapples as it contains disease-fighting antioxidants",
+          "The presence of various substances in pineapple that contain antiemetic and diuretic properties are quite useful for new mothers",
+          "The content of fibre and numerous elements help in stimulating the digestive process and treating various disorders of the stomach, as well as constipation, consequently reducing haemorrhoids",
+          "Regular consumption of pineapples is also known to bring about a substantial reduction in inflammation and pain experienced in joints and various muscles of the body",
+          "Any bouts of an extreme headache, dizziness or sleeplessness are highly reduced when including pineapples in your diet",
+          "Since consuming pineapples helps in controlling hypertension by diluting the volume of blood as well as removing any blood clots, the health of the cardiological system is improved and the heart remains in an optimal condition",
+        ],
+      },
+      {
+        heading:
+          "When and How to Introduce Pineapple to a Breastfeeding Mom's Diet",
+        items: [
+          "Eating pineapple while you are breastfeeding is completely safe",
+          "This is because acidic foods like citrus fruits, pineapple, and tomato do not affect breast milk, as these foods do not change the pH balance of maternal plasma",
+          "In case, you are worried about including pineapple in your diet while you are breastfeeding you should discuss your concerns with a gynaecologist or a nutritionist",
+        ],
+      },
+      {
+        heading: "How to Prepare, Eat, and Store a Pineapple Safely",
+        items: [
+          "To avoid consuming any bacteria or germs that can harm the baby while breastfeeding, it is essential that you clean, prepare, and store a pineapple in a safe and hygienic manner",
+          "Here are some tips to keep in mind when consuming pineapple",
+          "Wash your hands and rinse the pineapple thoroughly under running water. This helps in getting rid of any microbes and germs on the surface",
+          "Cut the desired shape and size and store the pineapple chunks in an airtight container and refrigerate",
+          "Consume the pineapple within 2 days of refrigeration",
+          "Avoid buying cut pineapple from vendors, as you cannot be assured of the hygiene practices kept in mind while cleaning and cutting it",
+        ],
+      },
+      {
+        heading: "Note",
+        items: [
+          "The connection between pineapple juice and breastfeeding might not make sense early on since every fruit seems to bring only benefits to the one who eats it",
+          "By knowing the right time to eat it and the right way to consume it, a nursing mother can derive benefits from it while ensuring the well-being of her child",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 45,
+    slug: "placenta-abruption",
+    title: "Placenta Abruption",
+    description:
+      "While you’re pregnant, placenta is an organ that provides nutrients to your baby. Placenta is implanted in the upper part of your uterus, and normally detaches from the uterine wall after you deliver your baby. The placenta...",
+    date: "2021-08-23",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181478/Placenta_Abruption_hgh8q6.jpg",
+      alt: "Placenta Abruption",
+    },
+    tags: ["Pregnancy", "Pregnancy Health"],
+    content: [
+      {
+        paragraphs: [
+          "While you’re pregnant, placenta is an organ that provides nutrients to your baby. Placenta is implanted in the upper part of your uterus, and normally detaches from the uterine wall after you deliver your baby. The placenta detaches too early, in the case of placental abruption. In placental abruption, the placenta may completely detach or partially detach. This can cause complications, because your baby may not get enough oxygen or nutrients. One can also experience bleeding that’s harmful to you and your baby.",
+        ],
+      },
+      {
+        heading: "Is Placenta Abruption common?",
+        paragraphs: [
+          "1 in 100 (about 1%) women experience placental abruption, in third trimester of their pregnancy but it can happen any time after 20 weeks of pregnancy up until delivery. It’s important to be able to recognize the symptoms of placental abruption, so that you can seek treatment quickly.",
+        ],
+      },
+      {
+        heading: "Difference between placental abruption and placenta previa",
+        paragraphs: [
+          "Placenta previa, the placenta is covering all or part of the mother cervix. It's also called low-lying placenta. It act as an obstacle that’s blocking the exit from the uterus. In placenta previa, placenta is in a complicated position, but it’s still attached to the uterus. When the placenta detaches from the uterus, this is a placental abruption. Both conditions has their own complications. Both can cause vaginal bleeding during pregnancy and labor.",
+        ],
+      },
+      {
+        heading: "Types of Placenta Abruption",
+        items: [
+          "partial placental abruption, occurs when placenta slightly detach from the uterine wall.",
+          "Total placental abruption, occurs when placenta completely detach from uterine wall. Vaginal bleeding is more.",
+          "Revealed placental abruptions, have moderate to severe vaginal bleeding.",
+          "Concealed placental abruptions, have little or no visible vaginal bleeding. Blood is trapped between the placenta and uterine wall.",
+        ],
+      },
+      {
+        heading: "Complications from a placental abruption include",
+        subsections: [
+          {
+            title: "For mother",
+            items: [
+              "Blood clotting issues",
+              "Blood transfusion",
+              "Blood loss",
+              "Hemorrhage",
+              "Kidney failure",
+            ],
+          },
+          {
+            title: "For babies",
+            items: [
+              "Low birth weight",
+              "Premature birth",
+              "Growth problems",
+              "Still birth",
+              "Brain injury from lack of oxygen",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Risk factors for placental abruption",
+        paragraphs: [
+          "If you have any of the following, You are at higher risk for placental abruptions:",
+        ],
+        items: [
+          "High blood pressure or hypertension",
+          "gestational diabetes",
+          "Uterine fibroids",
+          "A blood cloting disorder",
+          "Short umbilical cord",
+          "Previous placenta Abruption",
+          "Rapid loss of the amniotic fluid",
+          "Injury of uterus like car accidents, fall to the stomach.",
+        ],
+      },
+      {
+        heading: "Symptoms of placental abruption?",
+        items: [
+          "Most common symptom is vaginal bleeding",
+          "Cramping during the third trimester",
+          "Abodminal pain",
+          "Uterine tenderness",
+          "Decreased fetal movement",
+          "Backache or back pain",
+        ],
+        paragraphs: [
+          "Pain can range from mild cramping to strong contractions and often begins suddenly. There could be no visible bleeding, because the blood is trapped between the placenta and the uterine wall.",
+        ],
+      },
+      {
+        heading: "Treatment of Placental abruption",
+        paragraphs: [
+          "A healthcare provider will recommend treatment based on:",
+          "- Signs of distress from your unborn baby.",
+          "- How long the pregnancy is gestational age of your unborn baby.",
+          "- The severity of the abruption.",
+          "- Amount of blood you've lost.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 46,
+    slug: "pregnancy-diet-foods-to-eat-while-pregnant",
+    title: "Pregnancy Diet- Foods to Eat While Pregnant",
+    description:
+      "Pregnancy creates extra demands for certain nutrients, including iron and folate. If you are pregnant, aim to include the recommended nutrients in your diet, rather than increasing your kgs intake. Good food hygiene during pregnancy can help...",
+    date: "2021-08-11",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181479/Pregnancy_Diet_Foods_to_Eat_While_Pregnant_yjtjj7.jpg",
+      alt: "Pregnancy Diet",
+    },
+    tags: ["Pregnancy", "Pregnancy Health"],
+    content: [
+      {
+        paragraphs: [
+          "Pregnancy creates extra demands for certain nutrients, including iron and folate. If you are pregnant, aim to include the recommended nutrients in your diet, rather than increasing your kgs intake. Good food hygiene during pregnancy can help reduce your risk of listeriosis and salmonella. Increases your nutrients when you are pregnant, such as iron, iodine and folate. Good nutrition during pregnancy can help to keep you and your developing baby healthy.",
+        ],
+      },
+      {
+        paragraphs: [
+          "When building your healthy eating plan, you’ll want to focus on whole foods that give you higher amounts of the good stuff you’d need when not pregnant such as:",
+        ],
+        items: [
+          "vitamins and minerals",
+          "protein",
+          "healthy types of fat",
+          "complex carbohydrates",
+          "fibre and fluids",
+        ],
+      },
+      {
+        paragraphs: [
+          "Here are some super nutritious foods to eat when you’re pregnant to help make sure you’re hitting those nutrient goals:",
+        ],
+        items: [
+          "Dairy products",
+          "Legumes",
+          "Sweet potatoes",
+          "Salmon/Eggs",
+          "Broccoli and dark, leafy greens",
+          "Lean meat and proteins",
+          "Berries, Avocados",
+          "Whole grains",
+          "Dried fruits",
+          "Water",
+        ],
+      },
+      {
+        paragraphs: [
+          "Your growing baby is just waiting to slurp up all those nutrient-dense foods from a well-rounded eating plan of whole grains, fruits and veggies, lean proteins, and healthy fats.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 47,
+    slug: "prenatal-care-tips-that-every-soon-to-be-mother-should-know",
+    title: "Prenatal Care Tips that Every soon to be mother should know",
+    description:
+      "Prenatal care is medical care you get during pregnancy. This can help keep you and your baby healthy. Early prenatal care can provide necessary information to the mother regarding nutrition-related...",
+    date: "2021-08-09",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181478/Prenatal_Care_Tips_that_Every_soon_to_be_mother_should_know_qvfgkd.avif",
+      alt: "Prenatal care",
+    },
+    tags: ["Pregnancy", "Pregnancy Health"],
+    content: [
+      {
+        heading: "Prenatal care",
+        paragraphs: [
+          "Prenatal care is medical care you get during pregnancy. This can help keep you and your baby healthy. Early prenatal care can provide necessary information to the mother regarding nutrition-related and behavioural risk factors that can impact the mother and baby. Follow your doctor's advice. When you get regular prenatal care. Your doctor will schedule you for many checkups over the course of your pregnancy. Don't miss any because they are all are very important.",
+        ],
+      },
+      {
+        heading: "Prenatal Care Tips",
+        items: [
+          "Visit Your doctor regularly",
+          "Take your prenatal vitamins",
+          "Don’t eat fish with lots of mercury",
+          "Maintain A Balanced Diet",
+          "Hydrate",
+          "Stay Active",
+          "Keep Crackers by your bed",
+          "Try not to stress",
+          "Do things that you love",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 48,
+    slug: "prenatal-care-tips-that-every-soon-to-be-mother-should-know",
+    title: "Prenatal Care Tips that Every soon to be mother should know",
+    description:
+      "Prenatal care is medical care you get during pregnancy. This can help keep you and your baby healthy. Early prenatal care can provide necessary information to the mother regarding nutrition-related...",
+    date: "2021-08-09",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181478/Prenatal_Care_Tips_that_Every_soon_to_be_mother_should_know_qvfgkd.avif",
+      alt: "Prenatal care",
+    },
+    tags: ["Pregnancy", "Pregnancy Health"],
+    content: [
+      {
+        heading: "Prenatal care",
+        paragraphs: [
+          "Prenatal care is medical care you get during pregnancy. This can help keep you and your baby healthy. Early prenatal care can provide necessary information to the mother regarding nutrition-related and behavioural risk factors that can impact the mother and baby. Follow your doctor's advice. When you get regular prenatal care. Your doctor will schedule you for many checkups over the course of your pregnancy. Don't miss any because they are all are very important.",
+        ],
+      },
+      {
+        heading: "Prenatal Care Tips",
+        items: [
+          "Visit Your doctor regularly",
+          "Take your prenatal vitamins",
+          "Don’t eat fish with lots of mercury",
+          "Maintain A Balanced Diet",
+          "Hydrate",
+          "Stay Active",
+          "Keep Crackers by your bed",
+          "Try not to stress",
+          "Do things that you love",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 49,
+    slug: "pumpkin-soup-for-babies",
+    title: "Pumpkin Soup For Babies",
+    description:
+      "You will need- • 1 cup homemade vegetable stockve• ½ cup onion (chopped)• 1 cup pumpkin (diced)• ¼tsp nutmeg powder• 1tbsp parsley (finely chopped)• 2 cups water How to Prepare- • Put all the ingredients into...",
+    date: "2023-01-25",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181479/Pumpkin_Soup_For_Babies_yzavm3.jpg",
+      alt: "Pumpkin soup",
+    },
+    tags: ["Babies Food(6-24Months)"],
+    content: [
+      {
+        heading: "You will need",
+        items: [
+          "1 cup homemade vegetable stockve",
+          "½ cup onion (chopped)",
+          "1 cup pumpkin (diced)",
+          "¼tsp nutmeg powder",
+          "1tbsp parsley (finely chopped)",
+          "2 cups water",
+        ],
+      },
+      {
+        heading: "How to Prepare",
+        items: [
+          "Put all the ingredients into a stockpot and place it over medium heat.",
+          "Bring the mixture to boil. Pressure cook it to hasten the cooking process.",
+          "As the mixture begins boiling.",
+          "Lower the flame and simmer the mixture for an hour until the pumpkin turns tender.",
+          "After an hour, check the pumpkin’s texture and turn off the flame. Set aside to cool for 10-15 minutes.",
+          "Blend the mixture into a lump-free, smooth liquid using an immersion blender.",
+          "Transfer the soup to a bowl and feed.",
+          "For older babies and toddlers, you can add shredded chicken or tofu to this soup. You can add veggies like peas and carrots both mashed, to make it more healthy and filling like a complete meal.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 50,
+    slug: "second-pregnancy-symptoms-differences",
+    title: "Second Pregnancy Symptoms & Differences",
+    description:
+      "Irrespective of whether it is your first pregnancy or second pregnancy, pregnancy symptoms are generally common across each pregnancy. But sometimes, there may be some early signs of second pregnancy...",
+    date: "2023-01-15",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181479/Second_Pregnancy_Symptoms_Differences_xqv38k.webp",
+      alt: "Second Pregnancy",
+    },
+    tags: ["Second Pregnancy"],
+    content: [
+      {
+        paragraphs: [
+          "Irrespective of whether it is your first pregnancy or second pregnancy, pregnancy symptoms are generally common across each pregnancy. But sometimes, there may be some early signs of second pregnancy before missed period that can cause you to feel nervous and anxious. Therefore, understanding the reason behind their occurrence is important.",
+          "Read this post as we help you to understand everything about the symptoms you experience in your second pregnancy and ways to cope with them.",
+        ],
+      },
+      {
+        heading: "How Are Second Pregnancy Symptoms Different From First?",
+        paragraphs: [
+          "Here are some of the ways a second pregnancy can probably differ from the first. However, it may or may not be true in individual cases.",
+        ],
+        items: [
+          "Bump gets bigger sooner: The stomach muscles are weaker than the first time. As they have already been stretched once before, the abdominal muscles are less resistant to stretching the second time, and the belly is likely to show soon as the baby starts to grow.",
+          "Breast changes: Change in breasts is common during pregnancy, but the breasts might become more tender and painful during the second pregnancy. They may become more sensitive when you are breastfeeding, and the nipples may also hurt more. The pigmented area around the nipple, called the areola, gets darker.",
+          "Early fetal movements: In the second pregnancy, you may feel the baby kicks and movements sooner because you might identify the sensations sooner.",
+          "Braxton-Hicks contractions are different: You may feel contractions earlier in a second pregnancy than you did in the first pregnancy. These false contractions are a body’s way of preparing for labor. You might also experience post-birth contractions.",
+          "Labor is shorter: Since your body has already gone through the process of childbirth once, it could take less time for cervical dilation and effacement (thining) the second time. First-time labor lasts for an average of eight hours, whereas the delivery after second pregnancy has an average of five hours.",
+          "Carrying low: Your uterine muscles may lose their firmness, and might not be the same as they were in the first pregnancy. They may not support the baby as they did before, and the baby might drop lower in the abdomen.",
+          "Afterbirth pains: You might have intense afterbirth pains and contractions, which are the body’s way of shrinking back the uterus to its pre-pregnancy state. Since the uterus is bigger with the second pregnancy, it could be more painful as it gets contracted.",
+          "Fatigue: You might feel more tired in second or subsequent pregnancies than in your first one. It could be because you are already a mom trying to meet the demands of your older child while dealing with pregnancy fatigue. You may have less time to rest and less pampering from your partner that may all add up to your fatigue.",
+          "Back pain: Back pain may increase with the subsequent pregnancy. It might develop due to the shifting of the center of gravity to accommodate the growing uterus. The pain could be intense since the bump shows up earlier in the second pregnancy.",
+          "Breastfeeding becomes easier: You have already done it before, and you may have a better idea of what to do next. Milk might come in easier in the second pregnancy.",
+        ],
+      },
+      {
+        heading: "Second Pregnancy After Cesarean",
+        paragraphs: [
+          "An immediate pregnancy after a cesarean delivery might leave you exhausted. So it is advisable to wait for at least six months for second pregnancy after your first cesarean section. Waiting for 18 months between delivery and conception may give enough time for the body to heal completely, especially the cesarean section scar on the womb and replenish the lost nutrients.",
+          "A smaller gap might lead to an increased risk of complications such as premature birth, low birth weight of the baby, or a ruptured uterus.",
+        ],
+      },
+      {
+        heading: "Caution",
+        paragraphs: [
+          "A gap of five years or more between the first and second pregnancy can increase the risk of preeclampsia and other complications for the mother.",
+        ],
+      },
+      {
+        heading:
+          "How Might Your Postpartum Recovery Differ During Second-Time Pregnancy?",
+        paragraphs: [
+          "You will already know what to expect, and the ways to cope with the changes. Things that happened with your first delivery may not occur with the second birth. The labor also progresses faster, but it might take longer to get your normal body back after childbirth. In general, things might go smoother the second time since you will be aware of how to deal with them.",
+        ],
+      },
+      {
+        heading: "Is The Second Baby Easier To Deliver?",
+        paragraphs: [
+          "Second babies are usually easier and faster to deliver. Since the muscles, bones, and tissues have undergone stretching previously, it becomes easier for the baby to move through the birth canal in the successive delivery and also the womb contracts more strongly during labor. It usually takes less than an hour of pushing.",
+        ],
+      },
+      {
+        heading: "Should You Stop Breastfeeding During Pregnancy?",
+        paragraphs: [
+          "There is no reason to stop breastfeeding while you are pregnant. Your body is capable of producing enough breast milk for the nursing infant as well as nourishing the baby growing within. However, the breasts and nipples may become tender for some time. According to a systematic review of certain studies, breastfeeding is not likely to affect pregnancies and birth weight.",
+          "Also, the breasts start producing colostrum (thick milk that is produced towards the end of pregnancy), and your toddler may not like the taste of the milk. At this time, you might notice a drop in the milk intake by your older baby.",
+        ],
+      },
+      {
+        heading: "Can You Test Earlier With The Second Pregnancy?",
+        paragraphs: [
+          "You may not even require a pregnancy test to confirm your second pregnancy, as you are likely to show the symptoms sooner than you did before, and you’ll know it. However, it is best to wait until a week after you have missed your period to get an accurate and a meaningful pregnancy test result.",
+        ],
+      },
+      {
+        heading: "Do You Experience Any Symptoms That You Did The First Time?",
+        items: [
+          "Morning sickness",
+          "Frequent urination",
+          "Food cravings and aversions",
+          "Bloating and constipation",
+          "Mood swing",
+        ],
+      },
+      {
+        heading: "Do Your Pregnancy Complications Reappear This Time?",
+        paragraphs: [
+          "The complications you had in the previous pregnancy are likely to occur in the successive pregnancy as well.",
+        ],
+      },
+      {
+        heading: "Complications such as",
+        paragraphs: [
+          "high blood pressure, premature labor, gestational diabetes, preeclampsia, or postpartum depression might also occur in the subsequent pregnancy, especially in the case of more than one fetus. However, there is no definite evidence to back this.",
+          "If you are apprehensive of any possible complications the second time, talk to your doctor about it, and see if they can be avoided.",
+        ],
+      },
+      {
+        heading: "Coping With Your Older Child During The Second Pregnancy",
+        paragraphs: [
+          "The idea of managing pregnancy while taking care of an older child can be overwhelming. While there are several things to consider before having a second child, talking to your older child and helping them understand what to expect and how to prepare for it could make matters simple.",
+        ],
+        items: [
+          "Tell the child about a new one growing inside your womb, and encourage them to pat your bump, talk or sing to the baby.",
+          "Take them to prenatal check-ups, and let them also listen to the fetal heartbeat sometimes.",
+          "Mention about the baby frequently, but be careful not to go overboard lest they get jealous.",
+          "Involve them in shopping for the baby. Let them choose simpler things like clothes and toys for the little one.",
+          "While you do sensitize the older kid about the baby, make sure you spend some time with them. Go to a library or a park with them, or read some stories during bedtime.",
+          "Give them responsibility and tell them about the things to do when the newborn arrives. Explain how to comfort the baby while crying, helping with diaper changes, giving attention and more.",
+          "Tell the child that he or she will be a big brother/sister, and explain their role and importance in the family.",
+        ],
+      },
+      {
+        heading: "Quick tip",
+        paragraphs: [
+          "Men can support their pregnant women by attending to the needs of the firstborn and letting them focus on health during pregnancy.",
+        ],
+      },
+    ],
+  },
+  
+  {
+    id: 51,
+    slug: "simple-steps-to-do-urine-pregnancy-test-at-home",
+    title: "Simple Steps To Do Urine Pregnancy Test At Home",
+    description:
+      "Performing a pregnancy test at home has become possible due to the availability of ready-to-use kits. You can procure these pregnancy test kits without a prescription at pharmacies. Though you may rely on this test, you need to get several other urine...",
+    date: "2023-01-15",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181480/Simple_Steps_To_Do_Urine_Pregnancy_Test_At_Home_brkpkf.webp",
+      alt: "Urine Pregnancy Test",
+    },
+    tags: ["Pregnancy"],
+    content: [
+      {
+        paragraphs: [
+          "Performing a pregnancy test at home has become possible due to the availability of ready-to-use kits. You can procure these pregnancy test kits without a prescription at pharmacies. Though you may rely on this test, you need to get several other urine tests done at the clinic throughout your pregnancy. These tests may sound annoying, but their utility ranges from confirming pregnancy to detecting developmental anomalies in the growing fetus. This post presents important information about conducting a home pregnancy test, the various urine tests required during pregnancy, and their significance for you and your baby.",
+        ],
+      },
+      {
+        heading: "What Is Urine Home Pregnancy Test?",
+        paragraphs: [
+          "During pregnancy, your placenta produces the human chorionic gonadotropin (hCG) hormone, which appears in the urine and blood about ten days after your missed period. This is the time when the fertilized egg implants in the uterus. The home pregnancy test detects the presence of hCG in urine.",
+          "In the initial eight to ten weeks, hCG levels increase rapidly. They reach the peak during the tenth week and then decline until the end of your pregnancy.",
+        ],
+      },
+      {
+        heading: "What Does Urine Test Show?",
+        paragraphs: [
+          "The urine test confirms pregnancy if you take it around one to two weeks after missed periods. It helps you know whether or not hCG is present in the urine. It is a qualitative test and does not give you the quantity of the hormone present in your body. The presence of hCG is a positive sign of pregnancy.",
+        ],
+      },
+      {
+        heading:
+          "Steps To Follow For An Accurate Urine Test To Confirm Pregnancy",
+        items: [
+          "Know when to take the test: Wait for about one to two weeks after you miss your period to get the best results. You may tend to miscalculate when your period is due in the case of irregular periods, and this can affect the test. In fact, out of every 100 pregnant women, 10 to 20 will not be able to detect their pregnancy on the first day of their missed period due to miscalculated periods.",
+          "Check the expiration date: If you are planning to take a home pregnancy urine test, check for the expiry date, because the newer the pregnancy kit, the better the results. Also check for the condition of the kit packaging (the open seal, wear and tear, etc.). If you have stocked up a pregnancy kit from months ago, do not use it.",
+          "Test in the morning: Going for a morning urine pregnancy test (first urine in the morning) helps you get the most accurate results because your urine is concentrated in the morning with the highest levels of hCG. Do not drink fluids before collecting the urine as it can dilute the hCG levels and alter the results.",
+          "Collecting the urine sample: Some home pregnancy kits require you to hold an indicator stick under the urine stream until it soaks completely. This will take about three to five seconds. Some other urine testing kits will require the urine sample to be collected in a cup and test a few drops on the stick.",
+          "Read the instructions carefully: Before taking the test, go through the instructions given in the overleaf. Different brands have different specifications, and you need to understand the one you are about to use. Factors such as the method of collecting the urine, the length of the time you need to let the urine stay on the test stick and the symbols used to prove the results could be different for each brand.",
+          "Familiarize yourself with the symbols: You have to know the symbols listed on your pack to understand the reading better. If you are unable to decipher the symbols when reading the results, do not panic. Call the toll free number listed on the pack to seek help.",
+          "Wait for the results: After the test, place the strip horizontally on a clean surface for the readings. Different tests have different time requirements. The waiting time is usually anywhere from one to five minutes but some tests are said to take as long as ten minutes to give the correct result. Dispose of the strip after the result is out. Do not consider the result if it takes too long to come out. The results may be inaccurate and can give a false positive evaporation line.",
+          "Checking the final result: If you see even a faint line appearing next to the first one, consider that as a positive. This indicates that the test had picked up traces of hCG in your urine. If you are not sure about the line, which is too light and not definitive, wait until the following morning for a retest.",
+        ],
+      },
+      {
+        heading:
+          "After the result, here are some things you need to keep in mind",
+        items: [
+          "In the case of a positive result: If a urine pregnancy test result is positive, make an appointment with your doctor. Your specialist may also recommend a blood test to confirm the results of the urine test. In most cases, the results of a urine test are accurate.",
+          "In the case of a negative result: If you have missed your period and still the result shows negative, wait for some more time and take the test again. False negatives are sometimes possible. These can happen when you have miscalculated your ovulation date or taken the test earlier than recommended.",
+        ],
+      },
+      {
+        heading: "How Accurate Are Home Pregnancy Tests?",
+        paragraphs: [
+          "Home pregnancy tests claim to be 97% to 99% accurate if they are done in the right way. However, in certain cases, as discussed below, the result could be false positive or false negative. If you continue to get false results in spite of the symptoms of pregnancy such as missed period, nausea, fatigue and breast tenderness, wait to take another test or check with your doctor.",
+        ],
+      },
+      {
+        heading: "Reason For A False Positive",
+        paragraphs: [
+          "Although false positives are rare after a urine test they are not ruled out. A false positive result is nothing but the test proving that you are pregnant, while in reality, you are not.",
+        ],
+      },
+      {
+        heading: "Reasons For A False Negative",
+        paragraphs: [
+          "If the test indicates a negative again and again, do not worry. False negatives are common. See a doctor to find out the reason for your missed period.",
+        ],
+        items: [
+          "Testing too early: If you undertake a pregnancy test in a sheer rush of anxiety, be prepared for a false negative. You have to wait until it is time to take the test. The chances of getting a false negative are high if you take the test immediately after missing your period.",
+          "Low sensitivity of the strip: Despite picking the latest pregnancy kit, there is every chance of your strip being less sensitive while detecting the level of hCG due to a manufacturing defect. If you are not convinced with the negative result, try and retake the test with a different brand of home pregnancy kit.",
+          "Diluted urine: This is the very reason why you should take the test early in the morning. If it is taken at other times of the day, the diluted urine might give a misleading result. Sometimes, your early morning urine could also be diluted. In that case, take the test again on the next day. The results could be different.",
+        ],
+      },
+      {
+        paragraphs: [
+          "Even if the test is negative, we suggest you be positive and have a word with your doctor.",
+          "Once your pregnancy is confirmed, you will have to undergo urine tests at various times during the nine months. This time it will not be at home but at a clinic or lab.",
+        ],
+      },
+      {
+        heading: "Clinical Urine Test (Urinalysis) At Doctor’s Clinic",
+        paragraphs: [
+          "Your doctor will recommend a urine test during the first prenatal care visit to confirm the result of the home test and also to rule out any health issues that could pose a danger to your pregnancy. You will continue to have periodic tests during the prenatal appointments.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 52,
+    slug: "spinach-pumpkin-puree",
+    title: "Spinach - Pumpkin Puree",
+    description:
+      "If you’re in search of a new recipe for your baby, we suggest that you make spinach pumpkin puree for him. Both spinach and pumpkin are very nutritious and can contribute to your baby’s overall growth and development. Th...",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181480/Spinach_Pumpkin_Puree_ioaqsk.jpg",
+      alt: "Spinach - Pumpkin Puree",
+    },
+    tags: ["Babies Food(6-24Months)"],
+    content: [
+      {
+        paragraphs: [
+          "If you’re in search of a new recipe for your baby, we suggest that you make spinach pumpkin puree for him. Both spinach and pumpkin are very nutritious and can contribute to your baby’s overall growth and development. This delicious recipe can provide calcium, Vitamin C, iron, and other essential nutrients to your baby. We bring you a recipe of spinach-pumpkin puree that you can try. You can make this yummy spinach puree for your baby in no time!",
+        ],
+      },
+      {
+        heading: "You will need",
+        items: [
+          "Spinach",
+          "Pumpkin-1/2 small bowl",
+          "salt- According to the taste",
+          "cinnamon powder- Optional",
+        ],
+      },
+      {
+        heading: "How to Prepare",
+        items: [
+          "Remove stems of spinach and soak it in cold water for two minutes. Meanwhile, peel the pumpkin and cut it into small cubes.",
+          "Rinse both the veggies under running water thoroughly.",
+          "Boil the pumpkin into a medium-sized saucepan for about 15 minutes.",
+          "Boil the spinach leaves for 2-3 minutes in another saucepan.",
+          "Rinse both the boiled vegetables under cold water for 2-3 minutes to stop the cooking process.",
+          "Puree the spinach and pumpkin using a food processor or blender until you get a smooth texture.",
+          "Add water to attain the desired consistency.",
+          "Add salt according to the taste and mix it well and Serve it to your baby.",
+          "You can also add a pinch of cinnamon powder while serving to enhance the taste of the spinach pumpkin puree.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 53,
+    slug: "spinach-soup-for-babies",
+    title: "Spinach Soup For Babies",
+    description:
+      "You will need-• 1 large potato (peeled and cubed)• 2 cups baby spinach (thoroughly washed and chopped)• 1 cup homemade vegetable stock• 1 stalk celery (finely chopped• ½ cup red onion (finely chopped)• 2 garlic cloves (minced)• 2tsps olive oil...",
+    date: "2023-01-25",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181480/Spinach_Soup_ihik4j.jpg",
+      alt: "Spinach Soup",
+    },
+    tags: ["Babies Food(6-24Months)"],
+    content: [
+      {
+        heading: "You will need",
+        items: [
+          "1 large potato (peeled and cubed)",
+          "2 cups baby spinach (thoroughly washed and chopped)",
+          "1 cup homemade vegetable stock",
+          "1 stalk celery (finely chopped)",
+          "½ cup red onion (finely chopped)",
+          "2 garlic cloves (minced)",
+          "2 tsps olive oil",
+          "1 tbsp sour cream",
+        ],
+      },
+      {
+        heading: "How to Prepare",
+        items: [
+          "Heat butter or olive oil in a saucepan and saute garlic, onion, celery, and potato for about 5-6 minutes, over medium heat.",
+          "Add vegetable stock and bring the mixture to boil.",
+          "As the mixture starts boiling, cover the saucepan with a lid, and simmer for 10-12 minutes over low heat.",
+          "Add the spinach, cover, and simmer for an additional 10 minutes.",
+          "Once done, turn off the heat and keep the saucepan aside to cool.",
+          "Blend the mixture into a thin soup, using an immersion blender.",
+          "Transfer the soup into a serving bowl and serve immediately.",
+          "You can add whole-wheat noodles to this soup for older babies and toddlers.",
+        ],
+      },
+      {
+        heading: "Quick Tip",
+        items: [
+          "Blanch the spinach separately and discard the water. This reduces the amount of oxalates present in spinach, a compound that binds minerals and reduces their absorption in the body.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 54,
+    slug: "the-second-trimester-of-pregnancy",
+    title: "The Second Trimester of Pregnancy",
+    description:
+      "The weeks are grouped into three trimesters. The second trimester includes weeks 13 through 27 of a pregnancy or months 4, 5, and 6. It’s the middle phase of pregnancy.In the second trimester, the baby grows larger and stronger and many women begin showing a larger belly ...",
+    date: "2021-08-15",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181481/The_Second_Trimester_of_Pregnancy_a3ofvl.jpg",
+      alt: "Second Trimester",
+    },
+    tags: ["Pregnancy"],
+    content: [
+      {
+        heading: "What is the second trimester?",
+        paragraphs: [
+          "The weeks are grouped into three trimesters. The second trimester includes weeks 13 through 27 of a pregnancy or months 4, 5, and 6. It’s the middle phase of pregnancy.",
+          "In the second trimester, the baby grows larger and stronger and many women begin showing a larger belly or start to see your “baby bump” and feel your baby move for the first time.",
+          "During the second trimester of pregnancy, symptoms that you may have experienced during the first trimester begin to improve.",
+        ],
+      },
+      {
+        heading:
+          "What happens to your body during the second trimester? The following changes and symptoms may occur:",
+        items: [
+          "the uterus expands",
+          "you begin to show a larger abdomen",
+          "dizziness or lightheadedness due to lower blood pressure",
+          "feeling the baby move",
+          "body aches",
+          "increased appetite",
+          "stretch marks on the stomach,breast, thighs, or buttocks",
+          "itching",
+          "leg cramps",
+          "swelling of the ankles or hands",
+        ],
+      },
+      {
+        heading: "What happens to the fetus during the second trimester?",
+        paragraphs: [
+          "The baby’s organs become fully developed during the second trimester.The brain will undergo its most important period of growth from the fifth month on.",
+          "The baby can also start to hear and swallow. Eyelids are beginning to open, and the eyebrows and eyelashes are visible. Rapid growth is continuing in fetal size and weight.",
+          "Small hairs become noticeable. Later on in the second trimester, the baby will begin to move around. It will develop sleeping and waking cycles that a pregnant woman will begin to notice.",
+          "A fetus born at the end of 24 weeks may survive in a neonatal intensive care unit.",
+        ],
+      },
+      {
+        heading: "Call your doctor if you experience any of these symptoms:",
+        items: [
+          "nausea",
+          "vomiting",
+          "jaundice (yellowing of the whites of the eyes)",
+          "extreme swelling",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 55,
+    slug: "sweet-potato-macaroni-and-cheese",
+    title: "Sweet Potato Macaroni and Cheese",
+    description:
+      "This Sweet Potato Mac and Cheese requires just 5 simple ingredients, zero prep work, and is just the yummiest pasta recipe! You will need...",
+    date: "2023-02-28",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181480/Sweet_Potato_Macaroni_and_Cheese_bgy0td.jpg",
+      alt: "Sweet Potato Macaroni and Cheese",
+    },
+    tags: ["Babies Food(6-24Months)"],
+    content: [
+      {
+        paragraphs: [
+          "This Sweet Potato Mac and Cheese requires just 5 simple ingredients, zero prep work, and is just the yummiest pasta recipe!",
+        ],
+      },
+      {
+        heading: "You will need",
+        items: [
+          "Pasta: We prefer a small pasta shape, but any will work.",
+          "Sweet potato puree: You can use a pouch or homemade puree.",
+          "Unsalted butter",
+          "Shredded cheddar cheese: This melts right into the mixture, making it super creamy without the need to make a roux.",
+          "Milk",
+        ],
+      },
+      {
+        heading: "How to Prepare",
+        items: [
+          "Cook the pasta according to package directions. Drain.",
+          "Measure out the sweet potato. (This is a great step for the kids to help with!)",
+          "Add all of the ingredients to the pot.",
+          "Stir together.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 56,
+    slug: "the-second-trimester-of-pregnancy",
+    title: "The Second Trimester of Pregnancy",
+    description:
+      "The weeks are grouped into three trimesters. The second trimester includes weeks 13 through 27 of a pregnancy or months 4, 5, and 6. It’s the middle phase of pregnancy.In the second trimester, the baby grows larger and stronger and many women begin showing a larger belly ...",
+    date: "2021-08-15",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181481/The_Second_Trimester_of_Pregnancy_a3ofvl.jpg",
+      alt: "Second Trimester",
+    },
+    tags: ["Pregnancy"],
+    content: [
+      {
+        heading: "What is the second trimester?",
+        paragraphs: [
+          "The weeks are grouped into three trimesters. The second trimester includes weeks 13 through 27 of a pregnancy or months 4, 5, and 6. It’s the middle phase of pregnancy.",
+          "In the second trimester, the baby grows larger and stronger and many women begin showing a larger belly or start to see your “baby bump” and feel your baby move for the first time.",
+          "During the second trimester of pregnancy, symptoms that you may have experienced during the first trimester begin to improve.",
+        ],
+      },
+      {
+        heading:
+          "What happens to your body during the second trimester? The following changes and symptoms may occur:",
+        items: [
+          "the uterus expands",
+          "you begin to show a larger abdomen",
+          "dizziness or lightheadedness due to lower blood pressure",
+          "feeling the baby move",
+          "body aches",
+          "increased appetite",
+          "stretch marks on the stomach, breast, thighs, or buttocks",
+          "itching",
+          "leg cramps",
+          "swelling of the ankles or hands",
+        ],
+      },
+      {
+        heading: "What happens to the fetus during the second trimester?",
+        paragraphs: [
+          "The baby’s organs become fully developed during the second trimester. The brain will undergo its most important period of growth from the fifth month on.",
+          "The baby can also start to hear and swallow. Eyelids are beginning to open, and the eyebrows and eyelashes are visible. Rapid growth is continuing in fetal size and weight.",
+          "Small hairs become noticeable. Later on in the second trimester, the baby will begin to move around. It will develop sleeping and waking cycles that a pregnant woman will begin to notice.",
+          "A fetus born at the end of 24 weeks may survive in a neonatal intensive care unit.",
+        ],
+      },
+      {
+        heading: "Call your doctor if you experience any of these symptoms:",
+        items: [
+          "nausea",
+          "vomiting",
+          "jaundice (yellowing of the whites of the eyes)",
+          "extreme swelling",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 57,
+    slug: "things-to-know-about-pregnancy-for-first-time-mother",
+    title: "Things to know about pregnancy for first-time mother",
+    description:
+      "Bringing a baby into the world is one of the most beautiful, meaningful achievements in life. There is a lot you need to know, especially if you are first time pregnant, But before the baby is born, many changes happen to your body....",
+    date: "2021-08-13",
+    image: {
+      url: "https://img1.wsimg.com/isteam/stock/64693/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1280",
+      alt: "first-time mother",
+    },
+    tags: ["Pregnancy"],
+    content: [
+      {
+        paragraphs: [
+          "Bringing a baby into the world is one of the most beautiful, meaningful achievements in life. There is a lot you need to know, especially if you are first time pregnant, But before the baby is born, many changes happen to your body.",
+          "If you’re pregnant for the first time, we’re sure you have a lot of questions about what the next nine months will be like. Becoming pregnant is only the beginning but it’s a very important stage in your child’s health.",
+        ],
+      },
+      {
+        heading: "Following some of these tips for first-time pregnancies:",
+        items: [
+          "**Exercise Regularly:** To fight the pain and mood swings that come with being pregnant, pregnant women should exercise regularly.",
+          "**Take Naps:** Your body is going through hormonal changes that will affect your energy levels and Fatigue, especially during the first trimester, is common. let your body relax and take out the time for sleep. Once the baby is born, you won’t have the opportunity to rest. So try to treat yourself to an afternoon nap to restore yourself.",
+          "**Drink Plenty of Water:** Low fluid or water intake can lead to birth defects and miscarriage as well as complicated labor. First time mother require more water than normal as it becomes part of the amniotic fluid that surrounds your baby.",
+          "**Avoid Caffeine:** Pregnant women should avoid caffeine during pregnancy, because of its some major health risks. Caffeine gets digested much slower and goes through the placenta into your baby’s bloodstream, and effects of a racing high blood pressure, heart rate and a stimulated nervous system affect you and your baby. This may result is a higher chance of miscarriage.",
+          "**Prenatal Massage:** Lower back pain that can be a menace throughout your pregnancy. Before giving birth, schedule a time for a professional prenatal massage.",
+          "**Go Shopping:** Don’t forget to go shopping for your bundle of joy by getting those essential and cute baby items ready.",
+          "**Make a birth plan:** Making a birthing plan is essential. Do your own research online about your options.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 58,
+    slug: "third-trimester-of-pregnancy",
+    title: "Third Trimester of Pregnancy",
+    description:
+      "Your third trimester lasts from month 7 through month 9 of pregnancy.The third trimester begins in week 28 of pregnancy and lasts until you give birth, which may be around week 40 of pregnancy. During this trimester, your baby grows, develops, and starts to change position to get ready for birth....",
+    date: "2021-08-16",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181481/The_Second_Trimester_of_Pregnancy_reqsgk.png",
+      alt: "Third Trimester",
+    },
+    tags: ["Pregnancy"],
+    content: [
+      {
+        paragraphs: [
+          "Your third trimester lasts from month 7 through month 9 of pregnancy.",
+          "The third trimester begins in week 28 of pregnancy and lasts until you give birth, which may be around week 40 of pregnancy. During this trimester, your baby grows, develops, and starts to change position to get ready for birth. About 30 percent of all babies linger past the 40-week mark. If that's the case, you can try a few tricks to naturally induce labor on your own, but once you reach week 42 of pregnancy, you’ll be officially considered overdue, at which point your doctor will induce labor if it doesn’t begin on its own.",
+        ],
+      },
+      {
+        heading: "Baby’s growth during the third trimester",
+        items: [
+          "**Digestive system:** In the final weeks of pregnancy, meconium — or baby’s first poop, consisting mostly of blood cells, vernix and lanugo — starts to build up in baby’s intestines.",
+          "**Brain:** In the third trimester your baby’s brain will grow faster than ever, test-driving some nifty skills including blinking, dreaming and regulating his own body temperature.",
+          "**Five senses:** Your baby’s touch receptors will be fully developed around week 29 or week 30. By week 31 of pregnancy, your baby will get signals from all five senses.",
+          "**Bones:** As your baby transforms cartilage to bone in months 7 and 8, baby will be getting all of her calcium from you.",
+          "**Skin:** By week 32 of pregnancy, baby’s formerly see-through skin will become opaque.",
+          "Around week 34 of pregnancy, baby’s body turns southward, settling into a heads-down, bottom-up position unless your baby remains stubbornly in the breech position. In which case your doctor will likely attempt to manually turn baby around week 37.",
+        ],
+      },
+      {
+        heading:
+          "If you haven’t already had them, the following may be offered",
+        items: [
+          "flu (influenza) vaccination",
+          "gestational diabetes check",
+          "cough (pertussis) vaccination",
+          "(streptococcal) B check",
+        ],
+      },
+      {
+        heading: "Real signs of labor",
+        items: [
+          "Labor contractions",
+          "Your water breaking",
+          "Bloody show",
+          "Lightening",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 59,
+    slug: "tips-for-taking-care-of-your-mental-health-during-pregnancy",
+    title: "Tips for Taking Care of Your Mental Health During Pregnancy",
+    description:
+      "It is no surprise that there are unique  challenges and psychological changes that can occur during pregnancy. One moment you may feel wonderfully happy, teary-eyed and  next sad, irritable and tired.There are so much of advice for maintaining physical health during pregnancy...",
+    date: "2021-08-16",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756450958/Tips_for_Taking_Care_of_Your_Mental_Health_During_Pregnancy_fsmofb.jpg",
+      alt: "Mental health during pregnancy",
+    },
+    tags: ["Pregnancy"],
+    content: [
+      {
+        paragraphs: [
+          "It is no surprise that there are unique  challenges and psychological changes that can occur during pregnancy. One moment you may feel wonderfully happy, teary-eyed and  next sad, irritable and tired.",
+          "There are so much of advice for maintaining physical health during pregnancy, but mental health is just as important as physical health.",
+        ],
+      },
+      {
+        heading:
+          "Here's are some self-care tips to help you navigate fluctuating moods:",
+        items: [
+          "Release Those Endorphins (Endorphins are endogenous opioid neuropeptides and peptide hormones in humans.They are produced and stored in the pituitary gland.)",
+          "Connect with Others Who Can Relate",
+          "Engage in Positive Self-Talk",
+          "Reduce Information Overload(click and search online, information overload can make you feel overwhelmed and uneasy.)",
+          "Seek Professional Help: it’s important to recognize that chronic depression or anxiety can develop during pregnancy. Ups and downs are a natural part of the pregnancy.",
+        ],
+      },
+      {
+        heading:
+          "One should seek professional guidance if you experience any of the following symptoms:",
+        items: [
+          "Loss of interest in activities that you enjoy",
+          "Sadness or anxiety",
+          "Sleeping too much or not enough",
+          "Thoughts of suicide",
+          "Difficulty concentrating",
+          "Feelings of guilt, shame, or worthlessness",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 60,
+    slug: "urinary-tract-infections-during-pregnancy",
+    title: "Urinary Tract Infections During Pregnancy",
+    description:
+      "Urinary tract infections are common during pregnancy. Women can often experience them in pregnancy. Left or untreated, UTI can pose a serious health risk to a pregnant woman and a developing fetus. According to one study from the Centers for Disease Control and Prevention...",
+    date: "2021-08-26",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181481/Tips_for_Taking_Care_of_Your_Mental_Health_During_Pregnancy_v44u0u.png",
+      alt: "Urinary Tract Infections",
+    },
+    tags: ["Pregnancy"],
+    content: [
+      {
+        paragraphs: [
+          "Urinary tract infections are common during pregnancy. Women can often experience them in pregnancy. Left or untreated, UTI can pose a serious health risk to a pregnant woman and a developing fetus. According to one study from the Centers for Disease Control and Prevention, 8% of pregnant women experience a UTI. Bacteria cause most UTIs. Anyone can get one, but they're most common in women, and they can be extra concerning if you are pregnant.",
+        ],
+      },
+      {
+        heading:
+          "A UTI is an infection of some part of your body's urinary system, which includes your:",
+        items: [
+          "Ureters (tubes that carry urine from your kidneys to your bladder).",
+          "BladderUrethra (a short tube that carries urine from your bladder to outside your body).",
+          "Kidneys",
+        ],
+        paragraphs: [
+          "Usually, these infections are in the bladder and urethra. But sometimes they can lead to kidney infections. UTIs may lead to preterm labor (giving birth too early) and low birth weight.",
+        ],
+      },
+      {
+        heading: "Symptoms Of UTI during Pregnancy",
+        items: [
+          "Trouble with peeing",
+          "An urgent need to pee, or peeing more often.",
+          "A burning sensation or cramps in your lower back or lower belly.",
+          "A burning feeling when you pee.",
+          "Urine that looks cloudy or has an odor",
+          "Blood in your pee, which can turn it red, bright pink.",
+        ],
+      },
+      {
+        heading: "UTI Treatment During Pregnancy",
+        paragraphs: [
+          "Doctors will recommend antibiotics for 3-7 days. Don’t stop it early, even if your symptoms fade. Without treatment, a UTI can cause serious complications.",
+        ],
+      },
+      {
+        heading: "UTI Complications During Pregnancy",
+        items: [
+          "Anemia",
+          "Severe infection",
+          "Preterm labor",
+          "Adult respiratory distress syndrome",
+          "Long-term infection",
+        ],
+      },
+      {
+        heading: "UTI Prevention During Pregnancy",
+        items: [
+          "Pee often.",
+          "Wipe yourself from front to back when you go to the bathroom.",
+          "Drink at least eight glasses of water a day.",
+          "Empty your bladder shortly before and after sex.",
+          "Avoid strong feminine deodorants or soaps that cause irritation.",
+          "Take showers instead of baths.",
+          "Wash your genital area with warm water before sex.",
+          "Wear cotton underwear.",
+          "Don’t wear pants that are too tight.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 61,
+    slug: "using-postpartum-waist-trainers",
+    title: "Using Postpartum Waist Trainers",
+    description:
+      "Can They Really Get You A Flat Stomach? Benefits and Precautions You’ve just done something amazing and brought a new life into this world!",
+    date: "2023-02-27",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181481/Using_Postpartum_Waist_Trainers_ossauj.webp",
+      alt: "Postpartum Waist Trainers",
+    },
+    tags: ["Postnatal Care"],
+    content: [
+      {
+        paragraphs: [
+          "Can They Really Get You A Flat Stomach? Benefits and Precautions",
+          "You’ve just done something amazing and brought a new life into this world! Before you start stressing about getting your pre-baby body back — or even just returning to your previous routine — be kind to yourself.",
+          "You should not waist train immediately postpartum because you need to allow your body time to heal. It is important that you wait at least 4-6 weeks before using a waist trainer or engaging in any vigorous exercise activity.",
+          "Spend a little time breathing in that newborn smell, pampering yourself when you can, and letting others help you out. The more you can let yourself truly rest and recuperate in the first two to three weeks after birth, the better you’ll feel and heal in the long run.",
+          "Once you’re ready to get back on your feet (slowly, please), you might consider belly binding, a process that’s designed to make postpartum recovery a little easier and might help your body heal faster, too.",
+          "It’s not uncommon to see celebrity moms and many other people back in perfect shape within months of giving birth. So, what’s the secret? Using postpartum waist trainers is believed to do the magic here! In this era of people going for the perfect body shape, the age-old method of waist training has turned into a go-to remedy to shed the postpartum belly. we decided to take a deeper dive and look into the benefits of belly binding.",
+        ],
+      },
+      {
+        heading: "What Is Waist Training?",
+        paragraphs: [
+          "After birth, the changes in hormones and fluid content in the body can cause water retention in the abdomen. The accumulated water takes about two weeks to dissipate and two more weeks for the rest to subside. Meanwhile, it can take up to six weeks for the uterus to shrink from the size of a watermelon to its normal size. All this occurs naturally along with belly shrinkage whether women wear waist trainers or not. However, waist training is thought to speed up the process and help women shrink their bellies sooner.",
+          "The rationale behind waist training after delivery is that during pregnancy, the body releases a hormone called relaxin that softens the ligaments and cartilage. It helps during the final weeks of pregnancy to allow for increased flexibility to help with the baby’s passage through the birth canal.",
+          "Waist training is an old method of tightly binding or wrapping the body’s midsection from the bottom of your ribs to the lower waist with a supportive band or a corset to gradually decrease the natural waistline. The process is thought to reshape the waist leading to slimming in women looking for a perfectly shaped waist. There are also claims that waist trainers promote heat in the abdomen, which causes perspiration and fat loss.",
+          "Wearing belly support such as a wrap or a band helps to stabilise the pelvis and keep it steadily in shape so that it stops shifting and heals. The advantage of this is that women can resume exercise sooner to return to their normal function and pre-pregnancy shape.",
+          "Post-baby waist trainers come in many designs, and they are made of different types of materials, such as spandex, and latex, with cotton, nylon and lycra added to the fabric.",
+        ],
+      },
+      {
+        heading: "Types of Postpartum Waist Trainers",
+        items: [
+          "**1. Abdominal Compression Binder** - Abdominal compression binders are commonly used after surgery to stabilise the abdomen. They feature no-frills bands with adjustable compression that generally work with Velcro. Although it’s a general medical device not specific to postpartum mothers, it can be used as a support for the abdomen as part of waist training. A study conducted in 2019 found that women who wore abdominal binders after their c-sections were able to cover longer distances and had less feeling of distress than those who did not wear binders after 48 hours of operation. Since the incisions of c-sections stay fresh after such a short time, you should wait for 2-4 weeks and consult your doctor before using belly bands or wraps.",
+          "**2. Belly Wraps** - Belly wraps are the simplest of the waist trainers and are usually a wide adjustable elastic band that wraps around your abdomen from below the ribs to the top of the waist. They provide gentle compression, which can often be adjusted with a Velcro tightener, and several designs are available for pregnant women. These are not as intense as corsets or waist trainers but offer excellent support right after birth for the first week or two until you’re ready to upgrade.",
+          "**3. Waist Trainers/Cinchers** - Waist trainers are tighter and designed to apply more pressure on the abdomen using zippers or hook-and-eye closures. These are the ones commonly seen by celebrities, and they can be worn under a regular dress or when you’re at home working. They cover the midsection of your body from under the breasts to the top of the hips. Cinchers are often made of latex-like stiff materials reinforced with plastic or metal boning. Their purpose is to apply extra firm compression and drastically reduce the waist size. They can be worn a month after giving birth anywhere from one to eight hours a day, depending on your comfort. They are believed to show results in about a month if worn for eight hours a day along with following a healthy diet. Cinchers can also be worn while working out.",
+        ],
+      },
+      {
+        heading: "Benefits of Using Waist Trainers After Pregnancy",
+        items: [
+          "**1. Improves the Shape of Your Waist** - Most new moms wish to lose their baby pouch as soon as possible. Wearing a waist trainer belt can help you lose all the fluid and fat fast to achieve a shapely waist. The waist training works by cinching the waistline to make the stomach take the shape of the waist trainer.",
+          "**2. Eases Back Pain** - Maintaining a good posture with the help of waist trainers can help you go a long way in fixing your upper and lower back pain problems. Maintaining a good posture while you sit and walk helps to take the stress off the back and reduce back pain. In a comprehensive study, it was found that belly bands can decrease distress and offer lower back support to those who had c-sections.",
+          "**3. Improves Your Posture** - Waist training corsets use materials such as plastics or metal bones that keep your back straight for as long as you wear them. Hence wearing these will enhance the posture of your back, keeping the spine straight and firm. If you tend to slouch or have back pain post-pregnancy, waist trainers can help improve your posture.",
+          "**4. Soothes Menstrual Cramps** - Some women find that cinchers help ease menstrual cramps. The pressure applied to the peritoneal organs can result in lesser contractions in the uterus and blocks during the period.",
+          "**5. Makes You Eat Less** - The waist trainer wrapped tightly around your abdomen won’t allow you to stuff yourself with food. As a consequence of less eating, you lose weight faster and get into shape sooner.",
+        ],
+      },
+      {
+        heading: "Side Effects of Post-Pregnancy Waist Trainers",
+        items: [
+          "Use latex rubber as the band material, by some manufacturers can cause allergies in some women.",
+          "Waist trainers that are too tight can cause lightheadedness and breathing difficulties.",
+          "Tight waist trainers early during breastfeeding can make the mother eat less, which is bad for both her and the baby.",
+        ],
+      },
+      {
+        heading: "Precautions to Take While Using Postnatal Weight Trainers",
+        items: [
+          "Waist trainers should feel tight but not cause pain.",
+          "If you plan to wear a waist trainer after a c-section, you must consider the area of the incision, which is still delicate. Start with simpler ones, such as belly wraps and abdominal compression binders, before moving to cinchers or corsets.",
+          "Women with infections at the stitches or conditions, such as amnionitis or preeclampsia, should avoid them completely.",
+          "Poor-quality trainers can cause more harm than good, so it’s better to buy a premium-quality waist trainer.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 62,
+    slug: "uterus-during-pregnancy-sizes-and-how-it-works",
+    title: "Uterus During Pregnancy- Sizes And How It Works",
+    description:
+      "The uterus plays a crucial role in pregnancy as the abode of the infant, and it constantly expands during your gestation journey to hold the developing fetus.The uterus creates the placenta...",
+    date: "2023-01-14",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181481/Uterus_During_Pregnancy_Sizes_And_How_It_Works_wa03xl.webp",
+      alt: "Uterus During Pregnancy",
+    },
+    tags: ["Pregnancy"],
+    content: [
+      {
+        paragraphs: [
+          "The uterus plays a crucial role in pregnancy as the abode of the infant, and it constantly expands during your gestation journey to hold the developing fetus.",
+          "The uterus creates the placenta for fetal development and blood vessels to nurture it.",
+          "When you think of pregnancy, the first thing you may envision is a growing belly. While this is a visible change of pregnancy that is hard to ignore, myriad transformations occur inside a pregnant woman’s body. The most important change is the size of the uterus during pregnancy.",
+          "This post discusses interesting details about the uterus, including its size during and before pregnancy, functions, and positions. It also mentions how to maintain a healthy uterus.",
+        ],
+      },
+      {
+        heading: "Uterus During Pregnancy",
+        paragraphs: [
+          "The uterus is a distensible organ the size of a closed fist. It grows and changes to become large enough to accommodate a full-term baby. It is held in its position by ligaments, which stretch as the uterus grows.",
+          "Size Of Uterus During Pregnancy: As you know, the uterus keeps changing in shape and size as your pregnancy progresses. The uterus expands between 500 and 1,000 times its normal size. Let’s see how the organ changes during each trimester.",
+        ],
+      },
+      {
+        heading: "The first trimester (0 to 12 weeks)",
+        items: [
+          "At 12 weeks of pregnancy, the size of the uterus remains as small as the size of a grapefruit.",
+          "As your pregnancy progresses, the uterus grows, putting pressure on the bladder. This is when the frequency of urination increases.",
+          "In the case of twins or multiple pregnancies, the stretching of the uterus will be faster compared to that of a single baby.",
+        ],
+      },
+      {
+        heading: "The second trimester (14-28 weeks)",
+        items: [
+          "By the second trimester, the uterus grows to the size of a papaya. The uterus grows upward and develops outside the pelvic area.",
+          "The uterus expands between the navel area and the breasts and starts putting thrust on the other organs, pushing them away from their original positions. This may lead to some tensions in the ligaments and the surrounding muscles, leading to body aches and pains.",
+          "In some cases, the navel may pop out because of the pressure put by the uterus on other organs.",
+        ],
+      },
+      {
+        heading: "The third trimester (28-40 weeks)",
+        items: [
+          "By the third trimester, your uterus will get enlarged to the size of a watermelon. It will move from your pubic brim to the lower bottom of the rib cage.",
+          "Once you approach labor, your baby will descend into the pelvis.",
+        ],
+      },
+      {
+        heading: "After childbirth",
+        paragraphs: [
+          "After childbirth, the uterus shrinks back to its normal position and size. This process is known as involution, which will take about six to eight weeks.",
+          "Apart from changing in size to accommodate the growing fetus, the uterus also plays other roles during pregnancy.",
+        ],
+      },
+      {
+        heading: "Functions Of The Uterus During Pregnancy",
+        paragraphs: ["**During pregnancy, the uterus:**"],
+        items: [
+          "Accepts the fertilized ovum that passes through the fallopian tube.",
+          "Creates the placenta for the development of the fetus.",
+          "Nurtures the fetus with nutrients by developing blood vessels exclusively for this purpose.",
+          "Contracts to facilitate the exit of the baby and the placenta through the vagina during childbirth.",
+          "Post-delivery, it shrinks back and starts preparing for the next menstrual cycle.",
+          "It helps the blood flow into the ovaries. It supports other organs such as the vagina, bladder, and rectum. It plays an important role in sexual functions like triggering orgasm.",
+        ],
+      },
+      {
+        heading: "Measuring The Uterus During Pregnancy",
+        paragraphs: [
+          "Your doctor might measure the size of your uterus, also called the fundal height (fundus is the domed region at the top of the uterus), to understand the fetal growth and development. The fundal height is the measurement of the top of the pubic bone to the top of the uterus, which determines the gestational age.",
+          "Note: It should be noted that the size of the uterus varies from woman to woman and depends on height, weight, and age.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 63,
+    slug: "vegetable-dalia-khichdi",
+    title: "Vegetable Dalia Khichdi",
+    description:
+      "You will need-• 1 tablespoon ghee• 1/2 cup dalia (broken wheat)• 1/4 cup skinned and split green gram (mung dal)• 1 cup carrot finely chopped• 1 small onion , finely chopped• 2 tablespoon fresh green peas• 1/4 t...",
+    date: "2023-02-01",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181482/Vegetable_Dalia_Khichdi_xryds2.png",
+      alt: "Vegetable Dalia Khichdi",
+    },
+    tags: ["Babies Food(6-24Months)"],
+    content: [
+      {
+        heading: "You will need",
+        items: [
+          "1 tablespoon ghee",
+          "1/2 cup dalia (broken wheat)",
+          "1/4 cup skinned and split green gram (mung dal)",
+          "1 cup carrot finely chopped",
+          "1 small onion , finely chopped",
+          "2 tablespoon fresh green peas",
+          "1/4 teaspoon cumin seeds",
+          "2 tablespoon finely chopped coriander leaves",
+          "1/8 teaspoon turmeric powder",
+        ],
+      },
+      {
+        heading: "How to Prepare",
+        steps: [
+          "Washed mung dal properly. Drain and keep aside.",
+          "Heat a pressure cooker. Melt ghee and add cumin seeds.",
+          "Once the seeds crackle, add onion. Saute for few seconds and toss in the chopped carrot followed by green peas. Stir fry the veggies for a minute or so.",
+          "Add turmeric and stir well. Follow with the washed and drained mung dal. Fry for a few minutes and add the broken wheat. Stir fry on a low flame till the aroma rises.",
+          "Pour in 2 cups of water followed by finely chopped coriander leaves. Give a quick stir and put on the lid.",
+          "Pressure cook the khichdi on a medium flame for 2 whistles.",
+          "When the pressure releases on its own, open the lid and stir the khichdi through. Serve warm.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 64,
+    slug: "weight-gain-after-stopping-breastfeeding",
+    title: "Weight Gain After Stopping Breastfeeding",
+    description:
+      "Most lactating mothers worry about the increased possibilities of weight gain after breastfeeding. This is because lactation assists in postpartum weight loss. During exclusive nursing (the first six months), you may consume an excess of about...",
+    date: "2023-01-27",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181482/Weight_Gain_After_Stopping_Breastfeeding_jmhyuo.webp",
+      alt: "Weight gain after stopping breastfeeding",
+    },
+    tags: ["Breastfeeding"],
+    content: [
+      {
+        paragraphs: [
+          "Most lactating mothers worry about the increased possibilities of weight gain after breastfeeding. This is because lactation assists in postpartum weight loss. During exclusive nursing (the first six months), you may consume an excess of about 400-500 kilocalories per 24 hours for milk production. However, the process of breastfeeding affects the metabolism, due to which you may end up losing some weight.",
+          "You’ve probably heard of how breastfeeding burns about 300 to 500 calories every day. This surely may have seemed to you a great way to start shedding that pregnancy weight. But on the flip side, you may also have heard that many moms gain weight after they stop breastfeeding the baby. Rapid weight gain after stopping breastfeeding is common? Is it something that you need to worry about? Let’s find out.",
+          "In this post, we discuss the effects of lactation and its link with maternal weight gain. While on the topic, note that dieting is not recommended during lactation as it may comprise the nutritional needs of the mother and the baby.",
+        ],
+      },
+      {
+        heading: "Will You Gain Weight Once You Stop Nursing?",
+        paragraphs: [
+          "Weight gain in breastfeeding mothers is quite common, and this may be due to a combination of reasons, including increased calorie intake, lower calories burnt, and hormones. Hormonal changes that happen within your body right from the minute you get pregnant continue even after delivery and until you wean your baby. These hormones are responsible for quite a few body changes in pregnant women, even once you stop breastfeeding.",
+          "There is no substantial research-based evidence that links weaning and weight gain. It is true that breastfeeding burns more calories and also makes metabolism more efficient. The weight gain after cessation of breastfeeding could vary from one woman to another. While some women gain weight after they wean their babies. This does not happen with all women.",
+          "However, may not be the case with mothers who exercise while and after breastfeeding and are conscious about their diet and calorie intake.",
+        ],
+      },
+      {
+        heading: "What Causes Weight Gain After Weaning Your Baby?",
+        paragraphs: [
+          "Some women may notice weight gain after they wean their baby.",
+        ],
+        items: [
+          "**1. Hormonal changes:** Once you stop breastfeeding, hormones begin to drop. Both oxytocin and prolactin play an essential role in your emotional wellness. Some women may experience depression or feel low, causing them to binge eat, which could cause weight gain.",
+          "**2. Caloric surplus:** Your appetite may increase during breastfeeding, and it may stay that way for a while even after you wean your baby. The excess calories may eventually lead to weight gain. The effects of caloric surplus could be compounded by a lack of physical activity and a sedentary lifestyle.",
+        ],
+      },
+      {
+        heading: "Tips To Avoid Weight Gain After Weaning",
+        paragraphs: [
+          "The following tips could help you manage your food intake to shed the extra weight you gained after weaning your baby. And you can also make the following changes to your lifestyle.",
+        ],
+        items: [
+          "Keep an eye on what you eat and try to work on reducing the food intake.",
+          "Avoid any rapid weight loss diets since they may make you cave into your cravings eventually.",
+          "Do not overeat. Listen to your body and eat only when you are hungry.",
+          "Eat healthy snacks, such as fruits and nuts, to provide yourself with the necessary nutrients and calories.",
+          "Engage in moderate exercises. If you do not have more free time on hand, you may spread out your workouts into various parts across the day.",
+          "Stay active whenever possible. For instance, if you can walk to a place, then avoid using the car or bus.",
+          "Set realistic goals. Losing excess weight could take weeks or even months. Respect your body’s limits, and do not push it to the point that you risk injury.",
+          "You may exercise 15-20 times multiple times a day.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 65,
+    slug: "what-is-a-normal-heart-rate-during-pregnancy",
+    title: "What is a normal heart rate during pregnancy?",
+    description:
+      "Heart rate normally increases during pregnancy, as the body works to pump blood to the organs and placenta.During pregnancy, the amount of blood pumped by the heart (cardiac output) increases by 30 to 50%. As cardiac ou...",
+    date: "2023-02-25",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181482/What_is_a_normal_heart_rate_during_pregnancy_il2k4z.jpg",
+      alt: "What is a normal heart rate during pregnancy?",
+    },
+    tags: ["Pregnancy Health"],
+    content: [
+      "Heart rate normally increases during pregnancy, as the body works to pump blood to the organs and placenta. During pregnancy, the amount of blood pumped by the heart (cardiac output) increases by 30 to 50%. As cardiac output increases, the heart rate at rest speeds up from a normal prepregnancy rate of about 70 beats per minute to as high as 90 beats per minute. Many pregnant people also experience a drop in blood pressure, especially in early pregnancy.",
+      {
+        heading: "What is a normal heart rate during pregnancy?",
+        text: "There is no standard definition of a pregnancy heart rate that is too high or too low. Instead, doctors look at a person’s baseline heart rate and how their heart rate changes over time. The study also found that the average heart rate rises steadily through pregnancy. At 10 weeks, the average heart rate was 79.3 BPM. By 40 weeks, the average rate was 86.9 BPM. A 2019 meta-analysis looked at heart rate increases in 36,239 pregnant people. The authors found the average heart rate increase was around 10%, or 7–8 beats per minute. A person’s heart rate during pregnancy may be higher or lower than these figures if their prepregnancy heart rate is higher or lower. Brief heart palpitations and slight changes in pregnancy heart rate are common. A 2007 study emphasizes that while these changes in heart rate can signal a heart problem in rare cases, most are harmless.",
+      },
+      {
+        heading: "What causes an abnormal heart rate during pregnancy?",
+        items: [
+          {
+            title: "1. Anxiety",
+            text: "Anxiety makes a person’s heart beat faster. Some people also become anxious when they notice their heart is beating quickly, which can lead to more anxiety.",
+          },
+          {
+            title: "2. Heart disease",
+            text: "Sometimes, changes in heart rate signal a problem with the heart’s electrical system, a blocked artery, or other heart health problems. Heart health issues are more common during pregnancy. Heart disease is a leading cause of pregnancy-related death.",
+          },
+          {
+            title: "3. Abnormal starting heart rate",
+            text: "People with low or high resting heart rates may experience pregnancy heart rates that are also outside of the normal range.",
+          },
+          {
+            title: "4. Preexisting arrhythmias",
+            text: "Arrhythmias are heart palpitations or other disturbances of the heart rate. People with a history of arrhythmias may find that pregnancy worsens their condition.",
+          },
+          {
+            title: "5. Exercise",
+            text: "People who are physically active may have lower resting heart rates. This can extend to pregnancy.",
+          },
+        ],
+      },
+      {
+        heading: "How to get heart rate into a normal range",
+        text: "People whose heart rate falls outside their normal range should focus on why this happens, rather than trying to reach a particular number of BPM. Talk to a doctor before trying to change the heart rate. In general, a healthful lifestyle may help a person remain healthy during pregnancy and can support a normal heart rate.",
+        subitems: [
+          {
+            title: "Eat a healthful diet",
+            text: "Talk to a doctor about how best to nourish the body during pregnancy. Most pregnant people need 2,200–2,900 calories per day. This varies with age, body size, activity level, and other factors. Proteins, fruits, vegetables, and other nourishing foods can help protect the heart.",
+          },
+          {
+            title: "Exercise",
+            text: "Moderate exercise is usually safe during pregnancy, but talk to a doctor before trying a new or difficult routine. Most pregnant people need at least 150 minutes of aerobic exercise per week. Try walking, swimming, and other low-impact options. Yoga or stretching may help support healthy muscles and reduce pregnancy aches and pains.",
+          },
+          {
+            title: "Get proper prenatal care",
+            text: "See a doctor or midwife at least once during the first trimester, then schedule appointments regularly according to the healthcare provider’s recommendations. Regular prenatal care involves monitoring heart health and can reduce the risk of developing an untreated heart issue.",
+          },
+          {
+            title: "Manage anxiety and mental health",
+            text: "Anxiety can make the heart beat faster and make pregnancy more difficult. People experiencing anxiety should talk to a doctor, practice slow and deep breathing, and speak with a mental health counselor specializing in prenatal mental health.",
+          },
+        ],
+      },
+      {
+        heading: "When to see a doctor",
+        text: "It is important to have regular prenatal visits with a doctor during pregnancy. Discuss any changes in heart rate, and make sure the healthcare provider takes heart rate and blood pressure readings.",
+        list: [
+          "an intense headache, stomach pain, or sudden swelling in one or both feet or legs",
+          "chest pain or pressure",
+          "sudden high blood pressure",
+          "trouble breathing",
+        ],
+      },
+      {
+        heading: "Conclusion",
+        list: [
+          "Some people do not notice these changes, but others could find them alarming or uncomfortable.",
+          "Heart rate changes during pregnancy are normal. The body has to pump more blood and compensates by lowering blood pressure and pumping faster.",
+          "If a pregnant person has any symptoms that seem abnormal, they should speak to a healthcare provider.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 66,
+    slug: "what-is-linea-nigra-causes-and-how-to-get-rid-of-it",
+    title: "What is Linea Nigra? Causes And How To Get Rid Of It",
+    description:
+      "Linea nigra is a vertical, dark line on the belly that appears during pregnancy. It typically runs from the navel to the pubic area.The line is usually about 1 centimeter wide and runs from the navel toward the pubic area. In some cases, linea nigra extends above...",
+    date: "2023-02-06",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181482/What_is_Linea_Nigra_qrkyjb.jpg",
+      alt: "Linea Nigra",
+    },
+    tags: ["Pregnancy"],
+    content: [
+      {
+        heading: "What is Linea Nigra?",
+        paragraphs: [
+          "Linea nigra is a vertical, dark line on the belly that appears during pregnancy. It typically runs from the navel to the pubic area. The line is usually about 1 centimeter wide and runs from the navel toward the pubic area. In some cases, linea nigra extends above the navel towards the breasts.",
+          "Linea nigra is the result of hyperpigmentation, in which some skin cells produce more melanin than normal. Linea nigra is not harmful at all, some expecting mothers are understandably troubled by its development. Fortunately, linea nigra is a natural part of most women’s pregnancy and the condition typically resolves on its own without the need for treatment.",
+          "If you are expecting or considering becoming pregnant, here is everything you need to know about linea nigra.",
+        ],
+      },
+      {
+        heading: "During Pregnancy Common Types of Hyperpigmentation",
+        items: [
+          "Darkening of hyperpigmented areas such as nipples, areolae and labia",
+          "Linea Nigra: A dark, vertical line on the belly",
+          "Darkening of birthmarks, moles and freckles",
+          "Melasma: Patches of dark skin on the face",
+        ],
+      },
+      {
+        heading: "What Causes Linea Nigra?",
+        paragraphs: [
+          "During pregnancy, hormonal changes cause skin cells in this area to darken, hence the linea nigra. This line extends vertically from the breast plate down through the navel toward the pubic area.",
+          "During pregnancy, an increase in hormones; specifically melanocyte-stimulating hormones, progesterone, and estrogen, cause some skin cells to produce extra melanin, or pigment. After you give birth, these hormonal levels will return to normal, and your linea nigra will slowly fade.",
+          "Linea nigra most often appears during the second trimester of pregnancy and often occurs alongside other types of hyperpigmentation, such as melasma or the darkening of areas that are already pigmented, like the nipples, areola and labia.",
+        ],
+      },
+      {
+        heading: "When Does The Linea Nigra Appear?",
+        paragraphs: [
+          "The linea nigra is noticeable from the second trimester and fades away shortly after the birth of your baby. In some women, it may not fade away completely and in some, it may not show up at all during the pregnancy. Some others may start noticing it a little later in the pregnancy. The line usually becomes visible from the fourth or fifth month and expands in width as the belly grows.",
+          "The pregnancy line is prominent in women with darker skin compared to those with fairer skin. But does this line mean anything?",
+        ],
+      },
+      {
+        heading: "Linea Nigra And The Old Wives Tale",
+        items: [
+          "According to old wives tales, the linea nigra helps to predict the gender of the baby, they said:",
+          "The dark line helps the baby breastfeed by guiding them to the areola. Also, the baby can recognize the areola from the smell, which is similar to the smell of the amniotic fluid that was surrounding the baby.",
+          "If the line runs from the bottom of the rib cage to the pubic bone, it is a boy. If the line runs from the navel to the pubic bone, then its a girl.",
+        ],
+        paragraphs: [
+          '"But, there is no scientific evidence to prove these claims."',
+        ],
+      },
+      {
+        heading: "How Common is Linea Nigra?",
+        paragraphs: [
+          "During pregnancy, more than 90% of women report changes to their skin. Hyperpigmentation is among the most common of these changes. Nearly 75% of women will experience areas of skin darkening while they are pregnant. Linea nigra is just one type of hyperpigmentation.",
+        ],
+      },
+      {
+        heading: "Who is Most Likely to Develop Linea Nigra?",
+        paragraphs: [
+          "Linea nigra can be more prevalent in those who spend time in the sun, have certain pre-existing conditions such as hyperthyroidism, or have a genetic predisposition to hyperpigmentation.",
+          "You’re more likely to develop linea nigra if you already have dark skin. Women with light skin may experience a lighter colored linea nigra because they have less pigment in their skin to begin with.",
+        ],
+      },
+      {
+        heading: "Factors that Increase Risk of Linea Nigra are",
+        items: [
+          "Genetics",
+          "Dark skin",
+          "Thyroid disease",
+          "Hormonal imbalances",
+          "Certain medications",
+        ],
+        paragraphs: [
+          "Although it’s much less common, linea nigra can occur in men or women who are not pregnant due to hormonal changes. In this case, it’s best to see a doctor for a diagnosis of the underlying causes.",
+        ],
+      },
+      {
+        heading: "Can Linea Nigra Be Prevented?",
+        paragraphs: [
+          "There is no way to prevent linea nigra, although protecting your belly from sun exposure can keep the condition from worsening. It’s important to note that the use of skin lightening creams, especially those that contain hydroquinone, is not recommended during pregnancy.",
+        ],
+      },
+      {
+        heading: "Linea Nigra Treatment Options",
+        paragraphs: [
+          "Dermatologists and doctors recommend not treating linea nigra during pregnancy or while breastfeeding.",
+          "Skin lightening creams often contain hydroquinone, which has not been proven safe for pregnant or breastfeeding women.",
+          "After pregnancy, linea nigra will resolve on its own, although it can take several months.",
+        ],
+      },
+      {
+        heading: "The following methods may help linea nigra fade sooner",
+        items: [
+          "Lightening creams or bleaches; only if not breastfeeding",
+          "Protecting the belly from excess sun exposure",
+          "Ingesting folic acid from dark leafy greens and fortified whole wheat breads",
+          "A homemade mask made with lemon, raw sugar, and honey applied on the abdomen and left for 10-15 minutes can lighten the linea nigra. You can do it a few times a week.",
+        ],
+        paragraphs: [
+          "This common skin condition is nothing to worry about, and does go away over time once your hormones have returned to pre-pregnancy levels.",
+        ],
+      },
+    ],
+  },
+  
+  {
+    id: 67,
+    slug: "what-to-eat-avoid-after-a-miscarriage",
+    title: "What To Eat & Avoid After A Miscarriage",
+    description:
+      "In addition to emotional support, a woman needs physical nourishment and the right foods to eat after miscarriage to recover properly. A miscarriage is a devastating experience. There is no way to compensate for the loss of a child, regardless of how early in the pregnancy it occurs...",
+    date: "2023-01-16",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181482/What_To_Eat_Avoid_After_A_Miscarriage_ep6j3y.webp",
+      alt: "What To Eat & Avoid After A Miscarriage?",
+    },
+    tags: ["Miscarriage"],
+    content: [
+      "In addition to emotional support, a woman needs physical nourishment and the right foods to eat after miscarriage to recover properly. A miscarriage is a devastating experience. There is no way to compensate for the loss of a child, regardless of how early in the pregnancy it occurs. Unfortunately, most miscarriages are still not openly discussed nowadays. However, it is critical to discuss miscarriages and talk about this heartbreaking loss. The body of a woman also becomes vulnerable after a pregnancy loss. Therefore, it is critical to understand what foods to consume after a miscarriage and what foods to avoid. This can help you recover from the miscarriage and prevent one from occurring again.",
+      {
+        heading: "Best Foods To Eat After Miscarriage",
+        text: "A miscarriage can cause heavy bleeding and dizziness. It can also cause weakness. The food you eat during this time can impact your health greatly. Here are some foods you should eat after a miscarriage:",
+      },
+      {
+        heading: "1. Calcium-rich foods",
+        text: "During pregnancy, your body’s calcium reserves can plummet. That is why it is important to consume foods that are rich in calcium.",
+        list: [
+          "Milk",
+          "Dairy products",
+          "Seafood like salmon and sardines",
+          "Dried fruits",
+          "Soya",
+          "Dark green leafy vegetables",
+        ],
+      },
+      {
+        heading: "2. Iron-rich foods",
+        text: "As mentioned before, a miscarriage can cause heavy bleeding. That can cause depletion in the amount of iron in your body. You may even experience anemia and other symptoms of iron deficiency due to your miscarriage. Feelings of weakness and fatigue are common after a miscarriage. That is why it is important to consume iron-rich foods after a pregnancy loss. The best kind of iron to consume after a miscarriage is heme-iron. It is the kind of iron that is easily absorbed by the body. Lean meat is a good source of heme-iron. So consume red meat in plenty after a miscarriage. But remember to cook it well. Avoid frying it. You can grill it instead.",
+        otherSources: [
+          "Beans",
+          "Green leafy vegetables",
+          "Brussels Sprouts",
+          "Raisins",
+          "Lentils",
+          "Dried Peaches",
+          "Pumpkin Seeds",
+          "Soybeans",
+          "Sesame butter (Tahini)",
+          "Brown Rice",
+          "Dark Chocolate",
+          "Molasses",
+        ],
+        vitaminCSources: [
+          "Lemon",
+          "Oranges",
+          "Papaya",
+          "Strawberries",
+          "Grapefruits",
+        ],
+      },
+      {
+        heading: "3. Fruits and vegetables",
+        text: "You need to consume ample amount of fruits and vegetables to get the nutrients your body needs after a miscarriage.",
+      },
+      {
+        heading: "4. Feel-good foods",
+        text: "Mourning the loss of a baby can plunge you into depression. The feeling of depression varies among women. Some women can bounce back pretty easily after a miscarriage while others can mourn for months and even years. No matter the category you fall in, you are a survivor. But you can consume some comfort food to help deal with post-miscarriage depression. You can consume foods rich in magnesium to recover from depression.",
+        list: ["Nuts", "Beans", "Plain chocolate"],
+      },
+      {
+        heading: "Foods To Avoid After Miscarriage",
+        text: "A healthy diet doesn’t just mean consuming nourishing food. It also means saying no to food that is not good for your body! Some of the foods you should avoid after miscarriage includes:",
+      },
+      {
+        heading: "1. Low-fiber starches",
+        text: "Carbohydrates provide your body with the fuel it needs and also controls your body’s sugar levels. But refined grains or low-fiber starches can have an adverse impact on your body. They can cause rapid fluctuations in your body’s sugar levels. That is why it is important to limit the amount of low fiber starch in your diet.",
+      },
+      {
+        heading: "2. Sweets",
+        text: "Avoid sugary foods with a high glycemic index as they too can cause fluctuating blood sugar levels.",
+      },
+      {
+        heading: "3. Fatty milk and meats",
+        text: "The fats in meat and dairy products can cause inflammation. So avoid fatty meats and dairy products after a miscarriage. After a miscarriage, it is important to avoid inflammation that can cause you pain and discomfort.",
+      },
+      {
+        heading: "4. Junk food",
+        text: "You may crave junk food, and it is okay to eat some in moderation. But do not make junk food your main course after a miscarriage. Junk food will just fill you with empty calories and prevent you from consuming nutrient rich food that your body needs right now.",
+      },
+      {
+        heading: "5. Soy products",
+        text: "Soy is good for your health; there is no doubt about that. But it is also full of phytate, which prevents your body from absorbing iron. So, limit the amount of soy product, you consume after a miscarriage.",
+      },
+    ],
+  },
+
+  {
+    id: 68,
+    slug: "whats-the-best-age-gap-between-siblings",
+    title: "What's the best age gap between siblings?",
+    description:
+      "The gap you leave between babies depends on when you and your partner feel ready to have another child. It also depends on when you're able to conceive. This can be difficult to control...",
+    date: "2023-02-03",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181482/What_s_the_best_age_gap_between_siblings_vpqkqm.webp",
+      alt: "Best age gap between siblings",
+    },
+    tags: ["Second Pregnancy"],
+    content: [
+      {
+        paragraphs: [
+          "The gap you leave between babies depends on when you and your partner feel ready to have another child. It also depends on when you're able to conceive. This can be difficult to control, even with careful planning.",
+          "Having a rough idea of when you and your partner would be ready for another baby can be handy. There is always pros and cons for all sized gap.",
+          "If you're in your late 30s, your fertility may influence how soon you start to try again. Women's fertility starts to decline from the age of 35 onwards.",
+          "How long you decide to wait may also depend on your recovery from your last pregnancy. It's best for your health to recover from one pregnancy and birth before embarking on the next.",
+        ],
+      },
+      {
+        heading: "Risks of Conceiving Within Six Months",
+        paragraphs: [
+          "Conceiving a baby within six months of your last birth can increase the risk of you developing the following during pregnancy:",
+        ],
+        items: ["Placental abruption", "Iron deficiency anaemia"],
+      },
+      {
+        heading: "Risks for Babies Conceived Within Six Months",
+        paragraphs: [
+          "Research has also shown that a longer gap may be better for your baby, too.",
+          "Compared with a longer gap, babies conceived within six months of a previous pregnancy are at a higher risk of:",
+        ],
+        items: [
+          "Being born prematurely",
+          "Measuring small for their dates",
+          "Having a low birth weight",
+        ],
+        paragraphs2: [
+          "There is also an increased risk of a baby having a congenital condition, such as a heart condition.",
+          "A gap of at least 18 months will give you time to recover your energy and replenish the nutrients you lost during your previous pregnancy.",
+          "You'll also have time to mentally and physically prepare yourself for getting pregnant again and having a new addition to your family.",
+        ],
+      },
+      {
+        heading: "Considerations for Different Age Gaps",
+        paragraphs: [
+          "Bear in mind that a gap of between 18 months and about two years means you won't have as much me-time as you had in your first pregnancy. You'll have a small child taking up your time and energy. However, you'll have the benefit of experience. You may find that you cope better with your second pregnancy because you're more aware of what to expect.",
+          "Apart from your own health and well-being, you may be influenced by how age gaps would affect your family life. A small gap between siblings gets the challenging baby years over with more quickly. But it also means that the expenses come closer together. You may also find your children are more likely to squabble as their interests overlap. No matter how many toys there are in your house, they're sure to both want the same one at the same time.",
+          "Larger gaps offer the opportunity to enjoy each child as an individual. You will have time to give them your undivided attention for the first few years. It also means you can spread the cost of having children over a longer period of time and you can probably reuse a lot of your baby equipment.",
+          "However, it's also possible that siblings with a large age gap may grow up less close to one another. There's also the chance that your older child may resent a younger sibling.",
+          "On the plus side, one study showed that longer gaps can improve the reading and maths skills of older children. Siblings with more than two years' age difference scored better than children born closer together. This may be because they had more one-to-one time with their parents.",
+          "Whichever age gap you choose, you're sure to make it work for you and your family. If you're still undecided, learn more about the pros and cons of different sibling age gaps.",
+          "There are no rules about what age difference between babies works best. Plus, it depends how you think of things and what your family is like. But there are some reasons why a certain age gap might suit you and your family.",
+        ],
+      },
+      {
+        heading: "Small gap: Under two years",
+        pros: [
+          "Your children are likely to play together.",
+          "You’ll get the most exhausted periods of pregnancy and the early years done all together.",
+          "Having more siblings of a similar age might make kids more creative.",
+          "Your children are more likely to be into similar activities, games and TV shows, which should make your life easier.",
+          "When you’re on maternity leave, you’ll get to spend more time with your eldest child too.",
+        ],
+        cons: [
+          "Can be tiring looking after a toddler when you’re pregnant, especially if your calcium and iron stores are still low from your previous pregnancy.",
+          "Increased risk of complications in labour, including a rise in pre-term birth.",
+          "Toddlers might be jealous of or resent a new baby.",
+        ],
+      },
+      {
+        heading: "Medium gap: Two to four years",
+        pros: [
+          "Your body will have had time to get back to normal after round one.",
+          "With this gap, you’ll have the lowest risk of having preterm birth and a low birth weight baby.",
+          "You can save cash by re-using the baby equipment your first child doesn’t need any more.",
+          "You’ll be mostly up-to-date with your knowledge about all things baby-related.",
+        ],
+        cons: [
+          "The age gap might be too big for the siblings to play together or have things in common for a while.",
+        ],
+      },
+      {
+        heading: "Longer gap: over four years",
+        pros: [
+          "Your eldest child can help out when the baby arrives.",
+          "Your older child will most likely be at school so you can get lots of one-on-one time with your newborn.",
+          "The dynamic can be lovely, with the older child looking after the younger one.",
+          "The gap will mean you won’t feel like you’ve been constantly shattered with young babies for years.",
+          "Jealousy and resentment might be less of an issue.",
+        ],
+        cons: [
+          "You might have to refresh your baby knowledge quite a bit, with some advice having changed along the way.",
+          "With bigger gaps, your children may be into different things so not as close until they’re much older.",
+          "Gaps of over five years are associated with pregnancy and birth problems, not just because you’re likely to be an older mum.",
+        ],
+      },
+    ],
+  },
+
+  {
+    id: 69,
+    slug: "women-need-to-stop-believing-these-pregnancy-myths",
+    title: "Women need to stop believing these Pregnancy myths",
+    description:
+      "Congratulations, you’re pregnant — now it’s time for the information overload. Now that you have seen the two pink lines on the pregnancy test kit, it’s time to celebrate the upcoming arrival of the new addition to your ...",
+    date: "2023-03-04",
+    image: {
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1756181482/Women_need_to_stop_believing_these_Pregnancy_myths_-_Copy_-_Copy_kvnwhm.png",
+      alt: "Pregnancy myths",
+    },
+    tags: ["Pregnancy", "Pregnancy Health"],
+    content: [
+      "Congratulations, you’re pregnant — now it’s time for the information overload. Now that you have seen the two pink lines on the pregnancy test kit, it’s time to celebrate the upcoming arrival of the new addition to your family. There are a ton of dos and don’ts to keep track of when you’re expecting. What types of activities are safe for you and your growing bump? What foods can you eat? What things do you need to avoid? There’s a plenty of useful information out there, unfortunately there are also numbers of myths that are misleading or just plain false. However here are some most common pregnancy myths. So let’s take a look!",
+      {
+        heading: "Common pregnancy myths",
+        text: "Ranging from how to tell the baby’s gender to how much hair your baby will have - pregnancy and childbirth. Here are the most common ones to stay aware about. Learning more about facts and less about myths can help you maintain a healthy pregnancy with peace of mind.",
+      },
+      {
+        heading: "Start eating for two",
+        text: "Perhaps the most common myth out there is that the moment you are pregnant, you should start eating for two. This is not only not true but can also be harmful for you as excessive weight gain can impact both you and your baby’s health. In fact, it is normal to keep the same intake of calories or some more during the first trimester. Even in the later stages, it is not advised to eat for two but gradually increase the calorie intake, a number that is decided by taking into account your health and your pre-pregnancy weight. Eating right and eating healthy during pregnancy is what is most important! And in today’s world, your doctor will likely recommend you to a dietician to better understand what and how much to eat during this time.",
+      },
+      {
+        heading: "Morning sickness only happens in the morning",
+        text: "Unfortunately, the not-so-welcome nausea and vomiting that occur when you’re pregnant can happen morning, noon or night. But don’t worry — they usually fade early in the second trimester. Why is it called morning sickness then? Well, the misleading nickname probably came about because having an empty stomach like when you wake up in the morning can make that nausea more pronounced.",
+      },
+      {
+        heading: "Exercise pregnancy myths",
+        text: "You shouldn’t do any exercise during pregnancy - haven’t you heard that already? The most common misconception is that one shouldn’t do any physical exercise when pregnant. However, unless the doctor has specifically prescribed bed rest due to some bodily conditions, it is advisable to include some form of exercise or the other in your daily routine. From yoga and walking to swimming - there’s a plethora of exercises you can do to stay healthy. Just make sure to check-in with your doctor before you start anything new and your doctor will be able to guide you on physical activities depending on the needs, your previous habits and the stage of pregnancy.",
+      },
+      {
+        heading:
+          "What you had before you knew you were pregnant can harm your baby",
+        text: "For the first weeks after conception, many women may not be aware of their pregnancy and may have had a glass of wine or some exotic food or even an over-the-counter drug. However, doctors say that the ill effects’ causing substances are under a limited list and many of these things may have no impact at all. However, to be on the safe side, inform your doctor of all your worries as soon as you find out you are pregnant, so your doctor can help you alleviate those worries.",
+      },
+      {
+        heading: "No sex during pregnancy",
+        text: "Having sex during pregnancy can hurt your baby - it’s time to debunk this myth. While some postures may be uncomfortable, sex during pregnancy is absolutely okay as per doctors. You can ask your doctor for any precautions or safe positions but do not shy away from intimate time with your partner.",
+      },
+      {
+        heading:
+          "You can miscarry if you lift heavy objects, take the stairs or do exercises",
+        text: "According to doctors, miscarriages can be caused by various hormonal and other factors and not by doing regular activities. As long as you stick to what’s comfortable to you and not engage in high-risk adventures like horse-racing and sky-diving etc., you should be fine. As your centre of gravity shifts during this time, you are prone to be imbalanced, so it’s better to be cautious during any activity.",
+      },
+      {
+        heading: "Big bellies have difficult deliveries",
+        text: "Another unfounded myth - your belly size doesn’t determine what type of birth you will have or how easy or difficult it will be. The additional weight gain can depend on many factors like your body weight, water retention etc. and a big belly doesn’t always signify a big baby.",
+      },
+      {
+        heading: "Avoid all seafood during pregnancy",
+        text: "Many women are asked to completely cut down on seafood during pregnancy. The risk of mercury and thus fish like king mackerel and swordfish should be avoided. It is also best to avoid raw fish during this time, unless your doctor gives you a go-ahead on the same. Consult your doctor for what to eat and what not to eat during this time, without paying heed to myths.",
+      },
+      {
+        heading: "Flying while pregnant can cause a miscarriage",
+        text: "In general, airline travel is safe if you’re expecting, but there are things to keep in mind. For one, you’re at higher risk of developing blood clots when you’re seated for long periods of time. To prevent this from happening, make sure you stand up and walk the aisle every couple of hours.",
+      },
+      {
+        heading: "Heartburn indicates that baby will have full head of hair",
+        text: "Doctors agree that heartburn only indicates that you ate something which caused indigestion and you should watch your diet to avoid it. Avoiding spicy, fried food and big meals, can significantly reduce heartburn during pregnancy and your baby can still have a normal amount of hair!",
+      },
+      {
+        heading: "Avoid all caffeine completely",
+        text: "According to gynaecologists, one or two servings of caffeine is absolutely safe during pregnancy unless you have some other conditions like heartburn, which may be worsened by hot drinks.",
+      },
+      {
+        heading: "Note",
+        text: "As explained above, it’s best to verify all the information that you come across when you are pregnant before implementing them. People love sharing stories and may be more than eager to give you a fair share of their experiences or what they might have heard. However, this can be misinformation or simply cause anxiety so it’s better to make a list of things to ignore when you are pregnant, with myths topping the list. Always get verified information from your doctor or physician before you start or stop anything new.",
       },
     ],
   },
