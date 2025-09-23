@@ -8,6 +8,7 @@ import Link from "next/link";
 import SignUp from "@/components/SignUp";
 import Pagination from "@/components/Pagination";
 import CategoryFilter from "@/components/CategoryFilter";
+import RecentPosts from "./RecentPosts";
 
 const categories = [
   "All",
@@ -103,7 +104,7 @@ const BlogListClient = () => {
 
       <div className="flex flex-col lg:flex-row gap-5">
         {/* Blog List */}
-        <div className="w-full lg:w-[73%] flex flex-col gap-6">
+        <div className="w-full lg:w-[73%] flex flex-col gap-6 lg:border-r border-r-0 pr-0 lg:pr-6">
           {currentBlogs.length > 0 ? (
             currentBlogs.map((blog) => (
               <div key={blog.slug} className="flex flex-col md:flex-row gap-6 border-b pb-6">
@@ -125,12 +126,14 @@ const BlogListClient = () => {
                     </Link>
                   </h2>
                   <p className="mb-2">{blog.description}</p>
-                  <Link
+                  <div className="text-end  ">
+                    <Link
                     href={`/blog/${blog.slug}`}
-                    className="text-[#F69E87] hover:text-[#e6846a]"
+                    className="text-[#F69E87] hover:text-[#e6846a] "
                   >
                     Continue Reading →
                   </Link>
+                  </div>
                 </div>
               </div>
             ))
@@ -154,6 +157,7 @@ const BlogListClient = () => {
             onSelectCategory={handleCategoryChange}
           />
           <SignUp />
+          <RecentPosts />
         </div>
       </div>
     </section>
