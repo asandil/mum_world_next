@@ -5659,7 +5659,7 @@ const Blogs = [
       "A complete guide to breastfeeding positions, latching problems, practical fixes, hacks, emotional struggles, and when to seek professional help. Includes images of common breastfeeding positions.",
     date: "2023-03-04",
     image: {
-      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1755936520/Apple-Cinnamon-Oatmeal-2_yroptp.jpg",
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758697826/Breastfeeding_Positions_Latching_Issues_rrzmhf.jpg",
       alt: "Breastfeeding Positions & Latching Guide",
     },
     tags: ["Breastfeeding", "Parenting", "New Moms"],
@@ -5795,7 +5795,7 @@ const Blogs = [
       "A complete guide to self-care for new moms after birth, covering practical, emotional, mental, and social well-being tips to thrive while caring for a newborn.",
     date: "2023-03-04",
     image: {
-      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1755936520/Apple-Cinnamon-Oatmeal-2_yroptp.jpg",
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758697623/Self-Care_for_New_Moms_xcprx5.jpg",
       alt: "Self-Care for New Moms",
     },
     tags: ["Parenting", "New Moms", "Self-Care"],
@@ -5864,7 +5864,7 @@ const Blogs = [
       "A complete guide to understanding skin and hair changes after pregnancy, why they happen, and practical tips to manage them while boosting confidence.",
     date: "2023-03-04",
     image: {
-      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1755936520/Apple-Cinnamon-Oatmeal-2_yroptp.jpg",
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758697624/Skin_Hair_Changes_After_Pregnancy_nwikfn.jpg",
       alt: "Skin & Hair Changes After Pregnancy",
     },
     tags: ["Postpartum", "Skin Care", "Hair Care", "New Moms"],
@@ -5995,7 +5995,7 @@ const Blogs = [
       "A complete guide for parents on traveling with a baby, including when to start, practical tips for road, air, and train travel, packing essentials, sleep, feeding, and handling meltdowns.",
     date: "2023-03-04",
     image: {
-      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1755936520/Apple-Cinnamon-Oatmeal-2_yroptp.jpg",
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758697623/Travel_Tips_with_Baby_rag79r.jpg",
       alt: "Travel Tips with Baby",
     },
     tags: ["Parenting", "Baby Travel", "Travel Tips", "New Moms"],
@@ -6105,7 +6105,7 @@ const Blogs = [
       "A comprehensive guide for new parents on achieving work-life balance after baby, with practical strategies, solutions for common challenges, and long-term hacks.",
     date: "2023-03-04",
     image: {
-      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1755936520/Apple-Cinnamon-Oatmeal-2_yroptp.jpg",
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758697636/Work-Life_Balance_After_Baby_mydanb.jpg",
       alt: "Work-Life Balance After Baby",
     },
     tags: ["Parenting", "New Moms", "Work-Life Balance", "Baby Care"],
@@ -6200,7 +6200,7 @@ const Blogs = [
       "A comprehensive guide with smart parenting hacks for new moms, covering sleep, feeding, baby care, household, self-care, relationships, and safety.",
     date: "2023-03-04",
     image: {
-      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1755936520/Apple-Cinnamon-Oatmeal-2_yroptp.jpg",
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758697623/Parenting_Hacks_for_New_Moms_lhh6ke.jpg",
       alt: "Parenting Hacks for New Moms",
     },
     tags: ["Parenting", "New Moms", "Baby Care", "Self-Care"],
@@ -6300,7 +6300,7 @@ const Blogs = [
       "A complete guide for moms-to-be on what to pack in your hospital bag, including essentials for mom, baby, and support person, plus items often overlooked.",
     date: "2023-03-04",
     image: {
-      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1755936520/Apple-Cinnamon-Oatmeal-2_yroptp.jpg",
+      url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758697623/Hospital_Bag_Checklist_for_Delivery-_image_xf6e0o.avif",
       alt: "Hospital Bag Checklist",
     },
     tags: ["Pregnancy", "Hospital Bag", "Delivery Prep", "Newborn"],
