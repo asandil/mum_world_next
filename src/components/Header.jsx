@@ -145,17 +145,58 @@ export default function Header() {
                 eBooks
               </Link>
             </li> */}
-            <li className="text-[14px] uppercase">
-              <Link
-                href="/faqs"
-                className={`head ${
-                  isActive("/faqs")
+            <li className="text-[14px] group relative cursor-pointer uppercase">
+              <div
+                className={`child flex items-center gap-2 ${
+                  isActive("/baby-vaccination-chart") ||
+                  isActive("/due-date-calculator")
                     ? "text-[#e6846a] font-bold"
                     : "hover:text-[#e6846a]"
                 }`}
               >
-                Faqs
-              </Link>
+                Help & Support{" "}
+                <svg
+                  className="mr-[16px] text-[16px] shrink-0 child1"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="16"
+                  height="16"
+                >
+                  <path d="M19.544 7.236a.773.773 0 0 1-.031 1.06l-7.883 7.743-7.42-7.742a.773.773 0 0 1 0-1.061.699.699 0 0 1 1.017 0l6.433 6.713 6.868-6.745a.698.698 0 0 1 1.016.032" />
+                </svg>
+              </div>
+              <div className="absolute hidden group-hover:block bg-[rgb(246,246,246)] p-5 dropdown-content w-fit">
+                <Link
+                  href="/contact-us"
+                  className={`head block w-[240px] ${
+                    isActive("/baby-vaccination-chart")
+                      ? "text-[#e6846a] font-bold"
+                      : "hover:text-[#e6846a]"
+                  }`}
+                >
+                  Contact Us
+                </Link>
+                <Link
+                  href="/share-your-feedback"
+                  className={`head block mt-4 text-[14px] ${
+                    isActive("/pregnancy-due-date-calculator")
+                      ? "text-[#e6846a] font-bold"
+                      : "hover:text-[#e6846a]"
+                  }`}
+                >
+                  Share Your Feedback
+                </Link>
+                <Link
+                  href="/faqs"
+                  className={`head block mt-4 text-[14px] ${
+                    isActive("/pregnancy-weight-gain-calculator")
+                      ? "text-[#e6846a] font-bold"
+                      : "hover:text-[#e6846a]"
+                  }`}
+                >
+                  FAQS
+                </Link>
+              </div>
             </li>
           </ul>
         </nav>

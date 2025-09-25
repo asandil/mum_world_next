@@ -73,20 +73,28 @@ const BlogPage = async ({ params }) => {
 
             {/* Blog content sections */}
             {blog.content?.map((section, idx) => (
-              <div key={idx} className="mb-[32px]">
-                <h3 className="text-[20px] font-[600] text-black mb-[12px]">
+              <div key={idx} className="mb-[12px]">
+                <h3 className="text-[20px] font-[600] text-black mb-[8px]">
                   {section.heading}
                 </h3>
 
+                <h3 className="text-[18px] font-[600] text-black ">
+                  {section.subheading}
+                </h3>
+
+                 <h3 className="text-[18px] font-[500] text-black">
+                  {section.interheading}
+                </h3>
+
                 {Array.isArray(section.items) ? (
-                  <ul className="list-disc pl-[20px] space-y-2 text-[16px] text-[rgb(89,89,89)] leading-[1.6]">
+                  <ul className="list-disc pl-[20px] text-[16px] text-[rgb(89,89,89)] ">
                     {section.items.map((item, i) => (
                       <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
                     ))}
                   </ul>
                 ) : (
                   <p
-                    className="text-[16px] leading-[1.6] text-[rgb(89,89,89)] whitespace-pre-line"
+                    className="text-[16px] text-[rgb(89,89,89)] whitespace-pre-line"
                     dangerouslySetInnerHTML={{ __html: section.items }}
                   />
                 )}
