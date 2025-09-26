@@ -5043,8 +5043,8 @@ const Blogs = [
       url: "https://res.cloudinary.com/dc0wr8hev/image/upload/v1758649659/Common_Baby_Illnesses_Remedies_dqmr7i.jpg",
       alt: "Pregnancy myths",
     },
-    tags: ["Pregnancy", "Pregnancy Health"],
-    category: "Pregnancy Health",
+    tags: ["Baby"],
+    category: "Baby",
     content: [
       {
         heading: "Common Baby Illnesses & Remedies – Mom’s Survival Guide",
