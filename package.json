@@ -11,6 +11,7 @@
   "dependencies": {
     "fs": "^0.0.1-security",
     "gray-matter": "^4.0.3",
+    "mongoose": "^8.18.2",
     "next": "15.4.6",
     "nodemailer": "^7.0.5",
     "path": "^0.12.7",

@@ -1,7 +1,4 @@
-// app/blog/page.js
-import ArticleList from "@/components/the-poetry/ArticleList";
-import BlogList from "@/components/the-poetry/ArticleList";
-import { getBlogPosts } from "@/lib/api/blog";
+
 import { getPoetryPosts } from "@/lib/content";
 import Image from "next/image";
 import Link from "next/link";
