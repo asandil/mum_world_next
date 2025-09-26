@@ -1,6 +1,6 @@
+import faqdata from "@/assets/FaqData";
+import FAQAccordion from "@/components/Faq";
 import React from "react";
-import FaqData from "../../assets/FaqData.js";
-import FAQAccordion from "../../components/Faq";
 
 const page = () => {
   return (
@@ -24,7 +24,7 @@ const page = () => {
         </div>
         {/* questions and answers */}
         <div className="mt-10">
-          {FaqData.map((item, idx) => (
+          {faqdata.map((item, idx) => (
             <FAQAccordion
               key={idx}
               question={item.question}
