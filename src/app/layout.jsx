@@ -7,6 +7,7 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import GoogleAdSense from "@/components/GoogleAdSense";
 import AdUnit from "@/components/AdUnit";
 import { ToastContainer } from "react-toastify";
+import GlobalProvider from "@/components/Application/GlobalProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,35 +28,39 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <GoogleAnalytics />
         <GoogleAdSense />
         <Header />
-        
+
         {/* Top Ad Unit - Leaderboard */}
         {/* <div className="ad-container">
           <div className="ad-label">Advertisement</div>
           <AdUnit slot="5878778835" />
         </div> */}
-        
+
         <div className="content-wrapper">
           <main>
-            <ToastContainer />
-            {children}
+            <GlobalProvider>
+              <ToastContainer />
+              {children}
+            </GlobalProvider>
           </main>
-          
+
           {/* <aside className="ad-sidebar">
             <div className="ad-label">Advertisement</div>
             <AdUnit slot="YOUR_SIDEBAR_SLOT_ID" />
           </aside> */}
         </div>
-        
+
         {/* Bottom Ad Unit - Banner */}
         {/* <div className="ad-container">
           <div className="ad-label">Advertisement</div>
           <AdUnit slot="YOUR_BOTTOM_SLOT_ID" />
         </div> */}
-        
+
         <Footer />
       </body>
     </html>

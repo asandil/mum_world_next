@@ -27,8 +27,16 @@ import { FaRegEye } from "react-icons/fa6";
 import { showToast } from "@/lib/showToast";
 import axios from "axios";
 import OTPVerification from "@/components/Application/OTPVerification";
+import { useDispatch } from "react-redux";
+import { useRouter, useSearchParams } from "next/navigation";
+import { login } from "@/store/reducer/authReducer";
 
 const LoginPage = () => {
+
+  const dispatch = useDispatch();
+  const SearchParams = useSearchParams();
+  const router = useRouter();
+
   const [loading, setLoading] = useState(false);
   const [isTypePassword, setIsTypePassword] = useState(true);
   const [optVerificationLoading, setOptVerificationLoading] = useState(false);
@@ -77,20 +85,21 @@ const LoginPage = () => {
   const handleOtpVerification = async (values) => {
     console.log("handleOtpVerification", values);
     try {
-      setLoading(true);
-      const { data: loginResponse } = await axios.post(
+      setOptVerificationLoading(true);
+      const { data: otpResponse } = await axios.post(
         `/api/auth/verify-otp`,
         values
       );
-      if (!loginResponse.success) {
-        throw new Error(loginResponse.message);
+      if (!otpResponse.success) {
+        throw new Error(otpResponse.message);
       }
       setOtpEmail("");
-      showToast("success", loginResponse.message);
+      showToast("success", otpResponse.message);
+      dispatch(login(otpResponse.data))
     } catch (error) {
       showToast("error", error.message);
     } finally {
-      setLoading(false);
+      setOptVerificationLoading(false);
     }
   };
 
