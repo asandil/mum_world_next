@@ -65,9 +65,9 @@ const RegiterPage = () => {
         throw new Error(registerResponse.message)
       }
       form.reset()
-      alert(registerResponse.message)
+      showToast("success", registerResponse.message)
     } catch (error) {
-      alert(error.message)
+      showToast("error", error.message)
     } finally{
       setLoading(false)
     }

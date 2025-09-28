@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import GoogleAdSense from "@/components/GoogleAdSense";
 import AdUnit from "@/components/AdUnit";
+import { ToastContainer } from "react-toastify";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
         
         <div className="content-wrapper">
           <main>
+            <ToastContainer />
             {children}
           </main>
           
