@@ -26,7 +26,7 @@ import { zSchema } from "@/lib/zodSchema";
 import { WEBSITE_LOGIN } from "@/routes/WebsiteRoute";
 
 // Assets
-import Logo from "@/assets/logo.jpg";
+import Logo from "@/assets/images/logo.jpg";
 import OTPVerification from "@/components/Application/OTPVerification";
 import UpdatePassword from "@/components/Application/UpdatePassword";
 import { showToast } from "@/lib/showToast";

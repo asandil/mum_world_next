@@ -49,6 +49,7 @@ export async function POST(request) {
       _id: getUser._id,
       role: getUser.role,
       name: getUser.name,
+      email:getUser.email,
       avatar: getUser.avatar,
     };
 
