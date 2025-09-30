@@ -1,224 +1,333 @@
-// components/FeedbackForm.tsx
 "use client";
+import React, { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { useForm } from "react-hook-form";
+import z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { zSchema } from "@/lib/zodSchema";
+import { ButtonLoading } from "@/components/Application/ButtonLoading";
 
-import { useState } from "react";
+// Icons
+import { FaStar, FaRegStar } from "react-icons/fa";
+import axios from "axios";
+import { showToast } from "@/lib/showToast";
+import { Textarea } from "./ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
 
-const FeedbackForm = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    rating: 0,
-    category: "general",
-    message: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState("idle");
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleRatingChange = (rating) => {
-    setFormData((prev) => ({
-      ...prev,
-      rating,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log("form data", formData);
-  };
-
+// Star Rating Component
+const StarRating = ({ value, onChange, maxStars = 5 }) => {
   return (
-    <div className="w-full max-w-2xl mx-auto ">
-      <h4 className="text-center md:text-start text-[22px] text-[rgb(27,27,27)] leading-[1.25] mb-[24px] font-[400]">
-        Share Your Feedback
-      </h4>
-      {/* <h2 className="text-2xl font-bold text-start mb-6 text-gray-800">Share Your Feedback</h2> */}
-
-      {submitStatus === "success" && (
-        <div className="mb-6 p-4 bg-green-100 text-green-700 rounded-md">
-          Thank you for your feedback! We appreciate you taking the time to
-          share your thoughts with us.
-        </div>
-      )}
-
-      {submitStatus === "error" && (
-        <div className="mb-6 p-4 bg-red-100 text-red-700 rounded-md">
-          There was an error submitting your feedback. Please try again later.
-        </div>
-      )}
-
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            {/* <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Name
-            </label> */}
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name*"
-              value={formData.name}
-              onChange={handleChange}
-              className="py-[15.5px] px-[16px] form_text text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
-              required
-            />
-          </div>
-
-          <div>
-            {/* <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Email
-            </label> */}
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email*"
-              value={formData.email}
-              onChange={handleChange}
-              className="py-[15.5px] px-[16px] form_text text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
-              required
-            />
-          </div>
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Rate your experience with us
-          </label>
-          <div className="flex space-x-2">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <button
-                key={star}
-                type="button"
-                onClick={() => handleRatingChange(star)}
-                className="focus:outline-none cursor-pointer"
-              >
-                <svg
-                  className={`w-8 h-8 ${
-                    star <= formData.rating ? "text-[#F69E87]" : "text-gray-300"
-                  }`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <label
-            htmlFor="category"
-            className="block text-sm font-medium text-gray-700 mb-[8px]"
-          >
-            Category
-          </label>
-          <select
-            id="category"
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-            className="py-[15.5px] px-[16px] form_text text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
-          >
-            <option value="general">General Feedback</option>
-            <option value="content">Content Suggestion</option>
-            <option value="medical">Medical Information</option>
-            <option value="nutrition">Nutrition & Diet</option>
-            <option value="fitness">Pregnancy Fitness</option>
-            <option value="mental-health">Mental Health</option>
-            <option value="preparation">Birth Preparation</option>
-            <option value="postpartum">Postpartum Care</option>
-            <option value="community">Community Support</option>
-            <option value="technical">Technical Issue</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-
-        <div>
-          <label
-            htmlFor="message"
-            className="block text-sm font-medium text-gray-700 mb-1"
-          >
-            Your Feedback
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            rows={5}
-            value={formData.message}
-            onChange={handleChange}
-            className="py-[6px] px-[16px] h-[112px] resize-none form_text text-[rgb(94,94,94)] border-[1px] border-[rgb(226,226,226)] w-[100%] font-[400] text-[16px] focus:outline-none focus:border focus:border-current"
-            required
-          ></textarea>
-        </div>
-
-        <div className="pb-[24px] mt-[24px]">
+    <div className="flex items-center space-x-1">
+      {[...Array(maxStars)].map((_, index) => {
+        const ratingValue = index + 1;
+        return (
           <button
-            type="submit"
-            disabled={isSubmitting}
-            className="font-[700] min-h-[56px] w-[100%] bg-[#F69E87] text-[#fff] cursor-pointer text-[14px] hover:bg-[#e6846a] transition-all duration-300 ease-in-out delay-0 disabled:opacity-50 disabled:cursor-not-allowed rounded-[3px] hover:shadow-lg"
+            key={index}
+            type="button"
+            className="text-2xl focus:outline-none"
+            onClick={() => onChange(ratingValue)}
+            onMouseEnter={() => {
+              // Optional: Add hover effect
+              document
+                .querySelectorAll(".star-rating button")
+                .forEach((btn, i) => {
+                  if (i <= index) {
+                    btn.classList.add("text-yellow-500");
+                    btn.classList.remove("text-gray-300");
+                  }
+                });
+            }}
+            onMouseLeave={() => {
+              // Reset to current value
+              document
+                .querySelectorAll(".star-rating button")
+                .forEach((btn, i) => {
+                  if (i < value) {
+                    btn.classList.add("text-yellow-500");
+                    btn.classList.remove("text-gray-300");
+                  } else {
+                    btn.classList.add("text-gray-300");
+                    btn.classList.remove("text-yellow-500");
+                  }
+                });
+            }}
           >
-            {isSubmitting ? (
-              <div className="flex items-center justify-center text-white">
-                <div className="loader mr-[10px]"></div>
-                <style jsx>{`
-                  .loader {
-                    width: 25px;
-                    height: 25px;
-                    border-radius: 50%;
-                    display: inline-block;
-                    border-top: 2px solid #ffeb3b;
-                    border-right: 2px solid transparent;
-                    box-sizing: border-box;
-                    animation: rotation 1s linear infinite;
-                    position: relative;
-                  }
-                  .loader::after {
-                    content: "";
-                    box-sizing: border-box;
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    width: 25px;
-                    height: 25px;
-                    border-radius: 50%;
-                    border-bottom: 2px solid #ffeb3b;
-                    border-left: 2px solid transparent;
-                  }
-                  @keyframes rotation {
-                    0% {
-                      transform: rotate(0deg);
-                    }
-                    100% {
-                      transform: rotate(360deg);
-                    }
-                  }
-                `}</style>
-                Sending...
-              </div>
+            {ratingValue <= value ? (
+              <FaStar className="text-yellow-500" />
             ) : (
-              "SEND"
+              <FaRegStar className="text-gray-300" />
             )}
           </button>
-        </div>
-      </form>
+        );
+      })}
+      <span className="ml-2 text-sm text-gray-600">
+        {value} / {maxStars}
+      </span>
     </div>
   );
 };
 
-export default FeedbackForm;
+const FeedBackForm = () => {
+  const [loading, setLoading] = useState(false);
+
+  const formSchema = zSchema
+    .pick({
+      email: true,
+      name: true,
+      bio: true,
+      feedBackCategory: true,
+    })
+    .extend({
+      rating: z
+        .number()
+        .min(1, "Rating is required")
+        .max(5, "Maximum rating is 5"),
+    });
+
+  // 1. Define your form.
+  const form = useForm({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      bio: "",
+      feedBackCategory: "",
+      rating: 0,
+    },
+  });
+
+  // 2. Define a submit handler.
+  const handleFeedbackSubmit = async (values) => {
+    console.log("Submitting feedback:", values);
+
+    try {
+      setLoading(true);
+
+      const { data: feedbackResponse } = await axios.post(
+        `/api/feedback`, // Your new API route
+        values
+      );
+
+      if (!feedbackResponse.success) {
+        throw new Error(feedbackResponse.message);
+      }
+
+      form.reset();
+      showToast("success", feedbackResponse.message);
+    } catch (error) {
+      console.error("Error submitting feedback:", error);
+      showToast("error", error.response?.data?.message || error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // 2. Define a submit handler.
+  // const handleRegisterSubmit = async (values) => {
+  //   console.log(values);
+  //   try {
+  //     setLoading(true);
+  //     const { data: registerResponse } = await axios.post(
+  //       `/api/auth/register`,
+  //       values
+  //     );
+  //     if (!registerResponse.success) {
+  //       throw new Error(registerResponse.message);
+  //     }
+  //     form.reset();
+  //     showToast("success", registerResponse.message);
+  //   } catch (error) {
+  //     showToast("error", error.message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  return (
+    <>
+      <Card className="w-full">
+        <CardContent>
+          <div className="mt-5">
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(handleFeedbackSubmit)}
+                className="space-y-8"
+              >
+                <div className="mb-5">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Full Name</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="text"
+                            placeholder="Enter your name"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div className="mb-5">
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Email</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="email"
+                            placeholder="mumWorld@gmail.com"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <div className="mb-5">
+                  <FormField
+                    control={form.control}
+                    name="feedBackCategory"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>FeedBack Category</FormLabel>
+                        <Select
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                        >
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select a feedBack category to display" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            <SelectItem value="General Feedback">
+                              General Feedback
+                            </SelectItem>
+                            <SelectItem value="Content Suggestion">
+                              Content Suggestion
+                            </SelectItem>
+                            <SelectItem value="Medical Information">
+                              Medical Information
+                            </SelectItem>
+                            <SelectItem value="Nutrition & Diet">
+                              Nutrition & Diet
+                            </SelectItem>
+                            <SelectItem value="Pregnancy Fitness">
+                              Pregnancy Fitness
+                            </SelectItem>
+                            <SelectItem value="Mental Health">
+                              Mental Health
+                            </SelectItem>
+                            <SelectItem value="Birth Preparation">
+                              Birth Preparation
+                            </SelectItem>
+                            <SelectItem value="Postpartum Care">
+                              Postpartum Care
+                            </SelectItem>
+                            <SelectItem value="Community Support">
+                              Community Support
+                            </SelectItem>
+                            <SelectItem value="Technical Issue">
+                              Technical Issue
+                            </SelectItem>
+                            <SelectItem value="Other">Other</SelectItem>
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <div className="mb-5">
+                  <FormField
+                    control={form.control}
+                    name="rating"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Rating</FormLabel>
+                        <FormControl>
+                          <div className="star-rating">
+                            <StarRating
+                              value={field.value}
+                              onChange={field.onChange}
+                              maxStars={5}
+                            />
+                          </div>
+                        </FormControl>
+                        <FormDescription>
+                          Rate your experience from 1 to 5 stars
+                        </FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <div className="mb-5">
+                  <FormField
+                    control={form.control}
+                    name="bio"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Bio</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            placeholder="Tell us a little bit about yourself"
+                            className="resize-none"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormDescription>
+                          You can <span>@mention</span> other users and
+                          organizations.
+                        </FormDescription>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <ButtonLoading
+                    loading={loading}
+                    type="submit"
+                    text="Create Account"
+                    className="w-full cursor-pointer"
+                  />
+                </div>
+              </form>
+            </Form>
+          </div>
+        </CardContent>
+      </Card>
+    </>
+  );
+};
+
+export default FeedBackForm;

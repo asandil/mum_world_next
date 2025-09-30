@@ -28,4 +28,16 @@ export const zSchema = z.object({
   otp: z.string().regex(/^\d{6}$/, {
     message: "OTP must be a 6-digit numbers",
   }),
+  bio: z
+    .string()
+    .min(10, {
+      message: "Bio must be at least 10 characters.",
+    })
+    .max(160, {
+      message: "Bio must not be longer than 30 characters.",
+    }),
+  feedBackCategory: z.string({
+    required_error: "Please select an email to display.",
+  }),
+  rating: z.number().min(1, "Rating is required").max(5, "Maximum rating is 5"),
 });
