@@ -1,5 +1,5 @@
-import ContactForm from "@/components/ContactForm";
-import FeedbackForm from "@/components/FeedBackForm";
+// import ContactForm from "@/components/ContactForm";
+// import FeedbackForm from "@/components/FeedBackForm";
 import React from "react";
 import { BsFillHeartFill } from "react-icons/bs";
 
@@ -22,7 +22,7 @@ const ShareYourFeedback = () => {
         </h2>
         <div className="flex justify-center bg-[url('/background-image-contact-us.png')] bg-no-repeat bg-cover px-[30px] py-[20px] rounded-lg  shadow-xl">
           <div className="w-full bg-[#fff] px-[30px] py-[20px] rounded-lg shadow-xl opacity-80">
-            <FeedbackForm />
+            {/* <FeedbackForm /> */}
           </div>
         </div>
       </section>
