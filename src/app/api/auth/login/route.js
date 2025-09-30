@@ -90,12 +90,22 @@ export async function POST(request) {
 
     await newOtpData.save();
 
+    console.log("OTP saved to database:", { email, otp });
+
+    // Debug the email sending process
+    console.log("Sending OTP email to:", email);
+    // console.log("OTP email template:", otpEmail(otp));
+
     const otpEmailStatus = await sendMail(
       "Your login verification code",
       email,
       otpEmail(otp)
     );
+
+    console.log("SendMail function response:", otpEmailStatus);
+
     if (!otpEmailStatus.success) {
+      console.error("SendMail failed with:", otpEmailStatus);
       return response(false, 400, "Failed to send OTP.");
     }
     return response(true, 200, "Please verify your device.");
