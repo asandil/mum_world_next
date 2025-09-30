@@ -109,7 +109,7 @@ const Testimonials = () => {
 const TestimonialCard = ({ testimonial }) => {
   return (
     <Card className="h-full hover:shadow-lg transition-shadow duration-300">
-      <CardContent className="p-6 flex flex-col h-full">
+      <CardContent className=" flex flex-col h-full">
         <div className="flex items-center">
           <figure></figure>
           <div  >
@@ -146,7 +146,7 @@ const TestimonialCard = ({ testimonial }) => {
           </div>
         </div>
 
-        <div className="mt-auto">
+        <div className="">
           <div className="text-sm text-gray-500 capitalize mb-2">
             Category: {testimonial.feedBackCategory}
           </div>

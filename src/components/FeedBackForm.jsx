@@ -311,19 +311,36 @@ const FeedBackForm = () => {
                   <FormField
                     control={form.control}
                     name="bio"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Bio</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="Tell us a little bit about yourself"
-                            className="resize-none"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
+                    render={({ field }) => {
+                      const [wordCount, setWordCount] = useState(0);
+
+                      const handleChange = (e) => {
+                        field.onChange(e); // keep form state in sync
+                        const words = e.target.value
+                          .trim()
+                          .split(/\s+/)
+                          .filter(Boolean).length;
+                        setWordCount(words);
+                      };
+
+                      return (
+                        <FormItem>
+                          <FormLabel>Bio</FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder="Tell us a little bit about yourself"
+                              className="resize-none"
+                              {...field}
+                              onChange={handleChange}
+                            />
+                          </FormControl>
+                          <div className="text-right text-sm text-gray-500 mt-1">
+                            {wordCount} / 150 words
+                          </div>
+                          <FormMessage />
+                        </FormItem>
+                      );
+                    }}
                   />
                 </div>
 

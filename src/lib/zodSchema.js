@@ -30,20 +30,43 @@ export const zSchema = z.object({
   }),
   bio: z
     .string()
-    .min(10, {
-      message: "Bio must be at least 10 characters.",
+    .refine((val) => val.trim().split(/\s+/).length >= 15, {
+      message: "Bio must be at least 15 words",
     })
-    .max(160, {
-      message: "Bio must not be longer than 30 characters.",
+    .refine((val) => val.trim().split(/\s+/).length <= 150, {
+      message: "Bio must be at most 150 words",
     }),
-  feedBackCategory: z.string({
-    required_error: "Please select an email to display.",
-  }),
+  feedBackCategory: z.enum(
+    [
+      "General Feedback",
+      "Content Suggestion",
+      "Medical Information",
+      "Nutrition & Diet",
+      "Pregnancy Fitness",
+      "Mental Health",
+      "Birth Preparation",
+      "Postpartum Care",
+      "Community Support",
+      "Technical Issue",
+      "Other",
+    ],
+    {
+      required_error: "Please select a valid category.",
+    }
+  ),
   rating: z.number().min(1, "Rating is required").max(5, "Maximum rating is 5"),
-  feedBackCity: z.string({
-    required_error: "Please enter your city to display.",
-  }),
-  feedBackAddress: z.string({
-    required_error: "Please enter your address to display.",
-  }),
+  feedBackCity: z
+    .string({
+      required_error: "Please enter your city.",
+    })
+    .min(2, { message: "City must be at least 2 characters long." })
+    .max(50, { message: "City must be at most 50 characters long." })
+    .regex(/^[A-Za-z\s]+$/, "City can only contain letters and spaces."),
+
+  feedBackAddress: z
+    .string({
+      required_error: "Please enter your address.",
+    })
+    .min(5, { message: "Address must be at least 5 characters long." })
+    .max(100, { message: "Address must be at most 100 characters long." }),
 });
