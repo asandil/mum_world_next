@@ -29,11 +29,13 @@ const FeedbackSchema = new mongoose.Schema(
       default: "",
       trim: true,
     },
+    feedBackAddress: { type: String, required: true },
+    feedBackCity: { type: String, required: true },
   },
   {
     timestamps: true, // This will add createdAt and updatedAt automatically
   }
 );
 
-export default mongoose.models.Feedback ||
+export default mongoose.models.FeedBackForm ||
   mongoose.model("FeedBackForm", FeedbackSchema);

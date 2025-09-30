@@ -14,6 +14,8 @@ export async function POST(request) {
       feedBackCategory: true,
       rating: true,
       bio: true,
+      feedBackCity: true,
+      feedBackAddress: true,
     });
 
     const payload = await request.json();
@@ -29,7 +31,7 @@ export async function POST(request) {
       );
     }
 
-    const { name, email, feedBackCategory, rating, bio } = validatedData.data;
+    const { name, email, feedBackCategory, rating, bio, feedBackAddress, feedBackCity } = validatedData.data;
 
     // Create new feedback
     const newFeedback = new FeedBackForm({ 
@@ -37,7 +39,9 @@ export async function POST(request) {
       email, 
       feedBackCategory, 
       rating, 
-      bio 
+      bio,
+      feedBackAddress,
+      feedBackCity,
     });
 
     await newFeedback.save();
@@ -46,5 +50,23 @@ export async function POST(request) {
 
   } catch (error) {
     return catchError(error);
+  }
+}
+
+export async function GET(){
+  try {
+    await connectDB();
+
+    const feedback = await FeedBackForm.find({ rating: { $gte: 4 } })
+      .sort({ createdAt: -1 })
+      .select('name rating bio feedBackCategory createdAt feedBackAddress feedBackCity  ').lean()
+
+      return response(true, 200, "Feedback fetched successfully", {
+        feedback,
+        total: feedback.length
+      });
+ 
+  } catch (error) {
+    return catchError(error)
   }
 }

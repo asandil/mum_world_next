@@ -92,6 +92,8 @@ const FeedBackForm = () => {
       name: true,
       bio: true,
       feedBackCategory: true,
+      feedBackAddress: true,
+      feedBackCity: true,
     })
     .extend({
       rating: z
@@ -109,6 +111,8 @@ const FeedBackForm = () => {
       bio: "",
       feedBackCategory: "",
       rating: 0,
+      feedBackAddress: "",
+      feedBackCity: "",
     },
   });
 
@@ -137,27 +141,6 @@ const FeedBackForm = () => {
       setLoading(false);
     }
   };
-
-  // 2. Define a submit handler.
-  // const handleRegisterSubmit = async (values) => {
-  //   console.log(values);
-  //   try {
-  //     setLoading(true);
-  //     const { data: registerResponse } = await axios.post(
-  //       `/api/auth/register`,
-  //       values
-  //     );
-  //     if (!registerResponse.success) {
-  //       throw new Error(registerResponse.message);
-  //     }
-  //     form.reset();
-  //     showToast("success", registerResponse.message);
-  //   } catch (error) {
-  //     showToast("error", error.message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   return (
     <>
@@ -207,7 +190,6 @@ const FeedBackForm = () => {
                     )}
                   />
                 </div>
-
                 <div className="mb-5">
                   <FormField
                     control={form.control}
@@ -267,6 +249,45 @@ const FeedBackForm = () => {
                 <div className="mb-5">
                   <FormField
                     control={form.control}
+                    name="feedBackAddress"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Address</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="text"
+                            placeholder="Enter your address"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+                <div className="mb-5">
+                  <FormField
+                    control={form.control}
+                    name="feedBackCity"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>City</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="text"
+                            placeholder="Enter your city name"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <div className="mb-5 ">
+                  <FormField
+                    control={form.control}
                     name="rating"
                     render={({ field }) => (
                       <FormItem>
@@ -280,9 +301,6 @@ const FeedBackForm = () => {
                             />
                           </div>
                         </FormControl>
-                        <FormDescription>
-                          Rate your experience from 1 to 5 stars
-                        </FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}
@@ -303,10 +321,6 @@ const FeedBackForm = () => {
                             {...field}
                           />
                         </FormControl>
-                        <FormDescription>
-                          You can <span>@mention</span> other users and
-                          organizations.
-                        </FormDescription>
                         <FormMessage />
                       </FormItem>
                     )}

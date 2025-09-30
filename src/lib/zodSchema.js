@@ -40,4 +40,10 @@ export const zSchema = z.object({
     required_error: "Please select an email to display.",
   }),
   rating: z.number().min(1, "Rating is required").max(5, "Maximum rating is 5"),
+  feedBackCity: z.string({
+    required_error: "Please enter your city to display.",
+  }),
+  feedBackAddress: z.string({
+    required_error: "Please enter your address to display.",
+  }),
 });

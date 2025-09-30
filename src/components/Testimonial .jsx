@@ -1,250 +1,160 @@
-// components/TestimonialCarousel.tsx
 "use client";
+import React, { useState, useEffect } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { ChevronLeft, ChevronRight } from "lucide-react"; // install lucide-react if not already
 
-import { useState, useEffect } from "react";
-import testimonials from "@/lib/TestimonialData";
-
-const TestimonialCarousel = () => {
+const Testimonials = () => {
+  const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
-  const [cardsToShow, setCardsToShow] = useState(1); // Start with 1 for mobile first
 
-  // Update cards to show based on screen size
+  const itemsPerPage = 3; // show 3 testimonials at a time
+
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setCardsToShow(1); // Mobile
-      } else if (window.innerWidth < 1024) {
-        setCardsToShow(2); // Tablet
-      } else {
-        setCardsToShow(3); // Desktop
-      }
-      
-      // Reset index when changing card count to avoid empty spaces
-      setCurrentIndex(0);
-    };
-
-    // Set initial value
-    handleResize();
-
-    // Add event listener
-    window.addEventListener('resize', handleResize);
-    
-    // Clean up
-    return () => window.removeEventListener('resize', handleResize);
+    fetchTestimonials();
   }, []);
 
-  const totalGroups = Math.ceil(testimonials.length / cardsToShow);
+  const fetchTestimonials = async () => {
+    try {
+      const response = await fetch("/api/feedback");
+      const result = await response.json();
 
-  const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === totalGroups - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? totalGroups - 1 : prevIndex - 1
-    );
-  };
-
-  const goToTestimonial = (index) => {
-    setCurrentIndex(index);
-  };
-
-  useEffect(() => {
-    let interval;
-
-    if (isAutoPlay) {
-      interval = setInterval(() => {
-        nextTestimonial();
-      }, 5000);
+      if (result.success) {
+        setTestimonials(result.data.feedback);
+      }
+    } catch (error) {
+      console.error("Error fetching testimonials:", error);
+    } finally {
+      setLoading(false);
     }
+  };
 
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [isAutoPlay, currentIndex, totalGroups]);
+  const totalPages = Math.ceil(testimonials.length / itemsPerPage);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1 >= totalPages ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 < 0 ? totalPages - 1 : prev - 1));
+  };
+
+  if (loading) {
+    return <div className="text-center">Loading testimonials...</div>;
+  }
+
+  const start = currentIndex * itemsPerPage;
+  const end = start + itemsPerPage;
+  const visibleTestimonials = testimonials.slice(start, end);
 
   return (
-    <div className="lg:w-[984px] xl:w-[1160px] mx-auto px-[24px] md:px-[24px] lg:px-[0px]">
-      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-gray-800">
-        What Our Clients Say
+    <div className="relative max-w-6xl mx-auto px-4 py-8">
+      <h2 className="text-3xl font-bold text-center mb-8">
+        What Our Users Say
       </h2>
 
-      <div
-        className="relative overflow-hidden"
-        onMouseEnter={() => setIsAutoPlay(false)}
-        onMouseLeave={() => setIsAutoPlay(true)}
-      >
-        <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{
-            transform: `translateX(-${currentIndex * (100 / totalGroups)}%)`,
-          }}
-        >
-          {Array(totalGroups)
-            .fill(0)
-            .map((_, groupIndex) => (
-              <div
-                key={groupIndex}
-                className="w-full flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-2"
-              >
-                {testimonials
-                  .slice(
-                    groupIndex * cardsToShow,
-                    groupIndex * cardsToShow + cardsToShow
-                  )
-                  .map((testimonial) => (
-                    <div
-                      key={testimonial.id}
-                      className="bg-white rounded-xl shadow-md sm:shadow-lg p-4 sm:p-6 flex flex-col"
-                    >
-                      <div className="flex items-start mb-4">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gray-200 rounded-full overflow-hidden mr-3 sm:mr-4 flex-shrink-0">
-                          <img
-                            src={testimonial.avatar}
-                            alt={testimonial.name}
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-semibold text-gray-800 text-sm sm:text-base truncate">
-                            {testimonial.name}
-                          </h4>
-                          <p className="text-gray-600 text-xs sm:text-sm truncate">
-                            {testimonial.role}
-                          </p>
-                          <div className="flex items-center mt-1">
-                            {[...Array(5)].map((_, i) => (
-                              <svg
-                                key={i}
-                                className={`w-3 h-3 sm:w-4 sm:h-4 ${
-                                  i < testimonial.rating
-                                    ? "text-[#F69E87]"
-                                    : "text-gray-200"
-                                }`}
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                              >
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                              </svg>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-
-                      <p className="text-gray-600 text-sm sm:text-base italic mb-0 mt-auto">
-                        "{testimonial.content}"
-                      </p>
-                    </div>
-                  ))}
-              </div>
-            ))}
+      {/* Carousel */}
+      <div className="relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {visibleTestimonials.map((testimonial) => (
+            <TestimonialCard key={testimonial._id} testimonial={testimonial} />
+          ))}
         </div>
 
-        {/* Navigation buttons - Hidden on mobile, visible on tablet and up */}
-        <button
-          onClick={prevTestimonial}
-          className="hidden sm:block absolute cursor-pointer left-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 sm:p-3 shadow-md hover:bg-gray-100 focus:outline-none z-10"
-          aria-label="Previous testimonial"
-        >
-          <svg
-            className="w-4 h-4 sm:w-6 sm:h-6 text-gray-700"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-
-        <button
-          onClick={nextTestimonial}
-          className="hidden sm:block absolute cursor-pointer right-0 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 sm:p-3 shadow-md hover:bg-gray-100 focus:outline-none z-10"
-          aria-label="Next testimonial"
-        >
-          <svg
-            className="w-4 h-4 sm:w-6 sm:h-6 text-gray-700"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
-
-        {/* Mobile navigation buttons */}
-        <div className="flex justify-center mt-6 sm:hidden">
+        {/* Left Arrow */}
+        {testimonials.length > itemsPerPage && (
           <button
-            onClick={prevTestimonial}
-            className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none mx-2"
-            aria-label="Previous testimonial"
+            onClick={prevSlide}
+            className="absolute left-[-25px] top-1/2 -translate-y-1/2 bg-gray-200 p-2 rounded-full shadow hover:bg-gray-300"
           >
-            <svg
-              className="w-6 h-6 text-gray-700"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
+            <ChevronLeft className="w-5 h-5" />
           </button>
-          
+        )}
+
+        {/* Right Arrow */}
+        {testimonials.length > itemsPerPage && (
           <button
-            onClick={nextTestimonial}
-            className="bg-white rounded-full p-2 shadow-md hover:bg-gray-100 focus:outline-none mx-2"
-            aria-label="Next testimonial"
+            onClick={nextSlide}
+            className="absolute right-[-25px] top-1/2 -translate-y-1/2 bg-gray-200 p-2 rounded-full shadow hover:bg-gray-300"
           >
-            <svg
-              className="w-6 h-6 text-gray-700"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
+            <ChevronRight className="w-5 h-5" />
           </button>
-        </div>
+        )}
       </div>
 
-      {/* Indicators */}
-      <div className="flex justify-center mt-6 sm:mt-8">
-        {Array(totalGroups)
-          .fill(0)
-          .map((_, index) => (
+      {/* Dots */}
+      {testimonials.length > itemsPerPage && (
+        <div className="flex justify-center mt-6 space-x-2">
+          {Array.from({ length: totalPages }).map((_, i) => (
             <button
-              key={index}
-              onClick={() => goToTestimonial(index)}
-              className={`h-2 w-2 cursor-pointer sm:h-3 sm:w-3 rounded-full mx-1 sm:mx-2 ${
-                index === currentIndex ? "bg-[#F69E87]" : "bg-gray-300"
+              key={i}
+              onClick={() => setCurrentIndex(i)}
+              className={`w-3 h-3 rounded-full ${
+                i === currentIndex ? "bg-gray-800" : "bg-gray-400"
               }`}
-              aria-label={`Go to testimonial group ${index + 1}`}
             />
           ))}
-      </div>
+        </div>
+      )}
+
+      {testimonials.length === 0 && (
+        <div className="text-center text-gray-500 mt-8">
+          No testimonials yet. Be the first to share your feedback!
+        </div>
+      )}
     </div>
   );
 };
 
-export default TestimonialCarousel;
+const TestimonialCard = ({ testimonial }) => {
+  return (
+    <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+      <CardContent className="p-6 flex flex-col h-full">
+        <div className="flex items-center">
+          <figure></figure>
+          <div  >
+            <div className="font-semibold text-gray-900">
+              {testimonial.name}
+            </div>
+            <div className="flex gap-[10px] " >
+              
+              <p className="text-gray-700 text-sm">
+                {testimonial.feedBackAddress}
+              </p>
+              <p className="text-gray-700 text-sm">
+                {testimonial.feedBackCity}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex gap-[12px] items-center mb-4">
+          <div className="flex">
+            {[...Array(5)].map((_, i) => (
+              <span
+                key={i}
+                className={`text-xl ${
+                  i < testimonial.rating ? "text-yellow-500" : "text-gray-300"
+                }`}
+              >
+                ★
+              </span>
+            ))}
+          </div>
+          <div className="text-sm text-gray-400 text-end">
+            {new Date(testimonial.createdAt).toLocaleDateString()}
+          </div>
+        </div>
+
+        <div className="mt-auto">
+          <div className="text-sm text-gray-500 capitalize mb-2">
+            Category: {testimonial.feedBackCategory}
+          </div>
+          <p className="text-gray-700 mb-2 italic">"{testimonial.bio}"</p>
+        </div>
+      </CardContent>
+    </Card>
+  );
+};
+
+export default Testimonials;
