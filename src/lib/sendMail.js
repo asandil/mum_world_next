@@ -12,7 +12,7 @@ export const sendMail = async (subject, receiver, body) => {
   });
 
   const options = {
-    from: ` "Mum World by Alok" <${process.env.NODEMAILER_EMAIL}> `,
+    from: ` "MumWorld" <${process.env.NODEMAILER_EMAIL}> `,
     to: receiver,
     subject: subject,
     html: body,

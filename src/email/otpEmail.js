@@ -125,7 +125,7 @@ export const otpEmail = (otp) => {
 																	style="line-height:10px">
 																	<div style="max-width: 250px;"><img
 																			alt="reset-password" height="auto"
-																			src="https://res.cloudinary.com/dgmrr12qy/image/upload/v1758025703/otp-email_z9ozag.png"
+																			src="https://res.cloudinary.com/dc0wr8hev/image/upload/v1759216043/logo_fh433u.jpg"
 																			style="display: block; height: auto; border: 0; width: 100%;"
 																			title="reset-password" width="250" /></div>
 																</div>
