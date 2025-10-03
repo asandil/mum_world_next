@@ -1,0 +1,36 @@
+import cloudinary from "@/lib/cloudinary";
+import { connectDB } from "@/lib/db";
+import { catchError, isAuthenticated, response } from "@/lib/helperFunction";
+import MediaModel from "@/models/Media.model";
+
+export async function POST(request){
+
+  const payload = await request.json();
+
+  try {
+    const auth = await isAuthenticated('admin')
+    if(!auth.isAuth){
+      return response(false, 403, "Unauthorized or Not Admin .")
+    }
+
+    await connectDB();
+
+    const newMedia = await MediaModel.insertMany(payload)
+    return response(true, 200, "Media uploaded succesfully", newMedia)
+
+  } catch (error) {
+
+    if(payload && payload.length > 0){
+      const publicIds = playload.map(data => data.publicIds)
+      try {
+        await cloudinary.api.delete_resources(publicIds)
+      } catch (deleteError) {
+        error.cloudinary = deleteError
+      }
+    }
+
+
+
+    return catchError(error)
+  }
+}

@@ -10,8 +10,9 @@ const UploadMedia = ({ isMultiple }) => {
   const handleOnError = (error) => {
     showToast("error", error.statusText);
   };
+
   const handleOnQueueEnd = async (results) => {
-    console.log(results);
+    console.log("cloudinaary Images", results);
     const files = results.info.files;
     const uploadedFiles = files
       .filter((file) => file.uploadInfo)
@@ -22,20 +23,20 @@ const UploadMedia = ({ isMultiple }) => {
         path: file.uploadInfo.path,
         thumbnail_url: file.uploadInfo.thumbnail_url,
       }));
-
-      if(uploadedFiles.length > 0 ){
-        try {
-          const { data: mediaUploadResponse } = await axios.post('/api/media/create', uploadedFiles)
-          if(!mediaUploadResponse.success){
-            throw new Error(mediaUploadResponse.message)
-          }
-
-          showToast('success', mediaUploadResponse.message)
-
-        } catch (error) {
-          showToast('error', error.message)
+    if (uploadedFiles.length > 0) {
+      try {
+        const { data: mediaUploadResponse } = await axios.post(
+          "/api/media/create",
+          uploadedFiles
+        );
+        if (!mediaUploadResponse.success) {
+          throw new Error(mediaUploadResponse.message);
         }
+        showToast("success", mediaUploadResponse.message);
+      } catch (error) {
+        showToast("error", error.message);
       }
+    }
   };
 
   return (
@@ -57,7 +58,7 @@ const UploadMedia = ({ isMultiple }) => {
     >
       {({ open }) => {
         return (
-          <Button className="button" onClick={() => open()}>
+          <Button onClick={() => open()}>
             <FilePlus />
             Upload Media
           </Button>
