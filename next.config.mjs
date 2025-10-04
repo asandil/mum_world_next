@@ -12,6 +12,13 @@ const nextConfig = {
         hostname: 'img1.wsimg.com',
         pathname: '/**',
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        port:"",
+        pathname: "/**",
+        search: ""
+      }
     ],
   },
 };
