@@ -274,15 +274,6 @@ const Products = () => {
       <main className="py-[40px] w-[100%] lg:w-[984px] xl:w-[1160px] mx-auto px-[24px]">
         {/* Header */}
         <ProductHeader cartCount={cart.length} onCartClick={toggleCart} />
-        {/* <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Products for Indian Moms
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Discover our carefully crafted guides designed specifically for
-            Indian mothers, blending modern knowledge with traditional wisdom.
-          </p>
-        </div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-[80px] gap-8">
           {productsData.map((product) => (

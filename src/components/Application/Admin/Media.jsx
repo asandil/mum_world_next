@@ -2,7 +2,12 @@ import Image from "next/image";
 import React from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import Link from "next/link";
 import { ADMIN_MEDIA_EDIT } from "@/routes/AdminPanelRoute";
 import { MdOutlineEdit } from "react-icons/md";
@@ -17,12 +22,20 @@ const Media = ({
   selectedMedia,
   setSelectedMedia,
 }) => {
-  const handleCheck = () => {};
+  const handleCheck = () => {
+    let newSelectedMedia = [];
+    if(selectedMedia.includes(media._id)){
+      newSelectedMedia = selectedMedia.filter(m => m !== media._id)
+    } else {
+      newSelectedMedia = [...selectedMedia, media._id]
+    }
+    setSelectedMedia(newSelectedMedia)
+  };
 
   const handleCopyLink = async (url) => {
-    await navigator.clipboard.writeText(url)
-    showToast("success", "Link copied.")
-  }
+    await navigator.clipboard.writeText(url);
+    showToast("success", "Link copied.");
+  };
 
   return (
     <div className="border border-gray-200 dark:border-gray-800 relative group overflow-hidden">
@@ -30,42 +43,44 @@ const Media = ({
         <Checkbox
           checked={selectedMedia.includes(media._id)}
           onCheckedChange={handleCheck}
-          className="border-primary"
+          className="border-primary cursor-pointer "
         />
       </div>
 
-      <div className="absolute top-2 right-2 z-20" >
+      <div className="absolute top-2 right-2 z-20">
         <DropdownMenu>
           <DropdownMenuTrigger>
-            <span className="w-7 h-7 flex items-center justify-center rounded-full bg-black/50 cursor-pointer" >
+            <span className="w-7 h-7 flex items-center justify-center rounded-full bg-black/50 cursor-pointer">
               <BsThreeDotsVertical />
             </span>
           </DropdownMenuTrigger>
-          <DropdownMenuContent align="start" >
-            {deleteType === "SD" && 
+          <DropdownMenuContent align="start">
+            {deleteType === "SD" && (
               <>
                 <DropdownMenuItem asChild className="cursor-pointer">
-                  <Link href={ADMIN_MEDIA_EDIT(media._id)} >
-                  <MdOutlineEdit/>
-                  Edit</Link>
+                  <Link href={ADMIN_MEDIA_EDIT(media._id)}>
+                    <MdOutlineEdit />
+                    Edit
+                  </Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem  className="cursor-pointer" onClick={() => handleCopyLink(media.secure_url)}>
-                  <IoIosLink/>
+                <DropdownMenuItem
+                  className="cursor-pointer"
+                  onClick={() => handleCopyLink(media.secure_url)}
+                >
+                  <IoIosLink />
                   Copy Link
                 </DropdownMenuItem>
               </>
-            }
-            <DropdownMenuItem  className="cursor-pointer">
-                  <LuTrash color="red" />
-                  {deleteType === "SD" ? "Move Into Trash" : "Delete Permanently"}
-                </DropdownMenuItem>
+            )}
+            <DropdownMenuItem className="cursor-pointer" onClick={() => handleDelete([media._id], deleteType)} >
+              <LuTrash color="red" />
+              {deleteType === "SD" ? "Move Into Trash" : "Delete Permanently"}
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
 
-      <div className="w-full h-full absolute z-10 transition-all duration-150 ease-in group-hover:bg-black/30" >
-
-      </div>
+      <div className="w-full h-full absolute z-10 transition-all duration-150 ease-in group-hover:bg-black/30"></div>
 
       <div>
         <Image

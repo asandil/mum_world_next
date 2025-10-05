@@ -76,9 +76,7 @@ const StarRating = ({ value, onChange, maxStars = 5 }) => {
           </button>
         );
       })}
-      <span className="ml-2 text-sm text-gray-600">
-        {value} / {maxStars}
-      </span>
+      
     </div>
   );
 };
@@ -203,7 +201,7 @@ const FeedBackForm = () => {
                         >
                           <FormControl>
                             <SelectTrigger>
-                              <SelectValue placeholder="Select a feedBack category to display" />
+                              <SelectValue placeholder="Select category" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
@@ -348,7 +346,7 @@ const FeedBackForm = () => {
                   <ButtonLoading
                     loading={loading}
                     type="submit"
-                    text="Create Account"
+                    text="SUBMIT"
                     className="w-full cursor-pointer"
                   />
                 </div>
