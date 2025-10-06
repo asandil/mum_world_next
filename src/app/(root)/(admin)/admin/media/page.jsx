@@ -147,7 +147,7 @@ const MediaPage = () => {
                 ) : (
                   <div className="flex gap-2" >
                     <Button
-                      className="bg-green-500 hover:bg-green-600"
+                      className="bg-green-500 hover:bg-green-600 cursor-pointer"
                       onClick={() => handleDelete(selectedMedia, "RSD")}
                     >
                       Restore
@@ -155,6 +155,7 @@ const MediaPage = () => {
                     <Button
                       variant="destructive"
                       onClick={() => handleDelete(selectedMedia, deleteType)}
+                      className="cursor-pointer"
                     >
                       Delete Permanently
                     </Button>
