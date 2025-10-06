@@ -25,6 +25,7 @@ import { useForm } from "react-hook-form";
 import imgPlaceholder from "@/assets/images/img-placeholder.webp";
 import axios from "axios";
 import { showToast } from "@/lib/showToast";
+import { useParams } from "next/navigation";
 
 const breadCrumbData = [
   {
@@ -41,13 +42,15 @@ const breadCrumbData = [
   },
 ];
 
-const EditPage = ({ params }) => {
-  const { id } = use(params);
+const EditPage = () => {
+  const params = useParams();
+  const id = params.id;
 
   const [loading, setLoading] = useState(false);
 
   const { data: mediaData } = useFetch(`/api/media/get/${id}`);
 
+  console.log("Media ID from params:", id);
   console.log("Media Data", mediaData);
 
   const formSchema = zSchema.pick({
