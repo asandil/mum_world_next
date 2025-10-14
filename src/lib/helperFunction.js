@@ -1,5 +1,3 @@
-import { jwtVerify } from "jose";
-import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 
 export const response = (success, statusCode, message, data = {}) => {
@@ -42,30 +40,37 @@ export const generateOTP = () => {
   return otp;
 };
 
-export const isAuthenticated = async (role) => {
-  try {
-    const cookieStore = await cookies();
-    if (!cookieStore.has("access_token")) {
-      return {
-        isAuth: false,
-      };
-    }
+export const columnConfig = (
+  column,
+  isCreatedAt = false,
+  isUpdatedAt = false,
+  isDeletedAt = false
+) => {
+  const newCloumn = [...column];
 
-    const access_token = cookieStore.get("access_token");
-    const { payload } = await jwtVerify(
-      access_token.value,
-      new TextEncoder().encode(process.env.SECRET_KEY)
-    );
-
-    if (payload.role !== role) {
-      return {
-        isAuth: false,
-      };
-    }
-
-    return {
-      isAuth: true,
-      userId: payload._id,
-    };
-  } catch (error) {}
+  if (isCreatedAt) {
+    newCloumn.push({
+      accessorKey: "createdAt",
+      header: "Created At",
+      cell: ({ renderedCellValue }) =>
+        new Data(renderedCellValue).toLocalString(),
+    });
+  }
+  if (isUpdatedAt) {
+    newCloumn.push({
+      accessorKey: "updatedAt",
+      header: "Updated At",
+      cell: ({ renderedCellValue }) =>
+        new Data(renderedCellValue).toLocalString(),
+    });
+  }
+  if (isDeletedAt) {
+    newCloumn.push({
+      accessorKey: "deletedAt",
+      header: "Deleted At",
+      cell: ({ renderedCellValue }) =>
+        new Data(renderedCellValue).toLocalString(),
+    });
+  }
+  return newCloumn;
 };

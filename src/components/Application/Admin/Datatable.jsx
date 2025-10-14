@@ -1,5 +1,6 @@
+"use client"
 import { IconButton, Tooltip } from "@mui/material";
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import {
   MaterialReactTable,
@@ -70,7 +71,7 @@ const Datatable = ({
     try {
       const csvConfig = mkConfig({
         fieldSeparator: ",",
-        fieldSeparator: ".",
+        decimalSeparator: ".",
         useKeysAsHeaders: true,
         filename: "csv-data",
       });
@@ -119,6 +120,7 @@ const Datatable = ({
       url.searchParams.set("filters", JSON.stringify(columnFilters ?? []));
       url.searchParams.set("globalFilter", globalFilter ?? "");
       url.searchParams.set("sorting", JSON.stringify(sorting ?? []));
+      url.searchParams.set("deleteType", deleteType)
 
       const { data: response } = await axios.get(url.href);
       return response;
@@ -151,7 +153,7 @@ const Datatable = ({
     onGlobalFilterChange: setGlobalFilter,
     onPaginationChange: setPagination,
     onSortingChange: setSorting,
-    rowCount: data?.meta?.totalRowCount ?? 0,
+    rowCount: meta?.totalRowCount ?? 0,
     onRowSelectionChange: setRowSelection,
     state: {
       columnFilters,
@@ -231,15 +233,7 @@ const Datatable = ({
     ),
 
     enableRowActions: true,
-    renderRowActionMenuItems: ({ row }) => [
-      <MenuItem key="edit" onClick={() => console.info("Edit")}>
-        Edit
-      </MenuItem>,
-      <MenuItem key="delete" onClick={() => console.info("Delete")}>
-        Delete
-      </MenuItem>,
-    ],
-
+    positionActionsColumn: "last",
     renderRowActionMenuItems: ({ row }) =>
       createAction(row, deleteType, handleDelete),
 
@@ -249,11 +243,12 @@ const Datatable = ({
           type="button"
           text={
             <>
-              <SaveAltIcon />
+              <SaveAltIcon fontSize="30" /> Export
             </>
           }
           loading={exportLoading}
           onClick={() => handleExport(table.getSelectedRowModel().rows)}
+          className="cursor-pointer"
         />
       </Tooltip>
     ),
