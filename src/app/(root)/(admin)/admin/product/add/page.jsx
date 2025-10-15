@@ -72,9 +72,9 @@ const AddProduct = () => {
       name: "",
       slug: "",
       category: "",
-      mrp: "",
-      sellingPrice: "",
-      discountPercentage: "",
+      mrp: 0,
+      sellingPrice: 0,
+      discountPercentage: 0,
       description: "",
     },
   });
@@ -89,6 +89,17 @@ const AddProduct = () => {
     }
   }, [form.watch("name")]);
 
+  // discounted percentage calculator
+  useEffect(() => {
+    const mrp = form.getValues("mrp") || 0;
+    const sellingPrice = form.getValues("sellingPrice") || 0;
+
+    if (mrp > 0 && sellingPrice > 0) {
+      const discountPercentage = ((mrp - sellingPrice) / mrp) * 100;
+      form.setValue("discountPercentage", Math.round(discountPercentage));
+    }
+  }, [form.watch("mrp"), form.watch("sellingPrice")]);
+
   const editor = (event, editor) => {
     const data = editor.getData();
     console.log("description data", data);
@@ -98,8 +109,15 @@ const AddProduct = () => {
   // 2. Define a login submit handler.
   const onSubmit = async (values) => {
     console.log("Add category data", values);
+    setLoading(true);
     try {
-      setLoading(true);
+      if (selectedMedia.length <= 0) {
+        return showToast("error", "Please select media.");
+      }
+
+      const mediaIds = selectedMedia.map((media) => media._id);
+      values.media = mediaIds;
+
       const { data: response } = await axios.post(
         `/api/product/create`,
         values
@@ -253,6 +271,7 @@ const AddProduct = () => {
                         <FormControl>
                           <Input
                             type="number"
+                            readOnly
                             placeholder="Enter Discount Percentage"
                             {...field}
                           />

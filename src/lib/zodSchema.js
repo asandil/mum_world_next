@@ -22,8 +22,8 @@ export const zSchema = z.object({
   name: z
     .string()
     .min(2, { message: "Name must be at least 2 characters long" })
-    .max(50, { message: "Name must be at moast 50 characters long" })
-    .regex(/^[A-Za-z\s]+$/, "Name can only contain letters and spaces"),
+    .max(50, { message: "Name must be at moast 50 characters long" }),
+    // .regex(/^[A-Za-z\s]+$/, "Name can only contain letters and spaces"),
 
   otp: z.string().regex(/^\d{6}$/, {
     message: "OTP must be a 6-digit numbers",
@@ -73,20 +73,31 @@ export const zSchema = z.object({
   _id: z.string().min(3, "_id is required."),
   alt: z.string().min(3, "Alt is required."),
   title: z.string().min(3, "Title is required."),
-  slug: z.string().min(3, 'Slug is required.'),
+  slug: z.string().min(3, "Slug is required."),
 
   category: z.string().min(3, "Category is required."),
   mrp: z.union([
-    z.number().positive('Expected positive value, received negative. '),
-    z.string().transform((val) => Number(val)).refine((val) => !isNaN(val) && val >= 0, 'Please entera valid number. ')
+    z.number().positive("Expected positive value, received negative. "),
+    z
+      .string()
+      .transform((val) => Number(val))
+      .refine((val) => !isNaN(val) && val >= 0, "Please entera valid number. "),
   ]),
   sellingPrice: z.union([
-    z.number().positive('Expected positive value, received negative. '),
-    z.string().transform((val) => Number(val)).refine((val) => !isNaN(val) && val >= 0, 'Please entera valid number. ')
+    z.number().positive("Expected positive value, received negative. "),
+    z
+      .string()
+      .transform((val) => Number(val))
+      .refine((val) => !isNaN(val) && val >= 0, "Please entera valid number. "),
   ]),
   discountPercentage: z.union([
-    z.number().positive('Expected positive value, received negative. '),
-    z.string().transform((val) => Number(val)).refine((val) => !isNaN(val) && val >= 0, 'Please entera valid number. ')
+    z.number().positive("Expected positive value, received negative. "),
+    z
+      .string()
+      .transform((val) => Number(val))
+      .refine((val) => !isNaN(val) && val >= 0, "Please entera valid number. "),
   ]),
   description: z.string().min(3, "Description is required."),
+
+  media: z.array(z.string()),
 });
