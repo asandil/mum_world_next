@@ -11,7 +11,7 @@ const useFetch = (url, method = "GET", options = {}) => {
   const optionsString = JSON.stringify(options);
   const requestOptions = useMemo(() => {
     const opts = { ...options };
-    if ((method = "POST" && !opts.data)) {
+    if ((method === "POST" && !opts.data)) {
       opts.data = {};
     }
     return opts;
