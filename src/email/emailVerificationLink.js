@@ -173,7 +173,7 @@ export const emailVerificationLink = (link) => {
                                                                     style="margin: 0; color: #7747FF; direction: ltr; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; font-size: 20px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0; mso-line-height-alt: 45.6px;">
 
                                                                     <a href="${link}"
-                                                                        style="background-color: #7747FF;color:white;padding:10px 30px;text-decoration: none; border-radius: 50px;">Verify</a>
+                                                                        style="background-color: #F5A895;color:white;padding:10px 30px;text-decoration: none; border-radius: 50px;">Verify</a>
                                                                 </h4>
                                                                 
                                                             </td>
