@@ -1,3 +1,7 @@
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import userIcon from "@/assets/images/user.png";
+import { Chip } from "@mui/material";
+
 export const DT_CATEGORY_COLUMN = [
   {
     accessorKey: "name",
@@ -64,5 +68,43 @@ export const DT_PRODUCT_VARIANT_COLUMN = [
   {
     accessorKey: "discountPercentage",
     header: "Discount Percentage",
+  },
+];
+
+export const DT_CUSTOMERS_COLUMN = [
+  {
+    accessorKey: "avatar",
+    header: "Avatar",
+    Cell: ({ renderedCellValue }) => (
+      <Avatar>
+        <AvatarImage src={renderedCellValue?.url || userIcon.src} />
+      </Avatar>
+    ),
+  },
+  {
+    accessorKey: "name",
+    header: "Name",
+  },
+  {
+    accessorKey: "email",
+    header: "Email",
+  },
+  {
+    accessorKey: "phone",
+    header: "Phone",
+  },
+  {
+    accessorKey: "address",
+    header: "Address",
+  },
+  {
+    accessorKey: "isEmailVerified",
+    header: "Is Verified",
+    Cell: ({ renderedCellValue }) =>
+      renderedCellValue ? (
+        <Chip color="success" label="Verified" />
+      ) : (
+        <Chip color="error" label="Not Verified" />
+      ),
   },
 ];
