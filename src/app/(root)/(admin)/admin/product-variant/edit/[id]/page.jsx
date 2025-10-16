@@ -30,16 +30,21 @@ import MediaModal from "@/components/Application/Admin/MediaModal";
 const breadCrumbData = [
   { href: ADMIN_DASHBOARD, label: "Home" },
   { href: ADMIN_PRODUCT_SHOW, label: "Products" },
-  { href: "", label: "Add Product" },
+  { href: "", label: "Edit Product" },
 ];
 
-const AddProduct = () => {
+const EditProduct = ({ params }) => {
+  const { id } = use(params);
+
   const [loading, setLoading] = useState(false);
   const [categoryOption, setCategoryOption] = useState([]);
-  const { data: getCategory } = useFetch(
-    `/api/category?deleteType=SD&&size=1000`
+  const { data: getCategory } = useFetch(`/api/category?deleteType=SD`);
+  console.log("Get Category in Product Page", getCategory);
+
+  const { data: getProduct, loading: getProductLoading } = useFetch(
+    `/api/product/get/${id}`
   );
-  console.log(getCategory);
+  console.log("Get Product by ID in Product Edit Page", getProduct);
 
   // Media modal states
   const [open, setOpen] = useState(false);
@@ -56,6 +61,7 @@ const AddProduct = () => {
   }, [getCategory]);
 
   const formSchema = zSchema.pick({
+    _id: true,
     name: true,
     slug: true,
     category: true,
@@ -69,6 +75,7 @@ const AddProduct = () => {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      _id: id,
       name: "",
       slug: "",
       category: "",
@@ -80,6 +87,30 @@ const AddProduct = () => {
   });
 
   console.log("Add Product Form", form);
+
+  useEffect(() => {
+    if (getProduct && getProduct.success) {
+      const product = getProduct.data;
+      form.reset({
+        _id: product?._id,
+        name: product?.name,
+        slug: product?.slug,
+        category: product?.category,
+        mrp: product?.mrp,
+        sellingPrice: product?.sellingPrice,
+        discountPercentage: product?.discountPercentage,
+        description: product?.description,
+      });
+
+      if (product.media) {
+        const media = product.media.map((media) => ({
+          _id: media._id,
+          url: media.secure_url,
+        }));
+        setSelectedMedia(media);
+      }
+    }
+  }, [getProduct]);
 
   // here we use slugify
   useEffect(() => {
@@ -118,14 +149,10 @@ const AddProduct = () => {
       const mediaIds = selectedMedia.map((media) => media._id);
       values.media = mediaIds;
 
-      const { data: response } = await axios.post(
-        `/api/product/create`,
-        values
-      );
+      const { data: response } = await axios.put(`/api/product/update`, values);
       if (!response.success) {
         throw new Error(response.message);
       }
-      form.reset();
       showToast("success", response.message);
     } catch (error) {
       showToast("error", error.message);
@@ -139,7 +166,7 @@ const AddProduct = () => {
       <BreadCrumb breadCrumbData={breadCrumbData} />
       <Card className="py-0 rounded shadow-sm">
         <CardHeader className="pt-3 px-3 border-b [.border-b]:pb-2">
-          <h4 className="text-xl font-semibold">Add Product</h4>
+          <h4 className="text-xl font-semibold">Edit Product</h4>
         </CardHeader>
         <CardContent className="pb-5">
           <Form {...form}>
@@ -286,7 +313,12 @@ const AddProduct = () => {
                   <FormLabel className="mb-2">
                     Description<span className="text-red-500">*</span>
                   </FormLabel>
-                  <Editor onChange={editor} />
+                  {!getProductLoading && (
+                    <Editor
+                      onChange={editor}
+                      initialData={form.getValues("description")}
+                    />
+                  )}
                   <FormMessage></FormMessage>
                 </div>
               </div>
@@ -328,7 +360,7 @@ const AddProduct = () => {
                 <ButtonLoading
                   loading={loading}
                   type="submit"
-                  text="Add Product"
+                  text="Save Changes"
                   className=" cursor-pointer"
                 />
               </div>
@@ -340,4 +372,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default EditProduct;

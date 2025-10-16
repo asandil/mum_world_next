@@ -1,5 +1,8 @@
 "use client";
-import { ADMIN_DASHBOARD, ADMIN_PRODUCT_SHOW } from "@/routes/AdminPanelRoute";
+import {
+  ADMIN_DASHBOARD,
+  ADMIN_PRODUCT_VARIANT_SHOW,
+} from "@/routes/AdminPanelRoute";
 import BreadCrumb from "@/components/Application/Admin/BreadCrumb";
 import { ButtonLoading } from "@/components/Application/ButtonLoading";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
@@ -26,68 +29,64 @@ import slugify from "slugify";
 import Select from "@/components/Application/Select";
 import Editor from "@/components/Application/Admin/Editor";
 import MediaModal from "@/components/Application/Admin/MediaModal";
+import { sizes } from "@/lib/utils";
 
 const breadCrumbData = [
   { href: ADMIN_DASHBOARD, label: "Home" },
-  { href: ADMIN_PRODUCT_SHOW, label: "Products" },
-  { href: "", label: "Add Product" },
+  { href: ADMIN_PRODUCT_VARIANT_SHOW, label: "Product Varients" },
+  { href: "", label: "Add Product Varients" },
 ];
 
 const AddProduct = () => {
   const [loading, setLoading] = useState(false);
-  const [categoryOption, setCategoryOption] = useState([]);
-  const { data: getCategory } = useFetch(
-    `/api/category?deleteType=SD&&size=1000`
+  const [productOption, setProductOption] = useState([]);
+  const { data: getProduct } = useFetch(
+    `/api/product?deleteType=SD&&size=1000`
   );
-  console.log(getCategory);
+  console.log(getProduct);
 
   // Media modal states
   const [open, setOpen] = useState(false);
   const [selectedMedia, setSelectedMedia] = useState([]);
 
   useEffect(() => {
-    if (getCategory && getCategory.success) {
-      console.log("category section data in product page", getCategory);
-      const data = getCategory.data;
-      const options = data.map((cat) => ({ label: cat.name, value: cat._id }));
-      console.log("category section OPTIONS data in product page", options);
-      setCategoryOption(options);
+    if (getProduct && getProduct.success) {
+      console.log("Product section data in product page", getProduct);
+      const data = getProduct.data;
+      const options = data.map((product) => ({
+        label: product.name,
+        value: product._id,
+      }));
+      console.log("Product section OPTIONS data in product page", options);
+      setProductOption(options);
     }
-  }, [getCategory]);
+  }, [getProduct]);
 
   const formSchema = zSchema.pick({
-    name: true,
-    slug: true,
-    category: true,
+    product: true,
+    sku: true,
+    color: true,
+    size: true,
     mrp: true,
     sellingPrice: true,
     discountPercentage: true,
-    description: true,
   });
 
   // 1. Define your form.
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: "",
-      slug: "",
-      category: "",
+      product: "",
+      sku: "",
+      color: "",
+      size: "",
       mrp: 0,
       sellingPrice: 0,
       discountPercentage: 0,
-      description: "",
     },
   });
 
   console.log("Add Product Form", form);
-
-  // here we use slugify
-  useEffect(() => {
-    const name = form.getValues("name");
-    if (name) {
-      form.setValue("slug", slugify(name).toLowerCase());
-    }
-  }, [form.watch("name")]);
 
   // discounted percentage calculator
   useEffect(() => {
@@ -100,15 +99,9 @@ const AddProduct = () => {
     }
   }, [form.watch("mrp"), form.watch("sellingPrice")]);
 
-  const editor = (event, editor) => {
-    const data = editor.getData();
-    console.log("description data", data);
-    form.setValue("description", data);
-  };
-
   // 2. Define a login submit handler.
   const onSubmit = async (values) => {
-    console.log("Add category data", values);
+    console.log("Add Product Varient data", values);
     setLoading(true);
     try {
       if (selectedMedia.length <= 0) {
@@ -119,7 +112,7 @@ const AddProduct = () => {
       values.media = mediaIds;
 
       const { data: response } = await axios.post(
-        `/api/product/create`,
+        `/api/product-variant/create`,
         values
       );
       if (!response.success) {
@@ -139,7 +132,7 @@ const AddProduct = () => {
       <BreadCrumb breadCrumbData={breadCrumbData} />
       <Card className="py-0 rounded shadow-sm">
         <CardHeader className="pt-3 px-3 border-b [.border-b]:pb-2">
-          <h4 className="text-xl font-semibold">Add Product</h4>
+          <h4 className="text-xl font-semibold">Add Product Variant</h4>
         </CardHeader>
         <CardContent className="pb-5">
           <Form {...form}>
@@ -148,61 +141,82 @@ const AddProduct = () => {
                 <div className="">
                   <FormField
                     control={form.control}
-                    name="name"
+                    name="product"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>
-                          Name<span className="text-red-500">*</span>{" "}
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            type="text"
-                            placeholder="Enter product name"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <div className="">
-                  {/* in this slug form we use slugify: npm i slugify */}
-                  {/* And we auto generate that slug by using form watch function. */}
-                  <FormField
-                    control={form.control}
-                    name="slug"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>
-                          Slug<span className="text-red-500">*</span>
-                        </FormLabel>
-                        <FormControl>
-                          <Input
-                            type="text"
-                            placeholder="Enter product slug"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <div className="">
-                  <FormField
-                    control={form.control}
-                    name="category"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>
-                          Category<span className="text-red-500">*</span>
+                          Product<span className="text-red-500">*</span>
                         </FormLabel>
                         <FormControl>
                           <Select
-                            options={categoryOption}
+                            options={productOption}
+                            selected={field.value}
+                            setSelected={field.onChange}
+                            isMulti={false}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <div className="">
+                  <FormField
+                    control={form.control}
+                    name="sku"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          Sku<span className="text-red-500">*</span>{" "}
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            type="text"
+                            placeholder="Enter sku"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <div className="">
+                  <FormField
+                    control={form.control}
+                    name="color"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          Color<span className="text-red-500">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            type="text"
+                            placeholder="Enter color"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <div className="">
+                  <FormField
+                    control={form.control}
+                    name="size"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          Size<span className="text-red-500">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Select
+                            options={sizes}
                             selected={field.value}
                             setSelected={field.onChange}
                             isMulti={false}
@@ -258,7 +272,7 @@ const AddProduct = () => {
                   />
                 </div>
 
-                <div className="">
+                <div className="mb-5">
                   <FormField
                     control={form.control}
                     name="discountPercentage"
@@ -280,14 +294,6 @@ const AddProduct = () => {
                       </FormItem>
                     )}
                   />
-                </div>
-
-                <div className="mb-5 md:col-span-2 ">
-                  <FormLabel className="mb-2">
-                    Description<span className="text-red-500">*</span>
-                  </FormLabel>
-                  <Editor onChange={editor} />
-                  <FormMessage></FormMessage>
                 </div>
               </div>
 
@@ -328,7 +334,7 @@ const AddProduct = () => {
                 <ButtonLoading
                   loading={loading}
                   type="submit"
-                  text="Add Product"
+                  text="Add Product Variant"
                   className=" cursor-pointer"
                 />
               </div>

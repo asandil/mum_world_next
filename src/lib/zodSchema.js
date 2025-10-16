@@ -23,7 +23,7 @@ export const zSchema = z.object({
     .string()
     .min(2, { message: "Name must be at least 2 characters long" })
     .max(50, { message: "Name must be at moast 50 characters long" }),
-    // .regex(/^[A-Za-z\s]+$/, "Name can only contain letters and spaces"),
+  // .regex(/^[A-Za-z\s]+$/, "Name can only contain letters and spaces"),
 
   otp: z.string().regex(/^\d{6}$/, {
     message: "OTP must be a 6-digit numbers",
@@ -100,4 +100,9 @@ export const zSchema = z.object({
   description: z.string().min(3, "Description is required."),
 
   media: z.array(z.string()),
+
+  product: z.string().min(3, "Product is required."),
+  color: z.string().min(3, "Color is required."),
+  size: z.string().min(1, "Size is required."),
+  sku: z.string().min(3, "Sku is required."),
 });
