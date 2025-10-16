@@ -1,5 +1,12 @@
-"use client"
-import { IconButton, Tooltip } from "@mui/material";
+"use client";
+import {
+  IconButton,
+  Tooltip,
+  Modal,
+  Box,
+  Typography,
+  Button,
+} from "@mui/material";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import {
@@ -48,21 +55,33 @@ const Datatable = ({
   // Export loading state
   const [exportLoading, setExportLoading] = useState(false);
 
+  // Delete modal state
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [pendingDeleteData, setPendingDeleteData] = useState({
+    ids: [],
+    type: "",
+  });
+
   // handle delete method
   const deleteMutation = useDeleteMutation(queryKey, deleteEndpoint);
 
-  const handleDelete = (ids, deleteType) => {
-    let c;
-    if (deleteType === "PD") {
-      c = confirm("Are you sure you want to delete the data permanently?");
-    } else {
-      c = confirm("Are you sure you want to move data into trash?");
-    }
+  const openDeleteModal = (ids, deleteType) => {
+    setPendingDeleteData({ ids, type: deleteType });
+    setDeleteModalOpen(true);
+  };
 
-    if (c) {
-      deleteMutation.mutate({ ids, deleteType });
-      setRowSelection({});
-    }
+  const closeDeleteModal = () => {
+    setDeleteModalOpen(false);
+    setPendingDeleteData({ ids: [], type: "" });
+  };
+
+  const handleDelete = () => {
+    deleteMutation.mutate({
+      ids: pendingDeleteData.ids,
+      deleteType: pendingDeleteData.type,
+    });
+    setRowSelection({});
+    closeDeleteModal();
   };
 
   // export method
@@ -120,7 +139,7 @@ const Datatable = ({
       url.searchParams.set("filters", JSON.stringify(columnFilters ?? []));
       url.searchParams.set("globalFilter", globalFilter ?? "");
       url.searchParams.set("sorting", JSON.stringify(sorting ?? []));
-      url.searchParams.set("deleteType", deleteType)
+      url.searchParams.set("deleteType", deleteType);
 
       const { data: response } = await axios.get(url.href);
       return response;
@@ -128,6 +147,42 @@ const Datatable = ({
 
     placeholderData: keepPreviousData,
   });
+
+  // Modal style
+  const modalStyle = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: 400,
+    bgcolor: "background.paper",
+    borderRadius: "8px",
+    boxShadow: 24,
+    p: 4,
+  };
+
+  // Get modal title and message based on delete type
+  const getDeleteModalContent = () => {
+    const { type } = pendingDeleteData;
+    const selectedCount = pendingDeleteData.ids.length;
+
+    if (type === "PD") {
+      return {
+        title: "Permanently Delete Data",
+        message: `Are you sure you want to permanently delete ${selectedCount} item(s)? This action cannot be undone.`,
+      };
+    } else if (type === "RSD") {
+      return {
+        title: "Restore Data",
+        message: `Are you sure you want to restore ${selectedCount} item(s) from trash?`,
+      };
+    } else {
+      return {
+        title: "Move to Trash",
+        message: `Are you sure you want to move ${selectedCount} item(s) into trash?`,
+      };
+    }
+  };
 
   // init table
   const table = useMaterialReactTable({
@@ -194,7 +249,7 @@ const Datatable = ({
                 !table.getIsAllRowsSelected()
               }
               onClick={() =>
-                handleDelete(Object.keys(rowSelection), deleteType)
+                openDeleteModal(Object.keys(rowSelection), deleteType)
               }
             >
               <DeleteIcon />
@@ -209,7 +264,9 @@ const Datatable = ({
                   !table.getIsSomePageRowsSelected() &&
                   !table.getIsAllRowsSelected()
                 }
-                onClick={() => handleDelete(Object.keys(rowSelection), "RSD")}
+                onClick={() =>
+                  openDeleteModal(Object.keys(rowSelection), "RSD")
+                }
               >
                 <RestoreFromTrashIcon />
               </IconButton>
@@ -221,7 +278,7 @@ const Datatable = ({
                   !table.getIsAllRowsSelected()
                 }
                 onClick={() =>
-                  handleDelete(Object.keys(rowSelection), deleteType)
+                  openDeleteModal(Object.keys(rowSelection), deleteType)
                 }
               >
                 <DeleteForeverIcon />
@@ -235,7 +292,7 @@ const Datatable = ({
     enableRowActions: true,
     positionActionsColumn: "last",
     renderRowActionMenuItems: ({ row }) =>
-      createAction(row, deleteType, handleDelete),
+      createAction(row, deleteType, openDeleteModal),
 
     renderTopToolbarCustomActions: ({ table }) => (
       <Tooltip>
@@ -254,7 +311,51 @@ const Datatable = ({
     ),
   });
 
-  return <MaterialReactTable table={table} />;
+  const modalContent = getDeleteModalContent();
+
+  return (
+    <>
+      <MaterialReactTable table={table} />
+
+      {/* Delete Confirmation Modal */}
+      <Modal
+        open={deleteModalOpen}
+        onClose={closeDeleteModal}
+        aria-labelledby="delete-confirmation-modal"
+        aria-describedby="delete-confirmation-description"
+      >
+        <Box sx={modalStyle}>
+          <Typography
+            id="delete-confirmation-modal"
+            variant="h6"
+            component="h2"
+            gutterBottom
+          >
+            {modalContent.title}
+          </Typography>
+          <Typography
+            id="delete-confirmation-description"
+            sx={{ mt: 2, mb: 3 }}
+          >
+            {modalContent.message}
+          </Typography>
+          <Box sx={{ display: "flex", justifyContent: "flex-end", gap: 2 }}>
+            <Button onClick={closeDeleteModal} variant="outlined">
+              Cancel
+            </Button>
+            <Button
+              onClick={handleDelete}
+              variant="contained"
+              color={pendingDeleteData.type === "PD" ? "error" : "primary"}
+              disabled={deleteMutation.isPending}
+            >
+              {deleteMutation.isPending ? "Processing..." : "Confirm"}
+            </Button>
+          </Box>
+        </Box>
+      </Modal>
+    </>
+  );
 };
 
 export default Datatable;
