@@ -11,47 +11,62 @@ export async function GET(request) {
       return response(false, 403, "Unauthorized or Not Admin .");
     }
 
-    await connectDB()
+    await connectDB();
 
-    const searchParams = request.nextUrl.searchParams
+    const searchParams = request.nextUrl.searchParams;
 
     // Extractquery parameters
-    const start = parseInt(searchParams.get('start') || 0, 10)
-    const size = parseInt(searchParams.get('size') || 10, 10)
-    const filters = JSON.parse(searchParams.get('filters') || "[]")
-    const globalFilter = searchParams.get('globalFilter') || ""
-    const sorting = JSON.parse(searchParams.get('sorting') || "[]")
-    const deleteType = searchParams.get('deleteType')
+    const start = parseInt(searchParams.get("start") || 0, 10);
+    const size = parseInt(searchParams.get("size") || 10, 10);
+    const filters = JSON.parse(searchParams.get("filters") || "[]");
+    const globalFilter = searchParams.get("globalFilter") || "";
+    const sorting = JSON.parse(searchParams.get("sorting") || "[]");
+    const deleteType = searchParams.get("deleteType");
 
     // Build match query
-    let matchQuery = {}
+    let matchQuery = {};
 
-    if(deleteType === "SD"){
-      matchQuery = { deletedAt: null }
-    }else if (deleteType === "PD"){
-      matchQuery = { deletedAt: { $ne: null } }
+    if (deleteType === "SD") {
+      matchQuery = { deletedAt: null };
+    } else if (deleteType === "PD") {
+      matchQuery = { deletedAt: { $ne: null } };
     }
 
     // Global search
-    if(globalFilter){
+    if (globalFilter) {
       matchQuery["$or"] = [
-        {code: {$regex: globalFilter, $options: 'i'}},
-        {discountPercentage: {$regex: globalFilter, $options: 'i'}},
-        {minShoppingAmount: {$regex: globalFilter, $options: 'i'}},
-        {validity: {$regex: globalFilter, $options: 'i'}},
-      ] 
+        { code: { $regex: globalFilter, $options: "i" } },
+        {
+          $expr: {
+            $regexMatch: {
+              input: { $toString: "$discountPercentage" },
+              regex: globalFilter,
+              options: "i",
+            },
+          },
+        },
+        {
+          $expr: {
+            $regexMatch: {
+              input: { $toString: "$minShoppingAmount" },
+              regex: globalFilter,
+              options: "i",
+            },
+          },
+        },
+      ];
     }
 
     // Column filteration
-    filters.forEach(filter => {
-      matchQuery[filter.id] = { $regex: filter.value, $options: "i" }
+    filters.forEach((filter) => {
+      matchQuery[filter.id] = { $regex: filter.value, $options: "i" };
     });
 
     // Sorting
-    let sortQuery = {}
-    sorting.forEach(sort => {
-      sortQuery[sort.id] = sort.desc ? -1 : 1
-    })
+    let sortQuery = {};
+    sorting.forEach((sort) => {
+      sortQuery[sort.id] = sort.desc ? -1 : 1;
+    });
 
     // Aggregate pipeline
 
@@ -61,32 +76,31 @@ export async function GET(request) {
       { $skip: start },
       { $limit: size },
       {
-        $project:{
+        $project: {
           _id: 1,
           code: 1,
           discountPercentage: 1,
           minShoppingAmount: 1,
           validity: 1,
-          createdAt : 1,
+          createdAt: 1,
           updatedAt: 1,
-          deletedAt: 1
-        }
-      }
-    ]
+          deletedAt: 1,
+        },
+      },
+    ];
 
     // Execute query
 
-    const getCoupon = await CouponModel.aggregate(aggregatePipeline)
+    const getCoupon = await CouponModel.aggregate(aggregatePipeline);
 
     // get totalRowCount
-    const totalRowCount = await CouponModel.countDocuments(matchQuery)
+    const totalRowCount = await CouponModel.countDocuments(matchQuery);
 
     return NextResponse.json({
       success: true,
       data: getCoupon,
-      meta: { totalRowCount: totalRowCount}
-    })
-
+      meta: { totalRowCount: totalRowCount },
+    });
   } catch (error) {
     return catchError(error);
   }

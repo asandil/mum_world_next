@@ -39,7 +39,7 @@ export async function GET(request) {
         { email: { $regex: globalFilter, $options: "i" } },
         { phone: { $regex: globalFilter, $options: "i" } },
         { address: { $regex: globalFilter, $options: "i" } },
-        { isEmailVerified: { $regex: globalFilter, $options: "i" } },
+        // { isEmailVerified: { $regex: globalFilter, $options: "i" } },
       ];
     }
 
