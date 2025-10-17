@@ -22,7 +22,7 @@ export const ADMIN_PRODUCT_VARIANT_EDIT = (id) => id ?  `/admin/product-variant/
 
 // Product Variant routes
 export const ADMIN_COUPON_ADD = "/admin/coupon/add"
-export const ADMIN__COUPON_SHOW = "/admin/coupon"
+export const ADMIN_COUPON_SHOW = "/admin/coupon"
 export const ADMIN_COUPON_EDIT = (id) => id ?  `/admin/coupon/edit/${id}` : ''
 
 // Customer routes

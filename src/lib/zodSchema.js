@@ -81,21 +81,30 @@ export const zSchema = z.object({
     z
       .string()
       .transform((val) => Number(val))
-      .refine((val) => !isNaN(val) && val >= 0, "Please entera valid number. "),
+      .refine(
+        (val) => !isNaN(val) && val >= 0,
+        "Please enter a valid number. "
+      ),
   ]),
   sellingPrice: z.union([
     z.number().positive("Expected positive value, received negative. "),
     z
       .string()
       .transform((val) => Number(val))
-      .refine((val) => !isNaN(val) && val >= 0, "Please entera valid number. "),
+      .refine(
+        (val) => !isNaN(val) && val >= 0,
+        "Please enter a valid number. "
+      ),
   ]),
   discountPercentage: z.union([
     z.number().positive("Expected positive value, received negative. "),
     z
       .string()
       .transform((val) => Number(val))
-      .refine((val) => !isNaN(val) && val >= 0, "Please entera valid number. "),
+      .refine(
+        (val) => !isNaN(val) && val >= 0,
+        "Please enter a valid number. "
+      ),
   ]),
   description: z.string().min(3, "Description is required."),
 
@@ -105,4 +114,19 @@ export const zSchema = z.object({
   color: z.string().min(3, "Color is required."),
   size: z.string().min(1, "Size is required."),
   sku: z.string().min(3, "Sku is required."),
+
+  code: z.string().min(3, "Code is required."),
+
+  minShoppingAmount: z.union([
+    z.number().positive("Expected positive value, received negative. "),
+    z
+      .string()
+      .transform((val) => Number(val))
+      .refine(
+        (val) => !isNaN(val) && val >= 0,
+        "Please enter a valid number. "
+      ),
+  ]),
+
+  validity: z.coerce.date(),
 });
