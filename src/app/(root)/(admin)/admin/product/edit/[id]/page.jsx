@@ -21,7 +21,7 @@ import { useForm } from "react-hook-form";
 import imgPlaceholder from "@/assets/images/img-placeholder.webp";
 import axios from "axios";
 import { showToast } from "@/lib/showToast";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import slugify from "slugify";
 import Select from "@/components/Application/Select";
 import Editor from "@/components/Application/Admin/Editor";
@@ -34,6 +34,8 @@ const breadCrumbData = [
 ];
 
 const EditProduct = ({ params }) => {
+
+  const router = useRouter()
   const { id } = use(params);
 
   const [loading, setLoading] = useState(false);
@@ -154,6 +156,7 @@ const EditProduct = ({ params }) => {
         throw new Error(response.message);
       }
       showToast("success", response.message);
+      router.push(ADMIN_PRODUCT_SHOW)
     } catch (error) {
       showToast("error", error.message);
     } finally {

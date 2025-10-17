@@ -19,17 +19,14 @@ import useFetch from "@/hooks/useFetch";
 import { zSchema } from "@/lib/zodSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import imgPlaceholder from "@/assets/images/img-placeholder.webp";
 import axios from "axios";
 import { showToast } from "@/lib/showToast";
-import { useParams } from "next/navigation";
-import slugify from "slugify";
 import Select from "@/components/Application/Select";
-import Editor from "@/components/Application/Admin/Editor";
 import MediaModal from "@/components/Application/Admin/MediaModal";
 import { sizes } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 const breadCrumbData = [
   { href: ADMIN_DASHBOARD, label: "Home" },
@@ -37,7 +34,10 @@ const breadCrumbData = [
   { href: "", label: "Add Product Varients" },
 ];
 
-const AddProduct = () => {
+const AddProductVariant = () => {
+
+  const router = useRouter()
+
   const [loading, setLoading] = useState(false);
   const [productOption, setProductOption] = useState([]);
   const { data: getProduct } = useFetch(
@@ -86,7 +86,7 @@ const AddProduct = () => {
     },
   });
 
-  console.log("Add Product Form", form);
+  console.log("Add Product Variant Form", form);
 
   // discounted percentage calculator
   useEffect(() => {
@@ -120,6 +120,7 @@ const AddProduct = () => {
       }
       form.reset();
       showToast("success", response.message);
+      router.push(ADMIN_PRODUCT_VARIANT_SHOW);
     } catch (error) {
       showToast("error", error.message);
     } finally {
@@ -346,4 +347,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default AddProductVariant;

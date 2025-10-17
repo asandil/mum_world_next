@@ -22,7 +22,7 @@ export const zSchema = z.object({
   name: z
     .string()
     .min(2, { message: "Name must be at least 2 characters long" })
-    .max(50, { message: "Name must be at moast 50 characters long" }),
+    .max(100, { message: "Name must be at moast 100 characters long" }),
   // .regex(/^[A-Za-z\s]+$/, "Name can only contain letters and spaces"),
 
   otp: z.string().regex(/^\d{6}$/, {
