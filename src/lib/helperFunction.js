@@ -13,7 +13,7 @@ export const catchError = (error, customMessage) => {
   // handling duplicate key error
   if (error.code === 11000) {
     const keys = Object.keys(error.keyPattern).join(",");
-    error.mesage = `Duplicate field: ${keys}. These fields value must be unique`;
+    error.message = `Duplicate field: ${keys}. These fields value must be unique`;
   }
 
   let errorObj = {};
@@ -53,7 +53,7 @@ export const columnConfig = (
       accessorKey: "createdAt",
       header: "Created At",
       cell: ({ renderedCellValue }) =>
-        new Data(renderedCellValue).toLocalString(),
+        new Date(renderedCellValue).toLocalString(),
     });
   }
   if (isUpdatedAt) {
@@ -61,7 +61,7 @@ export const columnConfig = (
       accessorKey: "updatedAt",
       header: "Updated At",
       cell: ({ renderedCellValue }) =>
-        new Data(renderedCellValue).toLocalString(),
+        new Date(renderedCellValue).toLocalString(),
     });
   }
   if (isDeletedAt) {
@@ -69,7 +69,7 @@ export const columnConfig = (
       accessorKey: "deletedAt",
       header: "Deleted At",
       cell: ({ renderedCellValue }) =>
-        new Data(renderedCellValue).toLocalString(),
+        new Date(renderedCellValue).toLocalString(),
     });
   }
   return newCloumn;
