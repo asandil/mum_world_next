@@ -15,13 +15,11 @@ import { Input } from "@/components/ui/input";
 import useFetch from "@/hooks/useFetch";
 import { zSchema } from "@/lib/zodSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Image from "next/image";
 import React, { use, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import imgPlaceholder from "@/assets/images/img-placeholder.webp";
 import axios from "axios";
 import { showToast } from "@/lib/showToast";
-import { useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import slugify from "slugify";
 
 const breadCrumbData = [
@@ -32,6 +30,8 @@ const breadCrumbData = [
 
 const EditCategory = ({ params }) => {
   const { id } = use(params);
+
+  const router = useRouter();
 
   const { data: categoryData } = useFetch(`/api/category/get/${id}`);
 
@@ -88,6 +88,7 @@ const EditCategory = ({ params }) => {
       }
       form.reset();
       showToast("success", response.message);
+      router.push(ADMIN_CATEGORY_SHOW);
     } catch (error) {
       showToast("error", error.message);
     } finally {

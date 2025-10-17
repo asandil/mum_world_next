@@ -12,16 +12,13 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import useFetch from "@/hooks/useFetch";
 import { zSchema } from "@/lib/zodSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Image from "next/image";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import imgPlaceholder from "@/assets/images/img-placeholder.webp";
 import axios from "axios";
 import { showToast } from "@/lib/showToast";
-import { useParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import slugify from "slugify";
 
 const breadCrumbData = [
@@ -31,6 +28,7 @@ const breadCrumbData = [
 ];
 
 const AddCategory = () => {
+  const router = useRouter();
 
   const [loading, setLoading] = useState(false);
 
@@ -48,27 +46,31 @@ const AddCategory = () => {
     },
   });
 
-  console.log("Add Category Form",form)
+  console.log("Add Category Form", form);
 
   // here we use slugify
   useEffect(() => {
-    const name = form.getValues('name')
-    if(name){
-      form.setValue('slug', slugify(name).toLowerCase())
+    const name = form.getValues("name");
+    if (name) {
+      form.setValue("slug", slugify(name).toLowerCase());
     }
-  },[form.watch('name')])
+  }, [form.watch("name")]);
 
-   // 2. Define a login submit handler.
+  // 2. Define a login submit handler.
   const onSubmit = async (values) => {
     console.log("Add category data", values);
     try {
       setLoading(true);
-      const { data: response } = await axios.post(`/api/category/create`, values);
+      const { data: response } = await axios.post(
+        `/api/category/create`,
+        values
+      );
       if (!response.success) {
         throw new Error(response.message);
       }
       form.reset();
       showToast("success", response.message);
+      router.push(ADMIN_CATEGORY_SHOW);
     } catch (error) {
       showToast("error", error.message);
     } finally {
@@ -94,7 +96,11 @@ const AddCategory = () => {
                     <FormItem>
                       <FormLabel>Name</FormLabel>
                       <FormControl>
-                        <Input type="text" placeholder="Enter category name" {...field} />
+                        <Input
+                          type="text"
+                          placeholder="Enter category name"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
