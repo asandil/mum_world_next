@@ -71,6 +71,31 @@ export const DT_PRODUCT_VARIANT_COLUMN = [
   },
 ];
 
+export const DT_COUPON_COLUMN = [
+  {
+    accessorKey: "code",
+    header: "Coupon Code Name",
+  },
+  {
+    accessorKey: "discountPercentage",
+    header: "Discount Percentage",
+  },
+  {
+    accessorKey: "minShoppingAmount",
+    header: "Min Shopping Amount",
+  },
+  {
+    accessorKey: "validity",
+    header: "Validity",
+    Cell: ({ renderedCellValue }) =>
+      renderedCellValue ? (
+        <Chip color="success" label="Valid" />
+      ) : (
+        <Chip color="error" label="Expired" />
+      ),
+  },
+];
+
 export const DT_CUSTOMERS_COLUMN = [
   {
     accessorKey: "avatar",
