@@ -20,8 +20,8 @@ export async function PUT(request) {
       return response(false, 400, "Invalid or empty id list.");
     }
 
-    const category = await CouponModel.find({ _id: { $in: ids } }).lean();
-    if (!category.length) {
+    const coupon = await CouponModel.find({ _id: { $in: ids } }).lean();
+    if (!coupon.length) {
       return response(false, 404, "Data Not Found.");
     }
 
@@ -72,8 +72,8 @@ export async function DELETE(request) {
       return response(false, 400, "Invalid or empty id list.");
     }
 
-    const category = await CouponModel.find({ _id: { $in: ids } }).lean();
-    if (!category.length) {
+    const coupon = await CouponModel.find({ _id: { $in: ids } }).lean();
+    if (!coupon.length) {
       return response(false, 404, "Data Not Found.");
     }
 
