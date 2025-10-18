@@ -39,7 +39,7 @@ export async function GET(request) {
         {
           $expr: {
             $regexMatch: {
-              input: { $toString: "$discountPercentage" },
+              input: { $toString: "$minShoppingAmount" },
               regex: globalFilter,
               options: "i",
             },
@@ -48,7 +48,7 @@ export async function GET(request) {
         {
           $expr: {
             $regexMatch: {
-              input: { $toString: "$minShoppingAmount" },
+              input: { $toString: "$discountPercentage" },
               regex: globalFilter,
               options: "i",
             },
@@ -59,7 +59,16 @@ export async function GET(request) {
 
     // Column filteration
     filters.forEach((filter) => {
-      matchQuery[filter.id] = { $regex: filter.value, $options: "i" };
+      if (
+        filter.id === "minShoppingAmount" ||
+        filter.id === "discountPercentage"
+      ) {
+        matchQuery[filter.id] = Number(filter.value);
+      } else if (filter.id === "validity") {
+        matchQuery[filter.id] = new Date(filter.value);
+      } else {
+        matchQuery[filter.id] = { $regex: filter.value, $options: "i" };
+      }
     });
 
     // Sorting
@@ -92,6 +101,8 @@ export async function GET(request) {
     // Execute query
 
     const getCoupon = await CouponModel.aggregate(aggregatePipeline);
+
+    // console.log("@@@!!!!getCoupon", getCoupon);
 
     // get totalRowCount
     const totalRowCount = await CouponModel.countDocuments(matchQuery);
