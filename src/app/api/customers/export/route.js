@@ -18,7 +18,7 @@ export async function GET(request) {
 
     const getCustomers = await UserModel.find(filter)
       .select("-media -description")
-      .sort({ createdAT: -1 })
+      .sort({ createdAt: -1 })
       .lean();
 
     if (!getCustomers) {

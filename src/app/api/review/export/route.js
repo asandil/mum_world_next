@@ -1,31 +1,31 @@
 import { isAuthenticated } from "@/lib/authentication";
 import { connectDB } from "@/lib/db";
 import { catchError, response } from "@/lib/helperFunction";
-import ProductVariantModel from "@/models/ProductVarient.model";
+import ReviewModel from "@/models/Review.model";
 
 export async function GET(request) {
   try {
     const auth = await isAuthenticated("admin");
     if (!auth.isAuth) {
-      return response(false, 403, "Unauthorized Or Not Admin.");
+      return response(false, 403, "Unauthorized or Not Admin.");
     }
 
     await connectDB();
 
     const filter = {
-      deletedAt: null,
+      deleteAt: null,
     };
 
-    const getProductVariant = await ProductVariantModel.find(filter)
-      .select("-media -description")
-      .sort({ createdAt: -1 })
+    const getReview = await ReviewModel.find(filter)
+      .select("-media, -description")
+      .sort({ createAt: -1 })
       .lean();
 
-    if (!getProductVariant) {
+    if (!getReview) {
       return response(false, 403, "Collection Empty.");
     }
 
-    return response(true, 200, "Data Found.", getProductVariant);
+    return response(true, 200, "Data Found", getReview);
   } catch (error) {
     return catchError(error);
   }

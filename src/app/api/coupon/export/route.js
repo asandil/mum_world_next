@@ -18,7 +18,7 @@ export async function GET(request) {
 
     const getReview = await ReviewModel.find(filter)
       .select("-media -description")
-      .sort({ createdAT: -1 })
+      .sort({ createdAt: -1 })
       .lean();
 
     if (!getReview) {
