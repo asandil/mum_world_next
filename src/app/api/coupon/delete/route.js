@@ -59,7 +59,7 @@ export async function DELETE(request) {
   try {
     const auth = await isAuthenticated("admin");
     if (!auth.isAuth) {
-      return response(false, 403, "Unauthorized Or Not an Admin");
+      return response(false, 403, "Unauthorized Or Not an Admin.");
     }
 
     await connectDB();

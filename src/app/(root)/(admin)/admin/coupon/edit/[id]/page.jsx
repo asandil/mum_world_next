@@ -113,7 +113,7 @@ const EditCoupon = ({ params }) => {
       <BreadCrumb breadCrumbData={breadCrumbData} />
       <Card className="py-0 rounded shadow-sm">
         <CardHeader className="pt-3 px-3 border-b [.border-b]:pb-2">
-          <h4 className="text-xl font-semibold">Edit Product</h4>
+          <h4 className="text-xl font-semibold">Edit Coupon</h4>
         </CardHeader>
         <CardContent className="pb-5">
           <Form {...form}>
