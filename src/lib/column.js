@@ -133,3 +133,22 @@ export const DT_CUSTOMERS_COLUMN = [
       ),
   },
 ];
+
+export const DT_REVIEW_COLUMN = [
+  {
+    accessorKey: "product",
+    header: "Product",
+  },
+  {
+    accessorKey: "rating",
+    header: "Rating",
+  },
+  {
+    accessorKey: "title",
+    header: "Title",
+  },
+  {
+    accessorKey: "review",
+    header: "Review",
+  },
+];
