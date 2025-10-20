@@ -140,13 +140,18 @@ export const DT_REVIEW_COLUMN = [
     header: "Product",
   },
   {
-    accessorKey: "rating",
-    header: "Rating",
+    accessorKey: "user",
+    header: "User",
   },
   {
     accessorKey: "title",
     header: "Title",
   },
+  {
+    accessorKey: "rating",
+    header: "Rating",
+  },
+
   {
     accessorKey: "review",
     header: "Review",

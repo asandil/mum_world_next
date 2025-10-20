@@ -2,7 +2,6 @@ import { isAuthenticated } from "@/lib/authentication";
 import { connectDB } from "@/lib/db";
 import { catchError, response } from "@/lib/helperFunction";
 import ReviewModel from "@/models/Review.model";
-import UserModel from "@/models/User.model";
 import { NextResponse } from "next/server";
 
 export async function GET(request) {
@@ -36,9 +35,11 @@ export async function GET(request) {
     // Global search
     if (globalFilter) {
       matchQuery["$or"] = [
+        { "productData.name": { $regex: globalFilter, $options: "i" } },
+        { "userData.name": { $regex: globalFilter, $options: "i" } },
+        { rating: { $regex: globalFilter, $options: "i" } },
         { title: { $regex: globalFilter, $options: "i" } },
         { review: { $regex: globalFilter, $options: "i" } },
-        { "productData.name": { $regex: globalFilter, $options: "i" } },
         {
           $expr: {
             $regexMatch: {
@@ -53,15 +54,10 @@ export async function GET(request) {
 
     // Column filteration
     filters.forEach((filter) => {
-      if (
-        filter.id === "rating"
-      ) {
-        matchQuery[filter.id] = Number(filter.value);
-      } else if (filter.id === "product") {
-        matchQuery["productData.name"] = {
-          $regex: filter.value,
-          $options: "i",
-        };
+      if (filter.id === "product") {
+        matchQuery["productData.name"] = { $regex: filter.value, $options: "i" };
+      } else if (filter.id === "user") {
+        matchQuery["userData.name"] = { $regex: filter.value, $options: "i" };
       } else {
         matchQuery[filter.id] = { $regex: filter.value, $options: "i" };
       }
@@ -90,6 +86,20 @@ export async function GET(request) {
           preserveNullAndEmptyArrays: true,
         },
       },
+      {
+        $lookup: {
+          from: "users",
+          localField: "user",
+          foreignField: "_id",
+          as: "userData",
+        },
+      },
+      {
+        $unwind: {
+          path: "$userData",
+          preserveNullAndEmptyArrays: true,
+        },
+      },
       { $match: matchQuery },
       { $sort: Object.keys(sortQuery).length ? sortQuery : { createdAt: -1 } },
       { $skip: start },
@@ -98,9 +108,10 @@ export async function GET(request) {
         $project: {
           _id: 1,
           product: "$productData.name",
+          user: "$userData.name",
           rating: 1,
-          title: 1,
           review: 1,
+          title: 1,
           createdAt: 1,
           updatedAt: 1,
           deletedAt: 1,

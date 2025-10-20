@@ -10,7 +10,7 @@ import { useCallback, useMemo } from "react";
 
 const breadCrumbData = [
   { href: ADMIN_DASHBOARD, label: "Home" },
-  { href: "", label: "Reviews" },
+  { href: "", label: "Review" },
 ];
 
 const ShowReview = () => {
@@ -49,7 +49,7 @@ const ShowReview = () => {
             exportEndpoint="/api/review/export"
             deleteEndpoint="/api/review/delete"
             deleteType="SD"
-            trashView={`${ADMIN_TRASH}?trashof=reviews`}
+            trashView={`${ADMIN_TRASH}?trashof=review`}
             createAction={action}
           />
         </CardContent>

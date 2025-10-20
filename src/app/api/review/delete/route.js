@@ -20,8 +20,8 @@ export async function PUT(request) {
       return response(false, 400, "Invalid or empty id list.");
     }
 
-    const review = await ReviewModel.find({ _id: { $in: ids } }).lean();
-    if (!review.length) {
+    const data = await ReviewModel.find({ _id: { $in: ids } }).lean();
+    if (!data.length) {
       return response(false, 404, "Data Not Found.");
     }
 
@@ -72,9 +72,9 @@ export async function DELETE(request) {
       return response(false, 400, "Invalid or empty id list.");
     }
 
-    const review = await ReviewModel.find({ _id: { $in: ids } }).lean();
+    const data = await ReviewModel.find({ _id: { $in: ids } }).lean();
 
-    if (!review.length) {
+    if (!data.length) {
       return response(false, 404, "Data Not Found.");
     }
 
