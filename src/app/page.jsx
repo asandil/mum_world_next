@@ -6,6 +6,12 @@ import FeedBackForm from "@/components/FeedBackForm";
 import { BsChatHeartFill } from "react-icons/bs";
 import { BsFillHeartFill } from "react-icons/bs";
 
+export const metadata = {
+  title: "Pregnancy Journey & Newborn Care | Tools, Tips & Support | MumWorld",
+  description: "Explore expert guidance for every stage of motherhood with pregnancy tools, baby care advice, and health calculators on MumWorld — your companion for creating healthy beginnings.",
+  keywords: "pregnancy tips, newborn care, baby development, motherhood",
+}
+
 export default function Home() {
   return (
     <>
