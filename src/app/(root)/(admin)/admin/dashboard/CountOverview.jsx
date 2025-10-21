@@ -16,8 +16,8 @@ const CountOverview = () => {
     <div className="grid lg:grid-cols-4 sm:grid-cols-2 sm:gap-10 gap-5">
       <Link href={ADMIN_CATEGORY_SHOW}>
         <div className="flex items-center justify-between p-3 rounded-lg border shadow border-l-4 border-l-green-400 bg-white dark:bg-card dark:border-gray-800 dark:border-l-green-400">
-          <div>
-            <h4 className="font-medium text-gray-500">Total Categories</h4>
+          <div className="text-gray-500 dark:text-gray-200">
+            <h4 className="font-medium text-gray-500 dark:text-gray-200 ">Total Categories</h4>
             <span className="text-xl font-bold">{countData?.data?.category || 0 }</span>
           </div>
           <div>
@@ -29,8 +29,8 @@ const CountOverview = () => {
       </Link>
       <Link href={ADMIN_PRODUCT_SHOW}>
         <div className="flex items-center justify-between p-3 rounded-lg border shadow border-l-4 border-l-blue-400 bg-white dark:bg-card dark:border-gray-800 dark:border-l-blue-400">
-          <div>
-            <h4 className="font-medium text-gray-500">Total Product</h4>
+          <div className="text-gray-500 dark:text-gray-200">
+            <h4 className="font-medium text-gray-500 dark:text-gray-200 ">Total Product</h4>
             <span className="text-xl font-bold">{countData?.data?.product || 0}</span>
           </div>
           <div>
@@ -42,8 +42,8 @@ const CountOverview = () => {
       </Link>
       <Link href={ADMIN_CUSTOMERS_SHOW}>
         <div className="flex items-center justify-between p-3 rounded-lg border shadow border-l-4 border-l-yellow-400 bg-white dark:bg-card dark:border-gray-800 dark:border-l-yellow-400">
-          <div>
-            <h4 className="font-medium text-gray-500">Total Customers</h4>
+          <div className="text-gray-500 dark:text-gray-200">
+            <h4 className="font-medium text-gray-500 dark:text-gray-200 ">Total Customers</h4>
             <span className="text-xl font-bold">{countData?.data?.customer || 0}</span>
           </div>
           <div>
@@ -55,8 +55,8 @@ const CountOverview = () => {
       </Link>
       <Link href="">
         <div className="flex items-center justify-between p-3 rounded-lg border shadow border-l-4 border-l-cyan-400 bg-white dark:bg-card dark:border-gray-800 dark:border-l-cyan-400">
-          <div>
-            <h4 className="font-medium text-gray-500">Total Orders</h4>
+          <div className="text-gray-500 dark:text-gray-200">
+            <h4 className="font-medium text-gray-500 dark:text-gray-200 ">Total Orders</h4>
             <span className="text-xl font-bold">10</span>
           </div>
           <div>

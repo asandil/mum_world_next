@@ -15,6 +15,7 @@ import Image from "next/image";
 import Media from "./Media";
 import ModalMediaBlock from "./ModalMediaBlock";
 import { showToast } from "@/lib/showToast";
+import { ButtonLoading } from "../ButtonLoading";
 
 const MediaModal = ({
   open,
@@ -76,7 +77,7 @@ const MediaModal = ({
         className="sm:max-w-[80%] h-screen p-0 py-10 bg-transparent border-0 shadow-none"
       >
         <DialogDescription className="hidden"></DialogDescription>
-        <div className="h-[90vh] bg-white p-3 rounded shadow">
+        <div className="h-[90vh] bg-white dark:bg-card p-3 rounded shadow">
           <DialogHeader className="h-8 boder-b">
             <DialogTitle>Media Selection</DialogTitle>
           </DialogHeader>
@@ -108,6 +109,13 @@ const MediaModal = ({
                   </React.Fragment>
                 ))}
             </div> 
+            {hasNextPage ?
+            <div className="flex justify-center py-5 " >
+              <ButtonLoading  type="button" onClick={() => fetchNextPage()} loading={isFetching} text="Load More" />
+            </div>
+            :
+            <p className="text-center py-5">Nothing more to load.</p>  
+          }
             </> 
           }
           </div>
