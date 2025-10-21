@@ -7,7 +7,7 @@ import Link from "next/link";
 import { OrderOverview } from "./OrderOverview";
 import { OrderStatus } from "./OrderStatus";
 import LatestOrder from "./LatestOrder";
-import LatestReview from "./Latestreview";
+import LatestReview from "./LatestReview";
 
 const AdminDashboard = () => {
   return (
