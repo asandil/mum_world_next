@@ -25,7 +25,7 @@ export const ADMIN_COUPON_SHOW = "/admin/coupon";
 export const ADMIN_COUPON_EDIT = (id) => (id ? `/admin/coupon/edit/${id}` : "");
 
 // Customer routes
-export const ADMIN_CUSTOMER_SHOW = "/admin/customers";
+export const ADMIN_CUSTOMERS_SHOW = "/admin/customers";
 
 // Rating & review
 export const ADMIN_REVIEW_SHOW = "/admin/review";

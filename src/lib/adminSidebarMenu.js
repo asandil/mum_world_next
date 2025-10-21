@@ -11,7 +11,7 @@ import {
   ADMIN_CATEGORY_SHOW,
   ADMIN_COUPON_ADD,
   ADMIN_COUPON_SHOW,
-  ADMIN_CUSTOMER_SHOW,
+  ADMIN_CUSTOMERS_SHOW,
   ADMIN_DASHBOARD,
   ADMIN_MEDIA_SHOW,
   ADMIN_PRODUCT_ADD,
@@ -87,7 +87,7 @@ export const adminAppSidebarMenu = [
   },
   {
     title: "Customers",
-    url: ADMIN_CUSTOMER_SHOW,
+    url: ADMIN_CUSTOMERS_SHOW,
     icon: LuUserRound,
   },
   {

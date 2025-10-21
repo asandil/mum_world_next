@@ -6,7 +6,7 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 import { IoShirtOutline } from "react-icons/io5";
 import { LuUserRound } from "react-icons/lu";
 import useFetch from "@/hooks/useFetch";
-import { ADMIN_CATEGORY_SHOW, ADMIN_CUSTOMER_SHOW, ADMIN_PRODUCT_SHOW } from "@/routes/AdminPanelRoute";
+import { ADMIN_CATEGORY_SHOW, ADMIN_CUSTOMERS_SHOW, ADMIN_PRODUCT_SHOW } from "@/routes/AdminPanelRoute";
 
 const CountOverview = () => {
 
@@ -40,7 +40,7 @@ const CountOverview = () => {
           </div>
         </div>
       </Link>
-      <Link href={ADMIN_CUSTOMER_SHOW}>
+      <Link href={ADMIN_CUSTOMERS_SHOW}>
         <div className="flex items-center justify-between p-3 rounded-lg border shadow border-l-4 border-l-yellow-400 bg-white dark:bg-card dark:border-gray-800 dark:border-l-yellow-400">
           <div>
             <h4 className="font-medium text-gray-500">Total Customers</h4>
