@@ -5,6 +5,7 @@ import UserDropDown from "./UserDropDown";
 import { RiMenu4Fill } from "react-icons/ri";
 import { Button } from "@/components/ui/button";
 import { useSidebar } from "@/components/ui/sidebar";
+import AdminSearch from "@/app/(root)/(admin)/admin/dashboard/AdminSearch";
 
 const Topbar = () => {
 
@@ -12,7 +13,9 @@ const Topbar = () => {
 
   return (
     <div className="px-5 border-t-1 border-b-1 h-14 w-full  z-50 flex justify-between items-center bg-white dark:bg-card ">
-      <div>Search</div>
+      <div>
+        <AdminSearch />
+      </div>
       <div className="flex items-center gap-2">
         <ThemeSwitch />
         <UserDropDown />
