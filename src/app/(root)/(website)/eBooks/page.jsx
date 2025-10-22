@@ -6,6 +6,12 @@ import ProductModal from "@/components/ProductModal";
 import ProductHeader from "@/components/ProductHeader";
 import { useRouter } from "next/navigation";
 
+// export const metadata = {
+//   title: "Motherhood Poetry Collection | Heartfelt Verses by MumWorld",
+//   description: "Dive into the emotional world of motherhood through beautifully written poems that capture joy, love, and the journey of being a mom.",
+//   keywords: "pregnancy blog, parenting articles, motherhood blog, baby care tips",
+// }
+
 // Sample product data
 const productsData = [
   {

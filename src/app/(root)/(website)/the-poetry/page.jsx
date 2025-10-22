@@ -3,6 +3,12 @@ import { getPoetryPosts } from "@/lib/content";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Motherhood Poetry Collection | Heartfelt Verses by MumWorld",
+  description: "Dive into the emotional world of motherhood through beautifully written poems that capture joy, love, and the journey of being a mom.",
+  keywords: "pregnancy blog, parenting articles, motherhood blog, baby care tips",
+}
+
 const POSTS_PER_PAGE = 4;
 
 export default async function ArticlePage({ searchParams }) {

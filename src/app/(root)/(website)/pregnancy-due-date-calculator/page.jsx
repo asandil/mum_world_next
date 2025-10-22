@@ -3,6 +3,12 @@ import PregnancyCalculatorDetailed from "@/components/PregnancyCalculatorDetaile
 import Image from "next/image";
 import React from "react";
 
+export const metadata = {
+  title: "Pregnancy Due Date Calculator | Track Your Baby’s Arrival",
+  description: "Use our free pregnancy due date calculator to estimate your baby’s arrival, monitor growth milestones, and plan your pregnancy journey with ease.",
+  keywords: "pregnancy blog, parenting articles, motherhood blog, baby care tips",
+}
+
 const page = () => {
   return (
     <div>

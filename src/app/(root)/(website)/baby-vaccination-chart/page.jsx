@@ -4,6 +4,13 @@ import PregnancyCalculatorDetailed from "@/components/PregnancyCalculatorDetaile
 import ImmunizationScheduleAndChart from "@/components/ImmunizationScheduleAndChart";
 import ImmunizationScheduler from "@/components/ImmunizationSchedule";
 
+
+export const metadata = {
+  title: "Baby Vaccination Chart India | Immunization Schedule & Reminders | MumWorld",
+  description: "Stay on top of your baby’s vaccine schedule with MumWorld’s simple, reliable vaccination chart — guiding parents through every essential immunization milestone.",
+  keywords: "pregnancy blog, parenting articles, motherhood blog, baby care tips",
+}
+
 const page = () => {
   return (
     <>

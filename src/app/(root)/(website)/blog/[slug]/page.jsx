@@ -6,6 +6,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+export const metadata = {
+  title: "Motherhood & Wellness Blog | Pregnancy & Baby Care Insights | MumWorld",
+  description: "Discover inspiring articles on pregnancy, parenting, baby nutrition, and wellness. Stay informed and supported throughout your motherhood journey on the MumWorld blog.",
+  keywords: "pregnancy blog, parenting articles, motherhood blog, baby care tips",
+}
+
 // Server Component
 const BlogPage = async ({ params }) => {
   const { slug } = params; // ✅ Works in server component

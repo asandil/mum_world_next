@@ -2,6 +2,13 @@ import faqdata from "@/assets/FaqData";
 import FAQAccordion from "@/components/Faq";
 import React from "react";
 
+
+export const metadata = {
+  title: "Pregnancy & Newborn FAQs | MumWorld Answers",
+  description: "Explore answers to top pregnancy and newborn care questions. Find clear guidance on health, nutrition, and parenting from MumWorld experts.",
+  keywords: "pregnancy blog, parenting articles, motherhood blog, baby care tips",
+}
+
 const page = () => {
   return (
     <div>

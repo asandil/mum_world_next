@@ -6,6 +6,12 @@ import WeightGainCalculatorDetailed from "@/components/WeightGainCalculatorDetai
 import Image from "next/image";
 import React from "react";
 
+export const metadata = {
+  title: "Pregnancy Weight Gain Calculator | Healthy Pregnancy Tracker",
+  description: "Calculate healthy pregnancy weight gain week by week. Stay on track with our easy pregnancy weight gain calculator and expert wellness insights.",
+  keywords: "pregnancy blog, parenting articles, motherhood blog, baby care tips",
+}
+
 const page = () => {
   return (
     <div>

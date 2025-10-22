@@ -2,6 +2,13 @@ import FeedBackForm from "@/components/FeedBackForm";
 import React from "react";
 import { BsFillHeartFill } from "react-icons/bs";
 
+export const metadata = {
+  title: "Share Your Feedback | Help MumWorld Improve for You",
+  description: "Share your feedback and help us create better pregnancy and newborn care tools. Your experience at MumWorld matters to us.",
+  keywords: "pregnancy blog, parenting articles, motherhood blog, baby care tips",
+}
+
+
 const ShareYourFeedback = () => {
   return (
     <div>

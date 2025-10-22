@@ -1,6 +1,12 @@
 "use client";
 import React, { useEffect, useMemo, useState, useCallback } from "react";
 
+// export const metadata = {
+//   title: "My Orders | Track Your Purchases on MumWorld",
+//   description: "View, track, and manage your MumWorld orders easily. Stay updated on your purchases and enjoy a seamless shopping experience.",
+//   keywords: "pregnancy blog, parenting articles, motherhood blog, baby care tips",
+// }
+
 export default function OrdersPage() {
   const [orders, setOrders] = useState([]);
   const [pdfError, setPdfError] = useState(null);
