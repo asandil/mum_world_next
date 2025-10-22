@@ -5,6 +5,7 @@ import TestimonialCarousel from "@/components/Testimonial ";
 import FeedBackForm from "@/components/FeedBackForm";
 import { BsChatHeartFill } from "react-icons/bs";
 import { BsFillHeartFill } from "react-icons/bs";
+import Home from "@/app/(root)/(website)/page"
 
 export const metadata = {
   title: "Pregnancy Journey & Newborn Care | Tools, Tips & Support | MumWorld",
@@ -12,7 +13,7 @@ export const metadata = {
   keywords: "pregnancy tips, newborn care, baby development, motherhood",
 }
 
-export default function Home() {
+export default function MainHome() {
   return (
     <>
       <div className="">
@@ -150,6 +151,7 @@ export default function Home() {
         <section>
           <TestimonialCarousel />
         </section>
+        <Home/>
       </div>
     </>
   );
