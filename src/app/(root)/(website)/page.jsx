@@ -4,6 +4,8 @@ import React from "react";
 import banner1 from "@/assets/images/banner1.png";
 import banner2 from "@/assets/images/banner2.png";
 import Image from "next/image";
+import FeaturedProduct from "@/components/Application/website/FeaturedProduct";
+import advertisingBanner from "@/assets/images/advertisingBanner.png";
 
 const Home = () => {
   return (
@@ -36,6 +38,16 @@ const Home = () => {
             </Link>
           </div>
         </div>
+      </section>
+      <FeaturedProduct />
+      <section className="w-full sm:pt-20 pt-5 pb-10">
+        <Image
+          src={advertisingBanner.src}
+          width={advertisingBanner.width}
+          height={advertisingBanner.height}
+          alt="advertisingBanner"
+          className="w-full"
+        />
       </section>
     </>
   );
