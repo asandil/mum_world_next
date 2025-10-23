@@ -8,6 +8,8 @@ import slider1 from "@/assets/images/slider-1.png";
 import slider2 from "@/assets/images/slider-2.png";
 import slider3 from "@/assets/images/slider-3.png";
 import slider4 from "@/assets/images/slider-4.png";
+import slider5 from "@/assets/images/slider-5.png";
+import slider6 from "@/assets/images/slider-6.png";
 import Image from "next/image";
 import { LuChevronRight } from "react-icons/lu";
 import { LuChevronLeft } from "react-icons/lu";
@@ -68,6 +70,7 @@ const MainSlider = () => {
             width={slider1.width}
             height={slider1.height}
             alt="slider 1"
+            className="h-150"
           />
         </div>
         <div>
@@ -76,6 +79,7 @@ const MainSlider = () => {
             width={slider2.width}
             height={slider2.height}
             alt="slider 2"
+            className="h-150"
           />
         </div>
         <div>
@@ -84,6 +88,7 @@ const MainSlider = () => {
             width={slider3.width}
             height={slider3.height}
             alt="slider 3"
+            className="h-150"
           />
         </div>
         <div>
@@ -92,6 +97,25 @@ const MainSlider = () => {
             width={slider4.width}
             height={slider4.height}
             alt="slider 4"
+            className="h-150"
+          />
+        </div>
+        <div>
+          <Image
+            src={slider5.src}
+            width={slider5.width}
+            height={slider5.height}
+            alt="slider 5"
+            className="h-150"
+          />
+        </div>
+        <div>
+          <Image
+            src={slider6.src}
+            width={slider6.width}
+            height={slider6.height}
+            alt="slider 6"
+            className="h-150"
           />
         </div>
       </Slider>
