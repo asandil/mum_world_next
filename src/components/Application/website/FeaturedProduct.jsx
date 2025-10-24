@@ -16,6 +16,7 @@ const FeaturedProduct = () => {
         const { data } = await axios(
           `${process.env.NEXT_PUBLIC_API_BASE_URL}/product/get-featured-product`
         );
+        console.log("Featured Product Data in Home Page", data);
         setProductData(data);
       } catch (error) {
         console.error("Error fetching featured products:", error);
