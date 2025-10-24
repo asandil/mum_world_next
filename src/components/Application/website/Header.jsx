@@ -3,6 +3,7 @@ import {
   USER_DASHBOARD,
   WEBSITE_HOME,
   WEBSITE_LOGIN,
+  WEBSITE_SHOP,
 } from "@/routes/WebsiteRoute";
 import Image from "next/image";
 import Link from "next/link";
@@ -64,7 +65,7 @@ const Header = () => {
                 <Link href={WEBSITE_HOME}>About</Link>
               </li>
               <li className="text-gray-600 hover:text-primary hover:font-semibold">
-                <Link href={WEBSITE_HOME}>Shop</Link>
+                <Link href={WEBSITE_SHOP}>Shop</Link>
               </li>
 
               <li className="text-gray-600 hover:text-primary hover:font-semibold">
