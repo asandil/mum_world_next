@@ -13,11 +13,11 @@ const kumbh = Kumbh_Sans({
 const layout = ({children}) => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <main>
         <div>{children}</div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
