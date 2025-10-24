@@ -13,6 +13,11 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import useWindowSize from "@/hooks/useWindowSize";
+import axios from "axios";
+import { useSearchParams } from "next/navigation";
+import { useInfiniteQuery } from "@tanstack/react-query";
+import ProductBox from "@/components/Application/website/ProductBox";
+import { ButtonLoading } from "@/components/Application/ButtonLoading";
 
 const breadcrumb = {
   title: "Shop",
@@ -20,10 +25,34 @@ const breadcrumb = {
 };
 
 const Shop = () => {
+  const searchParams = useSearchParams().toString();
   const [limit, setLimit] = useState(12);
   const [sorting, setSorting] = useState("default_sorting");
   const [isMobileFilter, setIsMobileFilter] = useState(false);
   const windowSize = useWindowSize();
+
+  const fetchProduct = async (pageParam) => {
+    const { data: getProduct } = await axios.get(
+      `/api/shop?page=${pageParam}&limit=${limit}&sort=${sorting}&${searchParams}`
+    );
+    console.log("getProduct in Shop UI ", getProduct);
+    if (!getProduct.success) {
+      return;
+    }
+    return getProduct.data;
+  };
+
+  const { error, data, isFetching, fetchNextPage, hasNextPage } =
+    useInfiniteQuery({
+      queryKey: ["shop-products", limit, sorting, searchParams],
+      queryFn: async ({ pageParam = 0 }) => await fetchProduct(pageParam),
+      initialPageParam: 0,
+      getNextPageParam: (lastPage) => {
+        return lastPage.nextPage;
+      },
+    });
+
+  console.log(" Product Data In UI Shopping Page. ", data);
 
   return (
     <div>
@@ -36,9 +65,12 @@ const Shop = () => {
             </div>
           </div>
         ) : (
-          <Sheet open={isMobileFilter} onOpenChange={() => setIsMobileFilter(false)}>
-            <SheetContent side="left" className="block" >
-              <SheetHeader className="border-b" >
+          <Sheet
+            open={isMobileFilter}
+            onOpenChange={() => setIsMobileFilter(false)}
+          >
+            <SheetContent side="left" className="block">
+              <SheetHeader className="border-b">
                 <SheetTitle>Filter</SheetTitle>
                 <SheetDescription></SheetDescription>
               </SheetHeader>
@@ -58,8 +90,41 @@ const Shop = () => {
             mobileFilterOpen={isMobileFilter}
             setMobileFilterOpen={setIsMobileFilter}
           />
+
+          {isFetching && (
+            <div className="p-3 font-semibold text-center">Loading...</div>
+          )}
+          {error && (
+            <div className="p-3 font-semibold text-center text-red-500 ">
+              {error.message}
+            </div>
+          )}
+
+          <div className="grid lg:grid-cols-4 grid-cols-2 lg:gap-10 gap-5">
+            {data &&
+              data.pages.map((page) =>
+                page.products.map((product) => (
+                  <ProductBox key={product._id} product={product} />
+                ))
+              )}
+          </div>
+
+          {/* loadmore button */}
+          <div className="flex justify-center mt-10">
+            {hasNextPage ? (
+              <ButtonLoading
+                type="button"
+                loading={isFetching}
+                text="Load More"
+                onClick={fetchNextPage}
+              />
+            ) : (
+              <>{!isFetching && <span>No more data to load.</span>}</>
+            )}
+          </div>
         </div>
       </section>
+      
     </div>
   );
 };
