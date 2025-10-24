@@ -1,9 +1,18 @@
-"use client"
+"use client";
 import Filter from "@/components/Application/website/Filter";
 import Sorting from "@/components/Application/website/Sorting";
 import WebsiteBreadcrumb from "@/components/Application/website/WebsiteBreadcrumb";
 import { WEBSITE_SHOP } from "@/routes/WebsiteRoute";
 import React, { useState } from "react";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import useWindowSize from "@/hooks/useWindowSize";
 
 const breadcrumb = {
   title: "Shop",
@@ -11,21 +20,44 @@ const breadcrumb = {
 };
 
 const Shop = () => {
-
   const [limit, setLimit] = useState(12);
   const [sorting, setSorting] = useState("default_sorting");
+  const [isMobileFilter, setIsMobileFilter] = useState(false);
+  const windowSize = useWindowSize();
 
   return (
-    <div >
+    <div>
       <WebsiteBreadcrumb props={breadcrumb} />
       <section className="lg:flex lg:px-32 px-4 my-20">
-        <div className="w-72 me-4 ">
-          <div className="sticky top-0 bg-gray-50 p-4 rounded">
-            <Filter />
+        {windowSize.width >= 1024 ? (
+          <div className="w-72 me-4 lg:block hidden">
+            <div className="sticky top-0 bg-gray-50 p-4 rounded">
+              <Filter />
+            </div>
           </div>
-        </div>
-        <div className="lg:w-[calc(100%-18rem)]" >
-            <Sorting limit={limit} setLimit={setLimit} sorting={sorting} setSorting={setSorting} />
+        ) : (
+          <Sheet open={isMobileFilter} onOpenChange={() => setIsMobileFilter(false)}>
+            <SheetContent side="left" className="block" >
+              <SheetHeader className="border-b" >
+                <SheetTitle>Filter</SheetTitle>
+                <SheetDescription></SheetDescription>
+              </SheetHeader>
+              <div className="p-5 overflow-auto h-[calc(100vh-80px)] ">
+                <Filter />
+              </div>
+            </SheetContent>
+          </Sheet>
+        )}
+
+        <div className="lg:w-[calc(100%-18rem)]">
+          <Sorting
+            limit={limit}
+            setLimit={setLimit}
+            sorting={sorting}
+            setSorting={setSorting}
+            mobileFilterOpen={isMobileFilter}
+            setMobileFilterOpen={setIsMobileFilter}
+          />
         </div>
       </section>
     </div>

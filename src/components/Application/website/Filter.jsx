@@ -222,7 +222,7 @@ const Filter = () => {
             <div className="mt-4">
               <ButtonLoading
                 type="button"
-                text="Filter Product"
+                text="Filter Price"
                 className="rounded-full cursor-pointer "
                 onClick={handlePriceFilter}
               />
