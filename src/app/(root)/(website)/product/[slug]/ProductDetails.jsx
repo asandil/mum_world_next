@@ -17,6 +17,7 @@ import { decode } from "entities";
 import { FaPlus } from "react-icons/fa6";
 import { FiMinus } from "react-icons/fi";
 import { Input } from "@/components/ui/input";
+import { ButtonLoading } from "@/components/Application/ButtonLoading";
 
 const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
   // console.log("product",product)
@@ -37,14 +38,31 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
   };
 
   const handleQty = (actionType) => {
-    if(actionType === 'inc'){
-      setQty(prev => prev + 1);
+    if (actionType === "inc") {
+      setQty((prev) => prev + 1);
     } else {
-      if(qty !== 1){
-        setQty(prev => prev - 1);
+      if (qty !== 1) {
+        setQty((prev) => prev - 1);
       }
     }
-  }
+  };
+
+  const handleAddToCart = () => {
+    const cartProduct = {
+      productId: product._id,
+      variantId: variant._id,
+      name: product.name,
+      url: product.slug,
+      size: variant.size,
+      color: variant.color,
+      mrp: variant.mrp,
+      sellingPrice: variant.sellingPrice,
+      image: variant?.media?.[0]?.secure_url,
+      qty: qty,
+    };
+    console.log("Add to cart product:", cartProduct);
+    }
+  
 
   return (
     <div className="lg:px-32 px-4">
@@ -99,13 +117,18 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
           </div>
         </div>
         <div className="md:w-1/2 md:mt-0 mt-5">
+          {/* Name Section */}
           <h1 className="text-3xl font-semibold mb-2">{product.name}</h1>
+
+          {/* Review Section */}
           <div className="flex items-center gap-1 mb-5">
             {Array.from({ length: 5 }).map((_, i) => (
               <IoStar key={i} />
             ))}
             <span className="text-sm ps-2">({reviewCount} Reviews )</span>
           </div>
+
+          {/* Selling Price, Mrp and Discount Percentage Section */}
           <div className="flex items-center gap-2 mb-3">
             <span className=" text-xl font-semibold">
               {variant?.sellingPrice.toLocaleString("en-IN", {
@@ -123,11 +146,14 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
               {variant?.discountPercentage}% OFF
             </span>
           </div>
+
+          {/* Product Description */}
           <div
             className="line-clamp-3"
             dangerouslySetInnerHTML={{ __html: decode(product.description) }}
           ></div>
 
+          {/* Color Section */}
           <div className="mt-5">
             <p className="mb-2">
               <span
@@ -155,6 +181,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
             </div>
           </div>
 
+          {/* Size Section */}
           <div className="mt-5">
             <p className="mb-2">
               <span
@@ -182,23 +209,37 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
             </div>
           </div>
 
+          {/* Quantity Section */}
           <div className="mt-5">
             <p className="font-bold mb-2">Quantity</p>
             <div className="flex items-center h-10 border w-fit rounded-full">
-              <button type="button" onClick={() => handleQty("desc")} className="h-full w-10 flex justify-center items-center cursor-pointer ">
+              <button
+                type="button"
+                onClick={() => handleQty("desc")}
+                className="h-full w-10 flex justify-center items-center cursor-pointer "
+              >
                 <FiMinus />
               </button>
-              <Input type="text" value={qty} className="w-14 text-center border-none outline-offset-0" readOnly/>
-              <button type="button" onClick={() => handleQty("inc")} className="h-full w-10 flex justify-center items-center cursor-pointer ">
+              <Input
+                type="text"
+                value={qty}
+                className="w-14 text-center border-none outline-offset-0"
+                readOnly
+              />
+              <button
+                type="button"
+                onClick={() => handleQty("inc")}
+                className="h-full w-10 flex justify-center items-center cursor-pointer "
+              >
                 <FaPlus />
               </button>
             </div>
           </div>
-
-          <div className="" >
-
+          
+          {/* Add To Cart Section */}
+          <div className="mt-5">
+            <ButtonLoading type="button" text="Add To Cart" className="w-full rounded-full py-6 text-md cursor-pointer" onClick={handleAddToCart} />
           </div>
-
         </div>
       </div>
     </div>
