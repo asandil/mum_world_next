@@ -100,7 +100,7 @@ const Shop = () => {
             </div>
           )}
 
-          <div className="grid lg:grid-cols-4 grid-cols-2 lg:gap-10 gap-5">
+          <div className="grid lg:grid-cols-4 grid-cols-2 lg:gap-10 gap-5 mt-10 ">
             {data &&
               data.pages.map((page) =>
                 page.products.map((product) => (
