@@ -8,7 +8,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import logo from "@/assets/images/logo.jpg";
+import logo from "@/assets/images/headerLogo.png";
 import { IoIosSearch } from "react-icons/io";
 import Cart from "./Cart";
 import { VscAccount } from "react-icons/vsc";
@@ -17,11 +17,13 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import userIcon from "@/assets/images/user.png";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { IoMdClose } from "react-icons/io";
+import Search from "./Search";
 
 const Header = () => {
   const auth = useSelector((store) => store.authStore.auth);
 
   const [isMobileMenu, setIsMobileMenu] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
 
   return (
     <div className="bg-white border-b lg:px-32 px-4 ">
@@ -32,10 +34,10 @@ const Header = () => {
             alt="logo"
             width={383}
             height={146}
-            className="lg:w-32 w-24"
+            className="lg:w-42 w-24"
           />
         </Link>
-        <div className="flex justify-between gap-20 ">
+        <div className="flex justify-between gap-20">
           <nav
             className={`lg:relative lg:w-auto lg:h-auto lg:top-0 lg:left-0 lg:p-0 bg-white fixed z-50 top-0 w-full  h-screen transition-all ${
               isMobileMenu ? "left-0" : "-left-full"
@@ -47,7 +49,7 @@ const Header = () => {
                 alt="logo"
                 width={383}
                 height={146}
-                className="lg:w-32 w-24"
+                className="lg:w-42 w-24"
               />
               <button type="button" onClick={() => setIsMobileMenu(false)}>
                 <IoMdClose
@@ -85,6 +87,7 @@ const Header = () => {
           <div className="flex justify-between items-center gap-8  ">
             <button type="button">
               <IoIosSearch
+                onClick={() => setShowSearch(!showSearch)}
                 className="text-gray-500 hover:text-primary cursor-pointer "
                 size={25}
               />
@@ -119,6 +122,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      <Search isShow={showSearch} />
     </div>
   );
 };
