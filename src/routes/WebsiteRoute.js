@@ -9,3 +9,5 @@ export const USER_DASHBOARD = "/my-account"
 
 // Shop routes
 export const WEBSITE_SHOP = "/shop"
+
+export const WEBSITE_PRODUCT_DETAILS = (slug) => slug ? `/product/${slug}` : "/product"

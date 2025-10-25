@@ -2,11 +2,12 @@ import Image from "next/image";
 import React from "react";
 import imgPlaceholder from "@/assets/images/img-placeholder.webp";
 import Link from "next/link";
+import { WEBSITE_PRODUCT_DETAILS } from "@/routes/WebsiteRoute";
 
 const ProductBox = ({ product }) => {
   return (
     <div className="rounded-lg hover:shadow-lg">
-      <Link href="">
+      <Link href={WEBSITE_PRODUCT_DETAILS(product?.slug)}>
         <Image
           src={product?.media?.[0]?.secure_url || imgPlaceholder.src}
           width={400}
