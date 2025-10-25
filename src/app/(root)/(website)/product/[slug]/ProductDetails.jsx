@@ -12,6 +12,11 @@ import { WEBSITE_PRODUCT_DETAILS, WEBSITE_SHOP } from "@/routes/WebsiteRoute";
 import Link from "next/link";
 import Image from "next/image";
 import imagePlaceholder from "@/assets/images/img-placeholder.webp";
+import { IoStar } from "react-icons/io5";
+import { decode } from "entities";
+import { FaPlus } from "react-icons/fa6";
+import { FiMinus } from "react-icons/fi";
+import { Input } from "@/components/ui/input";
 
 const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
   // console.log("product",product)
@@ -21,6 +26,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
   // console.log("reviewCount",reviewCount)
 
   const [activeThumb, setActiveThumb] = useState();
+  const [qty, setQty] = useState(1);
 
   useEffect(() => {
     setActiveThumb(variant?.media?.[0]?.secure_url);
@@ -29,6 +35,16 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
   const handleThumb = (thumbUrl) => {
     setActiveThumb(thumbUrl);
   };
+
+  const handleQty = (actionType) => {
+    if(actionType === 'inc'){
+      setQty(prev => prev + 1);
+    } else {
+      if(qty !== 1){
+        setQty(prev => prev - 1);
+      }
+    }
+  }
 
   return (
     <div className="lg:px-32 px-4">
@@ -82,8 +98,107 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
             ))}
           </div>
         </div>
-        <div>
-          
+        <div className="md:w-1/2 md:mt-0 mt-5">
+          <h1 className="text-3xl font-semibold mb-2">{product.name}</h1>
+          <div className="flex items-center gap-1 mb-5">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <IoStar key={i} />
+            ))}
+            <span className="text-sm ps-2">({reviewCount} Reviews )</span>
+          </div>
+          <div className="flex items-center gap-2 mb-3">
+            <span className=" text-xl font-semibold">
+              {variant?.sellingPrice.toLocaleString("en-IN", {
+                style: "currency",
+                currency: "INR",
+              })}
+            </span>
+            <span className=" text-sm line-through text-gray-500">
+              {variant?.mrp.toLocaleString("en-IN", {
+                style: "currency",
+                currency: "INR",
+              })}
+            </span>
+            <span className=" bg-green-500 rounded-2xl px-3 py-1 text-white text-xs ms-5 ">
+              {variant?.discountPercentage}% OFF
+            </span>
+          </div>
+          <div
+            className="line-clamp-3"
+            dangerouslySetInnerHTML={{ __html: decode(product.description) }}
+          ></div>
+
+          <div className="mt-5">
+            <p className="mb-2">
+              <span
+                className="
+              font-semibold"
+              >
+                Color:
+              </span>{" "}
+              {variant.color}
+            </p>
+            <div className="flex gap-5">
+              {colors.map((color) => (
+                <Link
+                  href={`${WEBSITE_PRODUCT_DETAILS(
+                    product.slug
+                  )}?color=${color}&size=${variant.size}`}
+                  key={color}
+                  className={`border py-1 px-3 rounded-lg cursor-pointer hover:bg-primary hover:text-white ${
+                    color === variant.color ? "bg-primary text-white" : ""
+                  }`}
+                >
+                  {color}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-5">
+            <p className="mb-2">
+              <span
+                className="
+              font-semibold"
+              >
+                Size:
+              </span>{" "}
+              {variant.size}
+            </p>
+            <div className="flex gap-5">
+              {sizes.map((size) => (
+                <Link
+                  href={`${WEBSITE_PRODUCT_DETAILS(product.slug)}?color=${
+                    variant.color
+                  }&size=${size}`}
+                  key={size}
+                  className={`border py-1 px-3 rounded-lg cursor-pointer hover:bg-primary hover:text-white ${
+                    size === variant.size ? "bg-primary text-white" : ""
+                  }`}
+                >
+                  {size}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-5">
+            <p className="font-bold mb-2">Quantity</p>
+            <div className="flex items-center h-10 border w-fit rounded-full">
+              <button type="button" onClick={() => handleQty("desc")} className="h-full w-10 flex justify-center items-center cursor-pointer ">
+                <FiMinus />
+              </button>
+              <Input type="text" value={qty} className="w-14 text-center border-none outline-offset-0" readOnly/>
+              <button type="button" onClick={() => handleQty("inc")} className="h-full w-10 flex justify-center items-center cursor-pointer ">
+                <FaPlus />
+              </button>
+            </div>
+          </div>
+
+          <div className="" >
+
+          </div>
+
         </div>
       </div>
     </div>
