@@ -11,3 +11,6 @@ export const USER_DASHBOARD = "/my-account"
 export const WEBSITE_SHOP = "/shop"
 
 export const WEBSITE_PRODUCT_DETAILS = (slug) => slug ? `/product/${slug}` : "/product"
+
+// Cart routes
+export const WEBSITE_CART = "/cart"

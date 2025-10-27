@@ -8,7 +8,11 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { WEBSITE_PRODUCT_DETAILS, WEBSITE_SHOP } from "@/routes/WebsiteRoute";
+import {
+  WEBSITE_CART,
+  WEBSITE_PRODUCT_DETAILS,
+  WEBSITE_SHOP,
+} from "@/routes/WebsiteRoute";
 import Link from "next/link";
 import Image from "next/image";
 import imagePlaceholder from "@/assets/images/img-placeholder.webp";
@@ -18,6 +22,11 @@ import { FaPlus } from "react-icons/fa6";
 import { FiMinus } from "react-icons/fi";
 import { Input } from "@/components/ui/input";
 import { ButtonLoading } from "@/components/Application/ButtonLoading";
+import { useDispatch, useSelector } from "react-redux";
+import { addIntoCart } from "@/store/reducer/cartReducer";
+import { showToast } from "@/lib/showToast";
+import { Button } from "@/components/ui/button";
+import loadingSvg from "@/assets/images/loading.svg";
 
 const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
   // console.log("product",product)
@@ -26,11 +35,33 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
   // console.log("sizes",sizes)
   // console.log("reviewCount",reviewCount)
 
+  const dispatch = useDispatch();
+  const cartStore = useSelector((store) => store.cartStore);
+
   const [activeThumb, setActiveThumb] = useState();
   const [qty, setQty] = useState(1);
+  const [isAddedIntoCart, setIsAddedIntoCart] = useState(false);
+
+  const [isProductLoading, setIsProductLoading] = useState(false);
 
   useEffect(() => {
     setActiveThumb(variant?.media?.[0]?.secure_url);
+  }, [variant]);
+
+  useEffect(() => {
+    if (cartStore.count > 0) {
+      const existingProduct = cartStore.products.findIndex(
+        (cartProduct) =>
+          cartProduct.productId === product._id &&
+          cartProduct.variantId === variant._id
+      );
+      if (existingProduct >= 0) {
+        setIsAddedIntoCart(true);
+      } else {
+        setIsAddedIntoCart(false);
+      }
+    }
+    setIsProductLoading(false);
   }, [variant]);
 
   const handleThumb = (thumbUrl) => {
@@ -60,9 +91,11 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
       image: variant?.media?.[0]?.secure_url,
       qty: qty,
     };
+    dispatch(addIntoCart(cartProduct));
+    setIsAddedIntoCart(true);
+    showToast("success", "Product added into cart successfully.");
     console.log("Add to cart product:", cartProduct);
-    }
-  
+  };
 
   return (
     <div className="lg:px-32 px-4">
@@ -87,7 +120,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
           </BreadcrumbList>
         </Breadcrumb>
       </div>
-      <div className="md:flex justify-between items-start lg:gap-10 gap-5 mb-20">
+      <div className=" relative md:flex justify-between items-start lg:gap-10 gap-5 mb-20">
         <div className="md:w-1/2 xl:flex xl:justify-center xl:gap-5 md:sticky md:top-0">
           <div className="xl:order-last xl:mb-0 mb-5 xl:w-[calc(100%-144px)]">
             <Image
@@ -116,7 +149,16 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
             ))}
           </div>
         </div>
-        <div className="md:w-1/2 md:mt-0 mt-5">
+
+        <div className="hidden md:block">
+          {isProductLoading && (
+            <div className="  absolute z-50 left-1/2 top-[25%] ">
+              <Image src={loadingSvg} width={80} height={80} />
+            </div>
+          )}
+        </div>
+
+        <div className="md:w-1/2 md:mt-0 mt-5 relative">
           {/* Name Section */}
           <h1 className="text-3xl font-semibold mb-2">{product.name}</h1>
 
@@ -152,7 +194,6 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
             className="line-clamp-3"
             dangerouslySetInnerHTML={{ __html: decode(product.description) }}
           ></div>
-
           {/* Color Section */}
           <div className="mt-5">
             <p className="mb-2">
@@ -171,6 +212,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
                     product.slug
                   )}?color=${color}&size=${variant.size}`}
                   key={color}
+                  onClick={() => setIsProductLoading(true)}
                   className={`border py-1 px-3 rounded-lg cursor-pointer hover:bg-primary hover:text-white ${
                     color === variant.color ? "bg-primary text-white" : ""
                   }`}
@@ -179,6 +221,14 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
                 </Link>
               ))}
             </div>
+          </div>
+
+          <div className="block md:hidden">
+            {isProductLoading && (
+              <div className="  absolute z-50 left-[45%] top-[30%] ">
+                <Image src={loadingSvg} width={80} height={80} />
+              </div>
+            )}
           </div>
 
           {/* Size Section */}
@@ -199,6 +249,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
                     variant.color
                   }&size=${size}`}
                   key={size}
+                  onClick={() => setIsProductLoading(true)}
                   className={`border py-1 px-3 rounded-lg cursor-pointer hover:bg-primary hover:text-white ${
                     size === variant.size ? "bg-primary text-white" : ""
                   }`}
@@ -235,10 +286,26 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
               </button>
             </div>
           </div>
-          
+
           {/* Add To Cart Section */}
+
           <div className="mt-5">
-            <ButtonLoading type="button" text="Add To Cart" className="w-full rounded-full py-6 text-md cursor-pointer" onClick={handleAddToCart} />
+            {!isAddedIntoCart ? (
+              <ButtonLoading
+                type="button"
+                text="Add To Cart"
+                className="w-full rounded-full py-6 text-md cursor-pointer"
+                onClick={handleAddToCart}
+              />
+            ) : (
+              <Button
+                type="button"
+                asChild
+                className="w-full rounded-full py-6 text-md cursor-pointer"
+              >
+                <Link href={WEBSITE_CART}>Go To Cart</Link>
+              </Button>
+            )}
           </div>
         </div>
       </div>
