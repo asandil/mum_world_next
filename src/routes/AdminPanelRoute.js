@@ -30,5 +30,9 @@ export const ADMIN_CUSTOMERS_SHOW = "/admin/customers";
 // Rating & review
 export const ADMIN_REVIEW_SHOW = "/admin/review";
 
+// Banner and Adv
+export const ADMIN_BANNER_ADD = "/admin/banner/add";
+export const ADMIN_BANNER_SHOW = "/admin/banner"
+
 // Trash route
 export const ADMIN_TRASH = "/admin/trash";
