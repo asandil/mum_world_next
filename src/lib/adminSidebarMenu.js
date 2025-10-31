@@ -9,6 +9,7 @@ import { RiCoupon2Line } from "react-icons/ri";
 import { RiAdvertisementLine } from "react-icons/ri";
 import {
   ADMIN_BANNER_ADD,
+  ADMIN_BANNER_SHOW,
   ADMIN_CATEGORY_ADD,
   ADMIN_CATEGORY_SHOW,
   ADMIN_COUPON_ADD,
@@ -99,8 +100,18 @@ export const adminAppSidebarMenu = [
   },
   {
     title: "Banner and Add",
-    url: ADMIN_BANNER_ADD,
+    url: "#",
     icon: RiAdvertisementLine,
+    submenu: [
+      {
+        title: "Add Banners",
+        url: ADMIN_BANNER_ADD,
+      },
+      {
+        title: "All Banner",
+        url: ADMIN_BANNER_SHOW
+      },
+    ],
   },
   {
     title: "Media",

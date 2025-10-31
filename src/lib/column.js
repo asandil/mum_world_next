@@ -157,3 +157,14 @@ export const DT_REVIEW_COLUMN = [
     header: "Review",
   },
 ];
+
+export const DT_BANNER_COLUMN = [
+  {
+    accessorKey: "name",
+    header: "Banner Name ",
+  },
+  {
+    accessorKey: "slug",
+    header: "Slug",
+  },
+];

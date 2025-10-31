@@ -7,17 +7,20 @@ export const ADMIN_MEDIA_EDIT = (id) => (id ? `/admin/media/edit/${id}` : "");
 // Category routes
 export const ADMIN_CATEGORY_ADD = "/admin/category/add";
 export const ADMIN_CATEGORY_SHOW = "/admin/category";
-export const ADMIN_CATEGORY_EDIT = (id) => id ? `/admin/category/edit/${id}` : "";
+export const ADMIN_CATEGORY_EDIT = (id) =>
+  id ? `/admin/category/edit/${id}` : "";
 
 // Product routes
 export const ADMIN_PRODUCT_ADD = "/admin/product/add";
 export const ADMIN_PRODUCT_SHOW = "/admin/product";
-export const ADMIN_PRODUCT_EDIT = (id) => id ? `/admin/product/edit/${id}` : "";
+export const ADMIN_PRODUCT_EDIT = (id) =>
+  id ? `/admin/product/edit/${id}` : "";
 
 // Product Variant routes
 export const ADMIN_PRODUCT_VARIANT_ADD = "/admin/product-variant/add";
 export const ADMIN_PRODUCT_VARIANT_SHOW = "/admin/product-variant";
-export const ADMIN_PRODUCT_VARIANT_EDIT = (id) => id ? `/admin/product-variant/edit/${id}` : "";
+export const ADMIN_PRODUCT_VARIANT_EDIT = (id) =>
+  id ? `/admin/product-variant/edit/${id}` : "";
 
 // Product Variant routes
 export const ADMIN_COUPON_ADD = "/admin/coupon/add";
@@ -32,7 +35,8 @@ export const ADMIN_REVIEW_SHOW = "/admin/review";
 
 // Banner and Adv
 export const ADMIN_BANNER_ADD = "/admin/banner/add";
-export const ADMIN_BANNER_SHOW = "/admin/banner"
+export const ADMIN_BANNER_SHOW = "/admin/banner";
+export const ADMIN_BANNER_EDIT = (id) => (id ? `/admin/banner/edit/${id}` : "");
 
 // Trash route
 export const ADMIN_TRASH = "/admin/trash";
