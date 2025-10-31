@@ -7,12 +7,9 @@ const bannerSchema = new mongoose.Schema(
       required: true,
       trim: true,
     },
-    slug: {
-      type: String,
+    discountPercentage:{
+      type: Number,
       required: true,
-      unique: true,
-      lowercase: true,
-      trim: true,
     },
     media: [
       {

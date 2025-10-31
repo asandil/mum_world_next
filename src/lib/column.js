@@ -164,7 +164,7 @@ export const DT_BANNER_COLUMN = [
     header: "Banner Name ",
   },
   {
-    accessorKey: "slug",
-    header: "Slug",
+    accessorKey: "discountPercentage",
+    header: "Discount Percentage",
   },
 ];
