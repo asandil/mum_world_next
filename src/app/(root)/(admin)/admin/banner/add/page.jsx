@@ -1,6 +1,7 @@
 "use client";
 import BreadCrumb from "@/components/Application/Admin/BreadCrumb";
 import MediaModal from "@/components/Application/Admin/MediaModal";
+import { ButtonLoading } from "@/components/Application/ButtonLoading";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   Form,
@@ -10,6 +11,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { showToast } from "@/lib/showToast";
 import { zSchema } from "@/lib/zodSchema";
 import { ADMIN_BANNER_SHOW, ADMIN_DASHBOARD } from "@/routes/AdminPanelRoute";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -51,7 +53,31 @@ const AddBanner = () => {
   console.log("Add Banner Form", form);
 
   const onSubmit = async (values) => {
-    console.log("Form Value Data.", values);
+    console.log("Banner Form Data.", values);
+    setLoading(true);
+    try {
+      if(selectedMedia.length <= 0){
+        return showToast("error", "Please select media.")
+      }
+      const mediaIds = selectedMedia.map((media) => media._id);
+      values.media = mediaIds;
+
+      const { data: response } = await axios.post(
+        `/api/banner/create`,
+        values
+      );
+
+      if(!response.success){
+        throw new Error(response.messaage);
+      }
+      form.reset();
+      showToast("Success", response.messaage)
+      router.push(ADMIN_BANNER_SHOW)
+    } catch (error) {
+      showToast("error", error.messaage)
+    } finally {
+      setLoading(false)
+    }
   };
 
   return (
@@ -140,6 +166,16 @@ const AddBanner = () => {
                   <span className="font-semibold">Select Media</span>
                 </div>
               </div>
+
+              <div className="mb-3 mt-5" >
+                  <ButtonLoading 
+                    loading={loading}
+                    type="submit"
+                    text="Add Banner"
+                    className="cursor-pointer"
+                  />
+              </div>
+
             </form>
           </Form>
         </CardContent>
