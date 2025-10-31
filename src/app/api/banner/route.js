@@ -36,22 +36,13 @@ export async function GET(request) {
     if (globalFilter) {
       matchQuery["$or"] = [
         { name: { $regex: globalFilter, $options: "i" } },
-        { slug: { $regex: globalFilter, $options: "i" } },
-       
+        { discountPercentage: { $regex: globalFilter, $options: "i" } },
       ];
     }
 
     // Column filteration
     filters.forEach((filter) => {
-      if (
-        filter.id === "mrp" ||
-        filter.id === "sellingPrice" ||
-        filter.id === "discountPercentage"
-      ) {
-        matchQuery[filter.id] = Number(filter.value);
-      } else {
-        matchQuery[filter.id] = { $regex: filter.value, $options: "i" };
-      }
+      matchQuery[filter.id] = { $regex: filter.value, $options: "i" };
     });
 
     // Sorting
@@ -71,7 +62,7 @@ export async function GET(request) {
         $project: {
           _id: 1,
           name: 1,
-          slug: 1,
+          discountPercentage: 1,
           createdAt: 1,
           updatedAt: 1,
           deletedAt: 1,

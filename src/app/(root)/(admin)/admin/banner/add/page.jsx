@@ -16,6 +16,7 @@ import { zSchema } from "@/lib/zodSchema";
 import { ADMIN_BANNER_SHOW, ADMIN_DASHBOARD } from "@/routes/AdminPanelRoute";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormControl } from "@mui/material";
+import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -56,27 +57,24 @@ const AddBanner = () => {
     console.log("Banner Form Data.", values);
     setLoading(true);
     try {
-      if(selectedMedia.length <= 0){
-        return showToast("error", "Please select media.")
+      if (selectedMedia.length <= 0) {
+        return showToast("error", "Please select media.");
       }
       const mediaIds = selectedMedia.map((media) => media._id);
       values.media = mediaIds;
 
-      const { data: response } = await axios.post(
-        `/api/banner/create`,
-        values
-      );
+      const { data: response } = await axios.post(`/api/banner/create`, values);
 
-      if(!response.success){
-        throw new Error(response.messaage);
+      if (!response.success) {
+        throw new Error(response.message);
       }
       form.reset();
-      showToast("Success", response.messaage)
-      router.push(ADMIN_BANNER_SHOW)
+      showToast("Success", response.message);
+      router.push(ADMIN_BANNER_SHOW);
     } catch (error) {
-      showToast("error", error.messaage)
+      showToast("error", error.message);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
   };
 
@@ -167,15 +165,14 @@ const AddBanner = () => {
                 </div>
               </div>
 
-              <div className="mb-3 mt-5" >
-                  <ButtonLoading 
-                    loading={loading}
-                    type="submit"
-                    text="Add Banner"
-                    className="cursor-pointer"
-                  />
+              <div className="mb-3 mt-5">
+                <ButtonLoading
+                  loading={loading}
+                  type="submit"
+                  text="Add Banner"
+                  className="cursor-pointer"
+                />
               </div>
-
             </form>
           </Form>
         </CardContent>
