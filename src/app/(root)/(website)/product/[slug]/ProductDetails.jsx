@@ -17,7 +17,7 @@ import Link from "next/link";
 import Image from "next/image";
 import imagePlaceholder from "@/assets/images/img-placeholder.webp";
 import { IoStar } from "react-icons/io5";
-import { decode } from "entities";
+import { decode, encode } from "entities";
 import { FaPlus } from "react-icons/fa6";
 import { FiMinus } from "react-icons/fi";
 import { Input } from "@/components/ui/input";
@@ -306,6 +306,19 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
                 <Link href={WEBSITE_CART}>Go To Cart</Link>
               </Button>
             )}
+          </div>
+        </div>
+      </div>
+
+      <div className="mb-20">
+        <div className="shadow rounded border">
+          <div className="p-3 bg-gray-50 border-b">
+            <h2 className="font-semibold text-2xl">Product Description</h2>
+          </div>
+          <div className="p-3">
+            <div
+              dangerouslySetInnerHTML={{ __html: encode(product.description) }}
+            ></div>
           </div>
         </div>
       </div>
