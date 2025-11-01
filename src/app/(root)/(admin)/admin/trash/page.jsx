@@ -4,6 +4,7 @@ import DatatableWrapper from "@/components/Application/Admin/DatatableWrapper";
 import DeleteAction from "@/components/Application/Admin/DeleteAction";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
+  DT_BANNER_COLUMN,
   DT_CATEGORY_COLUMN,
   DT_COUPON_COLUMN,
   DT_CUSTOMERS_COLUMN,
@@ -63,6 +64,13 @@ const TRASH_CONFIG = {
     fetchUrl: "/api/review",
     exportUrl: "/api/review/export",
     deleteUrl: "/api/review/delete",
+  },
+  banner: {
+    title: "Banner Trash",
+    columns: DT_BANNER_COLUMN,
+    frtchUrl: "/api/banner",
+    exportUrl: "/api/banner/export",
+    deleteUrl: "/api/banner/delete",
   },
 };
 
