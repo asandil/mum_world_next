@@ -27,6 +27,7 @@ import { addIntoCart } from "@/store/reducer/cartReducer";
 import { showToast } from "@/lib/showToast";
 import { Button } from "@/components/ui/button";
 import loadingSvg from "@/assets/images/loading.svg";
+import ProductReview from "@/components/Application/website/Productreview";
 
 const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
   // console.log("product",product)
@@ -322,6 +323,9 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
           </div>
         </div>
       </div>
+
+      <ProductReview product={product} />
+
     </div>
   );
 };
