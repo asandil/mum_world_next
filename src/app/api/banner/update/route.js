@@ -2,12 +2,12 @@ import { isAuthenticated } from "@/lib/authentication";
 import { connectDB } from "@/lib/db";
 import { catchError, response } from "@/lib/helperFunction";
 import { zSchema } from "@/lib/zodSchema";
-import ProductModel from "@/models/Product.model";
-import { encode } from "entities";
+import BannerModel from "@/models/BannerAndAds.model";
 
 export async function PUT(request) {
   try {
     const auth = await isAuthenticated("admin");
+
     if (!auth.isAuth) {
       return response(false, 403, "Unauthorized or Not Admin.");
     }
@@ -19,12 +19,7 @@ export async function PUT(request) {
     const schema = zSchema.pick({
       _id: true,
       name: true,
-      slug: true,
-      category: true,
-      mrp: true,
-      sellingPrice: true,
       discountPercentage: true,
-      description: true,
       media: true,
     });
 
@@ -36,27 +31,22 @@ export async function PUT(request) {
 
     const validatedData = validate.data;
 
-    const getProduct = await ProductModel.findOne({
+    const getBanner = await BannerModel.findOne({
       deletedAt: null,
       _id: validatedData._id,
     });
 
-    if (!getProduct) {
-      return response(false, 404, "Data not found");
+    if (!getBanner) {
+      return response(false, 404, "Data not found.");
     }
 
-    getProduct.name = validatedData.name;
-    getProduct.slug = validatedData.slug;
-    getProduct.category = validatedData.category;
-    getProduct.mrp = validatedData.mrp;
-    getProduct.sellingPrice = validatedData.sellingPrice;
-    getProduct.discountPercentage = validatedData.discountPercentage;
-    getProduct.description = encode(validatedData.description);
-    getProduct.media = validatedData.media;
+    getBanner.name = validatedData.name;
+    getBanner.discountPercentage = validatedData.discountPercentage;
+    getBanner.media = validatedData.media;
 
-    await getProduct.save();
+    await getBanner.save();
 
-    return response(true, 200, "Product updated succesfully");
+    return response(true, 200, "Product updated succesfully.");
   } catch (error) {
     return catchError(error);
   }

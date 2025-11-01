@@ -1,5 +1,7 @@
 "use client";
+import { ADMIN_BANNER_SHOW, ADMIN_DASHBOARD } from "@/routes/AdminPanelRoute";
 import BreadCrumb from "@/components/Application/Admin/BreadCrumb";
+import { ButtonLoading } from "@/components/Application/ButtonLoading";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   Form,
@@ -11,16 +13,15 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import useFetch from "@/hooks/useFetch";
-import { showToast } from "@/lib/showToast";
 import { zSchema } from "@/lib/zodSchema";
-import MediaModel from "@/models/Media.model";
-import { ADMIN_BANNER_SHOW, ADMIN_DASHBOARD } from "@/routes/AdminPanelRoute";
 import { zodResolver } from "@hookform/resolvers/zod";
-import axios from "axios";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import React, { use, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import { showToast } from "@/lib/showToast";
+import { useParams, useRouter } from "next/navigation";
+import MediaModal from "@/components/Application/Admin/MediaModal";
 
 const breadCrumbData = [
   { href: ADMIN_DASHBOARD, label: "Home" },
@@ -32,12 +33,14 @@ const EditBanner = ({ params }) => {
   const router = useRouter();
   const { id } = use(params);
 
-  const { data: bannerData } = useFetch(`/api/banner/get/${id}`);
-  console.log("Get Banner Data by ID in Banner Edit Page.", bannerData);
-
   const [loading, setLoading] = useState(false);
 
-  // Media model states
+  const { data: getBanner, loading: getBannerLoading } = useFetch(
+    `/api/banner/get/${id}`
+  );
+  console.log("Get Banner by ID in Banner Edit Page", getBanner);
+
+  // Media modal states
   const [open, setOpen] = useState(false);
   const [selectedMedia, setSelectedMedia] = useState([]);
 
@@ -47,7 +50,7 @@ const EditBanner = ({ params }) => {
     discountPercentage: true,
   });
 
-  // 1. Define your form
+  // 1. Define your form.
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -57,29 +60,30 @@ const EditBanner = ({ params }) => {
     },
   });
 
-  console.log("Add Banner Form Data.", form);
+  console.log("Add Banner Form", form);
 
   useEffect(() => {
-    if (bannerData && bannerData.success) {
-      const data = bannerData.data;
+    if (getBanner && getBanner.success) {
+      const banner = getBanner.data;
       form.reset({
-        _id: data?._id,
-        name: data?.name,
-        discountPercentage: data?.discountPercentage,
+        _id: banner?._id,
+        name: banner?.name,
+        discountPercentage: banner?.discountPercentage,
       });
-      if (data.media) {
-        const media = data.media.map((media) => ({
+
+      if (banner.media) {
+        const media = banner.media.map((media) => ({
           _id: media._id,
           url: media.secure_url,
         }));
         setSelectedMedia(media);
       }
     }
-  }, [bannerData]);
+  }, [getBanner]);
 
-  // 2. Define a login submit handler
+  // 2. Define a login submit handler.
   const onSubmit = async (values) => {
-    console.log("Add Banner Data.", values);
+    console.log("Add banner data", values);
     setLoading(true);
     try {
       if (selectedMedia.length <= 0) {
@@ -119,7 +123,9 @@ const EditBanner = ({ params }) => {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Name</FormLabel>
+                        <FormLabel>
+                          Banner Name<span className="text-red-500">*</span>{" "}
+                        </FormLabel>
                         <FormControl>
                           <Input
                             type="text"
@@ -132,6 +138,7 @@ const EditBanner = ({ params }) => {
                     )}
                   />
                 </div>
+
                 <div className="">
                   <FormField
                     control={form.control}
@@ -155,14 +162,16 @@ const EditBanner = ({ params }) => {
                   />
                 </div>
               </div>
-              <div className="md:col-span-2 border border-dashed rounded p-5 text-center">
-                <MediaModel
+
+              <div className="md:col-span-2 border border-dashed rounded p-5 text-center ">
+                <MediaModal
                   open={open}
                   setOpen={setOpen}
                   selectedMedia={selectedMedia}
                   setSelectedMedia={setSelectedMedia}
                   isMultiple={true}
                 />
+
                 {selectedMedia.length > 0 && (
                   <div className="flex justify-center items-center flex-wrap mb-3 gap-2">
                     {selectedMedia.map((media) => (
@@ -172,12 +181,28 @@ const EditBanner = ({ params }) => {
                           height={100}
                           width={100}
                           alt=""
-                          className="size-full objetc-cover"
+                          className="size-full object-cover"
                         />
                       </div>
                     ))}
                   </div>
                 )}
+
+                <div
+                  onClick={() => setOpen(true)}
+                  className="bg-gray-50 dark:bg-card border w-[200px] mx-auto p-5 cursor-pointer"
+                >
+                  <span className="font-semibold">Select Media</span>
+                </div>
+              </div>
+
+              <div className="mb-3 mt-5">
+                <ButtonLoading
+                  loading={loading}
+                  type="submit"
+                  text="Save Changes"
+                  className=" cursor-pointer"
+                />
               </div>
             </form>
           </Form>

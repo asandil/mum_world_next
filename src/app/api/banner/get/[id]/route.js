@@ -1,51 +1,41 @@
 import { isAuthenticated } from "@/lib/authentication";
 import { connectDB } from "@/lib/db";
-import { response } from "@/lib/helperFunction";
-import { zSchema } from "@/lib/zodSchema";
+import { catchError, response } from "@/lib/helperFunction";
+import { isValidObjectId } from "mongoose";
 import BannerModel from "@/models/BannerAndAds.model";
+import MediaModal from "@/models/Media.model";
 
-export async function PUT(request) {
+export async function GET(request, { params }) {
   try {
     const auth = await isAuthenticated("admin");
-
     if (!auth.isAuth) {
-      return response(false, 403, "Unauthorized or Not Admin.");
+      return response(false, 403, "Unauthorized Or Not Admin.");
     }
 
     await connectDB();
 
-    const payload = await request.json();
+    const getParams = await params;
+    const id = getParams.id;
 
-    const schema = zSchema.pick({
-      _id: true,
-      name: true,
-      discountPercentage: true,
-    });
+    const filter = {
+      deletedAt: null,
+    };
 
-    const validate = schema.safeParse(payload);
-
-    if (!validate.success) {
-      return response(false, 400, "Invalid or missing fields.", validate.error);
+    if (!isValidObjectId(id)) {
+      return response(false, 400, "Invalid object id.");
     }
 
-    const validatedData = validate.data;
+    filter._id = id;
 
-    const getBanner = await BannerModel.findOne({
-      deletedAt: null,
-      _id: validatedData._id,
-    });
+    const getBanner = await BannerModel.findOne(filter)
+      .populate("media", "_id secure_url")
+      .lean();
 
     if (!getBanner) {
-      return response(false, 404, "Data not found.");
+      return response(false, 404, "Banner not found.");
     }
 
-    getBanner.name = validatedData.name;
-    getBanner.name = validatedData.discountPercentage;
-    getBanner.media = validatedData.media;
-
-    await getBanner.save();
-
-    return response(true, 200, "Banner updated succesfully.");
+    return response(true, 200, "Banner found.", getBanner);
   } catch (error) {
     return catchError(error);
   }
