@@ -98,6 +98,285 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
     console.log("Add to cart product:", cartProduct);
   };
 
+  const parseProductDescription = (description) => {
+    const decoded = decodeHTML(description);
+    const lines = decoded.split("\n");
+    const result = [];
+    let i = 0;
+
+    while (i < lines.length) {
+      const line = lines[i].trim();
+
+      if (line.startsWith("•")) {
+        // Bullet points section
+        const bulletPoints = [];
+        while (i < lines.length && lines[i].trim().startsWith("•")) {
+          bulletPoints.push(
+            <div key={i} className="flex items-start ml-4 my-1">
+              <span className="mr-2">•</span>
+              <span>{lines[i].trim().substring(1).trim()}</span>
+            </div>
+          );
+          i++;
+        }
+        result.push(...bulletPoints);
+        continue;
+      }
+
+      // Handle bold text starting with **
+      if (line.startsWith("**") && line.endsWith("**")) {
+        result.push(
+          <div key={i} className="my-2">
+            <strong>{line.substring(2, line.length - 2)}</strong>
+          </div>
+        );
+        i++;
+        continue;
+      }
+
+      // Handle bold text starting with ** (without ending **)
+      if (line.startsWith("**")) {
+        result.push(
+          <div key={i} className="my-2">
+            <strong>{line.substring(2)}</strong>
+          </div>
+        );
+        i++;
+        continue;
+      }
+
+      // Look for table section - detect any line with multiple pipe characters
+      if (line.includes("|") && line.split("|").length > 2) {
+        const tableData = [];
+
+        // Start collecting table rows (skip if it's a separator line)
+        if (
+          !line.replace(/\||\s+/g, "").includes("---") &&
+          !line.replace(/\||\s+/g, "").includes("___")
+        ) {
+          tableData.push(line.split("|").filter((cell) => cell.trim() !== ""));
+        }
+
+        // Look for more table rows
+        i++;
+        while (i < lines.length) {
+          const currentLine = lines[i].trim();
+
+          // Skip separator lines (lines that are mostly dashes or underscores)
+          const cleanLine = currentLine.replace(/\||\s+/g, "");
+          if (
+            cleanLine.includes("---") ||
+            cleanLine.includes("___") ||
+            cleanLine === ""
+          ) {
+            i++;
+            continue;
+          }
+
+          // If it's a table row with pipes, add it
+          if (currentLine.includes("|") && currentLine.split("|").length > 2) {
+            tableData.push(
+              currentLine.split("|").filter((cell) => cell.trim() !== "")
+            );
+            i++;
+          }
+          // Check if it's a standalone size line like "XXL 44.42 |"
+          else if (/^(XS|S|M|L|XL|XXL|XXXL|XXXXL)\s+[\d.]+/.test(currentLine)) {
+            // Parse this standalone size line
+            const parts = currentLine
+              .replace(/\|/g, "")
+              .split(/\s+/)
+              .filter((part) => part.trim() !== "");
+            if (parts.length >= 3) {
+              // Add it to the table data
+              tableData.push(parts.slice(0, 3));
+            }
+            i++;
+          }
+          // If it's regular text or bullet points, stop collecting table data
+          else {
+            break;
+          }
+        }
+
+        // Render the table if we have data
+        if (tableData.length > 0) {
+          const headers = tableData[0]; // First row is header
+          const rows = tableData.slice(1); // Rest are data rows
+
+          result.push(
+            <div key={`table-${i}`} className="my-6 overflow-x-auto">
+              <table className="min-w-full border-collapse border border-gray-300">
+                <thead>
+                  <tr className="bg-gray-50">
+                    {headers.map((header, headerIndex) => (
+                      <th
+                        key={headerIndex}
+                        className="border border-gray-300 px-4 py-2 font-semibold"
+                      >
+                        {header.trim()}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      {row.map((cell, cellIndex) => (
+                        <td
+                          key={cellIndex}
+                          className="border border-gray-300 px-4 py-2 text-center"
+                        >
+                          {cell.trim()}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+        continue;
+      }
+
+      // Look for space-separated table data with proper column detection
+      if (
+        line.includes("Size") &&
+        (line.includes("Bust") || line.includes("Buss")) &&
+        line.includes("Waist")
+      ) {
+        // Parse the header line properly
+        const headers = ["Size", "Bust (in)", "Waist (in)"];
+        const rows = [];
+
+        // Skip to the data rows
+        i++;
+        while (i < lines.length) {
+          const currentLine = lines[i].trim();
+
+          // Skip separator lines
+          const cleanLine = currentLine.replace(/\s+/g, "");
+          if (
+            cleanLine.includes("---") ||
+            cleanLine.includes("___") ||
+            cleanLine === ""
+          ) {
+            i++;
+            continue;
+          }
+
+          // Look for size data rows - including lines with dots like "44.42"
+          const parts = currentLine
+            .split(/\s+/)
+            .filter((part) => part.trim() !== "");
+          if (
+            parts.length >= 3 &&
+            /^(XS|S|M|L|XL|XXL|XXXL|XXXXL)$/i.test(parts[0])
+          ) {
+            // Take only first 3 parts (Size, Bust, Waist)
+            rows.push(parts.slice(0, 3));
+            i++;
+          } else {
+            // Stop when we hit non-table data
+            break;
+          }
+        }
+
+        // Render the table if we have data
+        if (rows.length > 0) {
+          result.push(
+            <div key={`table-size-${i}`} className="my-6 overflow-x-auto">
+              <table className="min-w-full border-collapse border border-gray-300">
+                <thead>
+                  <tr className="bg-gray-50">
+                    {headers.map((header, headerIndex) => (
+                      <th
+                        key={headerIndex}
+                        className="border border-gray-300 px-4 py-2 font-semibold"
+                      >
+                        {header}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {rows.map((row, rowIndex) => (
+                    <tr key={rowIndex}>
+                      <td className="border border-gray-300 px-4 py-2 font-medium text-center">
+                        {row[0]}
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2 text-center">
+                        {row[1]}
+                      </td>
+                      <td className="border border-gray-300 px-4 py-2 text-center">
+                        {row[2]}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
+        continue;
+      }
+
+      // Handle standalone size lines that might come after the main table
+      if (/^(XS|S|M|L|XL|XXL|XXXL|XXXXL)\s+[\d.]+\s+[\d.]+/.test(line)) {
+        const parts = line
+          .replace(/\|/g, "")
+          .split(/\s+/)
+          .filter((part) => part.trim() !== "");
+        if (parts.length >= 3) {
+          result.push(
+            <div key={`extra-size-${i}`} className="my-2 text-sm">
+              <strong>{parts[0]}:</strong> Bust: {parts[1]}, Waist: {parts[2]}
+            </div>
+          );
+        }
+        i++;
+        continue;
+      }
+
+      // Skip separator lines and empty lines
+      const cleanLine = line.replace(/\||\s+/g, "");
+      if (
+        cleanLine.includes("---") ||
+        cleanLine.includes("___") ||
+        line === "" ||
+        line === "|" ||
+        line === "| |"
+      ) {
+        i++;
+        continue;
+      }
+
+      // Regular text
+      if (
+        line &&
+        !/^(XS|S|M|L|XL|XXL|XXXL|XXXXL)\s+[\d.]+\s+[\d.]+/i.test(line)
+      ) {
+        result.push(
+          <div key={i} className="my-1">
+            {lines[i]}
+          </div>
+        );
+      }
+
+      i++;
+    }
+
+    return result;
+  };
+
+  // Don't forget the decodeHTML function
+  const decodeHTML = (html) => {
+    const txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+  };
+
   return (
     <div className="lg:px-32 px-4">
       <div className="my-10">
@@ -191,10 +470,9 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
           </div>
 
           {/* Product Description */}
-          <div
-            className="line-clamp-3"
-            dangerouslySetInnerHTML={{ __html: decode(product.description) }}
-          ></div>
+          <div className="line-clamp-4">
+            <div>{parseProductDescription(product.description)}</div>
+          </div>
           {/* Color Section */}
           <div className="mt-5">
             <p className="mb-2">
@@ -316,16 +594,16 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
           <div className="p-3 bg-gray-50 border-b">
             <h2 className="font-semibold text-2xl">Product Description</h2>
           </div>
+
           <div className="p-3">
-            <div
-              dangerouslySetInnerHTML={{ __html: encode(product.description) }}
-            ></div>
+            <div className="font-sans">
+              {parseProductDescription(product.description)}
+            </div>
           </div>
         </div>
       </div>
 
       <ProductReview product={product} />
-
     </div>
   );
 };
