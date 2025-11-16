@@ -54,7 +54,7 @@ export const zSchema = z.object({
       required_error: "Please select a valid category.",
     }
   ),
-  rating: z.number().min(1, "Rating is required").max(5, "Maximum rating is 5"),
+  // rating: z.number().min(1, "Rating is required").max(5, "Maximum rating is 5"),
   feedBackCity: z
     .string({
       required_error: "Please enter your city.",
@@ -129,4 +129,16 @@ export const zSchema = z.object({
   ]),
 
   validity: z.coerce.date(),
+  userId: z.string().min(3, "User id is required."),
+  rating: z.union([
+    z.number().positive("Expected positive value, received negative. "),
+    z
+      .string()
+      .transform((val) => Number(val))
+      .refine(
+        (val) => !isNaN(val) && val >= 0,
+        "Please enter a valid number. "
+      ),
+  ]),
+  review: z.string().min(3, "review is required."),
 });

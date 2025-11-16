@@ -589,7 +589,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
         </div>
       </div>
 
-      <div className="mb-20">
+      <div className="mb-10">
         <div className="shadow rounded border">
           <div className="p-3 bg-gray-50 border-b">
             <h2 className="font-semibold text-2xl">Product Description</h2>
@@ -603,7 +603,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
         </div>
       </div>
 
-      <ProductReview product={product} />
+      <ProductReview productId={product._id} />
     </div>
   );
 };

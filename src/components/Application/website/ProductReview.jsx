@@ -1,149 +1,220 @@
+"use client";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import React from "react";
-import { FaArrowTrendUp } from "react-icons/fa6";
-
-import imagePlaceholder from "@/assets/images/img-placeholder.webp";
-
 import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Progress } from "@/components/ui/progress";
+import React, { useEffect, useState } from "react";
 import { IoStar } from "react-icons/io5";
-import { Avatar } from "@radix-ui/react-avatar";
-import { AvatarImage } from "@/components/ui/avatar";
-import Image from "next/image";
+import { ButtonLoading } from "../ButtonLoading";
+import { zSchema } from "@/lib/zodSchema";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useSelector } from "react-redux";
+import { Rating } from "@mui/material";
+import { Textarea } from "@/components/ui/textarea";
+import axios from "axios";
+import { showToast } from "@/lib/showToast";
+import Link from "next/link";
+import { WEBSITE_LOGIN } from "@/routes/WebsiteRoute";
 
-const ProductReview = ({ product }) => {
+const ProductReview = ({ productId }) => {
+  const auth = useSelector((store) => store.authStore.auth);
+  const [loading, setLoading] = useState(false);
+
+  const [currentUrl, setCurrentUrl] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCurrentUrl(window.location.href);
+    }
+  }, []);
+
+  const formSchema = zSchema.pick({
+    product: true,
+    userId: true,
+    rating: true,
+    title: true,
+    review: true,
+  });
+
+  // 1. Define your form.
+  const form = useForm({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      product: productId,
+      userId: auth?._id,
+      rating: 0,
+      title: "",
+      review: "",
+    },
+  });
+
+  console.log(form.formState.errors)
+
+  useEffect(() => {
+    form.setValue('userId', auth?._id)
+  },[])
+
+  const handleReviewSubmit = async (values) => {
+    console.log("Add Review data", values);
+    try {
+      setLoading(true);
+      const { data: response } = await axios.post(`/api/review/create`, values);
+
+      if (!response.success) {
+        throw new Error(response.message);
+      }
+      form.reset();
+      showToast("success", response.message);
+    } catch (error) {
+      showToast("error", error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <Card>
-      <CardHeader className="flex justify-between ">
-        <h4 className="font-semibold text-2xl">Rating and Reviews</h4>
-        <Button className="cursor-pointer">Write Review</Button>
-      </CardHeader>
-      <CardContent>
-        <div className=" shadow-xl rounded-xl w-full flex flex-col gap-[30px] sm:flex-row p-4 flex-wrap ">
-          <div className="shadow-xl   rounded-xl px-4 py-2 gap-[12px] ">
-            <h2 className="text-xl font-semibold ">Total Reviews</h2>
-            <div className="flex gap-[6px] items-center">
-              <p className="text-3xl font-semibold">10.0k</p>
-              <p className="bg-green-500 flex items-center gap-[4px]  rounded-lg text-white px-2 py-1">
-                21% <FaArrowTrendUp />
-              </p>
+    <div className="shadow rounded border mb-20">
+      <div className="p-3 bg-gray-50 border-b">
+        <h2 className="font-semibold text-2xl">Rating & Reviews</h2>
+      </div>
+      <div className="p-5">
+        <div className="flex justify-between flex-wrap items-center">
+          <div className="md:w-1/2 w-full md:flex md:gap-10 md:mb-0 mb-5">
+            <div className="md:w-[200px] w-full md:mb-0 mb-5 ">
+              <h4 className="text-center text-8xl font-semibold">0.0</h4>
+              <div className="flex justify-center gap-2">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <span key={i}>
+                    <IoStar />
+                  </span>
+                ))}
+              </div>
+              <p className="text-center mt-3">(00 Rating & Reviews)</p>
             </div>
-            <p>Growth in reviews on this year</p>
-          </div>
-          <div className="shadow-xl  rounded-xl px-4 py-2 gap-[12px] ">
-            <h2 className="text-xl font-semibold">Average Rating</h2>
-            <div className="flex gap-[6px]">
-              <p className="text-2xl font-semibold">4.0</p>
-              {Array.from({ length: 1 }).map((_, i) => (
-                <TableRow key={i}>
-                  <TableCell>
-                    <div className="flex items-center">
-                      {Array.from({ length: 4 }).map((_, i) => (
-                        <span key={i}>
-                          <IoStar className="text-yellow-500" />
-                        </span>
-                      ))}
+            <div className="md:w-[calc(100%-200px)] flex items-center">
+              <div className="w-full">
+                {[5, 4, 3, 2, 1].map((rating) => (
+                  <div key={rating} className="flex items-center gap-2 mb-2">
+                    <div className="flex items-center gap-1">
+                      <p className="w-3">{rating}</p>
+                      <IoStar />
                     </div>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </div>
-            <p>Average rating on this year</p>
-          </div>
-          <div className="shadow-xl  rounded-xl px-4 py-2 gap-[12px]">
-            <div className="flex gap-[4px] items-center">
-              <IoStar className="text-gray-300" />
-              <span>5</span>
-              <p className="w-[250px] h-[6px] bg-green-500 rounded-md"> </p>
-              <span> 2.0k</span>
-            </div>
-            <div className="flex gap-[4px] items-center ">
-              <IoStar className="text-gray-300" />
-              <span>4</span>
-              <p className="w-[150px] h-[6px] bg-blue-500 rounded-md"> </p>
-              <span> 1.0k</span>
-            </div>
-            <div className="flex gap-[4px] items-center">
-              <IoStar className="text-gray-300" />
-              <span>3</span>
-              <p className="w-[100px] h-[6px] bg-gray-500 rounded-md "></p>
-              <span> 500</span>
-            </div>
-            <div className="flex gap-[4px] items-center">
-              <IoStar className="text-gray-300" />
-              <span>2</span>
-              <p className="w-[50px] h-[6px] bg-yellow-500 rounded-md"> </p>
-              <span> 200</span>
-            </div>
-            <div className="flex gap-[4px] items-center">
-              <IoStar className="text-gray-300" />
-              <span>1</span>
-              <p className="w-[6px] h-[6px] rounded-full bg-red-500"> </p>
-              <span> 50</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid xl:grid-cols-2 grid-cols-1 gap-[24px] justify-between">
-          {Array.from({ length: 5 }).map((_, i) => (
-            <div
-              key={i}
-              className=" mt-[20px] shadow-xl rounded-xl p-4 flex  flex-col"
-            >
-              <div className="flex gap-[20px] ">
-                <Avatar className="w-12 h-12 rounded-full ">
-                  <AvatarImage src={imagePlaceholder.src} />
-                </Avatar>
-                <div>
-                  <h2 className="text-lg font-semibold">Towhidur Rahman</h2>
-
-                  <div className="flex gap-[20px]">
-                    <div className="flex items-center">
-                      {Array.from({ length: 5 }).map((_, i) => (
-                        <span key={i}>
-                          <IoStar className="text-yellow-500" />
-                        </span>
-                      ))}
-                    </div>
-                    <div>24-10-2025</div>
+                    <Progress value={15} />
+                    <span className="text-sm">15</span>
                   </div>
-                </div>
-              </div>
-              <div className="flex flex-col gap-[12px]">
-                <div className="w-[]">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum
-                  ullam magni error, natus, impedit ipsam facere doloribus,
-                  suscipit sunt harum ratione quas minus iusto aliquid? Officiis
-                  voluptates tenetur labore iusto! Nostrum laudantium
-                  necessitatibus consectetur quo tempore aliquam et non aliquid
-                  molestiae amet.
-                </div>
-                <div className="flex items-center xl:gap-5 gap-3 w-full overflow-auto xl:pb-0 pb-2 max-h-[600]">
-                  {Array.from({ length: 4 }).map((_, i) => (
-                    <Image
-                      key={i}
-                      src={imagePlaceholder.src}
-                      width={100}
-                      height={100}
-                      alt="product thumbnail"
-                    />
-                  ))}
-                </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
+          <div className="md:w-1/2 w-full md:text-end text-center">
+            <Button
+              type="button"
+              variant="outline"
+              className="md:w-fit w-full py-6 px-10 cursor-pointer"
+            >
+              Write Review
+            </Button>
+          </div>
         </div>
-      </CardContent>
-    </Card>
+
+        <div className="my-5">
+          <h4 className="text-xl font-semibold mb-2 ">Write a Review</h4>
+          {!auth ? (
+            <>
+              <p className="mb-2">Login to submit review</p>
+              <Button>
+                <Link href={`${WEBSITE_LOGIN}?callback=${currentUrl}`}>
+                  Login
+                </Link>
+              </Button>
+            </>
+          ) : (
+            <>
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(handleReviewSubmit)}
+                  className="space-y-8"
+                >
+                  <div className="mb-5">
+                    <FormField
+                      control={form.control}
+                      name="rating"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Rating
+                              value={field.value}
+                              size="large"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <div className="mb-5">
+                    <FormField
+                      control={form.control}
+                      name="title"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Title</FormLabel>
+                          <FormControl>
+                            <Input
+                              type="text"
+                              placeholder="Enter title"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <div className="mb-5">
+                    <FormField
+                      control={form.control}
+                      name="review"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Review</FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder="Write your comment here.... "
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <div className="mb-3">
+                    <ButtonLoading
+                      loading={loading}
+                      type="submit"
+                      text="Submit Review"
+                      className=" cursor-pointer"
+                    />
+                  </div>
+                </form>
+              </Form>
+            </>
+          )}
+        </div>
+      </div>
+    </div>
   );
 };
 
