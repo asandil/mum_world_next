@@ -26,6 +26,7 @@ import { WEBSITE_LOGIN } from "@/routes/WebsiteRoute";
 import { useInfiniteQuery, useQueryClient } from "@tanstack/react-query";
 import { LastPage } from "@mui/icons-material";
 import ReviewList from "./ReviewList";
+import useFetch from "@/hooks/useFetch";
 
 const ProductReview = ({ productId }) => {
 
@@ -36,6 +37,9 @@ const ProductReview = ({ productId }) => {
 
   const [currentUrl, setCurrentUrl] = useState("");
   const [isReview, setIsReview] = useState(false);
+
+  const {data: reviewDetails} = useFetch(`/api/review/details?productId=${productId}`)
+  console.log("@@@@@@!!!!! Product Review Details.",reviewDetails)
 
   useEffect(() => {
     if (typeof window !== "undefined") {
