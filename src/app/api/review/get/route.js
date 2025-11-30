@@ -54,6 +54,8 @@ export async function GET(request) {
 
     const reviews = await ReviewModel.aggregate(aggregation);
 
+    const totalReview = await ReviewModel.countDocuments(matchQuery)
+
     // check if more data exists
     let nextPage = null;
     if (reviews.length > limit) {
@@ -61,7 +63,7 @@ export async function GET(request) {
       reviews.pop();
     }
 
-    return response(true, 200, " Review Data.", { reviews, nextPage });
+    return response(true, 200, " Review Data.", { reviews, nextPage, totalReview });
   } catch (error) {
     return catchError(error);
   }

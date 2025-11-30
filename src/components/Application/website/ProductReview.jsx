@@ -23,10 +23,14 @@ import axios from "axios";
 import { showToast } from "@/lib/showToast";
 import Link from "next/link";
 import { WEBSITE_LOGIN } from "@/routes/WebsiteRoute";
-import { useInfiniteQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQueryClient } from "@tanstack/react-query";
 import { LastPage } from "@mui/icons-material";
+import ReviewList from "./ReviewList";
 
 const ProductReview = ({ productId }) => {
+
+  const queryClient = useQueryClient()
+
   const auth = useSelector((store) => store.authStore.auth);
   const [loading, setLoading] = useState(false);
 
@@ -74,6 +78,7 @@ const ProductReview = ({ productId }) => {
       }
       form.reset();
       showToast("success", response.message);
+      queryClient.invalidateQueries(['product-review'])
     } catch (error) {
       showToast("error", error.message);
     } finally {
@@ -240,6 +245,18 @@ const ProductReview = ({ productId }) => {
             )}
           </div>
         )}
+        <div className="mt-10 border-t pt-5" >
+            <h5>{data?.pages[0]?.totalReview || 0} Reviews </h5>
+            <div className="mt-10">
+              {data && data?.pages.map(page => (
+                page.reviews.map(review => (
+                  <div className="mb-5" key={review._id}>
+                    <ReviewList review={review} />
+                  </div>
+                ))
+              ))}
+            </div>
+        </div>
       </div>
     </div>
   );
