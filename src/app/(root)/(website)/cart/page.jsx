@@ -69,8 +69,8 @@ const CartPage = () => {
                       <div>
                         <h3 className="font-medium text-lg">{item.title}</h3>
                         <p className="text-[#F69E87] font-bold">
-                          {item.price?.currency || '₹'}
-                          {item.price?.current || item.price || '0.00'}
+                          {item.sellingPrice?.currency || '₹'}
+                          {item.sellingPrice?.current || item.sellingPrice || '0.00'}
                         </p>
                       </div>
                     </div>
@@ -110,8 +110,8 @@ const CartPage = () => {
                     <div className="text-right">
                       <p className="text-sm text-gray-500">Subtotal:</p>
                       <p className="text-[#F69E87] font-bold text-lg">
-                        {item.price?.currency || '₹'}
-                        {((item.price?.current || item.price || 0) * (item.qty || 1)).toFixed(2)}
+                        {item.sellingPrice?.currency || '₹'}
+                        {((item.sellingPrice?.current || item.sellingPrice|| 0) * (item.qty || 1)).toFixed(2)}
                       </p>
                     </div>
                   </div>
@@ -122,7 +122,7 @@ const CartPage = () => {
                   <span className="text-xl font-semibold">Total:</span>
                   <span className="text-xl font-bold text-[#F69E87]">
                     ₹{cart.reduce((total, item) => {
-                      const price = item.price?.current || item.price || 0
+                      const price = item.sellingPrice?.current || item.sellingPrice || 0
                       const qty = item.qty || 1
                       return total + (price * qty)
                     }, 0).toFixed(2)}
