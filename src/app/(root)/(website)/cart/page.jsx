@@ -1,12 +1,14 @@
 "use client"
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { useRouter } from 'next/navigation'
 import CartSidebar from '@/components/CartSidebar'
 import { increaseQuantity, decreaseQuantity, removeFromCart, removeItemByIndex } from '@/store/reducer/cartReducer'
 
 const CartPage = () => {
   const cart = useSelector((state) => state.cartStore?.products || [])
   const dispatch = useDispatch()
+  const router = useRouter()
   const [isOpen, setIsOpen] = React.useState(true) // Always open on cart page
 
   const handleClose = () => {
@@ -15,8 +17,7 @@ const CartPage = () => {
   }
 
   const handleCheckout = () => {
-    console.log('Proceeding to checkout')
-    // Implement checkout logic here
+    router.push('/checkout')
   }
 
   const handleIncreaseQuantity = (item) => {
