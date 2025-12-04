@@ -52,6 +52,13 @@ export const cartReducer = createSlice({
       );
       state.count = state.products.length;
     },
+    removeItemByIndex: (state, action) => {
+      const { index } = action.payload;
+      if (index >= 0 && index < state.products.length) {
+        state.products.splice(index, 1);
+        state.count = state.products.length;
+      }
+    },
     clearCart: (state, action) => {
       state.products = [];
       state.count = 0;
@@ -64,6 +71,7 @@ export const {
   increaseQuantity,
   decreaseQuantity,
   removeFromCart,
+  removeItemByIndex,
   clearCart,
 } = cartReducer.actions;
 export default cartReducer.reducer;

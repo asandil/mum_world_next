@@ -2,7 +2,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import CartSidebar from '@/components/CartSidebar'
-import { increaseQuantity, decreaseQuantity, removeFromCart } from '@/store/reducer/cartReducer'
+import { increaseQuantity, decreaseQuantity, removeFromCart, removeItemByIndex } from '@/store/reducer/cartReducer'
 
 const CartPage = () => {
   const cart = useSelector((state) => state.cartStore?.products || [])
@@ -33,11 +33,9 @@ const CartPage = () => {
     }))
   }
 
-  const handleRemoveItem = (item) => {
-    dispatch(removeFromCart({
-      productId: item.productId,
-      variantId: item.variantId
-    }))
+  const handleRemoveItem = (item, index) => {
+    // Remove item by index - this is more reliable
+    dispatch(removeItemByIndex({ index }))
   }
 
   return (
@@ -58,7 +56,7 @@ const CartPage = () => {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-lg shadow-lg p-6">
               {cart.map((item, index) => (
-                <div key={index} className="border-b py-4">
+                <div key={index} className={`${index < cart.length - 1 ? 'border-b' : ''} py-4`}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
                       {item.image && (
@@ -77,7 +75,7 @@ const CartPage = () => {
                       </div>
                     </div>
                     <button
-                      onClick={() => handleRemoveItem(item)}
+                      onClick={() => handleRemoveItem(item, index)}
                       className="text-red-500 hover:text-red-700 text-sm font-medium"
                     >
                       Remove
