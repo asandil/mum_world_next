@@ -440,7 +440,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
 
         <div className="md:w-1/2 md:mt-0 mt-5 relative">
           {/* Name Section */}
-          <h1 className="text-3xl font-semibold mb-2">{product.name}</h1>
+          <h1 className="text-3xl font-semibold mb-2">{product.name} test</h1>
 
           {/* Review Section */}
           <div className="flex items-center gap-1 mb-5">
