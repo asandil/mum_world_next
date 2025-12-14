@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BsCart2 } from "react-icons/bs";
 import {
   Sheet,
@@ -14,14 +14,34 @@ import Image from "next/image";
 import imgPlaceholder from "@/assets/images/img-placeholder.webp";
 import { removeFromCart } from "@/store/reducer/cartReducer";
 import Link from "next/link";
-import { WEBSITE_CART } from "@/routes/WebsiteRoute";
+import { WEBSITE_CART, WEBSITE_CHECKOUT } from "@/routes/WebsiteRoute";
 import { Button } from "@/components/ui/button";
+import { showToast } from "@/lib/showToast";
 
 const Cart = () => {
+  const [open, setOpen] = useState(false);
+  const [subtotal, setSubTotal] = useState(0);
+  const [discount, setDiscount] = useState(0);
   const cart = useSelector((store) => store.cartStore);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const cartProducts = cart.products;
+    const totalAmount = cartProducts.reduce(
+      (sum, product) => sum + product.sellingPrice * product.qty,
+      0
+    );
+    const discount = cartProducts.reduce(
+      (sum, product) =>
+        sum + (product.mrp - product.sellingPrice) * product.qty,
+      0
+    );
+    setSubTotal(totalAmount);
+    setDiscount(discount);
+  }, [cart]);
+
   return (
-    <Sheet>
+    <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger className="relative">
         <BsCart2
           className="text-gray-500 hover:text-primary cursor-pointer "
@@ -35,7 +55,7 @@ const Cart = () => {
         </SheetHeader>
 
         <div className="h-[calc(100vh-40px)] pb-10">
-          <div className="h-[calc(100%-128px)] overflow-auto px-2">
+          <div className="h-[calc(100%-110px)] overflow-auto px-2">
             {cart.count === 0 && (
               <div className="h-full flex justify-center items-center text-xl font-semibold">
                 Your cart Is Empty.
@@ -87,21 +107,31 @@ const Cart = () => {
               </div>
             ))}
           </div>
-          <div className="h-32 border-t pt-5 px-2">
+          <div className="h-28 border-t pt-5 px-2">
             <h2 className="flex justify-between items-center text-lg font-semibold">
               <span>Subtotal</span>
-              <span>0</span>
+              <span>
+                {subtotal.toLocaleString("en-IN", {
+                  style: "currency",
+                  currency: "INR",
+                })}
+              </span>
             </h2>
             <h2 className="flex justify-between items-center text-lg font-semibold">
               <span>Discount</span>
-              <span>0</span>
+              <span>
+                {discount.toLocaleString("en-IN", {
+                  style: "currency",
+                  currency: "INR",
+                })}
+              </span>
             </h2>
-            <div className="flex justify-between gap-10">
+            <div className="flex justify-between mt-3 gap-5">
               <Button
                 type="button"
                 asChild
                 variant="secondary"
-                className="w-1/2"
+                className="w-[150px]"
                 onClick={() => setOpen(false)}
               >
                 <Link href={WEBSITE_CART}>View Cart</Link>
@@ -109,10 +139,20 @@ const Cart = () => {
               <Button
                 type="button"
                 asChild
-                className="w-1/2"
+                className="w-[150px]"
                 onClick={() => setOpen(false)}
               >
-                <Link href={WEBSITE_CART}>View Cart</Link>
+                {cart.count ? (
+                  <Link href={WEBSITE_CHECKOUT}>Checkout</Link>
+                ) : (
+                  <button
+                    type="button"
+                    className="cursor-pointer"
+                    onClick={() => showToast("error", "Your cart is empty!")}
+                  >
+                    Checkout
+                  </button>
+                )}
               </Button>
             </div>
           </div>
