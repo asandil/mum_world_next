@@ -10,7 +10,7 @@ export async function GET(request) {
     const searchParams = request.nextUrl.searchParams;
     const productId = searchParams.get("productId");
     const page = parseInt(searchParams.get("page")) || 0;
-    const limit = 2;
+    const limit = 10;
     const skip = page * limit;
 
     let matchQuery = {
@@ -38,6 +38,9 @@ export async function GET(request) {
       {
         $sort: { createdAt: -1 },
       },
+      {
+        $skip: skip,
+      },
       { $limit: limit + 1 },
       {
         $project: {
@@ -54,7 +57,7 @@ export async function GET(request) {
 
     const reviews = await ReviewModel.aggregate(aggregation);
 
-    const totalReview = await ReviewModel.countDocuments(matchQuery)
+    const totalReview = await ReviewModel.countDocuments(matchQuery);
 
     // check if more data exists
     let nextPage = null;
@@ -63,7 +66,11 @@ export async function GET(request) {
       reviews.pop();
     }
 
-    return response(true, 200, " Review Data.", { reviews, nextPage, totalReview });
+    return response(true, 200, " Review Data.", {
+      reviews,
+      nextPage,
+      totalReview,
+    });
   } catch (error) {
     return catchError(error);
   }
