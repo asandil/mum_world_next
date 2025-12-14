@@ -47,6 +47,9 @@ const Cart = () => {
           className="text-gray-500 hover:text-primary cursor-pointer "
           size={25}
         />
+        <span className="absolute bg-red-500 text-white text-xs rounded-full w-5 h-5 flex justify-center items-center -right-2 -top-1">
+          {cart.count}
+        </span>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader className="py-2">
@@ -55,7 +58,7 @@ const Cart = () => {
         </SheetHeader>
 
         <div className="h-[calc(100vh-40px)] pb-10">
-          <div className="h-[calc(100%-110px)] overflow-auto px-2">
+          <div className="h-[calc(100%-128px)] overflow-auto px-2">
             {cart.count === 0 && (
               <div className="h-full flex justify-center items-center text-xl font-semibold">
                 Your cart Is Empty.
@@ -107,7 +110,7 @@ const Cart = () => {
               </div>
             ))}
           </div>
-          <div className="h-28 border-t pt-5 px-2">
+          <div className="h-32 border-t pt-5 px-2">
             <h2 className="flex justify-between items-center text-lg font-semibold">
               <span>Subtotal</span>
               <span>
