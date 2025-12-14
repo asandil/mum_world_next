@@ -3,9 +3,13 @@ import React from 'react'
 import usericon from "@/assets/images/user.png"
 import relativeTime from 'dayjs/plugin/relativeTime'
 import dayjs from 'dayjs'
+import { IoStar } from 'react-icons/io5'
 dayjs.extend(relativeTime)
 
 const ReviewList = ( {review} ) => {
+  
+  // console.log("Reviews", review)
+
   return (
     <div className='flex gap-5'>
       <div className='w-[60px]' >
@@ -21,9 +25,10 @@ const ReviewList = ( {review} ) => {
         <div>
           <h4 className='text-xl font-semibold'>{review?.title}</h4>
           <p className='flex gap-2 items-center'>
-            <span className='font-medium' >{review?.reviewedBy}</span>
+            <span className='font-[600]' >{review?.reviewedBy}</span>
             -
             <span className='text-gray-500'>{dayjs(review?.createdAt).fromNow()}</span>
+            <span className='flex items-center text-sm gap-1 ' >({" "}{review.rating} <IoStar className="text-yellow-500" />)</span>
           </p>
           <p className='mt-3 text-gray-600' >
             {review?.review}

@@ -1,6 +1,7 @@
 import { connectDB } from "@/lib/db";
 import { catchError, response } from "@/lib/helperFunction";
 import ReviewModel from "@/models/Review.model";
+import mongoose from "mongoose";
 
 export async function GET(request){
   try {
@@ -17,7 +18,25 @@ export async function GET(request){
       { $sort: { _id: 1 } }
     ])
 
-    return response(true, 200, "Review details.", reviews)
+    // totla Review
+    const totalReview = reviews.reduce((sum, r) => sum + r.count, 0)
+
+    // average rating
+    const averageRating = totalReview > 0
+      ? 
+        (reviews.reduce((sum, r) => sum + r._id * r.count, 0) / totalReview).toFixed(1) : "0.0"
+
+      const rating = reviews.reduce((acc,r) => {
+        acc[r._id] = r.count
+        return acc
+      },{})
+
+      const percentage = reviews.reduce((acc, r) => {
+        acc[r._id] = (r.count / totalReview) * 100;
+        return  acc;
+      }, {})
+
+    return response(true, 200, "Review details.", {totalReview, averageRating, rating, percentage, reviews})
 
   } catch (error) {
     return catchError(error)

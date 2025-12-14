@@ -34,12 +34,19 @@ const ProductReview = ({ productId }) => {
 
   const auth = useSelector((store) => store.authStore.auth);
   const [loading, setLoading] = useState(false);
-
   const [currentUrl, setCurrentUrl] = useState("");
   const [isReview, setIsReview] = useState(false);
+  const [reviewCount, setReviewCount] = useState()
 
   const {data: reviewDetails} = useFetch(`/api/review/details?productId=${productId}`)
   console.log("@@@@@@!!!!! Product Review Details.",reviewDetails)
+
+  useEffect(() => {
+    if(reviewDetails && reviewDetails.success) {
+      const reviewCountData = reviewDetails.data
+      setReviewCount(reviewCountData)
+    }
+  },[reviewDetails])
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -100,12 +107,12 @@ const ProductReview = ({ productId }) => {
 
   }
 
-  const {error, data, isFetching, fetchNextPage, hasNextpage} = useInfiniteQuery({
-    queryKey:['prouct-review'],
+  const {error, data, isFetching, fetchNextPage, hasNextPage} = useInfiniteQuery({
+    queryKey:['product-review'],
     queryFn: async({pageParam}) => await fetchReview(pageParam),
     initialPageParam: 0,
-    getNextPageParam: (LastPage) => {
-      return LastPage.nextpage
+    getNextPageParam: (lastPage) => {
+      return lastPage.nextPage
     }
   })
 
@@ -121,7 +128,7 @@ const ProductReview = ({ productId }) => {
         <div className="flex justify-between flex-wrap items-center">
           <div className="md:w-1/2 w-full md:flex md:gap-10 md:mb-0 mb-5">
             <div className="md:w-[200px] w-full md:mb-0 mb-5 ">
-              <h4 className="text-center text-8xl font-semibold">0.0</h4>
+              <h4 className="text-center text-8xl font-semibold">{reviewCount?.averageRating}</h4>
               <div className="flex justify-center gap-2">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <span key={i}>
@@ -129,7 +136,7 @@ const ProductReview = ({ productId }) => {
                   </span>
                 ))}
               </div>
-              <p className="text-center mt-3">(00 Rating & Reviews)</p>
+              <p className="text-center mt-3">({reviewCount?.totalReview} Rating & Reviews)</p>
             </div>
             <div className="md:w-[calc(100%-200px)] flex items-center">
               <div className="w-full">
@@ -139,8 +146,8 @@ const ProductReview = ({ productId }) => {
                       <p className="w-3">{rating}</p>
                       <IoStar />
                     </div>
-                    <Progress value={15} />
-                    <span className="text-sm">15</span>
+                    <Progress value={reviewCount?.percentage[rating]}/>
+                    <span className="text-sm">{reviewCount?.rating[rating]}</span>
                   </div>
                 ))}
               </div>
@@ -259,8 +266,12 @@ const ProductReview = ({ productId }) => {
                   </div>
                 ))
               ))}
+              {hasNextPage && 
+                <ButtonLoading text="Load More" type="button" />
+              }
             </div>
         </div>
+
       </div>
     </div>
   );
