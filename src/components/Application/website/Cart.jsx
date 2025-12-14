@@ -22,7 +22,6 @@ const Cart = ({ onToggle }) => {
         </span>
       )}
     </button>
-    // test branch
   )
 }
 
