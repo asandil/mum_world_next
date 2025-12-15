@@ -51,7 +51,7 @@ const Cart = () => {
           {cart.count}
         </span>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className="sm:max-w-[450px] w-full" >
         <SheetHeader className="py-2">
           <SheetTitle className="text-2xl">My Cart</SheetTitle>
           <SheetDescription></SheetDescription>

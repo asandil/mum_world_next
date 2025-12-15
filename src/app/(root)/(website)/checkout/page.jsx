@@ -1,10 +1,12 @@
 "use client";
 import WebsiteBreadcrumb from "@/components/Application/website/WebsiteBreadcrumb";
 import { Button } from "@/components/ui/button";
+import useFetch from "@/hooks/useFetch";
 import { WEBSITE_SHOP } from "@/routes/WebsiteRoute";
+import { addIntoCart, clearCart } from "@/store/reducer/cartReducer";
 import Link from "next/link";
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const breadCrumb = {
   title: "Checkout",
@@ -16,7 +18,30 @@ const breadCrumb = {
 };
 
 const Checkout = () => {
+  const dispatch = useDispatch();
   const cart = useSelector((store) => store.cartStore);
+  const [verifiedCartData, setVerifiedCartData] = useState([]);
+  const { data: getVerifiedCartData } = useFetch(
+    "/api/cart-verification",
+    "POST",
+    {
+      data: cart.products,
+    }
+  );
+
+  console.log("Checkout Data from Cart-Verification API ", getVerifiedCartData);
+
+  useEffect(() => {
+    if (getVerifiedCartData && getVerifiedCartData.success) {
+      const cartData = getVerifiedCartData.data;
+      setVerifiedCartData(cartData);
+      dispatch(clearCart());
+      cartData.forEach((cartItem) => {
+        dispatch(addIntoCart(cartItem));
+      });
+    }
+  }, [getVerifiedCartData]);
+
   return (
     <div>
       <WebsiteBreadcrumb props={breadCrumb} />
@@ -36,6 +61,18 @@ const Checkout = () => {
             <div className="rounded bg-gray-50 p-5 sticky top-5">
               <h4 className="text-lg font-semibold mb-5">Order Summary</h4>
               <div>
+                <table className="w-full border">
+                  <tbody>
+                    {verifiedCartData &&
+                      verifiedCartData?.map((product) => (
+                        <tr key={product.variantId}>
+                          <td className="p-3">
+                            <div></div>
+                          </td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </table>
                 <table className="w-full">
                   <tbody>
                     <tr>
