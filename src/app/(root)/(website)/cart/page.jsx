@@ -1,16 +1,21 @@
 "use client";
 import WebsiteBreadcrumb from "@/components/Application/website/WebsiteBreadcrumb";
 import { Button } from "@/components/ui/button";
-import { WEBSITE_PRODUCT_DETAILS, WEBSITE_SHOP } from "@/routes/WebsiteRoute";
+import {
+  WEBSITE_CHECKOUT,
+  WEBSITE_PRODUCT_DETAILS,
+  WEBSITE_SHOP,
+} from "@/routes/WebsiteRoute";
 import Link from "next/link";
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import imgPlaceholder from "@/assets/images/img-placeholder.webp";
 import Image from "next/image";
 import { FiMinus } from "react-icons/fi";
 import { FaPlus } from "react-icons/fa6";
 import { Input } from "@/components/ui/input";
-
+import { IoCloseCircleOutline } from "react-icons/io5";
+import { removeFromCart } from "@/store/reducer/cartReducer";
 const breadCrumb = {
   title: "Cart",
   links: [
@@ -22,7 +27,7 @@ const breadCrumb = {
 
 const CartPage = () => {
   const cart = useSelector((store) => store.cartStore);
-
+  const dispatch = useDispatch();
   const [qty, setQty] = useState(1);
 
   const handleQty = (actionType) => {
@@ -59,6 +64,7 @@ const CartPage = () => {
                   <th className="text-start p-3">Price</th>
                   <th className="text-start p-3">Quantity</th>
                   <th className="text-start p-3">Total</th>
+                  <th className="text-start p-3">Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -84,43 +90,107 @@ const CartPage = () => {
                       </div>
                     </td>
                     <td className="md:table-cell flex justify-between md:p-3 px-3 pb-2 text-center">
-                      {product.sellingPrice.toLocaleString("en-IN", {
-                        style: "currency",
-                        currency: "INR",
-                      })}
+                      <span className="md:hidden font-[600]">Price</span>
+                      <span>
+                        {product.sellingPrice.toLocaleString("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                        })}
+                      </span>
                     </td>
-                    <td className="md:table-cell flex justify-between md:p-3 px-3 pb-2 ">
-                      <div>
-                      <div className="flex justify-center items-center h-10 border w-fit rounded-full">
-                        <button
-                          type="button"
-                          onClick={() => handleQty("desc")}
-                          className="h-full w-10 flex justify-center items-center cursor-pointer "
-                        >
-                          <FiMinus />
-                        </button>
-                        <Input
-                          type="text"
-                          value={qty}
-                          className="w-14 text-center border-none outline-offset-0"
-                          readOnly
-                        />
-                        <button
-                          type="button"
-                          onClick={() => handleQty("inc")}
-                          className="h-full w-10 flex justify-center items-center cursor-pointer "
-                        >
-                          <FaPlus />
-                        </button>
+                    <td className="md:table-cell flex justify-between md:p-3 px-3 pb-2">
+                      <span className="md:hidden font-[600]">Quantity</span>
+                      <div className="flex justify-center">
+                        <div className="flex justify-center items-center md:h-10 h-7 border w-fit rounded-full">
+                          <button
+                            type="button"
+                            onClick={() => handleQty("desc")}
+                            className="h-full w-10 flex justify-center items-center cursor-pointer "
+                          >
+                            <FiMinus />
+                          </button>
+                          <Input
+                            type="text"
+                            value={qty}
+                            className="md:w-14 w-8 text-center border-none outline-offset-0"
+                            readOnly
+                          />
+                          <button
+                            type="button"
+                            onClick={() => handleQty("inc")}
+                            className="h-full w-10 flex justify-center items-center cursor-pointer "
+                          >
+                            <FaPlus />
+                          </button>
+                        </div>
                       </div>
-                      </div>
+                    </td>
+                    <td className="md:table-cell flex justify-between md:p-3 px-3 pb-2">
+                      <span className="md:hidden font-[600]">Total</span>
+                      <span>
+                        {(product.sellingPrice * product.qty).toLocaleString(
+                          "en-IN",
+                          { style: "currency", currency: "INR" }
+                        )}
+                      </span>
+                    </td>
+                    <td className="md:table-cell flex justify-between md:p-3 px-3 pb-2 text-center">
+                      <span className="md:hidden font-[600]">Remove</span>
+                      <button
+                        type="button"
+                        className="text-red-500"
+                        onClick={() =>
+                          dispatch(
+                            removeFromCart({
+                              productId: product.productId,
+                              variantId: product.variantId,
+                            })
+                          )
+                        }
+                      >
+                        <IoCloseCircleOutline />
+                      </button>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <div></div>
+          <div className="lg:w-[30%] w-full">
+            <div className="rounded bg-gray-50 p-5 sticky top-5">
+              <h4 className="text-lg font-semibold mb-5">Order Summary</h4>
+              <div>
+                <table className="w-full">
+                  <tbody>
+                    <tr>
+                      <td className="font-[600] py-2">Subtotal</td>
+                      <td className="text-end py-2 ">Subtotal</td>
+                    </tr>
+                    <tr>
+                      <td className="font-[600] py-2">Discount</td>
+                      <td className="text-end py-2 ">Subtotal</td>
+                    </tr>
+                    <tr>
+                      <td className="font-[600] py-2">Total</td>
+                      <td className="text-end py-2 ">Subtotal</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <Button
+                  type="button"
+                  asChild
+                  className="w-full bg-black rounded-full mt-5 mb-3"
+                >
+                  <Link href={WEBSITE_CHECKOUT}>Proceed to Checkout</Link>
+                </Button>
+                <p className="text-center">
+                  <Link href={WEBSITE_SHOP} className="hover:underline">
+                    Continue Shopping
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>
