@@ -7,7 +7,7 @@ import {
   WEBSITE_SHOP,
 } from "@/routes/WebsiteRoute";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import imgPlaceholder from "@/assets/images/img-placeholder.webp";
 import Image from "next/image";
@@ -29,6 +29,9 @@ const CartPage = () => {
   const cart = useSelector((store) => store.cartStore);
   const dispatch = useDispatch();
   const [qty, setQty] = useState(1);
+  const [subtotal, setSubTotal] = useState(0);
+  const [discount, setDiscount] = useState(0);
+  const [delivery, setDelivery] = useState(80);
 
   const handleQty = (actionType) => {
     if (actionType === "inc") {
@@ -39,6 +42,21 @@ const CartPage = () => {
       }
     }
   };
+
+  useEffect(() => {
+    const cartProducts = cart.products;
+    const totalAmount = cartProducts.reduce(
+      (sum, product) => sum + product.sellingPrice * product.qty,
+      0
+    );
+    const discount = cartProducts.reduce(
+      (sum, product) =>
+        sum + (product.mrp - product.sellingPrice) * product.qty,
+      0
+    );
+    setSubTotal(totalAmount);
+    setDiscount(discount);
+  }, [cart]);
 
   return (
     <div>
@@ -164,15 +182,62 @@ const CartPage = () => {
                   <tbody>
                     <tr>
                       <td className="font-[600] py-2">Subtotal</td>
-                      <td className="text-end py-2 ">Subtotal</td>
+                      <td className="text-end py-2 ">
+                        {(subtotal + discount).toLocaleString("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                        })}
+                      </td>
                     </tr>
                     <tr>
-                      <td className="font-[600] py-2">Discount</td>
-                      <td className="text-end py-2 ">Subtotal</td>
+                      <td className="font-[600] py-2">Delivery</td>
+                      <td className="text-end py-2 ">
+                        {delivery.toLocaleString("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                        })}
+                      </td>
                     </tr>
                     <tr>
                       <td className="font-[600] py-2">Total</td>
-                      <td className="text-end py-2 ">Subtotal</td>
+                      <td className="text-end py-2 ">
+                        {(subtotal + discount + delivery).toLocaleString(
+                          "en-IN",
+                          {
+                            style: "currency",
+                            currency: "INR",
+                          }
+                        )}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="font-[600] py-2">Discount</td>
+                      <td className="text-end py-2 ">
+                        -{" "}
+                        {discount.toLocaleString("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                        })}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="font-[600] py-2">FREE Delivery</td>
+                      <td className="text-end py-2 ">
+                        -{" "}
+                        {delivery.toLocaleString("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                        })}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="font-[600] py-2">Order Total</td>
+                      <td className="text-end py-2 ">
+                        {subtotal.toLocaleString("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                        })}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
