@@ -15,7 +15,11 @@ import { FiMinus } from "react-icons/fi";
 import { FaPlus } from "react-icons/fa6";
 import { Input } from "@/components/ui/input";
 import { IoCloseCircleOutline } from "react-icons/io5";
-import { removeFromCart } from "@/store/reducer/cartReducer";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeFromCart,
+} from "@/store/reducer/cartReducer";
 const breadCrumb = {
   title: "Cart",
   links: [
@@ -28,20 +32,9 @@ const breadCrumb = {
 const CartPage = () => {
   const cart = useSelector((store) => store.cartStore);
   const dispatch = useDispatch();
-  const [qty, setQty] = useState(1);
   const [subtotal, setSubTotal] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [delivery, setDelivery] = useState(80);
-
-  const handleQty = (actionType) => {
-    if (actionType === "inc") {
-      setQty((prev) => prev + 1);
-    } else {
-      if (qty !== 1) {
-        setQty((prev) => prev - 1);
-      }
-    }
-  };
 
   useEffect(() => {
     const cartProducts = cart.products;
@@ -56,6 +49,12 @@ const CartPage = () => {
     );
     setSubTotal(totalAmount);
     setDiscount(discount);
+
+    if (totalAmount >= 500) {
+      setDelivery(0);
+    } else {
+      setDelivery(80);
+    }
   }, [cart]);
 
   return (
@@ -122,20 +121,34 @@ const CartPage = () => {
                         <div className="flex justify-center items-center md:h-10 h-7 border w-fit rounded-full">
                           <button
                             type="button"
-                            onClick={() => handleQty("desc")}
+                            onClick={() =>
+                              dispatch(
+                                decreaseQuantity({
+                                  productId: product.productId,
+                                  variantId: product.variantId,
+                                })
+                              )
+                            }
                             className="h-full w-10 flex justify-center items-center cursor-pointer "
                           >
                             <FiMinus />
                           </button>
                           <Input
                             type="text"
-                            value={qty}
+                            value={product.qty}
                             className="md:w-14 w-8 text-center border-none outline-offset-0"
                             readOnly
                           />
                           <button
                             type="button"
-                            onClick={() => handleQty("inc")}
+                            onClick={() =>
+                              dispatch(
+                                increaseQuantity({
+                                  productId: product.productId,
+                                  variantId: product.variantId,
+                                })
+                              )
+                            }
                             className="h-full w-10 flex justify-center items-center cursor-pointer "
                           >
                             <FaPlus />
@@ -189,56 +202,70 @@ const CartPage = () => {
                         })}
                       </td>
                     </tr>
-                    <tr>
-                      <td className="font-[600] py-2">Delivery</td>
-                      <td className="text-end py-2 ">
-                        {delivery.toLocaleString("en-IN", {
-                          style: "currency",
-                          currency: "INR",
-                        })}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="font-[600] py-2">Total</td>
-                      <td className="text-end py-2 ">
-                        {(subtotal + discount + delivery).toLocaleString(
-                          "en-IN",
-                          {
+                    {delivery > 0 ? (
+                      <tr>
+                        <td className="font-[600] py-2">Delivery</td>
+                        <td className="text-end py-2 ">
+                          {delivery.toLocaleString("en-IN", {
                             style: "currency",
                             currency: "INR",
-                          }
-                        )}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="font-[600] py-2">Discount</td>
-                      <td className="text-end py-2 ">
-                        -{" "}
-                        {discount.toLocaleString("en-IN", {
+                          })}
+                        </td>
+                      </tr>
+                    ) : (
+                      <tr>
+                        <td className="font-[600] py-2 text-green-600">
+                          Delivery
+                        </td>
+                        <td className="text-end py-2 text-green-600">FREE</td>
+                      </tr>
+                    )}
+                    {discount > 0 && (
+                      <tr>
+                        <td className="font-[600] py-2">Discount</td>
+                        <td className="text-end py-2 text-green-600">
+                          -{" "}
+                          {discount.toLocaleString("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                          })}
+                        </td>
+                      </tr>
+                    )}
+                    {delivery === 0 && subtotal >= 500 && (
+                      <tr>
+                        <td className="font-[600] py-2 text-green-600">
+                          FREE Delivery
+                        </td>
+                        <td className="text-end py-2 text-green-600">
+                          - 80.00
+                        </td>
+                      </tr>
+                    )}
+                    <tr className="border-t">
+                      <td className="font-[600] py-2 text-lg">Order Total</td>
+                      <td className="text-end py-2 text-lg font-bold">
+                        {(
+                          subtotal + (delivery > 0 ? delivery : 0)
+                        ).toLocaleString("en-IN", {
                           style: "currency",
                           currency: "INR",
                         })}
                       </td>
                     </tr>
-                    <tr>
-                      <td className="font-[600] py-2">FREE Delivery</td>
-                      <td className="text-end py-2 ">
-                        -{" "}
-                        {delivery.toLocaleString("en-IN", {
-                          style: "currency",
-                          currency: "INR",
-                        })}
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="font-[600] py-2">Order Total</td>
-                      <td className="text-end py-2 ">
-                        {subtotal.toLocaleString("en-IN", {
-                          style: "currency",
-                          currency: "INR",
-                        })}
-                      </td>
-                    </tr>
+                    {(discount > 0 || delivery === 0) && (
+                      <tr>
+                        <td colSpan={2} className="text-sm text-green-600 pt-2">
+                          You save{" "}
+                          {(
+                            discount + (delivery === 0 ? 80 : 0)
+                          ).toLocaleString("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                          })}
+                        </td>
+                      </tr>
+                    )}
                   </tbody>
                 </table>
                 <Button
