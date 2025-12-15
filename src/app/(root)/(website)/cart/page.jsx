@@ -169,7 +169,7 @@ const CartPage = () => {
                       <span className="md:hidden font-[600]">Remove</span>
                       <button
                         type="button"
-                        className="text-red-500"
+                        className="text-red-500 cursor-pointer"
                         onClick={() =>
                           dispatch(
                             removeFromCart({
