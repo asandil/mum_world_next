@@ -2,8 +2,9 @@
 import WebsiteBreadcrumb from "@/components/Application/website/WebsiteBreadcrumb";
 import { Button } from "@/components/ui/button";
 import useFetch from "@/hooks/useFetch";
-import { WEBSITE_SHOP } from "@/routes/WebsiteRoute";
+import { WEBSITE_PRODUCT_DETAILS, WEBSITE_SHOP } from "@/routes/WebsiteRoute";
 import { addIntoCart, clearCart } from "@/store/reducer/cartReducer";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -56,8 +57,8 @@ const Checkout = () => {
         </div>
       ) : (
         <div className="flex lg:flex-nowrap flex-wrap gap-10 my-20 lg:px-32 px-4">
-          <div className="lg:w-[70%] w-full"></div>
-          <div className="lg:w-[30%] w-full">
+          <div className="lg:w-[60%] w-full"></div>
+          <div className="lg:w-[40%] w-full">
             <div className="rounded bg-gray-50 p-5 sticky top-5">
               <h4 className="text-lg font-semibold mb-5">Order Summary</h4>
               <div>
@@ -67,7 +68,29 @@ const Checkout = () => {
                       verifiedCartData?.map((product) => (
                         <tr key={product.variantId}>
                           <td className="p-3">
-                            <div></div>
+                            <div className="flex items-center gap-5">
+                              <Image
+                                src={product.image}
+                                width={60}
+                                height={60}
+                                alt={product.name}
+                                className="rounded"
+                              />
+                              <div>
+                                <h4 className="font-[600] line-clamp-1">
+                                  <Link
+                                    href={WEBSITE_PRODUCT_DETAILS(product.url)}
+                                  >
+                                    {product.name}
+                                  </Link>
+                                </h4>
+                                <p className="text-sm">Color: {product.color}</p>
+                                <p className="text-sm">Size: {product.size}</p>
+                              </div>
+                            </div>
+                          </td>
+                          <td className="p-3 text-center" > 
+                              <p className="text-nowrap text-sm" >{product.qty} X {product.sellingPrice.toLocaleString("en-IN", {style:"currency", currency:"INR"})}</p>
                           </td>
                         </tr>
                       ))}
