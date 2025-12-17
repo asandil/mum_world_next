@@ -1,12 +1,25 @@
 "use client";
+import { ButtonLoading } from "@/components/Application/ButtonLoading";
 import WebsiteBreadcrumb from "@/components/Application/website/WebsiteBreadcrumb";
 import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 import useFetch from "@/hooks/useFetch";
+import { showToast } from "@/lib/showToast";
+import { zSchema } from "@/lib/zodSchema";
 import { WEBSITE_PRODUCT_DETAILS, WEBSITE_SHOP } from "@/routes/WebsiteRoute";
 import { addIntoCart, clearCart } from "@/store/reducer/cartReducer";
+import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 
 const breadCrumb = {
@@ -30,7 +43,12 @@ const Checkout = () => {
     }
   );
 
-  console.log("Checkout Data from Cart-Verification API ", getVerifiedCartData);
+  const [isCouponApplied, setIsCouponApplied] = useState(false);
+  const [subtotal, setSubTotal] = useState(0);
+  const [discount, setDiscount] = useState(0);
+  const [couponLoading, setCouponLoading] = useState(false);
+
+  // console.log("Checkout Data from Cart-Verification API ", getVerifiedCartData);
 
   useEffect(() => {
     if (getVerifiedCartData && getVerifiedCartData.success) {
@@ -42,6 +60,47 @@ const Checkout = () => {
       });
     }
   }, [getVerifiedCartData]);
+
+  useEffect(() => {
+    const cartProducts = cart.products;
+    const subTotalAmount = cartProducts.reduce(
+      (sum, product) => sum + product.sellingPrice * product.qty,
+      0
+    );
+    const discount = cartProducts.reduce(
+      (sum, product) =>
+        sum + (product.mrp - product.sellingPrice) * product.qty,
+      0
+    );
+    setSubTotal(subTotalAmount);
+    setDiscount(discount);
+  }, [cart]);
+
+  // Coupon Form
+
+  const couponFormSchema = zSchema.pick({
+    code: true,
+    minShoppingAmount: true,
+  });
+
+  const couponForm = useForm({
+    resolver: zodResolver(couponFormSchema),
+    defaultValues: {
+      code: "",
+      minShoppingAmount: subtotal,
+    },
+  });
+
+  const applyCoupon = async (values) => {
+    setCouponLoading(true);
+    try {
+      
+    } catch (error) {
+      showToast("error", error.message)
+    } finally {
+      setCouponLoading(false)
+    }
+  };
 
   return (
     <div>
@@ -127,7 +186,44 @@ const Checkout = () => {
                     </tr>
                   </tbody>
                 </table>
-                <div></div>
+                <div className="mt-2">
+                  {!isCouponApplied ? (
+                    <Form {...couponForm}>
+                      <form
+                        className="flex justify-between gap-5"
+                        onSubmit={couponForm.handleSubmit(applyCoupon)}
+                      >
+                        <div className="w-[calc(100%-100px)]">
+                          <FormField
+                            control={couponForm.control}
+                            name="code"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormControl>
+                                  <Input
+                                    placeholder="Enter coupon code"
+                                    {...field}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          ></FormField>
+                        </div>
+                        <div className="w-[100px]">
+                          <ButtonLoading
+                            type="submit"
+                            text="Apply"
+                            className="w-full cursor-pointer"
+                            loading={couponLoading}
+                          ></ButtonLoading>
+                        </div>
+                      </form>
+                    </Form>
+                  ) : (
+                    <></>
+                  )}
+                </div>
               </div>
             </div>
           </div>

@@ -140,5 +140,6 @@ export const zSchema = z.object({
         "Please enter a valid number. "
       ),
   ]),
-  review: z.string().min(3, "review is required."),
+  review: z.string().min(3, "Review is required."),
+  code: z.string().min(3, "Coupon code is required."),
 });
