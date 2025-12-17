@@ -36,7 +36,7 @@ const Checkout = () => {
     if (getVerifiedCartData && getVerifiedCartData.success) {
       const cartData = getVerifiedCartData.data;
       setVerifiedCartData(cartData);
-      dispatch(clearCart());
+      // dispatch(clearCart());
       cartData.forEach((cartItem) => {
         dispatch(addIntoCart(cartItem));
       });
@@ -84,13 +84,21 @@ const Checkout = () => {
                                     {product.name}
                                   </Link>
                                 </h4>
-                                <p className="text-sm">Color: {product.color}</p>
+                                <p className="text-sm">
+                                  Color: {product.color}
+                                </p>
                                 <p className="text-sm">Size: {product.size}</p>
                               </div>
                             </div>
                           </td>
-                          <td className="p-3 text-center" > 
-                              <p className="text-nowrap text-sm" >{product.qty} X {product.sellingPrice.toLocaleString("en-IN", {style:"currency", currency:"INR"})}</p>
+                          <td className="p-3 text-center">
+                            <p className="text-nowrap text-sm">
+                              {product.qty} X{" "}
+                              {product.sellingPrice.toLocaleString("en-IN", {
+                                style: "currency",
+                                currency: "INR",
+                              })}
+                            </p>
                           </td>
                         </tr>
                       ))}
@@ -104,19 +112,12 @@ const Checkout = () => {
                     </tr>
 
                     <tr>
-                      <td className="font-[600] py-2">Delivery</td>
+                      <td className="font-[600] py-2">Discount</td>
                       <td className="text-end py-2 "></td>
                     </tr>
 
                     <tr>
-                      <td className="font-[600] py-2 text-green-600">
-                        Delivery
-                      </td>
-                      <td className="text-end py-2 text-green-600">FREE</td>
-                    </tr>
-
-                    <tr>
-                      <td className="font-[600] py-2">Discount</td>
+                      <td className="font-[600] py-2">Coupon Discount</td>
                       <td className="text-end py-2 text-green-600"></td>
                     </tr>
 
@@ -126,6 +127,7 @@ const Checkout = () => {
                     </tr>
                   </tbody>
                 </table>
+                <div></div>
               </div>
             </div>
           </div>
