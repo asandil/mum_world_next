@@ -48,6 +48,7 @@ const Checkout = () => {
   const [subtotal, setSubTotal] = useState(0);
   const [discount, setDiscount] = useState(0);
   const [couponDiscountAmount, setCouponDiscountAmount] = useState(0);
+  const [couponCode, setCouponCode] = useState("");
   const [totalAmount, setTotalAmount] = useState(0);
   const [couponLoading, setCouponLoading] = useState(false);
 
@@ -109,6 +110,7 @@ const Checkout = () => {
       setCouponDiscountAmount((subtotal * discountPercentage) / 100);
       setTotalAmount(subtotal - (subtotal * discountPercentage) / 100);
       showToast("success", response.message);
+      setCouponCode(couponForm.getValues("code"));
       couponForm.reset();
     } catch (error) {
       showToast("error", error.message);
@@ -258,7 +260,13 @@ const Checkout = () => {
                       </form>
                     </Form>
                   ) : (
-                    <></>
+                    <div className="flex justify-between py-1 px-5 rounded-lg bg-gray-200">
+                      <div>
+                        <span className="text-sm">Coupon:</span>
+                        <p className="text-m font-[600]">{couponCode}</p>
+                      </div>
+                      <button type="button" className="text-red-500"></button>
+                    </div>
                   )}
                 </div>
               </div>
