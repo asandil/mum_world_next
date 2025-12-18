@@ -16,6 +16,7 @@ import { zSchema } from "@/lib/zodSchema";
 import { WEBSITE_PRODUCT_DETAILS, WEBSITE_SHOP } from "@/routes/WebsiteRoute";
 import { addIntoCart, clearCart } from "@/store/reducer/cartReducer";
 import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
@@ -46,6 +47,8 @@ const Checkout = () => {
   const [isCouponApplied, setIsCouponApplied] = useState(false);
   const [subtotal, setSubTotal] = useState(0);
   const [discount, setDiscount] = useState(0);
+  const [couponDiscountAmount, setCouponDiscountAmount] = useState(0);
+  const [totalAmount, setTotalAmount] = useState(0);
   const [couponLoading, setCouponLoading] = useState(false);
 
   // console.log("Checkout Data from Cart-Verification API ", getVerifiedCartData);
@@ -74,6 +77,8 @@ const Checkout = () => {
     );
     setSubTotal(subTotalAmount);
     setDiscount(discount);
+    setTotalAmount(subTotalAmount);
+    couponForm.setValue("minShoppingAmount", subTotalAmount);
   }, [cart]);
 
   // Coupon Form
@@ -94,11 +99,21 @@ const Checkout = () => {
   const applyCoupon = async (values) => {
     setCouponLoading(true);
     try {
-      
+      const { data: response } = await axios.post("/api/coupon/apply", values);
+      if (!response.success) {
+        throw new Error(response.message);
+      }
+      const discountPercentage = response.data.discountPercentage;
+
+      // get coupon discount amount
+      setCouponDiscountAmount((subtotal * discountPercentage) / 100);
+      setTotalAmount(subtotal - (subtotal * discountPercentage) / 100);
+      showToast("success", response.message);
+      couponForm.reset();
     } catch (error) {
-      showToast("error", error.message)
+      showToast("error", error.message);
     } finally {
-      setCouponLoading(false)
+      setCouponLoading(false);
     }
   };
 
@@ -167,22 +182,44 @@ const Checkout = () => {
                   <tbody>
                     <tr>
                       <td className="font-[600] py-2">Subtotal</td>
-                      <td className="text-end py-2 "></td>
+                      <td className="text-end py-2 ">
+                        {subtotal.toLocaleString("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                        })}
+                      </td>
                     </tr>
 
                     <tr>
                       <td className="font-[600] py-2">Discount</td>
-                      <td className="text-end py-2 "></td>
+                      <td className="text-end py-2 ">
+                        -{" "}
+                        {discount.toLocaleString("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                        })}
+                      </td>
                     </tr>
 
                     <tr>
                       <td className="font-[600] py-2">Coupon Discount</td>
-                      <td className="text-end py-2 text-green-600"></td>
+                      <td className="text-end py-2 text-green-600">
+                        -{" "}
+                        {couponDiscountAmount.toLocaleString("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                        })}
+                      </td>
                     </tr>
 
                     <tr className="border-t">
                       <td className="font-[600] py-2 text-lg">Order Total</td>
-                      <td className="text-end py-2 text-lg font-bold"></td>
+                      <td className="text-end py-2 text-lg font-bold">
+                        {totalAmount.toLocaleString("en-IN", {
+                          style: "currency",
+                          currency: "INR",
+                        })}
+                      </td>
                     </tr>
                   </tbody>
                 </table>

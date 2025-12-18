@@ -12,29 +12,30 @@ export async function POST(request) {
       minShoppingAmount: true,
     });
 
-    const validate = couponFormSchema.safeParse(payload)
-    if(!validate.success){
-      return response(false, 400, "Missing or invalid data.", validate.error)
+    const validate = couponFormSchema.safeParse(payload);
+    if (!validate.success) {
+      return response(false, 400, "Missing or invalid data.", validate.error);
     }
 
-    const {code, minShoppingAmount} = validate.data;
+    const { code, minShoppingAmount } = validate.data;
 
-    const couponData = await CouponModel.findOne({code}).lean();
+    const couponData = await CouponModel.findOne({ code }).lean();
 
-    if(!couponData){
-      return response(false, 400, "Invalid or expired coupon code.")
+    if (!couponData) {
+      return response(false, 400, "Invalid or expired coupon code.");
     }
 
-    if(new Date() > couponData.validate){
-      return response(false, 400, "Expired coupon code ")
+    if (new Date() > couponData.validate) {
+      return response(false, 400, "Expired coupon code ");
     }
 
-    if(minShoppingAmount < couponData.minShoppingAmount){
-      return response(false, 400, "In-sufficient shopping amount.")
+    if (minShoppingAmount < couponData.minShoppingAmount) {
+      return response(false, 400, "In-sufficient shopping amount.");
     }
 
-    return response(true, 200, "coupon applied succesfully.", {discountPercentage:couponData.discountPercentage})
-
+    return response(true, 200, "coupon applied succesfully.", {
+      discountPercentage: couponData.discountPercentage,
+    });
   } catch (error) {
     return catchError(error);
   }
