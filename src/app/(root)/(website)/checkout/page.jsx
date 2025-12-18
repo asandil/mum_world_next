@@ -23,6 +23,7 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { IoCloseCircleSharp } from "react-icons/io5";
+import z from "zod";
 
 const breadCrumb = {
   title: "Checkout",
@@ -36,6 +37,7 @@ const breadCrumb = {
 const Checkout = () => {
   const dispatch = useDispatch();
   const cart = useSelector((store) => store.cartStore);
+  const auth = useSelector((store) => store.authStore);
   const [verifiedCartData, setVerifiedCartData] = useState([]);
   const { data: getVerifiedCartData } = useFetch(
     "/api/cart-verification",
@@ -127,6 +129,39 @@ const Checkout = () => {
     setCouponDiscountAmount(0);
     setTotalAmount(subtotal);
   };
+
+  // Place order
+  const orderFormSchema = zSchema
+    .pick({
+      name: true,
+      email: true,
+      phone: true,
+      country: true,
+      state: true,
+      city: true,
+      pincode: true,
+      landmark: true,
+      ordernote: true,
+    })
+    .extend({
+      userId: z.string().optional(),
+    });
+
+  const orderForm = useForm({
+    resolver: zodResolver(orderFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      country: "",
+      state: "",
+      city: "",
+      pincode: "",
+      landmark: "",
+      ordernote: "",
+      userId: auth?._id,
+    },
+  });
 
   return (
     <div>

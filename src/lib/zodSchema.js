@@ -142,4 +142,11 @@ export const zSchema = z.object({
   ]),
   review: z.string().min(3, "Review is required."),
   code: z.string().min(3, "Coupon code is required."),
+  phone: z.string().min(3, "Phone number is required."),
+  country: z.string().min(3, "Contry is required."),
+  state: z.string().min(3, "State is required."),
+  city: z.string().min(3, "City is required."),
+  pincode: z.string().min(3, "Pincode is required."),
+  landmark: z.string().min(3, "Landmark is required."),
+  ordernote: z.string().min(3, "Ordernote is required."),
 });
