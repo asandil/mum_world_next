@@ -22,6 +22,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
+import { IoCloseCircleSharp } from "react-icons/io5";
 
 const breadCrumb = {
   title: "Checkout",
@@ -111,12 +112,20 @@ const Checkout = () => {
       setTotalAmount(subtotal - (subtotal * discountPercentage) / 100);
       showToast("success", response.message);
       setCouponCode(couponForm.getValues("code"));
-      couponForm.reset();
+      setIsCouponApplied(true);
+      couponForm.resetField("code", "");
     } catch (error) {
       showToast("error", error.message);
     } finally {
       setCouponLoading(false);
     }
+  };
+
+  const removeCoupon = () => {
+    setIsCouponApplied(false);
+    setCouponCode("");
+    setCouponDiscountAmount(0);
+    setTotalAmount(subtotal);
   };
 
   return (
@@ -265,7 +274,13 @@ const Checkout = () => {
                         <span className="text-sm">Coupon:</span>
                         <p className="text-m font-[600]">{couponCode}</p>
                       </div>
-                      <button type="button" className="text-red-500"></button>
+                      <button
+                        type="button"
+                        className="cursor-pointer text-red-500"
+                        onClick={removeCoupon}
+                      >
+                        <IoCloseCircleSharp size={25} />
+                      </button>
                     </div>
                   )}
                 </div>
