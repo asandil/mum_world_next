@@ -7,6 +7,7 @@ import {
   FormControl,
   FormField,
   FormItem,
+  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -24,6 +25,7 @@ import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { IoCloseCircleSharp } from "react-icons/io5";
 import z from "zod";
+import { FaShippingFast } from "react-icons/fa";
 
 const breadCrumb = {
   title: "Checkout",
@@ -136,6 +138,8 @@ const Checkout = () => {
       name: true,
       email: true,
       phone: true,
+      address: true,
+      street: true,
       country: true,
       state: true,
       city: true,
@@ -153,6 +157,8 @@ const Checkout = () => {
       name: "",
       email: "",
       phone: "",
+      address: "",
+      street: "",
       country: "",
       state: "",
       city: "",
@@ -162,6 +168,8 @@ const Checkout = () => {
       userId: auth?._id,
     },
   });
+
+  const placeOrder = async (formData) => {};
 
   return (
     <div>
@@ -177,7 +185,183 @@ const Checkout = () => {
         </div>
       ) : (
         <div className="flex lg:flex-nowrap flex-wrap gap-10 my-20 lg:px-32 px-4">
-          <div className="lg:w-[60%] w-full"></div>
+          <div className="lg:w-[60%] w-full">
+            <div className="flex font-semibold gap-2 items-center">
+              <FaShippingFast size={25} />
+            </div>
+            <div className="mt-5">
+              <Form {...couponForm}>
+                <form
+                  className="grid grid-cols-2 gap-5"
+                  onSubmit={couponForm.handleSubmit(applyCoupon)}
+                >
+                  <div className="mb-3">
+                    <FormField
+                      control={couponForm.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-[600]" >Full Name (First and Last name) <span className="text-red-600">*</span></FormLabel>
+                          <FormControl>
+                            <Input type="text" placeholder="Full Name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    ></FormField>
+                  </div>
+                  <div className="mb-3">
+                    <FormField
+                      control={couponForm.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-[600]" >Email <span className="text-red-600" >*</span> </FormLabel>
+                          <FormControl>
+                            <Input type="email" placeholder="Email" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    ></FormField>
+                  </div>
+                  <div className="mb-3">
+                    <FormField
+                      control={couponForm.control}
+                      name="address"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-[600]" >Flat, House no, Building, Company, Apartment <span className="text-red-600" >*</span> </FormLabel>
+                          <FormControl>
+                            <Input placeholder="Address" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    ></FormField>
+                  </div>
+                  <div className="mb-3">
+                    <FormField
+                      control={couponForm.control}
+                      name="street"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-[600]" >Area, Street, Sector, Village <span className="text-red-600" >*</span> </FormLabel>
+                          <FormControl>
+                            <Input placeholder="Area-Street-Sector-village" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    ></FormField>
+                  </div>
+                  <div className="mb-3">
+                    <FormField
+                      control={couponForm.control}
+                      name="pincode"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-[600]">Landmark <span className="text-red-600" >*</span></FormLabel>
+                          <FormControl>
+                            <Input placeholder="LandMark" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    ></FormField>
+                  </div>
+                  <div className="mb-3">
+                    <FormField
+                      control={couponForm.control}
+                      name="city"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-[600]" >Town/City <span className="text-red-600" >*</span></FormLabel>
+                          <FormControl>
+                            <Input placeholder="City" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    ></FormField>
+                  </div>
+                  <div className="mb-3">
+                    <FormField
+                      control={couponForm.control}
+                      name="state"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-[600]" >State <span className="text-red-600" >*</span> </FormLabel>
+                          <FormControl>
+                            <Input placeholder="State" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    ></FormField>
+                  </div>
+                  <div className="mb-3">
+                    <FormField
+                      control={couponForm.control}
+                      name="pincode"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="font-[600]">Pincode <span className="text-red-600" >*</span> </FormLabel>
+                          <FormControl>
+                            <Input placeholder="Pincode" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    ></FormField>
+                  </div>
+                  
+                  <div className="mb-3">
+                    <FormField
+                      control={couponForm.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input placeholder="Enter your name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    ></FormField>
+                  </div>
+                  <div className="mb-3">
+                    <FormField
+                      control={couponForm.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input placeholder="Enter your name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    ></FormField>
+                  </div>
+                  <div className="mb-3">
+                    <FormField
+                      control={couponForm.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input placeholder="Enter your name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    ></FormField>
+                  </div>
+                </form>
+              </Form>
+            </div>
+          </div>
           <div className="lg:w-[40%] w-full">
             <div className="rounded bg-gray-50 p-5 sticky top-5">
               <h4 className="text-lg font-semibold mb-5">Order Summary</h4>
