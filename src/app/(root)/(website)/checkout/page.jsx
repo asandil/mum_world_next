@@ -57,6 +57,7 @@ const Checkout = () => {
   const [couponCode, setCouponCode] = useState("");
   const [totalAmount, setTotalAmount] = useState(0);
   const [couponLoading, setCouponLoading] = useState(false);
+  const [placingOrder, setPlacingOrder] = useState(false);
 
   // console.log("Checkout Data from Cart-Verification API ", getVerifiedCartData);
 
@@ -170,7 +171,16 @@ const Checkout = () => {
     },
   });
 
-  const placeOrder = async (formData) => {};
+  const placeOrder = async (formData) => {
+    console.log(formData);
+    setPlacingOrder(true);
+    try {
+      showToast("error", error.message);
+    } catch (error) {
+    } finally {
+      setPlacingOrder(false);
+    }
+  };
 
   return (
     <div>
@@ -413,6 +423,7 @@ const Checkout = () => {
                             </FormLabel>
                             <FormControl>
                               <Textarea
+                                className="resize-none"
                                 placeholder="Enter order note"
                                 {...field}
                               />
@@ -423,10 +434,13 @@ const Checkout = () => {
                       />
                     </div>
 
-                    <div className="w-full">
-                      <Button type="submit" className="w-full">
-                        Place Order
-                      </Button>
+                    <div className=" mb-3">
+                      <ButtonLoading
+                        type="submit"
+                        text="Place Order"
+                        loading={placingOrder}
+                        className="bg-black rounded-full px-5 cursor-pointer"
+                      />
                     </div>
                   </div>
                 </form>

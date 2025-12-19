@@ -148,7 +148,7 @@ export const zSchema = z.object({
   city: z.string().min(3, "City is required."),
   pincode: z.string().min(3, "Pincode is required."),
   landmark: z.string().min(3, "Landmark is required."),
-  ordernote: z.string().min(3, "Ordernote is required."),
+  ordernote: z.string().min(0).max(500, "Max 500 words in order notes.").optional(),
   address: z.string().min(3, "Address is required."),
   street: z.string().min(3, "Street/Area/Sector/Village is required.")
 });
