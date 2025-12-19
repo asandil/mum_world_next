@@ -128,6 +128,17 @@ export const zSchema = z.object({
       ),
   ]),
 
+  amount: z.union([
+    z.number().positive("Expected positive value, received negative. "),
+    z
+      .string()
+      .transform((val) => Number(val))
+      .refine(
+        (val) => !isNaN(val) && val >= 0,
+        "Please enter a valid number. "
+      ),
+  ]),
+
   validity: z.coerce.date(),
   userId: z.string().min(3, "User id is required."),
   rating: z.union([
@@ -148,7 +159,11 @@ export const zSchema = z.object({
   city: z.string().min(3, "City is required."),
   pincode: z.string().min(3, "Pincode is required."),
   landmark: z.string().min(3, "Landmark is required."),
-  ordernote: z.string().min(0).max(500, "Max 500 words in order notes.").optional(),
+  ordernote: z
+    .string()
+    .min(0)
+    .max(500, "Max 500 words in order notes.")
+    .optional(),
   address: z.string().min(3, "Address is required."),
-  street: z.string().min(3, "Street/Area/Sector/Village is required.")
+  street: z.string().min(3, "Street/Area/Sector/Village is required."),
 });
