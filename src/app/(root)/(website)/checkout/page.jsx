@@ -26,6 +26,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { IoCloseCircleSharp } from "react-icons/io5";
 import z from "zod";
 import { FaShippingFast } from "react-icons/fa";
+import { Textarea } from "@/components/ui/textarea";
 
 const breadCrumb = {
   title: "Checkout",
@@ -189,174 +190,244 @@ const Checkout = () => {
             <div className="flex font-semibold gap-2 items-center">
               <FaShippingFast size={25} />
             </div>
+
             <div className="mt-5">
-              <Form {...couponForm}>
-                <form
-                  className="grid grid-cols-2 gap-5"
-                  onSubmit={couponForm.handleSubmit(applyCoupon)}
-                >
-                  <div className="mb-3">
-                    <FormField
-                      control={couponForm.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-[600]" >Full Name (First and Last name) <span className="text-red-600">*</span></FormLabel>
-                          <FormControl>
-                            <Input type="text" placeholder="Full Name" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    ></FormField>
-                  </div>
-                  <div className="mb-3">
-                    <FormField
-                      control={couponForm.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-[600]" >Email <span className="text-red-600" >*</span> </FormLabel>
-                          <FormControl>
-                            <Input type="email" placeholder="Email" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    ></FormField>
-                  </div>
-                  <div className="mb-3">
-                    <FormField
-                      control={couponForm.control}
-                      name="address"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-[600]" >Flat, House no, Building, Company, Apartment <span className="text-red-600" >*</span> </FormLabel>
-                          <FormControl>
-                            <Input placeholder="Address" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    ></FormField>
-                  </div>
-                  <div className="mb-3">
-                    <FormField
-                      control={couponForm.control}
-                      name="street"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-[600]" >Area, Street, Sector, Village <span className="text-red-600" >*</span> </FormLabel>
-                          <FormControl>
-                            <Input placeholder="Area-Street-Sector-village" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    ></FormField>
-                  </div>
-                  <div className="mb-3">
-                    <FormField
-                      control={couponForm.control}
-                      name="pincode"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-[600]">Landmark <span className="text-red-600" >*</span></FormLabel>
-                          <FormControl>
-                            <Input placeholder="LandMark" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    ></FormField>
-                  </div>
-                  <div className="mb-3">
-                    <FormField
-                      control={couponForm.control}
-                      name="city"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-[600]" >Town/City <span className="text-red-600" >*</span></FormLabel>
-                          <FormControl>
-                            <Input placeholder="City" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    ></FormField>
-                  </div>
-                  <div className="mb-3">
-                    <FormField
-                      control={couponForm.control}
-                      name="state"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-[600]" >State <span className="text-red-600" >*</span> </FormLabel>
-                          <FormControl>
-                            <Input placeholder="State" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    ></FormField>
-                  </div>
-                  <div className="mb-3">
-                    <FormField
-                      control={couponForm.control}
-                      name="pincode"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="font-[600]">Pincode <span className="text-red-600" >*</span> </FormLabel>
-                          <FormControl>
-                            <Input placeholder="Pincode" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    ></FormField>
-                  </div>
-                  
-                  <div className="mb-3">
-                    <FormField
-                      control={couponForm.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormControl>
-                            <Input placeholder="Enter your name" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    ></FormField>
-                  </div>
-                  <div className="mb-3">
-                    <FormField
-                      control={couponForm.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormControl>
-                            <Input placeholder="Enter your name" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    ></FormField>
-                  </div>
-                  <div className="mb-3">
-                    <FormField
-                      control={couponForm.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormControl>
-                            <Input placeholder="Enter your name" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    ></FormField>
+              <Form {...orderForm}>
+                <form onSubmit={orderForm.handleSubmit(placeOrder)}>
+                  <div className="flex flex-col sm:flex-row sm:flex-wrap gap-5">
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                      <FormField
+                        control={orderForm.control}
+                        name="name"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-[600]">
+                              Full Name{" "}
+                              <span className="hidden 2xl:block">
+                                (First and Last name)
+                              </span>{" "}
+                              <span className="text-red-600">*</span>
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                type="text"
+                                placeholder="Full Name"
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                      <FormField
+                        control={orderForm.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-[600]">
+                              Email <span className="text-red-600">*</span>{" "}
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                type="email"
+                                placeholder="Email"
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                      <FormField
+                        control={orderForm.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-[600]">
+                              Phone No <span className="text-red-600">*</span>{" "}
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                type="tel"
+                                placeholder="Phone"
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                      <FormField
+                        control={orderForm.control}
+                        name="address"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-[600]">
+                              Flat, House no
+                              <span className="hidden 2xl:block">
+                                , Building, Company, Apartment
+                              </span>{" "}
+                              <span className="text-red-600">*</span>{" "}
+                            </FormLabel>
+                            <FormControl>
+                              <Input placeholder="Address" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                      <FormField
+                        control={orderForm.control}
+                        name="street"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-[600]">
+                              Area, Street{" "}
+                              <span className="hidden 2xl:block">
+                                , Sector, Village
+                              </span>{" "}
+                              <span className="text-red-600">*</span>{" "}
+                            </FormLabel>
+                            <FormControl>
+                              <Input
+                                placeholder="Area-Street-Sector-village"
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                      <FormField
+                        control={orderForm.control}
+                        name="landmark"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-[600]">
+                              Landmark <span className="text-red-600">*</span>
+                            </FormLabel>
+                            <FormControl>
+                              <Input placeholder="LandMark" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                      <FormField
+                        control={orderForm.control}
+                        name="city"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-[600]">
+                              Town/City <span className="text-red-600">*</span>
+                            </FormLabel>
+                            <FormControl>
+                              <Input placeholder="City" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                      <FormField
+                        control={orderForm.control}
+                        name="state"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-[600]">
+                              State <span className="text-red-600">*</span>{" "}
+                            </FormLabel>
+                            <FormControl>
+                              <Input placeholder="State" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                      <FormField
+                        control={orderForm.control}
+                        name="pincode"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-[600]">
+                              Pincode <span className="text-red-600">*</span>{" "}
+                            </FormLabel>
+                            <FormControl>
+                              <Input placeholder="Pincode" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                      <FormField
+                        control={orderForm.control}
+                        name="country"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-[600]">
+                              Country <span className="text-red-600">*</span>{" "}
+                            </FormLabel>
+                            <FormControl>
+                              <Input placeholder="Country" {...field} />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="w-full mb-3">
+                      <FormField
+                        control={orderForm.control}
+                        name="ordernote"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="font-[600]">
+                              Order Note
+                            </FormLabel>
+                            <FormControl>
+                              <Textarea
+                                placeholder="Enter order note"
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+
+                    <div className="w-full">
+                      <Button type="submit" className="w-full">
+                        Place Order
+                      </Button>
+                    </div>
                   </div>
                 </form>
               </Form>
