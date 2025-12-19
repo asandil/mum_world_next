@@ -171,6 +171,19 @@ const Checkout = () => {
     },
   });
 
+  // get order ID
+  const getOrderId = async (amount) => {
+    try {
+      const {date: orderIdData} = await axios.post("/api/payment/get-order-id", {amount})
+      if(!orderIdData.success){
+        throw new Error(orderIdData.message)
+      }
+      return {success: true, order_id:orderIdData.data}
+    } catch (error) {
+      return {success: false, message: error.message}
+    }
+  }
+
   const placeOrder = async (formData) => {
     console.log(formData);
     setPlacingOrder(true);
