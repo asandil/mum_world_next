@@ -27,6 +27,7 @@ import { IoCloseCircleSharp } from "react-icons/io5";
 import z from "zod";
 import { FaShippingFast } from "react-icons/fa";
 import { Textarea } from "@/components/ui/textarea";
+import Script from "next/script";
 
 const breadCrumb = {
   title: "Checkout",
@@ -174,22 +175,58 @@ const Checkout = () => {
   // get order ID
   const getOrderId = async (amount) => {
     try {
-      const {data: orderIdData} = await axios.post("/api/payment/get-order-id", {amount})
-      if(!orderIdData.success){
-        throw new Error(orderIdData.message)
+      const { data: orderIdData } = await axios.post(
+        "/api/payment/get-order-id",
+        { amount }
+      );
+      if (!orderIdData.success) {
+        throw new Error(orderIdData.message);
       }
-      return {success: true, order_id:orderIdData.data}
+      return { success: true, order_id: orderIdData.data };
     } catch (error) {
-      return {success: false, message: error.message}
+      return { success: false, message: error.message };
     }
-  }
+  };
 
   const placeOrder = async (formData) => {
-    console.log("Order Form Details From CheckOut Page.",formData);
+    console.log("Order Form Details From CheckOut Page.", formData);
     setPlacingOrder(true);
     try {
-      const generateOrderId = await getOrderId(totalAmount)
-      console.log(generateOrderId)
+      const generateOrderId = await getOrderId(totalAmount);
+      console.log(generateOrderId);
+      if(!generateOrderId){
+        throw new Error(generateOrderId.message);
+      }
+
+      const order_id = getOrderId.order_id
+
+      const rezOption = {
+        "key": process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+        "amount": totalAmount * 100,
+        "currency": "INR",
+        "name": "Mum-World",
+        "description": "Payment for order",
+        "image":
+          "https://res.cloudinary.com/dc0wr8hev/image/upload/v1766166906/lcsvrxwp43tsqaep2feu.png",
+        "order_id": order_id,
+        "handler": function (response) {},
+        "prefill": {
+          "name": formData.name,
+          "email": formData.email,
+          "contact": formData.phone,
+        },
+        "theme": {
+          "color": "#7c3aed",
+        },
+      };
+
+      const rzp = new Razorpay(rezOption);
+      rzp.on("payment.failed", function (response) {
+        showToast("error", response.error.description);
+      });
+
+      rzp.open();
+
     } catch (error) {
       showToast("error", error.message);
     } finally {
@@ -608,6 +645,7 @@ const Checkout = () => {
           </div>
         </div>
       )}
+      <Script src="https://checkout.razorpay.com/v1/checkout.js" />
     </div>
   );
 };
