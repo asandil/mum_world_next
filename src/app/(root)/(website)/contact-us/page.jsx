@@ -5,9 +5,11 @@ import { BsFillHeartFill } from "react-icons/bs";
 
 export const metadata = {
   title: "Contact MumWorld | Pregnancy & Newborn Support Team",
-  description: "Have questions about pregnancy or newborn care? Contact MumWorld’s expert support team for fast assistance and personalized guidance.",
-  keywords: "pregnancy blog, parenting articles, motherhood blog, baby care tips",
-}
+  description:
+    "Have questions about pregnancy or newborn care? Contact MumWorld’s expert support team for fast assistance and personalized guidance.",
+  keywords:
+    "pregnancy blog, parenting articles, motherhood blog, baby care tips",
+};
 
 const ContactUs = () => {
   return (
