@@ -14,7 +14,11 @@ import { Input } from "@/components/ui/input";
 import useFetch from "@/hooks/useFetch";
 import { showToast } from "@/lib/showToast";
 import { zSchema } from "@/lib/zodSchema";
-import { WEBSITE_PRODUCT_DETAILS, WEBSITE_SHOP } from "@/routes/WebsiteRoute";
+import {
+  WEBSITE_ORDER_DEATILS,
+  WEBSITE_PRODUCT_DETAILS,
+  WEBSITE_SHOP,
+} from "@/routes/WebsiteRoute";
 import { addIntoCart, clearCart } from "@/store/reducer/cartReducer";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
@@ -28,6 +32,7 @@ import z from "zod";
 import { FaShippingFast } from "react-icons/fa";
 import { Textarea } from "@/components/ui/textarea";
 import Script from "next/script";
+import { useRouter } from "next/navigation";
 
 const breadCrumb = {
   title: "Checkout",
@@ -39,6 +44,7 @@ const breadCrumb = {
 };
 
 const Checkout = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const cart = useSelector((store) => store.cartStore);
   const auth = useSelector((store) => store.authStore);
@@ -194,29 +200,60 @@ const Checkout = () => {
     try {
       const generateOrderId = await getOrderId(totalAmount);
       console.log(generateOrderId);
-      if(!generateOrderId){
+      if (!generateOrderId) {
         throw new Error(generateOrderId.message);
       }
 
-      const order_id = getOrderId.order_id
+      const order_id = getOrderId.order_id;
 
       const rezOption = {
-        "key": process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
-        "amount": totalAmount * 100,
-        "currency": "INR",
-        "name": "Mum-World",
-        "description": "Payment for order",
-        "image":
+        key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
+        amount: totalAmount * 100,
+        currency: "INR",
+        name: "Mum-World",
+        description: "Payment for order",
+        image:
           "https://res.cloudinary.com/dc0wr8hev/image/upload/v1766166906/lcsvrxwp43tsqaep2feu.png",
-        "order_id": order_id,
-        "handler": function (response) {},
-        "prefill": {
-          "name": formData.name,
-          "email": formData.email,
-          "contact": formData.phone,
+        order_id: order_id,
+        handler: async function (response) {
+          const products = verifiedCartData.map((cartItem) => ({
+            productId: cartItem.productId,
+            variantId: cartItem.variantId,
+            name: cartItem.variantId,
+            qty: cartItem.qty,
+            mrp: cartItem.mrp,
+            sellingPrice: cartItem.sellingPrice,
+          }));
+
+          const { data: paymentResponseData } = await axios.post(
+            "/api/payment/save-order",
+            {
+              ...formData,
+              ...response,
+              products: products,
+              subtotal: subtotal,
+              discount: discount,
+              couponDiscountAmount: couponDiscountAmount,
+              totalAmount: totalAmount,
+            }
+          );
+
+          if (paymentResponseData.success) {
+            showToast("success", paymentResponseData.message);
+            dispatch(clearCart());
+            orderForm.reset();
+            router.push(WEBSITE_ORDER_DEATILS(response.razorpay_order_id));
+          } else {
+            showToast("error", paymentResponseData.message);
+          }
         },
-        "theme": {
-          "color": "#7c3aed",
+        prefill: {
+          name: formData.name,
+          email: formData.email,
+          contact: formData.phone,
+        },
+        theme: {
+          color: "#7c3aed",
         },
       };
 
@@ -226,7 +263,6 @@ const Checkout = () => {
       });
 
       rzp.open();
-
     } catch (error) {
       showToast("error", error.message);
     } finally {
