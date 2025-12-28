@@ -63,31 +63,48 @@ const OrderSchema = new mongoose.Schema({
         ref: "ProductVariant",
         required: true,
       },
-      name: { type: String, required: true},
-      qty: { type: String, required: true},
-      mrp: { type: String, required: true},
-      sellingPrice: { type: String, required: true},
+      name: { type: String, required: true },
+      qty: { type: String, required: true },
+      mrp: { type: String, required: true },
+      sellingPrice: { type: String, required: true },
     },
   ],
   subtotal: {
     type: Number,
-    required: true
+    required: true,
   },
   discount: {
     type: Number,
-    required: true
+    required: true,
   },
   couponDiscountAmount: {
     type: Number,
-    required: true
+    required: true,
   },
   totalAmount: {
     type: Number,
-    required: true
+    required: true,
   },
-  discount: {
+  status: {
     type: String,
     enum: orderStatus,
-    default: "pending"
+    default: "pending",
+  },
+  payment_id: {
+    type: String,
+    required: true,
+  },
+  order_id: {
+    type: String,
+    required: true,
+  },
+  delatedAt: {
+    type: Date,
+    default: null,
+    index: true,
   },
 });
+
+const OrderModel =
+  mongoose.models.Order || mongoose.model("Order", OrderSchema, "orders");
+export default OrderModel;

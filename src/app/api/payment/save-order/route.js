@@ -1,6 +1,8 @@
 import { connectDB } from "@/lib/db";
 import { catchError, response } from "@/lib/helperFunction";
+import { sendMail } from "@/lib/sendMail";
 import { zSchema } from "@/lib/zodSchema";
+import OrderModel from "@/models/Order.model";
 import { validatePaymentVerification } from "razorpay/dist/utils/razorpay-utils";
 import z from "zod";
 
@@ -51,20 +53,61 @@ export async function POST(request) {
       });
     }
 
-    const validatedDate = validate.data
+    const validatedData = validate.data;
 
     // payment verification
-    const verification = validatePaymentVerification({
-      order_id: validatedDate.razorpay_order_id,
-      payment_id: validatedDate.razorpay_payment_id,
-    }, validatedDate.razorpay_signature, process.env.RAZORPAY_KEY_SECRET)
+    const verification = validatePaymentVerification(
+      {
+        order_id: validatedData.razorpay_order_id,
+        payment_id: validatedData.razorpay_payment_id,
+      },
+      validatedData.razorpay_signature,
+      process.env.RAZORPAY_KEY_SECRET
+    );
 
-    let paymentVerification = false
-    if(verification){
-      paymentVerification = true
+    let paymentVerification = false;
+    if (verification) {
+      paymentVerification = true;
     }
 
-    
+    const newOrder = await OrderModel.create({
+      user: validatedData.userId,
+      name: validatedData.name,
+      email: validatedData.email,
+      phone: validatedData.phone,
+      address: validatedData.address,
+      street: validatedData.street,
+      country: validatedData.country,
+      state: validatedData.state,
+      city: validatedData.city,
+      pincode: validatedData.pinecode,
+      landmark: validatedData.landmark,
+      ordernote: validatedData.ordernote,
+      products: validatedData.products,
+      discount: validatedData.discount,
+      couponDiscountAmount: validatedData.couponDiscountAmount,
+      totalAmount: validatedData.totalAmount,
+      subtotal: validatedData.subtotal,
+      payment_id: validatedData.razorpay_payment_id,
+      order_id: validatedData.razorpay_order_id,
+      status: paymentVerification ? "pending" : "unverified",
+    });
+
+    try {
+      const mailData = {
+        order_id: validatedData.razorpay_order_id,
+        orderDetailsUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/order-details/${validatedData.razorpay_order_id}`,
+      }
+
+      await sendMail("Your order has been placed successfully.", validatedData.email, orderNotification(mailData), mailData);
+
+      await sendMail("New order received", process.env.NODEMAILER_EMAIL, "order-placed-admin", mailData);
+
+    } catch (error) {
+      console.log(error)
+    }
+
+    return response(true, 200, "Order placed successfully.");
 
   } catch (error) {
     return catchError(error);
