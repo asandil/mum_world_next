@@ -33,6 +33,7 @@ import { FaShippingFast } from "react-icons/fa";
 import { Textarea } from "@/components/ui/textarea";
 import Script from "next/script";
 import { useRouter } from "next/navigation";
+import loading from "@/assets/images/loading.svg";
 
 const breadCrumb = {
   title: "Checkout",
@@ -65,6 +66,8 @@ const Checkout = () => {
   const [totalAmount, setTotalAmount] = useState(0);
   const [couponLoading, setCouponLoading] = useState(false);
   const [placingOrder, setPlacingOrder] = useState(false);
+
+  const [savingOrder, setSavingOrder] = useState(false);
 
   // console.log("Checkout Data from Cart-Verification API ", getVerifiedCartData);
 
@@ -200,11 +203,11 @@ const Checkout = () => {
     try {
       const generateOrderId = await getOrderId(totalAmount);
       console.log(generateOrderId);
-      if (!generateOrderId) {
+      if (!generateOrderId.success) {
         throw new Error(generateOrderId.message);
       }
 
-      const order_id = getOrderId.order_id;
+      const order_id = generateOrderId.order_id;
 
       const rezOption = {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
@@ -216,6 +219,7 @@ const Checkout = () => {
           "https://res.cloudinary.com/dc0wr8hev/image/upload/v1766166906/lcsvrxwp43tsqaep2feu.png",
         order_id: order_id,
         handler: async function (response) {
+          setSavingOrder(true);
           const products = verifiedCartData.map((cartItem) => ({
             productId: cartItem.productId,
             variantId: cartItem.variantId,
@@ -243,8 +247,10 @@ const Checkout = () => {
             dispatch(clearCart());
             orderForm.reset();
             router.push(WEBSITE_ORDER_DEATILS(response.razorpay_order_id));
+            setSavingOrder(false);
           } else {
             showToast("error", paymentResponseData.message);
+            setSavingOrder(false);
           }
         },
         prefill: {
@@ -272,6 +278,14 @@ const Checkout = () => {
 
   return (
     <div>
+      {savingOrder && (
+        <div className="h-screen w-screen fixed top-0 left-0 z-50 bg-black/20">
+          <div className="h-screen flex flex-col justify-center items-center">
+            <Image src={loading.src} height={80} width={80} alt="Loading" />
+            <h4 className="font-semibold" >Order Confirming...</h4>
+          </div>
+        </div>
+      )}
       <WebsiteBreadcrumb props={breadCrumb} />
       {cart.count === 0 ? (
         <div className="w-screen h-[500px] flex justify-center items-center py-32">

@@ -30,7 +30,7 @@ export async function POST(request) {
         country: true,
         state: true,
         city: true,
-        pinecode: true,
+        pincode: true,
         landmark: true,
         ordernote: true,
       })
@@ -80,7 +80,7 @@ export async function POST(request) {
       country: validatedData.country,
       state: validatedData.state,
       city: validatedData.city,
-      pincode: validatedData.pinecode,
+      pincode: validatedData.pincode,
       landmark: validatedData.landmark,
       ordernote: validatedData.ordernote,
       products: validatedData.products,
