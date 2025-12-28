@@ -101,7 +101,7 @@ export async function POST(request) {
 
       await sendMail("Your order has been placed successfully.", validatedData.email, orderNotification(mailData), mailData);
 
-      await sendMail("New order received", process.env.NODEMAILER_EMAIL, "order-placed-admin", mailData);
+      // await sendMail("New order received", process.env.NODEMAILER_EMAIL, "order-placed-admin", mailData);
 
     } catch (error) {
       console.log(error)
