@@ -114,33 +114,82 @@ const OrderDetails = async ({ params }) => {
             </table>
 
             <div className="grid md:grid-cols-2 grid-cols-1 gap-10 border mt-10">
-                <div className="p-5">
-                  <h4 className="text-lg font-semibold mb-5">Shipping Address</h4>
-                  <div>
-                    <table>
-                      <tbody>
-                        <tr>
-                          <td className="font-medium py-2">Name:-</td>
-                          <td className="text-end py-2">{orderData?.data?.name}</td>
-                        </tr>
-                        <tr>
-                          <td className="font-medium py-2">Email:-</td>
-                          <td className="text-end py-2">{orderData?.data?.email}</td>
-                        </tr>
-                        <tr>
-                          <td className="font-medium py-2">Phone:-</td>
-                          <td className="text-end py-2">{orderData?.data?.phone}</td>
-                        </tr>
-                        <tr>
-                          <td className="font-medium py-2">Country:-</td>
-                          <td className="text-end py-2">{orderData?.data?.country}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+              <div className="p-5">
+                <h4 className="text-lg font-semibold mb-5">Shipping Address</h4>
+                <div>
+                  <table className="w-full" >
+                    <tbody>
+                      <tr>
+                        <td className="font-medium py-2">Name:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.name}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium py-2">Email:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.email}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium py-2">Phone:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.phone}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium py-2">Address:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.address}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium py-2">Street:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.street}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium py-2">Country:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.country}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium py-2">State:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.state}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium py-2">City:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.city}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium py-2">PineCode:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.pincode}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium py-2">LandMark:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.landmark}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium py-2">OrderNote:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.ordernote || "---"}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
+              </div>
             </div>
-
           </div>
         )}
       </div>
