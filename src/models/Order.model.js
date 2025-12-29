@@ -1,5 +1,7 @@
 import { orderStatus } from "@/lib/utils";
 import mongoose from "mongoose";
+import ProductModel from "./Product.model";
+import ProductVariantModel from "./ProductVarient.model";
 
 const OrderSchema = new mongoose.Schema({
   user: {

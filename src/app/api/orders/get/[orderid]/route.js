@@ -6,13 +6,13 @@ export async function GET(request, { params }) {
   try {
     await connectDB();
     const getParams = await params;
-    const { orderid } = getParams.orderid;
+    const orderid = getParams.orderid;
 
     if (!orderid) {
       return response(false, 404, "Order not found.");
     }
 
-    const orderData = await OrderModel.findOne({ orderId: orderid })
+    const orderData = await OrderModel.findOne({ order_id: orderid })
       .populate("products.productId", "name slug")
       .populate({
         path: "products.variantId",

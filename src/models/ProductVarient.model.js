@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import ProductModel from "./Product.model";
+import MediaModel from "./Media.model";
 
 const productVariantSchema = new mongoose.Schema(
   {
