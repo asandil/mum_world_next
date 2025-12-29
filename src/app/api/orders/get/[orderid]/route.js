@@ -1,6 +1,9 @@
 import { connectDB } from "@/lib/db";
 import { catchError, response } from "@/lib/helperFunction";
 import OrderModel from "@/models/Order.model";
+import ProductModel from "@/models/Product.model";
+import ProductVariantModel from "@/models/ProductVarient.model";
+import MediaModel from "@/models/Media.model";
 
 export async function GET(request, { params }) {
   try {
