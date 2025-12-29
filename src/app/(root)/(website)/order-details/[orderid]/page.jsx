@@ -117,7 +117,7 @@ const OrderDetails = async ({ params }) => {
               <div className="p-5">
                 <h4 className="text-lg font-semibold mb-5">Shipping Address</h4>
                 <div>
-                  <table className="w-full" >
+                  <table className="w-full">
                     <tbody>
                       <tr>
                         <td className="font-medium py-2">Name:-</td>
@@ -183,6 +183,21 @@ const OrderDetails = async ({ params }) => {
                         <td className="font-medium py-2">OrderNote:-</td>
                         <td className="text-end py-2">
                           {orderData?.data?.ordernote || "---"}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div className="p-5 bg-gray-50">
+                <h4 className="text-lg font-semibold mb-5">Order Summary</h4>
+                <div>
+                  <table className="w-full">
+                    <tbody>
+                      <tr>
+                        <td className="font-medium py-2">Name:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.name}
                         </td>
                       </tr>
                     </tbody>
