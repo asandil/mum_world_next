@@ -8,6 +8,8 @@ const OrderDetails = async ({ params }) => {
     `${process.env.NEXT_PUBLIC_API_BASE_URL}/orders/get/${orderid}`
   );
 
+  console.log("Order Data", orderData);
+
   const breadCrumb = {
     title: "Order Details",
     links: [{ label: "Order Details" }],
@@ -39,8 +41,21 @@ const OrderDetails = async ({ params }) => {
                 {orderData?.data?.status}
               </p>
             </div>
-            <table className="w-full border" >
-
+            <table className="w-full border">
+              <thead className="border-b bg-gray-50 md:table-header-group hidden">
+                <tr>
+                  <th className="text-start p-3">Product</th>
+                  <th className="text-start p-3">Price</th>
+                  <th className="text-start p-3">Quantity</th>
+                  <th className="text-start p-3">Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                {orderData &&
+                  orderData?.data?.products?.map((product) => (
+                    <tr key={product.variantId._id}></tr>
+                  ))}
+              </tbody>
             </table>
           </div>
         )}
