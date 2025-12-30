@@ -1,16 +1,18 @@
-"use client"
+"use client";
 // components/PrintButton.jsx
-import React from 'react';
-import { ButtonLoading } from '../ButtonLoading';
+import React from "react";
+import { ButtonLoading } from "../ButtonLoading";
 
 const PrintButton = ({ orderData, variant = "default", className = "" }) => {
   // Format currency function for consistent formatting
   const formatCurrency = (amount) => {
-    return amount?.toLocaleString('en-IN', {
-      style: 'currency',
-      currency: 'INR',
-      minimumFractionDigits: 0,
-    }) || '₹0';
+    return (
+      amount?.toLocaleString("en-IN", {
+        style: "currency",
+        currency: "INR",
+        minimumFractionDigits: 0,
+      }) || "₹0"
+    );
   };
 
   const handlePrint = () => {
@@ -19,18 +21,25 @@ const PrintButton = ({ orderData, variant = "default", className = "" }) => {
       return;
     }
 
-    const printWindow = window.open('', '_blank', 'width=900,height=600');
-    
+    const printWindow = window.open("", "_blank", "width=900,height=600");
+
     // Get order data for easier access
     const order = orderData.data;
-    
+
     // Generate products HTML
-    const productsHtml = order.products?.map(product => `
+    const productsHtml =
+      order.products
+        ?.map(
+          (product) => `
       <tr>
         <td style="padding: 8px; border: 1px solid #ddd;">
-          <strong>${product?.productId?.name || 'N/A'}</strong><br/>
-          ${product?.variantId?.color ? `Color: ${product.variantId.color}<br/>` : ''}
-          ${product?.variantId?.size ? `Size: ${product.variantId.size}` : ''}
+          <strong>${product?.productId?.name || "N/A"}</strong><br/>
+          ${
+            product?.variantId?.color
+              ? `Color: ${product.variantId.color}<br/>`
+              : ""
+          }
+          ${product?.variantId?.size ? `Size: ${product.variantId.size}` : ""}
         </td>
         <td style="padding: 8px; border: 1px solid #ddd; text-align: center;">
           ${formatCurrency(product?.sellingPrice || 0)}
@@ -42,7 +51,10 @@ const PrintButton = ({ orderData, variant = "default", className = "" }) => {
           ${formatCurrency((product?.sellingPrice || 0) * (product?.qty || 1))}
         </td>
       </tr>
-    `).join('') || '<tr><td colspan="4" style="text-align: center;">No products found</td></tr>';
+    `
+        )
+        .join("") ||
+      '<tr><td colspan="4" style="text-align: center;">No products found</td></tr>';
 
     const printContent = `
       <!DOCTYPE html>
@@ -75,9 +87,7 @@ const PrintButton = ({ orderData, variant = "default", className = "" }) => {
             
             .header {
               text-align: center;
-              margin-bottom: 30px;
               padding-bottom: 20px;
-              border-bottom: 2px solid #e9ecef;
             }
             
             .header h1 {
@@ -96,7 +106,7 @@ const PrintButton = ({ orderData, variant = "default", className = "" }) => {
             }
             
             .section h3 {
-              color: #3498db;
+              color: #F69E87;
               margin-bottom: 15px;
               padding-bottom: 8px;
               border-bottom: 1px solid #ecf0f1;
@@ -242,28 +252,34 @@ const PrintButton = ({ orderData, variant = "default", className = "" }) => {
         <body>
           <div class="invoice-container">
             <div class="print-date">
-              <strong>Printed on:</strong> ${new Date().toLocaleDateString('en-IN', { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-              })}
+              <strong>Printed on:</strong> ${new Date().toLocaleDateString(
+                "en-IN",
+                {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                }
+              )}
             </div>
             
             <div class="header">
-              <h1>📦 Order Invoice</h1>
-              <p><strong>Order ID:</strong> ${order.order_id}</p>
-              <p><strong>Order Date:</strong> ${new Date(order.createdAt).toLocaleDateString('en-IN', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })}</p>
+              <div style="max-width: 260px">
+                <img
+                  alt="Logo"
+                  height="auto"
+                  src="https://res.cloudinary.com/dc0wr8hev/image/upload/v1766166906/lcsvrxwp43tsqaep2feu.png"
+                  style="display: block; height: auto; border: 0; width: 100%"
+                  title="Logo"
+                  width="200"
+                />
+              </div>
             </div>
             
             <div class="section">
-              <h3>📋 Order Information</h3>
+              <h3>Order Information</h3>
               <table>
                 <tr>
                   <td style="width: 30%;"><strong>Order ID:</strong></td>
@@ -271,12 +287,11 @@ const PrintButton = ({ orderData, variant = "default", className = "" }) => {
                 </tr>
                 <tr>
                   <td><strong>Transaction ID:</strong></td>
-                  <td>${order.payment_id || 'N/A'}</td>
+                  <td>${order.payment_id || "N/A"}</td>
                 </tr>
                 <tr>
                   <td><strong>Status:</strong></td>
                   <td>
-                    ${order.status}
                     <span class="status-badge status-${order.status.toLowerCase()}">
                       ${order.status}
                     </span>
@@ -286,7 +301,7 @@ const PrintButton = ({ orderData, variant = "default", className = "" }) => {
             </div>
             
             <div class="section">
-              <h3>🛍️ Ordered Products</h3>
+              <h3>Ordered Products</h3>
               <table>
                 <thead>
                   <tr>
@@ -304,30 +319,57 @@ const PrintButton = ({ orderData, variant = "default", className = "" }) => {
             
             <div class="flex-container">
               <div class="section" style="flex: 1;">
-                <h3>🏠 Shipping Address</h3>
+                <h3>Shipping Address</h3>
                 <table>
                   <tr><td><strong>Name:</strong></td><td>${order.name}</td></tr>
-                  <tr><td><strong>Email:</strong></td><td>${order.email}</td></tr>
-                  <tr><td><strong>Phone:</strong></td><td>${order.phone}</td></tr>
-                  <tr><td><strong>Address:</strong></td><td>${order.address}</td></tr>
-                  <tr><td><strong>Street:</strong></td><td>${order.street || '---'}</td></tr>
+                  <tr><td><strong>Email:</strong></td><td>${
+                    order.email
+                  }</td></tr>
+                  <tr><td><strong>Phone:</strong></td><td>${
+                    order.phone
+                  }</td></tr>
+                  <tr><td><strong>Address:</strong></td><td>${
+                    order.address
+                  }</td></tr>
+                  <tr><td><strong>Street:</strong></td><td>${
+                    order.street || "---"
+                  }</td></tr>
                   <tr><td><strong>City:</strong></td><td>${order.city}</td></tr>
-                  <tr><td><strong>State:</strong></td><td>${order.state}</td></tr>
-                  <tr><td><strong>Country:</strong></td><td>${order.country}</td></tr>
-                  <tr><td><strong>Pincode:</strong></td><td>${order.pincode}</td></tr>
-                  <tr><td><strong>Landmark:</strong></td><td>${order.landmark || '---'}</td></tr>
-                  ${order.ordernote ? `<tr><td><strong>Order Note:</strong></td><td>${order.ordernote}</td></tr>` : ''}
+                  <tr><td><strong>State:</strong></td><td>${
+                    order.state
+                  }</td></tr>
+                  <tr><td><strong>Country:</strong></td><td>${
+                    order.country
+                  }</td></tr>
+                  <tr><td><strong>Pincode:</strong></td><td>${
+                    order.pincode
+                  }</td></tr>
+                  <tr><td><strong>Landmark:</strong></td><td>${
+                    order.landmark || "---"
+                  }</td></tr>
+                  ${
+                    order.ordernote
+                      ? `<tr><td><strong>Order Note:</strong></td><td>${order.ordernote}</td></tr>`
+                      : ""
+                  }
                 </table>
               </div>
-              
               <div class="section total-section" style="flex: 1;">
-                <h3>💰 Order Summary</h3>
+                <h3>Order Summary</h3>
                 <table>
-                  <tr><td><strong>Subtotal:</strong></td><td>${formatCurrency(order.subtotal)}</td></tr>
-                  <tr><td><strong>Discount:</strong></td><td>${formatCurrency(order.discount)}</td></tr>
-                  <tr><td><strong>Coupon Discount:</strong></td><td>${formatCurrency(order.couponDiscountAmount)}</td></tr>
+                  <tr><td><strong>Subtotal:</strong></td><td>${formatCurrency(
+                    order.subtotal
+                  )}</td></tr>
+                  <tr><td><strong>Discount:</strong></td><td>${formatCurrency(
+                    order.discount
+                  )}</td></tr>
+                  <tr><td><strong>Coupon Discount:</strong></td><td>${formatCurrency(
+                    order.couponDiscountAmount
+                  )}</td></tr>
                   <tr><td><strong style="font-size: 18px;">Total Amount:</strong></td>
-                      <td><strong style="font-size: 18px; color: #27ae60;">${formatCurrency(order.totalAmount)}</strong></td></tr>
+                      <td><strong style="font-size: 18px; color: #27ae60;">${formatCurrency(
+                        order.totalAmount
+                      )}</strong></td></tr>
                 </table>
               </div>
             </div>
@@ -357,14 +399,14 @@ const PrintButton = ({ orderData, variant = "default", className = "" }) => {
         </body>
       </html>
     `;
-    
+
     printWindow.document.write(printContent);
     printWindow.document.close();
   };
 
   return (
-    <ButtonLoading 
-      type="button" 
+    <ButtonLoading
+      type="button"
       text="Print Invoice"
       variant={variant}
       className={`cursor-pointer ${className}`}
