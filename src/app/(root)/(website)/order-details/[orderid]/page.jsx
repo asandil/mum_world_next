@@ -5,6 +5,7 @@ import imgPlaceholder from "@/assets/images/img-placeholder.webp";
 import Image from "next/image";
 import Link from "next/link";
 import { WEBSITE_PRODUCT_DETAILS } from "@/routes/WebsiteRoute";
+import { ButtonLoading } from "@/components/Application/ButtonLoading";
 
 const OrderDetails = async ({ params }) => {
   const { orderid } = await params;
@@ -57,7 +58,10 @@ const OrderDetails = async ({ params }) => {
               <tbody>
                 {orderData &&
                   orderData?.data?.products?.map((product) => (
-                    <tr key={product.variantId._id}>
+                    <tr
+                      key={product.variantId._id}
+                      className="md:table-row block border-b"
+                    >
                       <td className="p-3">
                         <div className="flex items-center gap-5">
                           <Image
@@ -195,13 +199,62 @@ const OrderDetails = async ({ params }) => {
                   <table className="w-full">
                     <tbody>
                       <tr>
-                        <td className="font-medium py-2">Name:-</td>
+                        <td className="font-medium py-2">Subtotal:-</td>
                         <td className="text-end py-2">
-                          {orderData?.data?.name}
+                          {orderData?.data?.subtotal.toLocaleString("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                          })}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium py-2">Discount:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.discount.toLocaleString("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                          })}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium py-2">Coupon Discount:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.couponDiscountAmount.toLocaleString(
+                            "en-IN",
+                            {
+                              style: "currency",
+                              currency: "INR",
+                            }
+                          )}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="font-medium py-2">Total:-</td>
+                        <td className="text-end py-2">
+                          {orderData?.data?.totalAmount.toLocaleString(
+                            "en-IN",
+                            {
+                              style: "currency",
+                              currency: "INR",
+                            }
+                          )}
                         </td>
                       </tr>
                     </tbody>
                   </table>
+                </div>
+                <div className="w-full flex justify-between">
+                  <ButtonLoading
+                    type="button"
+                    text="Cancel"
+                    variant="destructive"
+                    className="cursor-pointer"
+                  />
+                  <ButtonLoading
+                    type="button"
+                    text="Print"
+                    className="cursor-pointer"
+                  />
                 </div>
               </div>
             </div>
