@@ -56,7 +56,7 @@ export async function POST(request) {
 
     const validatedData = validate.data;
 
-    // payment verification
+    // Payment verification
     const verification = validatePaymentVerification(
       {
         order_id: validatedData.razorpay_order_id,
@@ -71,6 +71,7 @@ export async function POST(request) {
       paymentVerification = true;
     }
 
+    // Create the order in database
     const newOrder = await OrderModel.create({
       user: validatedData.userId,
       name: validatedData.name,
@@ -95,21 +96,65 @@ export async function POST(request) {
     });
 
     try {
+      const orderDate = new Date().toLocaleDateString("en-IN", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+
+      const deliveryDate = new Date(
+        Date.now() + 6 * 24 * 60 * 60 * 1000
+      ).toLocaleDateString("en-IN", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+
       const mailData = {
+        name: validatedData.name,
+        email: validatedData.email,
+        phone: validatedData.phone,
+        address: validatedData.address,
+        street: validatedData.street,
+        country: validatedData.country,
+        state: validatedData.state,
+        city: validatedData.city,
+        pincode: validatedData.pincode,
+        landmark: validatedData.landmark,
+        ordernote: validatedData.ordernote || "",
         order_id: validatedData.razorpay_order_id,
+        payment_id: validatedData.razorpay_payment_id,
+        order_date: orderDate,
+        delivery_date: deliveryDate,
+        status: paymentVerification ? "Confirmed" : "Unverified",
+        subtotal: validatedData.subtotal,
+        discount: validatedData.discount,
+        couponDiscountAmount: validatedData.couponDiscountAmount,
+        totalAmount: validatedData.totalAmount,
+        products_count: validatedData.products.length,
         orderDetailsUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/order-details/${validatedData.razorpay_order_id}`,
-      }
+        base_url: process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000",
+      };
 
-      await sendMail("Your order has been placed successfully.", validatedData.email, orderNotification(mailData));
-
+      await sendMail(
+        `Order Confirmation - ${validatedData.razorpay_order_id}`,
+        validatedData.email,
+        orderNotification(mailData)
+      );
       // await sendMail("New order received", process.env.NODEMAILER_EMAIL, "order-placed-admin", mailData);
-
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
 
-    return response(true, 200, "Order placed successfully.");
-
+    return response(true, 200, "Order placed successfully.", {
+      order_id: newOrder.order_id,
+      status: newOrder.status,
+      message: "Order created and confirmation email sent.",
+    });
   } catch (error) {
     return catchError(error);
   }
