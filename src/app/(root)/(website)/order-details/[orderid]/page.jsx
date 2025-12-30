@@ -7,6 +7,9 @@ import Link from "next/link";
 import { WEBSITE_PRODUCT_DETAILS } from "@/routes/WebsiteRoute";
 import { ButtonLoading } from "@/components/Application/ButtonLoading";
 import PrintButton from "@/components/Application/website/PrintOrderDetails";
+import { MdOutgoingMail } from "react-icons/md";
+import { TbTransactionDollar } from "react-icons/tb";
+import { FiPhone } from "react-icons/fi";
 
 const OrderDetails = async ({ params }) => {
   const { orderid } = await params;
@@ -21,6 +24,20 @@ const OrderDetails = async ({ params }) => {
     links: [{ label: "Order Details" }],
   };
 
+  // Define status progression
+  const statusSteps = [
+    { status: "pending", label: "Pending", step: 1 },
+    { status: "confirmed", label: "Confirmed", step: 2 },
+    { status: "processing", label: "Processing", step: 3 },
+    { status: "shipped", label: "Shipped", step: 4 },
+    { status: "delivered", label: "Delivered", step: 5 },
+  ];
+
+  // Find current status step
+  const currentStatus = orderData?.data?.status?.toLowerCase() || "pending";
+  const currentStep =
+    statusSteps.find((step) => step.status === currentStatus)?.step || 1;
+
   return (
     <div>
       <WebsiteBreadcrumb props={breadCrumb} />
@@ -33,21 +50,184 @@ const OrderDetails = async ({ params }) => {
           </div>
         ) : (
           <div>
-            <div className="mb-5">
-              <p>
-                <b>Order Id:</b>
-                {orderData?.data?.order_id}
-              </p>
-              <p>
-                <b>Transaction Id:</b>
-                {orderData?.data?.payment_id}
-              </p>
-              <p className="capitalize">
-                <b>Status:</b>
-                {orderData?.data?.status}
-              </p>
+            {/* Order Status Progress Bar */}
+            <div className="mb-10 bg-white p-6 rounded-lg shadow-sm border">
+              <div className="flex justify-between items-center mb-6">
+                <div>
+                  <h2 className="text-xl font-bold text-gray-800">
+                    Order Id: #{orderData?.data?.order_id}
+                  </h2>
+                  <p className="text-gray-600">
+                    Placed on{" "}
+                    {new Date(
+                      orderData?.data?.createdAt || new Date()
+                    ).toLocaleDateString("en-IN", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })}
+                  </p>
+                </div>
+                <div className="text-right">
+                  <span
+                    className={`px-3 py-1 rounded-full text-sm font-medium ${
+                      currentStatus === "pending"
+                        ? "bg-yellow-100 text-yellow-800"
+                        : currentStatus === "confirmed"
+                        ? "bg-blue-100 text-blue-800"
+                        : currentStatus === "processing"
+                        ? "bg-purple-100 text-purple-800"
+                        : currentStatus === "shipped"
+                        ? "bg-indigo-100 text-indigo-800"
+                        : currentStatus === "delivered"
+                        ? "bg-green-100 text-green-800"
+                        : "bg-gray-100 text-gray-800"
+                    }`}
+                  >
+                    {currentStatus.charAt(0).toUpperCase() +
+                      currentStatus.slice(1)}
+                  </span>
+                </div>
+              </div>
+
+              {/* Progress Bar */}
+              <div className="relative">
+                {/* Progress Line */}
+                <div className="absolute top-5 left-0 right-0 h-1 bg-gray-200"></div>
+                <div
+                  className="absolute top-5 left-0 h-1 bg-green-500 transition-all duration-500"
+                  style={{
+                    width: `${
+                      ((currentStep - 1) / (statusSteps.length - 1)) * 100
+                    }%`,
+                  }}
+                ></div>
+
+                {/* Status Steps */}
+                <div className="relative flex justify-between">
+                  {statusSteps.map((step, index) => (
+                    <div
+                      key={step.status}
+                      className="flex flex-col items-center relative"
+                    >
+                      <div
+                        className={`w-10 h-10 rounded-full flex items-center justify-center z-10 mb-2 ${
+                          step.step <= currentStep
+                            ? "bg-green-500 text-white border-2 border-green-500"
+                            : "bg-white text-gray-400 border-2 border-gray-300"
+                        }`}
+                      >
+                        {step.step <= currentStep ? (
+                          <svg
+                            className="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M5 13l4 4L19 7"
+                            ></path>
+                          </svg>
+                        ) : (
+                          <span className="text-sm font-medium">
+                            {step.step}
+                          </span>
+                        )}
+                      </div>
+                      <span
+                        className={`text-sm font-medium ${
+                          step.step <= currentStep
+                            ? "text-green-600"
+                            : "text-gray-500"
+                        }`}
+                      >
+                        {step.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Status Description */}
+              <div className="mt-8 p-4 bg-[#EEE7E7] rounded-lg">
+                <div className="flex items-start">
+                  <svg
+                    className="w-5 h-5 text-[#F69E87] mt-0.5 mr-3 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    ></path>
+                  </svg>
+                  <div>
+                    <p className="text-sm text-[#F69E87]">
+                      {currentStatus === "pending" &&
+                        "Your order has been received and is awaiting confirmation."}
+                      {currentStatus === "confirmed" &&
+                        "Your order has been confirmed and is being prepared for processing."}
+                      {currentStatus === "processing" &&
+                        "Your order is being processed. We'll notify you when it ships."}
+                      {currentStatus === "shipped" &&
+                        "Your order has been shipped! Track your package for delivery updates."}
+                      {currentStatus === "delivered" &&
+                        "Your order has been delivered. Thank you for shopping with us!"}
+                      {![
+                        "pending",
+                        "confirmed",
+                        "processing",
+                        "shipped",
+                        "delivered",
+                      ].includes(currentStatus) &&
+                        `Your order status is: ${currentStatus}`}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Order Info Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <div className="flex items-center mb-2 text-[#F69E87]">
+                    <MdOutgoingMail size={32} />
+                    <span className="text-sm font-medium text-gray-700">
+                      Email
+                    </span>
+                  </div>
+                  <p className="text-gray-900">{orderData?.data?.email}</p>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <div className="flex items-center mb-2 text-[#F69E87]">
+                    <FiPhone size={32} />
+                    <span className="text-sm font-medium text-gray-700">
+                      Phone
+                    </span>
+                  </div>
+                  <p className="text-gray-900">{orderData?.data?.phone}</p>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <div className="flex items-center mb-2 text-[#F69E87]">
+                    <TbTransactionDollar size={32} />
+                    <span className="text-sm font-medium text-gray-700">
+                      Transaction ID
+                    </span>
+                  </div>
+                  <p className="text-gray-900">{orderData?.data?.payment_id}</p>
+                </div>
+              </div>
             </div>
-            <table className="w-full border">
+
+            {/* Products Table */}
+            <table className="w-full rounded-lg shadow-sm ">
               <thead className="border-b bg-gray-50 md:table-header-group hidden">
                 <tr>
                   <th className="text-start p-3">Product</th>
@@ -118,8 +298,8 @@ const OrderDetails = async ({ params }) => {
               </tbody>
             </table>
 
-            <div className="grid md:grid-cols-2 grid-cols-1 gap-10 border mt-10 rounded-lg">
-              <div className="p-5">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-10 mt-10">
+              <div className="p-5 rounded-lg border shadow-sm">
                 <h4 className="text-lg font-semibold mb-5">Shipping Address</h4>
                 <div>
                   <table className="w-full">
@@ -194,7 +374,7 @@ const OrderDetails = async ({ params }) => {
                   </table>
                 </div>
               </div>
-              <div className="p-5 bg-gray-50 rounded-lg">
+              <div className="p-5 bg-gray-50 rounded-lg border shadow-sm">
                 <h4 className="text-lg font-semibold mb-5">Order Summary</h4>
                 <div>
                   <table className="w-full">
