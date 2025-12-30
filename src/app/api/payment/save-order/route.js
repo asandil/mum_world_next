@@ -1,3 +1,4 @@
+import { orderNotification } from "@/email/orderNotifiation";
 import { connectDB } from "@/lib/db";
 import { catchError, response } from "@/lib/helperFunction";
 import { sendMail } from "@/lib/sendMail";
@@ -99,7 +100,7 @@ export async function POST(request) {
         orderDetailsUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/order-details/${validatedData.razorpay_order_id}`,
       }
 
-      await sendMail("Your order has been placed successfully.", validatedData.email, orderNotification(mailData), mailData);
+      await sendMail("Your order has been placed successfully.", validatedData.email, orderNotification(mailData));
 
       // await sendMail("New order received", process.env.NODEMAILER_EMAIL, "order-placed-admin", mailData);
 
