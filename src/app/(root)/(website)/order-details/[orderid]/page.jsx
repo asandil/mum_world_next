@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { WEBSITE_PRODUCT_DETAILS } from "@/routes/WebsiteRoute";
 import { ButtonLoading } from "@/components/Application/ButtonLoading";
+import PrintButton from "@/components/Application/website/PrintOrderDetails";
 
 const OrderDetails = async ({ params }) => {
   const { orderid } = await params;
@@ -117,7 +118,7 @@ const OrderDetails = async ({ params }) => {
               </tbody>
             </table>
 
-            <div className="grid md:grid-cols-2 grid-cols-1 gap-10 border mt-10">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-10 border mt-10 rounded-lg">
               <div className="p-5">
                 <h4 className="text-lg font-semibold mb-5">Shipping Address</h4>
                 <div>
@@ -193,7 +194,7 @@ const OrderDetails = async ({ params }) => {
                   </table>
                 </div>
               </div>
-              <div className="p-5 bg-gray-50">
+              <div className="p-5 bg-gray-50 rounded-lg">
                 <h4 className="text-lg font-semibold mb-5">Order Summary</h4>
                 <div>
                   <table className="w-full">
@@ -250,11 +251,7 @@ const OrderDetails = async ({ params }) => {
                     variant="destructive"
                     className="cursor-pointer"
                   />
-                  <ButtonLoading
-                    type="button"
-                    text="Print"
-                    className="cursor-pointer"
-                  />
+                  <PrintButton orderData={orderData} />
                 </div>
               </div>
             </div>
