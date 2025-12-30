@@ -502,7 +502,7 @@ export const orderNotification = (data) => {
                                 }</td>
                               </tr>
                               <tr>
-                                <td class="label">Status:</td>
+                                <td class="label">Payment Status:</td>
                                 <td class="value" style="color: #008a00;">${
                                   data?.status || "Confirmed"
                                 }</td>

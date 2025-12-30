@@ -106,7 +106,7 @@ const CartPage = () => {
                         </div>
                       </div>
                     </td>
-                    <td className="md:table-cell flex justify-between md:p-3 px-3 pb-2 text-center">
+                    <td className="md:table-cell flex justify-between md:p-3 px-3 pb-2 ">
                       <span className="md:hidden font-[600]">Price</span>
                       <span>
                         {product.sellingPrice.toLocaleString("en-IN", {
@@ -117,7 +117,7 @@ const CartPage = () => {
                     </td>
                     <td className="md:table-cell flex justify-between md:p-3 px-3 pb-2">
                       <span className="md:hidden font-[600]">Quantity</span>
-                      <div className="flex justify-center">
+                      <div className="flex">
                         <div className="flex justify-center items-center md:h-10 h-7 border w-fit rounded-full">
                           <button
                             type="button"
@@ -165,7 +165,7 @@ const CartPage = () => {
                         )}
                       </span>
                     </td>
-                    <td className="md:table-cell flex justify-between md:p-3 px-3 pb-2 text-center">
+                    <td className="md:table-cell flex justify-center md:p-3 px-3 pb-2 text-center">
                       <span className="md:hidden font-[600]">Remove</span>
                       <button
                         type="button"
@@ -188,7 +188,7 @@ const CartPage = () => {
             </table>
           </div>
           <div className="lg:w-[30%] w-full">
-            <div className="rounded bg-gray-50 p-5 sticky top-5">
+            <div className="rounded-lg shadow-sm bg-gray-50 p-5 sticky top-5">
               <h4 className="text-lg font-semibold mb-5">Order Summary</h4>
               <div>
                 <table className="w-full">
