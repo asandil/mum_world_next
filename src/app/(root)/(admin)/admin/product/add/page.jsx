@@ -342,7 +342,7 @@ const EditProduct = ({ params }) => {
                         />
                       </FormControl>
                       <FormMessage />
-                    </FormItem>
+                    </FormItem> 
                   )}
                 />
               </div>
