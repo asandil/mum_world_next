@@ -16,8 +16,9 @@ import useFetch from "@/hooks/useFetch";
 import { zSchema } from "@/lib/zodSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import imgPlaceholder from "@/assets/images/img-placeholder.webp";
 import axios from "axios";
 import { showToast } from "@/lib/showToast";
 import { useParams, useRouter } from "next/navigation";
@@ -26,56 +27,55 @@ import Select from "@/components/Application/Select";
 import Editor from "@/components/Application/Admin/Editor";
 import MediaModal from "@/components/Application/Admin/MediaModal";
 
-const BREADCRUMB_DATA = [
+const breadCrumbData = [
   { href: ADMIN_DASHBOARD, label: "Home" },
   { href: ADMIN_PRODUCT_SHOW, label: "Products" },
   { href: "", label: "Edit Product" },
 ];
 
-const FORM_SCHEMA = zSchema.pick({
-  _id: true,
-  name: true,
-  slug: true,
-  category: true,
-  mrp: true,
-  sellingPrice: true,
-  discountPercentage: true,
-  description: true,
-});
-
 const EditProduct = ({ params }) => {
-  const router = useRouter();
-  const { id } = useParams(params);
-  
+
+  const router = useRouter()
+  const { id } = use(params);
+
   const [loading, setLoading] = useState(false);
+  const [categoryOption, setCategoryOption] = useState([]);
+  const { data: getCategory } = useFetch(`/api/category?deleteType=SD&&size=1000`);
+  console.log("Get Category in Product Page", getCategory);
+
+  const { data: getProduct, loading: getProductLoading } = useFetch(
+    `/api/product/get/${id}`
+  );
+  console.log("Get Product by ID in Product Edit Page", getProduct);
+
+  // Media modal states
   const [open, setOpen] = useState(false);
   const [selectedMedia, setSelectedMedia] = useState([]);
 
-  // Fetch data with error handling
-  const { 
-    data: getCategory, 
-    loading: categoryLoading,
-    error: categoryError 
-  } = useFetch(`/api/category?deleteType=SD&size=1000`);
-
-  const { 
-    data: getProduct, 
-    loading: getProductLoading,
-    error: productError 
-  } = useFetch(`/api/product/get/${id}`);
-
-  // Memoize category options
-  const categoryOptions = useMemo(() => {
-    if (!getCategory?.success) return [];
-    return getCategory.data.map(cat => ({ 
-      label: cat.name, 
-      value: cat._id 
-    }));
+  useEffect(() => {
+    if (getCategory && getCategory.success) {
+      console.log("category section data in product page", getCategory);
+      const data = getCategory.data;
+      const options = data.map((cat) => ({ label: cat.name, value: cat._id }));
+      console.log("category section OPTIONS data in product page", options);
+      setCategoryOption(options);
+    }
   }, [getCategory]);
 
-  // Initialize form
+  const formSchema = zSchema.pick({
+    _id: true,
+    name: true,
+    slug: true,
+    category: true,
+    mrp: true,
+    sellingPrice: true,
+    discountPercentage: true,
+    description: true,
+  });
+
+  // 1. Define your form.
   const form = useForm({
-    resolver: zodResolver(FORM_SCHEMA),
+    resolver: zodResolver(formSchema),
     defaultValues: {
       _id: id,
       name: "",
@@ -88,307 +88,284 @@ const EditProduct = ({ params }) => {
     },
   });
 
-  // Load product data into form
+  console.log("Add Product Form", form);
+
   useEffect(() => {
-    if (getProduct?.success) {
+    if (getProduct && getProduct.success) {
       const product = getProduct.data;
-      
       form.reset({
-        _id: product._id || id,
-        name: product.name || "",
-        slug: product.slug || "",
-        category: product.category || "",
-        mrp: product.mrp || 0,
-        sellingPrice: product.sellingPrice || 0,
-        discountPercentage: product.discountPercentage || 0,
-        description: product.description || "",
+        _id: product?._id,
+        name: product?.name,
+        slug: product?.slug,
+        category: product?.category,
+        mrp: product?.mrp,
+        sellingPrice: product?.sellingPrice,
+        discountPercentage: product?.discountPercentage,
+        description: product?.description,
       });
 
-      // Set media
-      if (product.media?.length > 0) {
-        const media = product.media.map(item => ({
-          _id: item._id,
-          url: item.secure_url,
+      if (product.media) {
+        const media = product.media.map((media) => ({
+          _id: media._id,
+          url: media.secure_url,
         }));
         setSelectedMedia(media);
       }
     }
-  }, [getProduct, id, form]);
+  }, [getProduct]);
 
-  // Auto-generate slug from name
-  const nameValue = form.watch("name");
+  // here we use slugify
   useEffect(() => {
-    if (nameValue) {
-      const slug = slugify(nameValue, { 
-        lower: true, 
-        strict: true,
-        trim: true 
-      });
-      form.setValue("slug", slug, { shouldValidate: true });
+    const name = form.getValues("name");
+    if (name) {
+      form.setValue("slug", slugify(name).toLowerCase());
     }
-  }, [nameValue, form]);
+  }, [form.watch("name")]);
 
-  // Calculate discount percentage
-  const mrpValue = form.watch("mrp");
-  const sellingPriceValue = form.watch("sellingPrice");
+  // discounted percentage calculator
   useEffect(() => {
-    const mrp = parseFloat(mrpValue) || 0;
-    const sellingPrice = parseFloat(sellingPriceValue) || 0;
+    const mrp = form.getValues("mrp") || 0;
+    const sellingPrice = form.getValues("sellingPrice") || 0;
 
-    if (mrp > 0 && sellingPrice > 0 && sellingPrice <= mrp) {
-      const discount = ((mrp - sellingPrice) / mrp) * 100;
-      form.setValue("discountPercentage", Math.round(discount));
+    if (mrp > 0 && sellingPrice > 0) {
+      const discountPercentage = ((mrp - sellingPrice) / mrp) * 100;
+      form.setValue("discountPercentage", Math.round(discountPercentage));
     }
-  }, [mrpValue, sellingPriceValue, form]);
+  }, [form.watch("mrp"), form.watch("sellingPrice")]);
 
-  // Editor change handler
-  const handleEditorChange = useCallback((event, editor) => {
-    form.setValue("description", editor.getData(), { shouldValidate: true });
-  }, [form]);
+  const editor = (event, editor) => {
+    const data = editor.getData();
+    console.log("description data", data);
+    form.setValue("description", data);
+  };
 
-  // Form submission
+  // 2. Define a login submit handler.
   const onSubmit = async (values) => {
-    if (selectedMedia.length === 0) {
-      showToast("error", "Please select at least one media file.");
-      return;
-    }
-
+    console.log("Add category data", values);
     setLoading(true);
     try {
-      const mediaIds = selectedMedia.map(media => media._id);
-      const payload = { ...values, media: mediaIds };
+      if (selectedMedia.length <= 0) {
+        return showToast("error", "Please select media.");
+      }
 
-      const { data: response } = await axios.put(`/api/product/update`, payload);
-      
+      const mediaIds = selectedMedia.map((media) => media._id);
+      values.media = mediaIds;
+
+      const { data: response } = await axios.put(`/api/product/update`, values);
       if (!response.success) {
         throw new Error(response.message);
       }
-
       showToast("success", response.message);
-      router.push(ADMIN_PRODUCT_SHOW);
+      router.push(ADMIN_PRODUCT_SHOW)
     } catch (error) {
-      showToast("error", error.message || "Failed to update product");
+      showToast("error", error.message);
     } finally {
       setLoading(false);
     }
   };
 
-  // Loading state
-  if (getProductLoading || categoryLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-[400px]">
-        <div className="text-lg animate-pulse">Loading...</div>
-      </div>
-    );
-  }
-
-  // Error state
-  if (productError || categoryError) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-[400px]">
-        <div className="text-red-500 text-lg mb-4">Error loading data</div>
-        <button 
-          onClick={() => window.location.reload()}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
-        >
-          Retry
-        </button>
-      </div>
-    );
-  }
-
   return (
-    <div className="space-y-6">
-      <BreadCrumb breadCrumbData={BREADCRUMB_DATA} />
-      
-      <Card className="rounded-lg shadow-sm">
-        <CardHeader className="pb-3 border-b">
+    <div>
+      <BreadCrumb breadCrumbData={breadCrumbData} />
+      <Card className="py-0 rounded shadow-sm">
+        <CardHeader className="pt-3 px-3 border-b [.border-b]:pb-2">
           <h4 className="text-xl font-semibold">Edit Product</h4>
         </CardHeader>
-        
-        <CardContent className="pt-6">
+        <CardContent className="pb-5">
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-              {/* Form Fields Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  {
-                    name: "name",
-                    label: "Product Name",
-                    placeholder: "Enter product name",
-                    type: "text",
-                    required: true
-                  },
-                  {
-                    name: "slug",
-                    label: "Slug",
-                    placeholder: "Product slug (auto-generated)",
-                    type: "text",
-                    required: true
-                  },
-                  {
-                    name: "category",
-                    label: "Category",
-                    component: "select",
-                    required: true
-                  },
-                  {
-                    name: "mrp",
-                    label: "MRP",
-                    placeholder: "Enter MRP",
-                    type: "number",
-                    required: true
-                  },
-                  {
-                    name: "sellingPrice",
-                    label: "Selling Price",
-                    placeholder: "Enter selling price",
-                    type: "number",
-                    required: true
-                  },
-                  {
-                    name: "discountPercentage",
-                    label: "Discount Percentage",
-                    placeholder: "Auto-calculated",
-                    type: "number",
-                    readOnly: true
-                  }
-                ].map((fieldConfig) => (
+            <form onSubmit={form.handleSubmit(onSubmit)}>
+              <div className="space-y-8 grid md:grid-cols-2 grid-cols-1 gap-5 ">
+                <div className="">
                   <FormField
-                    key={fieldConfig.name}
                     control={form.control}
-                    name={fieldConfig.name}
+                    name="name"
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>
-                          {fieldConfig.label}
-                          {fieldConfig.required && <span className="text-red-500 ml-1">*</span>}
+                          Name<span className="text-red-500">*</span>{" "}
                         </FormLabel>
                         <FormControl>
-                          {fieldConfig.component === "select" ? (
-                            <Select
-                              options={categoryOptions}
-                              selected={field.value}
-                              setSelected={field.onChange}
-                              isMulti={false}
-                              isLoading={categoryLoading}
-                              disabled={loading}
-                            />
-                          ) : (
-                            <Input
-                              type={fieldConfig.type}
-                              placeholder={fieldConfig.placeholder}
-                              {...field}
-                              onChange={(e) => {
-                                if (fieldConfig.type === "number") {
-                                  field.onChange(parseFloat(e.target.value) || 0);
-                                } else {
-                                  field.onChange(e.target.value);
-                                }
-                              }}
-                              readOnly={fieldConfig.readOnly}
-                              disabled={loading}
-                              className={fieldConfig.readOnly ? "bg-gray-50" : ""}
-                            />
-                          )}
+                          <Input
+                            type="text"
+                            placeholder="Enter product name"
+                            {...field}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
                     )}
                   />
-                ))}
-              </div>
+                </div>
 
-              {/* Description Editor */}
-              <FormField
-                control={form.control}
-                name="description"
-                render={() => (
-                  <FormItem>
-                    <FormLabel>
-                      Description <span className="text-red-500">*</span>
-                    </FormLabel>
-                    <FormControl>
-                      {!getProductLoading && (
-                        <Editor
-                          onChange={handleEditorChange}
-                          initialData={form.getValues("description")}
-                          disabled={loading}
-                        />
-                      )}
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              {/* Media Selection Section */}
-              <div className="space-y-4">
-                <div className="border border-dashed rounded-lg p-6 text-center">
-                  <MediaModal
-                    open={open}
-                    setOpen={setOpen}
-                    selectedMedia={selectedMedia}
-                    setSelectedMedia={setSelectedMedia}
-                    isMultiple={true}
+                <div className="">
+                  {/* in this slug form we use slugify: npm i slugify */}
+                  {/* And we auto generate that slug by using form watch function. */}
+                  <FormField
+                    control={form.control}
+                    name="slug"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          Slug<span className="text-red-500">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            type="text"
+                            placeholder="Enter product slug"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                  
-                  {/* Media Preview Grid */}
-                  {selectedMedia.length > 0 && (
-                    <div className="mb-6">
-                      <div className="flex flex-wrap justify-center gap-4">
-                        {selectedMedia.map(media => (
-                          <div 
-                            key={media._id} 
-                            className="relative h-24 w-24 border rounded-lg overflow-hidden group"
-                          >
-                            <Image
-                              src={media.url}
-                              alt="Product media"
-                              fill
-                              className="object-cover"
-                              sizes="96px"
-                            />
-                            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity" />
-                          </div>
-                        ))}
-                      </div>
-                      <div className="mt-4 text-sm text-gray-500">
-                        {selectedMedia.length} media file(s) selected
-                      </div>
-                    </div>
+                </div>
+
+                <div className="">
+                  <FormField
+                    control={form.control}
+                    name="category"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          Category<span className="text-red-500">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Select
+                            options={categoryOption}
+                            selected={field.value}
+                            setSelected={field.onChange}
+                            isMulti={false}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <div className="">
+                  <FormField
+                    control={form.control}
+                    name="mrp"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          MRP<span className="text-red-500">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            type="number"
+                            placeholder="Enter MRP"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div> 
+
+                <div className="">
+                  <FormField
+                    control={form.control}
+                    name="sellingPrice"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          Selling Price<span className="text-red-500">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            type="text"
+                            placeholder="Enter Selling Price"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <div className="">
+                  <FormField
+                    control={form.control}
+                    name="discountPercentage"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>
+                          Discount Percentage
+                          <span className="text-red-500">*</span>
+                        </FormLabel>
+                        <FormControl>
+                          <Input
+                            type="number"
+                            readOnly
+                            placeholder="Enter Discount Percentage"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+             </div>
+
+                <div className="mb-5 md:col-span-2 ">
+                  <FormLabel className="mb-2">
+                    Description<span className="text-red-500">*</span>
+                  </FormLabel>
+                  {!getProductLoading && (
+                    <Editor
+                      onChange={editor}
+                      initialData={form.getValues("description")}
+                    />
                   )}
-                  
-                  {/* Media Select Button */}
-                  <button
-                    type="button"
-                    onClick={() => setOpen(true)}
-                    disabled={loading}
-                    className="inline-flex items-center px-6 py-3 border border-gray-300 rounded-lg bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                  >
-                    <span className="font-medium">
-                      {selectedMedia.length > 0 ? "Change Media" : "Select Media"}
-                    </span>
-                  </button>
+                  <FormMessage></FormMessage>
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex gap-4 pt-4">
+              <div className="md:col-span-2 border border-dashed rounded p-5 text-center ">
+                <MediaModal
+                  open={open}
+                  setOpen={setOpen}
+                  selectedMedia={selectedMedia}
+                  setSelectedMedia={setSelectedMedia}
+                  isMultiple={true}
+                />
+
+                {selectedMedia.length > 0 && (
+                  <div className="flex justify-center items-center flex-wrap mb-3 gap-2">
+                    {selectedMedia.map((media) => (
+                      <div key={media._id} className="h-24 w-24 border">
+                        <Image
+                          src={media.url}
+                          height={100}
+                          width={100}
+                          alt=""
+                          className="size-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <div
+                  onClick={() => setOpen(true)}
+                  className="bg-gray-50 dark:bg-card border w-[200px] mx-auto p-5 cursor-pointer"
+                >
+                  <span className="font-semibold">Select Media</span>
+                </div>
+              </div>
+
+              <div className="mb-3 mt-5">
                 <ButtonLoading
                   loading={loading}
                   type="submit"
                   text="Save Changes"
-                  className="min-w-[150px]"
+                  className=" cursor-pointer"
                 />
-                <button
-                  type="button"
-                  onClick={() => router.push(ADMIN_PRODUCT_SHOW)}
-                  disabled={loading}
-                  className="px-6 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 transition-colors"
-                >
-                  Cancel
-                </button>
               </div>
             </form>
           </Form>
