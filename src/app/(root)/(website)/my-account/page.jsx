@@ -2,9 +2,12 @@
 import UserPanelLayout from "@/components/Application/website/UserPanelLayout";
 import WebsiteBreadcrumb from "@/components/Application/website/WebsiteBreadcrumb";
 import useFetch from "@/hooks/useFetch";
+import { WEBSITE_ORDER_DEATILS } from "@/routes/WebsiteRoute";
+import Link from "next/link";
 import React from "react";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { IoCartOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
 
 const breadCrumbData = {
   title: "Dashboard",
@@ -14,6 +17,10 @@ const breadCrumbData = {
 const MyAccount = () => {
   const { data: dashboardData } = useFetch("/api/dashboard/user");
   console.log("DashBoard Data:", dashboardData);
+
+  const cartStore = useSelector((store) => store.cartStore);
+
+  console.log("Cart count in DashBoard Section", cartStore);
 
   return (
     <div>
@@ -26,7 +33,9 @@ const MyAccount = () => {
               <div className="flex items-center justify-between gap-5 border rounded p-3">
                 <div>
                   <h4 className="font-semibold text-lg mb-1">Total Order</h4>
-                  <span className="font-semibold text-gray-500">0</span>
+                  <span className="font-semibold text-gray-500">
+                    {dashboardData?.data?.totalOrder || 0}
+                  </span>
                 </div>
                 <div className="w-16 h-16 bg-primary rounded-full flex justify-center items-center ">
                   <HiOutlineShoppingBag className="text-white" size={25} />
@@ -35,7 +44,9 @@ const MyAccount = () => {
               <div className="flex items-center justify-between gap-5 border rounded p-3">
                 <div>
                   <h4 className="font-semibold text-lg mb-1">Items In Cart</h4>
-                  <span className="font-semibold text-gray-500">0</span>{" "}
+                  <span className="font-semibold text-gray-500">
+                    {cartStore?.count || 0}
+                  </span>{" "}
                 </div>
                 <div className="w-16 h-16 bg-primary rounded-full flex justify-center items-center">
                   <IoCartOutline className="text-white" size={25} />
@@ -61,6 +72,30 @@ const MyAccount = () => {
                     </th>
                   </tr>
                 </thead>
+                <tbody>
+                  {dashboardData &&
+                    dashboardData?.data?.recentOrders?.map((order, i) => (
+                      <tr key={order._id}>
+                        <td className="text-start text-sm text-gray-500 p-2">
+                          {i + 1}
+                        </td>
+                        <td className="text-start text-sm text-gray-500 p-2 underline hover:text-blue-500 underline-offset-2">
+                          <Link href={WEBSITE_ORDER_DEATILS(order.order_id)}>
+                            {order.order_id}
+                          </Link>
+                        </td>
+                        <td className="text-start text-sm text-gray-500 p-2">
+                          {order.products.length}
+                        </td>
+                        <td className="text-start text-sm text-gray-500 p-2">
+                          {order.totalAmount.toLocaleString("en-In", {
+                            style: "currency",
+                            currency: "INR",
+                          })}
+                        </td>
+                      </tr>
+                    ))}
+                </tbody>
               </table>
             </div>
           </div>
