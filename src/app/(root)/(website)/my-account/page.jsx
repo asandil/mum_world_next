@@ -38,6 +38,16 @@ const MyAccount = () => {
             </div>
             <div className="mt-5" >
               <h4 className="text-lg font-semibold mb-3 ">Recent Orders</h4>
+              <table className="w-full" >
+                <thead>
+                  <tr>
+                    <th className="text-start p-2 text-sm border-b text-nowrap text-gray-500">Sr.No</th>
+                    <th className="text-start p-2 text-sm border-b text-nowrap text-gray-500">Order id</th>
+                    <th className="text-start p-2 text-sm border-b text-nowrap text-gray-500">Total Item</th>
+                    <th className="text-start p-2 text-sm border-b text-nowrap text-gray-500">Amount</th>
+                  </tr>
+                </thead>
+              </table>
             </div>
           </div>
         </div>
