@@ -48,7 +48,7 @@ const Checkout = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const cart = useSelector((store) => store.cartStore);
-  const auth = useSelector((store) => store.authStore);
+  const authStore = useSelector((store) => store.authStore);
   const [verifiedCartData, setVerifiedCartData] = useState([]);
   const { data: getVerifiedCartData } = useFetch(
     "/api/cart-verification",
@@ -177,9 +177,15 @@ const Checkout = () => {
       pincode: "",
       landmark: "",
       ordernote: "",
-      userId: auth?._id,
+      userId: authStore?.auth?._id,
     },
   });
+
+  useEffect(() => {
+    if (authStore) {
+      orderForm.setValue("userId", authStore?.auth?._id);
+    }
+  }, [authStore]);
 
   // get order ID
   const getOrderId = async (amount) => {
@@ -282,7 +288,7 @@ const Checkout = () => {
         <div className="h-screen w-screen fixed top-0 left-0 z-50 bg-black/20">
           <div className="h-screen flex flex-col justify-center items-center">
             <Image src={loading.src} height={80} width={80} alt="Loading" />
-            <h4 className="font-semibold" >Order Confirming...</h4>
+            <h4 className="font-semibold">Order Confirming...</h4>
           </div>
         </div>
       )}

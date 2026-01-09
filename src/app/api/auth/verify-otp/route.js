@@ -46,7 +46,7 @@ export async function POST(request) {
 
     // setting cookie and token for login.
     const loggedInUserData = {
-      _id: getUser._id,
+      _id: getUser._id.toString(),
       role: getUser.role,
       name: getUser.name,
       email:getUser.email,
