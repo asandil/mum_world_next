@@ -22,7 +22,7 @@ export async function GET() {
         path: "products.variantId",
         populate: { path: "media" },
       })
-      .lean();
+      .limit(10).lean();
 
     // get total order count
     const totalOrder = await OrderModel.countDocuments({ user: userId });

@@ -8,6 +8,7 @@ import React from "react";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { IoCartOutline } from "react-icons/io5";
 import { useSelector } from "react-redux";
+import { TbLayoutDashboardFilled } from "react-icons/tb"
 
 const breadCrumbData = {
   title: "Dashboard",
@@ -27,7 +28,10 @@ const MyAccount = () => {
       <WebsiteBreadcrumb props={breadCrumbData} />
       <UserPanelLayout>
         <div className="shadow rounded">
-          <div className="p-5 text-xl font-semibold border">Dashboard</div>
+          <div className="p-5 text-xl font-semibold border flex gap-2 ">
+            <TbLayoutDashboardFilled className="text-primary" size={30}/>
+            <span>Dashboard</span>
+          </div>
           <div className="p-5">
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-10">
               <div className="flex items-center justify-between gap-5 border rounded p-3">
