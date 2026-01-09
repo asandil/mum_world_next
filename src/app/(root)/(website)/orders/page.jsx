@@ -15,8 +15,8 @@ const breadCrumbData = {
 };
 
 const Orders = () => {
-  const { data: orders, loading } = useFetch("/api/user-order");
-  console.log("Order Data in User Order page", orders);
+  const { data: orderData, loading } = useFetch("/api/user-order");
+  console.log("Order Data in User Order page", orderData);
 
   return (
     <div>
@@ -29,7 +29,7 @@ const Orders = () => {
           </div>
           <div className="p-5">
             {loading ? (
-              <div className="text-center py-5" >Loading...</div>
+              <div className="text-center py-5">Loading...</div>
             ) : (
               <table className="w-full">
                 <thead>
@@ -48,6 +48,30 @@ const Orders = () => {
                     </th>
                   </tr>
                 </thead>
+                <tbody>
+                  {orderData &&
+                    orderData?.data?.map((order, i) => (
+                      <tr key={order._id}>
+                        <td className="text-start text-sm text-gray-500 p-2">
+                          {i + 1}
+                        </td>
+                        <td className="text-start text-sm text-gray-500 p-2 underline hover:text-blue-500 underline-offset-2">
+                          <Link href={WEBSITE_ORDER_DEATILS(order.order_id)}>
+                            {order.order_id}
+                          </Link>
+                        </td>
+                        <td className="text-start text-sm text-gray-500 p-2">
+                          {order.products.length}
+                        </td>
+                        <td className="text-start text-sm text-gray-500 p-2">
+                          {order.totalAmount.toLocaleString("en-In", {
+                            style: "currency",
+                            currency: "INR",
+                          })}
+                        </td>
+                      </tr>
+                    ))}
+                </tbody>
               </table>
             )}
           </div>
