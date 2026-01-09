@@ -1,9 +1,49 @@
-import React from 'react'
+import UserPanelLayout from "@/components/Application/website/UserPanelLayout";
+import WebsiteBreadcrumb from "@/components/Application/website/WebsiteBreadcrumb";
+import React from "react";
+import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { IoCartOutline } from "react-icons/io5";
+
+const breadCrumbData = {
+  title: "Dashboard",
+  links: [{ label: "Dashboard" }],
+};
 
 const MyAccount = () => {
   return (
-    <div>MyAccount</div>
-  )
-}
+    <div>
+      <WebsiteBreadcrumb props={breadCrumbData} />
+      <UserPanelLayout>
+        <div className="shadow rounded">
+          <div className="p-5 text-xl font-semibold border">Dashboard</div>
+          <div className="p-5">
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-10">
+              <div className="flex items-center justify-between gap-5 border rounded p-3">
+                <div>
+                  <h4 className="font-semibold text-lg mb-1">Total Order</h4>
+                  <span className="font-semibold text-gray-500">0</span>
+                </div>
+                <div className="w-16 h-16 bg-primary rounded-full flex justify-center items-center ">
+                  <HiOutlineShoppingBag className="text-white" size={25} />
+                </div>
+              </div>
+              <div className="flex items-center justify-between gap-5 border rounded p-3">
+                <div>
+                  <h4 className="font-semibold text-lg mb-1">Items In Cart</h4>
+                  <span className="font-semibold text-gray-500">0</span>                </div>
+                <div className="w-16 h-16 bg-primary rounded-full flex justify-center items-center">
+                  <IoCartOutline className="text-white" size={25} />
+                </div>
+              </div>
+            </div>
+            <div className="mt-5" >
+              <h4 className="text-lg font-semibold mb-3 ">Recent Orders</h4>
+            </div>
+          </div>
+        </div>
+      </UserPanelLayout>
+    </div>
+  );
+};
 
-export default MyAccount
+export default MyAccount;

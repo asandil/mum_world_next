@@ -40,7 +40,7 @@ const UserPanelNavigation = () => {
           <Link href={USER_ORDERS} className={`block p-3 text-sm rounded hover:bg-primary hover:text-white ${pathname.startsWith(USER_ORDERS) ? "bg-primary text-white" : "" }`}>Orders</Link>
         </li>
         <li className="mb-2" >
-          <Button type="button" onclick={handleLogOut} variant="destructive" className="w-full"></Button>
+          <Button type="button" onclick={handleLogOut} variant="destructive" className="w-full">LogOut</Button>
         </li>
       </ul>
     </div>
