@@ -74,7 +74,7 @@ const Footer = () => {
                 <Link href="">Shop</Link>
               </li>
               <li className="mb-0 md:mb-2 text-gray-500">
-                <Link href="">About</Link>
+                <Link href="/about">About</Link>
               </li>
               <li className="mb-0 md:mb-2 text-gray-500">
                 <Link href={WEBSITE_REGISTER}>Register</Link>
