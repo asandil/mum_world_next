@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { ButtonLoading } from "@/components/Application/ButtonLoading";
 import UserPanelLayout from "@/components/Application/website/UserPanelLayout";
 import WebsiteBreadcrumb from "@/components/Application/website/WebsiteBreadcrumb";
@@ -12,9 +12,10 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import useFetch from "@/hooks/useFetch";
 import { zSchema } from "@/lib/zodSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 const breadCrumbData = {
@@ -23,13 +24,15 @@ const breadCrumbData = {
 };
 
 const Profile = () => {
+  const { data: user } = useFetch("/api/profile/get");
+  console.log(user);
 
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
 
   const formSchema = zSchema.pick({
-    name:true, 
+    name: true,
     phone: true,
-    address: true
+    address: true,
   });
 
   const form = useForm({
@@ -37,13 +40,22 @@ const Profile = () => {
     defaultValues: {
       name: "",
       phone: "",
-      address: ""
+      address: "",
     },
   });
 
-  const updateProfile = (value) => {
+  useEffect(() => {
+    if (user && user.success) {
+      const userData = user.data;
+      form.reset({
+        name: userData?.name,
+        phone: userData?.phone,
+        address: userData?.address,
+      });
+    }
+  }, [user]);
 
-  }
+  const updateProfile = (value) => {};
 
   return (
     <div>
@@ -103,7 +115,11 @@ const Profile = () => {
                       <FormItem>
                         <FormLabel>Address</FormLabel>
                         <FormControl>
-                          <Textarea placeholder="Enter your address" {...field} className="resize-none"/>
+                          <Textarea
+                            placeholder="Enter your address"
+                            {...field}
+                            className="resize-none"
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -111,7 +127,12 @@ const Profile = () => {
                   />
                 </div>
                 <div className="mb-3">
-                    <ButtonLoading loading={loading} type="submit" text="Save Changes" className="w-full cursor-pointer" />
+                  <ButtonLoading
+                    loading={loading}
+                    type="submit"
+                    text="Save Changes"
+                    className="w-full cursor-pointer"
+                  />
                 </div>
               </form>
             </Form>
