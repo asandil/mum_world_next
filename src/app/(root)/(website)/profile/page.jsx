@@ -21,6 +21,8 @@ import Dropzone from "react-dropzone";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import userIcon from "@/assets/images/user.png";
 import { FaCamera } from "react-icons/fa";
+import { catchError } from "@/lib/helperFunction";
+import { showToast } from "@/lib/showToast";
 const breadCrumbData = {
   title: "Profile",
   links: [{ label: "Profile" }],
@@ -31,6 +33,8 @@ const Profile = () => {
   console.log(user);
 
   const [loading, setLoading] = useState(false);
+  const [preview, setPreview] = useState();
+  const [file, setFile] = useState();
 
   const formSchema = zSchema.pick({
     name: true,
@@ -55,12 +59,42 @@ const Profile = () => {
         phone: userData?.phone,
         address: userData?.address,
       });
+      setPreview(userData?.avatar?.url);
     }
   }, [user]);
 
-  const handleFileSelection = () => {};
+  const handleFileSelection = (files) => {
+    const file = files[0];
+    const preview = URL.createObjectURL(file);
+    setPreview(preview);
+    setFile(file);
+  };
 
-  const updateProfile = (value) => {};
+  const updateProfile = async (values) => {
+    setLoading(true);
+    try {
+      let formData = new FormData();
+      if (file) {
+        formData.set("file", file);
+      }
+      formData.set("name", values.name);
+      formData.set("phone", values.phone);
+      formData.set("address", values.address);
+
+      const { data: response } = await axios.put(
+        "/api/profile/update",
+        formData
+      );
+      if (!response.success) {
+        throw new Error(response.message);
+      }
+      showToast("success", response.message);
+    } catch (error) {
+      catchError("error", error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div>
@@ -84,7 +118,7 @@ const Profile = () => {
                       <div {...getRootProps()}>
                         <input {...getInputProps()} />
                         <Avatar className="w-28 h-28 relative group border border-gray-100">
-                          <AvatarImage src={userIcon.src} />
+                          <AvatarImage src={preview ? preview : userIcon.src} />
                           <div className="absolute z-50 w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 justify-center items-center border-2 border-primary rounded-full group-hover:flex hidden cursor-pointer bg-primary/20">
                             <FaCamera className="text-primary h-10 w-10" />
                           </div>
