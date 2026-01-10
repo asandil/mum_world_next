@@ -26,6 +26,7 @@ import { showToast } from "@/lib/showToast";
 import { useDispatch } from "react-redux";
 import { login } from "@/store/reducer/authReducer";
 import axios from "axios";
+import { FaUserCog } from "react-icons/fa";
 const breadCrumbData = {
   title: "Profile",
   links: [{ label: "Profile" }],
@@ -107,7 +108,10 @@ const Profile = () => {
       <WebsiteBreadcrumb props={breadCrumbData} />
       <UserPanelLayout>
         <div className="shadow rounded">
-          <div className="p-5 text-xl font-semibold border-b">Profile</div>
+          <div className="p-5 text-xl font-semibold border-b flex gap-2">
+            <FaUserCog size={30} />
+            <span>Profile</span>
+          </div>
           <div className="p-5">
             <Form {...form}>
               <form
