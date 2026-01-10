@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
           <AdUnit slot="YOUR_BOTTOM_SLOT_ID" />
         </div> */}
 
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
