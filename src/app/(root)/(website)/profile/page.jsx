@@ -17,7 +17,10 @@ import { zSchema } from "@/lib/zodSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-
+import Dropzone from "react-dropzone";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import userIcon from "@/assets/images/user.png";
+import { FaCamera } from "react-icons/fa";
 const breadCrumbData = {
   title: "Profile",
   links: [{ label: "Profile" }],
@@ -55,6 +58,8 @@ const Profile = () => {
     }
   }, [user]);
 
+  const handleFileSelection = () => {};
+
   const updateProfile = (value) => {};
 
   return (
@@ -69,6 +74,25 @@ const Profile = () => {
                 onSubmit={form.handleSubmit(updateProfile)}
                 className="grid md:grid-cols-2 grid-cols-1 gap-5"
               >
+                <div className="md:col-span-2 col-span-1 flex justify-center items-center">
+                  <Dropzone
+                    onDrop={(acceptedFiles) =>
+                      handleFileSelection(acceptedFiles)
+                    }
+                  >
+                    {({ getRootProps, getInputProps }) => (
+                      <div {...getRootProps()}>
+                        <input {...getInputProps()} />
+                        <Avatar className="w-28 h-28 relative group border border-gray-100">
+                          <AvatarImage src={userIcon.src} />
+                          <div className="absolute z-50 w-full h-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 justify-center items-center border-2 border-primary rounded-full group-hover:flex hidden cursor-pointer bg-primary/20">
+                            <FaCamera className="text-primary h-10 w-10" />
+                          </div>
+                        </Avatar>
+                      </div>
+                    )}
+                  </Dropzone>
+                </div>
                 <div className="mb-3">
                   <FormField
                     control={form.control}
