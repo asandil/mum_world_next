@@ -23,12 +23,16 @@ import userIcon from "@/assets/images/user.png";
 import { FaCamera } from "react-icons/fa";
 import { catchError } from "@/lib/helperFunction";
 import { showToast } from "@/lib/showToast";
+import { useDispatch } from "react-redux";
+import { login } from "@/store/reducer/authReducer";
+import axios from "axios";
 const breadCrumbData = {
   title: "Profile",
   links: [{ label: "Profile" }],
 };
 
 const Profile = () => {
+  const dispatch = useDispatch();
   const { data: user } = useFetch("/api/profile/get");
   console.log(user);
 
@@ -89,6 +93,8 @@ const Profile = () => {
         throw new Error(response.message);
       }
       showToast("success", response.message);
+
+      dispatch(login(response.data));
     } catch (error) {
       catchError("error", error.message);
     } finally {

@@ -1,3 +1,4 @@
+import { isAuthenticated } from "@/lib/authentication";
 import cloudinary from "@/lib/cloudinary";
 import { connectDB } from "@/lib/db";
 import { catchError, response } from "@/lib/helperFunction";
@@ -29,22 +30,22 @@ export async function PUT(request) {
       const fileBuffer = await file.arrayBuffer();
       const base64Image = `data:${file.type};base64,${Buffer.from(
         fileBuffer
-      ).toString()}`;
+      ).toString("base64")}`;
+
+      const uploadFile = await cloudinary.uploader.upload(base64Image, {
+        upload_preset: process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET,
+      });
+
+      // Remove Old Avatar
+      if (user.avatar.public_id) {
+        await cloudinary.api.delete_resources([user.avatar.public_id]);
+      }
+
+      user.avatar = {
+        url: uploadFile.secure_url,
+        public_id: uploadFile.public_id,
+      };
     }
-
-    const uploadFile = await cloudinary.uploader.upload(base64Image, {
-      upload_preset: process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET,
-    });
-
-    // Remove Old Avatar
-    if (user.avatar.public_id) {
-      await cloudinary.api.delete_resources([user.avatar.public_id]);
-    }
-
-    user.avatar = {
-      url: uploadFile.secure_url,
-      public_id: uploadFile.public_id,
-    };
 
     await user.save();
 
