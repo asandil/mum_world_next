@@ -19,6 +19,8 @@ import { HiMiniBars3 } from "react-icons/hi2";
 import { IoMdClose } from "react-icons/io";
 import Search from "./Search";
 import { usePathname } from "next/navigation";
+import { FaChevronDown } from "react-icons/fa";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const Header = () => {
   const auth = useSelector((store) => store.authStore.auth);
@@ -106,7 +108,9 @@ const Header = () => {
             alt="logo"
             className="lg:w-22 sm:w-18 w-14 absolute -left-6 top-[-16px] lg:top-[-26px] block"
           />
-          <span className="ml-[18px] sm:ml-[32px] lg:ml-[46px] text-primary text-[18px] sm:text-[28px] font-semibold">Mumworld.in</span>
+          <span className="ml-[18px] sm:ml-[32px] lg:ml-[46px] text-primary text-[18px] sm:text-[28px] font-semibold">
+            Mumworld.in
+          </span>
         </Link>
 
         <div className="flex justify-between gap-10 2xl:gap-20">
@@ -203,7 +207,7 @@ const Header = () => {
             >
               <HiMiniBars3
                 size={25}
-                className="text-gray-500 hover:text-[#e6846a]"
+                className="text-primary hover:text-primary-hover"
               />
             </button>
           </div>
@@ -215,28 +219,29 @@ const Header = () => {
         <div className="fixed inset-0 bg-[url('/background-image-contact-us.png')] bg-no-repeat bg-cover opacity-100 h-[100vh] w-[100vw] z-50 lg:hidden">
           <nav className="py-[20px] px-[24px]">
             {/* Mobile menu header */}
-            <div className="flex justify-between items-center border-b border-[#e6846a] pb-3 mb-6">
+            <div className="flex justify-between items-center border-b border-[#e6846a] pb-3 mb-6 h-[60px] relative">
               <Image
                 src={logo}
                 alt="logo"
-                width={383}
-                height={146}
-                className="w-24"
+                className="w-22 absolute -left-6 top-[-26px] "
               />
+              <span className="ml-[48px] text-primary text-[28px] font-semibold">
+                Mumworld.in
+              </span>
               <button
-                className="text-4xl text-[#e6846a] rotate-45 cursor-pointer"
+                className="absolute right-0 -top-2 text-[#e6846a] cursor-pointer"
                 onClick={() => setIsMobileMenu(false)}
               >
-                +
+                <IoMdCloseCircleOutline size={32} />
               </button>
             </div>
 
             {/* Mobile menu items */}
-            <ul className="text-[#F69E87] px-[16px] text-[22px] font-[400] flex flex-col mt-[16px]">
+            <ul className="text-[#F69E87] text-[18px] sm:text-[22px] font-[400] flex flex-col mt-[16px]">
               {navItems.map((item, index) => (
                 <React.Fragment key={index}>
                   {item.submenu ? (
-                    <li className="py-[16px] border-b border-[#e6846a]">
+                    <li className="py-[4px] border-b border-[#e6846a]">
                       <div
                         className="flex justify-between items-center cursor-pointer"
                         onClick={() => toggleSubmenu(index)}
@@ -244,10 +249,10 @@ const Header = () => {
                         <span className="mobileHead">{item.name}</span>
                         <span
                           className={`transform transition-transform ${
-                            openSubmenu === index ? "rotate-90" : ""
+                            openSubmenu === index ? "rotate-180" : ""
                           }`}
                         >
-                          ▶
+                          <FaChevronDown />
                         </span>
                       </div>
 
@@ -272,7 +277,7 @@ const Header = () => {
                       )}
                     </li>
                   ) : (
-                    <li className="py-[16px] border-b border-[#e6846a]">
+                    <li className="py-[4px] border-b border-[#e6846a]">
                       <Link
                         href={item.href}
                         className={`mobileHead block ${
