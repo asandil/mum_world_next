@@ -19,25 +19,25 @@ import aboutCommunity from "@/assets/images/banner1.png";
 const AboutSection = () => {
   const values = [
     {
-      icon: <FaHeart className="text-pink-500" size={40} />,
+      icon: <FaHeart className="text-primary" size={40} />,
       title: "Mother-First Approach",
       description:
         "Every product is designed with mothers' comfort, health, and happiness as our top priority.",
     },
     {
-      icon: <FaShieldAlt className="text-blue-500" size={40} />,
+      icon: <FaShieldAlt className="text-primary" size={40} />,
       title: "Safety & Quality",
       description:
         "Rigorous testing ensures all products meet the highest safety standards for mothers and babies.",
     },
     {
-      icon: <FaLeaf className="text-green-500" size={40} />,
+      icon: <FaLeaf className="text-primary" size={40} />,
       title: "Natural & Organic",
       description:
         "We prioritize natural, organic ingredients that are gentle on sensitive skin.",
     },
     {
-      icon: <FaHandsHelping className="text-purple-500" size={40} />,
+      icon: <FaHandsHelping className="text-primary" size={40} />,
       title: "Community Support",
       description:
         "Building a supportive community where mothers can share, learn, and grow together.",
