@@ -168,6 +168,10 @@ export const DT_ORDER_COLUMN = [
     accessorKey: "totalAmount",
     header: "Total Amount",
   },
+  {
+    accessorKey:"status",
+    header:"Status"
+  },
 ];
 
 export const DT_CUSTOMERS_COLUMN = [
