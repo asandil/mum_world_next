@@ -96,6 +96,80 @@ export const DT_COUPON_COLUMN = [
   },
 ];
 
+export const DT_ORDER_COLUMN = [
+  {
+    accessorKey: "order_id",
+    header: "Order Id",
+  },
+  {
+    accessorKey: "payment_id",
+    heaader: "Payment Id",
+  },
+  {
+    accessorKey: "name",
+    header: "Name",
+  },
+  {
+    accessorKey: "email",
+    haeader: "Email",
+  },
+  {
+    accessorKey: "phone",
+    hheader: "Phone",
+  },
+  {
+    accessorKey: "address",
+    header: "Address",
+  },
+  {
+    accessorKey: "street",
+    header: "Header",
+  },
+  {
+    accessorKey: "country",
+    header: "Country",
+  },
+  {
+    accessorKey: "State",
+    header: "State",
+  },
+  {
+    accessorKey: "city",
+    header: "City",
+  },
+  {
+    accessorKey: "pincode",
+    header: "Pin Code",
+  },
+  {
+    accessorKey: "ordernote",
+    header: "Order Note",
+  },
+  {
+    accessorKey: "totalItem",
+    header: "Total Item",
+    Cell: ({ renderedCellValue }) => (
+      <span>{renderedCellValue?.length || 0}</span>
+    ),
+  },
+  {
+    accessorKey: "subtotal",
+    header: "Sub Total",
+  },
+  {
+    accessorKey: "discount",
+    header: "Discount",
+  },
+  {
+    accessorKey: "couponDiscount",
+    header: "Coupon Discount",
+  },
+  {
+    accessorKey: "totalAmount",
+    header: "Total Amount",
+  },
+];
+
 export const DT_CUSTOMERS_COLUMN = [
   {
     accessorKey: "avatar",
