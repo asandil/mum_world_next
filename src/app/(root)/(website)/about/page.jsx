@@ -75,7 +75,7 @@ const AboutSection = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-pink-50 to-blue-50">
+      <section className="relative py-20 bg-gradient-to-r from-primary/10 to-primary/40">
         <div className=" mx-auto px-4 lg:px-32">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -93,13 +93,13 @@ const AboutSection = () => {
               <div className="flex gap-4">
                 <Link
                   href={WEBSITE_SHOP}
-                  className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
+                  className="bg-primary text-white px-4 sm:px-8 py-3 rounded-lg font-semibold hover:bg-primary-hover transition-colors"
                 >
                   Shop Our Products
                 </Link>
                 <Link
                   href="#our-story"
-                  className="border-2 border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors"
+                  className="border-2 border-primary text-primary px-4 sm:px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors"
                 >
                   Our Story
                 </Link>
@@ -169,7 +169,7 @@ const AboutSection = () => {
                 selected or developed with input from real mothers, healthcare
                 professionals, and child development experts.
               </p>
-              <div className="bg-pink-50 p-6 rounded-lg border-l-4 border-primary">
+              <div className="bg-primary/10 p-6 rounded-lg border-l-4 border-primary">
                 <p className="text-gray-700 italic">
                   "We don't just sell products - we provide solutions that make
                   motherhood a little easier and a lot more joyful."
@@ -186,7 +186,7 @@ const AboutSection = () => {
             </h3>
             <div className="relative">
               <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20"></div>
-              <div className="space-y-12">
+              <div className="space-y-0">
                 {milestones.map((milestone, index) => (
                   <div
                     key={index}
@@ -201,7 +201,7 @@ const AboutSection = () => {
                     >
                       <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
                         <div className="flex items-center gap-3 mb-3">
-                          <BsStars className="text-yellow-500" size={20} />
+                          <BsStars className="text-primary" size={28} />
                           <span className="font-bold text-lg">
                             {milestone.year}
                           </span>
@@ -285,7 +285,7 @@ const AboutSection = () => {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 p-6 bg-blue-50 rounded-lg">
+              <div className="mt-8 p-6 bg-primary/20 rounded-lg">
                 <div className="flex items-center gap-3 mb-2">
                   <FaShippingFast className="text-primary" size={24} />
                   <h3 className="font-bold text-lg">
@@ -312,7 +312,7 @@ const AboutSection = () => {
       </section>
 
       {/* Community Section */}
-      <section className="py-20 bg-gradient-to-br from-pink-50 to-purple-50">
+      <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/10">
         <div className=" mx-auto px-4 lg:px-32">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
@@ -349,7 +349,7 @@ const AboutSection = () => {
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="bg-white p-3 rounded-lg shadow-sm">
-                    <FaHeart className="text-pink-500" size={24} />
+                    <FaHeart className="text-primary" size={24} />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-2">Expert Advice</h4>
@@ -361,7 +361,7 @@ const AboutSection = () => {
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="bg-white p-3 rounded-lg shadow-sm">
-                    <BsStars className="text-yellow-500" size={24} />
+                    <BsStars className="text-primary" size={24} />
                   </div>
                   <div>
                     <h4 className="font-bold text-lg mb-2">
@@ -374,42 +374,15 @@ const AboutSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="mt-8">
+              <div className="mt-8 flex gap-4">
                 <Link
-                  href="/community"
-                  className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
+                  href={WEBSITE_SHOP}
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
                 >
-                  Join the Community
-                  <span>→</span>
+                  Shop Now
                 </Link>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-primary text-white">
-        <div className=" mx-auto px-4 lg:px-32 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            Ready to Experience the Mumworld Difference?
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-            Join thousands of mothers who trust us for their care needs
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href={WEBSITE_SHOP}
-              className="bg-white text-primary px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Shop Now
-            </Link>
-            <Link
-              href="/contact"
-              className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition-colors"
-            >
-              Contact Us
-            </Link>
           </div>
         </div>
       </section>
