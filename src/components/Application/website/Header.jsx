@@ -32,6 +32,8 @@ const Header = () => {
   const isActive = (href) =>
     href === "/" ? pathname === href : pathname.startsWith(href);
 
+  const isShopPage = pathname.includes("/shop");
+  
   const toggleSubmenu = (index) => {
     if (openSubmenu === index) {
       setOpenSubmenu(null);
@@ -177,12 +179,14 @@ const Header = () => {
 
           {/* Icons Section */}
           <div className="flex justify-between items-center gap-6 sm:gap-8">
-            <button type="button" onClick={() => setShowSearch(!showSearch)}>
-              <IoIosSearch
-                className="text-gray-500 hover:text-[#e6846a] cursor-pointer"
-                size={25}
-              />
-            </button>
+            {isShopPage && (
+              <button type="button" onClick={() => setShowSearch(!showSearch)}>
+                <IoIosSearch
+                  className="text-gray-500 hover:text-[#e6846a] cursor-pointer"
+                  size={25}
+                />
+              </button>
+            )}
             <Cart />
 
             {!auth ? (
