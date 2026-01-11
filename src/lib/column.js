@@ -103,7 +103,7 @@ export const DT_ORDER_COLUMN = [
   },
   {
     accessorKey: "payment_id",
-    heaader: "Payment Id",
+    header: "Payment Id",
   },
   {
     accessorKey: "name",
@@ -111,11 +111,11 @@ export const DT_ORDER_COLUMN = [
   },
   {
     accessorKey: "email",
-    haeader: "Email",
+    header: "Email",
   },
   {
     accessorKey: "phone",
-    hheader: "Phone",
+    header: "Phone",
   },
   {
     accessorKey: "address",
@@ -123,14 +123,14 @@ export const DT_ORDER_COLUMN = [
   },
   {
     accessorKey: "street",
-    header: "Header",
+    header: "Street",
   },
   {
     accessorKey: "country",
     header: "Country",
   },
   {
-    accessorKey: "State",
+    accessorKey: "state",
     header: "State",
   },
   {
@@ -169,8 +169,8 @@ export const DT_ORDER_COLUMN = [
     header: "Total Amount",
   },
   {
-    accessorKey:"status",
-    header:"Status"
+    accessorKey: "status",
+    header: "Status",
   },
 ];
 

@@ -3,19 +3,14 @@ import BreadCrumb from "@/components/Application/Admin/BreadCrumb";
 import DatatableWrapper from "@/components/Application/Admin/DatatableWrapper";
 import DeleteAction from "@/components/Application/Admin/DeleteAction";
 import ViewAction from "@/components/Application/Admin/ViewAction";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { DT_COUPON_COLUMN } from "@/lib/column";
+import { DT_ORDER_COLUMN } from "@/lib/column";
 import { columnConfig } from "@/lib/helperFunction";
 import {
-  ADMIN_COUPON_ADD,
-  ADMIN_COUPON_EDIT,
-  ADMIN_COUPON_SHOW,
   ADMIN_DASHBOARD,
   ADMIN_ORDER_DETAILS,
   ADMIN_TRASH,
 } from "@/routes/AdminPanelRoute";
-import Link from "next/link";
 import { useCallback, useMemo } from "react";
 import { FiPlus } from "react-icons/fi";
 
@@ -26,7 +21,7 @@ const breadCrumbData = [
 
 const ShowOrder = () => {
   const columns = useMemo(() => {
-    return columnConfig(DT_COUPON_COLUMN);
+    return columnConfig(DT_ORDER_COLUMN);
   }, []);
 
   const action = useCallback((row, deleteType, handleDelete) => {
