@@ -2,7 +2,7 @@
 import BreadCrumb from "@/components/Application/Admin/BreadCrumb";
 import DatatableWrapper from "@/components/Application/Admin/DatatableWrapper";
 import DeleteAction from "@/components/Application/Admin/DeleteAction";
-import EditAction from "@/components/Application/Admin/EditAction";
+import ViewAction from "@/components/Application/Admin/ViewAction";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { DT_COUPON_COLUMN } from "@/lib/column";
@@ -31,7 +31,7 @@ const ShowOrder = () => {
   const action = useCallback((row, deleteType, handleDelete) => {
     let actionMenu = [];
     actionMenu.push(
-      <EditAction key="edit" href={ADMIN_COUPON_EDIT(row.original._id)} />
+      <ViewAction key="view" href={ADMIN_COUPON_EDIT(row.original._id)} />
     );
     actionMenu.push(
       <DeleteAction
