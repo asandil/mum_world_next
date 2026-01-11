@@ -420,18 +420,17 @@ const TermsAndConditions = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white border-b">
-        <div className="container mx-auto px-4 lg:px-32 py-8">
+        <div className=" mx-auto px-4 lg:px-32 py-8">
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
             Terms & Conditions
           </h1>
-
           <p className="text-gray-500 mt-2">
             Please read these terms carefully before using our website
           </p>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 lg:px-32 py-12">
+      <div className=" mx-auto px-4 lg:px-32 py-12">
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Table of Contents Sidebar */}
           <div className="lg:col-span-1">
@@ -466,9 +465,9 @@ const TermsAndConditions = () => {
           <div className="lg:col-span-3">
             <div className="bg-white rounded-xl shadow-lg p-8">
               {/* Important Notice */}
-              <div className="bg-blue-50 border-l-4 border-blue-500 p-6 mb-8">
+              <div className="bg-primary/10 border-l-4 border-primary p-6 mb-8">
                 <div className="flex items-start gap-3">
-                  <FaShieldAlt className="text-blue-500 mt-1" size={24} />
+                  <FaShieldAlt className="text-primary mt-1" size={28} />
                   <div>
                     <h3 className="font-bold text-lg text-gray-900 mb-2">
                       Important Notice
