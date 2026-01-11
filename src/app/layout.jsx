@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
       >
         <GoogleAnalytics />
         <GoogleAdSense />
-        <Header />
+        {/* <Header /> */}
 
         {/* Top Ad Unit - Leaderboard */}
         {/* <div className="ad-container">
