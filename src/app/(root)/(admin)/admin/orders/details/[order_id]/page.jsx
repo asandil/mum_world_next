@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { use, useEffect, useState } from "react";
 import imgPlaceholder from "@/assets/images/img-placeholder.webp";
 import Image from "next/image";
@@ -12,17 +12,17 @@ import { FiPhone } from "react-icons/fi";
 import useFetch from "@/hooks/useFetch";
 
 const OrderDetails = ({ params }) => {
-  const { orderid } = use (params)
-  const [orderData, setOrderData] = useState()
-  const { data, loading } = useFetch(`/api/orders/get/${orderid}`) 
+  const { orderid } = use(params);
+  const [orderData, setOrderData] = useState();
+  const { data, loading } = useFetch(`/api/orders/get/${orderid}`);
 
   console.log("Order Data in Admin Page.", data);
 
   useEffect(() => {
-    if(data && data.success){
-      setOrderData(data)
+    if (data && data.success) {
+      setOrderData(data);
     }
-  }, [data])
+  }, [data]);
 
   // Define status progression
   // const statusSteps = [
@@ -40,7 +40,7 @@ const OrderDetails = ({ params }) => {
 
   return (
     <div>
-      <div className="lg:px-32 px-5 my-20">
+      <div className="lg:px-0 px-0 my-0">
         {orderData && !orderData.success ? (
           <div className="flex justify-center items-center py-32">
             <h4 className="text-red-500 text-xl font-semibold">
