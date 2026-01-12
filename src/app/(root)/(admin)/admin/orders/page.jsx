@@ -49,7 +49,7 @@ const ShowOrder = () => {
             <h4 className="text-xl font-semibold">Show Orders</h4>
           </div>
         </CardHeader>
-        <CardContent className="pb-5 px-0">
+        <CardContent className="pt-0 px-0 w-full max-w-[1600px] ">
           <DatatableWrapper
             queryKey="orders-data"
             fetchUrl="/api/orders"

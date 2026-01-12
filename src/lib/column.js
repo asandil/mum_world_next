@@ -148,8 +148,8 @@ export const DT_ORDER_COLUMN = [
   {
     accessorKey: "totalItem",
     header: "Total Item",
-    Cell: ({ renderedCellValue }) => (
-      <span>{renderedCellValue?.length || 0}</span>
+    Cell: ({ renderedCellValue, row }) => (
+      <span>{row?.original?.products?.length || 0}</span>
     ),
   },
   {
@@ -159,6 +159,9 @@ export const DT_ORDER_COLUMN = [
   {
     accessorKey: "discount",
     header: "Discount",
+    Cell: ({ renderedCellValue }) => (
+      <span>{Math.round(renderedCellValue)}</span>
+    ),
   },
   {
     accessorKey: "couponDiscount",
