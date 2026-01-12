@@ -1,6 +1,5 @@
-import WebsiteBreadcrumb from "@/components/Application/website/WebsiteBreadcrumb";
-import axios from "axios";
-import React from "react";
+"use client"
+import React, { use, useEffect, useState } from "react";
 import imgPlaceholder from "@/assets/images/img-placeholder.webp";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,28 +9,34 @@ import PrintButton from "@/components/Application/website/PrintOrderDetails";
 import { MdOutgoingMail } from "react-icons/md";
 import { TbTransactionDollar } from "react-icons/tb";
 import { FiPhone } from "react-icons/fi";
+import useFetch from "@/hooks/useFetch";
 
-const OrderDetails = async ({ params }) => {
-  const { orderid } = await params;
-  const { data: orderData } = await axios.get(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/orders/get/${orderid}`
-  );
+const OrderDetails = ({ params }) => {
+  const { orderid } = use (params)
+  const [orderData, setOrderData] = useState()
+  const { data, loading } = useFetch(`/api/orders/get/${orderid}`) 
 
-  console.log("Order Data", orderData);
+  console.log("Order Data in Admin Page.", data);
+
+  useEffect(() => {
+    if(data && data.success){
+      setOrderData(data)
+    }
+  }, [data])
 
   // Define status progression
-  const statusSteps = [
-    { status: "pending", label: "Pending", step: 1 },
-    { status: "confirmed", label: "Confirmed", step: 2 },
-    { status: "processing", label: "Processing", step: 3 },
-    { status: "shipped", label: "Shipped", step: 4 },
-    { status: "delivered", label: "Delivered", step: 5 },
-  ];
+  // const statusSteps = [
+  //   { status: "pending", label: "Pending", step: 1 },
+  //   { status: "confirmed", label: "Confirmed", step: 2 },
+  //   { status: "processing", label: "Processing", step: 3 },
+  //   { status: "shipped", label: "Shipped", step: 4 },
+  //   { status: "delivered", label: "Delivered", step: 5 },
+  // ];
 
   // Find current status step
-  const currentStatus = orderData?.data?.status?.toLowerCase() || "pending";
-  const currentStep =
-    statusSteps.find((step) => step.status === currentStatus)?.step || 1;
+  // const currentStatus = orderData?.data?.status?.toLowerCase() || "pending";
+  // const currentStep =
+  //   statusSteps.find((step) => step.status === currentStatus)?.step || 1;
 
   return (
     <div>
@@ -51,18 +56,8 @@ const OrderDetails = async ({ params }) => {
                   <h2 className="text-xl font-bold text-gray-800">
                     Order Id: #{orderData?.data?.order_id}
                   </h2>
-                  <p className="text-gray-600">
-                    Placed on{" "}
-                    {new Date(
-                      orderData?.data?.createdAt || new Date()
-                    ).toLocaleDateString("en-IN", {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                    })}
-                  </p>
                 </div>
-                <div className="text-right">
+                {/* <div className="text-right">
                   <span
                     className={`px-3 py-1 rounded-full text-sm font-medium ${
                       currentStatus === "pending"
@@ -81,24 +76,24 @@ const OrderDetails = async ({ params }) => {
                     {currentStatus.charAt(0).toUpperCase() +
                       currentStatus.slice(1)}
                   </span>
-                </div>
+                </div> */}
               </div>
 
               {/* Progress Bar */}
               <div className="relative">
                 {/* Progress Line */}
                 <div className="absolute top-5 left-0 right-0 h-1 bg-gray-200"></div>
-                <div
+                {/* <div
                   className="absolute top-5 left-0 h-1 bg-green-500 transition-all duration-500"
                   style={{
                     width: `${
                       ((currentStep - 1) / (statusSteps.length - 1)) * 100
                     }%`,
                   }}
-                ></div>
+                ></div> */}
 
                 {/* Status Steps */}
-                <div className="relative flex justify-between">
+                {/* <div className="relative flex justify-between">
                   {statusSteps.map((step, index) => (
                     <div
                       key={step.status}
@@ -142,7 +137,7 @@ const OrderDetails = async ({ params }) => {
                       </span>
                     </div>
                   ))}
-                </div>
+                </div> */}
               </div>
 
               {/* Status Description */}
@@ -161,7 +156,7 @@ const OrderDetails = async ({ params }) => {
                       d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     ></path>
                   </svg>
-                  <div>
+                  {/* <div>
                     <p className="text-sm text-[#F69E87]">
                       {currentStatus === "pending" &&
                         "Your order has been received and is awaiting confirmation."}
@@ -182,7 +177,7 @@ const OrderDetails = async ({ params }) => {
                       ].includes(currentStatus) &&
                         `Your order status is: ${currentStatus}`}
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
