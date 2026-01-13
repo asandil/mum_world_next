@@ -10,11 +10,19 @@ import { MdOutgoingMail } from "react-icons/md";
 import { TbTransactionDollar } from "react-icons/tb";
 import { FiPhone } from "react-icons/fi";
 import useFetch from "@/hooks/useFetch";
+import { ADMIN_DASHBOARD, ADMIN_ORDER_SHOW } from "@/routes/AdminPanelRoute";
+import BreadCrumb from "@/components/Application/Admin/BreadCrumb";
+
+const breadcrumbData = [
+  { href: ADMIN_DASHBOARD, label: "Home" },
+  { href: ADMIN_ORDER_SHOW, label: "Orders" },
+  { href: "", label: "Order Details" },
+];
 
 const OrderDetails = ({ params }) => {
-  const { orderid } = use(params);
+  const { order_id } = use(params);
   const [orderData, setOrderData] = useState();
-  const { data, loading } = useFetch(`/api/orders/get/${orderid}`);
+  const { data, loading } = useFetch(`/api/orders/get/${order_id}`);
 
   console.log("Order Data in Admin Page.", data);
 
@@ -40,6 +48,7 @@ const OrderDetails = ({ params }) => {
 
   return (
     <div>
+      <BreadCrumb breadCrumbData={breadcrumbData} />
       <div className="lg:px-0 px-0 my-0">
         {orderData && !orderData.success ? (
           <div className="flex justify-center items-center py-32">
@@ -217,7 +226,7 @@ const OrderDetails = ({ params }) => {
 
             {/* Products Table */}
             <table className="w-full rounded-lg shadow-sm ">
-              <thead className="border-b bg-gray-50 md:table-header-group hidden">
+              <thead className="border-b bg-gray-50 dark:bg-card md:table-header-group hidden">
                 <tr>
                   <th className="text-start p-3">Product</th>
                   <th className="text-center p-3">Price</th>
@@ -363,7 +372,7 @@ const OrderDetails = ({ params }) => {
                   </table>
                 </div>
               </div>
-              <div className="p-5 bg-gray-50 rounded-lg border shadow-sm">
+              <div className="p-5 bg-gray-50 dark:bg-card rounded-lg border shadow-sm">
                 <h4 className="text-lg font-semibold mb-5">Order Summary</h4>
                 <div>
                   <table className="w-full">
