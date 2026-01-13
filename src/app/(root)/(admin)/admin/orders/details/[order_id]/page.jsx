@@ -12,6 +12,8 @@ import { FiPhone } from "react-icons/fi";
 import useFetch from "@/hooks/useFetch";
 import { ADMIN_DASHBOARD, ADMIN_ORDER_SHOW } from "@/routes/AdminPanelRoute";
 import BreadCrumb from "@/components/Application/Admin/BreadCrumb";
+import Select from "@/components/Application/Select";
+import { orderStatus } from "@/lib/utils";
 
 const breadcrumbData = [
   { href: ADMIN_DASHBOARD, label: "Home" },
@@ -19,18 +21,31 @@ const breadcrumbData = [
   { href: "", label: "Order Details" },
 ];
 
+const statusOptions = [
+  { label: "Pending", value: "pending" },
+  { label: "Processing", value: "processing" },
+  { label: "Shipped", value: "shipped" },
+  { label: "Delivered", value: "delivered" },
+  { label: "Cancelled", value: "cancelled" },
+  { label: "Unverified", value: "unverified" },
+];
+
 const OrderDetails = ({ params }) => {
   const { order_id } = use(params);
   const [orderData, setOrderData] = useState();
+  const [orderStatus, setOrderStatus] = useState();
   const { data, loading } = useFetch(`/api/orders/get/${order_id}`);
 
   console.log("Order Data in Admin Page.", data);
 
   useEffect(() => {
     if (data && data.success) {
-      setOrderData(data);
+      setOrderData(data?.data);
+      setOrderStatus(data?.data?.status);
     }
   }, [data]);
+
+  const handleOrderStatus = async () => {};
 
   // Define status progression
   // const statusSteps = [
@@ -50,7 +65,7 @@ const OrderDetails = ({ params }) => {
     <div>
       <BreadCrumb breadCrumbData={breadcrumbData} />
       <div className="lg:px-0 px-0 my-0">
-        {orderData && !orderData.success ? (
+        {!orderData ? (
           <div className="flex justify-center items-center py-32">
             <h4 className="text-red-500 text-xl font-semibold">
               Order Not Found
@@ -63,7 +78,7 @@ const OrderDetails = ({ params }) => {
               <div className="flex justify-between items-center mb-6">
                 <div>
                   <h2 className="text-xl font-bold text-gray-800">
-                    Order Id: #{orderData?.data?.order_id}
+                    Order Id: #{orderData?.order_id}
                   </h2>
                 </div>
                 {/* <div className="text-right">
@@ -199,7 +214,7 @@ const OrderDetails = ({ params }) => {
                       Email
                     </span>
                   </div>
-                  <p className="text-gray-900">{orderData?.data?.email}</p>
+                  <p className="text-gray-900">{orderData?.email}</p>
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded-lg">
@@ -209,7 +224,7 @@ const OrderDetails = ({ params }) => {
                       Phone
                     </span>
                   </div>
-                  <p className="text-gray-900">{orderData?.data?.phone}</p>
+                  <p className="text-gray-900">{orderData?.phone}</p>
                 </div>
 
                 <div className="bg-gray-50 p-4 rounded-lg">
@@ -219,7 +234,7 @@ const OrderDetails = ({ params }) => {
                       Transaction ID
                     </span>
                   </div>
-                  <p className="text-gray-900">{orderData?.data?.payment_id}</p>
+                  <p className="text-gray-900">{orderData?.payment_id}</p>
                 </div>
               </div>
             </div>
@@ -236,7 +251,7 @@ const OrderDetails = ({ params }) => {
               </thead>
               <tbody>
                 {orderData &&
-                  orderData?.data?.products?.map((product) => (
+                  orderData?.products?.map((product) => (
                     <tr
                       key={product.variantId._id}
                       className="md:table-row block border-b"
@@ -304,68 +319,48 @@ const OrderDetails = ({ params }) => {
                     <tbody>
                       <tr>
                         <td className="font-medium py-2">Name:-</td>
-                        <td className="text-end py-2">
-                          {orderData?.data?.name}
-                        </td>
+                        <td className="text-end py-2">{orderData?.name}</td>
                       </tr>
                       <tr>
                         <td className="font-medium py-2">Email:-</td>
-                        <td className="text-end py-2">
-                          {orderData?.data?.email}
-                        </td>
+                        <td className="text-end py-2">{orderData?.email}</td>
                       </tr>
                       <tr>
                         <td className="font-medium py-2">Phone:-</td>
-                        <td className="text-end py-2">
-                          {orderData?.data?.phone}
-                        </td>
+                        <td className="text-end py-2">{orderData?.phone}</td>
                       </tr>
                       <tr>
                         <td className="font-medium py-2">Address:-</td>
-                        <td className="text-end py-2">
-                          {orderData?.data?.address}
-                        </td>
+                        <td className="text-end py-2">{orderData?.address}</td>
                       </tr>
                       <tr>
                         <td className="font-medium py-2">Street:-</td>
-                        <td className="text-end py-2">
-                          {orderData?.data?.street}
-                        </td>
+                        <td className="text-end py-2">{orderData?.street}</td>
                       </tr>
                       <tr>
                         <td className="font-medium py-2">Country:-</td>
-                        <td className="text-end py-2">
-                          {orderData?.data?.country}
-                        </td>
+                        <td className="text-end py-2">{orderData?.country}</td>
                       </tr>
                       <tr>
                         <td className="font-medium py-2">State:-</td>
-                        <td className="text-end py-2">
-                          {orderData?.data?.state}
-                        </td>
+                        <td className="text-end py-2">{orderData?.state}</td>
                       </tr>
                       <tr>
                         <td className="font-medium py-2">City:-</td>
-                        <td className="text-end py-2">
-                          {orderData?.data?.city}
-                        </td>
+                        <td className="text-end py-2">{orderData?.city}</td>
                       </tr>
                       <tr>
                         <td className="font-medium py-2">PineCode:-</td>
-                        <td className="text-end py-2">
-                          {orderData?.data?.pincode}
-                        </td>
+                        <td className="text-end py-2">{orderData?.pincode}</td>
                       </tr>
                       <tr>
                         <td className="font-medium py-2">LandMark:-</td>
-                        <td className="text-end py-2">
-                          {orderData?.data?.landmark}
-                        </td>
+                        <td className="text-end py-2">{orderData?.landmark}</td>
                       </tr>
                       <tr>
                         <td className="font-medium py-2">OrderNote:-</td>
                         <td className="text-end py-2">
-                          {orderData?.data?.ordernote || "---"}
+                          {orderData?.ordernote || "---"}
                         </td>
                       </tr>
                     </tbody>
@@ -380,7 +375,7 @@ const OrderDetails = ({ params }) => {
                       <tr>
                         <td className="font-medium py-2">Subtotal:-</td>
                         <td className="text-end py-2">
-                          {orderData?.data?.subtotal.toLocaleString("en-IN", {
+                          {orderData?.subtotal.toLocaleString("en-IN", {
                             style: "currency",
                             currency: "INR",
                           })}
@@ -389,7 +384,7 @@ const OrderDetails = ({ params }) => {
                       <tr>
                         <td className="font-medium py-2">Discount:-</td>
                         <td className="text-end py-2">
-                          {orderData?.data?.discount.toLocaleString("en-IN", {
+                          {orderData?.discount.toLocaleString("en-IN", {
                             style: "currency",
                             currency: "INR",
                           })}
@@ -398,7 +393,7 @@ const OrderDetails = ({ params }) => {
                       <tr>
                         <td className="font-medium py-2">Coupon Discount:-</td>
                         <td className="text-end py-2">
-                          {orderData?.data?.couponDiscountAmount.toLocaleString(
+                          {orderData?.couponDiscountAmount.toLocaleString(
                             "en-IN",
                             {
                               style: "currency",
@@ -410,18 +405,34 @@ const OrderDetails = ({ params }) => {
                       <tr>
                         <td className="font-medium py-2">Total:-</td>
                         <td className="text-end py-2">
-                          {orderData?.data?.totalAmount.toLocaleString(
-                            "en-IN",
-                            {
-                              style: "currency",
-                              currency: "INR",
-                            }
-                          )}
+                          {orderData?.totalAmount.toLocaleString("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                          })}
                         </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
+                <hr />
+
+                <div className="pt-3">
+                  <h4 className="text-lg font-semibold mb-2">Order Status</h4>
+                  <Select
+                    options={statusOptions}
+                    selected={orderStatus}
+                    setSelected={(value) => setOrderStatus(value)}
+                    placeholder="Select"
+                    isMulti={false}
+                  />
+                  <ButtonLoading
+                    type="button"
+                    onClick={handleOrderStatus}
+                    text="Save Status"
+                    className="mt-5 cursor-pointer"
+                  />
+                </div>
+
                 <div className="w-full flex justify-between">
                   <ButtonLoading
                     type="button"
