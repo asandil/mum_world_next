@@ -18,7 +18,7 @@ export async function GET(request) {
       product: new mongoose.Types.ObjectId(productId),
     };
 
-    //  aggregation
+    //  aggregation 
 
     const aggregation = [
       {

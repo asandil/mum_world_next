@@ -14,6 +14,8 @@ import { ADMIN_DASHBOARD, ADMIN_ORDER_SHOW } from "@/routes/AdminPanelRoute";
 import BreadCrumb from "@/components/Application/Admin/BreadCrumb";
 import Select from "@/components/Application/Select";
 import { orderStatus } from "@/lib/utils";
+import { catchError, response } from "@/lib/helperFunction";
+import axios from "axios";
 
 const breadcrumbData = [
   { href: ADMIN_DASHBOARD, label: "Home" },
@@ -34,6 +36,7 @@ const OrderDetails = ({ params }) => {
   const { order_id } = use(params);
   const [orderData, setOrderData] = useState();
   const [orderStatus, setOrderStatus] = useState();
+  const [updatingStatus, setUpdatingStatus] = useState(false)
   const { data, loading } = useFetch(`/api/orders/get/${order_id}`);
 
   console.log("Order Data in Admin Page.", data);
@@ -45,21 +48,27 @@ const OrderDetails = ({ params }) => {
     }
   }, [data]);
 
-  const handleOrderStatus = async () => {};
+  const handleOrderStatus = async () => {
+    setUpdatingStatus(true)
+    try {
+      const { data: repsonse } = await axios.put("/api/orders/update-status", {
+        _id: orderData?._id,
+        status: orderStatus
+      })
+      if(!response.success){
+        throw new Error(response.message)
+      }
 
-  // Define status progression
-  // const statusSteps = [
-  //   { status: "pending", label: "Pending", step: 1 },
-  //   { status: "confirmed", label: "Confirmed", step: 2 },
-  //   { status: "processing", label: "Processing", step: 3 },
-  //   { status: "shipped", label: "Shipped", step: 4 },
-  //   { status: "delivered", label: "Delivered", step: 5 },
-  // ];
 
-  // Find current status step
-  // const currentStatus = orderData?.data?.status?.toLowerCase() || "pending";
-  // const currentStep =
-  //   statusSteps.find((step) => step.status === currentStatus)?.step || 1;
+
+    } catch (error) {
+      catchError
+    } finally {
+      setUpdatingStatus(false)
+    }
+  };
+
+
 
   return (
     <div>
@@ -311,7 +320,7 @@ const OrderDetails = ({ params }) => {
               </tbody>
             </table>
 
-            <div className="grid md:grid-cols-2 grid-cols-1 gap-10 mt-10">
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 mt-10">
               <div className="p-5 rounded-lg border shadow-sm">
                 <h4 className="text-lg font-semibold mb-5">Shipping Address</h4>
                 <div>
@@ -427,6 +436,7 @@ const OrderDetails = ({ params }) => {
                   />
                   <ButtonLoading
                     type="button"
+                    loading={updatingStatus}
                     onClick={handleOrderStatus}
                     text="Save Status"
                     className="mt-5 cursor-pointer"

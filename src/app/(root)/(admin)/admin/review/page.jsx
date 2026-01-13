@@ -41,7 +41,7 @@ const ShowReview = () => {
             <h4 className="text-xl font-semibold">Reviews</h4>
           </div>
         </CardHeader>
-        <CardContent className="pb-5 px-0">
+        <CardContent className="pb-5 px-0"> 
           <DatatableWrapper
             queryKey="review-data"
             fetchUrl="/api/review"

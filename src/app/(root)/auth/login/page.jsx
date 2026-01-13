@@ -130,7 +130,7 @@ const LoginPage = () => {
             />
             <p className="text-[24px] text-center text-primary mt-[-12px] font-[600]">
               Mumworld.in
-            </p>
+            </p> 
           </div>
 
           {!otpEmail ? (
