@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
-import Logo from "@/assets/images/logo.jpg";
+import Logo from "@/assets/images/footer_logo.svg";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
@@ -61,24 +61,27 @@ const RegiterPage = () => {
     console.log(values);
     try {
       setLoading(true);
-      const {data: registerResponse} = await axios.post(`/api/auth/register`, values)
-      if(!registerResponse.success){
-        throw new Error(registerResponse.message)
+      const { data: registerResponse } = await axios.post(
+        `/api/auth/register`,
+        values
+      );
+      if (!registerResponse.success) {
+        throw new Error(registerResponse.message);
       }
-      form.reset()
-      showToast("success", registerResponse.message)
+      form.reset();
+      showToast("success", registerResponse.message);
     } catch (error) {
-      showToast("error", error.message)
-    } finally{
-      setLoading(false)
+      showToast("error", error.message);
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <>
-      <Card className="w-[550px]">
+      <Card className="w-[340px] sm:w-[550px]">
         <CardContent>
-          <div className="flex justify-center mb-5">
+          <div className="flex flex-col items-center justify-center mb-5">
             <Image
               src={Logo.src}
               width={Logo.width}
@@ -86,6 +89,9 @@ const RegiterPage = () => {
               alt="logo"
               className="max-w-[100px]"
             />
+            <p className="text-[24px] text-center text-primary mt-[-12px] font-[600]">
+              Mumworld.in
+            </p>
           </div>
           <div className="text-center">
             <h1 className="text-3xl font-bold">Create Account</h1>
@@ -150,7 +156,7 @@ const RegiterPage = () => {
                           />
                         </FormControl>
                         <button
-                          className="absolute top-1/2 right-2 cursor-pointer"
+                          className="absolute top-1/2 right-2 cursor-pointer text-[24px] text-primary hover:text-primary-hover "
                           type="button"
                           onClick={() => setIsTypePassword(!isTypePassword)}
                         >
@@ -176,7 +182,7 @@ const RegiterPage = () => {
                           />
                         </FormControl>
                         <button
-                          className="absolute top-1/2 right-2 cursor-pointer"
+                          className="absolute top-1/2 right-2 cursor-pointer text-[24px] text-primary hover:text-primary-hover"
                           type="button"
                           onClick={() => setIsTypePassword(!isTypePassword)}
                         >
@@ -200,7 +206,7 @@ const RegiterPage = () => {
                     <p>Allready have account?</p>
                     <Link
                       href={WEBSITE_LOGIN}
-                      className="text-primary underline"
+                      className="text-primary underline hover:text-primary-hover"
                     >
                       Login
                     </Link>
