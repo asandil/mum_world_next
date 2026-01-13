@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import React, { useState } from "react";
-import Logo from "@/assets/images/logo.jpg";
+import Logo from "@/assets/images/footer_logo.svg";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import Link from "next/link";
@@ -120,7 +120,7 @@ const LoginPage = () => {
     <div>
       <Card className="w-[340px] sm:w-[550px]">
         <CardContent>
-          <div className="flex justify-center mb-5">
+          <div className="flex flex-col items-center justify-center mb-5">
             <Image
               src={Logo.src}
               width={Logo.width}
@@ -128,6 +128,9 @@ const LoginPage = () => {
               alt="logo"
               className="max-w-[100px]"
             />
+            <p className="text-[24px] text-center text-primary mt-[-12px] font-[600]">
+              Mumworld.in
+            </p>
           </div>
 
           {!otpEmail ? (
@@ -177,7 +180,7 @@ const LoginPage = () => {
                                 />
                               </FormControl>
                               <button
-                                className="absolute top-2 right-2 cursor-pointer"
+                                className="absolute top-2 right-2 cursor-pointer text-[24px] text-primary hover:text-primary-hover"
                                 type="button"
                                 onClick={() =>
                                   setIsTypePassword(!isTypePassword)
@@ -208,7 +211,7 @@ const LoginPage = () => {
                         <p>Don't have account?</p>
                         <Link
                           href={WEBSITE_REGISTER}
-                          className="text-primary underline"
+                          className="text-primary underline hover:text-primary-hover "
                         >
                           Create account
                         </Link>
@@ -216,7 +219,7 @@ const LoginPage = () => {
                       <div className="mt-3">
                         <Link
                           href={WEBSITE_RESETPASSWORD}
-                          className="text-primary underline"
+                          className="text-primary underline hover:text-primary-hover "
                         >
                           Forget password?
                         </Link>
