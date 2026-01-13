@@ -126,7 +126,7 @@ const LoginPage = () => {
               width={Logo.width}
               height={Logo.height}
               alt="logo"
-              className="max-w-[100px]"
+              className="w-[100px] sm:w-[150px]"
             />
             <p className="text-[24px] text-center text-primary mt-[-12px] font-[600]">
               Mumworld.in

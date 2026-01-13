@@ -26,7 +26,7 @@ import { zSchema } from "@/lib/zodSchema";
 import { WEBSITE_LOGIN } from "@/routes/WebsiteRoute";
 
 // Assets
-import Logo from "@/assets/images/logo.jpg";
+import Logo from "@/assets/images/footer_logo.svg";
 import OTPVerification from "@/components/Application/OTPVerification";
 import UpdatePassword from "@/components/Application/UpdatePassword";
 import { showToast } from "@/lib/showToast";
@@ -60,7 +60,7 @@ const ResetPassword = () => {
       if (!sendOtpResponse.success) {
         throw new Error(sendOtpResponse.message);
       }
-      setOtpEmail(values.email)
+      setOtpEmail(values.email);
       showToast("success", sendOtpResponse.message);
     } catch (error) {
       showToast("error", error.message);
@@ -91,15 +91,15 @@ const ResetPassword = () => {
 
   return (
     <>
-      <Card className="w-[450px]">
+      <Card className="w-[340px] sm:w-[4+50px]">
         <CardContent>
-          <div>
+          <div className="flex flex-col items-center justify-center mb-5">
             <Image
               src={Logo.src}
               width={Logo.width}
               height={Logo.height}
               alt="logo"
-              className="max-w-[150px]"
+              className="w-[100px] sm:w-[150px]"
             />
           </div>
 
@@ -146,7 +146,7 @@ const ResetPassword = () => {
                       <div className="flex justify-center items-center gap-1">
                         <Link
                           href={WEBSITE_LOGIN}
-                          className="text-primary underline"
+                          className="text-primary underline hover:text-primary-hover"
                         >
                           Back To Login
                         </Link>

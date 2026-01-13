@@ -102,7 +102,7 @@ const UpdatePassword = ({ email }) => {
                         />
                       </FormControl>
                       <button
-                        className="absolute top-1/2 right-2 cursor-pointer"
+                        className="absolute top-1/2 right-2 cursor-pointer text-[24px] text-primary hover:text-primary-hover"
                         type="button"
                         onClick={() => setIsTypePassword(!isTypePassword)}
                       >
@@ -128,7 +128,7 @@ const UpdatePassword = ({ email }) => {
                         />
                       </FormControl>
                       <button
-                        className="absolute top-1/2 right-2 cursor-pointer"
+                        className="absolute top-1/2 right-2 cursor-pointer text-[24px] text-primary hover:text-primary-hover"
                         type="button"
                         onClick={() => setIsTypePassword(!isTypePassword)}
                       >
