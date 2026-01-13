@@ -19,7 +19,11 @@ import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { zSchema } from "@/lib/zodSchema";
 import { ButtonLoading } from "@/components/Application/ButtonLoading";
-import { USER_DASHBOARD, WEBSITE_REGISTER, WEBSITE_RESETPASSWORD } from "@/routes/WebsiteRoute";
+import {
+  USER_DASHBOARD,
+  WEBSITE_REGISTER,
+  WEBSITE_RESETPASSWORD,
+} from "@/routes/WebsiteRoute";
 
 // Icons
 import { FaRegEyeSlash } from "react-icons/fa";
@@ -33,9 +37,8 @@ import { login } from "@/store/reducer/authReducer";
 import { ADMIN_DASHBOARD } from "@/routes/AdminPanelRoute";
 
 const LoginPage = () => {
-
   const dispatch = useDispatch();
-  
+
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -97,14 +100,15 @@ const LoginPage = () => {
       }
       setOtpEmail("");
       showToast("success", otpResponse.message);
-      dispatch(login(otpResponse.data))
+      dispatch(login(otpResponse.data));
 
-      if(searchParams.has('callback')) {
-        router.push(searchParams.get('callback'))
+      if (searchParams.has("callback")) {
+        router.push(searchParams.get("callback"));
       } else {
-        otpResponse.data.role === 'admin' ? router.push(ADMIN_DASHBOARD) : router.push(USER_DASHBOARD)
+        otpResponse.data.role === "admin"
+          ? router.push(ADMIN_DASHBOARD)
+          : router.push(USER_DASHBOARD);
       }
-
     } catch (error) {
       showToast("error", error.message);
     } finally {
@@ -114,7 +118,7 @@ const LoginPage = () => {
 
   return (
     <div>
-      <Card className="w-[550px]">
+      <Card className="w-[340px] sm:w-[550px]">
         <CardContent>
           <div className="flex justify-center mb-5">
             <Image
