@@ -21,6 +21,7 @@ import Search from "./Search";
 import { usePathname } from "next/navigation";
 import { FaChevronDown } from "react-icons/fa";
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import UserDropDown from "./UserDropDown";
 
 const Header = () => {
   const auth = useSelector((store) => store.authStore.auth);
@@ -203,6 +204,8 @@ const Header = () => {
                 </Avatar>
               </Link>
             )}
+
+            <UserDropDown />
 
             <button
               type="button"
