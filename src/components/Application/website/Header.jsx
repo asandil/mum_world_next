@@ -33,7 +33,7 @@ const Header = () => {
     href === "/" ? pathname === href : pathname.startsWith(href);
 
   const isShopPage = pathname.includes("/shop");
-  
+
   const toggleSubmenu = (index) => {
     if (openSubmenu === index) {
       setOpenSubmenu(null);
