@@ -470,23 +470,18 @@ const OrderDetails = ({ params }) => {
                     placeholder="Select"
                     isMulti={false}
                   />
+                  
+                </div>
+
+                <div className="mt-5 w-full flex justify-between">
+                  <PrintButton orderData={orderData} />
                   <ButtonLoading
                     type="button"
                     loading={updatingStatus}
                     onClick={handleOrderStatus}
-                    text="Save Status"
-                    className="mt-5 cursor-pointer"
+                    text="Change Order Status"
+                    className=" cursor-pointer"
                   />
-                </div>
-
-                <div className="w-full flex justify-between">
-                  <ButtonLoading
-                    type="button"
-                    text="Cancel"
-                    variant="destructive"
-                    className="cursor-pointer"
-                  />
-                  <PrintButton orderData={orderData} />
                 </div>
               </div>
             </div>
