@@ -90,7 +90,7 @@ const OrderDetails = ({ params }) => {
   return (
     <div>
       <BreadCrumb breadCrumbData={breadcrumbData} />
-      <div className="lg:px-0 px-0 my-0">
+      <div className="border rounded-sm px-2">
         {!orderData ? (
           <div className="flex justify-center items-center py-32">
             <h4 className="text-red-500 text-xl font-semibold">
@@ -98,7 +98,11 @@ const OrderDetails = ({ params }) => {
             </h4>
           </div>
         ) : (
-          <div>
+          <div className="px-0 mb-5">
+            <div className="py-2 border-b mb-3">
+              <h4 className="text-xl font-bold text-primary">Order Details</h4>
+            </div>
+
             {/* Order Status Progress Bar - Same as user page */}
             <div className="mb-10 bg-white p-6 rounded-lg shadow-sm border">
               <div className="flex justify-between items-center mb-6">
@@ -106,7 +110,7 @@ const OrderDetails = ({ params }) => {
                   <h2 className="text-xl font-bold text-gray-800">
                     Order Id: #{orderData?.order_id}
                   </h2>
-                  <p className="text-gray-600">
+                  {/* <p className="text-gray-600">
                     Placed on{" "}
                     {new Date(
                       orderData?.createdAt || new Date()
@@ -115,7 +119,7 @@ const OrderDetails = ({ params }) => {
                       month: "long",
                       year: "numeric",
                     })}
-                  </p>
+                  </p> */}
                 </div>
                 <div className="text-right">
                   <span
