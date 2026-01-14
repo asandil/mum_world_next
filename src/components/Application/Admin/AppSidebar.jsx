@@ -1,8 +1,9 @@
-"use client"
+"use client";
 import React from "react";
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
@@ -13,7 +14,7 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import Image from "next/image";
-import Logo from "@/assets/images/logo.jpg";
+import Logo from "@/assets/images/footer_logo.svg";
 import { LuChevronRight } from "react-icons/lu";
 import { IoMdClose } from "react-icons/io";
 import { adminAppSidebarMenu } from "@/lib/adminSidebarMenu";
@@ -26,28 +27,37 @@ import {
 import { Button } from "@/components/ui/button";
 
 const AppSidebar = () => {
-
   const { toggleSidebar } = useSidebar();
 
   return (
-    <Sidebar className="z-50" >
+    <Sidebar className="z-50">
       <SidebarHeader className="border-b h-14 p-0 ">
-        <div className="flex justify-between items-center px-4">
-          <Image
-            src={Logo.src}
-            height={50}
-            width={Logo.width}
-            alt="logo black"
-            className="block dark:hidden h-[50px] w-auto "
-          />
-          <Image
-            src={Logo.src}
-            height={50}
-            width={Logo.width}
-            alt="logo white"
-            className="hidden dark:block h-[50px] w-auto "
-          />
-          <Button onClick={toggleSidebar}  type="button" size="icon" className="md:hidden">
+        <div className="flex justify-between items-center pr-4">
+          <div className="flex items-center">
+            <Image
+              src={Logo.src}
+              height={50}
+              width={Logo.width}
+              alt="logo black"
+              className="block dark:hidden h-[50px] w-auto "
+            />
+            <Image
+              src={Logo.src}
+              height={50}
+              width={Logo.width}
+              alt="logo white"
+              className="hidden dark:block h-[50px] w-auto "
+            />
+            <span className="ml-[0px] text-primary text-[18px] sm:text-[24px] font-semibold">
+              Mumworld.in
+            </span>
+          </div>
+          <Button
+            onClick={toggleSidebar}
+            type="button"
+            size="icon"
+            className="md:hidden"
+          >
             <IoMdClose />
           </Button>
         </div>
@@ -59,7 +69,10 @@ const AppSidebar = () => {
             <Collapsible key={index} className="group/collapsible">
               <SidebarMenuItem>
                 <CollapsibleTrigger asChild>
-                  <SidebarMenuButton asChild className="font-semibold px-2 py-5" >
+                  <SidebarMenuButton
+                    asChild
+                    className="font-semibold px-2 py-5"
+                  >
                     <Link href={menu?.url}>
                       <menu.icon />
                       {menu.title}
@@ -75,7 +88,7 @@ const AppSidebar = () => {
                     <SidebarMenuSub>
                       {menu.submenu.map((submenuItem, subMenuIndex) => (
                         <SidebarMenuSubItem key={subMenuIndex}>
-                          <SidebarMenuSubButton asChild className="px-2 py-5" >
+                          <SidebarMenuSubButton asChild className="px-2 py-5">
                             <Link href={submenuItem.url}>
                               {submenuItem.title}
                             </Link>

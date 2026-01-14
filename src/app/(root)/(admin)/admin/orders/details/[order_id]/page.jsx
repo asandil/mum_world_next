@@ -93,7 +93,7 @@ const OrderDetails = ({ params }) => {
       <div className="border rounded-sm px-2">
         {!orderData ? (
           <div className="flex justify-center items-center py-32">
-            <h4 className="text-red-500 text-xl font-semibold">
+            <h4 className="text-primary text-xl font-semibold">
               Order Not Found
             </h4>
           </div>
