@@ -19,7 +19,7 @@ import LogoutButton from "./LogoutButton";
 import { IoBagHandle } from "react-icons/io5";
 import { ADMIN_ORDER_SHOW, ADMIN_PRODUCT_ADD } from "@/routes/AdminPanelRoute";
 
-const UserDropDown = () => {
+const AdminDropDown = () => {
   const auth = useSelector((store) => store.authStore.auth);
   console.log("loggedIn auth", auth);
   const { setTheme } = useTheme();
@@ -55,4 +55,4 @@ const UserDropDown = () => {
   );
 };
 
-export default UserDropDown;
+export default AdminDropDown;

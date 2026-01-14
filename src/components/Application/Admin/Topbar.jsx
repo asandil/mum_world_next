@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import ThemeSwitch from "./ThemeSwitch";
-import UserDropDown from "./UserDropDown";
+import UserDropDown from "./AdminDropDown";
 import { RiMenu4Fill } from "react-icons/ri";
 import { Button } from "@/components/ui/button";
 import { useSidebar } from "@/components/ui/sidebar";
@@ -9,6 +9,7 @@ import AdminSearch from "@/components/Application/Admin/AdminSearch";
 import Image from "next/image";
 import Logo from "@/assets/images/footer_logo.svg";
 import AdminMobileSearch from "./AdminMobileSearch";
+import AdminDropDown from "./AdminDropDown";
 
 const Topbar = () => {
   const { toggleSidebar } = useSidebar();
@@ -40,7 +41,7 @@ const Topbar = () => {
       <div className="flex items-center gap-2">
         <AdminMobileSearch />
         <ThemeSwitch />
-        <UserDropDown />
+        <AdminDropDown />
         <Button
           onClick={toggleSidebar}
           type="button"
