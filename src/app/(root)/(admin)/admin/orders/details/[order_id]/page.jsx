@@ -16,6 +16,7 @@ import Select from "@/components/Application/Select";
 import { orderStatus } from "@/lib/utils";
 import { catchError, response } from "@/lib/helperFunction";
 import axios from "axios";
+import { showToast } from "@/lib/showToast";
 
 const breadcrumbData = [
   { href: ADMIN_DASHBOARD, label: "Home" },
@@ -59,7 +60,7 @@ const OrderDetails = ({ params }) => {
         throw new Error(response.message)
       }
 
-
+      showToast("success", response.message)
 
     } catch (error) {
       catchError
