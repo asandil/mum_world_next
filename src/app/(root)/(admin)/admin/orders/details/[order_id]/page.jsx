@@ -37,7 +37,7 @@ const OrderDetails = ({ params }) => {
   const { order_id } = use(params);
   const [orderData, setOrderData] = useState();
   const [orderStatus, setOrderStatus] = useState();
-  const [updatingStatus, setUpdatingStatus] = useState(false)
+  const [updatingStatus, setUpdatingStatus] = useState(false);
   const { data, loading } = useFetch(`/api/orders/get/${order_id}`);
 
   console.log("Order Data in Admin Page.", data);
@@ -50,26 +50,23 @@ const OrderDetails = ({ params }) => {
   }, [data]);
 
   const handleOrderStatus = async () => {
-    setUpdatingStatus(true)
+    setUpdatingStatus(true);
     try {
-      const { data: repsonse } = await axios.put("/api/orders/update-status", {
+      const { data: response } = await axios.put("/api/orders/update-status", {
         _id: orderData?._id,
-        status: orderStatus
-      })
-      if(!response.success){
-        throw new Error(response.message)
+        status: orderStatus,
+      });
+      if (!response.success) {
+        throw new Error(response.message);
       }
 
-      showToast("success", response.message)
-
+      showToast("success", response.message);
     } catch (error) {
-      catchError
+      catchError;
     } finally {
-      setUpdatingStatus(false)
+      setUpdatingStatus(false);
     }
   };
-
-
 
   return (
     <div>
@@ -90,6 +87,7 @@ const OrderDetails = ({ params }) => {
                   <h2 className="text-xl font-bold text-gray-800">
                     Order Id: #{orderData?.order_id}
                   </h2>
+                  <p>Status: {orderData?.status}</p>
                 </div>
                 {/* <div className="text-right">
                   <span
