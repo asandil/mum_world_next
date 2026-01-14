@@ -21,4 +21,11 @@ export const sortings = [
   { label: "Price: High To Low", value: "price_high_low" },
 ];
 
-export const orderStatus = ["pending", "processing", "shipped", "delivered", "cnacelled", "unverified"];
+export const orderStatus = [
+  "pending",
+  "processing",
+  "shipped",
+  "delivered",
+  "cancelled",
+  "unverified",
+];
