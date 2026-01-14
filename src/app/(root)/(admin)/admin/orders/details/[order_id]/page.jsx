@@ -33,6 +33,16 @@ const statusOptions = [
   { label: "Unverified", value: "unverified" },
 ];
 
+// Define status progression (same as user page)
+const statusSteps = [
+  { status: "pending", label: "Pending", step: 1 },
+  { status: "confirmed", label: "Confirmed", step: 2 },
+  { status: "processing", label: "Processing", step: 3 },
+  { status: "shipped", label: "Shipped", step: 4 },
+  { status: "delivered", label: "Delivered", step: 5 },
+  { status: "cancelled", label: "Cancelled", step: 6 },
+];
+
 const OrderDetails = ({ params }) => {
   const { order_id } = use(params);
   const [orderData, setOrderData] = useState();
@@ -49,6 +59,11 @@ const OrderDetails = ({ params }) => {
     }
   }, [data]);
 
+  // Find current status step (same as user page)
+  const currentStatus = orderData?.status?.toLowerCase() || "pending";
+  const currentStep =
+    statusSteps.find((step) => step.status === currentStatus)?.step || 1;
+
   const handleOrderStatus = async () => {
     setUpdatingStatus(true);
     try {
@@ -61,8 +76,12 @@ const OrderDetails = ({ params }) => {
       }
 
       showToast("success", response.message);
+      
+      // Update local state with new status
+      setOrderData(prev => ({ ...prev, status: orderStatus }));
+      
     } catch (error) {
-      catchError;
+      catchError(error);
     } finally {
       setUpdatingStatus(false);
     }
@@ -80,16 +99,25 @@ const OrderDetails = ({ params }) => {
           </div>
         ) : (
           <div>
-            {/* Order Status Progress Bar */}
+            {/* Order Status Progress Bar - Same as user page */}
             <div className="mb-10 bg-white p-6 rounded-lg shadow-sm border">
               <div className="flex justify-between items-center mb-6">
                 <div>
                   <h2 className="text-xl font-bold text-gray-800">
                     Order Id: #{orderData?.order_id}
                   </h2>
-                  <p>Status: {orderData?.status}</p>
+                  <p className="text-gray-600">
+                    Placed on{" "}
+                    {new Date(
+                      orderData?.createdAt || new Date()
+                    ).toLocaleDateString("en-IN", {
+                      day: "numeric",
+                      month: "long",
+                      year: "numeric",
+                    })}
+                  </p>
                 </div>
-                {/* <div className="text-right">
+                <div className="text-right">
                   <span
                     className={`px-3 py-1 rounded-full text-sm font-medium ${
                       currentStatus === "pending"
@@ -108,24 +136,24 @@ const OrderDetails = ({ params }) => {
                     {currentStatus.charAt(0).toUpperCase() +
                       currentStatus.slice(1)}
                   </span>
-                </div> */}
+                </div>
               </div>
 
               {/* Progress Bar */}
               <div className="relative">
                 {/* Progress Line */}
                 <div className="absolute top-5 left-0 right-0 h-1 bg-gray-200"></div>
-                {/* <div
+                <div
                   className="absolute top-5 left-0 h-1 bg-green-500 transition-all duration-500"
                   style={{
                     width: `${
                       ((currentStep - 1) / (statusSteps.length - 1)) * 100
                     }%`,
                   }}
-                ></div> */}
+                ></div>
 
                 {/* Status Steps */}
-                {/* <div className="relative flex justify-between">
+                <div className="relative flex justify-between">
                   {statusSteps.map((step, index) => (
                     <div
                       key={step.status}
@@ -169,7 +197,7 @@ const OrderDetails = ({ params }) => {
                       </span>
                     </div>
                   ))}
-                </div> */}
+                </div>
               </div>
 
               {/* Status Description */}
@@ -188,28 +216,31 @@ const OrderDetails = ({ params }) => {
                       d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     ></path>
                   </svg>
-                  {/* <div>
+                  <div>
                     <p className="text-sm text-[#F69E87]">
                       {currentStatus === "pending" &&
-                        "Your order has been received and is awaiting confirmation."}
+                        "Order has been received and is awaiting confirmation."}
                       {currentStatus === "confirmed" &&
-                        "Your order has been confirmed and is being prepared for processing."}
+                        "Order has been confirmed and is being prepared for processing."}
                       {currentStatus === "processing" &&
-                        "Your order is being processed. We'll notify you when it ships."}
+                        "Order is being processed. Customer will be notified when it ships."}
                       {currentStatus === "shipped" &&
-                        "Your order has been shipped! Track your package for delivery updates."}
+                        "Order has been shipped! Customer can track their package for delivery updates."}
                       {currentStatus === "delivered" &&
-                        "Your order has been delivered. Thank you for shopping with us!"}
+                        "Order has been delivered. Thank the customer for shopping with us!"}
+                      {currentStatus === "cancelled" &&
+                        "Order has been cancelled. Refund process may be initiated if applicable."}
                       {![
                         "pending",
                         "confirmed",
                         "processing",
                         "shipped",
                         "delivered",
+                        "cancelled"
                       ].includes(currentStatus) &&
-                        `Your order status is: ${currentStatus}`}
+                        `Order status is: ${currentStatus}`}
                     </p>
-                  </div> */}
+                  </div>
                 </div>
               </div>
 
@@ -307,11 +338,10 @@ const OrderDetails = ({ params }) => {
                       <td className="md:table-cell flex justify-between md:mb-3 px-3 pb-2 text-center">
                         <span className="md:hidden  font-medium">Total</span>
                         <span>
-                          {product.qty *
-                            product.sellingPrice.toLocaleString("en-IN", {
-                              style: "currency",
-                              currency: "INR",
-                            })}
+                          {(product.qty * product.sellingPrice).toLocaleString("en-IN", {
+                            style: "currency",
+                            currency: "INR",
+                          })}
                         </span>
                       </td>
                     </tr>
