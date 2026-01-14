@@ -148,7 +148,7 @@ const OrderDetails = ({ params }) => {
                 {/* Progress Line */}
                 <div className="absolute top-5 left-0 right-0 h-1 bg-gray-200"></div>
                 <div
-                  className="absolute top-5 left-0 h-1 bg-green-500 transition-all duration-500"
+                  className="absolute top-5 left-0 h-1 bg-primary transition-all duration-500"
                   style={{
                     width: `${
                       ((currentStep - 1) / (statusSteps.length - 1)) * 100
@@ -166,13 +166,13 @@ const OrderDetails = ({ params }) => {
                       <div
                         className={`w-10 h-10 rounded-full flex items-center justify-center z-10 mb-2 ${
                           step.step <= currentStep
-                            ? "bg-green-500 text-white border-2 border-green-500"
+                            ? "bg-primary text-white border-2 border-primary"
                             : "bg-white text-gray-400 border-2 border-gray-300"
                         }`}
                       >
                         {step.step <= currentStep ? (
                           <svg
-                            className="w-5 h-5"
+                            className=" w-4 h-4 sm:w-5 sm:h-5"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -193,7 +193,7 @@ const OrderDetails = ({ params }) => {
                       <span
                         className={`text-sm font-medium ${
                           step.step <= currentStep
-                            ? "text-green-600"
+                            ? "text-primary"
                             : "text-gray-500"
                         }`}
                       >
@@ -470,7 +470,6 @@ const OrderDetails = ({ params }) => {
                     placeholder="Select"
                     isMulti={false}
                   />
-                  
                 </div>
 
                 <div className="mt-5 w-full flex justify-between">
