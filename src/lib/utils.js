@@ -23,6 +23,7 @@ export const sortings = [
 
 export const orderStatus = [
   "pending",
+  "confirmed",
   "processing",
   "shipped",
   "delivered",

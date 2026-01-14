@@ -26,6 +26,7 @@ const breadcrumbData = [
 
 const statusOptions = [
   { label: "Pending", value: "pending" },
+  { label: "Confirmed", value: "confirmed" },
   { label: "Processing", value: "processing" },
   { label: "Shipped", value: "shipped" },
   { label: "Delivered", value: "delivered" },
@@ -76,10 +77,9 @@ const OrderDetails = ({ params }) => {
       }
 
       showToast("success", response.message);
-      
+
       // Update local state with new status
-      setOrderData(prev => ({ ...prev, status: orderStatus }));
-      
+      setOrderData((prev) => ({ ...prev, status: orderStatus }));
     } catch (error) {
       catchError(error);
     } finally {
@@ -236,7 +236,7 @@ const OrderDetails = ({ params }) => {
                         "processing",
                         "shipped",
                         "delivered",
-                        "cancelled"
+                        "cancelled",
                       ].includes(currentStatus) &&
                         `Order status is: ${currentStatus}`}
                     </p>
@@ -338,10 +338,13 @@ const OrderDetails = ({ params }) => {
                       <td className="md:table-cell flex justify-between md:mb-3 px-3 pb-2 text-center">
                         <span className="md:hidden  font-medium">Total</span>
                         <span>
-                          {(product.qty * product.sellingPrice).toLocaleString("en-IN", {
-                            style: "currency",
-                            currency: "INR",
-                          })}
+                          {(product.qty * product.sellingPrice).toLocaleString(
+                            "en-IN",
+                            {
+                              style: "currency",
+                              currency: "INR",
+                            }
+                          )}
                         </span>
                       </td>
                     </tr>
