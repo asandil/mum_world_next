@@ -70,7 +70,7 @@ const MainSlider = () => {
             width={slider1.width}
             height={slider1.height}
             alt="slider 1"
-            className="h-150"
+            className="h-100"
           />
         </div>
         <div>
@@ -79,7 +79,7 @@ const MainSlider = () => {
             width={slider2.width}
             height={slider2.height}
             alt="slider 2"
-            className="h-150"
+            className="h-100"
           />
         </div>
         <div>
@@ -88,7 +88,7 @@ const MainSlider = () => {
             width={slider3.width}
             height={slider3.height}
             alt="slider 3"
-            className="h-150"
+            className="h-100"
           />
         </div>
         <div>
@@ -97,7 +97,7 @@ const MainSlider = () => {
             width={slider4.width}
             height={slider4.height}
             alt="slider 4"
-            className="h-150"
+            className="h-100"
           />
         </div>
         <div>
@@ -106,7 +106,7 @@ const MainSlider = () => {
             width={slider5.width}
             height={slider5.height}
             alt="slider 5"
-            className="h-150"
+            className="h-100"
           />
         </div>
         <div>
@@ -115,7 +115,7 @@ const MainSlider = () => {
             width={slider6.width}
             height={slider6.height}
             alt="slider 6"
-            className="h-150"
+            className="h-100"
           />
         </div>
       </Slider>

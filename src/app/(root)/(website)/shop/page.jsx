@@ -18,6 +18,7 @@ import { useSearchParams } from "next/navigation";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import ProductBox from "@/components/Application/website/ProductBox";
 import { ButtonLoading } from "@/components/Application/ButtonLoading";
+import MainSlider from "@/components/Application/website/MainSlider";
 
 const breadcrumb = {
   title: "Shop",
@@ -56,6 +57,7 @@ const Shop = () => {
 
   return (
     <div>
+      <MainSlider />
       <WebsiteBreadcrumb props={breadcrumb} />
       <section className="lg:flex lg:px-32 px-4 my-20">
         {windowSize.width >= 1024 ? (
@@ -124,7 +126,7 @@ const Shop = () => {
           </div>
         </div>
       </section>
-      
+      <MainSlider />
     </div>
   );
 };
