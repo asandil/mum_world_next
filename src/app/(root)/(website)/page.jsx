@@ -5,19 +5,20 @@ import TestimonialCarousel from "@/components/Testimonial ";
 import FeedBackForm from "@/components/FeedBackForm";
 import { BsChatHeartFill } from "react-icons/bs";
 import { BsFillHeartFill } from "react-icons/bs";
-// import Home from "@/app/(root)/(website)/page"
+import FeaturedProduct from "@/components/Application/website/FeaturedProduct";
 
 export const metadata = {
   title: "Pregnancy Journey & Newborn Care | Tools, Tips & Support | MumWorld",
-  description: "Explore expert guidance for every stage of motherhood with pregnancy tools, baby care advice, and health calculators on MumWorld — your companion for creating healthy beginnings.",
+  description:
+    "Explore expert guidance for every stage of motherhood with pregnancy tools, baby care advice, and health calculators on MumWorld — your companion for creating healthy beginnings.",
   keywords: "pregnancy tips, newborn care, baby development, motherhood",
-}
+};
 
 export default function MainHome() {
   return (
     <>
       <div className="">
-        <div className="px-[24px] lg:w-[984px] xl:w-[1160px] mx-auto">
+        <div className="px-[24px]">
           <div className="my-[24px] text-center">
             <img
               className="inline-block md:w-[626px] md:h-[419px] lg:h-[500px] lg:w-[747px]"
@@ -34,18 +35,10 @@ export default function MainHome() {
                 <br />
               </p>
             </div>
-            {/* <div className="mx-[-12px] flex justify-center items-center">
-              <a
-                className="bg-[rgb(250,182,107)] text-black text-[14px] font-[700] tracking-[0.143em] w-[100%] md:w-auto py-[8px] px-[32px] min-h-[56px] flex justify-center items-center"
-                href="/#0a817186-e965-4065-ad41-8790eb031a27"
-              >
-                SEND MESSAGE
-              </a>
-            </div> */}
           </div>
         </div>
         {/* what we do */}
-        <section className="py-[32px] lg:w-[984px] xl:w-[1160px] mx-auto px-[24px] lg:px-[0px]">
+        <section className="py-[32px] lg:px-32 px-4 ">
           <h1 className="mb-[24px] leading-[1.4] tracking-[1px] text-[22px] font-[700] uppercase text-black">
             What we do
             <hr className="mt-[16px] border-[1px] border-black" />
@@ -103,7 +96,7 @@ export default function MainHome() {
           </div>
         </section>
         {/* Our team */}
-        <section className="py-[32px] lg:w-[984px] xl:w-[1160px] mx-auto px-[24px] lg:px-[0px]">
+        <section className="py-[32px]">
           <div className="mb-[24px] text-center md:max-w-[50%] lg:max-w-[33.33%] mx-auto">
             <img
               className="inline-block"
@@ -147,11 +140,13 @@ export default function MainHome() {
           </div>
         </section>
 
+        {/* Featured Product Section */}
+        <FeaturedProduct />
+
         {/* Testimonial section */}
         <section>
           <TestimonialCarousel />
         </section>
-        {/* <Home/> */}
       </div>
     </>
   );

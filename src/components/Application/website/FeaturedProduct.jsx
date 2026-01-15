@@ -5,6 +5,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import ProductBox from "./ProductBox";
+import { WEBSITE_SHOP } from "@/routes/WebsiteRoute";
 
 const FeaturedProduct = () => {
   const [productData, setProductData] = useState(null);
@@ -33,8 +34,13 @@ const FeaturedProduct = () => {
     return (
       <section className="lg:px-32 px-4 sm:py-10">
         <div className="flex justify-between items-center mb-5">
-          <h2 className="sm:text-4xl text-2xl font-semibold">Featured Products</h2>
-          <Link href="" className="flex items-center gap-2 underline underline-offset-4 hover:text-primary">
+          <h2 className="sm:text-4xl text-2xl font-semibold">
+            Featured Products
+          </h2>
+          <Link
+            href=""
+            className="flex items-center gap-2 underline underline-offset-4 hover:text-primary"
+          >
             View All
             <IoIosArrowRoundForward />
           </Link>
@@ -47,12 +53,17 @@ const FeaturedProduct = () => {
   if (!productData) return null;
 
   return (
-    <section className="lg:px-32 px-4 sm:py-10">
+    <section className="lg:px-32 px-4">
       <div className="flex justify-between items-center mb-5">
-        <h2 className="sm:text-4xl text-2xl font-semibold">Featured Products</h2>
-        <Link href="" className="flex items-center gap-2 underline underline-offset-4 hover:text-primary">
+        <h2 className="text-[22px] text-black font-semibold">
+          Featured Products
+        </h2>
+        <Link
+          href={WEBSITE_SHOP}
+          className="flex items-center gap-2 underline underline-offset-4 text-primary hover:text-primary-hover"
+        >
           View All
-          <IoIosArrowRoundForward />
+          <IoIosArrowRoundForward size={28} />
         </Link>
       </div>
       <div className="grid md:grid-cols-4 grid-cols-2 sm:gap-10 gap-2">
