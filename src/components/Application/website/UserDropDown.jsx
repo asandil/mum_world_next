@@ -27,6 +27,7 @@ import { TbLayoutDashboardFilled } from "react-icons/tb";
 import { VscAccount } from "react-icons/vsc";
 import { useSelector } from "react-redux";
 import userIcon from "@/assets/images/user.png";
+import { AiOutlineLogout } from "react-icons/ai";
 
 const UserDropDown = () => {
   const pathname = usePathname();
@@ -60,56 +61,17 @@ const UserDropDown = () => {
         <DropdownMenuContent className="me-5 w-full border">
           <DropdownMenuLabel>
             
-            <p className="font-semibold">You are now signed out.</p>
+            <p className="font-semibold">You are signed out.</p>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild>
             <Link
-              href={USER_DASHBOARD}
-              className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white transition-colors ${
-                pathname.startsWith(USER_DASHBOARD)
-                  ? "bg-primary text-white cursor-not-allowed"
-                  : ""
-              }`}
+              href={WEBSITE_LOGIN}
+              className={`flex items-center px-4 py-2 gap-2 text-sm rounded hover:bg-primary hover:text-white transition-colors cursor-pointer`}
             >
-              <TbLayoutDashboardFilled size={28} />
-              <span>Dashboard</span>
+              <AiOutlineLogout size={28} color="red" />
+              <span>Login</span>
             </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link
-              href={USER_PROFILE}
-              className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white ${
-                pathname.startsWith(USER_PROFILE)
-                  ? "bg-primary text-white cursor-not-allowed"
-                  : ""
-              }`}
-            >
-              <FaUserCog size={28} />
-              <span>Profile</span>
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Link
-              href={USER_ORDERS}
-              className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white ${
-                pathname.startsWith(USER_ORDERS) ? "bg-primary text-white" : ""
-              }`}
-            >
-              <HiOutlineShoppingBag size={28} />
-              <span>Orders</span>
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild>
-            <Button
-              type="button"
-              onClick={handleLogOut}
-              variant="destructive"
-              className="w-full flex items-center justify-center gap-2"
-            >
-              <LuLogOut size={28} />
-              <span>LogOut</span>
-            </Button>
           </DropdownMenuItem>
         </DropdownMenuContent>
       ) : (
