@@ -17,7 +17,7 @@ import {
 import axios from "axios";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 import { FaUserCog } from "react-icons/fa";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
@@ -25,17 +25,33 @@ import { IoBagHandle } from "react-icons/io5";
 import { LuLogOut } from "react-icons/lu";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
 import { VscAccount } from "react-icons/vsc";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import userIcon from "@/assets/images/user.png";
 import { AiOutlineLogout } from "react-icons/ai";
+import { showToast } from "@/lib/showToast";
+import { logout } from "@/store/reducer/authReducer";
 
 const UserDropDown = () => {
   const pathname = usePathname();
+  const dispatch = useDispatch();
+  const router = useRouter();
   const auth = useSelector((store) => store.authStore.auth);
   console.log("Logged auth in User section.", auth);
   const { setTheme } = useTheme();
 
-  const handleLogOut = async () => {};
+  const handleLogOut = async () => {
+    try {
+      const { data: logoutResponse } = await axios.post(`/api/auth/logout`);
+      if (!logoutResponse.success) {
+        throw new Error(logoutResponse.message);
+      }
+      dispatch(logout());
+      showToast("success", logoutResponse.message);
+      router.push(WEBSITE_LOGIN);
+    } catch (error) {
+      showToast("error", error.message);
+    }
+  };
 
   return (
     <DropdownMenu>
@@ -127,7 +143,7 @@ const UserDropDown = () => {
               variant="destructive"
               className="w-full flex items-center justify-center gap-2 text-sm sm:text-lg cursor-pointer"
             >
-              <LuLogOut className='!w-6 !h-6' color="white" />
+              <LuLogOut className="!w-6 !h-6" color="white" />
               <span>LogOut</span>
             </Button>
           </DropdownMenuItem>
