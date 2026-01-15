@@ -84,10 +84,10 @@ const UserDropDown = () => {
           <DropdownMenuItem asChild className="mb-1">
             <Link
               href={USER_DASHBOARD}
-              className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white transition-colors ${
+              className={`flex items-center gap-2 p-3 text-sm sm:text-lg rounded hover:bg-primary hover:text-white transition-colors ${
                 pathname.startsWith(USER_DASHBOARD)
                   ? "bg-primary text-white cursor-not-allowed"
-                  : ""
+                  : "cursor-pointer"
               }`}
             >
               <TbLayoutDashboardFilled size={28} />
@@ -97,10 +97,10 @@ const UserDropDown = () => {
           <DropdownMenuItem asChild className="mb-1">
             <Link
               href={USER_PROFILE}
-              className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white ${
+              className={`flex items-center gap-2 p-3 text-sm sm:text-lg rounded hover:bg-primary hover:text-white ${
                 pathname.startsWith(USER_PROFILE)
                   ? "bg-primary text-white cursor-not-allowed"
-                  : ""
+                  : "cursor-pointer"
               }`}
             >
               <FaUserCog size={28} />
@@ -110,13 +110,13 @@ const UserDropDown = () => {
           <DropdownMenuItem asChild className="mb-1">
             <Link
               href={USER_ORDERS}
-              className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white transition-colors ${
+              className={`flex items-center gap-2 p-3 text-sm sm:text-lg rounded hover:bg-primary hover:text-white transition-colors ${
                 pathname.startsWith(USER_ORDERS)
                   ? "bg-primary text-white cursor-not-allowed"
-                  : ""
+                  : "cursor-pointer"
               }`}
             >
-              <HiOutlineShoppingBag size={28} />
+              <HiOutlineShoppingBag size={34} />
               <span>Orders</span>
             </Link>
           </DropdownMenuItem>
@@ -125,7 +125,7 @@ const UserDropDown = () => {
               type="button"
               onClick={handleLogOut}
               variant="destructive"
-              className="w-full flex items-center justify-center gap-2 text-sm sm:text-lg"
+              className="w-full flex items-center justify-center gap-2 text-sm sm:text-lg cursor-pointer"
             >
               <LuLogOut className='!w-6 !h-6' color="white" />
               <span>LogOut</span>
