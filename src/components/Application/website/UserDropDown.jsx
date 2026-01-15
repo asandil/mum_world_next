@@ -60,7 +60,6 @@ const UserDropDown = () => {
       {!auth ? (
         <DropdownMenuContent className="me-5 w-full border">
           <DropdownMenuLabel>
-            
             <p className="font-semibold">You are signed out.</p>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
@@ -75,12 +74,14 @@ const UserDropDown = () => {
           </DropdownMenuItem>
         </DropdownMenuContent>
       ) : (
-        <DropdownMenuContent className="me-5 w-full border">
+        <DropdownMenuContent className="me-5 w-full border px-2">
           <DropdownMenuLabel>
+            <p className="font-semibold">Name: {auth?.name}</p>
+            <p className="font-semibold">Email: {auth?.email}</p>
             <p className="font-semibold">Role: {auth?.role}</p>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem asChild>
+          <DropdownMenuItem asChild className="mb-1">
             <Link
               href={USER_DASHBOARD}
               className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white transition-colors ${
@@ -93,7 +94,7 @@ const UserDropDown = () => {
               <span>Dashboard</span>
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem asChild>
+          <DropdownMenuItem asChild className="mb-1">
             <Link
               href={USER_PROFILE}
               className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white ${
@@ -106,20 +107,32 @@ const UserDropDown = () => {
               <span>Profile</span>
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem asChild>
+          <DropdownMenuItem asChild className="mb-1">
+            <Link
+              href={USER_ORDERS}
+              className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white transition-colors ${
+                pathname.startsWith(USER_ORDERS)
+                  ? "bg-primary text-white cursor-not-allowed"
+                  : ""
+              }`}
+            >
+              <HiOutlineShoppingBag size={28} />
+              <span>Orders</span>
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild className="mb-1">
             <Button
               type="button"
               onClick={handleLogOut}
               variant="destructive"
-              className="w-full flex items-center justify-center gap-2"
+              className="w-full flex items-center justify-center gap-2 text-sm sm:text-lg"
             >
-              <LuLogOut size={28} />
+              <LuLogOut className='!w-6 !h-6' color="white" />
               <span>LogOut</span>
             </Button>
           </DropdownMenuItem>
         </DropdownMenuContent>
       )}
-     
     </DropdownMenu>
   );
 };
