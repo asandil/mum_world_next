@@ -26,6 +26,7 @@ import { LuLogOut } from "react-icons/lu";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
 import { VscAccount } from "react-icons/vsc";
 import { useSelector } from "react-redux";
+import userIcon from "@/assets/images/user.png";
 
 const UserDropDown = () => {
   const pathname = usePathname();
@@ -55,61 +56,108 @@ const UserDropDown = () => {
           )}
         </div>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="me-5 w-full border">
-        <DropdownMenuLabel>
-          <p className="font-semibold">Name: {auth?.name}</p>
-          <p className="font-semibold">Email: {auth?.email}</p>
-        </DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
-          <Link
-            href={USER_DASHBOARD}
-            className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white transition-colors ${
-              pathname.startsWith(USER_DASHBOARD)
-                ? "bg-primary text-white cursor-not-allowed"
-                : ""
-            }`}
-          >
-            <TbLayoutDashboardFilled size={28} />
-            <span>Dashboard</span>
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link
-            href={USER_PROFILE}
-            className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white ${
-              pathname.startsWith(USER_PROFILE)
-                ? "bg-primary text-white cursor-not-allowed"
-                : ""
-            }`}
-          >
-            <FaUserCog size={28} />
-            <span>Profile</span>
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Link
-            href={USER_ORDERS}
-            className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white ${
-              pathname.startsWith(USER_ORDERS) ? "bg-primary text-white" : ""
-            }`}
-          >
-            <HiOutlineShoppingBag size={28} />
-            <span>Orders</span>
-          </Link>
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <Button
-            type="button"
-            onClick={handleLogOut}
-            variant="destructive"
-            className="w-full flex items-center justify-center gap-2"
-          >
-            <LuLogOut size={28} />
-            <span>LogOut</span>
-          </Button>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
+      {!auth ? (
+        <DropdownMenuContent className="me-5 w-full border">
+          <DropdownMenuLabel>
+            
+            <p className="font-semibold">You are now signed out.</p>
+          </DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem asChild>
+            <Link
+              href={USER_DASHBOARD}
+              className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white transition-colors ${
+                pathname.startsWith(USER_DASHBOARD)
+                  ? "bg-primary text-white cursor-not-allowed"
+                  : ""
+              }`}
+            >
+              <TbLayoutDashboardFilled size={28} />
+              <span>Dashboard</span>
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link
+              href={USER_PROFILE}
+              className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white ${
+                pathname.startsWith(USER_PROFILE)
+                  ? "bg-primary text-white cursor-not-allowed"
+                  : ""
+              }`}
+            >
+              <FaUserCog size={28} />
+              <span>Profile</span>
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link
+              href={USER_ORDERS}
+              className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white ${
+                pathname.startsWith(USER_ORDERS) ? "bg-primary text-white" : ""
+              }`}
+            >
+              <HiOutlineShoppingBag size={28} />
+              <span>Orders</span>
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Button
+              type="button"
+              onClick={handleLogOut}
+              variant="destructive"
+              className="w-full flex items-center justify-center gap-2"
+            >
+              <LuLogOut size={28} />
+              <span>LogOut</span>
+            </Button>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      ) : (
+        <DropdownMenuContent className="me-5 w-full border">
+          <DropdownMenuLabel>
+            <p className="font-semibold">Role: {auth?.role}</p>
+          </DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem asChild>
+            <Link
+              href={USER_DASHBOARD}
+              className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white transition-colors ${
+                pathname.startsWith(USER_DASHBOARD)
+                  ? "bg-primary text-white cursor-not-allowed"
+                  : ""
+              }`}
+            >
+              <TbLayoutDashboardFilled size={28} />
+              <span>Dashboard</span>
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link
+              href={USER_PROFILE}
+              className={`flex items-center gap-2 p-3 text-sm rounded hover:bg-primary hover:text-white ${
+                pathname.startsWith(USER_PROFILE)
+                  ? "bg-primary text-white cursor-not-allowed"
+                  : ""
+              }`}
+            >
+              <FaUserCog size={28} />
+              <span>Profile</span>
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Button
+              type="button"
+              onClick={handleLogOut}
+              variant="destructive"
+              className="w-full flex items-center justify-center gap-2"
+            >
+              <LuLogOut size={28} />
+              <span>LogOut</span>
+            </Button>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      )}
+     
     </DropdownMenu>
   );
 };
