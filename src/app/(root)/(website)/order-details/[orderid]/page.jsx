@@ -10,6 +10,7 @@ import PrintButton from "@/components/Application/website/PrintOrderDetails";
 import { MdOutgoingMail } from "react-icons/md";
 import { TbTransactionDollar } from "react-icons/tb";
 import { FiPhone } from "react-icons/fi";
+import PrintOrderDetailsButton from "@/components/Application/website/PrintOrderDetails";
 
 const OrderDetails = async ({ params }) => {
   const { orderid } = await params;
@@ -58,7 +59,7 @@ const OrderDetails = async ({ params }) => {
                   <h2 className="text-xl font-bold text-gray-800">
                     Order Id: #{orderData?.data?.order_id}
                   </h2>
-                  <p className="text-gray-600">
+                  {/* <p className="text-gray-600">
                     Placed on{" "}
                     {new Date(
                       orderData?.data?.createdAt || new Date()
@@ -67,7 +68,7 @@ const OrderDetails = async ({ params }) => {
                       month: "long",
                       year: "numeric",
                     })}
-                  </p>
+                  </p> */}
                 </div>
                 <div className="text-right">
                   <span
@@ -432,7 +433,7 @@ const OrderDetails = async ({ params }) => {
                     variant="destructive"
                     className="cursor-pointer"
                   />
-                  <PrintButton orderData={orderData} />
+                  <PrintOrderDetailsButton orderData={orderData} />
                 </div>
               </div>
             </div>

@@ -3,7 +3,7 @@
 import React from "react";
 import { ButtonLoading } from "../ButtonLoading";
 
-const PrintButton = ({ orderData, variant = "default", className = "" }) => {
+const PrintOrderDetailsButton = ({ orderData, variant = "default", className = "" }) => {
   // Format currency function for consistent formatting
   const formatCurrency = (amount) => {
     return (
@@ -290,18 +290,6 @@ const PrintButton = ({ orderData, variant = "default", className = "" }) => {
                   <td>${order.payment_id || "N/A"}</td>
                 </tr>
                 <tr>
-                  <td><strong>Order Date:</strong></td>
-                  <td>
-                    <span >
-                      ${new Date(orderData?.data?.createdAt || new Date()).toLocaleDateString('en-IN', {
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric'
-                  })}
-                    </span>
-                  </td>
-                </tr>
-                <tr>
                   <td><strong>Status:</strong></td>
                   <td>
                     <span class="status-badge status-${order.status.toLowerCase()}">
@@ -428,4 +416,4 @@ const PrintButton = ({ orderData, variant = "default", className = "" }) => {
   );
 };
 
-export default PrintButton;
+export default PrintOrderDetailsButton;
