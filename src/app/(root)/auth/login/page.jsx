@@ -21,6 +21,7 @@ import { zSchema } from "@/lib/zodSchema";
 import { ButtonLoading } from "@/components/Application/ButtonLoading";
 import {
   USER_DASHBOARD,
+  WEBSITE_HOME,
   WEBSITE_REGISTER,
   WEBSITE_RESETPASSWORD,
 } from "@/routes/WebsiteRoute";
@@ -35,6 +36,7 @@ import { useDispatch } from "react-redux";
 import { useRouter, useSearchParams } from "next/navigation";
 import { login } from "@/store/reducer/authReducer";
 import { ADMIN_DASHBOARD } from "@/routes/AdminPanelRoute";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -118,7 +120,14 @@ const LoginPage = () => {
 
   return (
     <div>
-      <Card className="w-[340px] sm:w-[550px]">
+      <Link
+        href={WEBSITE_HOME}
+        className="items-center text-center text-primary hover:text-primary-hover inline-flex"
+      >
+        <IoIosArrowRoundForward size={32} className="rotate-180" />
+        <span>Back to Home</span>
+      </Link>
+      <Card className="w-[340px] sm:w-[550px] mt-2">
         <CardContent>
           <div className="flex flex-col items-center justify-center mb-5">
             <Image
@@ -130,7 +139,7 @@ const LoginPage = () => {
             />
             <p className="text-[24px] text-center text-primary mt-[-12px] font-[600]">
               Mumworld.in
-            </p> 
+            </p>
           </div>
 
           {!otpEmail ? (

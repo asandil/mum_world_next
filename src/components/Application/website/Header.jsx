@@ -190,7 +190,7 @@ const Header = () => {
             )}
             <Cart />
 
-            {!auth ? (
+            {/* {!auth ? (
               <Link href={WEBSITE_LOGIN}>
                 <VscAccount
                   className="text-gray-500 hover:text-[#e6846a] cursor-pointer"
@@ -203,7 +203,7 @@ const Header = () => {
                   <AvatarImage src={auth?.avatar?.url || userIcon.src} />
                 </Avatar>
               </Link>
-            )}
+            )} */}
 
             <UserDropDown />
 
