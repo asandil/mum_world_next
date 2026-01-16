@@ -1,5 +1,5 @@
-
 import {
+  ADMIN_BANNER_SHOW,
   ADMIN_CATEGORY_ADD,
   ADMIN_CATEGORY_SHOW,
   ADMIN_COUPON_ADD,
@@ -7,6 +7,7 @@ import {
   ADMIN_CUSTOMERS_SHOW,
   ADMIN_DASHBOARD,
   ADMIN_MEDIA_SHOW,
+  ADMIN_ORDER_SHOW,
   ADMIN_PRODUCT_ADD,
   ADMIN_PRODUCT_SHOW,
   ADMIN_PRODUCT_VARIANT_SHOW,
@@ -65,7 +66,7 @@ const searchData = [
   {
     label: "Orders",
     description: "Manage customer orders",
-    url: "",
+    url: ADMIN_ORDER_SHOW,
     keywords: ["orders"],
   },
   {
@@ -80,7 +81,12 @@ const searchData = [
     url: ADMIN_REVIEW_SHOW,
     keywords: ["ratings", "feedback"],
   },
-
+  {
+    label: "Banner and Add",
+    description: "Manage all banners",
+    url: ADMIN_BANNER_SHOW,
+    keywords: ["banners"],
+  },
   {
     label: "Media",
     description: "Manage website media files",

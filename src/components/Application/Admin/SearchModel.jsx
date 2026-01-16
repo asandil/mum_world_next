@@ -52,9 +52,12 @@ const SearchModel = ({ open, setOpen }) => {
 
         <ul className="mt-4 max-h-60 overflow-y-auto">
           {results.map((item, index) => (
-            <li key={index} >
-              <Link href={item.url} className="block py-2 px-3 rounded hover:bg-muted" onClick={() => setOpen(false)}>
-
+            <li key={index}>
+              <Link
+                href={item.url}
+                className="block py-2 px-3 rounded hover:bg-muted"
+                onClick={() => setOpen(false)}
+              >
                 <h4 className="font-medium">{item.label}</h4>
                 <p className="text-sm text-muted-foreground">
                   {item.description}
@@ -63,10 +66,11 @@ const SearchModel = ({ open, setOpen }) => {
             </li>
           ))}
 
-          {query && results.length === 0  && 
-          <div className="text-sm text-center text-red-500" >No Results Found.</div>
-          }
-
+          {query && results.length === 0 && (
+            <div className="text-sm text-center text-red-500">
+              No Results Found.
+            </div>
+          )}
         </ul>
       </DialogContent>
     </Dialog>

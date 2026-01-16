@@ -63,7 +63,7 @@ const productsData = [
       call_to_action: "Add to Cart now and enjoy a smoother pregnancy journey!",
     },
   },
-    {
+  {
     product: {
       id: 1,
       title: "Trimester-by-Trimester Pregnancy Guide – Indian Moms Edition",
@@ -127,7 +127,7 @@ const productsData = [
       call_to_action: "Add to Cart now and enjoy a smoother pregnancy journey!",
     },
   },
-    {
+  {
     product: {
       id: 1,
       title: "Trimester-by-Trimester Pregnancy Guide – Indian Moms Edition",
