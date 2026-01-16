@@ -98,13 +98,13 @@ export default function MainHome() {
         {/* Our team */}
         <section className="py-[32px]">
           <div className="mb-[24px] text-center md:max-w-[50%] lg:max-w-[33.33%] mx-auto">
-            <img
+            {/* <img
               className="inline-block"
               src="/shriti.webp"
               alt="Shriti Jha"
               width={342}
               height={342}
-            />
+            /> */}
             <h4 className="mb-[12px] mt-[12px] text-center leading-[1.25] text-[22px] font-[400] text-[rgb(27,27,27)]">
               Meet Sriti
             </h4>

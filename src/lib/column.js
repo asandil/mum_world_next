@@ -106,6 +106,10 @@ export const DT_ORDER_COLUMN = [
     header: "Payment Id",
   },
   {
+    accessorKey: "createdAt",
+    header:"Order Date and Time"
+  },
+  {
     accessorKey: "name",
     header: "Name",
   },
