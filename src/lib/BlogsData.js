@@ -6603,13 +6603,13 @@ const Blogs = [
     category: "Hospital Bag",
     content: [
       {
-        heading: "Hospital Bag Checklist for Delivery: Everything You Really Need",
+        heading:
+          "Hospital Bag Checklist for Delivery: Everything You Really Need",
         items:
           "When your due date is near, time feels both fast and slow. One thing that makes the wait easier is having your hospital bag ready. Instead of stuffing in everything at the last moment, a thoughtful checklist ensures you carry only what you’ll actually use.",
       },
       {
-        interheading:
-          "Here’s a simple breakdown for you:",
+        interheading: "Here’s a simple breakdown for you:",
         items: "",
       },
       {
@@ -6652,13 +6652,15 @@ const Blogs = [
       },
       {
         subheading: "Why This Matters",
-        items:"Your hospital bag isn’t just a suitcase—it’s your support kit. Each item you carry is there to make your journey smoother, calmer, and less stressful. Preparing in advance means you’ll focus less on “what’s missing” and more on the precious moment of meeting your baby.",
+        items:
+          "Your hospital bag isn’t just a suitcase—it’s your support kit. Each item you carry is there to make your journey smoother, calmer, and less stressful. Preparing in advance means you’ll focus less on “what’s missing” and more on the precious moment of meeting your baby.",
       },
       {
         subheading: "Get the Premium Hospital Bag Checklist (Only ₹99)",
-        items:"Want a ready-to-use, printable hospital bag checklist that covers everything (including little details most moms forget)? I’ve created a Premium Hospital Bag Checklist for just ₹99. It’s neat, easy to follow, and saves you the worry of missing something important.",
+        items:
+          "Want a ready-to-use, printable hospital bag checklist that covers everything (including little details most moms forget)? I’ve created a Premium Hospital Bag Checklist for just ₹99. It’s neat, easy to follow, and saves you the worry of missing something important.",
       },
-       {
+      {
         interheading:
           "Buy Your Premium Hospital Bag Checklist Now – Only ₹99 (LINK)",
         items: "",

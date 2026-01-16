@@ -204,6 +204,10 @@ export const DT_CUSTOMERS_COLUMN = [
     header: "Phone",
   },
   {
+    accessorKey:"createdAt",
+    header:"Created Data"
+  },
+  {
     accessorKey: "address",
     header: "Address",
   },
