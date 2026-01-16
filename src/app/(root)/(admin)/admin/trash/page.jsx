@@ -8,6 +8,7 @@ import {
   DT_CATEGORY_COLUMN,
   DT_COUPON_COLUMN,
   DT_CUSTOMERS_COLUMN,
+  DT_ORDER_COLUMN,
   DT_PRODUCT_COLUMN,
   DT_PRODUCT_VARIANT_COLUMN,
   DT_REVIEW_COLUMN,
@@ -68,9 +69,16 @@ const TRASH_CONFIG = {
   banner: {
     title: "Banner Trash",
     columns: DT_BANNER_COLUMN,
-    frtchUrl: "/api/banner",
+    fetchUrl: "/api/banner",
     exportUrl: "/api/banner/export",
     deleteUrl: "/api/banner/delete",
+  },
+    orders: {
+    title: "Orders Trash",
+    columns: DT_ORDER_COLUMN,
+    fetchUrl: "/api/orders",
+    exportUrl: "/api/orders/export",
+    deleteUrl: "/api/orders/delete",
   },
 };
 
