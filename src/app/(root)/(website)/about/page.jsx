@@ -183,8 +183,8 @@ const AboutSection = () => {
           </div>
 
           {/* Timeline */}
-          <div className="mb-20">
-            <h3 className="text-2xl font-bold text-center text-gray-900 mb-12">
+          <div className="mb-0 md:mb-12">
+            <h3 className="text-2xl font-bold text-center text-gray-900 mb-5 md:mb-10">
               Our Journey
             </h3>
             <div className="relative">
@@ -215,7 +215,7 @@ const AboutSection = () => {
                         <p className="text-gray-600">{milestone.description}</p>
                       </div>
                     </div>
-                    <div className="my-4 lg:my-0 lg:w-1/2 flex justify-center">
+                    <div className="my-4 lg:my-0 lg:w-8 flex justify-center">
                       <div className="w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg"></div>
                     </div>
                     <div
