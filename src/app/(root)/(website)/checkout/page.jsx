@@ -303,7 +303,7 @@ const Checkout = () => {
           </div>
         </div>
       ) : (
-        <div className="flex lg:flex-nowrap flex-wrap gap-10 my-20 lg:px-32 px-4">
+        <div className="flex lg:flex-nowrap flex-wrap gap-10 my-10 lg:px-32 px-4">
           <div className="lg:w-[60%] w-full">
             <div className="flex font-semibold gap-2 items-center">
               <FaShippingFast size={25} />
@@ -368,7 +368,8 @@ const Checkout = () => {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel className="font-[600]">
-                              Phone No <span className="text-red-600">*</span>{" "}
+                              Phone No{" "}
+                              <span className="text-red-600">*</span>{" "}
                             </FormLabel>
                             <FormControl>
                               <Input
@@ -491,7 +492,8 @@ const Checkout = () => {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel className="font-[600]">
-                              Pincode <span className="text-red-600">*</span>{" "}
+                              Pincode{" "}
+                              <span className="text-red-600">*</span>{" "}
                             </FormLabel>
                             <FormControl>
                               <Input placeholder="Pincode" {...field} />
@@ -509,7 +511,8 @@ const Checkout = () => {
                         render={({ field }) => (
                           <FormItem>
                             <FormLabel className="font-[600]">
-                              Country <span className="text-red-600">*</span>{" "}
+                              Country{" "}
+                              <span className="text-red-600">*</span>{" "}
                             </FormLabel>
                             <FormControl>
                               <Input placeholder="Country" {...field} />
