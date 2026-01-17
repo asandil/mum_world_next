@@ -77,15 +77,15 @@ const AboutSection = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-primary/10 to-primary/40">
+      <section className="relative py-8 md:py-12 bg-gradient-to-r from-primary/10 to-primary/40">
         <div className=" mx-auto px-4 lg:px-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <div>
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
                 Empowering Mothers,{" "}
                 <span className="text-primary">One Product at a Time</span>
               </h1>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-gray-600 mb-4 md:mb-8">
                 At Mumworld, we believe that motherhood is a beautiful journey
                 that deserves the best care, support, and products. We're
                 dedicated to providing mothers with high-quality, safe, and
@@ -118,7 +118,7 @@ const AboutSection = () => {
                 />
                 {/* <MainSlider/> */}
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg max-w-xs">
+              <div className="absolute -bottom-6 right-2 lg:-right-6 bg-white p-3 md:p-6 rounded-xl shadow-lg max-w-xs">
                 <div className="flex items-center gap-3 mb-2">
                   <GiFamilyHouse className="text-primary" size={24} />
                   <h3 className="font-bold text-lg">5000+ Happy Families</h3>
@@ -131,9 +131,9 @@ const AboutSection = () => {
       </section>
 
       {/* Our Story */}
-      <section id="our-story" className="py-20">
+      <section id="our-story" className="py-8 md:py-12">
         <div className=" mx-auto px-4 lg:px-32">
-          <div className="text-center mb-16">
+          <div className="text-center mb-6 md:mb-10">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Our Story
             </h2>
@@ -144,7 +144,7 @@ const AboutSection = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center mb-8 md:mb-12">
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src={aboutTeam}
@@ -155,17 +155,17 @@ const AboutSection = () => {
               />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 md:mb-6">
                 From Mother to Mother
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 mb-2 md:mb-4">
                 Our journey began when our founder, a new mother herself,
                 struggled to find products that were both effective and safe for
                 her newborn. Frustrated by the lack of options and confusing
                 information, she decided to create a space where mothers could
                 find exactly what they need.
               </p>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-3 md:mb-6">
                 Today, Mumworld is more than just a store - it's a community, a
                 resource, and a trusted partner for mothers at every stage of
                 their journey. Every product in our collection is carefully
@@ -232,9 +232,9 @@ const AboutSection = () => {
       </section>
 
       {/* Our Values */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-8 md:py-12 bg-gray-50">
         <div className=" mx-auto px-4 lg:px-32">
-          <div className="text-center mb-16">
+          <div className="text-center mb-5 md:mb-10">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Our Core Values
             </h2>
@@ -244,11 +244,11 @@ const AboutSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {values.map((value, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center"
+                className="bg-white p-4 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center"
               >
                 <div className="flex justify-center mb-6">{value.icon}</div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -262,19 +262,19 @@ const AboutSection = () => {
       </section>
 
       {/* Quality Promise */}
-      <section className="py-20">
+      <section className="py-8 md:py-12">
         <div className=" mx-auto px-4 lg:px-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-6">
                 Our Quality Promise
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-3 md:mb-6">
                 We understand that when it comes to mothers and babies, there's
                 no room for compromise. That's why every product at Mumworld
                 goes through a rigorous 5-step quality check:
               </p>
-              <ul className="space-y-4">
+              <ul className=" space-y-2 md:space-y-4">
                 {[
                   "Material Safety Testing",
                   "Ingredient Transparency",
@@ -288,7 +288,7 @@ const AboutSection = () => {
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 p-6 bg-primary/20 rounded-lg">
+              <div className=" mt-4 md:mt-8 p-6 bg-primary/20 rounded-lg">
                 <div className="flex items-center gap-3 mb-2">
                   <FaShippingFast className="text-primary" size={24} />
                   <h3 className="font-bold text-lg">
@@ -315,9 +315,9 @@ const AboutSection = () => {
       </section>
 
       {/* Community Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/10">
+      <section className="py-8 md:py-12 bg-gradient-to-br from-primary/10 to-primary/10">
         <div className=" mx-auto px-4 lg:px-32">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src={aboutCommunity}
@@ -328,21 +328,21 @@ const AboutSection = () => {
               />
             </div>
             <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-6">
                 Join Our Community
               </h2>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-3 md:mb-6">
                 Mumworld is more than products - it's a thriving community of
                 mothers supporting each other through every challenge and
                 celebration.
               </p>
-              <div className="space-y-6">
+              <div className=" space-y-3 md:space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="bg-white p-3 rounded-lg shadow-sm">
                     <FaHandsHelping className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-2">
+                    <h4 className="font-bold text-lg mb-0 md:mb-2">
                       Weekly Support Groups
                     </h4>
                     <p className="text-gray-600">
@@ -355,7 +355,9 @@ const AboutSection = () => {
                     <FaHeart className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-2">Expert Advice</h4>
+                    <h4 className="font-bold text-lg mb-0 md:mb-2">
+                      Expert Advice
+                    </h4>
                     <p className="text-gray-600">
                       Access to pediatricians, nutritionists, and parenting
                       coaches
@@ -367,7 +369,7 @@ const AboutSection = () => {
                     <BsStars className="text-primary" size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-2">
+                    <h4 className="font-bold text-lg mb-0 md:mb-2">
                       Member-Only Benefits
                     </h4>
                     <p className="text-gray-600">
@@ -377,7 +379,7 @@ const AboutSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="mt-8 flex gap-4">
+              <div className="mt-4 md:mt-8 flex gap-4">
                 <Link
                   href={WEBSITE_SHOP}
                   className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
