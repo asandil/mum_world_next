@@ -145,12 +145,12 @@ const AboutSection = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center mb-8 md:mb-12">
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src={aboutTeam}
+                src="https://res.cloudinary.com/dc0wr8hev/image/upload/v1768661774/uvtvdlkp4tgtulfunxmn.png"
                 alt="Mumworld team"
                 fill
-                className="object-fit"
+                className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
@@ -301,15 +301,7 @@ const AboutSection = () => {
                 </p>
               </div>
             </div>
-            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-              <Image
-                src={aboutQuality}
-                alt="Quality check process"
-                fill
-                className="object-fit"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
+            <div className="bg-[url(https://res.cloudinary.com/dc0wr8hev/image/upload/v1768661774/vodzu2lloittcqvyhwh9.png)] bg-no-repeat bg-cover relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"></div>
           </div>
         </div>
       </section>
@@ -318,12 +310,12 @@ const AboutSection = () => {
       <section className="py-8 md:py-12 bg-gradient-to-br from-primary/10 to-primary/10">
         <div className=" mx-auto px-4 lg:px-32">
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
-            <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src={aboutCommunity}
+                src="https://res.cloudinary.com/dc0wr8hev/image/upload/v1768661774/wm7gphs1potrx3ie6pmx.png"
                 alt="Mumworld community"
                 fill
-                className="object-fit"
+                className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
