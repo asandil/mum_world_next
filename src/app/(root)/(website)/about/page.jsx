@@ -48,27 +48,27 @@ const AboutSection = () => {
 
   const milestones = [
     {
-      year: "2020",
+      year: "2022",
       title: "Founded",
       description: "Mumworld began with a simple mission: support mothers",
     },
     {
-      year: "2021",
+      year: "2023",
       title: "1000+ Moms",
       description: "Served over 1000 mothers across India",
     },
     {
-      year: "2022",
+      year: "2024",
       title: "Product Launch",
       description: "Launched our exclusive mom-care product line",
     },
     {
-      year: "2023",
+      year: "2025",
       title: "Community",
       description: "Built an active community of 5000+ mothers",
     },
     {
-      year: "2024",
+      year: "2026",
       title: "National Reach",
       description: "Expanded delivery to 50+ cities across India",
     },
@@ -183,48 +183,90 @@ const AboutSection = () => {
           </div>
 
           {/* Timeline */}
-          <div className="mb-0 md:mb-12">
-            <h3 className="text-2xl font-bold text-center text-gray-900 mb-5 md:mb-10">
-              Our Journey
-            </h3>
-            <div className="relative">
-              <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20"></div>
-              <div className="space-y-0">
-                {milestones.map((milestone, index) => (
-                  <div
-                    key={index}
-                    className={`flex flex-col lg:flex-row items-center ${
-                      index % 2 === 0 ? "lg:flex-row-reverse" : ""
-                    }`}
-                  >
-                    <div
-                      className={`lg:w-1/2 ${
-                        index % 2 === 0 ? "lg:pr-12" : "lg:pl-12"
-                      }`}
-                    >
-                      <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-                        <div className="flex items-center gap-3 mb-3">
-                          <BsStars className="text-primary" size={28} />
-                          <span className="font-bold text-lg">
-                            {milestone.year}
-                          </span>
+          <div className="py-8 md:py-12">
+            <div className="text-center mb-12 md:mb-16">
+              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                Our Journey
+              </h3>
+              <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Milestones in our mission to support mothers
+              </p>
+            </div>
+
+            <div className="relative max-w-4xl mx-auto">
+              {/* Progress Bar Background */}
+              <div className="hidden lg:block absolute left-8 top-0 h-full w-1 bg-gray-200 rounded-full"></div>
+
+              <div className="space-y-12">
+                {milestones.map((milestone, index) => {
+                  const progress = ((index + 1) / milestones.length) * 100;
+
+                  return (
+                    <div key={index} className="relative">
+                      {/* Progress Fill */}
+                      <div
+                        className="hidden lg:block absolute left-8 top-0 w-1 bg-primary rounded-full"
+                        style={{ height: `${progress}%` }}
+                      ></div>
+
+                      <div className="flex items-start">
+                        {/* Timeline Node */}
+                        <div className="hidden lg:flex relative z-10 mr-8">
+                          <div className="w-16 h-16 rounded-full bg-white border-4 border-primary shadow-lg flex items-center justify-center">
+                            <div className="text-primary font-bold text-lg">
+                              {milestone.year}
+                            </div>
+                          </div>
+                          {/* Outer glow */}
+                          <div className="absolute inset-0 w-20 h-20 border-4 border-primary/10 rounded-full animate-pulse"></div>
                         </div>
-                        <h4 className="text-xl font-bold text-gray-900 mb-2">
-                          {milestone.title}
-                        </h4>
-                        <p className="text-gray-600">{milestone.description}</p>
+
+                        {/* Mobile Year */}
+                        <div className="lg:hidden mr-4">
+                          <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">
+                            {milestone.year}
+                          </div>
+                        </div>
+
+                        {/* Content Card */}
+                        <div className="flex-1">
+                          <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            <div className="flex items-center gap-4 mb-4">
+                              <div className="p-3 bg-primary/10 rounded-xl">
+                                <BsStars className="text-primary" size={24} />
+                              </div>
+                              <div>
+                                <h4 className="text-xl md:text-2xl font-bold text-gray-900">
+                                  {milestone.title}
+                                </h4>
+                                <div className="lg:hidden text-primary font-semibold mt-1">
+                                  {milestone.year}
+                                </div>
+                              </div>
+                            </div>
+                            <p className="text-gray-600 leading-relaxed">
+                              {milestone.description}
+                            </p>
+
+                            {/* Progress indicator for mobile */}
+                            <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between">
+                              <span className="text-sm text-gray-500">
+                                Milestone {index + 1} of {milestones.length}
+                              </span>
+                              <div className="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                                <div
+                                  className="h-full bg-primary rounded-full"
+                                  style={{ width: `${progress}%` }}
+                                ></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                    <div className="my-4 lg:my-0 lg:w-8 flex justify-center">
-                      <div className="w-4 h-4 bg-primary rounded-full border-4 border-white shadow-lg"></div>
-                    </div>
-                    <div
-                      className={`lg:w-1/2 ${
-                        index % 2 === 0 ? "lg:pl-12" : "lg:pr-12"
-                      }`}
-                    ></div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
