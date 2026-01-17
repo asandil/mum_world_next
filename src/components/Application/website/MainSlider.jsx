@@ -7,9 +7,9 @@ import Slider from "react-slick";
 import slider1 from "@/assets/images/slider-1.png";
 import slider2 from "@/assets/images/slider-2.png";
 import slider3 from "@/assets/images/slider-3.png";
-import slider4 from "@/assets/images/slider-4.png";
 import slider5 from "@/assets/images/slider-5.png";
 import slider6 from "@/assets/images/slider-6.png";
+import ShopHeaderImage from "@/assets/images/ShopHeaderImage.png";
 import Image from "next/image";
 import { LuChevronRight } from "react-icons/lu";
 import { LuChevronLeft } from "react-icons/lu";
@@ -66,6 +66,15 @@ const MainSlider = () => {
       <Slider {...settings}>
         <div>
           <Image
+            src={ShopHeaderImage.src}
+            width={ShopHeaderImage.width}
+            height={ShopHeaderImage.height}
+            alt="slider 1"
+            className="h-100 object-fill"
+          />
+        </div>
+        <div>
+          <Image
             src={slider1.src}
             width={slider1.width}
             height={slider1.height}
@@ -88,15 +97,6 @@ const MainSlider = () => {
             width={slider3.width}
             height={slider3.height}
             alt="slider 3"
-            className="h-100 object-fill"
-          />
-        </div>
-        <div>
-          <Image
-            src={slider4.src}
-            width={slider4.width}
-            height={slider4.height}
-            alt="slider 4"
             className="h-100 object-fill"
           />
         </div>

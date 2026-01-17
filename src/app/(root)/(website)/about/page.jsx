@@ -14,11 +14,9 @@ import { BsStars } from "react-icons/bs";
 import aboutHero from "@/assets/images/ShopHeaderImage.png";
 // import aboutHero from "@/assets/images/slider-1.png";
 import aboutTeam from "@/assets/images/slider-6.png";
-// import aboutTeam from "@/assets/images/advertisingBanner.png";
-import aboutQuality from "@/assets/images/advertisingBanner.png";
-// import aboutQuality from "@/assets/images/advertisingBanner.png";
+import aboutQuality from "@/assets/images/slider-1.png";
 import aboutCommunity from "@/assets/images/banner1.png";
-// import aboutCommunity from "@/assets/images/banner1.png";
+import MainSlider from "@/components/Application/website/MainSlider";
 
 const AboutSection = () => {
   const values = [
@@ -115,9 +113,10 @@ const AboutSection = () => {
                   src={aboutHero}
                   alt="Happy mother with baby"
                   fill
-                  className="object-cover"
+                  className="object-fit"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
+                {/* <MainSlider/> */}
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg max-w-xs">
                 <div className="flex items-center gap-3 mb-2">
@@ -151,7 +150,7 @@ const AboutSection = () => {
                 src={aboutTeam}
                 alt="Mumworld team"
                 fill
-                className="object-cover"
+                className="object-fit"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
@@ -307,7 +306,7 @@ const AboutSection = () => {
                 src={aboutQuality}
                 alt="Quality check process"
                 fill
-                className="object-cover"
+                className="object-fit"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
@@ -324,7 +323,7 @@ const AboutSection = () => {
                 src={aboutCommunity}
                 alt="Mumworld community"
                 fill
-                className="object-cover"
+                className="object-fit"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
