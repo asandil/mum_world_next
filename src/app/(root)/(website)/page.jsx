@@ -43,22 +43,39 @@ export default function MainHome() {
             What we do
             <hr className="mt-[16px] border-[1px] border-black" />
           </h1>
-          <div className="md:max-w-[50%]">
-            <p className="pb-[48px]">
-              <span>
-                Relevant, personalized, positive, empowering, mumworld.in offer
-                must-have information for every step of the pregnancy journey
-                and about new born care. Founded in 2021, mumworld.in has
-                publishing articles on various parenting topics and additional
-                articles on parenting, the mental health of women.
-              </span>
-              <br />
-              <span>
-                The mumworld.in brand drives everything we do, and it's as
-                powerful as it is simple: “healthy pregnancies and happy mother
-                and healthy babies."
-              </span>
-            </p>
+          <div className="">
+            <div className="pb-[48px] flex flex-col gap-[12px]">
+              <p>
+                Trusted Pregnancy, Postpartum & Parenting Platform for Mothers
+                in India
+              </p>
+              <p>
+                At mumworld.in, we provide relevant, personalized, and
+                empowering support for women through every stage of motherhood —
+                from pregnancy to postpartum recovery and newborn care.
+              </p>
+              <p>
+                Founded in 2021, Mumworld has been a reliable source of
+                pregnancy health information, postpartum wellness guidance,
+                parenting tips, and women’s mental health support. Today, we go
+                beyond articles to offer digital pregnancy and baby care guides
+                designed to help mothers feel informed, confident, and supported
+                at every step.
+              </p>
+              <p>
+                We also combine comfort and style with our thoughtfully designed
+                maternity wear and feeding-friendly clothing for new mothers.
+                Our clothing is made to support changing bodies while helping
+                moms feel comfortable, confident, and beautiful during pregnancy
+                and after delivery.
+              </p>
+              <p className="flex flex-col">
+                <span> Everything we do is guided by one simple mission:</span>
+                <span>
+                  “Healthy pregnancies, happy mothers, and healthy babies.”
+                </span>{" "}
+              </p>
+            </div>
             <h4 className="mb-[16px] leading-[1.25] text-[22px] font-[400] text-[rgb(27,27,27)]">
               Pregnancy Health
             </h4>
