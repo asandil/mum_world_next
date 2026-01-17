@@ -11,10 +11,14 @@ import {
 } from "react-icons/fa";
 import { GiFamilyHouse } from "react-icons/gi";
 import { BsStars } from "react-icons/bs";
-import aboutHero from "@/assets/images/slider-1.png";
-import aboutTeam from "@/assets/images/advertisingBanner.png";
+import aboutHero from "@/assets/images/ShopHeaderImage.png";
+// import aboutHero from "@/assets/images/slider-1.png";
+import aboutTeam from "@/assets/images/slider-6.png";
+// import aboutTeam from "@/assets/images/advertisingBanner.png";
 import aboutQuality from "@/assets/images/advertisingBanner.png";
+// import aboutQuality from "@/assets/images/advertisingBanner.png";
 import aboutCommunity from "@/assets/images/banner1.png";
+// import aboutCommunity from "@/assets/images/banner1.png";
 
 const AboutSection = () => {
   const values = [
