@@ -79,23 +79,55 @@ export default function MainHome() {
             <h4 className="mb-[16px] leading-[1.25] text-[22px] font-[400] text-[rgb(27,27,27)]">
               Pregnancy Health
             </h4>
-            <p className="pb-[48px]">
-              <span>
-                Having a baby and pregnancy should be a positive experience, so
-                our main focus is to give you helpful information. Pregnant
-                women are bombarded with dos and don'ts. Here is help to keep it
-                all straight.
-              </span>
-            </p>
+            <div className="pb-[48px] flex flex-col gap-[12px]">
+              <p>Complete Pregnancy Care, Tips & Tools for Expecting Mothers</p>
+              <p>
+                Pregnancy should be a positive and stress-free experience. At
+                Mumworld, we simplify pregnancy by offering clear, expert-backed
+                pregnancy health information that helps women make confident
+                decisions throughout all three trimesters
+              </p>
+              <p>
+                Pregnant women are often overwhelmed with confusing dos and
+                don’ts — we help cut through the noise with:
+              </p>
+              <p>Easy-to-follow pregnancy care tips</p>
+              <p>Trimester-wise health and wellness guidance</p>
+              <p>Practical digital tools for pregnancy planning and tracking</p>
+              <p>
+                Supportive content focused on both physical and emotional
+                well-being
+              </p>
+              <p>
+                Our goal is to help every expecting mother enjoy a healthier,
+                happier pregnancy journey.
+              </p>
+            </div>
             <h4 className="mb-[16px] leading-[1.25] text-[22px] font-[400] text-[rgb(27,27,27)]">
               Postpartum and Newborn Care
             </h4>
-            <p className="pb-[48px]">
-              <span>
-                Our job isn’t done once delivery is over. Our team will post
-                articles related to postpartum and newborn care.
-              </span>
-            </p>
+            <div className="pb-[48px] flex flex-col gap-[12px]">
+              <p>Postpartum Recovery & Newborn Care Support for New Moms</p>
+              <p>
+                Our support doesn’t end with delivery. Mumworld provides trusted
+                postpartum care and newborn care resources to help mothers
+                navigate life after birth with confidence.
+              </p>
+              <p>We offer digital guides and practical resources covering:</p>
+              <p>Postpartum recovery and healing after childbirth</p>
+              <p>
+                Emotional wellness and mental health support for new mothers
+              </p>
+              <p>Newborn care essentials, routines, and early milestones</p>
+              <p>
+                Guidance to help moms feel supported during the early days of
+                motherhood
+              </p>
+              <p>
+                From recovery after birth to caring for your newborn, Mumworld
+                is here to support both mother and baby — every step of the way.
+              </p>
+            </div>
           </div>
         </section>
         {/* Subscribe */}
@@ -115,13 +147,6 @@ export default function MainHome() {
         {/* Our team */}
         <section className="py-[32px]">
           <div className="mb-[24px] text-center md:max-w-[50%] lg:max-w-[33.33%] mx-auto">
-            {/* <img
-              className="inline-block"
-              src="/shriti.webp"
-              alt="Shriti Jha"
-              width={342}
-              height={342}
-            /> */}
             <h4 className="mb-[12px] mt-[12px] text-center leading-[1.25] text-[22px] font-[400] text-[rgb(27,27,27)]">
               Meet Sriti
             </h4>
