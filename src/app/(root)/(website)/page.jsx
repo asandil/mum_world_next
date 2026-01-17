@@ -171,6 +171,13 @@ export default function MainHome() {
                   </h3>
                   <p>Every step designed with mothers in mind</p>
                 </div>
+                <Image
+                  src="https://res.cloudinary.com/dc0wr8hev/image/upload/v1768660724/jqzudsvhwxgov904unca.jpg"
+                  alt="Mumworld team"
+                  fill
+                  className="object-fit"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
@@ -226,6 +233,13 @@ export default function MainHome() {
                   <h3 className="text-2xl font-bold mb-2">Natural Support</h3>
                   <p>Gentle care for mother and baby</p>
                 </div>
+                <Image
+                  src="https://res.cloudinary.com/dc0wr8hev/image/upload/v1768660723/lvdhhbf9ujq1zd0zga44.jpg"
+                  alt="Mumworld team"
+                  fill
+                  className="object-fit"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
             </div>
           </div>
@@ -238,7 +252,7 @@ export default function MainHome() {
         className="py-8 md:py-12 bg-gradient-to-r from-primary/10 to-primary/20"
       >
         <div className="mx-auto px-4 lg:px-32">
-          <div className="bg-[url(https://img1.wsimg.com/isteam/stock/NeWWRNm/:/rs=w:1534,m)] bg-no-repeat bg-cover rounded-2xl shadow-xl p-8 md:p-12">
+          <div className="bg-[url(https://res.cloudinary.com/dc0wr8hev/image/upload/v1768660948/mygwj3pdpar1chkoarxl.webp)] bg-no-repeat bg-cover rounded-2xl shadow-xl p-8 md:p-12">
             <div className="text-center mb-8">
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                 SUBSCRIBE
