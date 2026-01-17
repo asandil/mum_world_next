@@ -6,6 +6,7 @@ import FeedBackForm from "@/components/FeedBackForm";
 import { BsChatHeartFill } from "react-icons/bs";
 import { BsFillHeartFill } from "react-icons/bs";
 import FeaturedProduct from "@/components/Application/website/FeaturedProduct";
+import mainImage from "@/assets/images/ShopHeaderImage.png";
 
 export const metadata = {
   title: "Pregnancy Journey & Newborn Care | Tools, Tips & Support | MumWorld",
@@ -19,22 +20,18 @@ export default function MainHome() {
     <>
       <div className="">
         <div className="px-[24px]">
-          <div className="my-[24px] text-center">
-            <img
+          <div className="my-[12px] text-center">
+            <Image
               className="inline-block md:w-[626px] md:h-[419px] lg:h-[500px] lg:w-[747px]"
-              src="https://img1.wsimg.com/isteam/stock/WVqjYgr/:/cr=t:0%25,l:0%25,w:100%25,h:100%25/rs=w:1252,h:838,cg:true"
+              src={mainImage}
               alt=""
             />
           </div>
-          <div className="mb-[24px]">
-            <div className="mb-[24px]">
-              <p className="text-center text-[16px] leading-[1.25] font-[400]">
-                Everything about pregnancy Journey, Motherhood & baby care: Dos
-                and don'ts.
-                <br />
-                <br />
-              </p>
-            </div>
+          <div className="">
+            <p className="text-center text-[16px] font-[400]">
+              Everything about pregnancy Journey, Motherhood & baby care: Dos
+              and don'ts.
+            </p>
           </div>
         </div>
         {/* what we do */}
@@ -148,9 +145,44 @@ export default function MainHome() {
         <section className="py-[32px]">
           <div className="mb-[24px] text-center md:max-w-[50%] lg:max-w-[33.33%] mx-auto">
             <h4 className="mb-[12px] mt-[12px] text-center leading-[1.25] text-[22px] font-[400] text-[rgb(27,27,27)]">
-              Meet Sriti
+              Meet Sriti - Founder of Mumworld
             </h4>
-            <p className="text-center">
+            <div className="pb-[48px] flex flex-col gap-[12px]">
+              <p>
+                Hi, I’m Sriti, a proud mama and the founder of MumWorld.in — a
+                trusted space created with love, experience, and a deep
+                understanding of motherhood.
+              </p>
+              <p>
+                My journey into motherhood changed everything. Like many moms, I
+                found myself searching for honest information, emotional
+                reassurance, and practical guidance during pregnancy, postpartum
+                recovery, and early parenting. That search inspired me to create
+                Mumworld — a supportive, reliable, and judgment-free platform
+                for mothers.
+              </p>
+              <p>
+                At Mumworld, I share real-life experiences, expert-backed
+                insights, and thoughtful guidance to make everyday motherhood
+                feel less overwhelming and more joyful. We celebrate both the
+                chaos and beauty of motherhood — from diaper disasters to
+                heartwarming milestones — because that’s what real motherhood
+                looks like.
+              </p>
+              <p>
+                More than just a website, Mumworld is a community built on
+                empathy, honesty, and connection. I pour my heart into every
+                post, hoping to inspire, uplift, and remind moms that they are
+                never alone on this journey.
+              </p>
+              <p>
+                I’m here as your virtual cheerleader, confidante, and fellow
+                mom, walking alongside you through pregnancy, postpartum, and
+                the many stages of raising little humans.
+              </p>
+              <p>
+                Because motherhood doesn’t need perfection — it needs support.
+              </p>
               I am a proud mama on a mission to sprinkle a little bit of magic
               into your daily routine through my humble corner of the internet,
               mumworld.in. Ever since I embarked on this journey of motherhood,
@@ -161,12 +193,8 @@ export default function MainHome() {
               milestones, I pour my heart into every post, hoping to inspire,
               uplift, and connect with each and every one of you. Whether it's
               sharing family-friendly recipes that even the pickiest eaters will
-              love, offering practical parenting hacks to navigate the twists
-              and turns of raising tiny humans, or simply creating a safe space
-              where we can laugh, cry, and cheer each other on, I'm here to be
-              your virtual cheerleader and confidante.
-            </p>
-            <a
+            </div>
+            {/* <a
               className="inline-block"
               href="https://www.linkedin.com/in/sriti-jha-93423b57/"
               target="_blank"
@@ -178,7 +206,7 @@ export default function MainHome() {
                 width="48"
                 height="48"
               />
-            </a>
+            </a> */}
           </div>
         </section>
 
