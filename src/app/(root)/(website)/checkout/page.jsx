@@ -34,6 +34,7 @@ import { Textarea } from "@/components/ui/textarea";
 import Script from "next/script";
 import { useRouter } from "next/navigation";
 import loading from "@/assets/images/loading.svg";
+import { ShoppingCartIcon } from "lucide-react";
 
 const breadCrumb = {
   title: "Checkout",
@@ -294,12 +295,20 @@ const Checkout = () => {
       )}
       <WebsiteBreadcrumb props={breadCrumb} />
       {cart.count === 0 ? (
-        <div className="w-screen h-[500px] flex justify-center items-center py-32">
+        <div className="w-full h-full flex justify-center items-center  py-12 md:py-32 border">
           <div className="text-center">
-            <h4 className="text-4xl font-semibold mb-5"></h4>
-            <Button type="button" asChild>
-              <Link href={WEBSITE_SHOP}>Continue Shopping</Link>
-            </Button>
+            <div className=" flex flex-col items-center justify-center text-center">
+              <ShoppingCartIcon className="w-20 h-20 text-primary mb-2" />
+              <h2 className="text-3xl sm:text-4xl font-bold mb-2">
+                Your cart is empty!
+              </h2>
+              <p className="text-gray-600 mb-4">
+                Add some products to get started
+              </p>
+              <Button type="button" asChild>
+                <Link href={WEBSITE_SHOP}>Continue Shopping</Link>
+              </Button>
+            </div>
           </div>
         </div>
       ) : (

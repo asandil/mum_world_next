@@ -20,6 +20,7 @@ import {
   increaseQuantity,
   removeFromCart,
 } from "@/store/reducer/cartReducer";
+import { ShoppingCartIcon } from "lucide-react";
 const breadCrumb = {
   title: "Cart",
   links: [
@@ -61,15 +62,14 @@ const CartPage = () => {
     <div>
       <WebsiteBreadcrumb props={breadCrumb} />
       {cart.count === 0 ? (
-        <div className="w-screen h-full flex justify-center items-center py-32">
-          <div className="text-center">
-            <h4 className="text-4xl font-semibold mb-5 ">
-              Your cart is empty!
-            </h4>
-            <Button type="button" asChild>
-              <Link href={WEBSITE_SHOP}>Continue Shopping</Link>
-            </Button>
-          </div>
+        <div className="w-full h-full flex flex-col justify-center items-center py-12 md:py-32 border">
+          <ShoppingCartIcon className="w-20 h-20 text-primary mb-2" />
+          <h4 className=" text-3xl sm:text-4xl font-semibold mb-4">
+            Your cart is empty!
+          </h4>
+          <Button type="button" asChild>
+            <Link href={WEBSITE_SHOP}>Continue Shopping</Link>
+          </Button>
         </div>
       ) : (
         <div className="flex lg:flex-nowrap flex-wrap gap-10 my-10 lg:px-32 px-4">
