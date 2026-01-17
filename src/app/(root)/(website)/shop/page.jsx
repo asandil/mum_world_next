@@ -57,7 +57,7 @@ const Shop = () => {
 
   return (
     <div>
-      <MainSlider />
+      {/* <MainSlider /> */}
       <WebsiteBreadcrumb props={breadcrumb} />
       <section className="lg:flex lg:px-32 px-4 my-20">
         {windowSize.width >= 1024 ? (

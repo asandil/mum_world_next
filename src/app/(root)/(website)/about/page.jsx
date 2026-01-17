@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { GiFamilyHouse } from "react-icons/gi";
 import { BsStars } from "react-icons/bs";
-import aboutHero from "@/assets/images/ShopHeaderImage.png";
+import aboutHero from "@/assets/images/test.png";
 // import aboutHero from "@/assets/images/slider-1.png";
 import aboutTeam from "@/assets/images/slider-6.png";
 import aboutQuality from "@/assets/images/slider-1.png";

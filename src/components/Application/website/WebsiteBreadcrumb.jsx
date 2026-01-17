@@ -2,7 +2,7 @@ import { WEBSITE_HOME } from "@/routes/WebsiteRoute";
 import Link from "next/link";
 import React from "react";
 
-import shop from "@/assets/images/shop.png";
+import shop from "@/assets/images/2.png";
 import Image from "next/image";
 
 const WebsiteBreadcrumb = ({ props }) => {
@@ -13,7 +13,7 @@ const WebsiteBreadcrumb = ({ props }) => {
         src={shop}
         alt="Background"
         fill
-        className="object-fill -z-10 "
+        className="object-cover -z-10 border"
         priority
       />
 
