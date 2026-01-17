@@ -254,11 +254,11 @@ export default function MainHome() {
         <div className="mx-auto px-4 lg:px-32">
           <div className="bg-[url(https://res.cloudinary.com/dc0wr8hev/image/upload/v1768660948/mygwj3pdpar1chkoarxl.webp)] bg-no-repeat bg-cover rounded-2xl shadow-xl p-8 md:p-12">
             <div className="text-center mb-8">
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                 SUBSCRIBE
               </h2>
               <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-              <p className="text-gray-600 text-lg">
+              <p className="text-white text-lg">
                 Sign up to hear more from us.
               </p>
             </div>
@@ -319,22 +319,6 @@ export default function MainHome() {
                   support."
                 </p>
               </div>
-              <p className="text-gray-700 mt-6">
-                I am a proud mama on a mission to sprinkle a little bit of magic
-                into your daily routine through my humble corner of the
-                internet, mumworld.in. Ever since I embarked on this journey of
-                motherhood, I've been passionate about sharing my experiences,
-                insights, and tips to make life a little bit sweeter for fellow
-                moms like you. Here at mumworld.in, we're all about celebrating
-                the chaos and beauty of motherhood. From diaper disasters to
-                heartwarming milestones, I pour my heart into every post, hoping
-                to inspire, uplift, and connect with each and every one of you.
-                Whether it's sharing family-friendly recipes that even the
-                pickiest eaters will love, offering parenting hacks that
-                actually work, or simply providing a space where you can feel
-                seen and understood, my goal is to create a community where
-                every mom feels supported and empowered.
-              </p>
             </div>
           </div>
         </div>

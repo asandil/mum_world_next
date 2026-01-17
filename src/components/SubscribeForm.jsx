@@ -52,7 +52,7 @@ export default function SubscribeForm() {
         <div
           className={`mb-[16px] p-[16px] rounded-md text-center ${
             submitStatus.type === "success"
-              ? "bg-green-100 text-green-700 border border-green-300"
+              ? "bg-primary text-white border border-primary-hover"
               : "bg-red-100 text-red-700 border border-red-300"
           }`}
         >
