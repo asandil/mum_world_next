@@ -60,6 +60,11 @@ const Header = () => {
       submenu: null,
     },
     {
+      name: "About",
+      href: "/about",
+      submenu: null,
+    },
+    {
       name: "Tools",
       href: "#",
       submenu: [
