@@ -41,12 +41,12 @@ const CartPage = () => {
     const cartProducts = cart.products;
     const totalAmount = cartProducts.reduce(
       (sum, product) => sum + product.sellingPrice * product.qty,
-      0
+      0,
     );
     const discount = cartProducts.reduce(
       (sum, product) =>
         sum + (product.mrp - product.sellingPrice) * product.qty,
-      0
+      0,
     );
     setSubTotal(totalAmount);
     setDiscount(discount);
@@ -62,7 +62,7 @@ const CartPage = () => {
     <div>
       <WebsiteBreadcrumb props={breadCrumb} />
       {cart.count === 0 ? (
-        <div className="w-full h-full flex flex-col justify-center items-center py-12 md:py-32 border">
+        <div className="w-full h-full flex flex-col justify-center items-center py-12 md:py-32">
           <ShoppingCartIcon className="w-20 h-20 text-primary mb-2" />
           <h4 className=" text-3xl sm:text-4xl font-semibold mb-4">
             Your cart is empty!
@@ -126,7 +126,7 @@ const CartPage = () => {
                                 decreaseQuantity({
                                   productId: product.productId,
                                   variantId: product.variantId,
-                                })
+                                }),
                               )
                             }
                             className="h-full w-10 flex justify-center items-center cursor-pointer "
@@ -146,7 +146,7 @@ const CartPage = () => {
                                 increaseQuantity({
                                   productId: product.productId,
                                   variantId: product.variantId,
-                                })
+                                }),
                               )
                             }
                             className="h-full w-10 flex justify-center items-center cursor-pointer "
@@ -161,7 +161,7 @@ const CartPage = () => {
                       <span>
                         {(product.sellingPrice * product.qty).toLocaleString(
                           "en-IN",
-                          { style: "currency", currency: "INR" }
+                          { style: "currency", currency: "INR" },
                         )}
                       </span>
                     </td>
@@ -175,7 +175,7 @@ const CartPage = () => {
                             removeFromCart({
                               productId: product.productId,
                               variantId: product.variantId,
-                            })
+                            }),
                           )
                         }
                       >
