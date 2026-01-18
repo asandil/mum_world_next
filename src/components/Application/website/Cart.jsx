@@ -17,6 +17,7 @@ import Link from "next/link";
 import { WEBSITE_CART, WEBSITE_CHECKOUT } from "@/routes/WebsiteRoute";
 import { Button } from "@/components/ui/button";
 import { showToast } from "@/lib/showToast";
+import { ShoppingCartIcon } from "lucide-react";
 
 const Cart = () => {
   const [open, setOpen] = useState(false);
@@ -29,12 +30,12 @@ const Cart = () => {
     const cartProducts = cart.products;
     const totalAmount = cartProducts.reduce(
       (sum, product) => sum + product.sellingPrice * product.qty,
-      0
+      0,
     );
     const discount = cartProducts.reduce(
       (sum, product) =>
         sum + (product.mrp - product.sellingPrice) * product.qty,
-      0
+      0,
     );
     setSubTotal(totalAmount);
     setDiscount(discount);
@@ -51,17 +52,18 @@ const Cart = () => {
           {cart.count}
         </span>
       </SheetTrigger>
-      <SheetContent className="sm:max-w-[450px] w-full" >
+      <SheetContent className="sm:max-w-[450px] w-full">
         <SheetHeader className="py-2">
-          <SheetTitle className="text-2xl">My Cart</SheetTitle>
+          <SheetTitle className="text-2xl text-primary">My Cart</SheetTitle>
           <SheetDescription></SheetDescription>
         </SheetHeader>
 
         <div className="h-[calc(100vh-40px)] pb-10">
           <div className="h-[calc(100%-128px)] overflow-auto px-2">
             {cart.count === 0 && (
-              <div className="h-full flex justify-center items-center text-xl font-semibold">
-                Your cart Is Empty.
+              <div className="h-full flex flex-col justify-center items-center text-xl font-semibold">
+                <ShoppingCartIcon className="w-20 h-20 text-primary mb-2" />
+                <span>Your cart Is Empty.</span>
               </div>
             )}
             {cart?.products?.map((product) => (
@@ -93,7 +95,7 @@ const Cart = () => {
                         removeFromCart({
                           productId: product.productId,
                           variantId: product.variantId,
-                        })
+                        }),
                       )
                     }
                   >
