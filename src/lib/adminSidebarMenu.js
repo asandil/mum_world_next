@@ -33,7 +33,7 @@ export const adminAppSidebarMenu = [
   },
   {
     title: "Category",
-    url: "#",
+    url: ADMIN_CATEGORY_SHOW,
     icon: BiCategory,
     submenu: [
       {
@@ -48,7 +48,7 @@ export const adminAppSidebarMenu = [
   },
   {
     title: "Products",
-    url: "#",
+    url: ADMIN_PRODUCT_SHOW,
     icon: IoShirtOutline,
     submenu: [
       {
@@ -71,7 +71,7 @@ export const adminAppSidebarMenu = [
   },
   {
     title: "Coupons",
-    url: "#",
+    url: ADMIN_COUPON_SHOW,
     icon: RiCoupon2Line,
     submenu: [
       {
@@ -101,7 +101,7 @@ export const adminAppSidebarMenu = [
   },
   {
     title: "Banner and Add",
-    url: "#",
+    url: ADMIN_BANNER_SHOW,
     icon: RiAdvertisementLine,
     submenu: [
       {
@@ -110,7 +110,7 @@ export const adminAppSidebarMenu = [
       },
       {
         title: "All Banner",
-        url: ADMIN_BANNER_SHOW
+        url: ADMIN_BANNER_SHOW,
       },
     ],
   },
