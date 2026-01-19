@@ -563,7 +563,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
                 />
               </svg>
             </button>
-            <p>Shop with confidence</p>
+            {/* <p>Shop with confidence</p> */}
             <div className=" mt-4 md:mt-8 p-6 bg-primary/20 rounded-lg">
               <div className="flex items-center gap-3 mb-2">
                 <FaShippingFast className="text-primary" size={24} />

@@ -48,9 +48,11 @@ const Cart = () => {
           className="text-gray-500 hover:text-primary cursor-pointer "
           size={25}
         />
-        <span className="absolute bg-red-500 text-white text-xs rounded-full w-5 h-5 flex justify-center items-center -right-2 -top-1">
-          {cart.count}
-        </span>
+        {cart.count > 0 && (
+          <span className="absolute bg-primary text-white text-xs rounded-full w-5 h-5 flex justify-center items-center -right-2 -top-1">
+            {cart.count}
+          </span>
+        )}
       </SheetTrigger>
       <SheetContent className="sm:max-w-[450px] w-full">
         <SheetHeader className="py-2">
