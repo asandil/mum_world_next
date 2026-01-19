@@ -50,6 +50,16 @@ const Header = () => {
       submenu: null,
     },
     {
+      name: "About",
+      href: "/about",
+      submenu: null,
+    },
+    {
+      name: "Shop",
+      href: WEBSITE_SHOP,
+      submenu: null,
+    },
+    {
       name: "Blog",
       href: "/blog",
       submenu: null,
@@ -57,11 +67,6 @@ const Header = () => {
     {
       name: "The Poetry",
       href: "/the-poetry",
-      submenu: null,
-    },
-    {
-      name: "About",
-      href: "/about",
       submenu: null,
     },
     {
@@ -99,11 +104,6 @@ const Header = () => {
           href: "/faqs",
         },
       ],
-    },
-    {
-      name: "Shop",
-      href: WEBSITE_SHOP,
-      submenu: null,
     },
   ];
 
