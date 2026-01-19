@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { WEBSITE_HOME, WEBSITE_SHOP } from "@/routes/WebsiteRoute";
+import { WEBSITE_SHOP } from "@/routes/WebsiteRoute";
 import {
   FaHeart,
   FaShieldAlt,
@@ -11,12 +11,6 @@ import {
 } from "react-icons/fa";
 import { GiFamilyHouse } from "react-icons/gi";
 import { BsStars } from "react-icons/bs";
-import aboutHero from "@/assets/images/test.png";
-// import aboutHero from "@/assets/images/slider-1.png";
-import aboutTeam from "@/assets/images/slider-6.png";
-import aboutQuality from "@/assets/images/slider-1.png";
-import aboutCommunity from "@/assets/images/banner1.png";
-import MainSlider from "@/components/Application/website/MainSlider";
 
 const AboutSection = () => {
   const values = [
@@ -108,12 +102,13 @@ const AboutSection = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  src={aboutHero}
+                  // src={aboutHero}
+                  src="https://res.cloudinary.com/dc0wr8hev/image/upload/v1768815502/d1uunlhyjptwpvd5bosg.png"
                   alt="Happy mother with baby"
                   fill
-                  className="object-fit"
+                  className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 {/* <MainSlider/> */}
