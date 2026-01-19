@@ -16,7 +16,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import imagePlaceholder from "@/assets/images/img-placeholder.webp";
-import { IoStar } from "react-icons/io5";
+import { IoCloseCircleSharp, IoStar } from "react-icons/io5";
 import { decode, encode } from "entities";
 import { FaPlus } from "react-icons/fa6";
 import { FiMinus } from "react-icons/fi";
@@ -29,6 +29,8 @@ import { Button } from "@/components/ui/button";
 import loadingSvg from "@/assets/images/loading.svg";
 import ProductReview from "@/components/Application/website/ProductReview";
 import { FaShippingFast } from "react-icons/fa";
+import { IoMdCloseCircleOutline } from "react-icons/io";
+import chartLogo from "@/assets/images/SizeChart.png";
 
 const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
   // console.log("product",product)
@@ -543,9 +545,24 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
             <button
               type="button"
               onClick={() => setIsSizeChartOpen(true)}
-              className="mt-4 text-primary font-medium underline hover:no-underline cursor-pointer"
+              className="mt-4 text-primary font-medium hover:text-primary-hover flex items-center gap-1 cursor-pointer group"
             >
-              Size Guide
+              <span className="border-b border-dashed border-primary group-hover:border-solid">
+                Size Guide
+              </span>
+              <svg
+                className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
             </button>
             <p>Shop with confidence</p>
             <div className=" mt-4 md:mt-8 p-6 bg-primary/20 rounded-lg">
@@ -630,19 +647,36 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
 
       {/* Size Chart Modal */}
       {isSizeChartOpen && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <div className="sticky top-0 bg-white border-b p-4 flex justify-between items-center">
-              <h3 className="text-xl font-bold">Size Chart</h3>
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          onClick={() => setIsSizeChartOpen(false)}
+        >
+          <div
+            className="bg-white rounded-xl shadow-2xl max-w-lg w-full max-h-[70vh] flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between p-4 border-b relative">
+              <div className="flex ml-[-8px]">
+                <Image src={chartLogo} height={40} width={40} alt="" />
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    Size Guide
+                  </h3>
+                  <p className="text-sm text-gray-500">Find your perfect fit</p>
+                </div>
+              </div>
+
               <button
                 onClick={() => setIsSizeChartOpen(false)}
-                className="text-gray-500 hover:text-gray-700 text-2xl"
+                className="w-8 h-8 absolute right-3 top-3 cursor-pointer rounded-full flex items-center justify-center transition-colors"
               >
-                &times;
+                <IoMdCloseCircleOutline size={32} color="#F69E87" />
               </button>
             </div>
 
-            <div className="p-6">
+            {/* Modal Content */}
+            <div className="flex-1 overflow-y-auto p-4">
               <div className="mb-6">
                 <h4 className="font-semibold text-lg mb-3">How to Measure:</h4>
                 <ul className="space-y-2 text-gray-600">
@@ -671,129 +705,135 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
               </div>
 
               {/* Size Table */}
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse border border-gray-300">
-                  <thead>
-                    <tr className="bg-gray-50">
-                      <th className="border border-gray-300 px-4 py-3 font-semibold">
-                        Size
-                      </th>
-                      <th className="border border-gray-300 px-4 py-3 font-semibold">
-                        Bust (inches)
-                      </th>
-                      <th className="border border-gray-300 px-4 py-3 font-semibold">
-                        Waist (inches)
-                      </th>
-                      <th className="border border-gray-300 px-4 py-3 font-semibold">
-                        Hips (inches)
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        XS
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        32-34
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        24-26
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        34-36
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        S
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        34-36
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        26-28
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        36-38
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        M
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        36-38
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        28-30
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        38-40
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        L
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        38-40
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        30-32
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        40-42
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        XL
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        40-42
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        32-34
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        42-44
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        XXL
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        42-44
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        34-36
-                      </td>
-                      <td className="border border-gray-300 px-4 py-3 text-center">
-                        44-46
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <div>
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="font-semibold text-gray-900">
+                    Size Chart (in inches)
+                  </h4>
+                  <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded">
+                    Standard Fit
+                  </span>
+                </div>
 
-              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-                <p className="text-sm text-gray-600">
-                  <strong>Note:</strong> All measurements are in inches. Sizes
-                  may vary slightly depending on fabric and style. For
-                  personalized assistance, contact our customer support.
-                </p>
+                <div className="overflow-x-auto rounded-lg border border-gray-200">
+                  <table className="w-full">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="text-left py-3 px-4 font-semibold text-gray-700 border-r">
+                          Size
+                        </th>
+                        <th className="text-center py-3 px-4 font-semibold text-gray-700 border-r">
+                          Bust
+                        </th>
+                        <th className="text-center py-3 px-4 font-semibold text-gray-700 border-r">
+                          Waist
+                        </th>
+                        <th className="text-center py-3 px-4 font-semibold text-gray-700">
+                          Hips
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-gray-200">
+                      {[
+                        {
+                          size: "XS",
+                          bust: "32-34",
+                          waist: "24-26",
+                          hips: "34-36",
+                        },
+                        {
+                          size: "S",
+                          bust: "34-36",
+                          waist: "26-28",
+                          hips: "36-38",
+                        },
+                        {
+                          size: "M",
+                          bust: "36-38",
+                          waist: "28-30",
+                          hips: "38-40",
+                        },
+                        {
+                          size: "L",
+                          bust: "38-40",
+                          waist: "30-32",
+                          hips: "40-42",
+                        },
+                        {
+                          size: "XL",
+                          bust: "40-42",
+                          waist: "32-34",
+                          hips: "42-44",
+                        },
+                        {
+                          size: "XXL",
+                          bust: "42-44",
+                          waist: "34-36",
+                          hips: "44-46",
+                        },
+                      ].map((row, index) => (
+                        <tr
+                          key={row.size}
+                          className={`hover:bg-gray-50 ${variant.size === row.size ? "bg-primary/20" : ""}`}
+                        >
+                          <td className="py-3 px-4 font-medium border-r">
+                            <div className="flex items-center gap-2">
+                              {row.size}
+                              {variant.size === row.size && (
+                                <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                              )}
+                            </div>
+                          </td>
+                          <td className="py-3 px-4 text-center border-r">
+                            {row.bust}
+                          </td>
+                          <td className="py-3 px-4 text-center border-r">
+                            {row.waist}
+                          </td>
+                          <td className="py-3 px-4 text-center">{row.hips}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                {/* Current Size Indicator */}
+                <div className="mt-4 p-3 bg-primary/10 rounded-lg border border-primary">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 bg-primary rounded-full"></div>
+                    <p className="text-[16px] text-gray-700">
+                      Your selected size:{" "}
+                      <span className="font-bold text-primary">
+                        {variant.size}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+
+                {/* Help Note */}
+                <div className="mt-4 p-3 bg-primary rounded-lg border border-amber-100">
+                  <p className="text-sm text-white">
+                    <span className="font-medium">Note:</span> Measurements are
+                    approximate. For custom sizing or assistance,
+                    <Link
+                      href="/contact-us"
+                      className="ml-1 text-white font-medium underline"
+                    >
+                      contact support
+                    </Link>
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="sticky bottom-0 bg-white border-t p-4">
-              <button
+            {/* Modal Footer */}
+            <div className="p-4 border-t">
+              <ButtonLoading
+                type="button"
+                text="Close"
+                className="w-full rounded-full py-6 text-md cursor-pointer"
                 onClick={() => setIsSizeChartOpen(false)}
-                className="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary-hover transition-colors"
-              >
-                Close
-              </button>
+              />
             </div>
           </div>
         </div>
