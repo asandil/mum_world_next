@@ -28,6 +28,7 @@ import { showToast } from "@/lib/showToast";
 import { Button } from "@/components/ui/button";
 import loadingSvg from "@/assets/images/loading.svg";
 import ProductReview from "@/components/Application/website/ProductReview";
+import { FaShippingFast } from "react-icons/fa";
 
 const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
   // console.log("product",product)
@@ -45,6 +46,8 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
 
   const [isProductLoading, setIsProductLoading] = useState(false);
 
+  const [isSizeChartOpen, setIsSizeChartOpen] = useState(false);
+
   useEffect(() => {
     setActiveThumb(variant?.media?.[0]?.secure_url);
   }, [variant]);
@@ -54,7 +57,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
       const existingProduct = cartStore.products.findIndex(
         (cartProduct) =>
           cartProduct.productId === product._id &&
-          cartProduct.variantId === variant._id
+          cartProduct.variantId === variant._id,
       );
       if (existingProduct >= 0) {
         setIsAddedIntoCart(true);
@@ -115,7 +118,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
             <div key={i} className="flex items-start ml-4 my-1">
               <span className="mr-2">•</span>
               <span>{lines[i].trim().substring(1).trim()}</span>
-            </div>
+            </div>,
           );
           i++;
         }
@@ -128,7 +131,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
         result.push(
           <div key={i} className="my-2">
             <strong>{line.substring(2, line.length - 2)}</strong>
-          </div>
+          </div>,
         );
         i++;
         continue;
@@ -139,7 +142,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
         result.push(
           <div key={i} className="my-2">
             <strong>{line.substring(2)}</strong>
-          </div>
+          </div>,
         );
         i++;
         continue;
@@ -176,7 +179,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
           // If it's a table row with pipes, add it
           if (currentLine.includes("|") && currentLine.split("|").length > 2) {
             tableData.push(
-              currentLine.split("|").filter((cell) => cell.trim() !== "")
+              currentLine.split("|").filter((cell) => cell.trim() !== ""),
             );
             i++;
           }
@@ -234,7 +237,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
                   ))}
                 </tbody>
               </table>
-            </div>
+            </div>,
           );
         }
         continue;
@@ -316,7 +319,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
                   ))}
                 </tbody>
               </table>
-            </div>
+            </div>,
           );
         }
         continue;
@@ -332,7 +335,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
           result.push(
             <div key={`extra-size-${i}`} className="my-2 text-sm">
               <strong>{parts[0]}:</strong> Bust: {parts[1]}, Waist: {parts[2]}
-            </div>
+            </div>,
           );
         }
         i++;
@@ -360,7 +363,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
         result.push(
           <div key={i} className="my-1">
             {lines[i]}
-          </div>
+          </div>,
         );
       }
 
@@ -440,7 +443,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
 
         <div className="md:w-1/2 md:mt-0 mt-5 relative">
           {/* Name Section */}
-          <h1 className="text-3xl font-semibold mb-2">{product.name} test</h1>
+          <h1 className="text-3xl font-semibold mb-2">{product.name}</h1>
 
           {/* Review Section */}
           <div className="flex items-center gap-1 mb-5">
@@ -488,7 +491,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
               {colors.map((color) => (
                 <Link
                   href={`${WEBSITE_PRODUCT_DETAILS(
-                    product.slug
+                    product.slug,
                   )}?color=${color}&size=${variant.size}`}
                   key={color}
                   onClick={() => setIsProductLoading(true)}
@@ -536,6 +539,26 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
                   {size}
                 </Link>
               ))}
+            </div>
+            <button
+              type="button"
+              onClick={() => setIsSizeChartOpen(true)}
+              className="mt-4 text-primary font-medium underline hover:no-underline cursor-pointer"
+            >
+              Size Guide
+            </button>
+            <p>Shop with confidence</p>
+            <div className=" mt-4 md:mt-8 p-6 bg-primary/20 rounded-lg">
+              <div className="flex items-center gap-3 mb-2">
+                <FaShippingFast className="text-primary" size={24} />
+                <h3 className="font-bold text-lg">
+                  Free Shipping & Easy Returns
+                </h3>
+              </div>
+              <p className="text-gray-600">
+                Enjoy free shipping on all orders above ₹599 and 10-day easy
+                returns on all products.
+              </p>
             </div>
           </div>
 
@@ -604,6 +627,177 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
       </div>
 
       <ProductReview productId={product._id} />
+
+      {/* Size Chart Modal */}
+      {isSizeChartOpen && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="sticky top-0 bg-white border-b p-4 flex justify-between items-center">
+              <h3 className="text-xl font-bold">Size Chart</h3>
+              <button
+                onClick={() => setIsSizeChartOpen(false)}
+                className="text-gray-500 hover:text-gray-700 text-2xl"
+              >
+                &times;
+              </button>
+            </div>
+
+            <div className="p-6">
+              <div className="mb-6">
+                <h4 className="font-semibold text-lg mb-3">How to Measure:</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>
+                      <strong>Bust:</strong> Measure around the fullest part of
+                      your bust
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>
+                      <strong>Waist:</strong> Measure around your natural
+                      waistline
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>
+                      <strong>Hips:</strong> Measure around the fullest part of
+                      your hips
+                    </span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Size Table */}
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse border border-gray-300">
+                  <thead>
+                    <tr className="bg-gray-50">
+                      <th className="border border-gray-300 px-4 py-3 font-semibold">
+                        Size
+                      </th>
+                      <th className="border border-gray-300 px-4 py-3 font-semibold">
+                        Bust (inches)
+                      </th>
+                      <th className="border border-gray-300 px-4 py-3 font-semibold">
+                        Waist (inches)
+                      </th>
+                      <th className="border border-gray-300 px-4 py-3 font-semibold">
+                        Hips (inches)
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        XS
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        32-34
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        24-26
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        34-36
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        S
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        34-36
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        26-28
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        36-38
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        M
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        36-38
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        28-30
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        38-40
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        L
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        38-40
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        30-32
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        40-42
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        XL
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        40-42
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        32-34
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        42-44
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        XXL
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        42-44
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        34-36
+                      </td>
+                      <td className="border border-gray-300 px-4 py-3 text-center">
+                        44-46
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+                <p className="text-sm text-gray-600">
+                  <strong>Note:</strong> All measurements are in inches. Sizes
+                  may vary slightly depending on fabric and style. For
+                  personalized assistance, contact our customer support.
+                </p>
+              </div>
+            </div>
+
+            <div className="sticky bottom-0 bg-white border-t p-4">
+              <button
+                onClick={() => setIsSizeChartOpen(false)}
+                className="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary-hover transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
