@@ -5,6 +5,7 @@ import { WEBSITE_SHOP } from "@/routes/WebsiteRoute";
 import { FaHeart, FaShieldAlt, FaLeaf, FaHandsHelping } from "react-icons/fa";
 import { GiFamilyHouse } from "react-icons/gi";
 import { BsStars } from "react-icons/bs";
+import { FaBagShopping } from "react-icons/fa6";
 
 const AboutSection = () => {
   const values = [
@@ -80,16 +81,17 @@ const AboutSection = () => {
                 nurturing products that make every stage of motherhood more
                 comfortable and joyful.
               </p>
-              <div className="flex gap-4">
+              <div className="flex gap-4 flex-col sm:flex-row ">
                 <Link
                   href={WEBSITE_SHOP}
-                  className="bg-primary text-white px-4 sm:px-8 py-3 rounded-lg font-semibold hover:bg-primary-hover transition-colors"
+                  className="bg-primary text-white px-4 py-2 rounded-lg font-semibold hover:bg-primary-hover transition-colors flex gap-2 justify-center items-center"
                 >
-                  Shop Our Products
+                  <FaBagShopping size={28} />
+                  <span>Shop Our Products</span>
                 </Link>
                 <Link
                   href="#our-story"
-                  className="border-2 border-primary text-primary px-4 sm:px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors"
+                  className="border-2 border-primary text-primary px-4 py-2 flex justify-center rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors"
                 >
                   Our Story
                 </Link>
@@ -204,89 +206,91 @@ const AboutSection = () => {
 
       {/* Timeline */}
       <section className="py-8 md:py-12">
-        <div className="text-center mb-12 md:mb-16">
-          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our Journey
-          </h3>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Milestones in our mission to support mothers
-          </p>
-        </div>
+        <div className="mx-auto px-4 lg:px-32">
+          <div className="text-center mb-12 md:mb-16">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Journey
+            </h3>
+            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Milestones in our mission to support mothers
+            </p>
+          </div>
 
-        <div className="relative max-w-4xl mx-auto">
-          {/* Progress Bar Background */}
-          <div className="hidden lg:block absolute left-8 top-0 h-full w-1 bg-gray-200 rounded-full"></div>
+          <div className="relative max-w-4xl mx-auto">
+            {/* Progress Bar Background */}
+            <div className="hidden lg:block absolute left-8 top-0 h-full w-1 bg-gray-200 rounded-full"></div>
 
-          <div className="space-y-12">
-            {milestones.map((milestone, index) => {
-              const progress = ((index + 1) / milestones.length) * 100;
+            <div className="space-y-12">
+              {milestones.map((milestone, index) => {
+                const progress = ((index + 1) / milestones.length) * 100;
 
-              return (
-                <div key={index} className="relative">
-                  {/* Progress Fill */}
-                  <div
-                    className="hidden lg:block absolute left-8 top-0 w-1 bg-primary rounded-full"
-                    style={{ height: `${progress}%` }}
-                  ></div>
+                return (
+                  <div key={index} className="relative">
+                    {/* Progress Fill */}
+                    <div
+                      className="hidden lg:block absolute left-8 top-0 w-1 bg-primary rounded-full"
+                      style={{ height: `${progress}%` }}
+                    ></div>
 
-                  <div className="flex items-start">
-                    {/* Timeline Node */}
-                    <div className="hidden lg:flex relative z-10 mr-8">
-                      <div className="w-16 h-16 rounded-full bg-white border-4 border-primary shadow-lg flex items-center justify-center">
-                        <div className="text-primary font-bold text-lg">
+                    <div className="flex items-start">
+                      {/* Timeline Node */}
+                      <div className="hidden lg:flex relative z-10 mr-8">
+                        <div className="w-16 h-16 rounded-full bg-white border-4 border-primary shadow-lg flex items-center justify-center">
+                          <div className="text-primary font-bold text-lg">
+                            {milestone.year}
+                          </div>
+                        </div>
+                        {/* Outer glow */}
+                        <div className="absolute inset-0 w-20 h-20 border-4 border-primary/10 rounded-full animate-pulse"></div>
+                      </div>
+
+                      {/* Mobile Year */}
+                      <div className="lg:hidden mr-4">
+                        <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">
                           {milestone.year}
                         </div>
                       </div>
-                      {/* Outer glow */}
-                      <div className="absolute inset-0 w-20 h-20 border-4 border-primary/10 rounded-full animate-pulse"></div>
-                    </div>
 
-                    {/* Mobile Year */}
-                    <div className="lg:hidden mr-4">
-                      <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">
-                        {milestone.year}
-                      </div>
-                    </div>
-
-                    {/* Content Card */}
-                    <div className="flex-1">
-                      <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                        <div className="flex items-center gap-4 mb-4">
-                          <div className="p-3 bg-primary/10 rounded-xl">
-                            <BsStars className="text-primary" size={24} />
-                          </div>
-                          <div>
-                            <h4 className="text-xl md:text-2xl font-bold text-gray-900">
-                              {milestone.title}
-                            </h4>
-                            <div className="lg:hidden text-primary font-semibold mt-1">
-                              {milestone.year}
+                      {/* Content Card */}
+                      <div className="flex-1">
+                        <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                          <div className="flex items-center gap-4 mb-4">
+                            <div className="p-3 bg-primary/10 rounded-xl">
+                              <BsStars className="text-primary" size={24} />
+                            </div>
+                            <div>
+                              <h4 className="text-xl md:text-2xl font-bold text-gray-900">
+                                {milestone.title}
+                              </h4>
+                              <div className="lg:hidden text-primary font-semibold mt-1">
+                                {milestone.year}
+                              </div>
                             </div>
                           </div>
-                        </div>
-                        <p className="text-gray-600 leading-relaxed">
-                          {milestone.description}
-                        </p>
+                          <p className="text-gray-600 leading-relaxed">
+                            {milestone.description}
+                          </p>
 
-                        {/* Progress indicator for mobile */}
-                        <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between">
-                          <span className="text-sm text-gray-500">
-                            Milestone {index + 1} of {milestones.length}
-                          </span>
-                          <div className="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-primary rounded-full"
-                              style={{ width: `${progress}%` }}
-                            ></div>
+                          {/* Progress indicator for mobile */}
+                          <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between">
+                            <span className="text-sm text-gray-500">
+                              Milestone {index + 1} of {milestones.length}
+                            </span>
+                            <div className="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                              <div
+                                className="h-full bg-primary rounded-full"
+                                style={{ width: `${progress}%` }}
+                              ></div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
@@ -359,9 +363,10 @@ const AboutSection = () => {
               <div className="mt-4 md:mt-8 flex gap-4">
                 <Link
                   href={WEBSITE_SHOP}
-                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
                 >
-                  Shop Now
+                  <FaBagShopping size={28} />
+                  <span>Shop Now</span>
                 </Link>
               </div>
             </div>
