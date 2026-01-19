@@ -29,14 +29,15 @@ const ShowOrder = () => {
     actionMenu.push(
       <ViewAction key="view" href={ADMIN_ORDER_DETAILS(row.original.order_id)} />
     );
-    actionMenu.push(
-      <DeleteAction
-        key="delete"
-        handleDelete={handleDelete}
-        row={row}
-        deleteType={deleteType}
-      />
-    );
+    // We remove the functionality of delete from Order list
+    // actionMenu.push(
+    //   <DeleteAction
+    //     key="delete"
+    //     handleDelete={handleDelete}
+    //     row={row}
+    //     deleteType={deleteType}
+    //   />
+    // );
     return actionMenu;
   }, []);
 
