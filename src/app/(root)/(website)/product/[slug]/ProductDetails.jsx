@@ -30,7 +30,6 @@ import loadingSvg from "@/assets/images/loading.svg";
 import ProductReview from "@/components/Application/website/ProductReview";
 import { FaShippingFast } from "react-icons/fa";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import chartLogo from "@/assets/images/SizeChart.png";
 
 const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
   // console.log("product",product)
@@ -658,7 +657,12 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
             {/* Modal Header */}
             <div className="flex items-center justify-between p-4 border-b relative">
               <div className="flex ml-[-8px]">
-                <Image src={chartLogo} height={40} width={40} alt="" />
+                <Image
+                  src="https://res.cloudinary.com/dc0wr8hev/image/upload/v1768831068/wgbmmecdy7p8dwy6txjo.png"
+                  height={40}
+                  width={40}
+                  alt=""
+                />
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
                     Size Guide
