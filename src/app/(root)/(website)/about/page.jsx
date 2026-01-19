@@ -84,14 +84,14 @@ const AboutSection = () => {
               <div className="flex gap-4 flex-col sm:flex-row ">
                 <Link
                   href={WEBSITE_SHOP}
-                  className="bg-primary text-white px-4 py-2 rounded-lg font-semibold hover:bg-primary-hover transition-colors flex gap-2 justify-center items-center"
+                  className="bg-primary text-white px-4 py-3 rounded-lg font-semibold hover:bg-primary-hover transition-colors flex gap-2 justify-center items-center"
                 >
                   <FaBagShopping size={28} />
                   <span>Shop Our Products</span>
                 </Link>
                 <Link
                   href="#our-story"
-                  className="border-2 border-primary text-primary px-4 py-2 flex justify-center rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors"
+                  className="border-2 border-primary text-primary px-4 py-3 flex justify-center rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors"
                 >
                   Our Story
                 </Link>
@@ -108,6 +108,17 @@ const AboutSection = () => {
                   priority
                 />
               </div>
+              <Link
+                href={WEBSITE_SHOP}
+                className="bg-primary text-white px-2 py-2 sm:px-4 sm:py-3 rounded-lg font-semibold hover:bg-primary-hover transition-colors flex gap-2 justify-center items-center absolute bottom-[10%] left-[2%] sm:bottom-[20%] sm:left-[13%]"
+              >
+                <FaBagShopping size={28} />
+                <p className="flex gap-1.5">
+                  <span>Shop</span>
+                  <span className="sm:block hidden">Our Products</span>
+                </p>
+              </Link>
+
               <div className="absolute -bottom-6 right-2 lg:-right-6 bg-white p-3 md:p-6 rounded-xl shadow-lg max-w-xs">
                 <div className="flex items-center gap-3 mb-2">
                   <GiFamilyHouse className="text-primary" size={24} />
@@ -363,7 +374,7 @@ const AboutSection = () => {
               <div className="mt-4 md:mt-8 flex gap-4">
                 <Link
                   href={WEBSITE_SHOP}
-                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-white px-4 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors"
                 >
                   <FaBagShopping size={28} />
                   <span>Shop Now</span>
