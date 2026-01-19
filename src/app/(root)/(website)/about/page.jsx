@@ -2,13 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { WEBSITE_SHOP } from "@/routes/WebsiteRoute";
-import {
-  FaHeart,
-  FaShieldAlt,
-  FaShippingFast,
-  FaLeaf,
-  FaHandsHelping,
-} from "react-icons/fa";
+import { FaHeart, FaShieldAlt, FaLeaf, FaHandsHelping } from "react-icons/fa";
 import { GiFamilyHouse } from "react-icons/gi";
 import { BsStars } from "react-icons/bs";
 
@@ -102,16 +96,15 @@ const AboutSection = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-full h-[280px] sm:h-[400px] md:h-[450px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                 <Image
-                  // src={aboutHero}
                   src="https://res.cloudinary.com/dc0wr8hev/image/upload/v1768815502/d1uunlhyjptwpvd5bosg.png"
                   alt="Happy mother with baby"
                   fill
                   className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 50vw"
+                  priority
                 />
-                {/* <MainSlider/> */}
               </div>
               <div className="absolute -bottom-6 right-2 lg:-right-6 bg-white p-3 md:p-6 rounded-xl shadow-lg max-w-xs">
                 <div className="flex items-center gap-3 mb-2">
@@ -140,13 +133,13 @@ const AboutSection = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center mb-8 md:mb-12">
-            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative w-full h-[280px] sm:h-[400px] md:h-[450px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="https://res.cloudinary.com/dc0wr8hev/image/upload/v1768661774/uvtvdlkp4tgtulfunxmn.png"
                 alt="Mumworld team"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 50vw"
               />
             </div>
             <div>
@@ -176,100 +169,11 @@ const AboutSection = () => {
               </div>
             </div>
           </div>
-
-          {/* Timeline */}
-          <div className="py-8 md:py-12">
-            <div className="text-center mb-12 md:mb-16">
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Our Journey
-              </h3>
-              <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Milestones in our mission to support mothers
-              </p>
-            </div>
-
-            <div className="relative max-w-4xl mx-auto">
-              {/* Progress Bar Background */}
-              <div className="hidden lg:block absolute left-8 top-0 h-full w-1 bg-gray-200 rounded-full"></div>
-
-              <div className="space-y-12">
-                {milestones.map((milestone, index) => {
-                  const progress = ((index + 1) / milestones.length) * 100;
-
-                  return (
-                    <div key={index} className="relative">
-                      {/* Progress Fill */}
-                      <div
-                        className="hidden lg:block absolute left-8 top-0 w-1 bg-primary rounded-full"
-                        style={{ height: `${progress}%` }}
-                      ></div>
-
-                      <div className="flex items-start">
-                        {/* Timeline Node */}
-                        <div className="hidden lg:flex relative z-10 mr-8">
-                          <div className="w-16 h-16 rounded-full bg-white border-4 border-primary shadow-lg flex items-center justify-center">
-                            <div className="text-primary font-bold text-lg">
-                              {milestone.year}
-                            </div>
-                          </div>
-                          {/* Outer glow */}
-                          <div className="absolute inset-0 w-20 h-20 border-4 border-primary/10 rounded-full animate-pulse"></div>
-                        </div>
-
-                        {/* Mobile Year */}
-                        <div className="lg:hidden mr-4">
-                          <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">
-                            {milestone.year}
-                          </div>
-                        </div>
-
-                        {/* Content Card */}
-                        <div className="flex-1">
-                          <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                            <div className="flex items-center gap-4 mb-4">
-                              <div className="p-3 bg-primary/10 rounded-xl">
-                                <BsStars className="text-primary" size={24} />
-                              </div>
-                              <div>
-                                <h4 className="text-xl md:text-2xl font-bold text-gray-900">
-                                  {milestone.title}
-                                </h4>
-                                <div className="lg:hidden text-primary font-semibold mt-1">
-                                  {milestone.year}
-                                </div>
-                              </div>
-                            </div>
-                            <p className="text-gray-600 leading-relaxed">
-                              {milestone.description}
-                            </p>
-
-                            {/* Progress indicator for mobile */}
-                            <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between">
-                              <span className="text-sm text-gray-500">
-                                Milestone {index + 1} of {milestones.length}
-                              </span>
-                              <div className="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
-                                <div
-                                  className="h-full bg-primary rounded-full"
-                                  style={{ width: `${progress}%` }}
-                                ></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Our Values */}
-      <section className="py-8 md:py-12 bg-gray-50">
+      <section className="py-8 md:py-12 bg-primary/10">
         <div className=" mx-auto px-4 lg:px-32">
           <div className="text-center mb-5 md:mb-10">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -298,47 +202,91 @@ const AboutSection = () => {
         </div>
       </section>
 
-      {/* Quality Promise */}
+      {/* Timeline */}
       <section className="py-8 md:py-12">
-        <div className=" mx-auto px-4 lg:px-32">
-          <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
-            <div>
-              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3 md:mb-6">
-                Our Quality Promise
-              </h2>
-              <p className="text-gray-600 mb-3 md:mb-6">
-                We understand that when it comes to mothers and babies, there's
-                no room for compromise. That's why every product at Mumworld
-                goes through a rigorous 5-step quality check:
-              </p>
-              <ul className=" space-y-2 md:space-y-4">
-                {[
-                  "Material Safety Testing",
-                  "Ingredient Transparency",
-                  "Performance Evaluation",
-                  "Mother Feedback Integration",
-                  "Continuous Improvement",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className=" mt-4 md:mt-8 p-6 bg-primary/20 rounded-lg">
-                <div className="flex items-center gap-3 mb-2">
-                  <FaShippingFast className="text-primary" size={24} />
-                  <h3 className="font-bold text-lg">
-                    Free Shipping & Easy Returns
-                  </h3>
+        <div className="text-center mb-12 md:mb-16">
+          <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our Journey
+          </h3>
+          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Milestones in our mission to support mothers
+          </p>
+        </div>
+
+        <div className="relative max-w-4xl mx-auto">
+          {/* Progress Bar Background */}
+          <div className="hidden lg:block absolute left-8 top-0 h-full w-1 bg-gray-200 rounded-full"></div>
+
+          <div className="space-y-12">
+            {milestones.map((milestone, index) => {
+              const progress = ((index + 1) / milestones.length) * 100;
+
+              return (
+                <div key={index} className="relative">
+                  {/* Progress Fill */}
+                  <div
+                    className="hidden lg:block absolute left-8 top-0 w-1 bg-primary rounded-full"
+                    style={{ height: `${progress}%` }}
+                  ></div>
+
+                  <div className="flex items-start">
+                    {/* Timeline Node */}
+                    <div className="hidden lg:flex relative z-10 mr-8">
+                      <div className="w-16 h-16 rounded-full bg-white border-4 border-primary shadow-lg flex items-center justify-center">
+                        <div className="text-primary font-bold text-lg">
+                          {milestone.year}
+                        </div>
+                      </div>
+                      {/* Outer glow */}
+                      <div className="absolute inset-0 w-20 h-20 border-4 border-primary/10 rounded-full animate-pulse"></div>
+                    </div>
+
+                    {/* Mobile Year */}
+                    <div className="lg:hidden mr-4">
+                      <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">
+                        {milestone.year}
+                      </div>
+                    </div>
+
+                    {/* Content Card */}
+                    <div className="flex-1">
+                      <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                        <div className="flex items-center gap-4 mb-4">
+                          <div className="p-3 bg-primary/10 rounded-xl">
+                            <BsStars className="text-primary" size={24} />
+                          </div>
+                          <div>
+                            <h4 className="text-xl md:text-2xl font-bold text-gray-900">
+                              {milestone.title}
+                            </h4>
+                            <div className="lg:hidden text-primary font-semibold mt-1">
+                              {milestone.year}
+                            </div>
+                          </div>
+                        </div>
+                        <p className="text-gray-600 leading-relaxed">
+                          {milestone.description}
+                        </p>
+
+                        {/* Progress indicator for mobile */}
+                        <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between">
+                          <span className="text-sm text-gray-500">
+                            Milestone {index + 1} of {milestones.length}
+                          </span>
+                          <div className="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
+                            <div
+                              className="h-full bg-primary rounded-full"
+                              style={{ width: `${progress}%` }}
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <p className="text-gray-600">
-                  Enjoy free shipping on all orders above ₹599 and 10-day easy
-                  returns on all products.
-                </p>
-              </div>
-            </div>
-            <div className="bg-[url(https://res.cloudinary.com/dc0wr8hev/image/upload/v1768661774/vodzu2lloittcqvyhwh9.png)] bg-no-repeat bg-cover relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"></div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -347,13 +295,13 @@ const AboutSection = () => {
       <section className="py-8 md:py-12 bg-gradient-to-br from-primary/10 to-primary/10">
         <div className=" mx-auto px-4 lg:px-32">
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
-            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-full h-[280px] sm:h-[400px] md:h-[450px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="https://res.cloudinary.com/dc0wr8hev/image/upload/v1768661774/wm7gphs1potrx3ie6pmx.png"
                 alt="Mumworld community"
                 fill
                 className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, 50vw"
               />
             </div>
             <div>
