@@ -216,91 +216,98 @@ const AboutSection = () => {
       </section>
 
       {/* Timeline */}
+
       <section className="py-8 md:py-12">
         <div className="mx-auto px-4 lg:px-32">
-          <div className="text-center mb-12 md:mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <div className="text-center">
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
               Our Journey
             </h3>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <div className="w-20 h-1 bg-primary mx-auto mb-3"></div>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-2 md:mb-0">
               Milestones in our mission to support mothers
             </p>
           </div>
 
-          <div className="relative max-w-4xl mx-auto">
-            {/* Progress Bar Background */}
-            <div className="hidden lg:block absolute left-8 top-0 h-full w-1 bg-gray-200 rounded-full"></div>
+          <div className="relative">
+            {/* Desktop: Horizontal Timeline */}
+            <div className="hidden md:block">
+              {/* Progress Line */}
+              <div className="absolute top-6 left-0 right-0 h-1 bg-gray-200"></div>
 
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => {
-                const progress = ((index + 1) / milestones.length) * 100;
-
-                return (
-                  <div key={index} className="relative">
-                    {/* Progress Fill */}
-                    <div
-                      className="hidden lg:block absolute left-8 top-0 w-1 bg-primary rounded-full"
-                      style={{ height: `${progress}%` }}
-                    ></div>
-
-                    <div className="flex items-start">
-                      {/* Timeline Node */}
-                      <div className="hidden lg:flex relative z-10 mr-8">
-                        <div className="w-16 h-16 rounded-full bg-white border-4 border-primary shadow-lg flex items-center justify-center">
-                          <div className="text-primary font-bold text-lg">
-                            {milestone.year}
-                          </div>
+              <div className="relative grid grid-cols-5 gap-8 pt-10">
+                {milestones.map((milestone, index) => (
+                  <div key={index} className="relative group">
+                    {/* Node on Progress Line */}
+                    <div className="absolute -top-5 left-1/2 -translate-x-1/2">
+                      <div className="w-12 h-12 rounded-full bg-white border-4 border-primary shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <div className="text-primary font-bold">
+                          {milestone.year}
                         </div>
-                        {/* Outer glow */}
-                        <div className="absolute inset-0 w-20 h-20 border-4 border-primary/10 rounded-full animate-pulse"></div>
                       </div>
+                    </div>
 
-                      {/* Mobile Year */}
-                      <div className="lg:hidden mr-4">
-                        <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">
+                    {/* Content Card */}
+                    <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                      <div className="text-center mb-4">
+                        <div className="p-3 bg-primary/10 rounded-xl inline-block mb-3">
+                          <BsStars className="text-primary" size={20} />
+                        </div>
+                        <h4 className="font-bold text-gray-900 mb-2">
+                          {milestone.title}
+                        </h4>
+                        <p className="text-gray-600 text-sm">
+                          {milestone.description}
+                        </p>
+                      </div>
+                      <div className="text-center text-xs text-gray-500">
+                        Step {index + 1}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile/Tablet: Vertical Timeline */}
+            <div className="md:hidden">
+              <div className="relative pl-10">
+                {/* Vertical Line */}
+                <div className="absolute left-5 top-0 bottom-0 w-1 bg-gray-200"></div>
+
+                <div className="space-y-12">
+                  {milestones.map((milestone, index) => (
+                    <div key={index} className="relative">
+                      {/* Node */}
+                      <div className="absolute -left-10 top-0">
+                        <div className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">
                           {milestone.year}
                         </div>
                       </div>
 
                       {/* Content Card */}
-                      <div className="flex-1">
-                        <div className="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                          <div className="flex items-center gap-4 mb-4">
-                            <div className="p-3 bg-primary/10 rounded-xl">
-                              <BsStars className="text-primary" size={24} />
-                            </div>
-                            <div>
-                              <h4 className="text-xl md:text-2xl font-bold text-gray-900">
-                                {milestone.title}
-                              </h4>
-                              <div className="lg:hidden text-primary font-semibold mt-1">
-                                {milestone.year}
-                              </div>
-                            </div>
+                      <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
+                        <div className="flex items-start gap-4">
+                          <div className="p-3 bg-primary/10 rounded-xl">
+                            <BsStars className="text-primary" size={20} />
                           </div>
-                          <p className="text-gray-600 leading-relaxed">
-                            {milestone.description}
-                          </p>
-
-                          {/* Progress indicator for mobile */}
-                          <div className="mt-6 pt-6 border-t border-gray-100 flex items-center justify-between">
-                            <span className="text-sm text-gray-500">
-                              Milestone {index + 1} of {milestones.length}
-                            </span>
-                            <div className="w-24 h-2 bg-gray-200 rounded-full overflow-hidden">
-                              <div
-                                className="h-full bg-primary rounded-full"
-                                style={{ width: `${progress}%` }}
-                              ></div>
-                            </div>
+                          <div>
+                            <h4 className="font-bold text-gray-900 mb-2">
+                              {milestone.title}
+                            </h4>
+                            <p className="text-gray-600 text-sm">
+                              {milestone.description}
+                            </p>
                           </div>
+                        </div>
+                        <div className="mt-4 text-xs text-gray-500">
+                          Milestone {index + 1} of {milestones.length}
                         </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
