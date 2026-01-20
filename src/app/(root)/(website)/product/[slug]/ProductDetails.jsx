@@ -102,191 +102,191 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
     console.log("Add to cart product:", cartProduct);
   };
 
-const parseProductDescription = (description) => {
-  const decoded = decodeHTML(description);
-  const lines = decoded.split("\n");
-  const result = [];
-  let i = 0;
+  const parseProductDescription = (description) => {
+    const decoded = decodeHTML(description);
+    const lines = decoded.split("\n");
+    const result = [];
+    let i = 0;
 
-  while (i < lines.length) {
-    let line = lines[i].trim();
+    while (i < lines.length) {
+      let line = lines[i].trim();
 
-    // Handle bullet points with potential bold text inside
-    if (line.startsWith("•")) {
-      const bulletPoints = [];
-      while (i < lines.length && lines[i].trim().startsWith("•")) {
-        let bulletText = lines[i].trim().substring(1).trim();
-        
-        // Check if bullet text contains bold markers
-        if (bulletText.includes("**")) {
-          // Extract bold parts and regular text
-          const parts = [];
-          let currentPart = "";
-          let isBold = false;
-          let j = 0;
-          
-          while (j < bulletText.length) {
-            if (bulletText.substr(j, 2) === "**") {
-              // Push current part
-             if (currentPart) {
-                parts.push({
-                  text: currentPart,
-                  isBold: isBold
-                });
-                currentPart = "";
+      // Handle bullet points with potential bold text inside
+      if (line.startsWith("•")) {
+        const bulletPoints = [];
+        while (i < lines.length && lines[i].trim().startsWith("•")) {
+          let bulletText = lines[i].trim().substring(1).trim();
+
+          // Check if bullet text contains bold markers
+          if (bulletText.includes("**")) {
+            // Extract bold parts and regular text
+            const parts = [];
+            let currentPart = "";
+            let isBold = false;
+            let j = 0;
+
+            while (j < bulletText.length) {
+              if (bulletText.substr(j, 2) === "**") {
+                // Push current part
+                if (currentPart) {
+                  parts.push({
+                    text: currentPart,
+                    isBold: isBold,
+                  });
+                  currentPart = "";
+                }
+                isBold = !isBold;
+                j += 2;
+              } else {
+                currentPart += bulletText[j];
+                j++;
               }
-              isBold = !isBold;
-              j += 2;
-            } else {
-              currentPart += bulletText[j];
-              j++;
             }
+
+            // Push last part
+            if (currentPart) {
+              parts.push({
+                text: currentPart,
+                isBold: isBold,
+              });
+            }
+
+            // Render bullet point with bold text
+            bulletPoints.push(
+              <div key={i} className="flex items-start ml-4 my-1">
+                <span className="mr-2">•</span>
+                <span>
+                  {parts.map((part, idx) =>
+                    part.isBold ? (
+                      <strong key={idx}>{part.text}</strong>
+                    ) : (
+                      part.text
+                    ),
+                  )}
+                </span>
+              </div>,
+            );
+          } else {
+            // Regular bullet point without bold
+            bulletPoints.push(
+              <div key={i} className="flex items-start ml-4 my-1">
+                <span className="mr-2">•</span>
+                <span>{bulletText}</span>
+              </div>,
+            );
           }
-          
-          // Push last part
-          if (currentPart) {
-            parts.push({
-              text: currentPart,
-              isBold: isBold
-            });
-          }
-          
-          // Render bullet point with bold text
-          bulletPoints.push(
-            <div key={i} className="flex items-start ml-4 my-1">
-              <span className="mr-2">•</span>
-              <span>
-                {parts.map((part, idx) => 
-                  part.isBold ? 
-                    <strong key={idx}>{part.text}</strong> : 
-                    part.text
-                )}
-              </span>
+          i++;
+        }
+        result.push(...bulletPoints);
+        continue;
+      }
+
+      // Handle standalone bold text (for lines without bullet points)
+      // This pattern matches lines that start and end with **
+      if (line.startsWith("**") && line.endsWith("**")) {
+        const boldText = line.substring(2, line.length - 2);
+        result.push(
+          <div key={i} className="my-2">
+            <strong>{boldText}</strong>
+          </div>,
+        );
+        i++;
+        continue;
+      }
+
+      // Handle bold text at the beginning of a line
+      if (line.startsWith("**")) {
+        // Look for the closing **
+        const endBoldIndex = line.indexOf("**", 2);
+        if (endBoldIndex !== -1) {
+          const boldText = line.substring(2, endBoldIndex);
+          const remainingText = line.substring(endBoldIndex + 2).trim();
+
+          result.push(
+            <div key={i} className="my-2">
+              <strong>{boldText}</strong>
+              {remainingText && <span> {remainingText}</span>}
             </div>,
           );
         } else {
-          // Regular bullet point without bold
-          bulletPoints.push(
-            <div key={i} className="flex items-start ml-4 my-1">
-              <span className="mr-2">•</span>
-              <span>{bulletText}</span>
+          // No closing ** found, treat entire line as bold
+          result.push(
+            <div key={i} className="my-2">
+              <strong>{line.substring(2)}</strong>
             </div>,
           );
         }
         i++;
+        continue;
       }
-      result.push(...bulletPoints);
-      continue;
-    }
 
-    // Handle standalone bold text (for lines without bullet points)
-    // This pattern matches lines that start and end with **
-    if (line.startsWith("**") && line.endsWith("**")) {
-      const boldText = line.substring(2, line.length - 2);
-      result.push(
-        <div key={i} className="my-2">
-          <strong>{boldText}</strong>
-        </div>,
-      );
-      i++;
-      continue;
-    }
+      // Skip separator lines and empty lines
+      const cleanLine = line.replace(/\||\s+/g, "");
+      if (
+        cleanLine.includes("---") ||
+        cleanLine.includes("___") ||
+        line === "" ||
+        line === "|" ||
+        line === "| |"
+      ) {
+        i++;
+        continue;
+      }
 
-    // Handle bold text at the beginning of a line
-    if (line.startsWith("**")) {
-      // Look for the closing **
-      const endBoldIndex = line.indexOf("**", 2);
-      if (endBoldIndex !== -1) {
-        const boldText = line.substring(2, endBoldIndex);
-        const remainingText = line.substring(endBoldIndex + 2).trim();
-        
+      // Regular text - check if it contains bold markers
+      if (line.includes("**")) {
+        const parts = [];
+        let currentPart = "";
+        let isBold = false;
+        let j = 0;
+
+        while (j < line.length) {
+          if (line.substr(j, 2) === "**") {
+            // Push current part
+            if (currentPart) {
+              parts.push({
+                text: currentPart,
+                isBold: isBold,
+              });
+              currentPart = "";
+            }
+            isBold = !isBold;
+            j += 2;
+          } else {
+            currentPart += line[j];
+            j++;
+          }
+        }
+
+        // Push last part
+        if (currentPart) {
+          parts.push({
+            text: currentPart,
+            isBold: isBold,
+          });
+        }
+
         result.push(
-          <div key={i} className="my-2">
-            <strong>{boldText}</strong>
-            {remainingText && <span> {remainingText}</span>}
+          <div key={i} className="my-1">
+            {parts.map((part, idx) =>
+              part.isBold ? <strong key={idx}>{part.text}</strong> : part.text,
+            )}
           </div>,
         );
       } else {
-        // No closing ** found, treat entire line as bold
+        // Plain text without any formatting
         result.push(
-          <div key={i} className="my-2">
-            <strong>{line.substring(2)}</strong>
+          <div key={i} className="my-1">
+            {line}
           </div>,
         );
       }
+
       i++;
-      continue;
     }
 
-    // Skip separator lines and empty lines
-    const cleanLine = line.replace(/\||\s+/g, "");
-    if (
-      cleanLine.includes("---") ||
-      cleanLine.includes("___") ||
-      line === "" ||
-      line === "|" ||
-      line === "| |"
-    ) {
-      i++;
-      continue;
-    }
-
-    // Regular text - check if it contains bold markers
-    if (line.includes("**")) {
-      const parts = [];
-      let currentPart = "";
-      let isBold = false;
-      let j = 0;
-      
-      while (j < line.length) {
-        if (line.substr(j, 2) === "**") {
-          // Push current part
-          if (currentPart) {
-            parts.push({
-              text: currentPart,
-              isBold: isBold
-            });
-            currentPart = "";
-          }
-          isBold = !isBold;
-          j += 2;
-        } else {
-          currentPart += line[j];
-          j++;
-        }
-      }
-      
-      // Push last part
-      if (currentPart) {
-        parts.push({
-          text: currentPart,
-          isBold: isBold
-        });
-      }
-      
-      result.push(
-        <div key={i} className="my-1">
-          {parts.map((part, idx) => 
-            part.isBold ? 
-              <strong key={idx}>{part.text}</strong> : 
-              part.text
-          )}
-        </div>,
-      );
-    } else {
-      // Plain text without any formatting
-      result.push(
-        <div key={i} className="my-1">
-          {line}
-        </div>,
-      );
-    }
-
-    i++;
-  }
-
-  return result;
-};
+    return result;
+  };
 
   // Don't forget the decodeHTML function
   const decodeHTML = (html) => {
@@ -545,7 +545,7 @@ const parseProductDescription = (description) => {
       <div className="mb-10">
         <div className="shadow rounded border">
           <div className="p-3 bg-gray-50 border-b">
-            <h2 className="font-semibold text-2xl">Product Description</h2>
+            <h2 className="font-semibold text-2xl">Product details</h2>
           </div>
 
           <div className="p-3">
