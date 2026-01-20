@@ -108,7 +108,7 @@ const AboutSection = () => {
                   priority
                 />
               </div>
-              <Link
+              {/* <Link
                 href={WEBSITE_SHOP}
                 className="bg-primary text-white px-2 py-2 sm:px-4 sm:py-3 rounded-lg font-semibold hover:bg-primary-hover transition-colors flex gap-2 justify-center items-center absolute bottom-[10%] left-[2%] sm:bottom-[20%] sm:left-[13%]"
               >
@@ -117,7 +117,7 @@ const AboutSection = () => {
                   <span>Shop</span>
                   <span className="sm:block hidden">Our Products</span>
                 </p>
-              </Link>
+              </Link> */}
 
               <div className="absolute -bottom-6 right-2 lg:-right-6 bg-white p-3 md:p-6 rounded-xl shadow-lg max-w-xs">
                 <div className="flex items-center gap-3 mb-2">

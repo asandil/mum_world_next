@@ -32,16 +32,16 @@ export default function MainHome() {
                 pregnancy tools, baby care advice, and health calculators on
                 MumWorld — your companion for creating healthy beginnings.
               </p>
-              <div className="flex gap-4">
+              <div className="flex sm:flex-row flex-col gap-2 sm:gap-4 sm:justify-start justify-center text-center">
                 <a
                   href="#what-we-do"
-                  className="bg-primary text-white px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-primary-hover transition-colors"
+                  className="bg-primary text-white px-3 sm:px-6 py-3 rounded-lg font-semibold hover:bg-primary-hover transition-colors"
                 >
                   Explore Our Mission
                 </a>
                 <a
                   href="#subscribe"
-                  className="border-2 border-primary text-primary px-6 sm:px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors"
+                  className="border-2 border-primary text-primary px-6 py-3 sm:py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors"
                 >
                   Join Our Community
                 </a>
