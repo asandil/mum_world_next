@@ -10,7 +10,7 @@ export const sizes = [
   { label: "M", value: "M" },
   { label: "L", value: "L" },
   { label: "XL", value: "XL" },
-  { label: "2XL", value: "2XL" },
+  { label: "XXL", value: "XXL" },
 ];
 
 export const sortings = [
