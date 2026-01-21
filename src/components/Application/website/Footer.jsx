@@ -2,9 +2,13 @@ import React from "react";
 import logo from "@/assets/images/footer_logo.svg";
 import Image from "next/image";
 import {
+  USER_DASHBOARD,
+  WEBSITE_ABOUT,
   WEBSITE_HOME,
   WEBSITE_LOGIN,
   WEBSITE_REGISTER,
+  WEBSITE_SHOP,
+  WEBSITE_TERMS_AND_CONDITIONS,
 } from "@/routes/WebsiteRoute";
 import Link from "next/link";
 // import { IoLocationOutline } from "react-icons/io5";
@@ -42,22 +46,22 @@ const Footer = () => {
         </div>
         <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 text-center sm:text-start gap-2 sm:gap-4 xl:gap-10">
           <div>
-            <h4 className="text-[18px] font-bold uppercase mb-2">Categories</h4>
+            <h4 className="text-[18px] font-bold uppercase mb-2">Top Categories</h4>
             <ul>
               <li className=" mb-0 sm:mb-2 text-gray-500">
-                <Link href="">T-shirt</Link>
+                <Link href="">Maternity Co-ord Set with Zip</Link>
               </li>
               <li className="mb-0 sm:mb-2 text-gray-500">
-                <Link href="">Hoodies</Link>
+                <Link href="">Printed Kurta Pant Set</Link>
               </li>
               <li className="mb-0 sm:mb-2 text-gray-500">
-                <Link href="">Oversized</Link>
+                <Link href="">Floral Printed Kurta Pant Set</Link>
               </li>
               <li className="mb-0 md:mb-2 text-gray-500">
-                <Link href="">Full Sleeves</Link>
+                <Link href="">Western Maternity Collection</Link>
               </li>
               <li className="mb-0 md:mb-2 text-gray-500">
-                <Link href="">Polo</Link>
+                <Link href="">Ethnic collection zipless</Link>
               </li>
             </ul>
           </div>
@@ -71,10 +75,10 @@ const Footer = () => {
                 <Link href={WEBSITE_HOME}>Home</Link>
               </li>
               <li className="mb-0 md:mb-2 text-gray-500">
-                <Link href="">Shop</Link>
+                <Link href={WEBSITE_SHOP}>Shop</Link>
               </li>
               <li className="mb-0 md:mb-2 text-gray-500">
-                <Link href="/about">About</Link>
+                <Link href={WEBSITE_ABOUT}>About</Link>
               </li>
               <li className="mb-0 md:mb-2 text-gray-500">
                 <Link href={WEBSITE_REGISTER}>Register</Link>
@@ -91,19 +95,19 @@ const Footer = () => {
             </h4>
             <ul>
               <li className="mb-0 md:mb-2 text-gray-500">
-                <Link href="">Register</Link>
+                <Link href={WEBSITE_REGISTER}>Register</Link>
               </li>
               <li className="mb-0 md:mb-2 text-gray-500">
-                <Link href="">Login</Link>
+                <Link href={WEBSITE_LOGIN}>Login</Link>
               </li>
               <li className="mb-0 md:mb-2 text-gray-500">
-                <Link href="">My Account</Link>
+                <Link href={USER_DASHBOARD}>My Account</Link>
               </li>
               <li className="mb-0 md:mb-2 text-gray-500">
-                <Link href={WEBSITE_REGISTER}>Privacy Policy</Link>
+                <Link href="">Privacy Policy</Link>
               </li>
               <li className="mb-0 md:mb-2 text-gray-500">
-                <Link href="">Terms & Conditions</Link>
+                <Link href={WEBSITE_TERMS_AND_CONDITIONS}>Terms & Conditions</Link>
               </li>
             </ul>
           </div>
@@ -125,7 +129,7 @@ const Footer = () => {
                   href="tel:+91-8569874589"
                   className="hover:text-primary text-[16px]"
                 >
-                  91-8569874589
+                  91-8010213009
                 </Link>
               </li>
               <li className="mb-1 md:mb-2 text-gray-500 flex items-center gap-2 ">

@@ -146,12 +146,12 @@ const Filter = () => {
             </div>
           </AccordionContent>
         </AccordionItem>
-        {/* <AccordionItem value="2">
+        <AccordionItem value="2">
           <AccordionTrigger className="uppercase font-semibold hover:no-underline cursor-pointer">
             Color
           </AccordionTrigger>
           <AccordionContent>
-            <div className="max-h-48 overflow-auto">
+            <div className="max-h-full overflow-auto">
               <ul>
                 {colorData &&
                   colorData.success &&
@@ -169,7 +169,7 @@ const Filter = () => {
               </ul>
             </div>
           </AccordionContent>
-        </AccordionItem> */}
+        </AccordionItem>
         <AccordionItem value="3">
           <AccordionTrigger className="uppercase font-semibold hover:no-underline cursor-pointer">
             Size
