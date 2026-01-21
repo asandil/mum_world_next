@@ -46,21 +46,23 @@ const Footer = () => {
         </div>
         <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 text-center sm:text-start gap-2 sm:gap-4 xl:gap-10">
           <div>
-            <h4 className="text-[18px] font-bold uppercase mb-2">Top Categories</h4>
+            <h4 className="text-[18px] font-bold uppercase mb-2">
+              Top Categories
+            </h4>
             <ul>
-              <li className=" mb-0 sm:mb-2 text-gray-500">
+              <li className=" mb-0 sm:mb-2 text-gray-500 hover:text-primary">
                 <Link href="">Maternity Co-ord Set with Zip</Link>
               </li>
-              <li className="mb-0 sm:mb-2 text-gray-500">
+              <li className="mb-0 sm:mb-2 text-gray-500 hover:text-primary">
                 <Link href="">Printed Kurta Pant Set</Link>
               </li>
-              <li className="mb-0 sm:mb-2 text-gray-500">
+              <li className="mb-0 sm:mb-2 text-gray-500 hover:text-primary">
                 <Link href="">Floral Printed Kurta Pant Set</Link>
               </li>
-              <li className="mb-0 md:mb-2 text-gray-500">
+              <li className="mb-0 md:mb-2 text-gray-500 hover:text-primary">
                 <Link href="">Western Maternity Collection</Link>
               </li>
-              <li className="mb-0 md:mb-2 text-gray-500">
+              <li className="mb-0 md:mb-2 text-gray-500 hover:text-primary">
                 <Link href="">Ethnic collection zipless</Link>
               </li>
             </ul>
@@ -71,19 +73,19 @@ const Footer = () => {
               Userfull Links
             </h4>
             <ul>
-              <li className="mb-0 md:mb-2 text-gray-500">
+              <li className="mb-0 md:mb-2 text-gray-500 hover:text-primary">
                 <Link href={WEBSITE_HOME}>Home</Link>
               </li>
-              <li className="mb-0 md:mb-2 text-gray-500">
+              <li className="mb-0 md:mb-2 text-gray-500 hover:text-primary">
                 <Link href={WEBSITE_SHOP}>Shop</Link>
               </li>
-              <li className="mb-0 md:mb-2 text-gray-500">
+              <li className="mb-0 md:mb-2 text-gray-500 hover:text-primary">
                 <Link href={WEBSITE_ABOUT}>About</Link>
               </li>
-              <li className="mb-0 md:mb-2 text-gray-500">
+              <li className="mb-0 md:mb-2 text-gray-500 hover:text-primary">
                 <Link href={WEBSITE_REGISTER}>Register</Link>
               </li>
-              <li className="mb-0 md:mb-2 text-gray-500">
+              <li className="mb-0 md:mb-2 text-gray-500 hover:text-primary">
                 <Link href={WEBSITE_LOGIN}>Login</Link>
               </li>
             </ul>
@@ -94,20 +96,22 @@ const Footer = () => {
               Help Center
             </h4>
             <ul>
-              <li className="mb-0 md:mb-2 text-gray-500">
+              <li className="mb-0 md:mb-2 text-gray-500 hover:text-primary">
                 <Link href={WEBSITE_REGISTER}>Register</Link>
               </li>
-              <li className="mb-0 md:mb-2 text-gray-500">
+              <li className="mb-0 md:mb-2 text-gray-500 hover:text-primary">
                 <Link href={WEBSITE_LOGIN}>Login</Link>
               </li>
-              <li className="mb-0 md:mb-2 text-gray-500">
+              <li className="mb-0 md:mb-2 text-gray-500 hover:text-primary">
                 <Link href={USER_DASHBOARD}>My Account</Link>
               </li>
-              <li className="mb-0 md:mb-2 text-gray-500">
+              <li className="mb-0 md:mb-2 text-gray-500 hover:text-primary">
                 <Link href="">Privacy Policy</Link>
               </li>
-              <li className="mb-0 md:mb-2 text-gray-500">
-                <Link href={WEBSITE_TERMS_AND_CONDITIONS}>Terms & Conditions</Link>
+              <li className="mb-0 md:mb-2 text-gray-500 hover:text-primary">
+                <Link href={WEBSITE_TERMS_AND_CONDITIONS}>
+                  Terms & Conditions
+                </Link>
               </li>
             </ul>
           </div>
