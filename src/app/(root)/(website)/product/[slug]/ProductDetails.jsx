@@ -30,6 +30,11 @@ import loadingSvg from "@/assets/images/loading.svg";
 import ProductReview from "@/components/Application/website/ProductReview";
 import { FaShippingFast } from "react-icons/fa";
 import { IoMdCloseCircleOutline } from "react-icons/io";
+import { FaArrowUpLong } from "react-icons/fa6";
+import { RiArrowDropDownLine } from "react-icons/ri";
+import { GiReturnArrow } from "react-icons/gi";
+import { TbBrandShopee } from "react-icons/tb";
+import { FaArrowDownUpLock } from "react-icons/fa6";
 
 const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
   // console.log("product",product)
@@ -48,6 +53,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
   const [isProductLoading, setIsProductLoading] = useState(false);
 
   const [isSizeChartOpen, setIsSizeChartOpen] = useState(false);
+  const [isShopIsConfidence, setIsShopIsConfidence] = useState(false);
 
   useEffect(() => {
     setActiveThumb(variant?.media?.[0]?.secure_url);
@@ -458,38 +464,55 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
             <button
               type="button"
               onClick={() => setIsSizeChartOpen(true)}
-              className="mt-4 text-primary font-medium hover:text-primary-hover flex items-center gap-1 cursor-pointer group"
+              className="mt-4 text-primary font-medium hover:text-primary-hover flex items-center gap-2 cursor-pointer group"
             >
               <span className="border-b border-dashed border-primary group-hover:border-solid">
                 Size Guide
               </span>
-              <svg
-                className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 7l5 5m0 0l-5 5m5-5H6"
-                />
-              </svg>
+              <FaArrowUpLong className="rotate-90" />
             </button>
-            {/* <p>Shop with confidence</p> */}
-            <div className=" mt-4 md:mt-8 p-6 bg-primary/20 rounded-lg">
-              <div className="flex items-center gap-3 mb-2">
-                <FaShippingFast className="text-primary" size={24} />
-                <h3 className="font-bold text-lg">
-                  Free Shipping & Easy Returns
-                </h3>
+          </div>
+
+          {/* Additional Features */}
+          <div className="mt-5">
+            <button
+              type="button"
+              onClick={() => setIsShopIsConfidence(true)}
+              className="mt-4 text-primary font-medium hover:text-primary-hover flex items-center gap-0 cursor-pointer group"
+            >
+              <span className="border-b border-dashed border-primary group-hover:border-solid">
+                Shop with confidence
+              </span>
+            </button>
+            {isShopIsConfidence && (
+              <div>
+                <div className=" mt-2 md:mt-6 p-2 bg-primary/20 rounded-lg grid sm:grid-cols-4 grid-cols-2">
+                  <div className="flex flex-col mb-2">
+                    <TbBrandShopee className="text-primary" size={24} />
+                    <h3 className="text-[14px] font-semibold">Top Brand</h3>
+                  </div>
+                  <div className="flex flex-col mb-2">
+                    <FaArrowDownUpLock className="text-primary" size={24} />
+                    <h3 className="text-[14px] font-semibold">
+                      Secure transaction
+                    </h3>
+                  </div>
+                  <div className="flex flex-col mb-2">
+                    <FaShippingFast className="text-primary" size={24} />
+                    <h3 className="text-[14px] font-semibold">
+                      Free shipping above ₹599
+                    </h3>
+                  </div>
+
+                  <div className="flex flex-col mb-2">
+                    <GiReturnArrow className="text-primary" size={24} />
+                    <h3 className="text-[14px] font-semibold">
+                      10 days Return & Exchange
+                    </h3>
+                  </div>
+                </div>
               </div>
-              <p className="text-gray-600">
-                Enjoy free shipping on all orders above ₹599 and 10-day easy
-                returns on all products.
-              </p>
-            </div>
+            )}
           </div>
 
           {/* Quantity Section */}
@@ -654,39 +677,33 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
                     <tbody className="divide-y divide-gray-200">
                       {[
                         {
-                          size: "XS",
-                          bust: "32-34",
-                          waist: "24-26",
-                          hips: "34-36",
-                        },
-                        {
                           size: "S",
                           bust: "34-36",
-                          waist: "26-28",
+                          waist: "29-31",
                           hips: "36-38",
                         },
                         {
                           size: "M",
                           bust: "36-38",
-                          waist: "28-30",
+                          waist: "31-33",
                           hips: "38-40",
                         },
                         {
                           size: "L",
                           bust: "38-40",
-                          waist: "30-32",
+                          waist: "33-35",
                           hips: "40-42",
                         },
                         {
                           size: "XL",
                           bust: "40-42",
-                          waist: "32-34",
+                          waist: "35-37",
                           hips: "42-44",
                         },
                         {
                           size: "XXL",
                           bust: "42-44",
-                          waist: "34-36",
+                          waist: "37-39",
                           hips: "44-46",
                         },
                       ].map((row, index) => (
