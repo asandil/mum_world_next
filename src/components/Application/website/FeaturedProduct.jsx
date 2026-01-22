@@ -4,8 +4,8 @@ import axios from "axios";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
-import ProductBox from "./ProductBox";
 import { WEBSITE_SHOP } from "@/routes/WebsiteRoute";
+import FeaturedProductBox from "./FeaturedProductBox";
 
 const FeaturedProduct = () => {
   const [productData, setProductData] = useState(null);
@@ -70,7 +70,7 @@ const FeaturedProduct = () => {
         {!productData.success && <div>Data Not Found.</div>}
         {productData.success &&
           productData.data.map((product) => (
-            <ProductBox key={product._id} product={product} />
+            <FeaturedProductBox key={product._id} product={product} />
           ))}
       </div>
     </section>

@@ -326,14 +326,14 @@ export default function MainHome() {
 
       {/* Featured Product Section */}
       <section className="py-8 md:py-12 bg-gray-50">
-        <div className="mx-auto px-4 lg:px-32">
+        <div className="mx-auto px-4">
           <FeaturedProduct />
         </div>
       </section>
 
       {/* Testimonial section */}
       <section className="py-8 md:py-12">
-        <div className="mx-auto px-4 lg:px-32">
+        <div className="mx-auto px-4">
           <TestimonialCarousel />
         </div>
       </section>
