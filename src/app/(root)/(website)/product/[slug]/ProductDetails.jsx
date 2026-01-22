@@ -329,7 +329,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
               className="border rounded max-w-full"
             />
           </div>
-          <div className="flex xl:flex-col items-center xl:gap-5 gap-3 xl:w-36 overflow-auto xl:pb-0 pb-2 max-h-[600]">
+          <div className="flex xl:flex-col items-center xl:gap-5 gap-3 xl:w-36 overflow-auto xl:pb-0 pb-2 max-h-[550] 2xl:max-h-[800]">
             {variant?.media?.map((thumb) => (
               <Image
                 key={thumb._id}
@@ -339,7 +339,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
                 alt="product thumbnail"
                 className={`md:max-w-full max-w-16 rounded cursor-pointer ${
                   thumb.secure_url === activeThumb
-                    ? "border-2 border-primary "
+                    ? "border-4 border-primary "
                     : "border"
                 } `}
                 onClick={() => handleThumb(thumb?.secure_url)}
