@@ -15,7 +15,7 @@ const FeaturedProduct = () => {
     const fetchData = async () => {
       try {
         const { data } = await axios(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/product/get-featured-product`
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/product/get-featured-product`,
         );
         console.log("Featured Product Data in Home Page", data);
         setProductData(data);
@@ -39,7 +39,7 @@ const FeaturedProduct = () => {
           </h2>
           <Link
             href=""
-            className="flex items-center gap-2 underline underline-offset-4 hover:text-primary"
+            className="flex items-center gap-2 underline underline-offset-4 text-primary hover:text-primary-hover"
           >
             View All
             <IoIosArrowRoundForward />
@@ -66,7 +66,7 @@ const FeaturedProduct = () => {
           <IoIosArrowRoundForward size={28} />
         </Link>
       </div>
-      <div className="grid md:grid-cols-4 grid-cols-2 sm:gap-10 gap-2">
+      <div className="grid sm:grid-cols-4 lg:grid-cols-5 grid-cols-2 xl:gap-10 sm:gap-5 gap-3">
         {!productData.success && <div>Data Not Found.</div>}
         {productData.success &&
           productData.data.map((product) => (

@@ -9,7 +9,7 @@ export async function GET(request, { params }) {
 
     const getProduct = await ProductModel.find({ deletedAt: null })
       .populate("media")
-      .limit(8)
+      .limit(10)
       .lean();
 
     if (!getProduct) {
