@@ -9,7 +9,7 @@ import mainImage from "@/assets/images/ShopHeaderImage.png";
 import { FaHandsHelping, FaHeart, FaLeaf } from "react-icons/fa";
 
 export const metadata = {
-  title: "Pregnancy Journey & Newborn Care | Tools, Tips & Support | MumWorld",
+  title: "MumWorld | Maternity Wear, Pregnancy Tools & Newborn Care",
   description:
     "Shop stylish maternity wear online at MumWorld. Discover pregnancy tools, feeding-friendly dresses, newborn care tips & mom essentials.",
   keywords: "pregnancy tips, newborn care, baby development, motherhood",
