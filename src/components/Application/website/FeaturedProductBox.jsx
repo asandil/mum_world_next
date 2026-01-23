@@ -15,7 +15,7 @@ const FeaturedProductBox = ({ product }) => {
           src={product?.media?.[0]?.secure_url || imgPlaceholder.src}
           width={400}
           height={400}
-          alt={product?.media?.[0]?.alt || product?.name}
+          alt={product?.media?.[0]?.alt || product?.name} 
           title={product?.media?.[0]?.title || product?.name}
           className="w-full lg:h-[300px] md:h-[200px] h-[150px] object-cover object-top rounded-t-lg"
         />
