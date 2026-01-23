@@ -100,7 +100,7 @@ const OrderSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  delatedAt: {
+  deletedAt: {
     type: Date,
     default: null,
     index: true,

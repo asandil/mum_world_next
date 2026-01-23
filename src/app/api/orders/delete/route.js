@@ -36,7 +36,7 @@ export async function PUT(request) {
     if (deleteType === "SD") {
       await OrderModel.updateMany(
         { _id: { $in: ids } },
-        { $set: { deletedAt: new Date().toISOString() } }
+        { $set: { deletedAt: new Date() } }
       );
     } else {
       await OrderModel.updateMany(

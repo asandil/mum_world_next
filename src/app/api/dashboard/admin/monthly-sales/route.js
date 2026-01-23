@@ -5,7 +5,7 @@ import OrderModel from "@/models/Order.model";
 
 export async function GET() {
   try {
-    const auth = await isAuthenticated();
+    const auth = await isAuthenticated("admin");
     if (!auth.isAuth) {
       return response(false, 403, "Unauthorized or Not Admin");
     }
@@ -26,13 +26,13 @@ export async function GET() {
             month: { $month: "$createdAt" },
           },
           totalSales: { $sum: "$totalAmount" },
-          orderCount: { $sum: 1 },
         },
       },
       {
         $sort: { "_id.year": 1, "_id.month": 1 },
       },
     ]);
+    console.log("Monthly Sales Data:", monthlySales);
     return response(
       true,
       200,
