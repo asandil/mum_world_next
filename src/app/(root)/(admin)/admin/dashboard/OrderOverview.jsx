@@ -22,19 +22,19 @@ import useFetch from "@/hooks/useFetch";
 
 export const description = "A bar chart";
 
-const chartData = [
-  { month: "January", amount: 186 },
-  { month: "February", amount: 305 },
-  { month: "March", amount: 237 },
-  { month: "April", amount: 73 },
-  { month: "May", amount: 209 },
-  { month: "June", amount: 214 },
-  { month: "July", amount: 24 },
-  { month: "August", amount: 514 },
-  { month: "September", amount: 264 },
-  { month: "October", amount: 454 },
-  { month: "November", amount: 654 },
-  { month: "December", amount: 114 },
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 
 const chartConfig = {
@@ -45,17 +45,68 @@ const chartConfig = {
 };
 
 export function OrderOverview() {
-
   const [chartData, setChartData] = useState([]);
-  const {data: monthlySales, loading} = useFetch('/api/dashboard/admin/monthly-sales');
-
-  // console.log("monthly Sales", monthlySales?.data);
+  const { data: monthlySales, loading } = useFetch(
+    "/api/dashboard/admin/monthly-sales",
+  );
 
   useEffect(() => {
-    if(monthlySales && monthlySales.success){
-      console.log("monthly Sales", monthlySales?.data)
+    if (monthlySales && monthlySales.success) {
+      console.log("monthly Sales", monthlySales?.data);
+      const getChartData = months.map((month, index) => {
+        const monthData = monthlySales?.data.find(
+          (item) => item?._id?.month === index + 1,
+        );
+        return {
+          month: month,
+          amount: monthData?.totalSales ?? 0,
+          orderCount: monthData?.orderCount ?? 0,
+        };
+      });
+      setChartData(getChartData);
     }
   }, [monthlySales]);
+
+  const CustomTooltipContent = (props) => {
+    const { active, payload, label } = props;
+
+    if (active && payload && payload.length) {
+      const data = payload[0].payload;
+
+      return (
+        <div className="rounded-lg border bg-background p-2 shadow-sm">
+          <div className="grid gap-2">
+            <div className="flex flex-col">
+              <span className="text-[0.70rem] uppercase text-muted-foreground">
+                {label}
+              </span>
+              <div className="mt-2 space-y-1">
+                <div className="flex items-center gap-4 justify-between">
+                  <span className="text-sm font-medium">
+                    Total Sales Amount
+                  </span>
+                  <span className="font-bold tabular-nums text-foreground">
+                    {data.amount.toLocaleString("en-IN", {
+                      style: "currency",
+                      currency: "INR",
+                    })}
+                  </span>
+                </div>
+                <div className="flex items-center gap-4 justify-between">
+                  <span className="text-sm font-medium">Total Order</span>
+                  <span className="font-bold tabular-nums text-foreground">
+                    {data.orderCount}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    return null;
+  };
 
   return (
     <ChartContainer config={chartConfig}>
@@ -68,10 +119,7 @@ export function OrderOverview() {
           axisLine={false}
           tickFormatter={(value) => value.slice(0, 3)}
         />
-        <ChartTooltip
-          cursor={true}
-          content={<ChartTooltipContent />}
-        />
+        <ChartTooltip cursor={true} content={<CustomTooltipContent />} />
         <Bar dataKey="amount" fill="var(--color-desktop)" radius={8} />
       </BarChart>
     </ChartContainer>

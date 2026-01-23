@@ -24,8 +24,10 @@ export async function GET() {
           _id: {
             year: { $year: "$createdAt" },
             month: { $month: "$createdAt" },
+            day: { $dayOfMonth: "$createdAt" },
           },
           totalSales: { $sum: "$totalAmount" },
+          orderCount: { $sum: 1 },
         },
       },
       {
