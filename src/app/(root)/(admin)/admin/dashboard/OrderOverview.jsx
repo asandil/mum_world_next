@@ -17,6 +17,8 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
+import { useEffect, useState } from "react";
+import useFetch from "@/hooks/useFetch";
 
 export const description = "A bar chart";
 
@@ -43,6 +45,18 @@ const chartConfig = {
 };
 
 export function OrderOverview() {
+
+  const [chartData, setChartData] = useState([]);
+  const {data: monthlySales, loading} = useFetch('/api/dashboard/admin/monthly-sales');
+
+  console.log("monthly Sales", monthlySales.data)
+
+  useEffect(() => {
+    if(monthlySales && monthlySales.sucess){
+      console.log("monthly Sales", monthlySales.data)
+    }
+  }, [monthlySales]);
+
   return (
     <ChartContainer config={chartConfig}>
       <BarChart accessibilityLayer data={chartData}>
