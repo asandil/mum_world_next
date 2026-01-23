@@ -49,7 +49,7 @@ export function OrderOverview() {
   const [chartData, setChartData] = useState([]);
   const {data: monthlySales, loading} = useFetch('/api/dashboard/admin/monthly-sales');
 
-  console.log("monthly Sales", monthlySales.data)
+  // console.log("monthly Sales", monthlySales.data)
 
   useEffect(() => {
     if(monthlySales && monthlySales.sucess){
