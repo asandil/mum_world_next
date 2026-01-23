@@ -5,17 +5,10 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
+import { useEffect, useState } from "react";
+import useFetch from "@/hooks/useFetch";
 
 export const description = "A donut chart";
-
-const chartData = [
-  { status: "pending", count: 275, fill: "var(--color-pending)" },
-  { status: "processing", count: 200, fill: "var(--color-processing)" },
-  { status: "shipped", count: 187, fill: "var(--color-shipped)" },
-  { status: "delivered", count: 173, fill: "var(--color-delivered)" },
-  { status: "cancelled", count: 90, fill: "var(--color-cancelled)" },
-  { status: "unverified", count: 90, fill: "var(--color-unverified)" },
-];
 
 const chartConfig = {
   status: {
@@ -48,6 +41,36 @@ const chartConfig = {
 };
 
 export function OrderStatus() {
+
+  const [chartData, setChartData] = useState([]);
+  const [statusCounts, setStatusCounts] = useState();
+  const [totalCount, setTotalCount] = useState(0);
+
+  const {data: orderStatus, loading} = useFetch('/api/dashboard/admin/order-status');
+
+  console.log("orderStatus",orderStatus)
+
+  useEffect(() => {
+    if (orderStatus && orderStatus.success) {
+      const newOrderStatus = orderStatus.data.map((o) => ({
+        status: o._id,
+        count: o.count,
+        fill: `var(--color-${o._id})`,
+      }))
+      setChartData(newOrderStatus);
+
+      const getTotalCount = orderStatus.data.reduce((acc, curr) => acc + curr.count, 0);
+      setTotalCount(getTotalCount);
+
+      const statusObj = orderStatus.data.reduce((acc, item) => {
+        acc[item._id] = item.count;
+        return acc;
+      }, {});
+      setStatusCounts(statusObj);
+
+    }
+  },[orderStatus]);
+
   return (
     <div>
       <ChartContainer
@@ -77,7 +100,7 @@ export function OrderStatus() {
                         y={viewBox.cy}
                         className="fill-foreground text-3xl font-bold"
                       >
-                        100
+                        {totalCount}
                       </tspan>
                       <tspan
                         x={viewBox.cx}
@@ -98,7 +121,7 @@ export function OrderStatus() {
         <ul>
           <li className="flex justify-between items-center mb-3 text-sm" >
             <span>Pending</span>
-            <span className="rounded-full px-2 text-sm bg-blue-500 text-white" >0</span>
+            <span className="rounded-full px-2 text-sm bg-blue-500 text-white" >{statusCounts?.pending || 0}</span>
           </li>
           <li className="flex justify-between items-center mb-3 text-sm" >
             <span>Processing</span>
