@@ -11,7 +11,7 @@ import { FaHandsHelping, FaHeart, FaLeaf } from "react-icons/fa";
 export const metadata = {
   title: "Pregnancy Journey & Newborn Care | Tools, Tips & Support | MumWorld",
   description:
-    "Explore expert guidance for every stage of motherhood with pregnancy tools, baby care advice, and health calculators on MumWorld — your companion for creating healthy beginnings.",
+    "Shop stylish maternity wear online at MumWorld. Discover pregnancy tools, feeding-friendly dresses, newborn care tips & mom essentials.",
   keywords: "pregnancy tips, newborn care, baby development, motherhood",
 };
 

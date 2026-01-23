@@ -41,14 +41,15 @@ const chartConfig = {
 };
 
 export function OrderStatus() {
-
   const [chartData, setChartData] = useState([]);
   const [statusCounts, setStatusCounts] = useState();
   const [totalCount, setTotalCount] = useState(0);
 
-  const {data: orderStatus, loading} = useFetch('/api/dashboard/admin/order-status');
+  const { data: orderStatus, loading } = useFetch(
+    "/api/dashboard/admin/order-status",
+  );
 
-  console.log("orderStatus",orderStatus)
+  console.log("orderStatus", orderStatus);
 
   useEffect(() => {
     if (orderStatus && orderStatus.success) {
@@ -56,10 +57,13 @@ export function OrderStatus() {
         status: o._id,
         count: o.count,
         fill: `var(--color-${o._id})`,
-      }))
+      }));
       setChartData(newOrderStatus);
 
-      const getTotalCount = orderStatus.data.reduce((acc, curr) => acc + curr.count, 0);
+      const getTotalCount = orderStatus.data.reduce(
+        (acc, curr) => acc + curr.count,
+        0,
+      );
       setTotalCount(getTotalCount);
 
       const statusObj = orderStatus.data.reduce((acc, item) => {
@@ -67,9 +71,8 @@ export function OrderStatus() {
         return acc;
       }, {});
       setStatusCounts(statusObj);
-
     }
-  },[orderStatus]);
+  }, [orderStatus]);
 
   return (
     <div>
@@ -119,29 +122,41 @@ export function OrderStatus() {
       </ChartContainer>
       <div>
         <ul>
-          <li className="flex justify-between items-center mb-3 text-sm" >
+          <li className="flex justify-between items-center mb-3 text-sm">
             <span>Pending</span>
-            <span className="rounded-full px-2 text-sm bg-blue-500 text-white" >{statusCounts?.pending || 0}</span>
+            <span className="rounded-full px-2 text-sm bg-blue-500 text-white">
+              {statusCounts?.pending || 0}
+            </span>
           </li>
-          <li className="flex justify-between items-center mb-3 text-sm" >
+          <li className="flex justify-between items-center mb-3 text-sm">
             <span>Processing</span>
-            <span className="rounded-full px-2 text-sm bg-yellow-500 text-white" >0</span>
+            <span className="rounded-full px-2 text-sm bg-yellow-500 text-white">
+              {statusCounts?.processing || 0}
+            </span>
           </li>
-          <li className="flex justify-between items-center mb-3 text-sm" >
+          <li className="flex justify-between items-center mb-3 text-sm">
             <span>Shipped</span>
-            <span className="rounded-full px-2 text-sm bg-cyan-500 text-white" >0</span>
+            <span className="rounded-full px-2 text-sm bg-cyan-500 text-white">
+              {statusCounts?.shipped || 0}
+            </span>
           </li>
-          <li className="flex justify-between items-center mb-3 text-sm" >
+          <li className="flex justify-between items-center mb-3 text-sm">
             <span>Delivered</span>
-            <span className="rounded-full px-2 text-sm bg-green-500 text-white" >0</span>
+            <span className="rounded-full px-2 text-sm bg-green-500 text-white">
+              {statusCounts?.delivered || 0}
+            </span>
           </li>
-          <li className="flex justify-between items-center mb-3 text-sm" >
+          <li className="flex justify-between items-center mb-3 text-sm">
             <span>Cancelled</span>
-            <span className="rounded-full px-2 text-sm bg-red-500 text-white" >0</span>
+            <span className="rounded-full px-2 text-sm bg-red-500 text-white">
+              {statusCounts?.cancelled || 0}
+            </span>
           </li>
-          <li className="flex justify-between items-center mb-3 text-sm" >
+          <li className="flex justify-between items-center mb-3 text-sm">
             <span>Unverified</span>
-            <span className="rounded-full px-2 text-sm bg-orange-500 text-white" >0</span>
+            <span className="rounded-full px-2 text-sm bg-orange-500 text-white">
+              {statusCounts?.unverified || 0}
+            </span>
           </li>
         </ul>
       </div>
