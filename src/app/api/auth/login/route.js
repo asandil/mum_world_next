@@ -24,7 +24,7 @@ export async function POST(request) {
       });
 
     const validatedData = validationSchema.safeParse(payload);
-    console.log("kola!!!!!!!!!!!!!!!", validatedData);
+    console.log("!!!!", validatedData);
 
     if (!validatedData.success) {
       return response(

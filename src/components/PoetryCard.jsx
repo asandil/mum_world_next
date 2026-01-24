@@ -38,7 +38,7 @@ export default function PoetryCard({ post }) {
           {/* Meta Info */}
           <div className="flex gap-3 justify-center text-sm leading-6 text-gray-500 pb-8">
             {/* <span>{formatDate(post.data.date)}</span> */}
-            <span>kola</span>
+            {/* <span>kola</span> */}
             <span>|</span>
             <span>Poetry</span>
           </div>
@@ -50,7 +50,7 @@ export default function PoetryCard({ post }) {
               className="hover:text-amber-800 transition-colors"
             >
               {/* {post.data.title} */}
-              kola
+              {/* kola */}
             </Link>
           </h4>
           {/* Description */}
@@ -58,7 +58,7 @@ export default function PoetryCard({ post }) {
             className="text-left pb-4 whitespace-pre-line text-base font-normal"
             dangerouslySetInnerHTML={{ __html: post.data.description.slice(0, 150) + "..." }}
           /> */}
-          kola
+          {/* kola */}
         </div>
 
         {/* Read More Link */}

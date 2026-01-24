@@ -1,29 +1,20 @@
 "use client";
 import {
-  USER_DASHBOARD,
   WEBSITE_HOME,
-  WEBSITE_LOGIN,
   WEBSITE_SHOP,
 } from "@/routes/WebsiteRoute";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import logo from "@/assets/images/footer_logo.svg";
-import { IoIosSearch } from "react-icons/io";
 import Cart from "./Cart";
-import { VscAccount } from "react-icons/vsc";
-import { useSelector } from "react-redux";
-import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import userIcon from "@/assets/images/user.png";
 import { HiMiniBars3 } from "react-icons/hi2";
-import { IoMdClose } from "react-icons/io";
 import { usePathname } from "next/navigation";
 import { FaChevronDown } from "react-icons/fa";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 import UserDropDown from "./UserDropDown";
 
 const Header = () => {
-  const auth = useSelector((store) => store.authStore.auth);
   const pathname = usePathname();
   const [isMobileMenu, setIsMobileMenu] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
@@ -183,21 +174,6 @@ const Header = () => {
           <div className="flex justify-between items-center gap-6 sm:gap-8">
             <Cart />
 
-            {/* {!auth ? (
-              <Link href={WEBSITE_LOGIN}>
-                <VscAccount
-                  className="text-gray-500 hover:text-[#e6846a] cursor-pointer"
-                  size={25}
-                />
-              </Link>
-            ) : (
-              <Link href={USER_DASHBOARD}>
-                <Avatar>
-                  <AvatarImage src={auth?.avatar?.url || userIcon.src} />
-                </Avatar>
-              </Link>
-            )} */}
-
             <UserDropDown />
 
             <button
@@ -216,7 +192,7 @@ const Header = () => {
 
       {/* Mobile Menu - EXACTLY LIKE OLD HEADER */}
       {isMobileMenu && (
-        <div className="fixed inset-0 bg-[url('/background-image-contact-us.png')] bg-no-repeat bg-cover opacity-100 h-[100vh] w-[100vw] z-50 lg:hidden">
+        <div className="fixed inset-0 bg-[url('/background-image-contact-us.png')] bg-no-repeat bg-cover opacity-100 h-[100vh] w-[100vw] z-50 xl:hidden">
           <nav className="py-[20px] px-[24px]">
             {/* Mobile menu header */}
             <div className="flex justify-between items-center border-b border-[#e6846a] pb-3 mb-6 h-[60px] relative">
