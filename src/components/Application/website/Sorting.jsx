@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import {
   Select,
   SelectContent,
@@ -9,6 +10,8 @@ import {
 import { sortings } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { IoFilter } from "react-icons/io5";
+import { IoIosSearch } from "react-icons/io";
+import Search from "./Search";
 
 const Sorting = ({
   limit,
@@ -18,9 +21,15 @@ const Sorting = ({
   mobileFilterOpen,
   setMobileFilterOpen,
 }) => {
+    const [showSearch, setShowSearch] = useState(false);
   return (
     <div className="flex justify-between items-center flex-wrap gap-2 p-4 bg-gray-50">
-      <Button type="button" className="lg:hidden" variant="outline" onClick={() => setMobileFilterOpen(!mobileFilterOpen)}>
+      <Button
+        type="button"
+        className="lg:hidden"
+        variant="outline"
+        onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
+      >
         <IoFilter />
         Filter
       </Button>
@@ -42,13 +51,16 @@ const Sorting = ({
           </li>
         ))}
       </ul>
+      <Search isShow={showSearch} />
       <Select value={sorting} onValueChange={(value) => setSorting(value)}>
         <SelectTrigger className="md:w-[180px] w-48 bg-white ">
           <SelectValue placeholder="Default Sorting" />
         </SelectTrigger>
         <SelectContent>
-          {sortings.map(option => (
-            <SelectItem key={option.value} value={option.value}>{option.label}</SelectItem>
+          {sortings.map((option) => (
+            <SelectItem key={option.value} value={option.value}>
+              {option.label}
+            </SelectItem>
           ))}
         </SelectContent>
       </Select>

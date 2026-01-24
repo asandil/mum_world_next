@@ -17,7 +17,6 @@ import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import userIcon from "@/assets/images/user.png";
 import { HiMiniBars3 } from "react-icons/hi2";
 import { IoMdClose } from "react-icons/io";
-import Search from "./Search";
 import { usePathname } from "next/navigation";
 import { FaChevronDown } from "react-icons/fa";
 import { IoMdCloseCircleOutline } from "react-icons/io";
@@ -27,13 +26,10 @@ const Header = () => {
   const auth = useSelector((store) => store.authStore.auth);
   const pathname = usePathname();
   const [isMobileMenu, setIsMobileMenu] = useState(false);
-  const [showSearch, setShowSearch] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
 
   const isActive = (href) =>
     href === "/" ? pathname === href : pathname.startsWith(href);
-
-  const isShopPage = pathname.includes("/shop");
 
   const toggleSubmenu = (index) => {
     if (openSubmenu === index) {
@@ -185,14 +181,6 @@ const Header = () => {
 
           {/* Icons Section */}
           <div className="flex justify-between items-center gap-6 sm:gap-8">
-            {isShopPage && (
-              <button type="button" onClick={() => setShowSearch(!showSearch)}>
-                <IoIosSearch
-                  className="text-gray-500 hover:text-[#e6846a] cursor-pointer"
-                  size={25}
-                />
-              </button>
-            )}
             <Cart />
 
             {/* {!auth ? (
@@ -309,8 +297,6 @@ const Header = () => {
           </nav>
         </div>
       )}
-
-      <Search isShow={showSearch} />
     </div>
   );
 };
