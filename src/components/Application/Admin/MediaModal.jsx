@@ -111,7 +111,7 @@ const MediaModal = ({
             </div> 
             {hasNextPage ?
             <div className="flex justify-center py-5 " >
-              <ButtonLoading  type="button" onClick={() => fetchNextPage()} loading={isFetching} text="Load More" />
+              <ButtonLoading  type="button" onClick={() => fetchNextPage()} loading={isFetching} text="Load More" className="cursor-pointer" />
             </div>
             :
             <p className="text-center py-5">Nothing more to load.</p>  

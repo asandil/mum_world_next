@@ -281,6 +281,7 @@ const ProductReview = ({ productId }) => {
                 type="button"
                 loading={isFetching}
                 onClick={fetchNextPage}
+                className="cursor-pointer"
               />
             )}
           </div>

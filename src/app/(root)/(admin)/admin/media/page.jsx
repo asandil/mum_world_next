@@ -201,7 +201,7 @@ const MediaPage = () => {
           )}
 
           {hasNextPage &&
-            <ButtonLoading type="button" loading={isFetching} onClick={() => fetchNextPage()} text="Load More" />
+            <ButtonLoading type="button" loading={isFetching} onClick={() => fetchNextPage()} text="Load More" className="cursor-pointer" />
           }
 
         </CardContent>

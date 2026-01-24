@@ -119,6 +119,7 @@ const Shop = () => {
                 loading={isFetching}
                 text="Load More"
                 onClick={fetchNextPage}
+                className="cursor-pointer"
               />
             ) : (
               <>{!isFetching && <span>No more data to load.</span>}</>
