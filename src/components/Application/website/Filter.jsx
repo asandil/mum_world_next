@@ -125,7 +125,7 @@ const Filter = () => {
             Category
           </AccordionTrigger>
           <AccordionContent>
-            <div className="max-h-48 overflow-auto">
+            <div className="max-h-full overflow-auto">
               <ul>
                 {categoryData &&
                   categoryData.success &&

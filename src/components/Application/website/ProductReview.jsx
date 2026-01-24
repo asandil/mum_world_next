@@ -122,7 +122,7 @@ const ProductReview = ({ productId }) => {
   console.log("@@!! Review Data", data);
 
   return (
-    <div className="shadow rounded border mb-20">
+    <div className="rounded-lg shadow-xl mb-20">
       <div className="p-3 bg-gray-50 border-b">
         <h2 className="font-semibold text-2xl">Rating & Reviews</h2>
       </div>

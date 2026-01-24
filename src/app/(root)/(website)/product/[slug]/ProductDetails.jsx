@@ -566,7 +566,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
       </div>
 
       <div className="mb-10">
-        <div className="shadow rounded border">
+        <div className="shadow-xl rounded-lg">
           <div className="p-3 bg-gray-50 border-b">
             <h2 className="font-semibold text-2xl">Product details</h2>
           </div>
