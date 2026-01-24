@@ -14,6 +14,8 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import useDeleteMutation from "@/hooks/useDeleteMutation";
 import { ButtonLoading } from "@/components/Application/ButtonLoading";
+import Image from "next/image";
+import notFound from "@/assets/images/not-found.png";
 
 const breadCrumbData = [
   { href: ADMIN_DASHBOARD, label: "Home" },
@@ -21,7 +23,7 @@ const breadCrumbData = [
 ];
 
 const MediaPage = () => {
-  const queryClient = useQueryClient()
+  const queryClient = useQueryClient();
   const [deleteType, setDeleteType] = useState("SD");
   const [selectedMedia, setSelectedMedia] = useState("SD");
   const [selectAll, setSelectAll] = useState(false);
@@ -42,7 +44,7 @@ const MediaPage = () => {
 
   const fetchMedia = async (page, deleteType) => {
     const { data: response } = await axios.get(
-      `/api/media?page=${page}&&limit=10&&deleteType=${deleteType}`
+      `/api/media?page=${page}&&limit=10&&deleteType=${deleteType}`,
     );
     console.log("meida response", response);
     return response;
@@ -89,7 +91,7 @@ const MediaPage = () => {
   useEffect(() => {
     if (selectAll) {
       const ids = data.pages.flatMap((page) =>
-        page.mediaData.map((media) => media._id)
+        page.mediaData.map((media) => media._id),
       );
       setSelectedMedia(ids);
     } else {
@@ -107,7 +109,9 @@ const MediaPage = () => {
               {deleteType === "SD" ? "Media" : "Media Trash"}
             </h4>
             <div className="flex items-center gap-5">
-              {deleteType === "SD" && <UploadMedia isMultiple={true} queryClient={queryClient} />}
+              {deleteType === "SD" && (
+                <UploadMedia isMultiple={true} queryClient={queryClient} />
+              )}
               <div className="flex gap-3">
                 {deleteType === "SD" ? (
                   <Button type="button" variant="destructive">
@@ -124,7 +128,7 @@ const MediaPage = () => {
             </div>
           </div>
         </CardHeader>
-        <CardContent className="pb-5" >
+        <CardContent className="pb-5">
           {selectedMedia.length > 0 && (
             <div className="py-2 px-3 bg-[#F89D8A] mb-2 rounded flex justify-between items-center">
               <Label>
@@ -145,7 +149,7 @@ const MediaPage = () => {
                     Move Into Trash
                   </Button>
                 ) : (
-                  <div className="flex gap-2" >
+                  <div className="flex gap-2">
                     <Button
                       className="bg-green-500 hover:bg-green-600 cursor-pointer"
                       onClick={() => handleDelete(selectedMedia, "RSD")}
@@ -175,9 +179,20 @@ const MediaPage = () => {
           ) : (
             <>
               {data.pages.flatMap((page) =>
-                page.mediaData.map((media) => media._id)
+                page.mediaData.map((media) => media._id),
               ).length === 0 && (
-                <div className="text-center">Data not found.</div>
+                <div className="text-center flex flex-col justify-center items-center">
+                  <div className="h-full w-full flex justify-center items-center">
+                    <Image
+                      src={notFound.src}
+                      width={notFound.width}
+                      height={notFound.height}
+                      alt="not-found"
+                      className="w-20"
+                    />
+                  </div>
+                  <span>Data not found.</span>
+                </div>
               )}
               <div className="grid lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-2 mb-5">
                 {data?.pages?.map((page, index) => (
@@ -200,10 +215,15 @@ const MediaPage = () => {
             </>
           )}
 
-          {hasNextPage &&
-            <ButtonLoading type="button" loading={isFetching} onClick={() => fetchNextPage()} text="Load More" className="cursor-pointer" />
-          }
-
+          {hasNextPage && (
+            <ButtonLoading
+              type="button"
+              loading={isFetching}
+              onClick={() => fetchNextPage()}
+              text="Load More"
+              className="cursor-pointer"
+            />
+          )}
         </CardContent>
       </Card>
     </div>
