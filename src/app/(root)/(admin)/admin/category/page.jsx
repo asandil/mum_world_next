@@ -31,7 +31,7 @@ const ShowCategory = () => {
   const action = useCallback((row, deleteType, handleDelete) => {
     let actionMenu = [];
     actionMenu.push(
-      <EditAction key="edit" href={ADMIN_CATEGORY_EDIT(row.original._id)} />
+      <EditAction key="edit" href={ADMIN_CATEGORY_EDIT(row.original._id)} />,
     );
     actionMenu.push(
       <DeleteAction
@@ -39,7 +39,7 @@ const ShowCategory = () => {
         handleDelete={handleDelete}
         row={row}
         deleteType={deleteType}
-      />
+      />,
     );
     return actionMenu;
   }, []);
@@ -52,8 +52,13 @@ const ShowCategory = () => {
           <div className="flex justify-between items-center">
             <h4 className="text-xl font-semibold">Show Category</h4>
             <Button>
-              <FiPlus />
-              <Link href={ADMIN_CATEGORY_ADD}>New Category</Link>
+              <Link
+                href={ADMIN_CATEGORY_ADD}
+                className="flex gap-1 items-center"
+              >
+                <FiPlus />
+                <span>New Category</span>
+              </Link>
             </Button>
           </div>
         </CardHeader>

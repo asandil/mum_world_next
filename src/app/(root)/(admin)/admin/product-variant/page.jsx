@@ -31,7 +31,10 @@ const ShowProductVariant = () => {
   const action = useCallback((row, deleteType, handleDelete) => {
     let actionMenu = [];
     actionMenu.push(
-      <EditAction key="edit" href={ADMIN_PRODUCT_VARIANT_EDIT(row.original._id)} />
+      <EditAction
+        key="edit"
+        href={ADMIN_PRODUCT_VARIANT_EDIT(row.original._id)}
+      />,
     );
     actionMenu.push(
       <DeleteAction
@@ -39,7 +42,7 @@ const ShowProductVariant = () => {
         handleDelete={handleDelete}
         row={row}
         deleteType={deleteType}
-      />
+      />,
     );
     return actionMenu;
   }, []);
@@ -52,8 +55,13 @@ const ShowProductVariant = () => {
           <div className="flex justify-between items-center">
             <h4 className="text-xl font-semibold">Show Product Variant</h4>
             <Button>
-              <FiPlus />
-              <Link href={ADMIN_PRODUCT_VARIANT_ADD}>New Variant</Link>
+              <Link
+                href={ADMIN_PRODUCT_VARIANT_ADD}
+                className="flex gap-1 items-center"
+              >
+                <FiPlus />
+                <span>New Variant</span>
+              </Link>
             </Button>
           </div>
         </CardHeader>
