@@ -10,13 +10,17 @@ import {
   ADMIN_MEDIA_SHOW,
   ADMIN_PRODUCT_ADD,
 } from "@/routes/AdminPanelRoute";
+import { FiPlus } from "react-icons/fi";
 
 const QuickAdd = () => {
   return (
     <div className="grid lg:grid-cols-4 sm:grid-cols-2 sm:gap-10 gap-5 mt-10">
       <Link href={ADMIN_CATEGORY_ADD}>
         <div className="flex items-center justify-between p-3 rounded-lg bg-primary hover:bg-primary-hover hover:shadow-lg">
-          <h4 className="font-medium text-white">Add Category</h4>
+          <div className="flex items-center gap-1">
+            <FiPlus size={20} color="#fff" />
+            <h4 className="font-medium text-white">Add Category</h4>
+          </div>
           <span className="w-12 h-12 border border-white flex justify-center items-center rounded-full  text-white">
             <BiCategory size={20} />
           </span>
@@ -24,7 +28,10 @@ const QuickAdd = () => {
       </Link>
       <Link href={ADMIN_PRODUCT_ADD}>
         <div className="flex items-center justify-between p-3 rounded-lg bg-primary hover:bg-primary-hover hover:shadow-lg">
-          <h4 className="font-medium text-white">Add Product</h4>
+          <div className="flex items-center gap-1">
+            <FiPlus size={20} color="#fff" />
+            <h4 className="font-medium text-white">Add Product</h4>
+          </div>
           <span className="w-12 h-12 border border-white flex justify-center items-center rounded-full  text-white">
             <IoShirtOutline size={20} />
           </span>
@@ -32,7 +39,10 @@ const QuickAdd = () => {
       </Link>
       <Link href={ADMIN_COUPON_ADD}>
         <div className="flex items-center justify-between p-3 rounded-lg bg-primary hover:bg-primary-hover hover:shadow-lg">
-          <h4 className="font-medium text-white">Add Coupon</h4>
+          <div className="flex items-center gap-1">
+            <FiPlus size={20} color="#fff" />
+            <h4 className="font-medium text-white">Add Coupon</h4>
+          </div>
           <span className="w-12 h-12 border border-white flex justify-center items-center rounded-full  text-white">
             <RiCoupon2Line size={20} />
           </span>
@@ -40,7 +50,10 @@ const QuickAdd = () => {
       </Link>
       <Link href={ADMIN_MEDIA_SHOW}>
         <div className="flex items-center justify-between p-3 rounded-lg bg-primary hover:bg-primary-hover hover:shadow-lg">
-          <h4 className="font-medium text-white">Upload Media</h4>
+          <div className="flex items-center gap-1">
+            <FiPlus size={20} color="#fff" />
+            <h4 className="font-medium text-white">Upload Media</h4>
+          </div>
           <span className="w-12 h-12 border border-white flex justify-center items-center rounded-full  text-white">
             <MdOutlinePermMedia size={20} />
           </span>

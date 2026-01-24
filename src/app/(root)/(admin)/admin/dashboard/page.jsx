@@ -9,6 +9,7 @@ import { OrderStatus } from "./OrderStatus";
 import LatestOrder from "./LatestOrder";
 import LatestReview from "./LatestReview";
 import { ADMIN_ORDER_SHOW, ADMIN_REVIEW_SHOW } from "@/routes/AdminPanelRoute";
+import { FaRegEye } from "react-icons/fa6";
 
 const AdminDashboard = () => {
   return (
@@ -21,9 +22,14 @@ const AdminDashboard = () => {
             <div className="flex justify-between items-center">
               <span className="font-semibold">Order Overview</span>
               <Button type="button">
-                <Link href={ADMIN_ORDER_SHOW}>View All</Link>
+                <Link
+                  href={ADMIN_ORDER_SHOW}
+                  className="flex items-center gap-2"
+                >
+                  <FaRegEye className="!w-5 !h-5" /> <span>View All</span>
+                </Link>
               </Button>
-            </div> 
+            </div>
           </CardHeader>
           <CardContent>
             <OrderOverview />
@@ -34,7 +40,12 @@ const AdminDashboard = () => {
             <div className="flex justify-between items-center">
               <span className="font-semibold">Order Overview</span>
               <Button type="button">
-                <Link href={ADMIN_ORDER_SHOW}>View All</Link>
+                <Link
+                  href={ADMIN_ORDER_SHOW}
+                  className="flex items-center gap-2"
+                >
+                  <FaRegEye className="!w-5 !h-5" /> <span>View All</span>
+                </Link>
               </Button>
             </div>
           </CardHeader>
@@ -48,12 +59,17 @@ const AdminDashboard = () => {
           <CardHeader className="py-3 border [.border-b]:pb-3 ">
             <div className="flex justify-between items-center">
               <span className="font-semibold">Latest Order (20)</span>
-              <Button type="button" >
-                <Link href={ADMIN_ORDER_SHOW}>View All</Link>
+              <Button type="button">
+                <Link
+                  href={ADMIN_ORDER_SHOW}
+                  className="flex items-center gap-2"
+                >
+                  <FaRegEye className="!w-5 !h-5" /> <span>View All</span>
+                </Link>
               </Button>
             </div>
           </CardHeader>
-          <CardContent className="pt-3 lg:h-[350px] overflow-auto " >
+          <CardContent className="pt-3 lg:h-[350px] overflow-auto ">
             <LatestOrder />
           </CardContent>
         </Card>
@@ -61,8 +77,13 @@ const AdminDashboard = () => {
           <CardHeader className="py-3 border [.border-b]:pb-3">
             <div className="flex justify-between items-center">
               <span className="font-semibold">Latest Review</span>
-              <Button type="button" >
-                <Link href={ADMIN_REVIEW_SHOW}>View All</Link>
+              <Button type="button">
+                <Link
+                  href={ADMIN_REVIEW_SHOW}
+                  className="flex items-center gap-2"
+                >
+                  <FaRegEye className="!w-5 !h-5" /> <span>View All</span>
+                </Link>
               </Button>
             </div>
           </CardHeader>
