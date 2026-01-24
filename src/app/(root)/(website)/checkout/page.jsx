@@ -220,7 +220,7 @@ const Checkout = () => {
         key: process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID,
         amount: totalAmount * 100,
         currency: "INR",
-        name: "Mum-World",
+        name: "Mumworld",
         description: "Payment for order",
         image:
           "https://res.cloudinary.com/dc0wr8hev/image/upload/v1766166906/lcsvrxwp43tsqaep2feu.png",
