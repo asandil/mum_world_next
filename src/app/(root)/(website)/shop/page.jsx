@@ -19,6 +19,8 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import ProductBox from "@/components/Application/website/ProductBox";
 import { ButtonLoading } from "@/components/Application/ButtonLoading";
 import MainSlider from "@/components/Application/website/MainSlider";
+import Image from "next/image";
+import notFound from "@/assets/images/not-found.png";
 
 const breadcrumb = {
   title: "Shop",
@@ -34,7 +36,7 @@ const Shop = () => {
 
   const fetchProduct = async (pageParam) => {
     const { data: getProduct } = await axios.get(
-      `/api/shop?page=${pageParam}&limit=${limit}&sort=${sorting}&${searchParams}`
+      `/api/shop?page=${pageParam}&limit=${limit}&sort=${sorting}&${searchParams}`,
     );
     console.log("getProduct in Shop UI ", getProduct);
     if (!getProduct.success) {
@@ -107,7 +109,7 @@ const Shop = () => {
               data.pages.map((page) =>
                 page.products.map((product) => (
                   <ProductBox key={product._id} product={product} />
-                ))
+                )),
               )}
           </div>
 
@@ -122,7 +124,22 @@ const Shop = () => {
                 className="cursor-pointer"
               />
             ) : (
-              <>{!isFetching && <span>No more data to load.</span>}</>
+              <>
+                {!isFetching && (
+                  <div className="text-center flex flex-col justify-center items-center">
+                    <div className="h-full w-full flex justify-center items-center">
+                      <Image
+                        src={notFound.src}
+                        width={notFound.width}
+                        height={notFound.height}
+                        alt="not-found"
+                        className="w-20"
+                      />
+                    </div>
+                    <span className="text-primary">No more data to load.</span>
+                  </div>
+                )}
+              </>
             )}
           </div>
         </div>
