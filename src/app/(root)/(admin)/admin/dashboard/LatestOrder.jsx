@@ -65,7 +65,7 @@ const LatestOrder = () => {
             <TableCell>{order.payment_id}</TableCell>
             <TableCell>{order.products.length}</TableCell>
             <TableCell>{statusBadge(order.status)}</TableCell>
-            <TableCell className="text-right">
+            <TableCell>
               {order.totalAmount.toLocaleString("en-IN", {
                 style: "currency",
                 currency: "INR",
