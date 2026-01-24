@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import {
   Table,
@@ -17,10 +17,13 @@ import Image from "next/image";
 import notFound from "@/assets/images/not-found.png";
 
 const LatestReview = () => {
-
   const [latestReview, setLatestReview] = useState();
 
-  const {data: getLatestReview, loading} = useFetch("/api/dashboard/admin/latest-review");
+  const { data: getLatestReview, loading } = useFetch(
+    "/api/dashboard/admin/latest-review",
+  );
+
+  console.log("review", getLatestReview)
 
   useEffect(() => {
     if (getLatestReview && getLatestReview.success) {
@@ -59,38 +62,18 @@ const LatestReview = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {Array.from({ length: 10 }).map((_, i) => (
-          <TableRow key={i}>
-            <TableCell className="flex items-center gap-3" >
-              <Avatar>
-                <AvatarImage src={imgPlaceholder.src} />
-              </Avatar>
-              <span className="line-clamp-1" >Lorem ipsum dolor sit amet.</span>
-            </TableCell>
-            <TableCell>
-              <div className="flex items-center ">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <span key={i} >
-                    <IoStar className="text-yellow-500  " />
-                  </span>
-                ))}
-              </div>
-            </TableCell>
-          </TableRow>
-        ))}
-
         {latestReview?.map((review) => (
           <TableRow key={review._id}>
-            <TableCell className="flex items-center gap-3" >
+            <TableCell className="flex items-center gap-3">
               <Avatar>
-                <AvatarImage src={imgPlaceholder.src} />
+                <AvatarImage src={ review?.product?.media[0]?.secure_url || imgPlaceholder.src} />
               </Avatar>
-              {/* <span className="line-clamp-1" >{review.product.name}</span> */}
+              <span className="line-clamp-1" >{review?.product?.name || "Not Found"}</span>
             </TableCell>
             <TableCell>
               <div className="flex items-center ">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <span key={i} >
+                {Array.from({ length: review?.rating }).map((_, i) => (
+                  <span key={i}>
                     <IoStar className="text-yellow-500  " />
                   </span>
                 ))}
@@ -98,7 +81,6 @@ const LatestReview = () => {
             </TableCell>
           </TableRow>
         ))}
-
       </TableBody>
     </Table>
   );
