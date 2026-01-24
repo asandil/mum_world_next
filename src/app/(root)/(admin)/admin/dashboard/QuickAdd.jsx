@@ -15,39 +15,33 @@ const QuickAdd = () => {
   return (
     <div className="grid lg:grid-cols-4 sm:grid-cols-2 sm:gap-10 gap-5 mt-10">
       <Link href={ADMIN_CATEGORY_ADD}>
-        <div className="flex items-center justify-between p-3 rounded-lg shadow bg-white dark:bg-card bg-gradient-to-tr from-primary/50 via-primary/70 to-primary ">
-          <h4 className="font-medium text-white">
-            Add Category
-          </h4>
-          <span className="w-12 h-12 border dark:border-green-800 flex justify-center items-center rounded-full  text-white">
+        <div className="flex items-center justify-between p-3 rounded-lg bg-primary hover:bg-primary-hover hover:shadow-lg">
+          <h4 className="font-medium text-white">Add Category</h4>
+          <span className="w-12 h-12 border border-white flex justify-center items-center rounded-full  text-white">
             <BiCategory size={20} />
           </span>
         </div>
       </Link>
       <Link href={ADMIN_PRODUCT_ADD}>
-        <div className="flex items-center justify-between p-3 rounded-lg shadow bg-white dark:bg-card bg-gradient-to-tr from-primary/50 via-primary/70 to-primary">
-          <h4 className="font-medium text-white">
-            Add Product
-          </h4>
-          <span className="w-12 h-12 border dark:border-blue-800 flex justify-center items-center rounded-full  text-white">
+        <div className="flex items-center justify-between p-3 rounded-lg bg-primary hover:bg-primary-hover hover:shadow-lg">
+          <h4 className="font-medium text-white">Add Product</h4>
+          <span className="w-12 h-12 border border-white flex justify-center items-center rounded-full  text-white">
             <IoShirtOutline size={20} />
           </span>
         </div>
       </Link>
       <Link href={ADMIN_COUPON_ADD}>
-        <div className="flex items-center justify-between p-3 rounded-lg shadow bg-primary">
+        <div className="flex items-center justify-between p-3 rounded-lg bg-primary hover:bg-primary-hover hover:shadow-lg">
           <h4 className="font-medium text-white">Add Coupon</h4>
-          <span className="w-12 h-12 border dark:border-yellow-800 flex justify-center items-center rounded-full  text-white">
+          <span className="w-12 h-12 border border-white flex justify-center items-center rounded-full  text-white">
             <RiCoupon2Line size={20} />
           </span>
         </div>
       </Link>
       <Link href={ADMIN_MEDIA_SHOW}>
-        <div className="flex items-center justify-between p-3 rounded-lg shadow bg-primary">
-          <h4 className="font-medium text-white">
-            Upload Media
-          </h4>
-          <span className="w-12 h-12 border  border-white flex justify-center items-center rounded-full  text-white">
+        <div className="flex items-center justify-between p-3 rounded-lg bg-primary hover:bg-primary-hover hover:shadow-lg">
+          <h4 className="font-medium text-white">Upload Media</h4>
+          <span className="w-12 h-12 border border-white flex justify-center items-center rounded-full  text-white">
             <MdOutlinePermMedia size={20} />
           </span>
         </div>
