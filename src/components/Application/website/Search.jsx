@@ -23,11 +23,11 @@ const Search = ({ isShow }) => {
 
   return (
     <div
-      className="w-[50%] max-w-auto"
+      className="w-full"
     >
        <form onSubmit={handleSubmit} className="flex justify-between items-center relative">
         <Input
-          className="rounded-full h-8 ps-5 border-primary"
+          className="rounded-full h-10 ps-5 border-primary"
           placeholder="Search..."
           onChange={(e) => setQuery(e.target.value)}
           value={query || ''}

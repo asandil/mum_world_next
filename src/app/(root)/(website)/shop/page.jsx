@@ -61,7 +61,7 @@ const Shop = () => {
     <div>
       {/* <MainSlider /> */}
       <WebsiteBreadcrumb props={breadcrumb} />
-      <section className="lg:flex lg:px-32 px-4 my-10">
+      <section className="lg:flex xl:px-32 lg:px-10 px-4 my-10">
         {windowSize.width >= 1024 ? (
           <div className="w-72 me-4 lg:block hidden">
             <div className="sticky top-0 bg-gray-50 p-4 rounded">

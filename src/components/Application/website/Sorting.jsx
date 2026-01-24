@@ -23,19 +23,21 @@ const Sorting = ({
 }) => {
   const [showSearch, setShowSearch] = useState(false);
   return (
-    <div className="flex justify-between items-center flex-wrap gap-2 p-4 bg-gray-50">
-      <Button
-        type="button"
-        className="lg:hidden"
-        variant="outline"
-        onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
-      >
-        <IoFilter />
-        Filter
-      </Button>
-      <Search isShow={showSearch} />
-      <div className="flex flex-wrap gap-4">
-        <ul className="flex items-center gap-4">
+    <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4 p-4 bg-gray-50">
+      <div className="flex justify-between w-full gap-4 lg:hidden">
+        <Button
+          type="button"
+          className="lg:hidden"
+          variant="outline"
+          onClick={() => setMobileFilterOpen(!mobileFilterOpen)}
+        >
+          <IoFilter />
+          Filter
+        </Button>
+        <Search isShow={showSearch} />
+      </div>
+      <div className="flex justify-between gap-2 sm:gap-4">
+        <ul className="flex items-center gap-2 sm:gap-4">
           <li className="font-semibold">Show</li>
           {[9, 12, 24, 48].map((limitNumber) => (
             <li key={limitNumber}>
@@ -44,7 +46,7 @@ const Sorting = ({
                 onClick={() => setLimit(limitNumber)}
                 className={`${
                   limitNumber === limit
-                    ? "w-8 h-8 flex justify-center items-center rounded-full bg-primary text-white text-sm"
+                    ? "w-6 h-6 sm:w-8 sm:h-8 flex justify-center items-center rounded-full bg-primary text-white text-sm"
                     : "cursor-pointer"
                 }`}
               >
@@ -66,6 +68,9 @@ const Sorting = ({
             ))}
           </SelectContent>
         </Select>
+      </div>
+      <div className="lg:block hidden w-full">
+      <Search isShow={showSearch}/>
       </div>
     </div>
   );
