@@ -11,6 +11,7 @@ import {
 import useFetch from "@/hooks/useFetch";
 import Image from "next/image";
 import notFound from "@/assets/images/not-found.png";
+import { statusBadge } from "@/lib/helperFunction";
 
 const LatestOrder = () => {
   const [latestOrder, setLatestOrder] = useState();
@@ -63,8 +64,13 @@ const LatestOrder = () => {
             <TableCell>{order._id}</TableCell>
             <TableCell>{order.payment_id}</TableCell>
             <TableCell>{order.products.length}</TableCell>
-            <TableCell>Pending</TableCell>
-            <TableCell className="text-right">100</TableCell>
+            <TableCell>{statusBadge(order.status)}</TableCell>
+            <TableCell className="text-right">
+              {order.totalAmount.toLocaleString("en-IN", {
+                style: "currency",
+                currency: "INR",
+              })}
+            </TableCell>
           </TableRow>
         ))}
       </TableBody>
