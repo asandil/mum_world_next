@@ -12,6 +12,8 @@ import useFetch from "@/hooks/useFetch";
 import Image from "next/image";
 import notFound from "@/assets/images/not-found.png";
 import { statusBadge } from "@/lib/helperFunction";
+import { ADMIN_ORDER_DETAILS } from "@/routes/AdminPanelRoute";
+import Link from "next/link";
 
 const LatestOrder = () => {
   const [latestOrder, setLatestOrder] = useState();
@@ -61,7 +63,7 @@ const LatestOrder = () => {
       <TableBody>
         {latestOrder?.map((order) => (
           <TableRow key={order._id}>
-            <TableCell>{order._id}</TableCell>
+            <TableCell className=" hover:text-primary hover:underline-offset-2"> <Link href={ADMIN_ORDER_DETAILS(order.order_id)} > {order._id} </Link></TableCell>
             <TableCell>{order.payment_id}</TableCell>
             <TableCell>{order.products.length}</TableCell>
             <TableCell>{statusBadge(order.status)}</TableCell>

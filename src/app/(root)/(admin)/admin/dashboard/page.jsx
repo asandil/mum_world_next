@@ -8,6 +8,7 @@ import { OrderOverview } from "./OrderOverview";
 import { OrderStatus } from "./OrderStatus";
 import LatestOrder from "./LatestOrder";
 import LatestReview from "./LatestReview";
+import { ADMIN_ORDER_SHOW, ADMIN_REVIEW_SHOW } from "@/routes/AdminPanelRoute";
 
 const AdminDashboard = () => {
   return (
@@ -20,7 +21,7 @@ const AdminDashboard = () => {
             <div className="flex justify-between items-center">
               <span className="font-semibold">Order Overview</span>
               <Button type="button">
-                <Link href="">View All</Link>
+                <Link href={ADMIN_ORDER_SHOW}>View All</Link>
               </Button>
             </div> 
           </CardHeader>
@@ -33,7 +34,7 @@ const AdminDashboard = () => {
             <div className="flex justify-between items-center">
               <span className="font-semibold">Order Overview</span>
               <Button type="button">
-                <Link href="">View All</Link>
+                <Link href={ADMIN_ORDER_SHOW}>View All</Link>
               </Button>
             </div>
           </CardHeader>
@@ -46,9 +47,9 @@ const AdminDashboard = () => {
         <Card className="rounded-lg lg:w-[70%] w-full p-0 block ">
           <CardHeader className="py-3 border [.border-b]:pb-3 ">
             <div className="flex justify-between items-center">
-              <span className="font-semibold">Latest Order</span>
+              <span className="font-semibold">Latest Order (20)</span>
               <Button type="button" >
-                <Link href="">View All</Link>
+                <Link href={ADMIN_ORDER_SHOW}>View All</Link>
               </Button>
             </div>
           </CardHeader>
@@ -61,7 +62,7 @@ const AdminDashboard = () => {
             <div className="flex justify-between items-center">
               <span className="font-semibold">Latest Review</span>
               <Button type="button" >
-                <Link href="">View All</Link>
+                <Link href={ADMIN_REVIEW_SHOW}>View All</Link>
               </Button>
             </div>
           </CardHeader>
