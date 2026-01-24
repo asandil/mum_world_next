@@ -21,7 +21,7 @@ const Sorting = ({
   mobileFilterOpen,
   setMobileFilterOpen,
 }) => {
-    const [showSearch, setShowSearch] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
   return (
     <div className="flex justify-between items-center flex-wrap gap-2 p-4 bg-gray-50">
       <Button
@@ -33,37 +33,40 @@ const Sorting = ({
         <IoFilter />
         Filter
       </Button>
-      <ul className="flex items-center gap-4">
-        <li className="font-semibold">Show</li>
-        {[9, 12, 24, 48].map((limitNumber) => (
-          <li key={limitNumber}>
-            <button
-              type="button"
-              onClick={() => setLimit(limitNumber)}
-              className={`${
-                limitNumber === limit
-                  ? "w-8 h-8 flex justify-center items-center rounded-full bg-primary text-white text-sm"
-                  : "cursor-pointer"
-              }`}
-            >
-              {limitNumber}
-            </button>
-          </li>
-        ))}
-      </ul>
       <Search isShow={showSearch} />
-      <Select value={sorting} onValueChange={(value) => setSorting(value)}>
-        <SelectTrigger className="md:w-[180px] w-48 bg-white ">
-          <SelectValue placeholder="Default Sorting" />
-        </SelectTrigger>
-        <SelectContent>
-          {sortings.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
-              {option.label}
-            </SelectItem>
+      <div className="flex flex-wrap gap-4">
+        <ul className="flex items-center gap-4">
+          <li className="font-semibold">Show</li>
+          {[9, 12, 24, 48].map((limitNumber) => (
+            <li key={limitNumber}>
+              <button
+                type="button"
+                onClick={() => setLimit(limitNumber)}
+                className={`${
+                  limitNumber === limit
+                    ? "w-8 h-8 flex justify-center items-center rounded-full bg-primary text-white text-sm"
+                    : "cursor-pointer"
+                }`}
+              >
+                {limitNumber}
+              </button>
+            </li>
           ))}
-        </SelectContent>
-      </Select>
+        </ul>
+
+        <Select value={sorting} onValueChange={(value) => setSorting(value)}>
+          <SelectTrigger className="md:w-[180px] w-48 bg-white ">
+            <SelectValue placeholder="Default Sorting" />
+          </SelectTrigger>
+          <SelectContent>
+            {sortings.map((option) => (
+              <SelectItem key={option.value} value={option.value}>
+                {option.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
     </div>
   );
 };
