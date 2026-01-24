@@ -50,12 +50,6 @@ const CartPage = () => {
     );
     setSubTotal(totalAmount);
     setDiscount(discount);
-
-    if (totalAmount >= 500) {
-      setDelivery(0);
-    } else {
-      setDelivery(80);
-    }
   }, [cart]);
 
   return (
@@ -86,7 +80,7 @@ const CartPage = () => {
               </thead>
               <tbody>
                 {cart.products.map((product) => (
-                  <tr key={product._id} className="md:table-row block border-b">
+                  <tr key={product._id} className="md:table-row block border-b pb-[10px]">
                     <td className="p-3">
                       <div className="flex items-center gap-5">
                         <Image
@@ -189,41 +183,24 @@ const CartPage = () => {
           </div>
           <div className="lg:w-[30%] w-full">
             <div className="rounded-lg shadow-sm bg-gray-50 p-5 sticky top-5">
-              <h4 className="text-lg font-semibold mb-5">Order Summary</h4>
+              <h4 className="text-lg font-semibold">Order Summary</h4>
               <div>
                 <table className="w-full">
                   <tbody>
                     <tr>
-                      <td className="font-[600] py-2">Subtotal</td>
-                      <td className="text-end py-2 ">
+                      <td className="font-[600] pt-1">Subtotal</td>
+                      <td className="text-end pt-1 ">
                         {(subtotal + discount).toLocaleString("en-IN", {
                           style: "currency",
                           currency: "INR",
                         })}
                       </td>
                     </tr>
-                    {delivery > 0 ? (
-                      <tr>
-                        <td className="font-[600] py-2">Delivery</td>
-                        <td className="text-end py-2 ">
-                          {delivery.toLocaleString("en-IN", {
-                            style: "currency",
-                            currency: "INR",
-                          })}
-                        </td>
-                      </tr>
-                    ) : (
-                      <tr>
-                        <td className="font-[600] py-2 text-green-600">
-                          Delivery
-                        </td>
-                        <td className="text-end py-2 text-green-600">FREE</td>
-                      </tr>
-                    )}
+                    
                     {discount > 0 && (
                       <tr>
-                        <td className="font-[600] py-2">Discount</td>
-                        <td className="text-end py-2 text-green-600">
+                        <td className="font-[600] pb-1">Discount</td>
+                        <td className="text-end pb-1 text-green-600">
                           -{" "}
                           {discount.toLocaleString("en-IN", {
                             style: "currency",
@@ -232,33 +209,23 @@ const CartPage = () => {
                         </td>
                       </tr>
                     )}
-                    {delivery === 0 && subtotal >= 500 && (
-                      <tr>
-                        <td className="font-[600] py-2 text-green-600">
-                          FREE Delivery
-                        </td>
-                        <td className="text-end py-2 text-green-600">
-                          - 80.00
-                        </td>
-                      </tr>
-                    )}
                     <tr className="border-t">
-                      <td className="font-[600] py-2 text-lg">Order Total</td>
-                      <td className="text-end py-2 text-lg font-bold">
+                      <td className="font-[600] pt-2 text-lg">Order Total</td>
+                      <td className="text-end pt-2 text-lg font-bold">
                         {(
-                          subtotal + (delivery > 0 ? delivery : 0)
+                          subtotal
                         ).toLocaleString("en-IN", {
                           style: "currency",
                           currency: "INR",
                         })}
                       </td>
                     </tr>
-                    {(discount > 0 || delivery === 0) && (
+                    {(discount > 0 ) && (
                       <tr>
-                        <td colSpan={2} className="text-sm text-green-600 pt-2">
+                        <td colSpan={2} className="text-sm text-green-600">
                           You save{" "}
-                          {(
-                            discount + (delivery === 0 ? 80 : 0)
+                          {( 
+                            discount
                           ).toLocaleString("en-IN", {
                             style: "currency",
                             currency: "INR",
@@ -271,11 +238,11 @@ const CartPage = () => {
                 <Button
                   type="button"
                   asChild
-                  className="w-full bg-black rounded-full mt-5 mb-3"
+                  className="w-full bg-black text-[16px] rounded-full mt-3 sm:mt-5 mb-3"
                 >
                   <Link href={WEBSITE_CHECKOUT}>Proceed to Checkout</Link>
                 </Button>
-                <p className="text-center">
+                <p className="text-center text-[16px] sm:text-[18px]">
                   <Link href={WEBSITE_SHOP} className="hover:underline">
                     Continue Shopping
                   </Link>
