@@ -312,7 +312,7 @@ const Checkout = () => {
           </div>
         </div>
       ) : (
-        <div className="flex lg:flex-nowrap flex-wrap gap-10 my-10 lg:px-32 px-4">
+        <div className="flex lg:flex-nowrap flex-wrap gap-10 my-10 xl:px-32 lg:px-10 px-4">
           <div className="lg:w-[60%] w-full">
             <div className="flex font-semibold gap-2 items-center">
               <FaShippingFast size={25} />

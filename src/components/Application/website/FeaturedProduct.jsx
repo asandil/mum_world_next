@@ -32,7 +32,7 @@ const FeaturedProduct = () => {
 
   if (loading) {
     return (
-      <section className="lg:px-32 px-4 sm:py-10">
+      <section className="xl:px-32 lg:px-10 px-4 sm:py-10">
         <div className="flex justify-between items-center mb-5">
           <h2 className="sm:text-4xl text-2xl font-semibold">
             Featured Products
@@ -53,7 +53,7 @@ const FeaturedProduct = () => {
   if (!productData) return null;
 
   return (
-    <section className="lg:px-32 px-4">
+    <section className="xl:px-32 lg:px-10 px-4">
       <div className="flex justify-between items-center mb-5">
         <h2 className="text-[22px] text-black font-semibold">
           Featured Products

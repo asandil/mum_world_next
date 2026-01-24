@@ -20,7 +20,7 @@ export default function MainHome() {
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative py-8 md:py-12 bg-gradient-to-r from-primary/10 to-primary/30">
-        <div className="mx-auto px-4 lg:px-32">
+        <div className="mx-auto xl:px-32 lg:px-10 px-4">
           <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <div>
               <h1 className="text-3xl lg:text-[44px] font-bold text-gray-900 mb-4 md:mb-6">
@@ -75,7 +75,7 @@ export default function MainHome() {
 
       {/* What We Do Section */}
       <section id="what-we-do" className="py-8 md:py-12">
-        <div className="mx-auto px-4 lg:px-32">
+        <div className="mx-auto xl:px-32 lg:px-10 px-4">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               What We Do
@@ -251,7 +251,7 @@ export default function MainHome() {
         id="subscribe"
         className="py-8 md:py-12 bg-gradient-to-r from-primary/10 to-primary/20"
       >
-        <div className="mx-auto px-4 lg:px-32">
+        <div className="mx-auto xl:px-32 lg:px-10 px-4">
           <div className="bg-[url(https://res.cloudinary.com/dc0wr8hev/image/upload/v1768660948/mygwj3pdpar1chkoarxl.webp)] bg-no-repeat bg-cover rounded-2xl shadow-xl p-8 md:p-12">
             <div className="text-center mb-8">
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
@@ -271,7 +271,7 @@ export default function MainHome() {
 
       {/* Our Team / Founder Section */}
       <section className="py-8 md:py-12">
-        <div className="mx-auto px-4 lg:px-32">
+        <div className="mx-auto px-4 xl:px-32 lg:px-10">
           <div className="text-center mb-8 md:mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
               Meet Sriti - Founder of Mumworld
@@ -333,7 +333,7 @@ export default function MainHome() {
 
       {/* Testimonial section */}
       <section className="py-8 md:py-12">
-        <div className="mx-auto px-4">
+        <div className="mx-auto xl:px-32 lg:px-10 px-4">
           <TestimonialCarousel />
         </div>
       </section>

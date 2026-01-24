@@ -72,7 +72,7 @@ const CartPage = () => {
           </Button>
         </div>
       ) : (
-        <div className="flex lg:flex-nowrap flex-wrap gap-10 my-10 lg:px-32 px-4">
+        <div className="flex lg:flex-nowrap flex-wrap gap-10 my-10 xl:px-32 lg:px-10 px-4">
           <div className="lg:w-[70%] w-full">
             <table className="w-full border">
               <thead className="border-b bg-gray-50 md:table-header-group hidden">

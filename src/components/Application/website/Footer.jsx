@@ -29,7 +29,7 @@ import { FaClockRotateLeft } from "react-icons/fa6";
 const Footer = () => {
   return (
     <footer className="bg-gray-50 border-t">
-      <div className="flex xl:flex-row flex-col py-10 lg:px-32 px-4 xl:justify-between justify-center items-center gap-8">
+      <div className="flex xl:flex-row flex-col py-10 xl:px-32 lg:px-10 px-4 xl:justify-between justify-center items-center gap-8">
         <div className=" mt-[-48px]">
           <Image
             src={logo}

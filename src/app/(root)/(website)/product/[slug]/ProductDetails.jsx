@@ -302,7 +302,7 @@ const ProductDetails = ({ product, variant, colors, sizes, reviewCount }) => {
   };
 
   return (
-    <div className="lg:px-32 px-4">
+    <div className="xl:px-32 lg:px-10 px-4">
       <div className="my-10">
         <Breadcrumb>
           <BreadcrumbList>
