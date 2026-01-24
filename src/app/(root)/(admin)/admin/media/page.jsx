@@ -191,7 +191,7 @@ const MediaPage = () => {
                       className="w-20"
                     />
                   </div>
-                  <span>Data not found.</span>
+                  <span className="text-red-500" >Data not found.</span>
                 </div>
               )}
               <div className="grid lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 gap-2 mb-5">

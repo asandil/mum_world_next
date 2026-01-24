@@ -11,6 +11,8 @@ import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import Fuse from "fuse.js";
 import searchData from "@/lib/search";
+import Image from "next/image";
+import notFound from "@/assets/images/not-found.png";
 
 const options = {
   keys: ["label", "description", "keywords"],
@@ -67,8 +69,17 @@ const SearchModel = ({ open, setOpen }) => {
           ))}
 
           {query && results.length === 0 && (
-            <div className="text-sm text-center text-red-500">
-              No Results Found.
+            <div className="text-center flex flex-col justify-center items-center">
+              <div className="h-full w-full flex justify-center items-center">
+                <Image
+                  src={notFound.src}
+                  width={notFound.width}
+                  height={notFound.height}
+                  alt="not-found"
+                  className="w-20"
+                />
+              </div>
+              <span className="text-red-500">No results found</span>
             </div>
           )}
         </ul>
