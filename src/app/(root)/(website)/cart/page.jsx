@@ -35,7 +35,6 @@ const CartPage = () => {
   const dispatch = useDispatch();
   const [subtotal, setSubTotal] = useState(0);
   const [discount, setDiscount] = useState(0);
-  const [delivery, setDelivery] = useState(80);
 
   useEffect(() => {
     const cartProducts = cart.products;
@@ -68,7 +67,7 @@ const CartPage = () => {
       ) : (
         <div className="flex lg:flex-nowrap flex-wrap gap-10 my-10 xl:px-32 lg:px-10 px-4">
           <div className="lg:w-[70%] w-full">
-            <table className="w-full border">
+            <table className="w-full rounded-lg shadow-lg">
               <thead className="border-b bg-gray-50 md:table-header-group hidden">
                 <tr>
                   <th className="text-start p-3">Product</th>
@@ -182,7 +181,7 @@ const CartPage = () => {
             </table>
           </div>
           <div className="lg:w-[30%] w-full">
-            <div className="rounded-lg shadow-sm bg-gray-50 p-5 sticky top-5">
+            <div className="rounded-lg shadow-lg bg-gray-50 p-5 sticky top-5">
               <h4 className="text-lg font-semibold">Order Summary</h4>
               <div>
                 <table className="w-full">

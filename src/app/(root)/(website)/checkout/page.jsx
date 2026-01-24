@@ -56,7 +56,7 @@ const Checkout = () => {
     "POST",
     {
       data: cart.products,
-    }
+    },
   );
 
   const [isCouponApplied, setIsCouponApplied] = useState(false);
@@ -87,12 +87,12 @@ const Checkout = () => {
     const cartProducts = cart.products;
     const subTotalAmount = cartProducts.reduce(
       (sum, product) => sum + product.sellingPrice * product.qty,
-      0
+      0,
     );
     const discount = cartProducts.reduce(
       (sum, product) =>
         sum + (product.mrp - product.sellingPrice) * product.qty,
-      0
+      0,
     );
     setSubTotal(subTotalAmount);
     setDiscount(discount);
@@ -193,7 +193,7 @@ const Checkout = () => {
     try {
       const { data: orderIdData } = await axios.post(
         "/api/payment/get-order-id",
-        { amount }
+        { amount },
       );
       if (!orderIdData.success) {
         throw new Error(orderIdData.message);
@@ -246,7 +246,7 @@ const Checkout = () => {
               discount: discount,
               couponDiscountAmount: couponDiscountAmount,
               totalAmount: totalAmount,
-            }
+            },
           );
 
           if (paymentResponseData.success) {
@@ -313,7 +313,7 @@ const Checkout = () => {
         </div>
       ) : (
         <div className="flex lg:flex-nowrap flex-wrap gap-10 my-10 xl:px-32 lg:px-10 px-4">
-          <div className="lg:w-[60%] w-full">
+          <div className="lg:w-[60%] w-full rounded-xl shadow-lg p-5 border ">
             <div className="flex font-semibold gap-2 items-center">
               <FaShippingFast size={25} />
             </div>
@@ -568,10 +568,10 @@ const Checkout = () => {
             </div>
           </div>
           <div className="lg:w-[40%] w-full">
-            <div className="rounded bg-gray-50 p-5 sticky top-5">
-              <h4 className="text-lg font-semibold mb-5">Order Summary</h4>
+            <div className="border rounded-xl shadow-lg bg-gray-50 p-5 sticky top-5">
+              <h4 className="text-lg font-semibold mb-2">Order Summary</h4>
               <div>
-                <table className="w-full border">
+                <table className="w-full rounded-xl shadow-lg mb-2">
                   <tbody>
                     {verifiedCartData &&
                       verifiedCartData?.map((product) => (
@@ -601,7 +601,7 @@ const Checkout = () => {
                             </div>
                           </td>
                           <td className="p-3 text-center">
-                            <p className="text-nowrap text-sm">
+                            <p className="text-nowrap text-[16px]">
                               {product.qty} X{" "}
                               {product.sellingPrice.toLocaleString("en-IN", {
                                 style: "currency",
@@ -625,7 +625,7 @@ const Checkout = () => {
                       </td>
                     </tr>
 
-                    <tr>
+                    {/* <tr>
                       <td className="font-[600] py-2">Discount</td>
                       <td className="text-end py-2 ">
                         -{" "}
@@ -634,7 +634,7 @@ const Checkout = () => {
                           currency: "INR",
                         })}
                       </td>
-                    </tr>
+                    </tr> */}
 
                     <tr>
                       <td className="font-[600] py-2">Coupon Discount</td>
