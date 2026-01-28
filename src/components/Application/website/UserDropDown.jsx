@@ -30,6 +30,7 @@ import userIcon from "@/assets/images/user.png";
 import { AiOutlineLogout } from "react-icons/ai";
 import { showToast } from "@/lib/showToast";
 import { logout } from "@/store/reducer/authReducer";
+import { ADMIN_DASHBOARD } from "@/routes/AdminPanelRoute";
 
 const UserDropDown = () => {
   const pathname = usePathname();
@@ -53,6 +54,9 @@ const UserDropDown = () => {
     }
   };
 
+  // Check if user is admin
+  const isAdmin = auth?.role === "admin";
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild className="cursor-pointer">
@@ -65,7 +69,7 @@ const UserDropDown = () => {
               />
             </Link>
           ) : (
-            <Link href={USER_DASHBOARD}>
+            <Link href={isAdmin ? USER_DASHBOARD : USER_PROFILE}>
               <Avatar className="border border-primary hover:border-primary-hover">
                 <AvatarImage src={auth?.avatar?.url || userIcon.src} />
               </Avatar>
@@ -97,45 +101,66 @@ const UserDropDown = () => {
             <p className="font-semibold">Role: {auth?.role}</p>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
-          <DropdownMenuItem asChild className="mb-1">
-            <Link
-              href={USER_DASHBOARD}
-              className={`flex items-center gap-2 p-3 text-sm sm:text-lg rounded hover:bg-primary hover:text-white transition-colors ${
-                pathname.startsWith(USER_DASHBOARD)
-                  ? "bg-primary text-white cursor-not-allowed"
-                  : "cursor-pointer"
-              }`}
-            >
-              <TbLayoutDashboardFilled size={28} />
-              <span>Dashboard</span>
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild className="mb-1">
-            <Link
-              href={USER_PROFILE}
-              className={`flex items-center gap-2 p-3 text-sm sm:text-lg rounded hover:bg-primary hover:text-white ${
-                pathname.startsWith(USER_PROFILE)
-                  ? "bg-primary text-white cursor-not-allowed"
-                  : "cursor-pointer"
-              }`}
-            >
-              <FaUserCog size={28} />
-              <span>Profile</span>
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem asChild className="mb-1">
-            <Link
-              href={USER_ORDERS}
-              className={`flex items-center gap-2 p-3 text-sm sm:text-lg rounded hover:bg-primary hover:text-white transition-colors ${
-                pathname.startsWith(USER_ORDERS)
-                  ? "bg-primary text-white cursor-not-allowed"
-                  : "cursor-pointer"
-              }`}
-            >
-              <HiOutlineShoppingBag size={34} />
-              <span>Orders</span>
-            </Link>
-          </DropdownMenuItem>
+
+          {/* Only show Dashboard for admin */}
+          {isAdmin ? (
+            <DropdownMenuItem asChild className="mb-1">
+              <Link
+                href={ADMIN_DASHBOARD}
+                className={`flex items-center gap-2 p-3 text-sm sm:text-lg rounded hover:bg-primary hover:text-white transition-colors ${
+                  pathname.startsWith(ADMIN_DASHBOARD)
+                    ? "bg-primary text-white cursor-not-allowed"
+                    : "cursor-pointer"
+                }`}
+              >
+                <TbLayoutDashboardFilled size={28} />
+                <span>Admin Dashboard</span>
+              </Link>
+            </DropdownMenuItem>
+          ) : (
+            <div>
+              <DropdownMenuItem asChild className="mb-1">
+                <Link
+                  href={USER_DASHBOARD}
+                  className={`flex items-center gap-2 p-3 text-sm sm:text-lg rounded hover:bg-primary hover:text-white transition-colors ${
+                    pathname.startsWith(USER_DASHBOARD)
+                      ? "bg-primary text-white cursor-not-allowed"
+                      : "cursor-pointer"
+                  }`}
+                >
+                  <TbLayoutDashboardFilled size={28} />
+                  <span>Dashboard</span>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild className="mb-1">
+                <Link
+                  href={USER_PROFILE}
+                  className={`flex items-center gap-2 p-3 text-sm sm:text-lg rounded hover:bg-primary hover:text-white ${
+                    pathname.startsWith(USER_PROFILE)
+                      ? "bg-primary text-white cursor-not-allowed"
+                      : "cursor-pointer"
+                  }`}
+                >
+                  <FaUserCog size={28} />
+                  <span>Profile</span>
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild className="mb-1">
+                <Link
+                  href={USER_ORDERS}
+                  className={`flex items-center gap-2 p-3 text-sm sm:text-lg rounded hover:bg-primary hover:text-white transition-colors ${
+                    pathname.startsWith(USER_ORDERS)
+                      ? "bg-primary text-white cursor-not-allowed"
+                      : "cursor-pointer"
+                  }`}
+                >
+                  <HiOutlineShoppingBag size={34} />
+                  <span>Orders</span>
+                </Link>
+              </DropdownMenuItem>
+            </div>
+          )}
+
           <DropdownMenuItem asChild className="mb-1">
             <Button
               type="button"
