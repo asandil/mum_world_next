@@ -20,7 +20,7 @@ export const metadata = {
 
 // Server Component
 const BlogPage = async ({ params }) => {
-  const { slug } = params; // ✅ Works in server component
+  const { slug } = await params;
 
   // Find blog by slug
   const blog = Blogs.find((b) => b.slug === slug);
