@@ -10,7 +10,7 @@ import { LastPage } from "@mui/icons-material";
 import { keepPreviousData, useInfiniteQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React, { useState } from "react";
-import loading from "@/assets/images/loading.svg"
+import loading from "@/assets/images/loading.svg";
 import Image from "next/image";
 import Media from "./Media";
 import ModalMediaBlock from "./ModalMediaBlock";
@@ -24,12 +24,11 @@ const MediaModal = ({
   setSelectedMedia,
   isMultiple,
 }) => {
-
-  const [previouslySelected, setPreviouslySelected] = useState([])
+  const [previouslySelected, setPreviouslySelected] = useState([]);
 
   const fetchMedia = async (page) => {
     const { data: response } = await axios.get(
-      `/api/media?page=${page}&&limit=18&&deleteType=SD`
+      `/api/media?page=${page}&&limit=18&&deleteType=SD`,
     );
     return response;
   };
@@ -54,20 +53,20 @@ const MediaModal = ({
   });
 
   const handleClear = () => {
-    setSelectedMedia([])
-    setPreviouslySelected([])
-    showToast("success", "Media selected cleared.")
+    setSelectedMedia([]);
+    setPreviouslySelected([]);
+    showToast("success", "Media selected cleared.");
   };
   const handleClose = () => {
-    setSelectedMedia(previouslySelected)
-    setOpen(false)
+    setSelectedMedia(previouslySelected);
+    setOpen(false);
   };
   const handleSelect = () => {
-    if(selectedMedia.length <=0){
-      return showToast("error", "Please select a media.")
+    if (selectedMedia.length <= 0) {
+      return showToast("error", "Please select a media.");
     }
-    setPreviouslySelected(selectedMedia)
-    setOpen(false)
+    setPreviouslySelected(selectedMedia);
+    setOpen(false);
   };
 
   return (
@@ -83,54 +82,73 @@ const MediaModal = ({
           </DialogHeader>
 
           <div className="h-[calc(100%-80px)] overflow-auto py-2 ">
-            {isPending ? 
-            (<div className="size-full flex justify-center items-center">
-              <Image src={loading} alt="loading" height={80} width={80} />
-            </div>)
-            :
-            isError ? 
-            <div className="size-full flex justify-center items-center">
-              <span className="text-red-500">{error.message}</span>
-            </div>
-            :
-            <>
-            <div className="grid lg:grid-cols-6 grid-cols-3 gap-2">
-              {data?.pages?.map((page, index) => (
-                  <React.Fragment key={index}>
-                    {page?.mediaData?.map((media) => (
-                      <ModalMediaBlock 
-                        key={media._id}
-                        media={media}
-                        selectedMedia={selectedMedia}
-                        setSelectedMedia={setSelectedMedia}
-                        isMultiple={isMultiple}
-                      />
-                    ))}
-                  </React.Fragment>
-                ))}
-            </div> 
-            {hasNextPage ?
-            <div className="flex justify-center py-5 " >
-              <ButtonLoading  type="button" onClick={() => fetchNextPage()} loading={isFetching} text="Load More" className="cursor-pointer" />
-            </div>
-            :
-            <p className="text-center py-5">Nothing more to load.</p>  
-          }
-            </> 
-          }
+            {isPending ? (
+              <div className="size-full flex justify-center items-center">
+                <Image src={loading} alt="loading" height={80} width={80} />
+              </div>
+            ) : isError ? (
+              <div className="size-full flex justify-center items-center">
+                <span className="text-red-500">{error.message}</span>
+              </div>
+            ) : (
+              <>
+                <div className="grid lg:grid-cols-6 grid-cols-3 gap-2">
+                  {data?.pages?.map((page, index) => (
+                    <React.Fragment key={index}>
+                      {page?.mediaData?.map((media) => (
+                        <ModalMediaBlock
+                          key={media._id}
+                          media={media}
+                          selectedMedia={selectedMedia}
+                          setSelectedMedia={setSelectedMedia}
+                          isMultiple={isMultiple}
+                        />
+                      ))}
+                    </React.Fragment>
+                  ))}
+                </div>
+                {hasNextPage ? (
+                  <div className="flex justify-center py-5 ">
+                    <ButtonLoading
+                      type="button"
+                      onClick={() => fetchNextPage()}
+                      loading={isFetching}
+                      text="Load More"
+                      className="cursor-pointer"
+                    />
+                  </div>
+                ) : (
+                  <p className="text-center py-5">Nothing more to load.</p>
+                )}
+              </>
+            )}
           </div>
 
           <div className="h-10 pt-3 border-t flex justify-between">
             <div>
-              <Button type="button" variant="destructive" onClick={handleClear}>
+              <Button
+                type="button"
+                variant="destructive"
+                onClick={handleClear}
+                className="cursor-pointer"
+              >
                 Clear All
               </Button>
             </div>
             <div className="flex gap-5">
-              <Button type="button" variant="secondary" onClick={handleClose}>
+              <Button
+                type="button"
+                variant="secondary"
+                onClick={handleClose}
+                className="cursor-pointer"
+              >
                 Close
               </Button>
-              <Button type="button" onClick={handleSelect}>
+              <Button
+                type="button"
+                onClick={handleSelect}
+                className="cursor-pointer"
+              >
                 Select
               </Button>
             </div>
