@@ -42,7 +42,7 @@ const EditProductVariant = ({}) => {
   const [loading, setLoading] = useState(false);
   const [productOption, setProductOption] = useState([]);
   const { data: productData } = useFetch(
-    `/api/product?deleteType=SD&&size=1000`
+    `/api/product?deleteType=SD&size=100`
   );
   console.log("Get Product Variant in Product Variant Page", productData);
 

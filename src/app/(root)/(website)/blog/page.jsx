@@ -1,6 +1,8 @@
 import React, { Suspense } from "react";
 import BlogListClient from "@/components/BlogListClient";
 
+export const revalidate = 3600; // Revalidate every hour
+
 export const metadata = {
   title: "Motherhood & Wellness Blog | Pregnancy & Baby Care Insights | MumWorld",
   description: "Discover inspiring articles on pregnancy, parenting, baby nutrition, and wellness. Stay informed and supported throughout your motherhood journey on the MumWorld blog.",

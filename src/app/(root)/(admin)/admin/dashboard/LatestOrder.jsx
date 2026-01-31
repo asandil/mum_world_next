@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Table,
   TableBody,
@@ -8,25 +8,13 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import useFetch from "@/hooks/useFetch";
 import Image from "next/image";
 import notFound from "@/assets/images/not-found.png";
 import { statusBadge } from "@/lib/helperFunction";
 import { ADMIN_ORDER_DETAILS } from "@/routes/AdminPanelRoute";
 import Link from "next/link";
 
-const LatestOrder = () => {
-  const [latestOrder, setLatestOrder] = useState();
-  const { data, loading } = useFetch("/api/dashboard/admin/latest-order");
-
-  console.log("Latest order data:", data);
-
-  useEffect(() => {
-    if (data && data.success) {
-      setLatestOrder(data.data);
-    }
-  }, [data]);
-
+const LatestOrder = ({ data: latestOrder, loading }) => {
   if (loading) {
     return (
       <div className="h-full w-full flex justify-center items-center">

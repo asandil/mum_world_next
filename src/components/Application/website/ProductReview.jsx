@@ -90,7 +90,7 @@ const ProductReview = ({ productId }) => {
       }
       form.reset();
       showToast("success", response.message);
-      queryClient.invalidateQueries(["product-review"]);
+      queryClient.invalidateQueries({ queryKey: ["product-review", productId] });
     } catch (error) {
       showToast("error", error.message);
     } finally {
@@ -111,8 +111,9 @@ const ProductReview = ({ productId }) => {
 
   const { error, data, isFetching, fetchNextPage, hasNextPage } =
     useInfiniteQuery({
-      queryKey: ["product-review"],
+      queryKey: ["product-review", productId],
       queryFn: async ({ pageParam }) => await fetchReview(pageParam),
+      staleTime: 5 * 60 * 1000, // 5 minutes
       initialPageParam: 0,
       getNextPageParam: (lastPage) => {
         return lastPage.nextPage;

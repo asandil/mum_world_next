@@ -49,6 +49,7 @@ const Shop = () => {
     useInfiniteQuery({
       queryKey: ["shop-products", limit, sorting, searchParams],
       queryFn: async ({ pageParam = 0 }) => await fetchProduct(pageParam),
+      staleTime: 2 * 60 * 1000, // 2 minutes
       initialPageParam: 0,
       getNextPageParam: (lastPage) => {
         return lastPage.nextPage;

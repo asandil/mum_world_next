@@ -3,6 +3,8 @@ import { getPoetryPosts } from "@/lib/content";
 import Image from "next/image";
 import Link from "next/link";
 
+export const revalidate = 3600; // Revalidate every hour
+
 export const metadata = {
   title: "Motherhood Poetry Collection | Heartfelt Verses by MumWorld",
   description: "Dive into the emotional world of motherhood through beautifully written poems that capture joy, love, and the journey of being a mom.",

@@ -7,6 +7,8 @@ import { GiFamilyHouse } from "react-icons/gi";
 import { BsStars } from "react-icons/bs";
 import { FaBagShopping } from "react-icons/fa6";
 
+export const revalidate = 3600; // Revalidate every hour
+
 export const metadata = {
   title: "About Mumworld.in | MumWorld",
   description: "Discover inspiring articles on pregnancy, parenting, baby nutrition, and wellness. Stay informed and supported throughout your motherhood journey on the MumWorld blog.",

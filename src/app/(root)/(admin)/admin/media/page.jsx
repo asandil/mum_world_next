@@ -61,6 +61,7 @@ const MediaPage = () => {
   } = useInfiniteQuery({
     queryKey: ["media-data", deleteType],
     queryFn: async ({ pageParam }) => await fetchMedia(pageParam, deleteType),
+    staleTime: 2 * 60 * 1000, // 2 minutes
     initialPageParam: 0,
     getNextPageParam: (lastPage, pages) => {
       const nextPage = pages.length;

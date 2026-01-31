@@ -1,9 +1,8 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -12,25 +11,10 @@ import {
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import imgPlaceholder from "@/assets/images/img-placeholder.webp";
 import { IoStar } from "react-icons/io5";
-import useFetch from "@/hooks/useFetch";
 import Image from "next/image";
 import notFound from "@/assets/images/not-found.png";
 
-const LatestReview = () => {
-  const [latestReview, setLatestReview] = useState();
-
-  const { data: getLatestReview, loading } = useFetch(
-    "/api/dashboard/admin/latest-review",
-  );
-
-  console.log("review", getLatestReview)
-
-  useEffect(() => {
-    if (getLatestReview && getLatestReview.success) {
-      setLatestReview(getLatestReview.data);
-    }
-  }, [getLatestReview]);
-
+const LatestReview = ({ data: latestReview, loading }) => {
   if (loading) {
     return (
       <div className="h-full w-full flex justify-center items-center">

@@ -40,7 +40,7 @@ const AddProduct = () => {
   const [loading, setLoading] = useState(false);
   const [categoryOption, setCategoryOption] = useState([]);
   const { data: getCategory } = useFetch(
-    `/api/category?deleteType=SD&&size=1000`
+    `/api/category?deleteType=SD&size=100`
   );
   console.log(getCategory);
 

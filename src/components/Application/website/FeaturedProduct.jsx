@@ -2,33 +2,23 @@
 
 import axios from "axios";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { WEBSITE_SHOP } from "@/routes/WebsiteRoute";
 import FeaturedProductBox from "./FeaturedProductBox";
+import { useQuery } from "@tanstack/react-query";
 
 const FeaturedProduct = () => {
-  const [productData, setProductData] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data } = await axios(
-          `${process.env.NEXT_PUBLIC_API_BASE_URL}/product/get-featured-product`,
-        );
-        console.log("Featured Product Data in Home Page", data);
-        setProductData(data);
-      } catch (error) {
-        console.error("Error fetching featured products:", error);
-        setProductData({ success: false });
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
+  const { data: productData, isLoading: loading } = useQuery({
+    queryKey: ["featured-products"],
+    queryFn: async () => {
+      const { data } = await axios(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/product/get-featured-product`,
+      );
+      return data;
+    },
+    staleTime: 5 * 60 * 1000, // 5 minutes
+  });
 
   if (loading) {
     return (

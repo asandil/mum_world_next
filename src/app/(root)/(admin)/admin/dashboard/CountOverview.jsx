@@ -5,16 +5,13 @@ import { BiCategory } from "react-icons/bi";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { IoShirtOutline } from "react-icons/io5";
 import { LuUserRound } from "react-icons/lu";
-import useFetch from "@/hooks/useFetch";
 import {
   ADMIN_CATEGORY_SHOW,
   ADMIN_CUSTOMERS_SHOW,
   ADMIN_PRODUCT_SHOW,
 } from "@/routes/AdminPanelRoute";
 
-const CountOverview = () => {
-  const { data: countData } = useFetch("/api/dashboard/admin/count");
-
+const CountOverview = ({ data }) => {
   return (
     <div className="grid lg:grid-cols-4 sm:grid-cols-2 sm:gap-10 gap-5">
       <Link href={ADMIN_CATEGORY_SHOW}>
@@ -22,7 +19,7 @@ const CountOverview = () => {
           <div className="">
             <h4 className="font-medium text-white ">Total Categories</h4>
             <span className="text-xl font-bold text-white">
-              {countData?.data?.category || 0}
+              {data?.category || 0}
             </span>
           </div>
           <div>
@@ -37,7 +34,7 @@ const CountOverview = () => {
           <div className="">
             <h4 className="font-medium text-[#fff]">Total Product</h4>
             <span className="text-xl font-bold text-[#fff]">
-              {countData?.data?.product || 0}
+              {data?.product || 0}
             </span>
           </div>
           <div>
@@ -52,7 +49,7 @@ const CountOverview = () => {
           <div className="text-gray-500 dark:text-gray-200">
             <h4 className="font-medium text-[#fff]">Total Customers</h4>
             <span className="text-xl font-bold text-[#fff]">
-              {countData?.data?.customer || 0}
+              {data?.customer || 0}
             </span>
           </div>
           <div>
@@ -67,7 +64,7 @@ const CountOverview = () => {
           <div className="text-[#fff]">
             <h4 className="font-medium text-[#fff]">Total Orders</h4>
             <span className="text-xl font-bold">
-              {countData?.data?.order || 0}
+              {data?.order || 0}
             </span>
           </div>
           <div>

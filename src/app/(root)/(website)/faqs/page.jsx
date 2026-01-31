@@ -3,6 +3,8 @@ import FAQAccordion from "@/components/Faq";
 import React from "react";
 
 
+export const revalidate = 3600; // Revalidate every hour
+
 export const metadata = {
   title: "Pregnancy & Newborn FAQs | MumWorld Answers",
   description: "Explore answers to top pregnancy and newborn care questions. Find clear guidance on health, nutrition, and parenting from MumWorld experts.",

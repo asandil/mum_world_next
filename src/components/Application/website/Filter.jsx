@@ -29,14 +29,11 @@ const Filter = () => {
   const [selectedColor, setSelectedColor] = React.useState([]);
   const [selectedSize, setSelectedSize] = React.useState([]);
 
-  const { data: categoryData } = useFetch("/api/category/get-category");
-  console.log("categoryData in Shop UI ", categoryData);
+  const { data: filtersData } = useFetch("/api/shop/filters");
 
-  const { data: colorData } = useFetch("/api/product-variant/colors");
-  console.log("colorData in Shop UI ", colorData);
-
-  const { data: sizeData } = useFetch("/api/product-variant/sizes");
-  console.log("sizeData in Shop UI ", sizeData);
+  const categoryData = filtersData ? { success: true, data: filtersData.data?.categories } : null;
+  const colorData = filtersData ? { success: true, data: filtersData.data?.colors } : null;
+  const sizeData = filtersData ? { success: true, data: filtersData.data?.sizes } : null;
 
   const urlSearchParams = new URLSearchParams(searchParams.toString());
   const router = useRouter();

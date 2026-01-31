@@ -18,7 +18,6 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { useEffect, useState } from "react";
-import useFetch from "@/hooks/useFetch";
 
 export const description = "A bar chart";
 
@@ -44,17 +43,13 @@ const chartConfig = {
   },
 };
 
-export function OrderOverview() {
+export function OrderOverview({ data: monthlySales }) {
   const [chartData, setChartData] = useState([]);
-  const { data: monthlySales, loading } = useFetch(
-    "/api/dashboard/admin/monthly-sales",
-  );
 
   useEffect(() => {
-    if (monthlySales && monthlySales.success) {
-      console.log("monthly Sales", monthlySales?.data);
+    if (monthlySales) {
       const getChartData = months.map((month, index) => {
-        const monthData = monthlySales?.data.find(
+        const monthData = monthlySales.find(
           (item) => item?._id?.month === index + 1,
         );
         return {

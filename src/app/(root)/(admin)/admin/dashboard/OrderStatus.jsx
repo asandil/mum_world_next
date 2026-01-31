@@ -6,7 +6,6 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { useEffect, useState } from "react";
-import useFetch from "@/hooks/useFetch";
 
 export const description = "A donut chart";
 
@@ -40,33 +39,27 @@ const chartConfig = {
   },
 };
 
-export function OrderStatus() {
+export function OrderStatus({ data: orderStatus }) {
   const [chartData, setChartData] = useState([]);
   const [statusCounts, setStatusCounts] = useState();
   const [totalCount, setTotalCount] = useState(0);
 
-  const { data: orderStatus, loading } = useFetch(
-    "/api/dashboard/admin/order-status",
-  );
-
-  console.log("orderStatus", orderStatus);
-
   useEffect(() => {
-    if (orderStatus && orderStatus.success) {
-      const newOrderStatus = orderStatus.data.map((o) => ({
+    if (orderStatus) {
+      const newOrderStatus = orderStatus.map((o) => ({
         status: o._id,
         count: o.count,
         fill: `var(--color-${o._id})`,
       }));
       setChartData(newOrderStatus);
 
-      const getTotalCount = orderStatus.data.reduce(
+      const getTotalCount = orderStatus.reduce(
         (acc, curr) => acc + curr.count,
         0,
       );
       setTotalCount(getTotalCount);
 
-      const statusObj = orderStatus.data.reduce((acc, item) => {
+      const statusObj = orderStatus.reduce((acc, item) => {
         acc[item._id] = item.count;
         return acc;
       }, {});

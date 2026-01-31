@@ -45,6 +45,7 @@ const MediaModal = ({
     queryKey: ["MediaModal"],
     queryFn: async ({ pageParam }) => await fetchMedia(pageParam),
     placeholderData: keepPreviousData,
+    staleTime: 5 * 60 * 1000, // 5 minutes
     initialPageParam: 0,
     getNextPageParam: (LastPage, allPages) => {
       const nextPage = allPages.length;

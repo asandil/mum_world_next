@@ -8,6 +8,8 @@ import FeaturedProduct from "@/components/Application/website/FeaturedProduct";
 import mainImage from "@/assets/images/ShopHeaderImage.png";
 import { FaHandsHelping, FaHeart, FaLeaf } from "react-icons/fa";
 
+export const revalidate = 3600; // Revalidate every hour
+
 export const metadata = {
   title: "MumWorld | Maternity Wear, Pregnancy Tools & Newborn Care",
   description:

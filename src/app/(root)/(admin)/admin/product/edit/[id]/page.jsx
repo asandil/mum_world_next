@@ -40,7 +40,7 @@ const EditProduct = ({ params }) => {
 
   const [loading, setLoading] = useState(false);
   const [categoryOption, setCategoryOption] = useState([]);
-  const { data: getCategory } = useFetch(`/api/category?deleteType=SD&&size=1000`);
+  const { data: getCategory } = useFetch(`/api/category?deleteType=SD&size=100`);
   console.log("Get Category in Product Page", getCategory);
 
   const { data: getProduct, loading: getProductLoading } = useFetch(
