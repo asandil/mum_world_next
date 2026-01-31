@@ -19,13 +19,14 @@ import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { zSchema } from "@/lib/zodSchema";
 import { ButtonLoading } from "@/components/Application/ButtonLoading";
-import { WEBSITE_LOGIN } from "@/routes/WebsiteRoute";
+import { WEBSITE_HOME, WEBSITE_LOGIN } from "@/routes/WebsiteRoute";
 
 // Icons
 import { FaRegEyeSlash } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa6";
 import axios from "axios";
 import { showToast } from "@/lib/showToast";
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const RegiterPage = () => {
   const [loading, setLoading] = useState(false);
@@ -63,7 +64,7 @@ const RegiterPage = () => {
       setLoading(true);
       const { data: registerResponse } = await axios.post(
         `/api/auth/register`,
-        values
+        values,
       );
       if (!registerResponse.success) {
         throw new Error(registerResponse.message);
@@ -79,144 +80,153 @@ const RegiterPage = () => {
 
   return (
     <>
-      <Card className="w-[340px] sm:w-[550px]">
-        <CardContent>
-          <div className="flex flex-col items-center justify-center mb-5">
-            <Image
-              src={Logo.src}
-              width={Logo.width}
-              height={Logo.height}
-              alt="logo"
-              className="w-[100px] sm:w-[150px]"
-            />
-            <p className="text-[24px] text-center text-primary mt-[-12px] font-[600]">
-              Mumworld.in
-            </p>
-          </div>
-          <div className="text-center">
-            <h1 className="text-3xl font-bold">Create Account</h1>
-            <p>Create new account by filling out the form below.</p>
-          </div>
-          <div className="mt-5">
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(handleRegisterSubmit)}
-                className="space-y-8"
-              >
-                <div className="mb-5">
-                  <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Full Name</FormLabel>
-                        <FormControl>
-                          <Input
-                            type="text"
-                            placeholder="Enter your name"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div className="mb-5">
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email</FormLabel>
-                        <FormControl>
-                          <Input
-                            type="email"
-                            placeholder="example@gmail.com"
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div className="mb-5">
-                  <FormField
-                    control={form.control}
-                    name="password"
-                    render={({ field }) => (
-                      <FormItem className="relative">
-                        <FormLabel>Password</FormLabel>
-                        <FormControl>
-                          <Input
-                            type={isTypePassword ? "password" : "text"}
-                            placeholder="Enter your Password"
-                            {...field}
-                          />
-                        </FormControl>
-                        <button
-                          className="absolute top-1/2 right-2 cursor-pointer text-[24px] text-primary hover:text-primary-hover "
-                          type="button"
-                          onClick={() => setIsTypePassword(!isTypePassword)}
-                        >
-                          {isTypePassword ? <FaRegEyeSlash /> : <FaRegEye />}
-                        </button>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div className="mb-5">
-                  <FormField
-                    control={form.control}
-                    name="confirmPassword"
-                    render={({ field }) => (
-                      <FormItem className="relative">
-                        <FormLabel>Confirm Password</FormLabel>
-                        <FormControl>
-                          <Input
-                            type={isTypePassword ? "password" : "text"}
-                            placeholder="Enter your Confirm Password"
-                            {...field}
-                          />
-                        </FormControl>
-                        <button
-                          className="absolute top-1/2 right-2 cursor-pointer text-[24px] text-primary hover:text-primary-hover"
-                          type="button"
-                          onClick={() => setIsTypePassword(!isTypePassword)}
-                        >
-                          {isTypePassword ? <FaRegEyeSlash /> : <FaRegEye />}
-                        </button>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                <div className="mb-3">
-                  <ButtonLoading
-                    loading={loading}
-                    type="submit"
-                    text="Create Account"
-                    className="w-full cursor-pointer"
-                  />
-                </div>
-                <div className="text-center">
-                  <div className="flex justify-center items-center gap-1">
-                    <p>Allready have account?</p>
-                    <Link
-                      href={WEBSITE_LOGIN}
-                      className="text-primary underline hover:text-primary-hover"
-                    >
-                      Login
-                    </Link>
+      <div>
+        <Link
+          href={WEBSITE_HOME}
+          className="items-center text-center text-primary hover:text-primary-hover inline-flex"
+        >
+          <IoIosArrowRoundForward size={32} className="rotate-180" />
+          <span>Back to Home</span>
+        </Link>
+        <Card className="w-[340px] sm:w-[550px]">
+          <CardContent>
+            <div className="flex flex-col items-center justify-center mb-5">
+              <Image
+                src={Logo.src}
+                width={Logo.width}
+                height={Logo.height}
+                alt="logo"
+                className="w-[100px] sm:w-[150px]"
+              />
+              <p className="text-[24px] text-center text-primary mt-[-12px] font-[600]">
+                Mumworld.in
+              </p>
+            </div>
+            <div className="text-center">
+              <h1 className="text-3xl font-bold">Create Account</h1>
+              <p>Create new account by filling out the form below.</p>
+            </div>
+            <div className="mt-5">
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(handleRegisterSubmit)}
+                  className="space-y-8"
+                >
+                  <div className="mb-5">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Full Name</FormLabel>
+                          <FormControl>
+                            <Input
+                              type="text"
+                              placeholder="Enter your name"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
                   </div>
-                </div>
-              </form>
-            </Form>
-          </div>
-        </CardContent>
-      </Card>
+                  <div className="mb-5">
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Email</FormLabel>
+                          <FormControl>
+                            <Input
+                              type="email"
+                              placeholder="example@gmail.com"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <div className="mb-5">
+                    <FormField
+                      control={form.control}
+                      name="password"
+                      render={({ field }) => (
+                        <FormItem className="relative">
+                          <FormLabel>Password</FormLabel>
+                          <FormControl>
+                            <Input
+                              type={isTypePassword ? "password" : "text"}
+                              placeholder="Enter your Password"
+                              {...field}
+                            />
+                          </FormControl>
+                          <button
+                            className="absolute top-1/2 right-2 cursor-pointer text-[24px] text-primary hover:text-primary-hover "
+                            type="button"
+                            onClick={() => setIsTypePassword(!isTypePassword)}
+                          >
+                            {isTypePassword ? <FaRegEyeSlash /> : <FaRegEye />}
+                          </button>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <div className="mb-5">
+                    <FormField
+                      control={form.control}
+                      name="confirmPassword"
+                      render={({ field }) => (
+                        <FormItem className="relative">
+                          <FormLabel>Confirm Password</FormLabel>
+                          <FormControl>
+                            <Input
+                              type={isTypePassword ? "password" : "text"}
+                              placeholder="Enter your Confirm Password"
+                              {...field}
+                            />
+                          </FormControl>
+                          <button
+                            className="absolute top-1/2 right-2 cursor-pointer text-[24px] text-primary hover:text-primary-hover"
+                            type="button"
+                            onClick={() => setIsTypePassword(!isTypePassword)}
+                          >
+                            {isTypePassword ? <FaRegEyeSlash /> : <FaRegEye />}
+                          </button>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <ButtonLoading
+                      loading={loading}
+                      type="submit"
+                      text="Create Account"
+                      className="w-full cursor-pointer"
+                    />
+                  </div>
+                  <div className="text-center">
+                    <div className="flex justify-center items-center gap-1">
+                      <p>Allready have account?</p>
+                      <Link
+                        href={WEBSITE_LOGIN}
+                        className="text-primary underline hover:text-primary-hover"
+                      >
+                        Login
+                      </Link>
+                    </div>
+                  </div>
+                </form>
+              </Form>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </>
   );
 };

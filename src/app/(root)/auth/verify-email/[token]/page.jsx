@@ -19,7 +19,7 @@ const EmailVerification = ({ params }) => {
     const verify = async () => {
       const { data: verificationResponse } = await axios.post(
         "/api/auth/verify-email",
-        { token }
+        { token },
       );
       if (verificationResponse.success) {
         setIsverified(true);
