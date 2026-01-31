@@ -2,6 +2,8 @@ import axios from "axios";
 import React from "react";
 import ProductDetails from "./ProductDetails";
 
+export const revalidate = 3600; // Revalidate every hour
+
 const ProductPage = async ({ params, searchParams }) => {
   const { slug } = await params;
   const { color, size } = await searchParams;

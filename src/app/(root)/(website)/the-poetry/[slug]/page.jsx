@@ -5,6 +5,13 @@ import RecentPosts from "@/components/RecentPosts";
 import SignUp from "@/components/SignUp";
 import Image from "next/image";
 
+export function generateStaticParams() {
+  const posts = getPoetryPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
 export default async function PoetryPage({ params }) {
   const { slug } = await params;
   const decodedSlug = decodeURIComponent(slug);
