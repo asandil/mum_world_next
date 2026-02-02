@@ -15,7 +15,6 @@ import {
   ADMIN_CATEGORY_SHOW,
   ADMIN_COUPON_ADD,
   ADMIN_COUPON_SHOW,
-  ADMIN_CUSTOMER_FEEDBACK_SHOW,
   ADMIN_CUSTOMERS_SHOW,
   ADMIN_DASHBOARD,
   ADMIN_MEDIA_SHOW,
@@ -100,11 +99,6 @@ export const adminAppSidebarMenu = [
     title: "Product Rating & Review",
     url: ADMIN_REVIEW_SHOW,
     icon: IoMdStarOutline,
-  },
-  {
-    title: "Customer FeedBack",
-    url: ADMIN_CUSTOMER_FEEDBACK_SHOW,
-    icon: VscFeedback,
   },
   {
     title: "Banner and Add",

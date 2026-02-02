@@ -38,9 +38,6 @@ export const ADMIN_CUSTOMERS_SHOW = "/admin/customers";
 // Product Rating & review
 export const ADMIN_REVIEW_SHOW = "/admin/review";
 
-// Customer Feedback Show
-export const ADMIN_CUSTOMER_FEEDBACK_SHOW = "/admin/customer-feedback";
-
 // Banner routes
 export const ADMIN_BANNER_ADD = "/admin/banner/add";
 export const ADMIN_BANNER_SHOW = "/admin/banner";

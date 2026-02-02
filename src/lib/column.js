@@ -247,38 +247,6 @@ export const DT_REVIEW_COLUMN = [
   },
 ];
 
-export const DT_FEEDBACK_COLUMN = [
-  {
-    accessorKey: "name",
-    header: "Name",
-  },
-  {
-    accessorKey: "email",
-    header: "Email",
-  },
-  {
-    accessorKey: "bio",
-    header: "Bio",
-  },
-  {
-    accessorKey: "feedBackCategory",
-    header: "FeedBack Category",
-  },
-
-  {
-    accessorKey: "rating",
-    header: "Rating",
-  },
-  {
-    accessorKey: "feedBackAddress",
-    header: "FeedBack Address",
-  },
-  {
-    accessorKey: "feedBackCity",
-    header: "FeedBack City",
-  },
-];
-
 export const DT_BANNER_COLUMN = [
   {
     accessorKey: "name",
