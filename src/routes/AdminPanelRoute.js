@@ -29,13 +29,17 @@ export const ADMIN_COUPON_EDIT = (id) => (id ? `/admin/coupon/edit/${id}` : "");
 
 // Order routes
 export const ADMIN_ORDER_SHOW = "/admin/orders";
-export const ADMIN_ORDER_DETAILS = (order_id) => order_id ? `/admin/orders/details/${order_id}` : "";
+export const ADMIN_ORDER_DETAILS = (order_id) =>
+  order_id ? `/admin/orders/details/${order_id}` : "";
 
 // Customer routes
 export const ADMIN_CUSTOMERS_SHOW = "/admin/customers";
 
-// Rating & review
+// Product Rating & review
 export const ADMIN_REVIEW_SHOW = "/admin/review";
+
+// Customer Feedback Show
+export const ADMIN_CUSTOMER_FEEDBACK_SHOW = "/admin/customer-feedback";
 
 // Banner routes
 export const ADMIN_BANNER_ADD = "/admin/banner/add";

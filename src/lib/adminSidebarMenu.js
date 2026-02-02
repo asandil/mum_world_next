@@ -7,6 +7,7 @@ import { IoMdStarOutline } from "react-icons/io";
 import { MdOutlinePermMedia } from "react-icons/md";
 import { RiCoupon2Line } from "react-icons/ri";
 import { RiAdvertisementLine } from "react-icons/ri";
+import { VscFeedback } from "react-icons/vsc";
 import {
   ADMIN_BANNER_ADD,
   ADMIN_BANNER_SHOW,
@@ -14,6 +15,7 @@ import {
   ADMIN_CATEGORY_SHOW,
   ADMIN_COUPON_ADD,
   ADMIN_COUPON_SHOW,
+  ADMIN_CUSTOMER_FEEDBACK_SHOW,
   ADMIN_CUSTOMERS_SHOW,
   ADMIN_DASHBOARD,
   ADMIN_MEDIA_SHOW,
@@ -98,6 +100,11 @@ export const adminAppSidebarMenu = [
     title: "Product Rating & Review",
     url: ADMIN_REVIEW_SHOW,
     icon: IoMdStarOutline,
+  },
+  {
+    title: "Customer FeedBack",
+    url: ADMIN_CUSTOMER_FEEDBACK_SHOW,
+    icon: VscFeedback,
   },
   {
     title: "Banner and Add",
