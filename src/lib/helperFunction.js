@@ -132,13 +132,14 @@ export const columnConfig = (
 
 export const statusBadge = (status) => {
   const statusColorConfig = {
-    pending: 'bg-blue-500',
-    processing: 'bg-yellow-500',
-    shipped: 'bg-cyan-500',
-    delivered: 'bg-green-500',
-    cancelled: 'bg-red-500',
-    unverified: 'bg-orange-500',
-  }
+    pending: "bg-gradient-to-r from-blue-400 to-blue-800 text-white",
+    processing: "bg-gradient-to-r from-yellow-400 to-yellow-800 text-black",
+    shipped: "bg-gradient-to-r from-cyan-400 to-cyan-800 text-white",
+    delivered: "bg-gradient-to-r from-green-400 to-green-800 text-white",
+    cancelled: "bg-gradient-to-r from-red-400 to-red-800 text-white",
+    unverified: "bg-gradient-to-r from-orange-400 to-orange-800 text-white",
+    confirmed: "bg-gradient-to-r from-emerald-400 to-emerald-800 text-white",
+  };
   return <span className={`${statusColorConfig[status]} text-white capitalize px-2 py-1 rounded-full text-xs`}>
     {status}
   </span>

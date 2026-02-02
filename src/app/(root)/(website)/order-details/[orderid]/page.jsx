@@ -28,12 +28,12 @@ const OrderDetails = async ({ params }) => {
   // Define status progression
   const statusSteps = [
     { status: "pending", label: "Pending", step: 1 },
-    { status: "confirmed", label: "Confirmed", step: 2 },
-    { status: "processing", label: "Processing", step: 3 },
-    { status: "shipped", label: "Shipped", step: 4 },
-    { status: "delivered", label: "Delivered", step: 5 },
-    { status: "cancelled", label: "Cancelled", step: 6 },
-    { status: "unverified", label: "Unverified", step: 7 },
+    { status: "unverified", label: "Unverified", step: 2 },
+    { status: "confirmed", label: "Confirmed", step: 3 },
+    { status: "processing", label: "Processing", step: 4 },
+    { status: "shipped", label: "Shipped", step: 5 },
+    { status: "delivered", label: "Delivered", step: 6 },
+    { status: "cancelled", label: "Cancelled", step: 7 },
   ];
 
   // Find current status step
@@ -75,16 +75,16 @@ const OrderDetails = async ({ params }) => {
                   <span
                     className={`px-3 py-1 rounded-full text-sm font-medium ${
                       currentStatus === "pending"
-                        ? "bg-yellow-100 text-yellow-800"
+                        ? "bg-gradient-to-r from-blue-400 to-blue-800 text-white"
                         : currentStatus === "confirmed"
-                        ? "bg-blue-100 text-blue-800"
+                        ? "bg-gradient-to-r from-emerald-400 to-emerald-800 text-white"
                         : currentStatus === "processing"
-                        ? "bg-purple-100 text-purple-800"
+                        ? "bg-gradient-to-r from-yellow-400 to-yellow-800 text-white"
                         : currentStatus === "shipped"
-                        ? "bg-indigo-100 text-indigo-800"
+                        ? "bg-gradient-to-r from-cyan-400 to-cyan-800 text-white"
                         : currentStatus === "delivered"
-                        ? "bg-green-100 text-green-800"
-                        : "bg-gray-100 text-gray-800"
+                        ? "bg-gradient-to-r from-green-400 to-green-800 text-white"
+                        : "bg-gradient-to-r from-red-400 to-red-800 text-white"
                     }`}
                   >
                     {currentStatus.charAt(0).toUpperCase() +
@@ -428,12 +428,12 @@ const OrderDetails = async ({ params }) => {
                   </table>
                 </div>
                 <div className="w-full flex justify-between">
-                  <ButtonLoading
+                  {/* <ButtonLoading
                     type="button"
                     text="Cancel"
                     variant="destructive"
                     className="cursor-pointer"
-                  />
+                  /> */}
                   <PrintOrderDetailsButton orderData={orderData} />
                 </div>
               </div>

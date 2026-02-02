@@ -37,12 +37,12 @@ const statusOptions = [
 // Define status progression (same as user page)
 const statusSteps = [
   { status: "pending", label: "Pending", step: 1 },
-  { status: "confirmed", label: "Confirmed", step: 2 },
-  { status: "processing", label: "Processing", step: 3 },
-  { status: "shipped", label: "Shipped", step: 4 },
-  { status: "delivered", label: "Delivered", step: 5 },
-  { status: "cancelled", label: "Cancelled", step: 6 },
-  { status: "unverified", label: "Unverified", step: 7 },
+    { status: "unverified", label: "Unverified", step: 2 },
+    { status: "confirmed", label: "Confirmed", step: 3 },
+    { status: "processing", label: "Processing", step: 4 },
+    { status: "shipped", label: "Shipped", step: 5 },
+    { status: "delivered", label: "Delivered", step: 6 },
+    { status: "cancelled", label: "Cancelled", step: 7 },
 ];
 
 const OrderDetails = ({ params }) => {
