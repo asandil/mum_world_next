@@ -23,7 +23,7 @@ const layout = ({ children }) => {
 
         {/* Top Ad Unit - Leaderboard */}
         <div className="ad-container">
-          <div className="ad-label">Advertisement</div>
+          {/* <div className="ad-label">Advertisement</div> */}
           <AdUnit slot="5878778835" />
         </div>
       </div>
@@ -37,7 +37,7 @@ const layout = ({ children }) => {
 
         {/* Top Ad Unit - Leaderboard */}
         <div className="ad-container">
-          <div className="ad-label">Advertisement</div>
+          {/* <div className="ad-label">Advertisement</div> */}
           <AdUnit slot="5878778835" />
         </div>
       </div>
