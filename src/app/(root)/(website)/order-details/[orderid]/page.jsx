@@ -33,6 +33,7 @@ const OrderDetails = async ({ params }) => {
     { status: "shipped", label: "Shipped", step: 4 },
     { status: "delivered", label: "Delivered", step: 5 },
     { status: "cancelled", label: "Cancelled", step: 6 },
+    { status: "unverified", label: "Unverified", step: 7 },
   ];
 
   // Find current status step

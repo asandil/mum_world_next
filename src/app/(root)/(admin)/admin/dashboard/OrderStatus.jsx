@@ -37,6 +37,10 @@ const chartConfig = {
     label: "Unverified",
     color: "#f97316",
   },
+  confirmed: {
+    label: "Confirmed",
+    color: "#f97316",
+  },
 };
 
 export function OrderStatus({ data: orderStatus }) {
