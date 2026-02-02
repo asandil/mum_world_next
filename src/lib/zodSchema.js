@@ -30,8 +30,8 @@ export const zSchema = z.object({
   }),
   bio: z
     .string()
-    .refine((val) => val.trim().split(/\s+/).length >= 15, {
-      message: "Bio must be at least 15 words",
+    .refine((val) => val.trim().split(/\s+/).length >= 5, {
+      message: "Bio must be at least 5 words",
     })
     .refine((val) => val.trim().split(/\s+/).length <= 150, {
       message: "Bio must be at most 150 words",

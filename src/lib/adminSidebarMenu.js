@@ -95,7 +95,7 @@ export const adminAppSidebarMenu = [
     icon: LuUserRound,
   },
   {
-    title: "Rating & Review",
+    title: "Product Rating & Review",
     url: ADMIN_REVIEW_SHOW,
     icon: IoMdStarOutline,
   },
