@@ -616,7 +616,7 @@ const Checkout = () => {
                           <Button
                             type="button"
                             onClick={handleLogin}
-                            className="flex items-center gap-2"
+                            className="flex items-center gap-2 cursor-pointer"
                           >
                             <LogIn size={16} />
                             Login to Place Order
