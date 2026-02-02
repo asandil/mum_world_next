@@ -15,6 +15,7 @@ import useFetch from "@/hooks/useFetch";
 import { showToast } from "@/lib/showToast";
 import { zSchema } from "@/lib/zodSchema";
 import {
+  WEBSITE_LOGIN,
   WEBSITE_ORDER_DEATILS,
   WEBSITE_PRODUCT_DETAILS,
   WEBSITE_SHOP,
@@ -34,7 +35,7 @@ import { Textarea } from "@/components/ui/textarea";
 import Script from "next/script";
 import { useRouter } from "next/navigation";
 import loading from "@/assets/images/loading.svg";
-import { ShoppingCartIcon } from "lucide-react";
+import { ShoppingCartIcon, LogIn } from "lucide-react";
 
 const breadCrumb = {
   title: "Checkout",
@@ -70,7 +71,7 @@ const Checkout = () => {
 
   const [savingOrder, setSavingOrder] = useState(false);
 
-  // console.log("Checkout Data from Cart-Verification API ", getVerifiedCartData);
+  const isLoggedIn = authStore?.auth?._id;
 
   useEffect(() => {
     if (getVerifiedCartData && getVerifiedCartData.success) {
@@ -116,6 +117,11 @@ const Checkout = () => {
   });
 
   const applyCoupon = async (values) => {
+    if (!isLoggedIn) {
+      showToast("error", "Please login to apply coupon");
+      return;
+    }
+
     setCouponLoading(true);
     try {
       const { data: response } = await axios.post("/api/coupon/apply", values);
@@ -205,6 +211,10 @@ const Checkout = () => {
   };
 
   const placeOrder = async (formData) => {
+    if (!isLoggedIn) {
+      showToast("error", "Please login to place order");
+      return;
+    }
     console.log("Order Form Details From CheckOut Page.", formData);
     setPlacingOrder(true);
     try {
@@ -282,6 +292,10 @@ const Checkout = () => {
       setPlacingOrder(false);
     }
   };
+  const handleLogin = () => {
+    // You should update this path to your actual login route
+    router.push(WEBSITE_LOGIN);
+  };
 
   return (
     <div>
@@ -314,15 +328,18 @@ const Checkout = () => {
       ) : (
         <div className="flex lg:flex-nowrap flex-wrap gap-10 my-10 xl:px-32 lg:px-10 px-4">
           <div className="lg:w-[60%] w-full rounded-xl shadow-lg p-5 border ">
-            <div className="flex font-semibold gap-2 items-center">
-              <FaShippingFast size={25} />
+            <div className="flex justify-between items-center mb-5">
+              <div className="flex font-semibold gap-2 items-center">
+                <FaShippingFast size={25} />
+                <span>Shipping Details</span>
+              </div>
             </div>
 
             <div className="mt-5">
               <Form {...orderForm}>
                 <form onSubmit={orderForm.handleSubmit(placeOrder)}>
                   <div className="flex flex-col sm:flex-row sm:flex-wrap gap-5">
-                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-1">
                       <FormField
                         control={orderForm.control}
                         name="name"
@@ -340,6 +357,7 @@ const Checkout = () => {
                                 type="text"
                                 placeholder="Full Name"
                                 {...field}
+                                disabled={!isLoggedIn}
                               />
                             </FormControl>
                             <FormMessage />
@@ -348,7 +366,7 @@ const Checkout = () => {
                       />
                     </div>
 
-                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-1">
                       <FormField
                         control={orderForm.control}
                         name="email"
@@ -362,6 +380,7 @@ const Checkout = () => {
                                 type="email"
                                 placeholder="Email"
                                 {...field}
+                                disabled={!isLoggedIn}
                               />
                             </FormControl>
                             <FormMessage />
@@ -370,7 +389,7 @@ const Checkout = () => {
                       />
                     </div>
 
-                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-1">
                       <FormField
                         control={orderForm.control}
                         name="phone"
@@ -385,6 +404,7 @@ const Checkout = () => {
                                 type="tel"
                                 placeholder="Phone"
                                 {...field}
+                                disabled={!isLoggedIn}
                               />
                             </FormControl>
                             <FormMessage />
@@ -393,7 +413,7 @@ const Checkout = () => {
                       />
                     </div>
 
-                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-1">
                       <FormField
                         control={orderForm.control}
                         name="address"
@@ -407,7 +427,11 @@ const Checkout = () => {
                               <span className="text-red-600">*</span>{" "}
                             </FormLabel>
                             <FormControl>
-                              <Input placeholder="Address" {...field} />
+                              <Input
+                                placeholder="Address"
+                                {...field}
+                                disabled={!isLoggedIn}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -415,7 +439,7 @@ const Checkout = () => {
                       />
                     </div>
 
-                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-1">
                       <FormField
                         control={orderForm.control}
                         name="street"
@@ -432,6 +456,7 @@ const Checkout = () => {
                               <Input
                                 placeholder="Area-Street-Sector-village"
                                 {...field}
+                                disabled={!isLoggedIn}
                               />
                             </FormControl>
                             <FormMessage />
@@ -440,7 +465,7 @@ const Checkout = () => {
                       />
                     </div>
 
-                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-1">
                       <FormField
                         control={orderForm.control}
                         name="landmark"
@@ -450,7 +475,11 @@ const Checkout = () => {
                               Landmark <span className="text-red-600">*</span>
                             </FormLabel>
                             <FormControl>
-                              <Input placeholder="LandMark" {...field} />
+                              <Input
+                                placeholder="LandMark"
+                                {...field}
+                                disabled={!isLoggedIn}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -458,7 +487,7 @@ const Checkout = () => {
                       />
                     </div>
 
-                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-1">
                       <FormField
                         control={orderForm.control}
                         name="city"
@@ -468,7 +497,11 @@ const Checkout = () => {
                               Town/City <span className="text-red-600">*</span>
                             </FormLabel>
                             <FormControl>
-                              <Input placeholder="City" {...field} />
+                              <Input
+                                placeholder="City"
+                                {...field}
+                                disabled={!isLoggedIn}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -476,7 +509,7 @@ const Checkout = () => {
                       />
                     </div>
 
-                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-1">
                       <FormField
                         control={orderForm.control}
                         name="state"
@@ -486,7 +519,11 @@ const Checkout = () => {
                               State <span className="text-red-600">*</span>{" "}
                             </FormLabel>
                             <FormControl>
-                              <Input placeholder="State" {...field} />
+                              <Input
+                                placeholder="State"
+                                {...field}
+                                disabled={!isLoggedIn}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -494,7 +531,7 @@ const Checkout = () => {
                       />
                     </div>
 
-                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-1">
                       <FormField
                         control={orderForm.control}
                         name="pincode"
@@ -505,7 +542,11 @@ const Checkout = () => {
                               <span className="text-red-600">*</span>{" "}
                             </FormLabel>
                             <FormControl>
-                              <Input placeholder="Pincode" {...field} />
+                              <Input
+                                placeholder="Pincode"
+                                {...field}
+                                disabled={!isLoggedIn}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -513,7 +554,7 @@ const Checkout = () => {
                       />
                     </div>
 
-                    <div className="w-full sm:w-[calc(50%-10px)] mb-3">
+                    <div className="w-full sm:w-[calc(50%-10px)] mb-1">
                       <FormField
                         control={orderForm.control}
                         name="country"
@@ -524,7 +565,11 @@ const Checkout = () => {
                               <span className="text-red-600">*</span>{" "}
                             </FormLabel>
                             <FormControl>
-                              <Input placeholder="Country" {...field} />
+                              <Input
+                                placeholder="Country"
+                                {...field}
+                                disabled={!isLoggedIn}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -532,7 +577,7 @@ const Checkout = () => {
                       />
                     </div>
 
-                    <div className="w-full mb-3">
+                    <div className="w-full mb-0">
                       <FormField
                         control={orderForm.control}
                         name="ordernote"
@@ -546,6 +591,7 @@ const Checkout = () => {
                                 className="resize-none"
                                 placeholder="Enter order note"
                                 {...field}
+                                disabled={!isLoggedIn}
                               />
                             </FormControl>
                             <FormMessage />
@@ -553,15 +599,37 @@ const Checkout = () => {
                         )}
                       />
                     </div>
+                    {isLoggedIn ? (
+                      <>
+                        <div className=" mb-3">
+                          <ButtonLoading
+                            type="submit"
+                            text="Place Order"
+                            loading={placingOrder}
+                            className="bg-black rounded-full px-5 cursor-pointer"
+                          />
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div className="mb-3">
+                          <Button
+                            type="button"
+                            onClick={handleLogin}
+                            className="flex items-center gap-2"
+                          >
+                            <LogIn size={16} />
+                            Login to Place Order
+                          </Button>
 
-                    <div className=" mb-3">
-                      <ButtonLoading
-                        type="submit"
-                        text="Place Order"
-                        loading={placingOrder}
-                        className="bg-black rounded-full px-5 cursor-pointer"
-                      />
-                    </div>
+                          {!isLoggedIn && (
+                            <p className="text-sm text-primary mt-2">
+                              You must be logged In to place an order
+                            </p>
+                          )}
+                        </div>
+                      </>
+                    )}
                   </div>
                 </form>
               </Form>
@@ -625,17 +693,6 @@ const Checkout = () => {
                       </td>
                     </tr>
 
-                    {/* <tr>
-                      <td className="font-[600] py-2">Discount</td>
-                      <td className="text-end py-2 ">
-                        -{" "}
-                        {discount.toLocaleString("en-IN", {
-                          style: "currency",
-                          currency: "INR",
-                        })}
-                      </td>
-                    </tr> */}
-
                     <tr>
                       <td className="font-[600] py-2">Coupon Discount</td>
                       <td className="text-end py-2 text-green-600">
@@ -675,6 +732,7 @@ const Checkout = () => {
                                   <Input
                                     placeholder="Enter coupon code"
                                     {...field}
+                                    disabled={!isLoggedIn}
                                   />
                                 </FormControl>
                                 <FormMessage />
@@ -688,6 +746,7 @@ const Checkout = () => {
                             text="Apply"
                             className="w-full cursor-pointer"
                             loading={couponLoading}
+                            disabled={!isLoggedIn}
                           ></ButtonLoading>
                         </div>
                       </form>
@@ -702,10 +761,16 @@ const Checkout = () => {
                         type="button"
                         className="cursor-pointer text-red-500"
                         onClick={removeCoupon}
+                        disabled={!isLoggedIn}
                       >
                         <IoCloseCircleSharp size={25} />
                       </button>
                     </div>
+                  )}
+                  {!isLoggedIn && (
+                    <p className="text-sm text-primary mt-2 text-center">
+                      Login to apply coupons
+                    </p>
                   )}
                 </div>
               </div>
