@@ -107,7 +107,7 @@ export const DT_ORDER_COLUMN = [
   },
   {
     accessorKey: "createdAt",
-    header:"Order Date and Time"
+    header: "Order Date and Time",
   },
   {
     accessorKey: "name",
@@ -204,8 +204,8 @@ export const DT_CUSTOMERS_COLUMN = [
     header: "Phone",
   },
   {
-    accessorKey:"createdAt",
-    header:"Created Data"
+    accessorKey: "createdAt",
+    header: "Created Data",
   },
   {
     accessorKey: "address",
@@ -244,6 +244,38 @@ export const DT_REVIEW_COLUMN = [
   {
     accessorKey: "review",
     header: "Review",
+  },
+];
+
+export const DT_FEEDBACK_COLUMN = [
+  {
+    accessorKey: "name",
+    header: "Name",
+  },
+  {
+    accessorKey: "email",
+    header: "Email",
+  },
+  {
+    accessorKey: "bio",
+    header: "Bio",
+  },
+  {
+    accessorKey: "feedBackCategory",
+    header: "FeedBack Category",
+  },
+
+  {
+    accessorKey: "rating",
+    header: "Rating",
+  },
+  {
+    accessorKey: "feedBackAddress",
+    header: "FeedBack Address",
+  },
+  {
+    accessorKey: "feedBackCity",
+    header: "FeedBack City",
   },
 ];
 
